@@ -1,0 +1,9 @@
+System Test
+
+Master MasterName
+	bluetooth 'masterBluetooth'
+	
+	Slave plant0
+		bluetooth
+
+Graph

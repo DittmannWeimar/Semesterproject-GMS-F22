@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: dk.gms.dsl.DeviceDSL
+Bundle-ManifestVersion: 2
+Bundle-Name: dk.gms.dsl.DeviceDSL
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: dk.gms.dsl.DeviceDSL; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.common,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: dk.gms.dsl.generator,
+ dk.gms.dsl.services,
+ dk.gms.dsl.serializer,
+ dk.gms.dsl,
+ dk.gms.dsl.deviceDefinition,
+ dk.gms.dsl.deviceDefinition.util,
+ dk.gms.dsl.validation,
+ dk.gms.dsl.deviceDefinition.impl,
+ dk.gms.dsl.scoping,
+ dk.gms.dsl.parser.antlr.internal,
+ dk.gms.dsl.parser.antlr
+Import-Package: org.apache.log4j

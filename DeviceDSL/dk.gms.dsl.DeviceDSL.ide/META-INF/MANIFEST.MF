@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: dk.gms.dsl.DeviceDSL.ide
+Bundle-ManifestVersion: 2
+Bundle-Name: dk.gms.dsl.DeviceDSL.ide
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: dk.gms.dsl.DeviceDSL.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: dk.gms.dsl.DeviceDSL,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: dk.gms.dsl.ide.contentassist.antlr.internal,
+ dk.gms.dsl.ide.contentassist.antlr

@@ -1,0 +1,23 @@
+INDEX VERSION 1.131+C:\Users\DittmannWeimar\Documents\kandidat\2. semseter\Semesterprojekt\DeviceDSL\.metadata\.plugins\org.eclipse.jdt.core
+967237947.index
+1532002201.index
+3298742800.index
+723464522.index
+1592408212.index
+3535128801.index
+2410226218.index
+690657102.index
+546289272.index
+3991038022.index
+4216989839.index
+1582111850.index
+2500079827.index
+1620397921.index
+1606196642.index
+2377087703.index
+3359592307.index
+1514157181.index
+918265173.index
+1865797976.index
+557591286.index
+850696858.index
