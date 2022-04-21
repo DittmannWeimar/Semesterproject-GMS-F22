@@ -1,47 +1,28 @@
-System Test:
-
-Master MasterName:
-	bluetooth 'masterBluetooth'
-	
-	Slave plant01:
-		bluetooth 'plant01'
-		
-		Actuator LED:
-			pins (9)
+System test_system:
+	Gateway test_gateway:
+		mac 11:22:33:44:55:66
+		Worker test_worker1:
+			mac AA:BB:CC:DD:EE:FF
+			sleep for 10 minutes
+			broadcast for 20 seconds
 			
-		Actuator WaterPump:
-			pins (10, 11, 12)
-			Setting moistureLimit:
-				default 10
+			Sensor Temperature:
+				pins(1,2)
+				rate 10
+				out as temperature with mapping temp + 2
+				behavior avarage(100)
+				predicate TRUE == TRUE
 				
-		Sensor Moisture:
-			pins (1, 2, 3, 4)
-			graph moisture
-			
-		Sensor Temperature:
-			pins (5, 6, 7, 8)
-			graph temperature
-				
-	Slave plant02:
-		bluetooth 'plant02'
-		
-		Actuator LED:
-			pins (1)
-			
-		Actuator LED:
-			pins (2)
-
-Graph temperature:
-	type Line
-	category 'Greenhouse 01'
-	title 'Temperature'
-	xlabel 'time'
-	ylabel 'temperature (C)'
+			Actuator LED:
+				pins(3)
+				Settings:
+					threshold = 2
+					brightness = 0.35
+				trigger on temp > threshold
 	
-Graph moisture:
-	type Line
-	category 'Greenhouse 01'
-	title 'Moisture'
-	xlabel 'time'
-	ylabel 'moisture'
-	
+	Graph test_graph:
+		type Line
+		category "basics"
+		title "Temperature"
+		x: Time
+		y: Degrees (C)
