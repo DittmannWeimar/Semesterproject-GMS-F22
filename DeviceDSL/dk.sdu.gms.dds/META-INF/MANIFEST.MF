@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: dk.sdu.gms.dds
+Bundle-ManifestVersion: 2
+Bundle-Name: dk.sdu.gms.dds
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: dk.sdu.gms.dds; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.common,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: dk.sdu.gms.dds.deviceDefinition.util,
+ dk.sdu.gms.dds.deviceDefinition,
+ dk.sdu.gms.dds.scoping,
+ dk.sdu.gms.dds,
+ dk.sdu.gms.dds.validation,
+ dk.sdu.gms.dds.generator,
+ dk.sdu.gms.dds.services,
+ dk.sdu.gms.dds.deviceDefinition.impl,
+ dk.sdu.gms.dds.serializer,
+ dk.sdu.gms.dds.parser.antlr,
+ dk.sdu.gms.dds.parser.antlr.internal
+Import-Package: org.apache.log4j

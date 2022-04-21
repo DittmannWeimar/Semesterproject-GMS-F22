@@ -1,0 +1,141 @@
+grammar dk.sdu.gms.dds.DeviceDefinition with org.eclipse.xtext.common.Terminals
+
+generate deviceDefinition "http://www.sdu.dk/gms/dds/DeviceDefinition"
+
+System:
+	(imports += Import)*
+	'System' ':'
+	gateway = Gateway
+	graphs += Graph*
+;
+
+Graph:
+	'Graph' type = [Import] name=ID ':'
+	'category' category = STRING
+	'title' title = STRING
+	'x' xlabel = STRING
+	'y' ylabel = STRING
+;
+	
+Gateway:
+	'Gateway' name=ID ':'
+	'mac' mac = MAC
+	workers += Worker+
+;
+
+Worker:
+	'Worker' name=ID ':'
+	'mac' mac = MAC
+	('sleep' 'for' sleepTime = INT timeUnit += TimeUnit)?
+	('broadcast' 'for' broadcastTime = INT timeUnit += TimeUnit)?
+	devices += Device*
+;
+
+Device:
+	Sensor | Actuator
+;
+
+terminal MAC:
+	HEXBYTE ('-'|':') HEXBYTE ('-'|':') HEXBYTE ('-'|':') HEXBYTE ('-'|':') HEXBYTE ('-'|':') HEXBYTE
+;
+
+terminal fragment HEXBYTE:
+	('0'..'9'|'A'..'F')('0'..'9'|'A'..'F')
+;
+
+Sensor:
+	'Sensor' type = [Import] (name=ID)? ':'
+	'pins' pins += INT* (',' pins += INT)*
+	'rate' sampleRate = Primitive
+	(outputs += SensorOutput)*
+	('behavior' behavior += SampleBehavior)?
+	('sample' 'if' predicate += Exp)?
+	('graph' graph = [Graph])?
+;
+
+SampleBehavior:
+	type = [Import] '(' args += Primary* (',' pins += Primary)* ')'
+;
+
+TimeUnit:
+	{Second} ('second'|'seconds') | {Minute} ('minute'|'minutes') | {Hour} ('hour'|'hours')
+;
+
+Binding:
+	name=ID
+;
+
+Import:
+	'import' name=ID
+;
+
+SensorOutput:
+	'out' (output=STRING)? 'as' binding = Binding ('with' 'mapping' mapping = Exp)?
+;
+
+Actuator:
+	'Actuator' type = [Import] (name=ID)? ':'
+	'pins' pins += INT* (',' pins += INT)* 
+	settings += Setting*
+	'trigger' 'on' exp = Exp
+;
+
+Setting:
+	'setting' binding = Binding '=' value=Primitive
+;
+
+terminal DECIMAL:
+	'-'? INT ('.' INT)+
+;
+
+Primitive:
+	{DecimalPrimitive} value = DECIMAL | {IntPrimitive} value=INT | {BooleanTrue} 'TRUE' | {BooleanFalse} 'FALSE'
+;
+
+Exp returns Expression:
+	Factor (( {Plus.left=current} '+' | {Minus.left=current}  '-' ) right=Factor)*
+;
+
+Factor returns Expression:
+	Compare (({Mult.left=current} '*' | {Div.left=current}  '/'  ) right=Compare)*
+;
+
+Compare returns Expression:
+	CompareOrEquals (( {Greater.left=current} '>' | {Lesser.left=current}  '<' ) right=CompareOrEquals)*
+;
+
+CompareOrEquals returns Expression:
+	EqualsOrNotEquals (({GreaterOrEquals.left=current} '>=' | {LesserOrEquals.left=current}  '<=' ) right=EqualsOrNotEquals)*
+;
+
+EqualsOrNotEquals returns Expression:
+	AndOr (({Equals.left=current} '==' | {NotEquals.left=current}  '!=' ) right=AndOr)*
+;
+
+AndOr returns Expression:
+	Primary (({And.left=current} 'and' | {Or.left=current}  'or' ) right=Primary)*
+;
+
+Primary returns Expression:
+	 Primitive | Parenthesis | VariableUse | ExternalCall
+;
+
+ExternalCall:
+	'call' func = [Import] '(' args += Exp? (',' args += Exp)* ')'
+;
+
+InternalVariableUse:
+	ref = [Binding]
+;
+
+ExternalVariableUse:
+	obj = [Device] ('.'|'->') ref = [Binding] 
+;
+
+VariableUse:
+	InternalVariableUse | ExternalVariableUse
+;
+
+Parenthesis:
+	'(' exp=Exp ')'
+;

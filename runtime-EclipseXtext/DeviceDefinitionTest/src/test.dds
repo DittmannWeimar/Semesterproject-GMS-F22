@@ -1,0 +1,46 @@
+import Temperature
+import Moisture
+import Pump
+import avarage
+import LED
+import Line
+import pow
+
+System:
+
+	Gateway test_gateway:
+		mac 11:22:33:44:55:66
+		Worker test_worker1:
+			mac AA:BB:CC:DD:EE:FF
+			sleep for 10 minutes
+			broadcast for 20 seconds
+			
+			Sensor Temperature temp1:
+				pins 1, 2
+				rate 10
+				out as temp with mapping call pow(temp, 2)
+				behavior avarage(100)
+				sample if temp1.temp == TRUE
+				graph test_graph
+				
+			Sensor Moisture moist1:
+				pins 5,6,7,8
+				rate 1
+				out as moisture
+				
+			Actuator LED:
+				pins 3
+				setting threshold = 2
+				setting brightness = 0.35
+				trigger on temp1.temp > threshold + moist1.moisture * 2
+				
+			Actuator Pump:
+				pins 9,10,11,12
+				trigger on moist1.moisture < 10
+	
+	Graph test_graph:
+		type Line
+		category "basics"
+		title "Temperature"
+		x "Time"
+		y "Degrees (C)"

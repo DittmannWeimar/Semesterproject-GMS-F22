@@ -1,2 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.eclipse.xtext.scoping.IScope"/>
+    <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EObject"/>
+    <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EReference"/>
+    <fullyQualifiedTypeName name="dk.sdu.gms.dds.deviceDefinition.ExternalVariableUse"/>
+    <fullyQualifiedTypeName name="org.eclipse.xtext.scoping.Scopes"/>
+    <fullyQualifiedTypeName name="org.eclipse.xtext.EcoreUtil2"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="dk.sdu.gms.dds.deviceDefinition.impl.ExternalVariableUseImpl"/>
+</qualifiedTypeNameHistroy>
