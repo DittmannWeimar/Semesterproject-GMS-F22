@@ -187,6 +187,7 @@ void handle_setting(const uint8_t * mac, const uint8_t *incomingData, int len) {
   if (try_unpack_setting_message("blue", incomingData)) {
     blue = settingMessage.newValue;
   }
+  update_color();
 }
 
 bool try_unpack_setting_message(String setting, const uint8_t *incomingData) {
