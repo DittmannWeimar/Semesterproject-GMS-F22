@@ -178,18 +178,28 @@ void handle_ping(const uint8_t * mac, const uint8_t *incomingData, int len) {
 }
 
 void handle_setting(const uint8_t * mac, const uint8_t *incomingData, int len) {
-  memcpy(&settingMessage, incomingData, len);
-  Serial.println("Recieved setting update for " + settingMessage.setting + " with value " + String(settingMessage.newValue));
-  if (settingMessage.setting = "red") {
+  if (try_unpack_setting_message("red", incomingData)) {
     red = settingMessage.newValue;
   }
-  if (settingMessage.setting = "green") {
+  if (try_unpack_setting_message("green", incomingData)) {
     green = settingMessage.newValue;
   }
-  if (settingMessage.setting = "blue") {
+  if (try_unpack_setting_message("blue", incomingData)) {
     blue = settingMessage.newValue;
   }
-  update_color();
+}
+
+bool try_unpack_setting_message(String setting, const uint8_t *incomingData) {
+  String messageSetting;
+  memcpy(&messageSetting, incomingData + 4, sizeof(setting));
+  float messageValue;
+  memcpy(&messageValue, incomingData + 4 + sizeof(setting), 4);
+  Serial.println("Recieved setting update for " + settingMessage.setting + " with value " + String(settingMessage.newValue));
+
+  settingMessage.setting = messageSetting;
+  settingMessage.newValue = messageValue;
+
+  return messageSetting.equals(setting);
 }
 
 void send_message(const uint8_t * mac, const uint8_t *incomingData, int len) {
