@@ -75,7 +75,7 @@ typedef struct message_base {
 message_base baseMessage;
 
 typedef struct message_setting : message_base {
-  String setting;
+  int setting;
   float newValue;
 } message_setting;
 message_setting settingMessage;
@@ -178,13 +178,14 @@ void handle_ping(const uint8_t * mac, const uint8_t *incomingData, int len) {
 }
 
 void handle_setting(const uint8_t * mac, const uint8_t *incomingData, int len) {
-  if (try_unpack_setting_message("red", incomingData)) {
+  memcpy(&settingMessage, incomingData, sizeof(settingMessage));
+  if (settingMessage.setting = 0) {
     red = settingMessage.newValue;
   }
-  if (try_unpack_setting_message("green", incomingData)) {
+  if (settingMessage.setting = 1) {
     green = settingMessage.newValue;
   }
-  if (try_unpack_setting_message("blue", incomingData)) {
+  if (settingMessage.setting = 0) {
     blue = settingMessage.newValue;
   }
   update_color();
