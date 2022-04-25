@@ -121,6 +121,12 @@ void sample () {
   delay(2000);
 }
 
+void update_color () {
+  analogWrite(redOutPin, red * 255.0);
+  analogWrite(redOutPin, blue * 255.0);
+  analogWrite(redOutPin, green * 255.0);
+}
+
 void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
   Serial.print("\r\nLast Packet Send Status:\t");
   Serial.println(status == ESP_NOW_SEND_SUCCESS ? "Delivery Success" : "Delivery Fail");
@@ -180,6 +186,7 @@ void handle_setting(const uint8_t * mac, const uint8_t *incomingData, int len) {
   if (settingMessage.setting = "blue") {
     blue = settingMEssage.newValue;
   }
+  update_color();
 }
 
 void send_message(const uint8_t * mac, const uint8_t *incomingData, int len) {
