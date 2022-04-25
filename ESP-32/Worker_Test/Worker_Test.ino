@@ -15,6 +15,13 @@ float sampleRate = 0.1;
 float temperature;
 float humidity;
 
+int dhtPin = 34;
+
+int redOutPin = 25;
+int blueOutPin = 26;
+int greenOutPin = 27;
+
+#define DHTTYPE DHT11
 void setup() {
   // Init Serial Monitor
   Serial.begin(115200);
@@ -46,6 +53,13 @@ void setup() {
   }
   // Register for a callback function that will be called when data is received
   esp_now_register_recv_cb(OnDataRecv);
+
+  // Set pinModes
+  pinMode(redOutPin, OUTPUT);
+  pinMode(greenOutPin, OUTPUT);
+  pinMode(blueOutPin, OUTPUT);
+  
+  DHT dht = DHT(dhtPin, DHT11);
 }
 
 typedef struct message_base {
@@ -76,9 +90,18 @@ void loop() {
 
 void sample () {
   Serial.println("Sampling..");
-  
-  temperature++;
-  humidity++;
+
+  // Reading temperature or humidity takes about 250 milliseconds!
+  // Sensor readings may also be up to 2 seconds 'old' (its a very slow sensor)
+  humidity = dht.readHumidity();
+  // Read temperature as Celsius (the default)
+  temperature = dht.readTemperature();
+
+  // Check if any reads failed and exit early (to try again).
+  if (isnan(humidity) || isnan(temperature)) {
+    Serial.println(F("Failed to read from DHT sensor!"));
+    return;
+  }
 
   Serial.print("Sample temperature: ");
   Serial.println(String(temperature));
@@ -89,6 +112,9 @@ void sample () {
   sampleMessage.type = Sample;
   sampleMessage.temp = temperature;
   sampleMessage.hum = humidity;
+
+  // Wait a few seconds between measurements.
+  delay(2000);
 }
 
 void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
