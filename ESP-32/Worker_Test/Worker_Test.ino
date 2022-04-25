@@ -22,6 +22,10 @@ int blueOutPin = 26;
 int greenOutPin = 27;
 
 #define DHTTYPE DHT11
+float red;
+float green;
+float blue;
+
 void setup() {
   // Init Serial Monitor
   Serial.begin(115200);
@@ -167,9 +171,14 @@ void handle_ping(const uint8_t * mac, const uint8_t *incomingData, int len) {
 void handle_setting(const uint8_t * mac, const uint8_t *incomingData, int len) {
   memcpy(&settingMessage, incomingData, len);
   Serial.println("Recieved setting update for " + settingMessage.setting + " with value " + String(settingMessage.newValue));
-  if (settingMessage.setting == "sampleRate") {
-    sampleRate = settingMessage.newValue;
-    Serial.println("Sample rate updated to " + String(sampleRate));
+  if (settingMessage.setting = "red") {
+    red = settingMEssage.newValue;
+  }
+  if (settingMessage.setting = "green") {
+    green = settingMEssage.newValue;
+  }
+  if (settingMessage.setting = "blue") {
+    blue = settingMEssage.newValue;
   }
 }
 

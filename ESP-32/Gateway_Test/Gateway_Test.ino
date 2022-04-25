@@ -1,9 +1,8 @@
 #include <esp_now.h>
 #include <WiFi.h>
 
-uint8_t workerAddress[] = {0x84, 0xCC, 0xA8, 0x2D, 0xDE, 0x3C};
+uint8_t workerAddress[] = {0x10, 0x97, 0xBD, 0xD3, 0x00, 0xBC};
 esp_now_peer_info_t workerInfo;
-String success;
 
 enum MESSAGE_TYPE { Ping, Setting, Sample };
 float incomingTemp;
@@ -60,27 +59,36 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  delay(5000);
-  baseMessage.type = Ping;
-  send_message(workerAddress, (uint8_t *)&baseMessage, sizeof(baseMessage));
+  set_worker_color(1.0, 0.0, 0.0);
+  delay(1000);
 
-  delay(5000);
+  set_worker_color(0.0, 1.0, 0.0);
+  delay(1000);
+
+  set_worker_color(0.0, 0.0, 1.0);
+  delay(1000);
+}
+
+void set_worker_color(float red, float green, float blue) {
   settingMessage.type = Setting;
-  settingMessage.setting = "sampleRate";
-  settingMessage.newValue = 0.2;
+  settingMessage.setting = "red";
+  settingMessage.newValue = red;
+  send_message(workerAddress, (uint8_t *)&settingMessage, sizeof(settingMessage));
+
+  settingMessage.type = Setting;
+  settingMessage.setting = "green";
+  settingMessage.newValue = green;
+  send_message(workerAddress, (uint8_t *)&settingMessage, sizeof(settingMessage));
+
+  settingMessage.type = Setting;
+  settingMessage.setting = "blue";
+  settingMessage.newValue = blue;
   send_message(workerAddress, (uint8_t *)&settingMessage, sizeof(settingMessage));
 }
 
 void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
-  Serial.print("\r\nLast Packet Send Status:\t");
+  Serial.print("Last Packet Send Status:\t");
   Serial.println(status == ESP_NOW_SEND_SUCCESS ? "Delivery Success" : "Delivery Fail");
-  if (status ==0){
-    success = "Delivery Success :)";
-  }
-  else{
-    success = "Delivery Fail :(";
-  }
 }
 
 void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {  
@@ -137,11 +145,4 @@ void handle_sample(const uint8_t * mac, const uint8_t *incomingData, int len) {
 
 void send_message(const uint8_t * mac, const uint8_t *incomingData, int len) {
   esp_err_t result = esp_now_send(mac, incomingData, len);
-   
-  if (result == ESP_OK) {
-    Serial.println("Sent with success");
-  }
-  else {
-    Serial.println("Error sending the data");
-  }
 }
