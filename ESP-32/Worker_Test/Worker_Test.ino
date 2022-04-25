@@ -1,10 +1,12 @@
+#include <DHTesp.h>
+
 #include <esp_now.h>
 #include <WiFi.h>
 
 #include <Wire.h>
 #include <Adafruit_AM2320.h>
 
-uint8_t gatewayAddress[] = {0x9C, 0x9C, 0x1F, 0xC5, 0xF7, 0xEC};
+uint8_t gatewayAddress[] = {0x4C, 0x11, 0xAE, 0xD9, 0x48, 0x14};
 esp_now_peer_info_t gatewayInfo;
 String success;
 
@@ -15,16 +17,17 @@ float sampleRate = 0.1;
 float temperature;
 float humidity;
 
-int dhtPin = 34;
+uint8_t dhtPin = 17;
 
 int redOutPin = 25;
 int blueOutPin = 26;
 int greenOutPin = 27;
 
-#define DHTTYPE DHT11
 float red;
 float green;
 float blue;
+
+DHTesp dht;
 
 void setup() {
   // Init Serial Monitor
@@ -62,8 +65,8 @@ void setup() {
   pinMode(redOutPin, OUTPUT);
   pinMode(greenOutPin, OUTPUT);
   pinMode(blueOutPin, OUTPUT);
-  
-  DHT dht = DHT(dhtPin, DHT11);
+
+  initTemp();
 }
 
 typedef struct message_base {
@@ -97,12 +100,12 @@ void sample () {
 
   // Reading temperature or humidity takes about 250 milliseconds!
   // Sensor readings may also be up to 2 seconds 'old' (its a very slow sensor)
-  humidity = dht.readHumidity();
+  //humidity = dht.getHumidity();
   // Read temperature as Celsius (the default)
-  temperature = dht.readTemperature();
+  temperature = dht.getTemperature();
 
   // Check if any reads failed and exit early (to try again).
-  if (isnan(humidity) || isnan(temperature)) {
+  if (isnan(humidity) && isnan(temperature)) {
     Serial.println(F("Failed to read from DHT sensor!"));
     return;
   }
@@ -123,8 +126,8 @@ void sample () {
 
 void update_color () {
   analogWrite(redOutPin, red * 255.0);
-  analogWrite(redOutPin, blue * 255.0);
-  analogWrite(redOutPin, green * 255.0);
+  analogWrite(blueOutPin, blue * 255.0);
+  analogWrite(greenOutPin, green * 255.0);
 }
 
 void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
@@ -150,7 +153,7 @@ void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
       handle_ping(mac, incomingData, len);
       break;
     case Setting:
-      handle_setting(mac, incomingData, len);
+      //handle_setting(mac, incomingData, len);
       break;
   }
 }
@@ -178,13 +181,13 @@ void handle_setting(const uint8_t * mac, const uint8_t *incomingData, int len) {
   memcpy(&settingMessage, incomingData, len);
   Serial.println("Recieved setting update for " + settingMessage.setting + " with value " + String(settingMessage.newValue));
   if (settingMessage.setting = "red") {
-    red = settingMEssage.newValue;
+    red = settingMessage.newValue;
   }
   if (settingMessage.setting = "green") {
-    green = settingMEssage.newValue;
+    green = settingMessage.newValue;
   }
   if (settingMessage.setting = "blue") {
-    blue = settingMEssage.newValue;
+    blue = settingMessage.newValue;
   }
   update_color();
 }
@@ -198,4 +201,13 @@ void send_message(const uint8_t * mac, const uint8_t *incomingData, int len) {
   else {
     Serial.println("Error sending the data");
   }
+}
+
+bool initTemp() {
+  byte resultValue = 0;
+  // Initialize temperature sensor
+  dht.setup(dhtPin, DHTesp::DHT11);
+  Serial.println("DHT initiated");
+
+  return true;
 }
