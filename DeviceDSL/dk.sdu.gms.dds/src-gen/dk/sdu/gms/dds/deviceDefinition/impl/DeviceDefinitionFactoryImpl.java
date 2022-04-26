@@ -31,6 +31,7 @@ import dk.sdu.gms.dds.deviceDefinition.Minus;
 import dk.sdu.gms.dds.deviceDefinition.Minute;
 import dk.sdu.gms.dds.deviceDefinition.Mult;
 import dk.sdu.gms.dds.deviceDefinition.NotEquals;
+import dk.sdu.gms.dds.deviceDefinition.OnOff;
 import dk.sdu.gms.dds.deviceDefinition.Or;
 import dk.sdu.gms.dds.deviceDefinition.Parenthesis;
 import dk.sdu.gms.dds.deviceDefinition.Plus;
@@ -41,7 +42,10 @@ import dk.sdu.gms.dds.deviceDefinition.Sensor;
 import dk.sdu.gms.dds.deviceDefinition.SensorOutput;
 import dk.sdu.gms.dds.deviceDefinition.Setting;
 import dk.sdu.gms.dds.deviceDefinition.TimeUnit;
+import dk.sdu.gms.dds.deviceDefinition.Trigger;
+import dk.sdu.gms.dds.deviceDefinition.Value;
 import dk.sdu.gms.dds.deviceDefinition.VariableUse;
+import dk.sdu.gms.dds.deviceDefinition.When;
 import dk.sdu.gms.dds.deviceDefinition.Worker;
 
 import org.eclipse.emf.ecore.EClass;
@@ -116,6 +120,7 @@ public class DeviceDefinitionFactoryImpl extends EFactoryImpl implements DeviceD
       case DeviceDefinitionPackage.IMPORT: return createImport();
       case DeviceDefinitionPackage.SENSOR_OUTPUT: return createSensorOutput();
       case DeviceDefinitionPackage.ACTUATOR: return createActuator();
+      case DeviceDefinitionPackage.TRIGGER: return createTrigger();
       case DeviceDefinitionPackage.SETTING: return createSetting();
       case DeviceDefinitionPackage.PRIMITIVE: return createPrimitive();
       case DeviceDefinitionPackage.EXPRESSION: return createExpression();
@@ -127,6 +132,8 @@ public class DeviceDefinitionFactoryImpl extends EFactoryImpl implements DeviceD
       case DeviceDefinitionPackage.SECOND: return createSecond();
       case DeviceDefinitionPackage.MINUTE: return createMinute();
       case DeviceDefinitionPackage.HOUR: return createHour();
+      case DeviceDefinitionPackage.WHEN: return createWhen();
+      case DeviceDefinitionPackage.ON_OFF: return createOnOff();
       case DeviceDefinitionPackage.DECIMAL_PRIMITIVE: return createDecimalPrimitive();
       case DeviceDefinitionPackage.INT_PRIMITIVE: return createIntPrimitive();
       case DeviceDefinitionPackage.BOOLEAN_TRUE: return createBooleanTrue();
@@ -143,6 +150,7 @@ public class DeviceDefinitionFactoryImpl extends EFactoryImpl implements DeviceD
       case DeviceDefinitionPackage.NOT_EQUALS: return createNotEquals();
       case DeviceDefinitionPackage.AND: return createAnd();
       case DeviceDefinitionPackage.OR: return createOr();
+      case DeviceDefinitionPackage.VALUE: return createValue();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -298,6 +306,18 @@ public class DeviceDefinitionFactoryImpl extends EFactoryImpl implements DeviceD
    * @generated
    */
   @Override
+  public Trigger createTrigger()
+  {
+    TriggerImpl trigger = new TriggerImpl();
+    return trigger;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Setting createSetting()
   {
     SettingImpl setting = new SettingImpl();
@@ -422,6 +442,30 @@ public class DeviceDefinitionFactoryImpl extends EFactoryImpl implements DeviceD
   {
     HourImpl hour = new HourImpl();
     return hour;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public When createWhen()
+  {
+    WhenImpl when = new WhenImpl();
+    return when;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public OnOff createOnOff()
+  {
+    OnOffImpl onOff = new OnOffImpl();
+    return onOff;
   }
 
   /**
@@ -614,6 +658,18 @@ public class DeviceDefinitionFactoryImpl extends EFactoryImpl implements DeviceD
   {
     OrImpl or = new OrImpl();
     return or;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Value createValue()
+  {
+    ValueImpl value = new ValueImpl();
+    return value;
   }
 
   /**

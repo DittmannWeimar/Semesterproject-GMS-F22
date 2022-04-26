@@ -3,7 +3,6 @@
  */
 package dk.sdu.gms.dds.deviceDefinition.impl;
 
-import dk.sdu.gms.dds.deviceDefinition.Binding;
 import dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage;
 import dk.sdu.gms.dds.deviceDefinition.Primitive;
 import dk.sdu.gms.dds.deviceDefinition.Setting;
@@ -15,7 +14,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,24 +23,13 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.SettingImpl#getBinding <em>Binding</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.SettingImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class SettingImpl extends MinimalEObjectImpl.Container implements Setting
+public class SettingImpl extends BindingImpl implements Setting
 {
-  /**
-   * The cached value of the '{@link #getBinding() <em>Binding</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getBinding()
-   * @generated
-   * @ordered
-   */
-  protected Binding binding;
-
   /**
    * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -72,56 +59,6 @@ public class SettingImpl extends MinimalEObjectImpl.Container implements Setting
   protected EClass eStaticClass()
   {
     return DeviceDefinitionPackage.Literals.SETTING;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Binding getBinding()
-  {
-    return binding;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetBinding(Binding newBinding, NotificationChain msgs)
-  {
-    Binding oldBinding = binding;
-    binding = newBinding;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeviceDefinitionPackage.SETTING__BINDING, oldBinding, newBinding);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setBinding(Binding newBinding)
-  {
-    if (newBinding != binding)
-    {
-      NotificationChain msgs = null;
-      if (binding != null)
-        msgs = ((InternalEObject)binding).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeviceDefinitionPackage.SETTING__BINDING, null, msgs);
-      if (newBinding != null)
-        msgs = ((InternalEObject)newBinding).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeviceDefinitionPackage.SETTING__BINDING, null, msgs);
-      msgs = basicSetBinding(newBinding, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DeviceDefinitionPackage.SETTING__BINDING, newBinding, newBinding));
   }
 
   /**
@@ -184,8 +121,6 @@ public class SettingImpl extends MinimalEObjectImpl.Container implements Setting
   {
     switch (featureID)
     {
-      case DeviceDefinitionPackage.SETTING__BINDING:
-        return basicSetBinding(null, msgs);
       case DeviceDefinitionPackage.SETTING__VALUE:
         return basicSetValue(null, msgs);
     }
@@ -202,8 +137,6 @@ public class SettingImpl extends MinimalEObjectImpl.Container implements Setting
   {
     switch (featureID)
     {
-      case DeviceDefinitionPackage.SETTING__BINDING:
-        return getBinding();
       case DeviceDefinitionPackage.SETTING__VALUE:
         return getValue();
     }
@@ -220,9 +153,6 @@ public class SettingImpl extends MinimalEObjectImpl.Container implements Setting
   {
     switch (featureID)
     {
-      case DeviceDefinitionPackage.SETTING__BINDING:
-        setBinding((Binding)newValue);
-        return;
       case DeviceDefinitionPackage.SETTING__VALUE:
         setValue((Primitive)newValue);
         return;
@@ -240,9 +170,6 @@ public class SettingImpl extends MinimalEObjectImpl.Container implements Setting
   {
     switch (featureID)
     {
-      case DeviceDefinitionPackage.SETTING__BINDING:
-        setBinding((Binding)null);
-        return;
       case DeviceDefinitionPackage.SETTING__VALUE:
         setValue((Primitive)null);
         return;
@@ -260,8 +187,6 @@ public class SettingImpl extends MinimalEObjectImpl.Container implements Setting
   {
     switch (featureID)
     {
-      case DeviceDefinitionPackage.SETTING__BINDING:
-        return binding != null;
       case DeviceDefinitionPackage.SETTING__VALUE:
         return value != null;
     }

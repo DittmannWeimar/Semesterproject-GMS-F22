@@ -6,7 +6,6 @@ package dk.sdu.gms.dds.serializer;
 import com.google.inject.Inject;
 import dk.sdu.gms.dds.deviceDefinition.Actuator;
 import dk.sdu.gms.dds.deviceDefinition.And;
-import dk.sdu.gms.dds.deviceDefinition.Binding;
 import dk.sdu.gms.dds.deviceDefinition.BooleanFalse;
 import dk.sdu.gms.dds.deviceDefinition.BooleanTrue;
 import dk.sdu.gms.dds.deviceDefinition.DecimalPrimitive;
@@ -29,6 +28,7 @@ import dk.sdu.gms.dds.deviceDefinition.Minus;
 import dk.sdu.gms.dds.deviceDefinition.Minute;
 import dk.sdu.gms.dds.deviceDefinition.Mult;
 import dk.sdu.gms.dds.deviceDefinition.NotEquals;
+import dk.sdu.gms.dds.deviceDefinition.OnOff;
 import dk.sdu.gms.dds.deviceDefinition.Or;
 import dk.sdu.gms.dds.deviceDefinition.Parenthesis;
 import dk.sdu.gms.dds.deviceDefinition.Plus;
@@ -37,6 +37,8 @@ import dk.sdu.gms.dds.deviceDefinition.Second;
 import dk.sdu.gms.dds.deviceDefinition.Sensor;
 import dk.sdu.gms.dds.deviceDefinition.SensorOutput;
 import dk.sdu.gms.dds.deviceDefinition.Setting;
+import dk.sdu.gms.dds.deviceDefinition.Value;
+import dk.sdu.gms.dds.deviceDefinition.When;
 import dk.sdu.gms.dds.deviceDefinition.Worker;
 import dk.sdu.gms.dds.services.DeviceDefinitionGrammarAccess;
 import java.util.Set;
@@ -69,9 +71,6 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 				return; 
 			case DeviceDefinitionPackage.AND:
 				sequence_AndOr(context, (And) semanticObject); 
-				return; 
-			case DeviceDefinitionPackage.BINDING:
-				sequence_Binding(context, (Binding) semanticObject); 
 				return; 
 			case DeviceDefinitionPackage.BOOLEAN_FALSE:
 				sequence_Primitive(context, (BooleanFalse) semanticObject); 
@@ -136,6 +135,9 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 			case DeviceDefinitionPackage.NOT_EQUALS:
 				sequence_EqualsOrNotEquals(context, (NotEquals) semanticObject); 
 				return; 
+			case DeviceDefinitionPackage.ON_OFF:
+				sequence_Trigger(context, (OnOff) semanticObject); 
+				return; 
 			case DeviceDefinitionPackage.OR:
 				sequence_AndOr(context, (Or) semanticObject); 
 				return; 
@@ -163,6 +165,12 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 			case DeviceDefinitionPackage.SYSTEM:
 				sequence_System(context, (dk.sdu.gms.dds.deviceDefinition.System) semanticObject); 
 				return; 
+			case DeviceDefinitionPackage.VALUE:
+				sequence_Primary(context, (Value) semanticObject); 
+				return; 
+			case DeviceDefinitionPackage.WHEN:
+				sequence_Trigger(context, (When) semanticObject); 
+				return; 
 			case DeviceDefinitionPackage.WORKER:
 				sequence_Worker(context, (Worker) semanticObject); 
 				return; 
@@ -184,7 +192,7 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 	 *         pins+=INT* 
 	 *         pins+=INT* 
 	 *         settings+=Setting* 
-	 *         exp=Exp
+	 *         trigger=Trigger
 	 *     )
 	 * </pre>
 	 */
@@ -269,26 +277,6 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getAndOrAccess().getOrLeftAction_1_0_1_0(), semanticObject.getLeft());
 		feeder.accept(grammarAccess.getAndOrAccess().getRightPrimaryParserRuleCall_1_1_0(), semanticObject.getRight());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Binding returns Binding
-	 *
-	 * Constraint:
-	 *     name=ID
-	 * </pre>
-	 */
-	protected void sequence_Binding(ISerializationContext context, Binding semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, DeviceDefinitionPackage.Literals.BINDING__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeviceDefinitionPackage.Literals.BINDING__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getBindingAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
@@ -837,6 +825,38 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     Exp returns Value
+	 *     Exp.Plus_1_0_0_0 returns Value
+	 *     Exp.Minus_1_0_1_0 returns Value
+	 *     Factor returns Value
+	 *     Factor.Mult_1_0_0_0 returns Value
+	 *     Factor.Div_1_0_1_0 returns Value
+	 *     Compare returns Value
+	 *     Compare.Greater_1_0_0_0 returns Value
+	 *     Compare.Lesser_1_0_1_0 returns Value
+	 *     CompareOrEquals returns Value
+	 *     CompareOrEquals.GreaterOrEquals_1_0_0_0 returns Value
+	 *     CompareOrEquals.LesserOrEquals_1_0_1_0 returns Value
+	 *     EqualsOrNotEquals returns Value
+	 *     EqualsOrNotEquals.Equals_1_0_0_0 returns Value
+	 *     EqualsOrNotEquals.NotEquals_1_0_1_0 returns Value
+	 *     AndOr returns Value
+	 *     AndOr.And_1_0_0_0 returns Value
+	 *     AndOr.Or_1_0_1_0 returns Value
+	 *     Primary returns Value
+	 *
+	 * Constraint:
+	 *     {Value}
+	 * </pre>
+	 */
+	protected void sequence_Primary(ISerializationContext context, Value semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     Primitive returns BooleanFalse
 	 *     Exp returns BooleanFalse
 	 *     Exp.Plus_1_0_0_0 returns BooleanFalse
@@ -995,10 +1015,11 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     Binding returns SensorOutput
 	 *     SensorOutput returns SensorOutput
 	 *
 	 * Constraint:
-	 *     (output=STRING? binding=Binding mapping=Exp?)
+	 *     (output=STRING? name=ID mapping=Exp?)
 	 * </pre>
 	 */
 	protected void sequence_SensorOutput(ISerializationContext context, SensorOutput semanticObject) {
@@ -1034,21 +1055,22 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     Binding returns Setting
 	 *     Setting returns Setting
 	 *
 	 * Constraint:
-	 *     (binding=Binding value=Primitive)
+	 *     (name=ID value=Primitive)
 	 * </pre>
 	 */
 	protected void sequence_Setting(ISerializationContext context, Setting semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, DeviceDefinitionPackage.Literals.SETTING__BINDING) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeviceDefinitionPackage.Literals.SETTING__BINDING));
+			if (transientValues.isValueTransient(semanticObject, DeviceDefinitionPackage.Literals.BINDING__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeviceDefinitionPackage.Literals.BINDING__NAME));
 			if (transientValues.isValueTransient(semanticObject, DeviceDefinitionPackage.Literals.SETTING__VALUE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeviceDefinitionPackage.Literals.SETTING__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSettingAccess().getBindingBindingParserRuleCall_1_0(), semanticObject.getBinding());
+		feeder.accept(grammarAccess.getSettingAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getSettingAccess().getValuePrimitiveParserRuleCall_3_0(), semanticObject.getValue());
 		feeder.finish();
 	}
@@ -1107,6 +1129,40 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 	 */
 	protected void sequence_TimeUnit(ISerializationContext context, Second semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Trigger returns OnOff
+	 *
+	 * Constraint:
+	 *     (onExp=Exp (offExp=Exp | (time=INT unit=TimeUnit)))
+	 * </pre>
+	 */
+	protected void sequence_Trigger(ISerializationContext context, OnOff semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Trigger returns When
+	 *
+	 * Constraint:
+	 *     exp=Exp
+	 * </pre>
+	 */
+	protected void sequence_Trigger(ISerializationContext context, When semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, DeviceDefinitionPackage.Literals.WHEN__EXP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeviceDefinitionPackage.Literals.WHEN__EXP));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getTriggerAccess().getExpExpParserRuleCall_0_2_0(), semanticObject.getExp());
+		feeder.finish();
 	}
 	
 	

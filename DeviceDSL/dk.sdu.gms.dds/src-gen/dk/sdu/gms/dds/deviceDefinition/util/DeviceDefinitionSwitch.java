@@ -30,6 +30,7 @@ import dk.sdu.gms.dds.deviceDefinition.Minus;
 import dk.sdu.gms.dds.deviceDefinition.Minute;
 import dk.sdu.gms.dds.deviceDefinition.Mult;
 import dk.sdu.gms.dds.deviceDefinition.NotEquals;
+import dk.sdu.gms.dds.deviceDefinition.OnOff;
 import dk.sdu.gms.dds.deviceDefinition.Or;
 import dk.sdu.gms.dds.deviceDefinition.Parenthesis;
 import dk.sdu.gms.dds.deviceDefinition.Plus;
@@ -40,7 +41,10 @@ import dk.sdu.gms.dds.deviceDefinition.Sensor;
 import dk.sdu.gms.dds.deviceDefinition.SensorOutput;
 import dk.sdu.gms.dds.deviceDefinition.Setting;
 import dk.sdu.gms.dds.deviceDefinition.TimeUnit;
+import dk.sdu.gms.dds.deviceDefinition.Trigger;
+import dk.sdu.gms.dds.deviceDefinition.Value;
 import dk.sdu.gms.dds.deviceDefinition.VariableUse;
+import dk.sdu.gms.dds.deviceDefinition.When;
 import dk.sdu.gms.dds.deviceDefinition.Worker;
 
 import org.eclipse.emf.ecore.EObject;
@@ -186,6 +190,7 @@ public class DeviceDefinitionSwitch<T> extends Switch<T>
       {
         SensorOutput sensorOutput = (SensorOutput)theEObject;
         T result = caseSensorOutput(sensorOutput);
+        if (result == null) result = caseBinding(sensorOutput);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -197,10 +202,18 @@ public class DeviceDefinitionSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case DeviceDefinitionPackage.TRIGGER:
+      {
+        Trigger trigger = (Trigger)theEObject;
+        T result = caseTrigger(trigger);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case DeviceDefinitionPackage.SETTING:
       {
         Setting setting = (Setting)theEObject;
         T result = caseSetting(setting);
+        if (result == null) result = caseBinding(setting);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -282,6 +295,22 @@ public class DeviceDefinitionSwitch<T> extends Switch<T>
         Hour hour = (Hour)theEObject;
         T result = caseHour(hour);
         if (result == null) result = caseTimeUnit(hour);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceDefinitionPackage.WHEN:
+      {
+        When when = (When)theEObject;
+        T result = caseWhen(when);
+        if (result == null) result = caseTrigger(when);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceDefinitionPackage.ON_OFF:
+      {
+        OnOff onOff = (OnOff)theEObject;
+        T result = caseOnOff(onOff);
+        if (result == null) result = caseTrigger(onOff);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -414,6 +443,14 @@ public class DeviceDefinitionSwitch<T> extends Switch<T>
         Or or = (Or)theEObject;
         T result = caseOr(or);
         if (result == null) result = caseExpression(or);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceDefinitionPackage.VALUE:
+      {
+        Value value = (Value)theEObject;
+        T result = caseValue(value);
+        if (result == null) result = caseExpression(value);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -614,6 +651,22 @@ public class DeviceDefinitionSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Trigger</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Trigger</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTrigger(Trigger object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Setting</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -785,6 +838,38 @@ public class DeviceDefinitionSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseHour(Hour object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>When</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>When</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWhen(When object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>On Off</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>On Off</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOnOff(OnOff object)
   {
     return null;
   }
@@ -1041,6 +1126,22 @@ public class DeviceDefinitionSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseOr(Or object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Value</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Value</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseValue(Value object)
   {
     return null;
   }

@@ -1,10 +1,12 @@
 import Temperature
+import TemperatureHumidity
 import Moisture
 import Pump
 import avarage
 import LED
 import Line
 import pow
+import time
 
 System:
 
@@ -15,31 +17,38 @@ System:
 			sleep for 10 minutes
 			broadcast for 20 seconds
 			
-			Sensor Temperature temp1:
+			Sensor TemperatureHumidity temp1:
 				pins 1, 2
 				rate 10
-				out as temp with mapping call pow(temp, 2)
+				out "temperature" as temp with mapping call pow(2, value)
+				out "humidity" as hum
 				behavior avarage(100)
 				sample if temp1.temp == TRUE
-				graph test_graph
+				graph temperatureGraph
 				
 			Sensor Moisture moist1:
 				pins 5,6,7,8
 				rate 1
 				out as moisture
 				
-			Actuator LED:
+			Actuator LED led1:
 				pins 3
 				setting threshold = 2
 				setting brightness = 0.35
-				trigger on temp1.temp > threshold + moist1.moisture * 2
+				when temp1.temp > threshold + moist1.moisture * 2
 				
 			Actuator Pump:
 				pins 9,10,11,12
-				trigger on moist1.moisture < 10
+				setting pumpTime = 10
+				on moist1.moisture < 10 + led1.brightness
+				off 2 + 10 < moist1.moisture > 20
+			
+			Actuator Pump:
+				pins 9,10,11,12
+				setting pumpTime = 10
+				on moist1.moisture < 10 run for 10 minutes
 	
-	Graph test_graph:
-		type Line
+	Graph Line temperatureGraph:
 		category "basics"
 		title "Temperature"
 		x "Time"

@@ -132,6 +132,15 @@ public interface DeviceDefinitionFactory extends EFactory
   Actuator createActuator();
 
   /**
+   * Returns a new object of class '<em>Trigger</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Trigger</em>'.
+   * @generated
+   */
+  Trigger createTrigger();
+
+  /**
    * Returns a new object of class '<em>Setting</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -229,6 +238,24 @@ public interface DeviceDefinitionFactory extends EFactory
    * @generated
    */
   Hour createHour();
+
+  /**
+   * Returns a new object of class '<em>When</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>When</em>'.
+   * @generated
+   */
+  When createWhen();
+
+  /**
+   * Returns a new object of class '<em>On Off</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>On Off</em>'.
+   * @generated
+   */
+  OnOff createOnOff();
 
   /**
    * Returns a new object of class '<em>Decimal Primitive</em>'.
@@ -373,6 +400,15 @@ public interface DeviceDefinitionFactory extends EFactory
    * @generated
    */
   Or createOr();
+
+  /**
+   * Returns a new object of class '<em>Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Value</em>'.
+   * @generated
+   */
+  Value createValue();
 
   /**
    * Returns the package supported by this factory.

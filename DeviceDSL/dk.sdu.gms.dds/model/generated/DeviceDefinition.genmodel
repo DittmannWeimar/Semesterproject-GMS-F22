@@ -58,15 +58,14 @@
     </genClasses>
     <genClasses ecoreClass="DeviceDefinition.ecore#//SensorOutput">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//SensorOutput/output"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//SensorOutput/binding"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//SensorOutput/mapping"/>
     </genClasses>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Actuator">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Actuator/settings"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Actuator/exp"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Actuator/trigger"/>
     </genClasses>
+    <genClasses ecoreClass="DeviceDefinition.ecore#//Trigger"/>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Setting">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Setting/binding"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Setting/value"/>
     </genClasses>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Primitive"/>
@@ -88,6 +87,15 @@
     <genClasses ecoreClass="DeviceDefinition.ecore#//Second"/>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Minute"/>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Hour"/>
+    <genClasses ecoreClass="DeviceDefinition.ecore#//When">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//When/exp"/>
+    </genClasses>
+    <genClasses ecoreClass="DeviceDefinition.ecore#//OnOff">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//OnOff/onExp"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//OnOff/offExp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//OnOff/time"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//OnOff/unit"/>
+    </genClasses>
     <genClasses ecoreClass="DeviceDefinition.ecore#//DecimalPrimitive">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//DecimalPrimitive/value"/>
     </genClasses>
@@ -144,5 +152,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Or/left"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Or/right"/>
     </genClasses>
+    <genClasses ecoreClass="DeviceDefinition.ecore#//Value"/>
   </genPackages>
 </genmodel:GenModel>

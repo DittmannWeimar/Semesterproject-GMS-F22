@@ -976,41 +976,6 @@ ruleTimeUnit returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleBinding
-entryRuleBinding returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getBindingRule()); }
-	iv_ruleBinding=ruleBinding
-	{ $current=$iv_ruleBinding.current; }
-	EOF;
-
-// Rule Binding
-ruleBinding returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			lv_name_0_0=RULE_ID
-			{
-				newLeafNode(lv_name_0_0, grammarAccess.getBindingAccess().getNameIDTerminalRuleCall_0());
-			}
-			{
-				if ($current==null) {
-					$current = createModelElement(grammarAccess.getBindingRule());
-				}
-				setWithLastConsumed(
-					$current,
-					"name",
-					lv_name_0_0,
-					"org.eclipse.xtext.common.Terminals.ID");
-			}
-		)
-	)
-;
-
 // Entry rule entryRuleImport
 entryRuleImport returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getImportRule()); }
@@ -1096,20 +1061,19 @@ ruleSensorOutput returns [EObject current=null]
 		}
 		(
 			(
+				lv_name_3_0=RULE_ID
 				{
-					newCompositeNode(grammarAccess.getSensorOutputAccess().getBindingBindingParserRuleCall_3_0());
+					newLeafNode(lv_name_3_0, grammarAccess.getSensorOutputAccess().getNameIDTerminalRuleCall_3_0());
 				}
-				lv_binding_3_0=ruleBinding
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getSensorOutputRule());
+						$current = createModelElement(grammarAccess.getSensorOutputRule());
 					}
-					set(
+					setWithLastConsumed(
 						$current,
-						"binding",
-						lv_binding_3_0,
-						"dk.sdu.gms.dds.DeviceDefinition.Binding");
-					afterParserOrEnumRuleCall();
+						"name",
+						lv_name_3_0,
+						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
@@ -1265,31 +1229,182 @@ ruleActuator returns [EObject current=null]
 				}
 			)
 		)*
-		otherlv_9='trigger'
-		{
-			newLeafNode(otherlv_9, grammarAccess.getActuatorAccess().getTriggerKeyword_8());
-		}
-		otherlv_10='on'
-		{
-			newLeafNode(otherlv_10, grammarAccess.getActuatorAccess().getOnKeyword_9());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getActuatorAccess().getExpExpParserRuleCall_10_0());
+					newCompositeNode(grammarAccess.getActuatorAccess().getTriggerTriggerParserRuleCall_8_0());
 				}
-				lv_exp_11_0=ruleExp
+				lv_trigger_9_0=ruleTrigger
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getActuatorRule());
 					}
 					set(
 						$current,
-						"exp",
-						lv_exp_11_0,
-						"dk.sdu.gms.dds.DeviceDefinition.Exp");
+						"trigger",
+						lv_trigger_9_0,
+						"dk.sdu.gms.dds.DeviceDefinition.Trigger");
 					afterParserOrEnumRuleCall();
 				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleTrigger
+entryRuleTrigger returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getTriggerRule()); }
+	iv_ruleTrigger=ruleTrigger
+	{ $current=$iv_ruleTrigger.current; }
+	EOF;
+
+// Rule Trigger
+ruleTrigger returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getTriggerAccess().getWhenAction_0_0(),
+						$current);
+				}
+			)
+			otherlv_1='when'
+			{
+				newLeafNode(otherlv_1, grammarAccess.getTriggerAccess().getWhenKeyword_0_1());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getTriggerAccess().getExpExpParserRuleCall_0_2_0());
+					}
+					lv_exp_2_0=ruleExp
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getTriggerRule());
+						}
+						set(
+							$current,
+							"exp",
+							lv_exp_2_0,
+							"dk.sdu.gms.dds.DeviceDefinition.Exp");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)
+		    |
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getTriggerAccess().getOnOffAction_1_0(),
+						$current);
+				}
+			)
+			otherlv_4='on'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getTriggerAccess().getOnKeyword_1_1());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getTriggerAccess().getOnExpExpParserRuleCall_1_2_0());
+					}
+					lv_onExp_5_0=ruleExp
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getTriggerRule());
+						}
+						set(
+							$current,
+							"onExp",
+							lv_onExp_5_0,
+							"dk.sdu.gms.dds.DeviceDefinition.Exp");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				(
+					otherlv_6='off'
+					{
+						newLeafNode(otherlv_6, grammarAccess.getTriggerAccess().getOffKeyword_1_3_0_0());
+					}
+					(
+						(
+							{
+								newCompositeNode(grammarAccess.getTriggerAccess().getOffExpExpParserRuleCall_1_3_0_1_0());
+							}
+							lv_offExp_7_0=ruleExp
+							{
+								if ($current==null) {
+									$current = createModelElementForParent(grammarAccess.getTriggerRule());
+								}
+								set(
+									$current,
+									"offExp",
+									lv_offExp_7_0,
+									"dk.sdu.gms.dds.DeviceDefinition.Exp");
+								afterParserOrEnumRuleCall();
+							}
+						)
+					)
+				)
+				    |
+				(
+					otherlv_8='run'
+					{
+						newLeafNode(otherlv_8, grammarAccess.getTriggerAccess().getRunKeyword_1_3_1_0());
+					}
+					otherlv_9='for'
+					{
+						newLeafNode(otherlv_9, grammarAccess.getTriggerAccess().getForKeyword_1_3_1_1());
+					}
+					(
+						(
+							lv_time_10_0=RULE_INT
+							{
+								newLeafNode(lv_time_10_0, grammarAccess.getTriggerAccess().getTimeINTTerminalRuleCall_1_3_1_2_0());
+							}
+							{
+								if ($current==null) {
+									$current = createModelElement(grammarAccess.getTriggerRule());
+								}
+								setWithLastConsumed(
+									$current,
+									"time",
+									lv_time_10_0,
+									"org.eclipse.xtext.common.Terminals.INT");
+							}
+						)
+					)
+					(
+						(
+							{
+								newCompositeNode(grammarAccess.getTriggerAccess().getUnitTimeUnitParserRuleCall_1_3_1_3_0());
+							}
+							lv_unit_11_0=ruleTimeUnit
+							{
+								if ($current==null) {
+									$current = createModelElementForParent(grammarAccess.getTriggerRule());
+								}
+								set(
+									$current,
+									"unit",
+									lv_unit_11_0,
+									"dk.sdu.gms.dds.DeviceDefinition.TimeUnit");
+								afterParserOrEnumRuleCall();
+							}
+						)
+					)
+				)
 			)
 		)
 	)
@@ -1317,20 +1432,19 @@ ruleSetting returns [EObject current=null]
 		}
 		(
 			(
+				lv_name_1_0=RULE_ID
 				{
-					newCompositeNode(grammarAccess.getSettingAccess().getBindingBindingParserRuleCall_1_0());
+					newLeafNode(lv_name_1_0, grammarAccess.getSettingAccess().getNameIDTerminalRuleCall_1_0());
 				}
-				lv_binding_1_0=ruleBinding
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getSettingRule());
+						$current = createModelElement(grammarAccess.getSettingRule());
 					}
-					set(
+					setWithLastConsumed(
 						$current,
-						"binding",
-						lv_binding_1_0,
-						"dk.sdu.gms.dds.DeviceDefinition.Binding");
-					afterParserOrEnumRuleCall();
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
@@ -1975,6 +2089,20 @@ rulePrimary returns [EObject current=null]
 			$current = $this_ExternalCall_3.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getPrimaryAccess().getValueAction_4_0(),
+						$current);
+				}
+			)
+			otherlv_5='value'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getPrimaryAccess().getValueKeyword_4_1());
+			}
+		)
 	)
 ;
 

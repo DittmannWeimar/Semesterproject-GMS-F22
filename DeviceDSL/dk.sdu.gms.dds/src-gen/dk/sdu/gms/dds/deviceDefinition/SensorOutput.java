@@ -3,7 +3,6 @@
  */
 package dk.sdu.gms.dds.deviceDefinition;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,7 +14,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.SensorOutput#getOutput <em>Output</em>}</li>
- *   <li>{@link dk.sdu.gms.dds.deviceDefinition.SensorOutput#getBinding <em>Binding</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.SensorOutput#getMapping <em>Mapping</em>}</li>
  * </ul>
  *
@@ -23,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface SensorOutput extends EObject
+public interface SensorOutput extends Binding
 {
   /**
    * Returns the value of the '<em><b>Output</b></em>' attribute.
@@ -46,28 +44,6 @@ public interface SensorOutput extends EObject
    * @generated
    */
   void setOutput(String value);
-
-  /**
-   * Returns the value of the '<em><b>Binding</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Binding</em>' containment reference.
-   * @see #setBinding(Binding)
-   * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getSensorOutput_Binding()
-   * @model containment="true"
-   * @generated
-   */
-  Binding getBinding();
-
-  /**
-   * Sets the value of the '{@link dk.sdu.gms.dds.deviceDefinition.SensorOutput#getBinding <em>Binding</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Binding</em>' containment reference.
-   * @see #getBinding()
-   * @generated
-   */
-  void setBinding(Binding value);
 
   /**
    * Returns the value of the '<em><b>Mapping</b></em>' containment reference.

@@ -62,7 +62,7 @@ TimeUnit:
 ;
 
 Binding:
-	name=ID
+	SensorOutput | Setting
 ;
 
 Import:
@@ -70,18 +70,23 @@ Import:
 ;
 
 SensorOutput:
-	'out' (output=STRING)? 'as' binding = Binding ('with' 'mapping' mapping = Exp)?
+	'out' (output=STRING)? 'as' name=ID ('with' 'mapping' mapping = Exp)?
 ;
 
 Actuator:
 	'Actuator' type = [Import] (name=ID)? ':'
 	'pins' pins += INT* (',' pins += INT)* 
 	settings += Setting*
-	'trigger' 'on' exp = Exp
+	trigger = Trigger
+;
+
+Trigger:
+	{When} 'when' exp = Exp
+	 | {OnOff} 'on' onExp = Exp (('off' offExp = Exp) | ('run' 'for' time=INT unit=TimeUnit))
 ;
 
 Setting:
-	'setting' binding = Binding '=' value=Primitive
+	'setting' name=ID '=' value=Primitive
 ;
 
 terminal DECIMAL:
@@ -117,7 +122,7 @@ AndOr returns Expression:
 ;
 
 Primary returns Expression:
-	 Primitive | Parenthesis | VariableUse | ExternalCall
+	 Primitive | Parenthesis | VariableUse | ExternalCall | {Value} 'value'
 ;
 
 ExternalCall:

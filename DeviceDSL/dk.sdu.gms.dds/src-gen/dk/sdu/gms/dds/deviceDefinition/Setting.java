@@ -3,7 +3,6 @@
  */
 package dk.sdu.gms.dds.deviceDefinition;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,7 +13,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Setting#getBinding <em>Binding</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Setting#getValue <em>Value</em>}</li>
  * </ul>
  *
@@ -22,30 +20,8 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Setting extends EObject
+public interface Setting extends Binding
 {
-  /**
-   * Returns the value of the '<em><b>Binding</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Binding</em>' containment reference.
-   * @see #setBinding(Binding)
-   * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getSetting_Binding()
-   * @model containment="true"
-   * @generated
-   */
-  Binding getBinding();
-
-  /**
-   * Sets the value of the '{@link dk.sdu.gms.dds.deviceDefinition.Setting#getBinding <em>Binding</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Binding</em>' containment reference.
-   * @see #getBinding()
-   * @generated
-   */
-  void setBinding(Binding value);
-
   /**
    * Returns the value of the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
