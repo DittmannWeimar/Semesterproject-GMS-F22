@@ -8,13 +8,15 @@ enum MESSAGE_TYPE { Ping, Setting, Sample };
 float incomingTemp;
 float incomingHum;
 
+const int potentiometerInPin = 34;
+
 typedef struct message_base {
   MESSAGE_TYPE type;
 } message_base;
 message_base baseMessage;
 
 typedef struct message_setting : message_base {
-  String setting;
+  int setting;
   float newValue;
 } message_setting;
 message_setting settingMessage;
@@ -56,33 +58,29 @@ void setup() {
   }
   // Register for a callback function that will be called when data is received
   esp_now_register_recv_cb(OnDataRecv);
+
+  //pinMode(potentiometerOutPin, OUTPUT);
+  pinMode(potentiometerInPin, INPUT);
 }
 
 void loop() {
-  set_worker_color(1.0, 0.0, 0.0);
-  delay(1000);
-
-  set_worker_color(0.0, 1.0, 0.0);
-  delay(1000);
-
-  set_worker_color(0.0, 0.0, 1.0);
+  float p = sample_potentiometer();
+  Serial.println(String(p));
+  
+  set_worker_treshold(p);
   delay(1000);
 }
 
-void set_worker_color(float red, float green, float blue) {
-  settingMessage.type = Setting;
-  settingMessage.setting = "red";
-  settingMessage.newValue = red;
-  send_message(workerAddress, (uint8_t *)&settingMessage, sizeof(settingMessage));
+float sample_potentiometer () {
+  int sample = analogRead(potentiometerInPin);
+  Serial.println(String(sample));
+  return sample / 4096.0 * 60;
+}
 
+void set_worker_treshold(float treshold) {
   settingMessage.type = Setting;
-  settingMessage.setting = "green";
-  settingMessage.newValue = green;
-  send_message(workerAddress, (uint8_t *)&settingMessage, sizeof(settingMessage));
-
-  settingMessage.type = Setting;
-  settingMessage.setting = "blue";
-  settingMessage.newValue = blue;
+  settingMessage.setting = 0;
+  settingMessage.newValue = treshold;
   send_message(workerAddress, (uint8_t *)&settingMessage, sizeof(settingMessage));
 }
 
@@ -127,7 +125,7 @@ void handle_ping(const uint8_t * mac, const uint8_t *incomingData, int len) {
 }
 
 void handle_sample(const uint8_t * mac, const uint8_t *incomingData, int len) {
-    memcpy(&sampleMessage, incomingData, sizeof(sampleMessage));
+  memcpy(&sampleMessage, incomingData, sizeof(sampleMessage));
   
   Serial.print("Sample recieved from ");
   print_mac(mac);
@@ -144,5 +142,6 @@ void handle_sample(const uint8_t * mac, const uint8_t *incomingData, int len) {
 }
 
 void send_message(const uint8_t * mac, const uint8_t *incomingData, int len) {
+  Serial.println("Sending message with length " + String(len));
   esp_err_t result = esp_now_send(mac, incomingData, len);
 }
