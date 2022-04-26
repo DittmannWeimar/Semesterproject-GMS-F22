@@ -1,10 +1,12 @@
-#include <DHTesp.h>
-
 #include <esp_now.h>
 #include <WiFi.h>
 
 #include <Wire.h>
 #include <Adafruit_AM2320.h>
+
+#include "DHT.h"
+#define DHTPIN 4     // Digital pin connected to the DHT sensor
+#define DHTTYPE DHT11   // DHT 11
 
 uint8_t gatewayAddress[] = {0x4C, 0x11, 0xAE, 0xD9, 0x48, 0x14};
 esp_now_peer_info_t gatewayInfo;
@@ -17,26 +19,26 @@ float sampleRate = 0.1;
 float temperature;
 float humidity;
 
-uint8_t dhtPin = 17;
+DHT dht(DHTPIN, DHTTYPE);
 
-int redOutPin = 25;
-int blueOutPin = 26;
-int greenOutPin = 27;
+uint8_t dhtPin = 4;
 
-float red;
-float green;
-float blue;
-
-DHTesp dht;
+int ledPin = 27;
+float ledTreshold;
 
 void setup() {
-  // Init Serial Monitor
+  // Set pinModes
+  pinMode(ledPin, OUTPUT);
   Serial.begin(115200);
  
   // Set device as a Wi-Fi Station
   WiFi.mode(WIFI_STA);
   Serial.print("Worker starting with MAC address ");
   Serial.println(WiFi.macAddress());
+
+  Serial.println("Initializing DHT sensor..");
+  dht.begin();
+  Serial.println("DHT initiated");
 
   // Init ESP-NOW
   if (esp_now_init() != ESP_OK) {
@@ -60,13 +62,6 @@ void setup() {
   }
   // Register for a callback function that will be called when data is received
   esp_now_register_recv_cb(OnDataRecv);
-
-  // Set pinModes
-  pinMode(redOutPin, OUTPUT);
-  pinMode(greenOutPin, OUTPUT);
-  pinMode(blueOutPin, OUTPUT);
-
-  initTemp();
 }
 
 typedef struct message_base {
@@ -89,7 +84,6 @@ message_sample sampleMessage;
 void loop() {
   // put your main code here, to run repeatedly:
   int sampleDelay = 1.0 / sampleRate * 1000;
-  Serial.println(String(sampleDelay));
   delay(max(sampleDelay, 1000));
   sample();
   send_message(gatewayAddress, (uint8_t *) &sampleMessage, sizeof(sampleMessage));
@@ -102,7 +96,8 @@ void sample () {
   // Sensor readings may also be up to 2 seconds 'old' (its a very slow sensor)
   //humidity = dht.getHumidity();
   // Read temperature as Celsius (the default)
-  temperature = dht.getTemperature();
+  temperature = dht.readTemperature();
+  humidity = dht.readHumidity();
 
   // Check if any reads failed and exit early (to try again).
   if (isnan(humidity) && isnan(temperature)) {
@@ -125,13 +120,16 @@ void sample () {
 }
 
 void update_color () {
-  analogWrite(redOutPin, red * 255.0);
-  analogWrite(blueOutPin, blue * 255.0);
-  analogWrite(greenOutPin, green * 255.0);
+  Serial.println("Threshold: " + String(ledTreshold));
+  if (temperature > ledTreshold) {
+    analogWrite(ledPin, 255.0);    
+  }else{
+    analogWrite(ledPin, 0.0);    
+  }
 }
 
 void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
-  Serial.print("\r\nLast Packet Send Status:\t");
+  Serial.print("Last Packet Send Status:\t");
   Serial.println(status == ESP_NOW_SEND_SUCCESS ? "Delivery Success" : "Delivery Fail");
   if (status ==0){
     success = "Delivery Success :)";
@@ -144,7 +142,7 @@ void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
 void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {  
   memcpy(&baseMessage, incomingData, sizeof(baseMessage));
   
-  Serial.print(String(baseMessage.type));
+  Serial.print("Type " + String(baseMessage.type) + " ");
   Serial.print("message received: ");
   Serial.println(len);
   
@@ -153,9 +151,11 @@ void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
       handle_ping(mac, incomingData, len);
       break;
     case Setting:
-      //handle_setting(mac, incomingData, len);
+      handle_setting(mac, incomingData, len);
       break;
   }
+
+  update_color();
 }
 
 void print_mac(const uint8_t * mac) {
@@ -180,49 +180,10 @@ void handle_ping(const uint8_t * mac, const uint8_t *incomingData, int len) {
 void handle_setting(const uint8_t * mac, const uint8_t *incomingData, int len) {
   memcpy(&settingMessage, incomingData, sizeof(settingMessage));
   if (settingMessage.setting == 0) {
-    red = settingMessage.newValue;
-    Serial.println("The led is now red");
+    ledTreshold = settingMessage.newValue;
   }
-  if (settingMessage.setting == 1) {
-    green = settingMessage.newValue;
-    Serial.println("The led is now green");
-  }
-  if (settingMessage.setting == 2) {
-    blue = settingMessage.newValue;
-    Serial.println("The led is now blue");
-  }
-  update_color();
-}
-
-bool try_unpack_setting_message(String setting, const uint8_t *incomingData) {
-  String messageSetting;
-  memcpy(&messageSetting, incomingData + 4, sizeof(setting));
-  float messageValue;
-  memcpy(&messageValue, incomingData + 4 + sizeof(setting), 4);
-  Serial.println("Recieved setting update for " + settingMessage.setting + " with value " + String(settingMessage.newValue));
-
-  settingMessage.setting = messageSetting;
-  settingMessage.newValue = messageValue;
-
-  return messageSetting.equals(setting);
 }
 
 void send_message(const uint8_t * mac, const uint8_t *incomingData, int len) {
   esp_err_t result = esp_now_send(mac, incomingData, len);
-   
-  if (result == ESP_OK) {
-    Serial.println("Sent with success");
-  }
-  else {
-    Serial.println("Error sending the data");
-  }
-}
-
-bool initTemp() {
-  byte resultValue = 0;
-  // Initialize temperature sensor
-  dht.setup(dhtPin, DHTesp::DHT11);
-  Serial.println("DHT initiated");
-
-  return true;
 }
