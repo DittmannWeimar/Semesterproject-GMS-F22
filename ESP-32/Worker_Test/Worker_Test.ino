@@ -1,4 +1,5 @@
 #include <esp_now.h>
+#include <esp_wifi.h>
 #include <WiFi.h>
 
 #include <Wire.h>
@@ -28,10 +29,42 @@ const int ledPin = 26;
 const int freq = 5000;
 const int ledChannel = 0;
 const int resolution = 8;
+const bool scan = true;
+const String STATION_NAME = "Gateway";
 
 float ledTreshold = 255;
+int espnow_channel = 0;
 
 void setup() {
+  WiFi.mode(WIFI_STA);
+  WiFi.disconnect();
+
+  if(scan) {
+    uint8_t networks = WiFi.scanNetworks();
+    for(int n=0;n<networks;n++) {
+        Serial.printf("%d %s   %d   %d %s \n", n,WiFi.SSID(n).c_str(),WiFi.RSSI(n), WiFi.channel(n), WiFi.BSSIDstr(n).c_str());
+        for(int i=0;i<8;i++) {
+            Serial.print(WiFi.BSSID(n)[i]);
+            Serial.print(" ");
+        }
+        Serial.println();
+
+        if(WiFi.SSID(n).indexOf(STATION_NAME) == 0)
+        {
+            Serial.println("Found");
+            memcpy(gatewayAddress, WiFi.BSSID(n), 6);
+            espnow_channel = WiFi.channel(n);
+        }
+        
+    }
+
+    WiFi.scanDelete();
+  }
+  
+  esp_wifi_set_promiscuous(true);
+  esp_wifi_set_channel(espnow_channel, WIFI_SECOND_CHAN_NONE);
+  esp_wifi_set_promiscuous(false);
+
   // Set pinModes
   pinMode(ledPin, OUTPUT);
   Serial.begin(115200);
