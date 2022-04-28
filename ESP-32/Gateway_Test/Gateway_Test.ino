@@ -1,7 +1,8 @@
 #include <esp_now.h>
+#include <esp_wifi.h>
 #include <WiFi.h>
 
-uint8_t workerAddress[] = {0x10, 0x97, 0xBD, 0xD3, 0x00, 0xBC};
+uint8_t workerAddress[] = {0x4C, 0x11, 0xAE, 0xD9, 0x48, 0x14};
 esp_now_peer_info_t workerInfo;
 
 enum MESSAGE_TYPE { Ping, Setting, Sample };
@@ -27,12 +28,26 @@ typedef struct message_sample : message_base {
 } message_sample;
 message_sample sampleMessage;
 
+const char* WIFI_SSID = "Chronos";
+const char* WIFI_PW = "fizzfyr13";
+
+#include "EspMQTTClient.h"
+
+EspMQTTClient client(
+  WIFI_SSID,
+  WIFI_PW,
+  "192.168.0.9",  // MQTT Broker server ip
+  "kristian",   // Can be omitted if not needed
+  "1234",   // Can be omitted if not needed
+  "test_gateway",     // Client name that uniquely identify your device
+  1883              // The MQTT port, default to 1883. this line can be omitted
+);
+
 void setup() {
   // Init Serial Monitor
   Serial.begin(115200);
- 
-  // Set device as a Wi-Fi Station
-  WiFi.mode(WIFI_STA);
+  
+  WiFi.mode(WIFI_AP_STA);
   Serial.print("Gateway starting with MAC address ");
   Serial.println(WiFi.macAddress());
 
@@ -45,6 +60,10 @@ void setup() {
   // Once ESPNow is successfully Init, we will register for Send CB to
   // get the status of Trasnmitted packet
   esp_now_register_send_cb(OnDataSent);
+
+  int32_t channel = getWiFiChannel(WIFI_SSID);
+  esp_wifi_set_channel(channel, WIFI_SECOND_CHAN_NONE);
+  esp_wifi_set_ps(WIFI_PS_NONE);
   
   // Register peer
   memcpy(workerInfo.peer_addr, workerAddress, 6);
@@ -55,19 +74,40 @@ void setup() {
   if (esp_now_add_peer(&workerInfo) != ESP_OK){
     Serial.println("Failed to add peer");
     return;
+  }else{
+    Serial.println("Succesfully added peer");
   }
   // Register for a callback function that will be called when data is received
   esp_now_register_recv_cb(OnDataRecv);
 
   //pinMode(potentiometerOutPin, OUTPUT);
   pinMode(potentiometerInPin, INPUT);
+
+  delay(1000);
+}
+
+int32_t getWiFiChannel(const char *ssid) {
+  if (int32_t n = WiFi.scanNetworks()) {
+      for (uint8_t i=0; i<n; i++) {
+          if (!strcmp(ssid, WiFi.SSID(i).c_str())) {
+              return WiFi.channel(i);
+          }
+      }
+  }
+  return 0;
+}
+
+void onConnectionEstablished()
+{
+  client.subscribe("#", [](const String &payload) {
+    set_worker_treshold(String(payload).toFloat());
+  });
+
+  send_sample();
 }
 
 void loop() {
-  float p = sample_potentiometer();
-  Serial.println(String(p));
-  
-  set_worker_treshold(p);
+  client.loop();
   delay(1000);
 }
 
@@ -141,7 +181,15 @@ void handle_sample(const uint8_t * mac, const uint8_t *incomingData, int len) {
   Serial.println(String(incomingHum));
 }
 
+void send_sample() {
+  client.publish(WiFi.macAddress() + "/temperature", String(incomingTemp));
+  client.publish(WiFi.macAddress() + "/humidity", String(incomingHum));
+}
+
 void send_message(const uint8_t * mac, const uint8_t *incomingData, int len) {
   Serial.println("Sending message with length " + String(len));
   esp_err_t result = esp_now_send(mac, incomingData, len);
+  if (result != 0) {
+    Serial.println("ESP-NOW ERROR: " + String(esp_err_to_name(result)));
+  }
 }

@@ -8,7 +8,7 @@
 #define DHTPIN 4     // Digital pin connected to the DHT sensor
 #define DHTTYPE DHT11   // DHT 11
 
-uint8_t gatewayAddress[] = {0x4C, 0x11, 0xAE, 0xD9, 0x48, 0x14};
+uint8_t gatewayAddress[] = {0x84, 0xCC, 0xA8, 0x2D, 0xDE, 0x3C};
 esp_now_peer_info_t gatewayInfo;
 String success;
 
@@ -23,8 +23,13 @@ DHT dht(DHTPIN, DHTTYPE);
 
 uint8_t dhtPin = 4;
 
-int ledPin = 27;
-float ledTreshold;
+const int ledPin = 26;
+
+const int freq = 5000;
+const int ledChannel = 0;
+const int resolution = 8;
+
+float ledTreshold = 255;
 
 void setup() {
   // Set pinModes
@@ -35,6 +40,11 @@ void setup() {
   WiFi.mode(WIFI_STA);
   Serial.print("Worker starting with MAC address ");
   Serial.println(WiFi.macAddress());
+
+  ledcSetup(ledChannel, freq, resolution);
+  
+  // attach the channel to the GPIO to be controlled
+  ledcAttachPin(ledPin, ledChannel);
 
   Serial.println("Initializing DHT sensor..");
   dht.begin();
@@ -59,7 +69,10 @@ void setup() {
   if (esp_now_add_peer(&gatewayInfo) != ESP_OK){
     Serial.println("Failed to add peer");
     return;
+  }else{
+    Serial.println("Succesfully added peer");
   }
+  
   // Register for a callback function that will be called when data is received
   esp_now_register_recv_cb(OnDataRecv);
 }
@@ -83,6 +96,7 @@ message_sample sampleMessage;
 
 void loop() {
   // put your main code here, to run repeatedly:
+  update_color();
   int sampleDelay = 1.0 / sampleRate * 1000;
   delay(max(sampleDelay, 1000));
   sample();
@@ -121,10 +135,10 @@ void sample () {
 
 void update_color () {
   Serial.println("Threshold: " + String(ledTreshold));
-  if (temperature > ledTreshold) {
-    analogWrite(ledPin, 255.0);    
+  if (20 > ledTreshold) {
+    ledcWrite(ledChannel, ledTreshold);    
   }else{
-    analogWrite(ledPin, 0.0);    
+    ledcWrite(ledChannel, ledTreshold);    
   }
 }
 
