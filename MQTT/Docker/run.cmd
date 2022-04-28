@@ -1,1 +1,1 @@
-docker run -d -it --name mosquitto -p 1883:1883 -v "%cd%/mosquitto":/mosquitto/ eclipse-mosquitto
+docker run -d -it --name mosquitto -p 1883:1883 -p 8081:8081 -v "%cd%/mosquitto":/mosquitto/ eclipse-mosquitto
