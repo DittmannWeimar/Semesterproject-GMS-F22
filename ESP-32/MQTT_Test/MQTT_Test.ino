@@ -11,11 +11,11 @@
 EspMQTTClient client(
   "The Lomznet",
   "logmigpa",
-  "localhost",  // MQTT Broker server ip
+  "192.168.0.136",  // MQTT Broker server ip
   "kristian",   // Can be omitted if not needed
   "1234",   // Can be omitted if not needed
   "TestClient",     // Client name that uniquely identify your device
-  8081              // The MQTT port, default to 1883. this line can be omitted
+  1883              // The MQTT port, default to 1883. this line can be omitted
 );
 
 void setup()
