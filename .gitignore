@@ -1,2 +1,3 @@
 .metadata/
-MQTT/Backend/node_modules/
+MQTT/Adapter/node_modules/
+MQTT/API/node_modules/
