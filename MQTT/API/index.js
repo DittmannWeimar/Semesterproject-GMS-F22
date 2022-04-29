@@ -41,36 +41,38 @@ app.get("/:collection/:gateway/:worker/:subject", async (req, res) => {
     if (allowed.includes(req.params.collection)) {
 
         var gatewayWildcard = req.params.gateway == wildcard
-        var workerWildcard = req.params.gateway == wildcard
+        var workerWildcard = req.params.worker == wildcard
 
         var collection = mongo.collection(req.params.collection)
 
-        var device = {
+        var baseQuery = {
             gateway: req.params.gateway,
             worker: req.params.worker,
             subject: req.params.subject,
         }
 
-        if (gatewayWildcard) delete device.gateway
-        if (workerWildcard) delete device.worker
+        if (gatewayWildcard) delete baseQuery.gateway
+        if (workerWildcard) delete baseQuery.worker
+
+        var optionals = []
 
         var from = req.query.from;
         var to = req.query.to;
 
-        var date = []
-        if (from != undefined) date.push({timestamp: { $gt: Number(from) }})
-        if (to != undefined) date.push({timestamp: { $lt: Number(to) }})
+        if (from != undefined) optionals.push({timestamp: { $gt: Number(from) }})
+        if (to != undefined) optionals.push({timestamp: { $lt: Number(to) }})
 
         var query
-        if (date.length == 0) {
-            query = device
+        if (optionals.length == 0) {
+            query = baseQuery
         }else{
+            var array = [baseQuery]
+            optionals.forEach(x => array.push(x))
             query = {
-                $and: [device, date]
+                $and: array
             }
         }
 
-        var results = []
         collection.find(query).toArray((err, result) => {
             if (err) {
                 res.status(500).send();

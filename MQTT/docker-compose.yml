@@ -3,6 +3,7 @@ services:
 
   api:
     build: API/
+    image: lomztein/gms-api:latest
     ports:
      - "3000:3010"
     networks:
@@ -15,11 +16,12 @@ services:
      - MQTT_HOST=mqtt://mosquitto:1883
      - MQTT_USERNAME=kristian
      - MQTT_PASSWORD=1234
-     - MONGO_CONNECTION_STRING=mongodb://database:27017
+     - MONGO_CONNECTION_STRING=mongodb://mongo:27017
      - MONGO_DATABASE=gms
 
   adapter:
     build: Adapter/
+    image: lomztein/gms-adapter:latest
     depends_on:
      - mongo
      - mosquitto
@@ -30,7 +32,7 @@ services:
      - MQTT_HOST=mqtt://mosquitto:1883
      - MQTT_USERNAME=kristian
      - MQTT_PASSWORD=1234
-     - MONGO_CONNECTION_STRING=mongodb://database:27017
+     - MONGO_CONNECTION_STRING=mongodb://mongo:27017
      - MONGO_DATABASE=gms
      
   mosquitto:
@@ -38,14 +40,16 @@ services:
     container_name: mosquitto
     ports:
      - "3001:1883"
+     - "3002:8081"
     networks:
      - frontend
     volumes:
-     - ./Mosquitto/mosquitto/:/mosquitto/
+     - ./mosquitto/:/mosquitto/
 
   mongo:
     build: MongoDB/
-    container_name: database
+    image: lomztein/gms-mongo:latest
+    container_name: mongo
     networks:
      - backend
     volumes:

@@ -56,17 +56,21 @@ function pushToDatabase(topic, message) {
     let gatewayMac = split[1]
     let workerMac = split[2]
     let subjectName = split[3]
+    let messageValue = message.toString();
+
+    let messageAsNumber = Number(messageValue)
+    if (!isNaN(messageAsNumber)) messageValue = messageAsNumber;
 
     let collection = mongo.collection(collectionName)
     let document = {
-      timestamp: new Date().toISOString(),
+      timestamp: Date.now(),
       gateway: gatewayMac,
       worker: workerMac,
       subject: subjectName,
-      message: message.toString()
+      message: messageValue
     }
 
-    console.log("{" + document.timestamp + "} " + topic + ": " + message.toString())
+    console.log("{" + document.timestamp + "} " + topic + ": " + messageValue)
     collection.insertOne(document)
   }
 }
