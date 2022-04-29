@@ -50,12 +50,12 @@ run();
 // -- WHEN WORLDS COLLIDE
 function pushToDatabase(topic, message) {
   let split = topic.split('/')
-  if (split.length == 4) {
+  if (split.length == 3 || split.length == 4) {
 
     let collectionName = split[0]
     let gatewayMac = split[1]
     let workerMac = split[2]
-    let subjectName = split[3]
+    let subjectName = split[split.length == 3 ? 2 : 3]
     let messageValue = message.toString();
 
     let messageAsNumber = Number(messageValue)

@@ -6,25 +6,28 @@
 #include <Adafruit_AM2320.h>
 
 #include "DHT.h"
-#define DHTPIN 4     // Digital pin connected to the DHT sensor
 #define DHTTYPE DHT11   // DHT 11
 
 uint8_t gatewayAddress[] = {0x84, 0xCC, 0xA8, 0x2D, 0xDE, 0x3C};
 esp_now_peer_info_t gatewayInfo;
-String success;
 
 enum MESSAGE_TYPE { Ping, Setting, Sample };
-float sampleRate = 0.1;
+float sampleRate = 0.5;
 
 // Readings cache
 float temperature;
 float humidity;
+int moisture;
 
-DHT dht(DHTPIN, DHTTYPE);
+int dhtPin = 4;
+DHT dht(dhtPin, DHTTYPE);
+int soilPin = 32;
 
-uint8_t dhtPin = 4;
+int ledPin = 26;
+int pumpPin = 25;
 
-const int ledPin = 26;
+float ledTemperatureThreshold = 30;
+float pumpMoistureThreshold = 800;
 
 const int freq = 5000;
 const int ledChannel = 0;
@@ -32,10 +35,15 @@ const int resolution = 8;
 const bool scan = true;
 const String STATION_NAME = "Gateway";
 
-float ledTreshold = 255;
 int espnow_channel = 0;
 
 void setup() {
+   // Set pinModes
+  pinMode(ledPin, OUTPUT);
+  pinMode(pumpPin, OUTPUT);
+  pinMode(soilPin, INPUT);
+
+  
   WiFi.mode(WIFI_STA);
   WiFi.disconnect();
 
@@ -65,8 +73,7 @@ void setup() {
   esp_wifi_set_channel(espnow_channel, WIFI_SECOND_CHAN_NONE);
   esp_wifi_set_promiscuous(false);
 
-  // Set pinModes
-  pinMode(ledPin, OUTPUT);
+ 
   Serial.begin(115200);
  
   // Set device as a Wi-Fi Station
@@ -110,10 +117,16 @@ void setup() {
   esp_now_register_recv_cb(OnDataRecv);
 }
 
+
+
+
 typedef struct message_base {
   MESSAGE_TYPE type;
 } message_base;
 message_base baseMessage;
+
+
+
 
 typedef struct message_setting : message_base {
   int setting;
@@ -121,22 +134,41 @@ typedef struct message_setting : message_base {
 } message_setting;
 message_setting settingMessage;
 
+
+
+
 typedef struct message_sample : message_base {
     float temp;
     float hum;
+    float moist;
 } message_sample;
 message_sample sampleMessage;
 
+
+
+
 void loop() {
   // put your main code here, to run repeatedly:
-  update_color();
   int sampleDelay = 1.0 / sampleRate * 1000;
   delay(max(sampleDelay, 1000));
-  sample();
+  sampleSoil();
+  sampleDHT();
+  check_actuators();
   send_message(gatewayAddress, (uint8_t *) &sampleMessage, sizeof(sampleMessage));
 }
 
-void sample () {
+
+
+
+
+void sampleSoil(){
+  moisture = analogRead(soilPin);
+  Serial.println(moisture);
+  sampleMessage.moist = moisture;
+}
+
+
+void sampleDHT () {
   Serial.println("Sampling..");
 
   // Reading temperature or humidity takes about 250 milliseconds!
@@ -145,6 +177,7 @@ void sample () {
   // Read temperature as Celsius (the default)
   temperature = dht.readTemperature();
   humidity = dht.readHumidity();
+  
 
   // Check if any reads failed and exit early (to try again).
   if (isnan(humidity) && isnan(temperature)) {
@@ -152,39 +185,45 @@ void sample () {
     return;
   }
 
-  Serial.print("Sample temperature: ");
-  Serial.println(String(temperature));
-
-  Serial.print("Sample humidity: ");
-  Serial.println(String(humidity));
-
   sampleMessage.type = Sample;
   sampleMessage.temp = temperature;
   sampleMessage.hum = humidity;
-
-  // Wait a few seconds between measurements.
-  delay(2000);
+  // Read moisture
 }
 
-void update_color () {
-  Serial.println("Threshold: " + String(ledTreshold));
-  if (20 > ledTreshold) {
-    ledcWrite(ledChannel, ledTreshold);    
+
+
+
+void check_actuators() {
+  if (temperature > ledTemperatureThreshold) {
+    ledcWrite(ledChannel, 255);    
   }else{
-    ledcWrite(ledChannel, ledTreshold);    
+    ledcWrite(ledChannel, 0);    
   }
+
+  if(pumpMoistureThreshold > moisture){
+    digitalWrite(pumpPin, HIGH);
+  } else {
+    digitalWrite(pumpPin, LOW);
+  }
+
+  Serial.print(String(pumpMoistureThreshold) + " > " + String(moisture));
+  
 }
+
+
+
+
+
 
 void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
   Serial.print("Last Packet Send Status:\t");
   Serial.println(status == ESP_NOW_SEND_SUCCESS ? "Delivery Success" : "Delivery Fail");
-  if (status ==0){
-    success = "Delivery Success :)";
-  }
-  else{
-    success = "Delivery Fail :(";
-  }
 }
+
+
+
+
 
 void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {  
   memcpy(&baseMessage, incomingData, sizeof(baseMessage));
@@ -202,8 +241,13 @@ void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
       break;
   }
 
-  update_color();
+  check_actuators();
 }
+
+
+
+
+
 
 void print_mac(const uint8_t * mac) {
   String result = "";
@@ -224,12 +268,25 @@ void handle_ping(const uint8_t * mac, const uint8_t *incomingData, int len) {
   send_message(mac, incomingData, len);
 }
 
+
+
+
+
+
 void handle_setting(const uint8_t * mac, const uint8_t *incomingData, int len) {
   memcpy(&settingMessage, incomingData, sizeof(settingMessage));
   if (settingMessage.setting == 0) {
-    ledTreshold = settingMessage.newValue;
+    ledTemperatureThreshold = settingMessage.newValue;
+  }
+  if (settingMessage.setting == 1) {
+    pumpMoistureThreshold = settingMessage.newValue;
   }
 }
+
+
+
+
+
 
 void send_message(const uint8_t * mac, const uint8_t *incomingData, int len) {
   esp_err_t result = esp_now_send(mac, incomingData, len);

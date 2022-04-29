@@ -6,9 +6,6 @@ uint8_t workerAddress[] = {0x4C, 0x11, 0xAE, 0xD9, 0x48, 0x14};
 esp_now_peer_info_t workerInfo;
 
 enum MESSAGE_TYPE { Ping, Setting, Sample };
-float incomingTemp;
-float incomingHum;
-
 const int potentiometerInPin = 34;
 
 typedef struct message_base {
@@ -25,11 +22,12 @@ message_setting settingMessage;
 typedef struct message_sample : message_base {
     float temp;
     float hum;
+    float moist;
 } message_sample;
 message_sample sampleMessage;
 
-const char* WIFI_SSID = "Wifi-esp";
-const char* WIFI_PW = "Wifi-esp";
+const char* WIFI_SSID = "Chronos";
+const char* WIFI_PW = "fizzfyr13";
 const char* STATION_NAME = "Gateway";
 
 #include "EspMQTTClient.h"
@@ -37,11 +35,11 @@ const char* STATION_NAME = "Gateway";
 EspMQTTClient client(
   WIFI_SSID,
   WIFI_PW,
-  "192.168.43.236",  // MQTT Broker server ip
+  "vald.io",  // MQTT Broker server ip
   "kristian",   // Can be omitted if not needed
   "1234",   // Can be omitted if not needed
   "test_gateway",     // Client name that uniquely identify your device
-  1883              // The MQTT port, default to 1883. this line can be omitted
+  3001              // The MQTT port, default to 1883. this line can be omitted
 );
 
 void setup() {
@@ -53,7 +51,7 @@ void setup() {
   Serial.print("Gateway starting with MAC address ");
   Serial.println(WiFi.macAddress());
   
-  WiFi.begin();
+  WiFi.begin(WIFI_SSID, WIFI_PW);
 
   if (WiFi.softAP(STATION_NAME, "123456789", 1, 0)) {
     Serial.println("Soft AP set up");
@@ -102,32 +100,38 @@ int32_t getWiFiChannel(const char *ssid) {
 
 void onConnectionEstablished()
 {
-  client.subscribe("#", [](const String &payload) {
-    set_worker_treshold(String(payload).toFloat());
+  client.subscribe("settings/" + WiFi.macAddress() + "/#", [](const String &payload) {
+    set_worker_setting(0, String(payload).toFloat());
   });
+}
 
-  client.publish(WiFi.macAddress() + "/temperature", String(incomingTemp));
-  client.publish(WiFi.macAddress() + "/humidity", String(incomingHum));
+void set_worker_setting(int setting, float value) {
+  settingMessage.type = Setting;
+  settingMessage.setting = setting;
+  settingMessage.newValue = value;
+  send_message(workerAddress, (uint8_t *)&settingMessage, sizeof(settingMessage));
+}
+
+String get_topic(const String collection, const String gatewayMac, const String workerMac, const String subject) {
+  return collection + "/" + gatewayMac + "/" + workerMac + "/" + subject;
+}
+
+String get_topic(const String collection, const uint8_t* mac, const String subject) {
+  return get_topic(collection, String(WiFi.macAddress()), mac_to_string(mac), subject);
+}
+
+String get_topic(const String collection, const String subject) {
+    return collection + "/" + String(WiFi.macAddress()) + "/" + subject;
 }
 
 void loop() {
   client.loop();
-  baseMessage.type = Ping;
-  send_message(workerAddress, (uint8_t *)&baseMessage, sizeof(baseMessage));
-  delay(1000);
 }
 
 float sample_potentiometer () {
   int sample = analogRead(potentiometerInPin);
   Serial.println(String(sample));
   return sample / 4096.0 * 60;
-}
-
-void set_worker_treshold(float treshold) {
-  settingMessage.type = Setting;
-  settingMessage.setting = 0;
-  settingMessage.newValue = treshold;
-  send_message(workerAddress, (uint8_t *)&settingMessage, sizeof(settingMessage));
 }
 
 void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
@@ -152,39 +156,39 @@ void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
   }
 }
 
-void print_mac(const uint8_t * mac) {
-  String result = "";
-  for (int i = 0; i < 6; i++) {
-    uint8_t b = mac[i];
-    Serial.print(b, HEX);
-    if (i != 6 - 1) {
-      Serial.print(":");
-    }
-  }
-  Serial.println("");
+void print_mac(const uint8_t* mac) {
+  Serial.println(mac_to_string(mac));
 }
 
-void handle_ping(const uint8_t * mac, const uint8_t *incomingData, int len) {
+String mac_to_string(const uint8_t* mac) {
+  String result = "";
+  for (int i = 0; i < 6; i++) {
+    result += String(mac[i], HEX);
+    if (i != 6 - 1) {
+      result += ":";
+    }
+  }
+  return result;
+}
+
+void handle_ping(const uint8_t* mac, const uint8_t *incomingData, int len) {
   Serial.print("Ping recieved from ");
   print_mac(mac);
   Serial.println("");
+
+  client.publish(get_topic("logs", mac, "ping"), String(millis()));
 }
 
-void handle_sample(const uint8_t * mac, const uint8_t *incomingData, int len) {
+void handle_sample(const uint8_t* mac, const uint8_t *incomingData, int len) {
   memcpy(&sampleMessage, incomingData, sizeof(sampleMessage));
   
   Serial.print("Sample recieved from ");
   print_mac(mac);
   Serial.println("");
 
-  incomingTemp = sampleMessage.temp;
-  incomingHum = sampleMessage.hum;
-
-  Serial.print("Sample temperature: ");
-  Serial.println(String(incomingTemp));
-
-  Serial.print("Sample humidity: ");
-  Serial.println(String(incomingHum));
+  client.publish(get_topic("samples", mac, "temperature"), String(sampleMessage.temp));
+  client.publish(get_topic("samples", mac, "humidity"), String(sampleMessage.hum));
+  client.publish(get_topic("samples", mac, "moisture"), String(sampleMessage.moist));
 }
 
 void send_message(const uint8_t * mac, const uint8_t *incomingData, int len) {
