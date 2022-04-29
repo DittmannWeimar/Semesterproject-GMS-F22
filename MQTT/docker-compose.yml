@@ -1,0 +1,62 @@
+version: "3"
+services:
+
+  api:
+    build: API/
+    ports:
+     - "3000:3010"
+    networks:
+     - frontend
+     - backend
+    depends_on:
+     - mongo
+     - mosquitto
+    environment:
+     - MQTT_HOST=mqtt://mosquitto:1883
+     - MQTT_USERNAME=kristian
+     - MQTT_PASSWORD=1234
+     - MONGO_CONNECTION_STRING=mongodb://database:27017
+     - MONGO_DATABASE=gms
+
+  adapter:
+    build: Adapter/
+    depends_on:
+     - mongo
+     - mosquitto
+    networks:
+     - frontend
+     - backend
+    environment:
+     - MQTT_HOST=mqtt://mosquitto:1883
+     - MQTT_USERNAME=kristian
+     - MQTT_PASSWORD=1234
+     - MONGO_CONNECTION_STRING=mongodb://database:27017
+     - MONGO_DATABASE=gms
+     
+  mosquitto:
+    image: eclipse-mosquitto
+    container_name: mosquitto
+    ports:
+     - "3001:1883"
+    networks:
+     - frontend
+    volumes:
+     - ./Mosquitto/mosquitto/:/mosquitto/
+
+  mongo:
+    build: MongoDB/
+    container_name: database
+    networks:
+     - backend
+    volumes:
+     - database:/data/db
+  
+networks:
+
+  frontend:
+  
+  backend:
+  
+volumes:
+
+  database:
