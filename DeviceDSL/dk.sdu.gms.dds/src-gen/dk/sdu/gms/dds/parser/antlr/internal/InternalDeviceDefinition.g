@@ -84,12 +84,138 @@ ruleSystem returns [EObject current=null]
 		{
 			newLeafNode(otherlv_1, grammarAccess.getSystemAccess().getColonKeyword_1());
 		}
+		otherlv_2='wifi'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getSystemAccess().getWifiKeyword_2());
+		}
+		(
+			(
+				lv_wifiSsid_3_0=RULE_STRING
+				{
+					newLeafNode(lv_wifiSsid_3_0, grammarAccess.getSystemAccess().getWifiSsidSTRINGTerminalRuleCall_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSystemRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"wifiSsid",
+						lv_wifiSsid_3_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		(
+			otherlv_4='with'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getSystemAccess().getWithKeyword_4_0());
+			}
+			otherlv_5='password'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getSystemAccess().getPasswordKeyword_4_1());
+			}
+			(
+				(
+					lv_wifiPassword_6_0=RULE_STRING
+					{
+						newLeafNode(lv_wifiPassword_6_0, grammarAccess.getSystemAccess().getWifiPasswordSTRINGTerminalRuleCall_4_2_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getSystemRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"wifiPassword",
+							lv_wifiPassword_6_0,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+				)
+			)
+		)?
+		otherlv_7='mqtt'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getSystemAccess().getMqttKeyword_5());
+		}
+		(
+			(
+				lv_mqttHost_8_0=RULE_STRING
+				{
+					newLeafNode(lv_mqttHost_8_0, grammarAccess.getSystemAccess().getMqttHostSTRINGTerminalRuleCall_6_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSystemRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"mqttHost",
+						lv_mqttHost_8_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		(
+			otherlv_9='with'
+			{
+				newLeafNode(otherlv_9, grammarAccess.getSystemAccess().getWithKeyword_7_0());
+			}
+			otherlv_10='username'
+			{
+				newLeafNode(otherlv_10, grammarAccess.getSystemAccess().getUsernameKeyword_7_1());
+			}
+			(
+				(
+					lv_mqttUsername_11_0=RULE_STRING
+					{
+						newLeafNode(lv_mqttUsername_11_0, grammarAccess.getSystemAccess().getMqttUsernameSTRINGTerminalRuleCall_7_2_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getSystemRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"mqttUsername",
+							lv_mqttUsername_11_0,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+				)
+			)
+			otherlv_12='and'
+			{
+				newLeafNode(otherlv_12, grammarAccess.getSystemAccess().getAndKeyword_7_3());
+			}
+			otherlv_13='password'
+			{
+				newLeafNode(otherlv_13, grammarAccess.getSystemAccess().getPasswordKeyword_7_4());
+			}
+			(
+				(
+					lv_mqttPassword_14_0=RULE_STRING
+					{
+						newLeafNode(lv_mqttPassword_14_0, grammarAccess.getSystemAccess().getMqttPasswordSTRINGTerminalRuleCall_7_5_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getSystemRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"mqttPassword",
+							lv_mqttPassword_14_0,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+				)
+			)
+		)?
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSystemAccess().getGatewayGatewayParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getSystemAccess().getGatewayGatewayParserRuleCall_8_0());
 				}
-				lv_gateway_2_0=ruleGateway
+				lv_gateway_15_0=ruleGateway
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSystemRule());
@@ -97,7 +223,7 @@ ruleSystem returns [EObject current=null]
 					set(
 						$current,
 						"gateway",
-						lv_gateway_2_0,
+						lv_gateway_15_0,
 						"dk.sdu.gms.dds.DeviceDefinition.Gateway");
 					afterParserOrEnumRuleCall();
 				}
@@ -106,9 +232,9 @@ ruleSystem returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSystemAccess().getGraphsGraphParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getSystemAccess().getGraphsGraphParserRuleCall_9_0());
 				}
-				lv_graphs_3_0=ruleGraph
+				lv_graphs_16_0=ruleGraph
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSystemRule());
@@ -116,7 +242,7 @@ ruleSystem returns [EObject current=null]
 					add(
 						$current,
 						"graphs",
-						lv_graphs_3_0,
+						lv_graphs_16_0,
 						"dk.sdu.gms.dds.DeviceDefinition.Graph");
 					afterParserOrEnumRuleCall();
 				}
@@ -633,7 +759,7 @@ ruleSensor returns [EObject current=null]
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
-		)?
+		)
 		otherlv_3=':'
 		{
 			newLeafNode(otherlv_3, grammarAccess.getSensorAccess().getColonKeyword_3());
@@ -1138,7 +1264,7 @@ ruleActuator returns [EObject current=null]
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
-		)?
+		)
 		otherlv_3=':'
 		{
 			newLeafNode(otherlv_3, grammarAccess.getActuatorAccess().getColonKeyword_3());

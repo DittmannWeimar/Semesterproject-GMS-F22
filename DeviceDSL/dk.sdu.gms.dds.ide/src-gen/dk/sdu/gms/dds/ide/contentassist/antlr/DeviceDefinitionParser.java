@@ -50,6 +50,8 @@ public class DeviceDefinitionParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getExternalVariableUseAccess().getAlternatives_1(), "rule__ExternalVariableUse__Alternatives_1");
 			builder.put(grammarAccess.getVariableUseAccess().getAlternatives(), "rule__VariableUse__Alternatives");
 			builder.put(grammarAccess.getSystemAccess().getGroup(), "rule__System__Group__0");
+			builder.put(grammarAccess.getSystemAccess().getGroup_4(), "rule__System__Group_4__0");
+			builder.put(grammarAccess.getSystemAccess().getGroup_7(), "rule__System__Group_7__0");
 			builder.put(grammarAccess.getGraphAccess().getGroup(), "rule__Graph__Group__0");
 			builder.put(grammarAccess.getGatewayAccess().getGroup(), "rule__Gateway__Group__0");
 			builder.put(grammarAccess.getWorkerAccess().getGroup(), "rule__Worker__Group__0");
@@ -107,8 +109,13 @@ public class DeviceDefinitionParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getExternalCallAccess().getGroup_4(), "rule__ExternalCall__Group_4__0");
 			builder.put(grammarAccess.getExternalVariableUseAccess().getGroup(), "rule__ExternalVariableUse__Group__0");
 			builder.put(grammarAccess.getParenthesisAccess().getGroup(), "rule__Parenthesis__Group__0");
-			builder.put(grammarAccess.getSystemAccess().getGatewayAssignment_2(), "rule__System__GatewayAssignment_2");
-			builder.put(grammarAccess.getSystemAccess().getGraphsAssignment_3(), "rule__System__GraphsAssignment_3");
+			builder.put(grammarAccess.getSystemAccess().getWifiSsidAssignment_3(), "rule__System__WifiSsidAssignment_3");
+			builder.put(grammarAccess.getSystemAccess().getWifiPasswordAssignment_4_2(), "rule__System__WifiPasswordAssignment_4_2");
+			builder.put(grammarAccess.getSystemAccess().getMqttHostAssignment_6(), "rule__System__MqttHostAssignment_6");
+			builder.put(grammarAccess.getSystemAccess().getMqttUsernameAssignment_7_2(), "rule__System__MqttUsernameAssignment_7_2");
+			builder.put(grammarAccess.getSystemAccess().getMqttPasswordAssignment_7_5(), "rule__System__MqttPasswordAssignment_7_5");
+			builder.put(grammarAccess.getSystemAccess().getGatewayAssignment_8(), "rule__System__GatewayAssignment_8");
+			builder.put(grammarAccess.getSystemAccess().getGraphsAssignment_9(), "rule__System__GraphsAssignment_9");
 			builder.put(grammarAccess.getGraphAccess().getTypeAssignment_1(), "rule__Graph__TypeAssignment_1");
 			builder.put(grammarAccess.getGraphAccess().getNameAssignment_2(), "rule__Graph__NameAssignment_2");
 			builder.put(grammarAccess.getGraphAccess().getCategoryAssignment_5(), "rule__Graph__CategoryAssignment_5");

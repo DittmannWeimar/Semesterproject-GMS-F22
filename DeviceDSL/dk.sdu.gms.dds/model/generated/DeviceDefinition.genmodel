@@ -7,6 +7,11 @@
   <genPackages prefix="DeviceDefinition" basePackage="dk.sdu.gms.dds" disposableProviderFactory="true"
       fileExtensions="dds" ecorePackage="DeviceDefinition.ecore#/">
     <genClasses ecoreClass="DeviceDefinition.ecore#//System">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//System/wifiSsid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//System/wifiPassword"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//System/mqttHost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//System/mqttUsername"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//System/mqttPassword"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//System/gateway"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//System/graphs"/>
     </genClasses>

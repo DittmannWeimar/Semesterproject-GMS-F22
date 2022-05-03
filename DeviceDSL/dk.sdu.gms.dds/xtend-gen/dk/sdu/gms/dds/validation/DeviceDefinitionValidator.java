@@ -4,6 +4,8 @@
 package dk.sdu.gms.dds.validation;
 
 import com.google.common.base.Objects;
+import dk.sdu.gms.dds.ActuatorDefinition;
+import dk.sdu.gms.dds.SensorDefinition;
 import dk.sdu.gms.dds.deviceDefinition.Actuator;
 import dk.sdu.gms.dds.deviceDefinition.Device;
 import dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage;

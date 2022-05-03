@@ -4,6 +4,8 @@ generate deviceDefinition "http://www.sdu.dk/gms/dds/DeviceDefinition"
 
 System:
 	'System' ':'
+	'wifi' wifiSsid = STRING ('with' 'password' wifiPassword = STRING)?
+	'mqtt' mqttHost = STRING ('with' 'username' mqttUsername = STRING 'and' 'password' mqttPassword = STRING)?
 	gateway = Gateway
 	graphs += Graph*
 ;
@@ -43,7 +45,7 @@ terminal fragment HEXBYTE:
 ;
 
 Sensor:
-	'Sensor' type = ID (name=ID)? ':'
+	'Sensor' type = ID name=ID ':'
 	'pins' pins += INT* (',' pins += INT)*
 	'rate' sampleRate = Primitive
 	(outputs += SensorOutput)*
@@ -70,7 +72,7 @@ SensorOutput:
 ;
 
 Actuator:
-	'Actuator' type = ID (name=ID)? ':'
+	'Actuator' type = ID name=ID ':'
 	'pins' pins += INT* (',' pins += INT)* 
 	settings += Setting*
 	trigger = Trigger

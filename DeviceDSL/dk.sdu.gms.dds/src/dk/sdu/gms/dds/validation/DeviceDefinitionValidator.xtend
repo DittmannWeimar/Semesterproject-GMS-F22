@@ -8,6 +8,8 @@ import dk.sdu.gms.dds.deviceDefinition.Actuator
 import dk.sdu.gms.dds.deviceDefinition.Sensor
 import dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage
 import org.eclipse.xtext.validation.Check
+import dk.sdu.gms.dds.ActuatorDefinition
+import dk.sdu.gms.dds.SensorDefinition
 
 /**
  * This class contains custom validation rules. 

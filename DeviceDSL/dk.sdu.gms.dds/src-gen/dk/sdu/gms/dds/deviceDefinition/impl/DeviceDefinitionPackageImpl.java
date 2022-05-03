@@ -436,9 +436,64 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
+  public EAttribute getSystem_WifiSsid()
+  {
+    return (EAttribute)systemEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSystem_WifiPassword()
+  {
+    return (EAttribute)systemEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSystem_MqttHost()
+  {
+    return (EAttribute)systemEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSystem_MqttUsername()
+  {
+    return (EAttribute)systemEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSystem_MqttPassword()
+  {
+    return (EAttribute)systemEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EReference getSystem_Gateway()
   {
-    return (EReference)systemEClass.getEStructuralFeatures().get(0);
+    return (EReference)systemEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -449,7 +504,7 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
   @Override
   public EReference getSystem_Graphs()
   {
-    return (EReference)systemEClass.getEStructuralFeatures().get(1);
+    return (EReference)systemEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -1683,6 +1738,11 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
 
     // Create classes and their features
     systemEClass = createEClass(SYSTEM);
+    createEAttribute(systemEClass, SYSTEM__WIFI_SSID);
+    createEAttribute(systemEClass, SYSTEM__WIFI_PASSWORD);
+    createEAttribute(systemEClass, SYSTEM__MQTT_HOST);
+    createEAttribute(systemEClass, SYSTEM__MQTT_USERNAME);
+    createEAttribute(systemEClass, SYSTEM__MQTT_PASSWORD);
     createEReference(systemEClass, SYSTEM__GATEWAY);
     createEReference(systemEClass, SYSTEM__GRAPHS);
 
@@ -1901,6 +1961,11 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
 
     // Initialize classes and features; add operations and parameters
     initEClass(systemEClass, dk.sdu.gms.dds.deviceDefinition.System.class, "System", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSystem_WifiSsid(), ecorePackage.getEString(), "wifiSsid", null, 0, 1, dk.sdu.gms.dds.deviceDefinition.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSystem_WifiPassword(), ecorePackage.getEString(), "wifiPassword", null, 0, 1, dk.sdu.gms.dds.deviceDefinition.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSystem_MqttHost(), ecorePackage.getEString(), "mqttHost", null, 0, 1, dk.sdu.gms.dds.deviceDefinition.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSystem_MqttUsername(), ecorePackage.getEString(), "mqttUsername", null, 0, 1, dk.sdu.gms.dds.deviceDefinition.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSystem_MqttPassword(), ecorePackage.getEString(), "mqttPassword", null, 0, 1, dk.sdu.gms.dds.deviceDefinition.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSystem_Gateway(), this.getGateway(), null, "gateway", null, 0, 1, dk.sdu.gms.dds.deviceDefinition.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSystem_Graphs(), this.getGraph(), null, "graphs", null, 0, -1, dk.sdu.gms.dds.deviceDefinition.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

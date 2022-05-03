@@ -68,13 +68,58 @@ public interface DeviceDefinitionPackage extends EPackage
   int SYSTEM = 0;
 
   /**
+   * The feature id for the '<em><b>Wifi Ssid</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SYSTEM__WIFI_SSID = 0;
+
+  /**
+   * The feature id for the '<em><b>Wifi Password</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SYSTEM__WIFI_PASSWORD = 1;
+
+  /**
+   * The feature id for the '<em><b>Mqtt Host</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SYSTEM__MQTT_HOST = 2;
+
+  /**
+   * The feature id for the '<em><b>Mqtt Username</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SYSTEM__MQTT_USERNAME = 3;
+
+  /**
+   * The feature id for the '<em><b>Mqtt Password</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SYSTEM__MQTT_PASSWORD = 4;
+
+  /**
    * The feature id for the '<em><b>Gateway</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SYSTEM__GATEWAY = 0;
+  int SYSTEM__GATEWAY = 5;
 
   /**
    * The feature id for the '<em><b>Graphs</b></em>' containment reference list.
@@ -83,7 +128,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SYSTEM__GRAPHS = 1;
+  int SYSTEM__GRAPHS = 6;
 
   /**
    * The number of structural features of the '<em>System</em>' class.
@@ -92,7 +137,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SYSTEM_FEATURE_COUNT = 2;
+  int SYSTEM_FEATURE_COUNT = 7;
 
   /**
    * The meta object id for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.GraphImpl <em>Graph</em>}' class.
@@ -1605,6 +1650,61 @@ public interface DeviceDefinitionPackage extends EPackage
   EClass getSystem();
 
   /**
+   * Returns the meta object for the attribute '{@link dk.sdu.gms.dds.deviceDefinition.System#getWifiSsid <em>Wifi Ssid</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Wifi Ssid</em>'.
+   * @see dk.sdu.gms.dds.deviceDefinition.System#getWifiSsid()
+   * @see #getSystem()
+   * @generated
+   */
+  EAttribute getSystem_WifiSsid();
+
+  /**
+   * Returns the meta object for the attribute '{@link dk.sdu.gms.dds.deviceDefinition.System#getWifiPassword <em>Wifi Password</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Wifi Password</em>'.
+   * @see dk.sdu.gms.dds.deviceDefinition.System#getWifiPassword()
+   * @see #getSystem()
+   * @generated
+   */
+  EAttribute getSystem_WifiPassword();
+
+  /**
+   * Returns the meta object for the attribute '{@link dk.sdu.gms.dds.deviceDefinition.System#getMqttHost <em>Mqtt Host</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Mqtt Host</em>'.
+   * @see dk.sdu.gms.dds.deviceDefinition.System#getMqttHost()
+   * @see #getSystem()
+   * @generated
+   */
+  EAttribute getSystem_MqttHost();
+
+  /**
+   * Returns the meta object for the attribute '{@link dk.sdu.gms.dds.deviceDefinition.System#getMqttUsername <em>Mqtt Username</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Mqtt Username</em>'.
+   * @see dk.sdu.gms.dds.deviceDefinition.System#getMqttUsername()
+   * @see #getSystem()
+   * @generated
+   */
+  EAttribute getSystem_MqttUsername();
+
+  /**
+   * Returns the meta object for the attribute '{@link dk.sdu.gms.dds.deviceDefinition.System#getMqttPassword <em>Mqtt Password</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Mqtt Password</em>'.
+   * @see dk.sdu.gms.dds.deviceDefinition.System#getMqttPassword()
+   * @see #getSystem()
+   * @generated
+   */
+  EAttribute getSystem_MqttPassword();
+
+  /**
    * Returns the meta object for the containment reference '{@link dk.sdu.gms.dds.deviceDefinition.System#getGateway <em>Gateway</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2816,6 +2916,46 @@ public interface DeviceDefinitionPackage extends EPackage
      * @generated
      */
     EClass SYSTEM = eINSTANCE.getSystem();
+
+    /**
+     * The meta object literal for the '<em><b>Wifi Ssid</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SYSTEM__WIFI_SSID = eINSTANCE.getSystem_WifiSsid();
+
+    /**
+     * The meta object literal for the '<em><b>Wifi Password</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SYSTEM__WIFI_PASSWORD = eINSTANCE.getSystem_WifiPassword();
+
+    /**
+     * The meta object literal for the '<em><b>Mqtt Host</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SYSTEM__MQTT_HOST = eINSTANCE.getSystem_MqttHost();
+
+    /**
+     * The meta object literal for the '<em><b>Mqtt Username</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SYSTEM__MQTT_USERNAME = eINSTANCE.getSystem_MqttUsername();
+
+    /**
+     * The meta object literal for the '<em><b>Mqtt Password</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SYSTEM__MQTT_PASSWORD = eINSTANCE.getSystem_MqttPassword();
 
     /**
      * The meta object literal for the '<em><b>Gateway</b></em>' containment reference feature.

@@ -31,6 +31,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.SystemImpl#getWifiSsid <em>Wifi Ssid</em>}</li>
+ *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.SystemImpl#getWifiPassword <em>Wifi Password</em>}</li>
+ *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.SystemImpl#getMqttHost <em>Mqtt Host</em>}</li>
+ *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.SystemImpl#getMqttUsername <em>Mqtt Username</em>}</li>
+ *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.SystemImpl#getMqttPassword <em>Mqtt Password</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.SystemImpl#getGateway <em>Gateway</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.SystemImpl#getGraphs <em>Graphs</em>}</li>
  * </ul>
@@ -39,6 +44,106 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class SystemImpl extends MinimalEObjectImpl.Container implements dk.sdu.gms.dds.deviceDefinition.System
 {
+  /**
+   * The default value of the '{@link #getWifiSsid() <em>Wifi Ssid</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getWifiSsid()
+   * @generated
+   * @ordered
+   */
+  protected static final String WIFI_SSID_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getWifiSsid() <em>Wifi Ssid</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getWifiSsid()
+   * @generated
+   * @ordered
+   */
+  protected String wifiSsid = WIFI_SSID_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getWifiPassword() <em>Wifi Password</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getWifiPassword()
+   * @generated
+   * @ordered
+   */
+  protected static final String WIFI_PASSWORD_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getWifiPassword() <em>Wifi Password</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getWifiPassword()
+   * @generated
+   * @ordered
+   */
+  protected String wifiPassword = WIFI_PASSWORD_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getMqttHost() <em>Mqtt Host</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMqttHost()
+   * @generated
+   * @ordered
+   */
+  protected static final String MQTT_HOST_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getMqttHost() <em>Mqtt Host</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMqttHost()
+   * @generated
+   * @ordered
+   */
+  protected String mqttHost = MQTT_HOST_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getMqttUsername() <em>Mqtt Username</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMqttUsername()
+   * @generated
+   * @ordered
+   */
+  protected static final String MQTT_USERNAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getMqttUsername() <em>Mqtt Username</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMqttUsername()
+   * @generated
+   * @ordered
+   */
+  protected String mqttUsername = MQTT_USERNAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getMqttPassword() <em>Mqtt Password</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMqttPassword()
+   * @generated
+   * @ordered
+   */
+  protected static final String MQTT_PASSWORD_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getMqttPassword() <em>Mqtt Password</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMqttPassword()
+   * @generated
+   * @ordered
+   */
+  protected String mqttPassword = MQTT_PASSWORD_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getGateway() <em>Gateway</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -78,6 +183,131 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements dk.sdu.g
   protected EClass eStaticClass()
   {
     return DeviceDefinitionPackage.Literals.SYSTEM;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getWifiSsid()
+  {
+    return wifiSsid;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setWifiSsid(String newWifiSsid)
+  {
+    String oldWifiSsid = wifiSsid;
+    wifiSsid = newWifiSsid;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceDefinitionPackage.SYSTEM__WIFI_SSID, oldWifiSsid, wifiSsid));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getWifiPassword()
+  {
+    return wifiPassword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setWifiPassword(String newWifiPassword)
+  {
+    String oldWifiPassword = wifiPassword;
+    wifiPassword = newWifiPassword;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceDefinitionPackage.SYSTEM__WIFI_PASSWORD, oldWifiPassword, wifiPassword));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getMqttHost()
+  {
+    return mqttHost;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setMqttHost(String newMqttHost)
+  {
+    String oldMqttHost = mqttHost;
+    mqttHost = newMqttHost;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceDefinitionPackage.SYSTEM__MQTT_HOST, oldMqttHost, mqttHost));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getMqttUsername()
+  {
+    return mqttUsername;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setMqttUsername(String newMqttUsername)
+  {
+    String oldMqttUsername = mqttUsername;
+    mqttUsername = newMqttUsername;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceDefinitionPackage.SYSTEM__MQTT_USERNAME, oldMqttUsername, mqttUsername));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getMqttPassword()
+  {
+    return mqttPassword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setMqttPassword(String newMqttPassword)
+  {
+    String oldMqttPassword = mqttPassword;
+    mqttPassword = newMqttPassword;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceDefinitionPackage.SYSTEM__MQTT_PASSWORD, oldMqttPassword, mqttPassword));
   }
 
   /**
@@ -173,6 +403,16 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements dk.sdu.g
   {
     switch (featureID)
     {
+      case DeviceDefinitionPackage.SYSTEM__WIFI_SSID:
+        return getWifiSsid();
+      case DeviceDefinitionPackage.SYSTEM__WIFI_PASSWORD:
+        return getWifiPassword();
+      case DeviceDefinitionPackage.SYSTEM__MQTT_HOST:
+        return getMqttHost();
+      case DeviceDefinitionPackage.SYSTEM__MQTT_USERNAME:
+        return getMqttUsername();
+      case DeviceDefinitionPackage.SYSTEM__MQTT_PASSWORD:
+        return getMqttPassword();
       case DeviceDefinitionPackage.SYSTEM__GATEWAY:
         return getGateway();
       case DeviceDefinitionPackage.SYSTEM__GRAPHS:
@@ -192,6 +432,21 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements dk.sdu.g
   {
     switch (featureID)
     {
+      case DeviceDefinitionPackage.SYSTEM__WIFI_SSID:
+        setWifiSsid((String)newValue);
+        return;
+      case DeviceDefinitionPackage.SYSTEM__WIFI_PASSWORD:
+        setWifiPassword((String)newValue);
+        return;
+      case DeviceDefinitionPackage.SYSTEM__MQTT_HOST:
+        setMqttHost((String)newValue);
+        return;
+      case DeviceDefinitionPackage.SYSTEM__MQTT_USERNAME:
+        setMqttUsername((String)newValue);
+        return;
+      case DeviceDefinitionPackage.SYSTEM__MQTT_PASSWORD:
+        setMqttPassword((String)newValue);
+        return;
       case DeviceDefinitionPackage.SYSTEM__GATEWAY:
         setGateway((Gateway)newValue);
         return;
@@ -213,6 +468,21 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements dk.sdu.g
   {
     switch (featureID)
     {
+      case DeviceDefinitionPackage.SYSTEM__WIFI_SSID:
+        setWifiSsid(WIFI_SSID_EDEFAULT);
+        return;
+      case DeviceDefinitionPackage.SYSTEM__WIFI_PASSWORD:
+        setWifiPassword(WIFI_PASSWORD_EDEFAULT);
+        return;
+      case DeviceDefinitionPackage.SYSTEM__MQTT_HOST:
+        setMqttHost(MQTT_HOST_EDEFAULT);
+        return;
+      case DeviceDefinitionPackage.SYSTEM__MQTT_USERNAME:
+        setMqttUsername(MQTT_USERNAME_EDEFAULT);
+        return;
+      case DeviceDefinitionPackage.SYSTEM__MQTT_PASSWORD:
+        setMqttPassword(MQTT_PASSWORD_EDEFAULT);
+        return;
       case DeviceDefinitionPackage.SYSTEM__GATEWAY:
         setGateway((Gateway)null);
         return;
@@ -233,12 +503,47 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements dk.sdu.g
   {
     switch (featureID)
     {
+      case DeviceDefinitionPackage.SYSTEM__WIFI_SSID:
+        return WIFI_SSID_EDEFAULT == null ? wifiSsid != null : !WIFI_SSID_EDEFAULT.equals(wifiSsid);
+      case DeviceDefinitionPackage.SYSTEM__WIFI_PASSWORD:
+        return WIFI_PASSWORD_EDEFAULT == null ? wifiPassword != null : !WIFI_PASSWORD_EDEFAULT.equals(wifiPassword);
+      case DeviceDefinitionPackage.SYSTEM__MQTT_HOST:
+        return MQTT_HOST_EDEFAULT == null ? mqttHost != null : !MQTT_HOST_EDEFAULT.equals(mqttHost);
+      case DeviceDefinitionPackage.SYSTEM__MQTT_USERNAME:
+        return MQTT_USERNAME_EDEFAULT == null ? mqttUsername != null : !MQTT_USERNAME_EDEFAULT.equals(mqttUsername);
+      case DeviceDefinitionPackage.SYSTEM__MQTT_PASSWORD:
+        return MQTT_PASSWORD_EDEFAULT == null ? mqttPassword != null : !MQTT_PASSWORD_EDEFAULT.equals(mqttPassword);
       case DeviceDefinitionPackage.SYSTEM__GATEWAY:
         return gateway != null;
       case DeviceDefinitionPackage.SYSTEM__GRAPHS:
         return graphs != null && !graphs.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (wifiSsid: ");
+    result.append(wifiSsid);
+    result.append(", wifiPassword: ");
+    result.append(wifiPassword);
+    result.append(", mqttHost: ");
+    result.append(mqttHost);
+    result.append(", mqttUsername: ");
+    result.append(mqttUsername);
+    result.append(", mqttPassword: ");
+    result.append(mqttPassword);
+    result.append(')');
+    return result.toString();
   }
 
 } //SystemImpl

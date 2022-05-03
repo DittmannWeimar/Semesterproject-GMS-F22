@@ -29,19 +29,43 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cSystemKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cGatewayAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cGatewayGatewayParserRuleCall_2_0 = (RuleCall)cGatewayAssignment_2.eContents().get(0);
-		private final Assignment cGraphsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cGraphsGraphParserRuleCall_3_0 = (RuleCall)cGraphsAssignment_3.eContents().get(0);
+		private final Keyword cWifiKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cWifiSsidAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cWifiSsidSTRINGTerminalRuleCall_3_0 = (RuleCall)cWifiSsidAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cWithKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cPasswordKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Assignment cWifiPasswordAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cWifiPasswordSTRINGTerminalRuleCall_4_2_0 = (RuleCall)cWifiPasswordAssignment_4_2.eContents().get(0);
+		private final Keyword cMqttKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cMqttHostAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cMqttHostSTRINGTerminalRuleCall_6_0 = (RuleCall)cMqttHostAssignment_6.eContents().get(0);
+		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+		private final Keyword cWithKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Keyword cUsernameKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
+		private final Assignment cMqttUsernameAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
+		private final RuleCall cMqttUsernameSTRINGTerminalRuleCall_7_2_0 = (RuleCall)cMqttUsernameAssignment_7_2.eContents().get(0);
+		private final Keyword cAndKeyword_7_3 = (Keyword)cGroup_7.eContents().get(3);
+		private final Keyword cPasswordKeyword_7_4 = (Keyword)cGroup_7.eContents().get(4);
+		private final Assignment cMqttPasswordAssignment_7_5 = (Assignment)cGroup_7.eContents().get(5);
+		private final RuleCall cMqttPasswordSTRINGTerminalRuleCall_7_5_0 = (RuleCall)cMqttPasswordAssignment_7_5.eContents().get(0);
+		private final Assignment cGatewayAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cGatewayGatewayParserRuleCall_8_0 = (RuleCall)cGatewayAssignment_8.eContents().get(0);
+		private final Assignment cGraphsAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cGraphsGraphParserRuleCall_9_0 = (RuleCall)cGraphsAssignment_9.eContents().get(0);
 		
 		//System:
 		//    'System' ':'
+		//    'wifi' wifiSsid = STRING ('with' 'password' wifiPassword = STRING)?
+		//    'mqtt' mqttHost = STRING ('with' 'username' mqttUsername = STRING 'and' 'password' mqttPassword = STRING)?
 		//    gateway = Gateway
 		//    graphs += Graph*
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'System' ':'
+		//'wifi' wifiSsid = STRING ('with' 'password' wifiPassword = STRING)?
+		//'mqtt' mqttHost = STRING ('with' 'username' mqttUsername = STRING 'and' 'password' mqttPassword = STRING)?
 		//gateway = Gateway
 		//graphs += Graph*
 		public Group getGroup() { return cGroup; }
@@ -52,17 +76,77 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		//':'
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 		
+		//'wifi'
+		public Keyword getWifiKeyword_2() { return cWifiKeyword_2; }
+		
+		//wifiSsid = STRING
+		public Assignment getWifiSsidAssignment_3() { return cWifiSsidAssignment_3; }
+		
+		//STRING
+		public RuleCall getWifiSsidSTRINGTerminalRuleCall_3_0() { return cWifiSsidSTRINGTerminalRuleCall_3_0; }
+		
+		//('with' 'password' wifiPassword = STRING)?
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//'with'
+		public Keyword getWithKeyword_4_0() { return cWithKeyword_4_0; }
+		
+		//'password'
+		public Keyword getPasswordKeyword_4_1() { return cPasswordKeyword_4_1; }
+		
+		//wifiPassword = STRING
+		public Assignment getWifiPasswordAssignment_4_2() { return cWifiPasswordAssignment_4_2; }
+		
+		//STRING
+		public RuleCall getWifiPasswordSTRINGTerminalRuleCall_4_2_0() { return cWifiPasswordSTRINGTerminalRuleCall_4_2_0; }
+		
+		//'mqtt'
+		public Keyword getMqttKeyword_5() { return cMqttKeyword_5; }
+		
+		//mqttHost = STRING
+		public Assignment getMqttHostAssignment_6() { return cMqttHostAssignment_6; }
+		
+		//STRING
+		public RuleCall getMqttHostSTRINGTerminalRuleCall_6_0() { return cMqttHostSTRINGTerminalRuleCall_6_0; }
+		
+		//('with' 'username' mqttUsername = STRING 'and' 'password' mqttPassword = STRING)?
+		public Group getGroup_7() { return cGroup_7; }
+		
+		//'with'
+		public Keyword getWithKeyword_7_0() { return cWithKeyword_7_0; }
+		
+		//'username'
+		public Keyword getUsernameKeyword_7_1() { return cUsernameKeyword_7_1; }
+		
+		//mqttUsername = STRING
+		public Assignment getMqttUsernameAssignment_7_2() { return cMqttUsernameAssignment_7_2; }
+		
+		//STRING
+		public RuleCall getMqttUsernameSTRINGTerminalRuleCall_7_2_0() { return cMqttUsernameSTRINGTerminalRuleCall_7_2_0; }
+		
+		//'and'
+		public Keyword getAndKeyword_7_3() { return cAndKeyword_7_3; }
+		
+		//'password'
+		public Keyword getPasswordKeyword_7_4() { return cPasswordKeyword_7_4; }
+		
+		//mqttPassword = STRING
+		public Assignment getMqttPasswordAssignment_7_5() { return cMqttPasswordAssignment_7_5; }
+		
+		//STRING
+		public RuleCall getMqttPasswordSTRINGTerminalRuleCall_7_5_0() { return cMqttPasswordSTRINGTerminalRuleCall_7_5_0; }
+		
 		//gateway = Gateway
-		public Assignment getGatewayAssignment_2() { return cGatewayAssignment_2; }
+		public Assignment getGatewayAssignment_8() { return cGatewayAssignment_8; }
 		
 		//Gateway
-		public RuleCall getGatewayGatewayParserRuleCall_2_0() { return cGatewayGatewayParserRuleCall_2_0; }
+		public RuleCall getGatewayGatewayParserRuleCall_8_0() { return cGatewayGatewayParserRuleCall_8_0; }
 		
 		//graphs += Graph*
-		public Assignment getGraphsAssignment_3() { return cGraphsAssignment_3; }
+		public Assignment getGraphsAssignment_9() { return cGraphsAssignment_9; }
 		
 		//Graph
-		public RuleCall getGraphsGraphParserRuleCall_3_0() { return cGraphsGraphParserRuleCall_3_0; }
+		public RuleCall getGraphsGraphParserRuleCall_9_0() { return cGraphsGraphParserRuleCall_9_0; }
 	}
 	public class GraphElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.gms.dds.DeviceDefinition.Graph");
@@ -379,7 +463,7 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		private final RuleCall cGraphGraphIDTerminalRuleCall_13_1_0_1 = (RuleCall)cGraphGraphCrossReference_13_1_0.eContents().get(1);
 		
 		//Sensor:
-		//    'Sensor' type = ID (name=ID)? ':'
+		//    'Sensor' type = ID name=ID ':'
 		//    'pins' pins += INT* (',' pins += INT)*
 		//    'rate' sampleRate = Primitive
 		//    (outputs += SensorOutput)*
@@ -390,7 +474,7 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Sensor' type = ID (name=ID)? ':'
+		//'Sensor' type = ID name=ID ':'
 		//'pins' pins += INT* (',' pins += INT)*
 		//'rate' sampleRate = Primitive
 		//(outputs += SensorOutput)*
@@ -409,7 +493,7 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		//ID
 		public RuleCall getTypeIDTerminalRuleCall_1_0() { return cTypeIDTerminalRuleCall_1_0; }
 		
-		//(name=ID)?
+		//name=ID
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
 		//ID
@@ -724,14 +808,14 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		private final RuleCall cTriggerTriggerParserRuleCall_8_0 = (RuleCall)cTriggerAssignment_8.eContents().get(0);
 		
 		//Actuator:
-		//    'Actuator' type = ID (name=ID)? ':'
+		//    'Actuator' type = ID name=ID ':'
 		//    'pins' pins += INT* (',' pins += INT)*
 		//    settings += Setting*
 		//    trigger = Trigger
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Actuator' type = ID (name=ID)? ':'
+		//'Actuator' type = ID name=ID ':'
 		//'pins' pins += INT* (',' pins += INT)*
 		//settings += Setting*
 		//trigger = Trigger
@@ -746,7 +830,7 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		//ID
 		public RuleCall getTypeIDTerminalRuleCall_1_0() { return cTypeIDTerminalRuleCall_1_0; }
 		
-		//(name=ID)?
+		//name=ID
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
 		//ID
@@ -1643,6 +1727,8 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 	
 	//System:
 	//    'System' ':'
+	//    'wifi' wifiSsid = STRING ('with' 'password' wifiPassword = STRING)?
+	//    'mqtt' mqttHost = STRING ('with' 'username' mqttUsername = STRING 'and' 'password' mqttPassword = STRING)?
 	//    gateway = Gateway
 	//    graphs += Graph*
 	//;
@@ -1723,7 +1809,7 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 	}
 	
 	//Sensor:
-	//    'Sensor' type = ID (name=ID)? ':'
+	//    'Sensor' type = ID name=ID ':'
 	//    'pins' pins += INT* (',' pins += INT)*
 	//    'rate' sampleRate = Primitive
 	//    (outputs += SensorOutput)*
@@ -1785,7 +1871,7 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 	}
 	
 	//Actuator:
-	//    'Actuator' type = ID (name=ID)? ':'
+	//    'Actuator' type = ID name=ID ':'
 	//    'pins' pins += INT* (',' pins += INT)*
 	//    settings += Setting*
 	//    trigger = Trigger

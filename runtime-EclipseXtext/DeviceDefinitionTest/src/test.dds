@@ -1,9 +1,10 @@
 System:
-
+	wifi "Chronos" with password "fizzfyr13"
+	mqtt "vald.io:3001" with username "kristian" and password "1234"
 	Gateway test_gateway:
 		mac 11:22:33:44:55:66
 		Worker test_worker1:
-			mac 55-44-22-5D-99-22
+			mac 55:44:22:5D:99:22
 			sleep for 10 minutes
 			broadcast for 20 seconds
 			
@@ -27,13 +28,13 @@ System:
 				setting brightness = 0.35
 				when temp1.temp > threshold + moist1.moisture * 2
 				
-			Actuator Pump:
+			Actuator Pump pump1:
 				pins 9,10,11,12
 				setting pumpTime = 10
 				on moist1.moisture < 10 + led1.brightness
 				off 2 + 10 < moist1.moisture > 20
 			
-			Actuator Pump:
+			Actuator Pump pump2:
 				pins 9,10,11,12
 				setting pumpTime = 10
 				on moist1.moisture < 10 run for 10 minutes

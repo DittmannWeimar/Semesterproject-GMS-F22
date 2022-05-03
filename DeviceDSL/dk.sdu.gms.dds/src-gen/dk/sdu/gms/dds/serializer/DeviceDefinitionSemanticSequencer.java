@@ -184,7 +184,7 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 	 * Constraint:
 	 *     (
 	 *         type=ID 
-	 *         name=ID? 
+	 *         name=ID 
 	 *         pins+=INT* 
 	 *         pins+=INT* 
 	 *         settings+=Setting* 
@@ -1012,7 +1012,7 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 	 * Constraint:
 	 *     (
 	 *         type=ID 
-	 *         name=ID? 
+	 *         name=ID 
 	 *         pins+=INT* 
 	 *         pins+=INT* 
 	 *         sampleRate=Primitive 
@@ -1059,7 +1059,14 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 	 *     System returns System
 	 *
 	 * Constraint:
-	 *     (gateway=Gateway graphs+=Graph*)
+	 *     (
+	 *         wifiSsid=STRING 
+	 *         wifiPassword=STRING? 
+	 *         mqttHost=STRING 
+	 *         (mqttUsername=STRING mqttPassword=STRING)? 
+	 *         gateway=Gateway 
+	 *         graphs+=Graph*
+	 *     )
 	 * </pre>
 	 */
 	protected void sequence_System(ISerializationContext context, dk.sdu.gms.dds.deviceDefinition.System semanticObject) {

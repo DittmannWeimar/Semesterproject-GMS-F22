@@ -3,6 +3,11 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="deviceDefinition" nsURI="http://www.sdu.dk/gms/dds/DeviceDefinition"
     nsPrefix="deviceDefinition">
   <eClassifiers xsi:type="ecore:EClass" name="System">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="wifiSsid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="wifiPassword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mqttHost" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mqttUsername" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mqttPassword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="gateway" eType="#//Gateway"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="graphs" upperBound="-1"
