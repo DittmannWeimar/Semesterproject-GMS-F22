@@ -1,6 +1,8 @@
+var categorySubfolder = "category-pages/";
+
 function addCategory(name) {
     var categoryBinding = _createCategoryJSBinding(name)
-    $('#navbar-categories').append(`<li id = ${categoryBinding.name}><a href="${categoryBinding.id}"> ${categoryBinding.name} </a></li>`)
+    $('#navbar-categories').append(`<li id = ${categoryBinding.name}><a href="${"/"+categorySubfolder+categoryBinding.id+".php"}"> ${categoryBinding.name} </a></li>`)
 }
 
 function _createCategoryJSBinding(name) {

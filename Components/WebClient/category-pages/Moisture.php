@@ -3,12 +3,12 @@
 
 <head>
     <title>Green House Management System</title>
-    <?php require "header.php" ?>
-    <script src="category-pages/Moisture.js"></script>
+    <?php require $_SERVER['DOCUMENT_ROOT'] . "/header.php" ?>
+    <script src="Moisture.js"></script>
 </head>
 
 <body>
-    <?php require "commonBody.php" ?>
+    <?php require $_SERVER['DOCUMENT_ROOT'] . "/commonBody.php" ?>
     <ul class="flex-container">
         <li class="chart-container">
             <canvas id="myChart" class="fixed-dimensions-chart"></canvas>
