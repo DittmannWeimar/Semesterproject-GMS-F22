@@ -49,10 +49,8 @@ async function test() {
 //MQTT!
 var mqtt;
 var reconnectTimeout = 2000;
-var host = process.env.MQTT_HOST.split(":")[0]
-var port = process.env.MQTT_HOST.split(":")[1]
-var username = process.env.MQTT_USERNAME
-var pw = process.env.MQTT_PASSWORD
+var host = "localhost";
+var port = 3002;
 
 function _onConnect(callback = null) {
     console.log("Connected to MQTT!");
@@ -79,8 +77,8 @@ function MQTTConnect(callback) {
         onFailure: () => {
             console.log("MQTT Failed to connect..");
         },
-        userName: username,
-        password: pw
+        userName: "kristian",
+        password: "1234"
     }
 
     mqtt.connect(options)
