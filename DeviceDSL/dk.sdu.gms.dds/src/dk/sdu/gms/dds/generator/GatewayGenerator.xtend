@@ -1,6 +1,5 @@
 package dk.sdu.gms.dds.generator
 
-import dk.sdu.gms.dds.SensorDefinition
 import dk.sdu.gms.dds.deviceDefinition.Gateway
 import dk.sdu.gms.dds.deviceDefinition.Sensor
 import dk.sdu.gms.dds.deviceDefinition.SensorOutput
@@ -152,7 +151,7 @@ public class GatewayGenerator {
 		{
 			«FOR worker : gateway.workers»
 			«FOR setting : settings(worker)»
-			client.subscribe("settings/" + WiFi.macAddress() + "/«worker.mac»/«fullyQualifiedName(setting)»", [](const String &payload) {
+			client.subscribe("settings/" + WiFi.macAddress() + "/«worker.mac»/«getBindingName(setting)»", [](const String &payload) {
 			set_worker_setting(«indexOfSetting(setting)», «indexOf(gateway, worker)», String(payload).toFloat());
 			});
 			«ENDFOR»
@@ -245,7 +244,7 @@ public class GatewayGenerator {
 		  print_mac(mac);
 		  Serial.println("");
 		  
-		  «FOR sampleName : gateway.getWorkersSampleNames»
+		  «FOR sampleName : getWorkersSampleNames(gateway)»
 		  if (!isnan(sampleMessage.«sampleName»)) {
 		  	client.publish(get_topic("samples", mac, "«sampleName»"), String(sampleMessage.«sampleName»));
 		  }
@@ -260,30 +259,4 @@ public class GatewayGenerator {
 		  }
 		}
 	'''
-	
-	static def getWorkersSampleNames(Gateway gateway) {
-		val sampleNames = new ArrayList<String>();
-		for (worker: gateway.workers) {
-			for (device : worker.devices) {
-				if (device instanceof Sensor) {
-					for (output: device.outputs) {
-						sampleNames.add(worker.name + "_" + device.name + "_" + getOutputName(device, output))
-					}
-				}
-			}
-		}
-		return sampleNames;
-	}
-	
-	static def getOutputName (Sensor sensor, SensorOutput output) {
-		if (output.output === null) {
-			val definition = SensorDefinition.getDefinition(sensor.type);
-			if (definition.outputs.length != 1) {
-				throw new IllegalArgumentException("Attempted to fetch single output name for sensor with 0 or multiple outputs.")
-			}
-			return definition.outputs.get(0);
-		}else{
-			return output.output;
-		}
-	}
 }

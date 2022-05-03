@@ -1,11 +1,7 @@
 package dk.sdu.gms.dds.generator;
 
-import dk.sdu.gms.dds.SensorDefinition;
 import dk.sdu.gms.dds.Utils;
-import dk.sdu.gms.dds.deviceDefinition.Device;
 import dk.sdu.gms.dds.deviceDefinition.Gateway;
-import dk.sdu.gms.dds.deviceDefinition.Sensor;
-import dk.sdu.gms.dds.deviceDefinition.SensorOutput;
 import dk.sdu.gms.dds.deviceDefinition.Setting;
 import dk.sdu.gms.dds.deviceDefinition.Worker;
 import java.util.ArrayList;
@@ -82,7 +78,7 @@ public class GatewayGenerator {
     _builder.append("typedef struct message_sample : message_base {");
     _builder.newLine();
     {
-      ArrayList<String> _workersSampleNames = GatewayGenerator.getWorkersSampleNames(gateway);
+      ArrayList<String> _workersSampleNames = Utils.getWorkersSampleNames(gateway);
       for(final String sample : _workersSampleNames) {
         _builder.append("\t");
         _builder.append("float ");
@@ -415,8 +411,8 @@ public class GatewayGenerator {
             String _mac = worker_1.getMac();
             _builder.append(_mac, "\t");
             _builder.append("/");
-            String _fullyQualifiedName = Utils.fullyQualifiedName(setting);
-            _builder.append(_fullyQualifiedName, "\t");
+            String _bindingName = Utils.getBindingName(setting);
+            _builder.append(_bindingName, "\t");
             _builder.append("\", [](const String &payload) {");
             _builder.newLineIfNotEmpty();
             _builder.append("\t");
@@ -647,7 +643,7 @@ public class GatewayGenerator {
     _builder.append("  ");
     _builder.newLine();
     {
-      ArrayList<String> _workersSampleNames_1 = GatewayGenerator.getWorkersSampleNames(gateway);
+      ArrayList<String> _workersSampleNames_1 = Utils.getWorkersSampleNames(gateway);
       for(final String sampleName : _workersSampleNames_1) {
         _builder.append("  ");
         _builder.append("if (!isnan(sampleMessage.");
@@ -690,45 +686,5 @@ public class GatewayGenerator {
     _builder.append("}");
     _builder.newLine();
     return _builder;
-  }
-  
-  public static ArrayList<String> getWorkersSampleNames(final Gateway gateway) {
-    final ArrayList<String> sampleNames = new ArrayList<String>();
-    EList<Worker> _workers = gateway.getWorkers();
-    for (final Worker worker : _workers) {
-      EList<Device> _devices = worker.getDevices();
-      for (final Device device : _devices) {
-        if ((device instanceof Sensor)) {
-          EList<SensorOutput> _outputs = ((Sensor)device).getOutputs();
-          for (final SensorOutput output : _outputs) {
-            String _name = worker.getName();
-            String _plus = (_name + "_");
-            String _name_1 = ((Sensor)device).getName();
-            String _plus_1 = (_plus + _name_1);
-            String _plus_2 = (_plus_1 + "_");
-            String _outputName = GatewayGenerator.getOutputName(((Sensor)device), output);
-            String _plus_3 = (_plus_2 + _outputName);
-            sampleNames.add(_plus_3);
-          }
-        }
-      }
-    }
-    return sampleNames;
-  }
-  
-  public static String getOutputName(final Sensor sensor, final SensorOutput output) {
-    String _output = output.getOutput();
-    boolean _tripleEquals = (_output == null);
-    if (_tripleEquals) {
-      final SensorDefinition definition = SensorDefinition.getDefinition(sensor.getType());
-      int _length = definition.outputs.length;
-      boolean _notEquals = (_length != 1);
-      if (_notEquals) {
-        throw new IllegalArgumentException("Attempted to fetch single output name for sensor with 0 or multiple outputs.");
-      }
-      return definition.outputs[0];
-    } else {
-      return output.getOutput();
-    }
   }
 }

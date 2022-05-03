@@ -35,7 +35,6 @@ import dk.sdu.gms.dds.deviceDefinition.Or;
 import dk.sdu.gms.dds.deviceDefinition.Parenthesis;
 import dk.sdu.gms.dds.deviceDefinition.Plus;
 import dk.sdu.gms.dds.deviceDefinition.Primitive;
-import dk.sdu.gms.dds.deviceDefinition.SampleBehavior;
 import dk.sdu.gms.dds.deviceDefinition.Second;
 import dk.sdu.gms.dds.deviceDefinition.Sensor;
 import dk.sdu.gms.dds.deviceDefinition.SensorOutput;
@@ -113,7 +112,6 @@ public class DeviceDefinitionFactoryImpl extends EFactoryImpl implements DeviceD
       case DeviceDefinitionPackage.WORKER: return createWorker();
       case DeviceDefinitionPackage.DEVICE: return createDevice();
       case DeviceDefinitionPackage.SENSOR: return createSensor();
-      case DeviceDefinitionPackage.SAMPLE_BEHAVIOR: return createSampleBehavior();
       case DeviceDefinitionPackage.TIME_UNIT: return createTimeUnit();
       case DeviceDefinitionPackage.BINDING: return createBinding();
       case DeviceDefinitionPackage.SENSOR_OUTPUT: return createSensorOutput();
@@ -224,18 +222,6 @@ public class DeviceDefinitionFactoryImpl extends EFactoryImpl implements DeviceD
   {
     SensorImpl sensor = new SensorImpl();
     return sensor;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public SampleBehavior createSampleBehavior()
-  {
-    SampleBehaviorImpl sampleBehavior = new SampleBehaviorImpl();
-    return sampleBehavior;
   }
 
   /**

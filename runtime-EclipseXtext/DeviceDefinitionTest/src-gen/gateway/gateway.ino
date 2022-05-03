@@ -28,7 +28,8 @@ message_setting settingMessage;
 typedef struct message_sample : message_base {
 	float test_worker1_temp1_temperature;
 	float test_worker1_temp1_humidity;
-	float test_worker1_moist1_moisture;
+	float test_worker1_mois_moisture;
+	float test_worker1_dummy_zero;
 } message_sample;
 message_sample sampleMessage;
 
@@ -42,7 +43,7 @@ EspMQTTClient client(
   "vald.io",
   "kristian",
   "1234",
-  "gms-gateway-dbb0fb3a-6c76-4dda-80f5-d69806a1b528",
+  "gms-gateway-07ef3659-f200-487b-9881-d12a38b5d4ab",
   3001
 );
 
@@ -95,10 +96,10 @@ void setup() {
 }
 
 void populate_worker_infos () {
-	set_mac_bytes(workers[0].address, 0x55, 0x44, 0x22, 0x5D, 0x99, 0x22);
-	memcpy(workers[0].info.peer_addr, workers[0].address, 6);
-	workers[0].info.channel = 0;  
-	workers[0].info.encrypt = false;
+		set_mac_bytes(workers[0].address, 0x55, 0x55, 0x55, 0x55, 0x55, 0x00);
+		memcpy(workers[0].info.peer_addr, workers[0].address, 6);
+		workers[0].info.channel = 0;  
+		workers[0].info.encrypt = false;
 }
 
 void set_mac_bytes(uint8_t arr[6], uint8_t b0, uint8_t b1, uint8_t b2, uint8_t b3, uint8_t b4, uint8_t b5) {
@@ -123,17 +124,8 @@ int32_t getWiFiChannel(const char *ssid) {
 
 void onConnectionEstablished()
 {
-	client.subscribe("settings/" + WiFi.macAddress() + "/55:44:22:5D:99:22/led1-threshold", [](const String &payload) {
+	client.subscribe("settings/" + WiFi.macAddress() + "/55:55:55:55:55:00/mois_threshold", [](const String &payload) {
 	set_worker_setting(0, 0, String(payload).toFloat());
-	});
-	client.subscribe("settings/" + WiFi.macAddress() + "/55:44:22:5D:99:22/led1-brightness", [](const String &payload) {
-	set_worker_setting(1, 0, String(payload).toFloat());
-	});
-	client.subscribe("settings/" + WiFi.macAddress() + "/55:44:22:5D:99:22/pump1-pumpTime", [](const String &payload) {
-	set_worker_setting(2, 0, String(payload).toFloat());
-	});
-	client.subscribe("settings/" + WiFi.macAddress() + "/55:44:22:5D:99:22/pump2-pumpTime", [](const String &payload) {
-	set_worker_setting(3, 0, String(payload).toFloat());
 	});
 }
 
@@ -229,8 +221,11 @@ void handle_sample(const uint8_t* mac, const uint8_t *incomingData, int len) {
   if (!isnan(sampleMessage.test_worker1_temp1_humidity)) {
   	client.publish(get_topic("samples", mac, "test_worker1_temp1_humidity"), String(sampleMessage.test_worker1_temp1_humidity));
   }
-  if (!isnan(sampleMessage.test_worker1_moist1_moisture)) {
-  	client.publish(get_topic("samples", mac, "test_worker1_moist1_moisture"), String(sampleMessage.test_worker1_moist1_moisture));
+  if (!isnan(sampleMessage.test_worker1_mois_moisture)) {
+  	client.publish(get_topic("samples", mac, "test_worker1_mois_moisture"), String(sampleMessage.test_worker1_mois_moisture));
+  }
+  if (!isnan(sampleMessage.test_worker1_dummy_zero)) {
+  	client.publish(get_topic("samples", mac, "test_worker1_dummy_zero"), String(sampleMessage.test_worker1_dummy_zero));
   }
 }
 

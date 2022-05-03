@@ -1,13 +1,24 @@
 package dk.sdu.gms.dds.generator;
 
+import dk.sdu.gms.dds.DeviceDefinition;
+import dk.sdu.gms.dds.Utils;
+import dk.sdu.gms.dds.deviceDefinition.Device;
+import dk.sdu.gms.dds.deviceDefinition.Setting;
 import dk.sdu.gms.dds.deviceDefinition.Worker;
+import java.util.ArrayList;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 
 @SuppressWarnings("all")
 public class WorkerGenerator {
-  public static Object generateWorker(final Worker worker, final IFileSystemAccess2 fsa) {
-    return null;
+  public static void generateWorker(final Worker worker, final IFileSystemAccess2 fsa) {
+    String _replace = worker.getMac().replace(":", "");
+    String _plus = (_replace + "/");
+    String _replace_1 = worker.getMac().replace(":", "");
+    String _plus_1 = (_plus + _replace_1);
+    String _plus_2 = (_plus_1 + ".ino");
+    fsa.generateFile(_plus_2, WorkerGenerator.generateCode(worker));
   }
   
   public static CharSequence generateCode(final Worker worker) {
@@ -20,50 +31,85 @@ public class WorkerGenerator {
     _builder.newLine();
     _builder.append("#include <Wire.h>");
     _builder.newLine();
+    _builder.append("\t");
     _builder.newLine();
-    _builder.append("#include <Adafruit_AM2320.h>");
+    _builder.append("// GENERATED DIRECTIVES");
     _builder.newLine();
-    _builder.newLine();
-    _builder.append("#include \"DHT.h\"");
-    _builder.newLine();
-    _builder.append("#define DHTTYPE DHT11   // DHT 11");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("uint8_t gatewayAddress[] = {0x84, 0xCC, 0xA8, 0x2D, 0xDE, 0x3C};");
-    _builder.newLine();
+    {
+      EList<Device> _devices = worker.getDevices();
+      for(final Device device : _devices) {
+        final ArrayList<Class<?>> generatedDirectives = new ArrayList<Class<?>>();
+        _builder.newLineIfNotEmpty();
+        {
+          boolean _contains = generatedDirectives.contains(device.getClass());
+          boolean _not = (!_contains);
+          if (_not) {
+            CharSequence _generateDirectives = DeviceDefinition.getDefinition(device).generateDirectives();
+            _builder.append(_generateDirectives);
+            _builder.append("\t");
+            _builder.newLineIfNotEmpty();
+            String _xblockexpression = null;
+            {
+              generatedDirectives.add(device.getClass());
+              _xblockexpression = "";
+            }
+            _builder.append(_xblockexpression);
+            _builder.newLineIfNotEmpty();
+          }
+        }
+      }
+    }
+    final String[] bytes = Utils.macAsBytes(Utils.gateway(worker).getMac());
+    _builder.newLineIfNotEmpty();
+    _builder.append("uint8_t gatewayAddress[] = {");
+    String _get = bytes[0];
+    _builder.append(_get);
+    _builder.append(", ");
+    String _get_1 = bytes[1];
+    _builder.append(_get_1);
+    _builder.append(", ");
+    String _get_2 = bytes[2];
+    _builder.append(_get_2);
+    _builder.append(", ");
+    String _get_3 = bytes[3];
+    _builder.append(_get_3);
+    _builder.append(", ");
+    String _get_4 = bytes[4];
+    _builder.append(_get_4);
+    _builder.append(", ");
+    String _get_5 = bytes[5];
+    _builder.append(_get_5);
+    _builder.append("};");
+    _builder.newLineIfNotEmpty();
     _builder.append("esp_now_peer_info_t gatewayInfo;");
     _builder.newLine();
     _builder.newLine();
     _builder.append("enum MESSAGE_TYPE { Ping, Setting, Sample };");
     _builder.newLine();
-    _builder.append("float sampleRate = 0.5;");
     _builder.newLine();
+    _builder.append("// GENERATED SETTINGS");
     _builder.newLine();
-    _builder.append("// Readings cache");
+    {
+      ArrayList<Setting> _settings = Utils.settings(worker);
+      for(final Setting setting : _settings) {
+        _builder.append("float ");
+        String _bindingName = Utils.getBindingName(setting);
+        _builder.append(_bindingName);
+        _builder.append(";");
+        _builder.newLineIfNotEmpty();
+      }
+    }
     _builder.newLine();
-    _builder.append("float temperature;");
+    _builder.append("// GENERATED INITIALIZATIONS");
     _builder.newLine();
-    _builder.append("float humidity;");
-    _builder.newLine();
-    _builder.append("int moisture;");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("int dhtPin = 4;");
-    _builder.newLine();
-    _builder.append("DHT dht(dhtPin, DHTTYPE);");
-    _builder.newLine();
-    _builder.append("int soilPin = 32;");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("int ledPin = 26;");
-    _builder.newLine();
-    _builder.append("int pumpPin = 25;");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("float ledTemperatureThreshold = 30;");
-    _builder.newLine();
-    _builder.append("float pumpMoistureThreshold = 800;");
-    _builder.newLine();
+    {
+      EList<Device> _devices_1 = worker.getDevices();
+      for(final Device device_1 : _devices_1) {
+        CharSequence _generateInitializers = DeviceDefinition.getDefinition(device_1).generateInitializers(device_1);
+        _builder.append(_generateInitializers);
+        _builder.newLineIfNotEmpty();
+      }
+    }
     _builder.newLine();
     _builder.append("const int freq = 5000;");
     _builder.newLine();
@@ -80,21 +126,6 @@ public class WorkerGenerator {
     _builder.newLine();
     _builder.newLine();
     _builder.append("void setup() {");
-    _builder.newLine();
-    _builder.append("   ");
-    _builder.append("// Set pinModes");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("pinMode(ledPin, OUTPUT);");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("pinMode(pumpPin, OUTPUT);");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("pinMode(soilPin, INPUT);");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("  ");
     _builder.newLine();
     _builder.append("  ");
     _builder.append("WiFi.mode(WIFI_STA);");
@@ -194,28 +225,6 @@ public class WorkerGenerator {
     _builder.newLine();
     _builder.newLine();
     _builder.append("  ");
-    _builder.append("ledcSetup(ledChannel, freq, resolution);");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("// attach the channel to the GPIO to be controlled");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("ledcAttachPin(ledPin, ledChannel);");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("Serial.println(\"Initializing DHT sensor..\");");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("dht.begin();");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("Serial.println(\"DHT initiated\");");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("  ");
     _builder.append("// Init ESP-NOW");
     _builder.newLine();
     _builder.append("  ");
@@ -285,10 +294,20 @@ public class WorkerGenerator {
     _builder.append("  ");
     _builder.append("esp_now_register_recv_cb(OnDataRecv);");
     _builder.newLine();
+    _builder.append("  ");
+    _builder.newLine();
+    _builder.append("  ");
+    _builder.append("// GENERATED SETUP");
+    _builder.newLine();
+    {
+      EList<Device> _devices_2 = worker.getDevices();
+      for(final Device device_2 : _devices_2) {
+        CharSequence _generateSetup = DeviceDefinition.getDefinition(device_2).generateSetup(device_2);
+        _builder.append(_generateSetup);
+        _builder.newLineIfNotEmpty();
+      }
+    }
     _builder.append("}");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.newLine();
     _builder.newLine();
     _builder.newLine();
     _builder.append("typedef struct message_base {");
@@ -299,9 +318,6 @@ public class WorkerGenerator {
     _builder.append("} message_base;");
     _builder.newLine();
     _builder.append("message_base baseMessage;");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.newLine();
     _builder.newLine();
     _builder.newLine();
     _builder.append("typedef struct message_setting : message_base {");
@@ -317,26 +333,21 @@ public class WorkerGenerator {
     _builder.append("message_setting settingMessage;");
     _builder.newLine();
     _builder.newLine();
-    _builder.newLine();
-    _builder.newLine();
-    _builder.newLine();
     _builder.append("typedef struct message_sample : message_base {");
     _builder.newLine();
-    _builder.append("    ");
-    _builder.append("float temp;");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("float hum;");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("float moist;");
-    _builder.newLine();
+    {
+      ArrayList<String> _workersSampleNames = Utils.getWorkersSampleNames(Utils.gateway(worker));
+      for(final String sample : _workersSampleNames) {
+        _builder.append("\t");
+        _builder.append("float ");
+        _builder.append(sample, "\t");
+        _builder.append(";");
+        _builder.newLineIfNotEmpty();
+      }
+    }
     _builder.append("} message_sample;");
     _builder.newLine();
     _builder.append("message_sample sampleMessage;");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.newLine();
     _builder.newLine();
     _builder.newLine();
     _builder.append("void loop() {");
@@ -345,151 +356,32 @@ public class WorkerGenerator {
     _builder.append("// put your main code here, to run repeatedly:");
     _builder.newLine();
     _builder.append("  ");
-    _builder.append("int sampleDelay = 1.0 / sampleRate * 1000;");
+    _builder.append("float value = 0;");
     _builder.newLine();
     _builder.append("  ");
-    _builder.append("delay(max(sampleDelay, 1000));");
     _builder.newLine();
-    _builder.append("  ");
-    _builder.append("sampleSoil();");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("sampleDHT();");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("check_actuators();");
+    {
+      EList<Device> _devices_3 = worker.getDevices();
+      for(final Device device_3 : _devices_3) {
+        _builder.append("  ");
+        CharSequence _generateLoop = DeviceDefinition.getDefinition(device_3).generateLoop(device_3);
+        _builder.append(_generateLoop, "  ");
+        _builder.newLineIfNotEmpty();
+      }
+    }
     _builder.newLine();
     _builder.append("  ");
     _builder.append("send_message(gatewayAddress, (uint8_t *) &sampleMessage, sizeof(sampleMessage));");
     _builder.newLine();
+    _builder.append("  ");
+    _builder.append("delay(");
+    int _sleepTime = worker.getSleepTime();
+    int _timeUnitMsMultiplier = Utils.getTimeUnitMsMultiplier(worker.getTimeUnit());
+    int _multiply = (_sleepTime * _timeUnitMsMultiplier);
+    _builder.append(_multiply, "  ");
+    _builder.append(");");
+    _builder.newLineIfNotEmpty();
     _builder.append("}");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.newLine();
-    _builder.newLine();
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("void sampleSoil(){");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("moisture = analogRead(soilPin);");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("Serial.println(moisture);");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("sampleMessage.moist = moisture;");
-    _builder.newLine();
-    _builder.append("}");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("void sampleDHT () {");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("Serial.println(\"Sampling..\");");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("// Reading temperature or humidity takes about 250 milliseconds!");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("// Sensor readings may also be up to 2 seconds \'old\' (its a very slow sensor)");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("//humidity = dht.getHumidity();");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("// Read temperature as Celsius (the default)");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("temperature = dht.readTemperature();");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("humidity = dht.readHumidity();");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("// Check if any reads failed and exit early (to try again).");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("if (isnan(humidity) && isnan(temperature)) {");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("Serial.println(F(\"Failed to read from DHT sensor!\"));");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("return;");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("sampleMessage.type = Sample;");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("sampleMessage.temp = temperature;");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("sampleMessage.hum = humidity;");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("// Read moisture");
-    _builder.newLine();
-    _builder.append("}");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.newLine();
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("void check_actuators() {");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("if (temperature > ledTemperatureThreshold) {");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("ledcWrite(ledChannel, 255);    ");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("}else{");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("ledcWrite(ledChannel, 0);    ");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("if(pumpMoistureThreshold > moisture){");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("digitalWrite(pumpPin, HIGH);");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("} else {");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("digitalWrite(pumpPin, LOW);");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("Serial.print(String(pumpMoistureThreshold) + \" > \" + String(moisture));");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.newLine();
-    _builder.append("}");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.newLine();
-    _builder.newLine();
-    _builder.newLine();
     _builder.newLine();
     _builder.newLine();
     _builder.append("void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {");
@@ -501,10 +393,6 @@ public class WorkerGenerator {
     _builder.append("Serial.println(status == ESP_NOW_SEND_SUCCESS ? \"Delivery Success\" : \"Delivery Fail\");");
     _builder.newLine();
     _builder.append("}");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.newLine();
-    _builder.newLine();
     _builder.newLine();
     _builder.newLine();
     _builder.append("void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {  ");
@@ -549,16 +437,7 @@ public class WorkerGenerator {
     _builder.append("  ");
     _builder.append("}");
     _builder.newLine();
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("check_actuators();");
-    _builder.newLine();
     _builder.append("}");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.newLine();
-    _builder.newLine();
-    _builder.newLine();
     _builder.newLine();
     _builder.newLine();
     _builder.append("void print_mac(const uint8_t * mac) {");
@@ -609,40 +488,32 @@ public class WorkerGenerator {
     _builder.append("}");
     _builder.newLine();
     _builder.newLine();
-    _builder.newLine();
-    _builder.newLine();
-    _builder.newLine();
-    _builder.newLine();
-    _builder.newLine();
     _builder.append("void handle_setting(const uint8_t * mac, const uint8_t *incomingData, int len) {");
     _builder.newLine();
     _builder.append("  ");
     _builder.append("memcpy(&settingMessage, incomingData, sizeof(settingMessage));");
     _builder.newLine();
-    _builder.append("  ");
-    _builder.append("if (settingMessage.setting == 0) {");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("ledTemperatureThreshold = settingMessage.newValue;");
-    _builder.newLine();
-    _builder.append("  ");
+    {
+      ArrayList<Setting> _settings_1 = Utils.settings(worker);
+      for(final Setting setting_1 : _settings_1) {
+        _builder.append("  ");
+        _builder.append("if (settingMessage.setting == ");
+        int _indexOfSetting = Utils.indexOfSetting(setting_1);
+        _builder.append(_indexOfSetting, "  ");
+        _builder.append(") {");
+        _builder.newLineIfNotEmpty();
+        _builder.append("  ");
+        _builder.append("\t");
+        String _bindingName_1 = Utils.getBindingName(setting_1);
+        _builder.append(_bindingName_1, "  \t");
+        _builder.append(" = settingMessage.newValue;");
+        _builder.newLineIfNotEmpty();
+        _builder.append("  ");
+        _builder.append("}");
+        _builder.newLine();
+      }
+    }
     _builder.append("}");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("if (settingMessage.setting == 1) {");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("pumpMoistureThreshold = settingMessage.newValue;");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("}");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.newLine();
-    _builder.newLine();
-    _builder.newLine();
     _builder.newLine();
     _builder.newLine();
     _builder.append("void send_message(const uint8_t * mac, const uint8_t *incomingData, int len) {");

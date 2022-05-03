@@ -34,7 +34,6 @@ import dk.sdu.gms.dds.deviceDefinition.Or;
 import dk.sdu.gms.dds.deviceDefinition.Parenthesis;
 import dk.sdu.gms.dds.deviceDefinition.Plus;
 import dk.sdu.gms.dds.deviceDefinition.Primitive;
-import dk.sdu.gms.dds.deviceDefinition.SampleBehavior;
 import dk.sdu.gms.dds.deviceDefinition.Second;
 import dk.sdu.gms.dds.deviceDefinition.Sensor;
 import dk.sdu.gms.dds.deviceDefinition.SensorOutput;
@@ -154,13 +153,6 @@ public class DeviceDefinitionSwitch<T> extends Switch<T>
         Sensor sensor = (Sensor)theEObject;
         T result = caseSensor(sensor);
         if (result == null) result = caseDevice(sensor);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case DeviceDefinitionPackage.SAMPLE_BEHAVIOR:
-      {
-        SampleBehavior sampleBehavior = (SampleBehavior)theEObject;
-        T result = caseSampleBehavior(sampleBehavior);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -542,22 +534,6 @@ public class DeviceDefinitionSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseSensor(Sensor object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Sample Behavior</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Sample Behavior</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseSampleBehavior(SampleBehavior object)
   {
     return null;
   }

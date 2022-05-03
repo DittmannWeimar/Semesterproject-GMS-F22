@@ -1,41 +1,79 @@
 package dk.sdu.gms.dds.sensors;
 
-import dk.sdu.gms.dds.SensorDefinition;
+import dk.sdu.gms.dds.Utils;
+import dk.sdu.gms.dds.deviceDefinition.Sensor;
+import dk.sdu.gms.dds.deviceDefinition.SensorOutput;
 import org.eclipse.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
 public class TemperatureHumiditySensor extends SensorDefinition {
   public TemperatureHumiditySensor() {
-    this.name = "TemperatureHunidity";
+    this.type = "TemperatureHumidity";
     this.pinCount = 1;
     this.outputs = new String[] { "temperature", "humidity" };
   }
   
   @Override
-  public String generateDirectives() {
+  public CharSequence generateDirectives() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("#include \"DHT.h\"");
     _builder.newLine();
-    _builder.append("#define DHTTYPE DHT11   // DHT 11");
+    _builder.append("#define DHTTYPE DHT11");
     _builder.newLine();
-    return _builder.toString();
+    return _builder;
   }
   
   @Override
-  public String generateInitializers(final String variablePrefix, final int[] pins) {
+  public CharSequence generateInitializers(final Sensor sensor) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("\t\t");
+    _builder.append("DHT ");
+    String _variablePrefix = Utils.getVariablePrefix(sensor);
+    _builder.append(_variablePrefix);
+    _builder.append("dht(");
+    Integer _get = sensor.getPins().get(0);
+    _builder.append(_get);
+    _builder.append(", DHTTYPE);");
+    _builder.newLineIfNotEmpty();
+    CharSequence _generateInitializers = super.generateInitializers(sensor);
+    _builder.append(_generateInitializers);
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  @Override
+  public CharSequence generateSetup(final Sensor sensor) {
+    StringConcatenation _builder = new StringConcatenation();
+    String _variablePrefix = Utils.getVariablePrefix(sensor);
+    _builder.append(_variablePrefix);
+    _builder.append("dht.begin();");
+    _builder.newLineIfNotEmpty();
+    _builder.append("Serial.println(\"DHT sensor initialized!\");");
     _builder.newLine();
-    return _builder.toString();
+    return _builder;
   }
   
   @Override
-  public String generateSetup(final String variablePrefix, final int[] pins) {
-    throw new UnsupportedOperationException("TODO: auto-generated method stub");
-  }
-  
-  @Override
-  public String generateLoop(final String variablePredix, final int[] pins) {
-    throw new UnsupportedOperationException("TODO: auto-generated method stub");
+  public CharSequence getSampleCode(final Sensor sensor, final SensorOutput output) {
+    CharSequence _switchResult = null;
+    String _sampleType = this.getSampleType(sensor, output);
+    if (_sampleType != null) {
+      switch (_sampleType) {
+        case "temperature":
+          StringConcatenation _builder = new StringConcatenation();
+          String _variablePrefix = Utils.getVariablePrefix(sensor);
+          _builder.append(_variablePrefix);
+          _builder.append("dht.readTemperature()");
+          _switchResult = _builder;
+          break;
+        case "humidity":
+          StringConcatenation _builder_1 = new StringConcatenation();
+          String _variablePrefix_1 = Utils.getVariablePrefix(sensor);
+          _builder_1.append(_variablePrefix_1);
+          _builder_1.append("dht.readHumidity()");
+          _switchResult = _builder_1;
+          break;
+      }
+    }
+    return _switchResult;
   }
 }

@@ -2354,3 +2354,1613 @@ Binding(SHIFT+CR,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+!SESSION 2022-05-03 20:10:26.223 -----------------------------------------------
+eclipse.buildId=4.23.0.I20220308-0310
+java.version=17.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=da_DK
+Framework arguments:  -product org.eclipse.epp.package.dsl.product -product org.eclipse.epp.package.dsl.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.dsl.product -data C:\Users\lomzt\Documents\GitHub\Semesterproject-GMS-F22\DeviceDSL -product org.eclipse.epp.package.dsl.product
+
+!ENTRY org.eclipse.jface 2 0 2022-05-03 20:10:28.554
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:10:28.554
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2b19b346,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@37c5b8e8,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:10:28.554
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@706d2bae,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3205610d,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2022-05-03 20:10:31.865
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\lomzt'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2022-05-03 20:12:30.056 -----------------------------------------------
+eclipse.buildId=4.23.0.I20220308-0310
+java.version=17.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=da_DK
+Framework arguments:  -product org.eclipse.epp.package.dsl.product -product org.eclipse.epp.package.dsl.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.dsl.product -data C:\Users\lomzt\Documents\GitHub\Semesterproject-GMS-F22\DeviceDSL -product org.eclipse.epp.package.dsl.product
+
+!ENTRY org.eclipse.jface 2 0 2022-05-03 20:12:32.624
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:12:32.624
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@62f7d7bd,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@de63949,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:12:32.624
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5c5c784c,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6a299b9d,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2022-05-03 20:12:38.184
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\lomzt'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.jface 2 0 2022-05-03 20:46:01.516
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:46:01.516
+!MESSAGE A conflict occurred for CTRL+SHIFT+CR:
+Binding(CTRL+SHIFT+CR,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.smartEnterInverse,Insert Line Above Current Line,
+		Adds a new line above the current line,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@642af8e0,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+SHIFT+CR,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.smartEnterInverse,Insert Line Above Current Line,
+		Adds a new line above the current line,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@642af8e0,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:46:01.516
+!MESSAGE A conflict occurred for CTRL+BS:
+Binding(CTRL+BS,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.deletePreviousWord,Delete Previous Word,
+		Delete the previous word,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6fe406be,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+BS,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.deletePreviousWord,Delete Previous Word,
+		Delete the previous word,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6fe406be,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:46:01.516
+!MESSAGE A conflict occurred for CTRL+SHIFT+J:
+Binding(CTRL+SHIFT+J,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.findIncrementalReverse,Incremental Find Reverse,
+		Incremental find reverse,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@645b23ea,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+SHIFT+J,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.findIncrementalReverse,Incremental Find Reverse,
+		Incremental find reverse,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@645b23ea,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:46:01.516
+!MESSAGE A conflict occurred for CTRL+SHIFT+K:
+Binding(CTRL+SHIFT+K,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.findPrevious,Find Previous,
+		Find previous item,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@563aeef0,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+K,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.findPrevious,Find Previous,
+		Find previous item,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@563aeef0,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:46:01.516
+!MESSAGE A conflict occurred for ALT+CTRL+J:
+Binding(ALT+CTRL+J,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.join.lines,Join Lines,
+		Join lines of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@65e4e12f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(ALT+CTRL+J,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.join.lines,Join Lines,
+		Join lines of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@65e4e12f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:46:01.516
+!MESSAGE A conflict occurred for ALT+SHIFT+A:
+Binding(ALT+SHIFT+A,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.toggleBlockSelectionMode,Toggle Block Selection,
+		Toggle block / column selection in the current text editor,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2a7adadb,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(ALT+SHIFT+A,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.toggleBlockSelectionMode,Toggle Block Selection,
+		Toggle block / column selection in the current text editor,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2a7adadb,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:46:01.516
+!MESSAGE A conflict occurred for CTRL+J:
+Binding(CTRL+J,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.findIncremental,Incremental Find,
+		Incremental find,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1783f80d,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+J,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.findIncremental,Incremental Find,
+		Incremental find,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1783f80d,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:46:01.516
+!MESSAGE A conflict occurred for CTRL+K:
+Binding(CTRL+K,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.findNext,Find Next,
+		Find next item,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@16cfd963,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+K,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.findNext,Find Next,
+		Find next item,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@16cfd963,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:46:01.516
+!MESSAGE A conflict occurred for CTRL+L:
+Binding(CTRL+L,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.goto.line,Go to Line,
+		Go to a specified line of text,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@54e0af0c,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+L,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.goto.line,Go to Line,
+		Go to a specified line of text,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@54e0af0c,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:46:01.516
+!MESSAGE A conflict occurred for CTRL+D:
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.delete.line,Delete Line,
+		Delete a line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@28301b49,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.delete.line,Delete Line,
+		Delete a line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@28301b49,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:46:01.516
+!MESSAGE A conflict occurred for CTRL+SHIFT+DEL:
+Binding(CTRL+SHIFT+DEL,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.delete.line.to.end,Delete to End of Line,
+		Delete to the end of a line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@207bddd2,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+SHIFT+DEL,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.delete.line.to.end,Delete to End of Line,
+		Delete to the end of a line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@207bddd2,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:46:01.516
+!MESSAGE A conflict occurred for CTRL+SHIFT+X:
+Binding(CTRL+SHIFT+X,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.upperCase,To Upper Case,
+		Changes the selection to upper case,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@48170c7f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+SHIFT+X,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.upperCase,To Upper Case,
+		Changes the selection to upper case,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@48170c7f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:46:01.516
+!MESSAGE A conflict occurred for CTRL+SHIFT+Y:
+Binding(CTRL+SHIFT+Y,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.lowerCase,To Lower Case,
+		Changes the selection to lower case,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@195e42be,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+SHIFT+Y,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.lowerCase,To Lower Case,
+		Changes the selection to lower case,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@195e42be,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:46:01.516
+!MESSAGE A conflict occurred for CTRL+DEL:
+Binding(CTRL+DEL,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.deleteNextWord,Delete Next Word,
+		Delete the next word,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@319cf88f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+DEL,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.deleteNextWord,Delete Next Word,
+		Delete the next word,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@319cf88f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:46:01.516
+!MESSAGE A conflict occurred for ALT+ARROW_UP:
+Binding(ALT+ARROW_UP,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.moveLineUp,Move Lines Up,
+		Moves the selected lines up,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4f772623,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(ALT+ARROW_UP,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.moveLineUp,Move Lines Up,
+		Moves the selected lines up,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4f772623,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:46:01.516
+!MESSAGE A conflict occurred for ALT+ARROW_DOWN:
+Binding(ALT+ARROW_DOWN,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.moveLineDown,Move Lines Down,
+		Moves the selected lines down,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3f73af46,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(ALT+ARROW_DOWN,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.moveLineDown,Move Lines Down,
+		Moves the selected lines down,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3f73af46,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:46:01.516
+!MESSAGE A conflict occurred for SHIFT+END:
+Binding(SHIFT+END,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.select.lineEnd,Select Line End,
+		Select to the end of the line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@54d351a4,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(SHIFT+END,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.select.lineEnd,Select Line End,
+		Select to the end of the line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@54d351a4,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:46:01.516
+!MESSAGE A conflict occurred for SHIFT+HOME:
+Binding(SHIFT+HOME,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.select.lineStart,Select Line Start,
+		Select to the beginning of the line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@25d9331,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(SHIFT+HOME,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.select.lineStart,Select Line Start,
+		Select to the beginning of the line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@25d9331,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:46:01.516
+!MESSAGE A conflict occurred for END:
+Binding(END,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.goto.lineEnd,Line End,
+		Go to the end of the line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@74edeb67,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(END,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.goto.lineEnd,Line End,
+		Go to the end of the line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@74edeb67,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:46:01.516
+!MESSAGE A conflict occurred for INSERT:
+Binding(INSERT,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.toggleOverwrite,Toggle Overwrite,
+		Toggle overwrite mode,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@56466323,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(INSERT,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.toggleOverwrite,Toggle Overwrite,
+		Toggle overwrite mode,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@56466323,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:46:01.516
+!MESSAGE A conflict occurred for F2:
+Binding(F2,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6a299b9d,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(F2,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.showInformation,Show Tooltip Description,
+		Displays information for the current caret location in a focused hover,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1856463e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(F2,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.showInformation,Show Tooltip Description,
+		Displays information for the current caret location in a focused hover,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1856463e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:46:01.516
+!MESSAGE A conflict occurred for HOME:
+Binding(HOME,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.goto.lineStart,Line Start,
+		Go to the start of the line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@767c9a1e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(HOME,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.goto.lineStart,Line Start,
+		Go to the start of the line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@767c9a1e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:46:01.516
+!MESSAGE A conflict occurred for ALT+CTRL+ARROW_UP:
+Binding(ALT+CTRL+ARROW_UP,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.copyLineUp,Duplicate Lines,
+		Duplicates the selected lines and leaves the selection unchanged,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6d51e165,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(ALT+CTRL+ARROW_UP,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.copyLineUp,Duplicate Lines,
+		Duplicates the selected lines and leaves the selection unchanged,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6d51e165,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:46:01.516
+!MESSAGE A conflict occurred for ALT+CTRL+ARROW_DOWN:
+Binding(ALT+CTRL+ARROW_DOWN,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.copyLineDown,Copy Lines,
+		Duplicates the selected lines and moves the selection to the copy,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@86bc897,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(ALT+CTRL+ARROW_DOWN,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.copyLineDown,Copy Lines,
+		Duplicates the selected lines and moves the selection to the copy,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@86bc897,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:46:01.516
+!MESSAGE A conflict occurred for CTRL+SHIFT+INSERT:
+Binding(CTRL+SHIFT+INSERT,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.toggleInsertMode,Toggle Insert Mode,
+		Toggle insert mode,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@22a61812,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+SHIFT+INSERT,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.toggleInsertMode,Toggle Insert Mode,
+		Toggle insert mode,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@22a61812,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:46:01.516
+!MESSAGE A conflict occurred for CTRL+SHIFT+ARROW_LEFT:
+Binding(CTRL+SHIFT+ARROW_LEFT,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.select.wordPrevious,Select Previous Word,
+		Select the previous word,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3018ca32,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+SHIFT+ARROW_LEFT,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.select.wordPrevious,Select Previous Word,
+		Select the previous word,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3018ca32,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:46:01.516
+!MESSAGE A conflict occurred for CTRL+SHIFT+ARROW_RIGHT:
+Binding(CTRL+SHIFT+ARROW_RIGHT,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.select.wordNext,Select Next Word,
+		Select the next word,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@52a04f9d,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+SHIFT+ARROW_RIGHT,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.select.wordNext,Select Next Word,
+		Select the next word,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@52a04f9d,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:46:01.516
+!MESSAGE A conflict occurred for CTRL+F10:
+Binding(CTRL+F10,
+	ParameterizedCommand(Command(org.eclipse.ui.window.showViewMenu,Show View Menu,
+		Show the view menu,
+		Category(org.eclipse.ui.category.window,Window,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4d91a2e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.dialogAndWindow,,,system)
+Binding(CTRL+F10,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.showRulerContextMenu,Show Ruler Context Menu,
+		Show the context menu for the ruler,
+		Category(org.eclipse.ui.category.window,Window,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@162df42f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+F10,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.showRulerContextMenu,Show Ruler Context Menu,
+		Show the context menu for the ruler,
+		Category(org.eclipse.ui.category.window,Window,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@162df42f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:46:01.516
+!MESSAGE A conflict occurred for CTRL+END:
+Binding(CTRL+END,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.goto.textEnd,Text End,
+		Go to the end of the text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6012f582,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+END,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.goto.textEnd,Text End,
+		Go to the end of the text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6012f582,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:46:01.516
+!MESSAGE A conflict occurred for CTRL+ARROW_UP:
+Binding(CTRL+ARROW_UP,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.scroll.lineUp,Scroll Line Up,
+		Scroll up one line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@309e92ba,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+ARROW_UP,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.scroll.lineUp,Scroll Line Up,
+		Scroll up one line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@309e92ba,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:46:01.516
+!MESSAGE A conflict occurred for CTRL+ARROW_DOWN:
+Binding(CTRL+ARROW_DOWN,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.scroll.lineDown,Scroll Line Down,
+		Scroll down one line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7c5ae6ed,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+ARROW_DOWN,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.scroll.lineDown,Scroll Line Down,
+		Scroll down one line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7c5ae6ed,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:46:01.516
+!MESSAGE A conflict occurred for CTRL+ARROW_LEFT:
+Binding(CTRL+ARROW_LEFT,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.goto.wordPrevious,Previous Word,
+		Go to the previous word,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@52fe9c5,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+ARROW_LEFT,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.goto.wordPrevious,Previous Word,
+		Go to the previous word,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@52fe9c5,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:46:01.516
+!MESSAGE A conflict occurred for CTRL+ARROW_RIGHT:
+Binding(CTRL+ARROW_RIGHT,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.goto.wordNext,Next Word,
+		Go to the next word,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@72e6a207,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+ARROW_RIGHT,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.goto.wordNext,Next Word,
+		Go to the next word,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@72e6a207,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:46:01.516
+!MESSAGE A conflict occurred for CTRL+HOME:
+Binding(CTRL+HOME,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.goto.textStart,Text Start,
+		Go to the beginning of the text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@36a9f5a3,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+HOME,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.goto.textStart,Text Start,
+		Go to the beginning of the text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@36a9f5a3,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:46:01.516
+!MESSAGE A conflict occurred for ALT+/:
+Binding(ALT+/,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.hippieCompletion,Word Completion,
+		Context insensitive completion,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1d6f0015,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(ALT+/,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.hippieCompletion,Word Completion,
+		Context insensitive completion,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1d6f0015,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-03 20:46:01.516
+!MESSAGE A conflict occurred for SHIFT+CR:
+Binding(SHIFT+CR,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.smartEnter,Insert Line Below Current Line,
+		Adds a new line below the current line,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@67f4a3bc,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(SHIFT+CR,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.smartEnter,Insert Line Below Current Line,
+		Adds a new line below the current line,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@67f4a3bc,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+
+!ENTRY org.apache.log4j 4 0 2022-05-03 23:02:42.126
+!MESSAGE org.eclipse.xtext.xbase.resource.BatchLinkableResource  - resolution of uriFragment '|1' failed.
+
+!STACK 0
+java.lang.IllegalStateException: A different resource with the URI 'java:/Objects/dk.sdu.gms.dds.deviceDefinition.Sensor' was already registered.
+	at org.eclipse.xtext.resource.XtextResourceSet.registerURI(XtextResourceSet.java:138)
+	at org.eclipse.xtext.resource.SynchronizedXtextResourceSet.registerURI(SynchronizedXtextResourceSet.java:53)
+	at org.eclipse.xtext.resource.XtextResourceSet$ResourcesList.inverseAdd(XtextResourceSet.java:153)
+	at org.eclipse.xtext.resource.XtextResourceSet$ResourcesList.inverseAdd(XtextResourceSet.java:147)
+	at org.eclipse.emf.common.notify.impl.NotifyingListImpl.addUnique(NotifyingListImpl.java:286)
+	at org.eclipse.xtext.resource.SynchronizedXtextResourceSet$1.addUnique(SynchronizedXtextResourceSet.java:363)
+	at org.eclipse.xtext.resource.SynchronizedXtextResourceSet$1.addUnique(SynchronizedXtextResourceSet.java:92)
+	at org.eclipse.emf.common.util.AbstractEList.add(AbstractEList.java:304)
+	at org.eclipse.xtext.resource.SynchronizedXtextResourceSet$1.add(SynchronizedXtextResourceSet.java:113)
+	at org.eclipse.xtext.resource.SynchronizedXtextResourceSet$1.add(SynchronizedXtextResourceSet.java:92)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.createResource(JdtTypeProvider.java:296)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.createResourceAndFindType(JdtTypeProvider.java:289)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.findObjectTypeInJavaProject(JdtTypeProvider.java:273)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.doFindObjectType(JdtTypeProvider.java:216)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.findObjectType(JdtTypeProvider.java:196)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.doFindTypeByName(JdtTypeProvider.java:154)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.findTypeByName(JdtTypeProvider.java:163)
+	at org.eclipse.xtext.common.types.xtext.AbstractTypeScope.getSingleElement(AbstractTypeScope.java:60)
+	at org.eclipse.xtext.common.types.xtext.AbstractTypeScope.getSingleElement(AbstractTypeScope.java:55)
+	at org.eclipse.xtend.core.scoping.LocalResourceFilteringTypeScope.getSingleElement(LocalResourceFilteringTypeScope.java:43)
+	at org.eclipse.xtend.core.scoping.RecordingTypeScope.getSingleElement(RecordingTypeScope.java:52)
+	at org.eclipse.xtext.scoping.impl.AbstractScope.getSingleElement(AbstractScope.java:109)
+	at org.eclipse.xtext.linking.impl.DefaultLinkingService.getLinkedObjects(DefaultLinkingService.java:115)
+	at org.eclipse.xtext.linking.lazy.LazyLinkingResource.getEObject(LazyLinkingResource.java:266)
+	at org.eclipse.xtext.xbase.resource.BatchLinkableResource.getEObject(BatchLinkableResource.java:120)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.getEObject(ResourceSetImpl.java:223)
+	at org.eclipse.emf.ecore.util.EcoreUtil.resolve(EcoreUtil.java:209)
+	at org.eclipse.emf.ecore.util.EcoreUtil.resolve(EcoreUtil.java:269)
+	at org.eclipse.emf.ecore.impl.BasicEObjectImpl.eResolveProxy(BasicEObjectImpl.java:1516)
+	at org.eclipse.xtext.xtype.impl.XImportDeclarationImpl.getImportedType(XImportDeclarationImpl.java:262)
+	at org.eclipse.xtend.core.scoping.XtendImportedNamespaceScopeProvider.getImportScope(XtendImportedNamespaceScopeProvider.java:285)
+	at org.eclipse.xtend.core.scoping.XtendImportedNamespaceScopeProvider.access$2(XtendImportedNamespaceScopeProvider.java:263)
+	at org.eclipse.xtend.core.scoping.XtendImportedNamespaceScopeProvider$1.get(XtendImportedNamespaceScopeProvider.java:132)
+	at org.eclipse.xtend.core.scoping.XtendImportedNamespaceScopeProvider$1.get(XtendImportedNamespaceScopeProvider.java:1)
+	at org.eclipse.xtext.util.OnChangeEvictingCache.get(OnChangeEvictingCache.java:79)
+	at org.eclipse.xtend.core.scoping.XtendImportedNamespaceScopeProvider.getScope(XtendImportedNamespaceScopeProvider.java:120)
+	at org.eclipse.xtext.xbase.scoping.batch.TypeScopes.createTypeScope(TypeScopes.java:60)
+	at org.eclipse.xtext.xbase.scoping.batch.XbaseBatchScopeProvider.getScope(XbaseBatchScopeProvider.java:113)
+	at org.eclipse.xtext.xbase.annotations.typesystem.XbaseWithAnnotationsBatchScopeProvider.getScope(XbaseWithAnnotationsBatchScopeProvider.java:54)
+	at org.eclipse.xtext.linking.impl.DefaultLinkingService.getScope(DefaultLinkingService.java:59)
+	at org.eclipse.xtext.linking.impl.DefaultLinkingService.getLinkedObjects(DefaultLinkingService.java:108)
+	at org.eclipse.xtext.linking.lazy.LazyLinkingResource.getEObject(LazyLinkingResource.java:266)
+	at org.eclipse.xtext.xbase.resource.BatchLinkableResource.getEObject(BatchLinkableResource.java:120)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.getEObject(ResourceSetImpl.java:223)
+	at org.eclipse.emf.ecore.util.EcoreUtil.resolve(EcoreUtil.java:209)
+	at org.eclipse.emf.ecore.util.EcoreUtil.resolve(EcoreUtil.java:269)
+	at org.eclipse.emf.ecore.impl.BasicEObjectImpl.eResolveProxy(BasicEObjectImpl.java:1516)
+	at org.eclipse.xtext.common.types.impl.JvmTypeReferenceImplCustom.eResolveProxy(JvmTypeReferenceImplCustom.java:32)
+	at org.eclipse.xtext.common.types.impl.JvmParameterizedTypeReferenceImpl.getType(JvmParameterizedTypeReferenceImpl.java:114)
+	at org.eclipse.xtend.core.jvmmodel.XtendJvmModelInferrer.initialize(XtendJvmModelInferrer.java:389)
+	at org.eclipse.xtend.core.jvmmodel.XtendJvmModelInferrer$5.run(XtendJvmModelInferrer.java:279)
+	at org.eclipse.xtend.core.jvmmodel.XtendJvmModelInferrer$3.run(XtendJvmModelInferrer.java:219)
+	at org.eclipse.xtext.xbase.resource.BatchLinkableResource.ensureJvmMembersInitialized(BatchLinkableResource.java:232)
+	at org.eclipse.xtext.common.types.impl.JvmDeclaredTypeImplCustom.checkPendingInitialization(JvmDeclaredTypeImplCustom.java:546)
+	at org.eclipse.xtext.common.types.impl.JvmDeclaredTypeImplCustom.eContents(JvmDeclaredTypeImplCustom.java:553)
+	at org.eclipse.emf.ecore.util.EcoreUtil$ProperContentIterator.<init>(EcoreUtil.java:1354)
+	at org.eclipse.emf.ecore.util.EcoreUtil$5.getChildren(EcoreUtil.java:1296)
+	at org.eclipse.emf.common.util.AbstractTreeIterator.next(AbstractTreeIterator.java:138)
+	at org.eclipse.xtext.resource.impl.DefaultResourceDescription.computeExportedObjects(DefaultResourceDescription.java:89)
+	at org.eclipse.xtend.core.resource.XtendResourceDescription.getLookUp(XtendResourceDescription.java:65)
+	at org.eclipse.xtext.resource.impl.AbstractResourceDescription.getExportedObjects(AbstractResourceDescription.java:51)
+	at org.eclipse.xtext.resource.impl.AbstractCompoundSelectable$4.apply(AbstractCompoundSelectable.java:76)
+	at org.eclipse.xtext.resource.impl.AbstractCompoundSelectable$4.apply(AbstractCompoundSelectable.java:72)
+	at com.google.common.collect.Iterators$6.transform(Iterators.java:783)
+	at com.google.common.collect.TransformedIterator.next(TransformedIterator.java:47)
+	at com.google.common.collect.TransformedIterator.next(TransformedIterator.java:47)
+	at com.google.common.collect.Iterators$ConcatenatedIterator.hasNext(Iterators.java:1333)
+	at org.eclipse.xtext.common.types.access.impl.IndexedJvmTypeAccess.getIndexedJvmType(IndexedJvmTypeAccess.java:110)
+	at org.eclipse.xtext.common.types.access.impl.IndexedJvmTypeAccess.getIndexedJvmType(IndexedJvmTypeAccess.java:94)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.findObjectTypeInIndex(JdtTypeProvider.java:589)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.findLoadedOrDerivedObjectType(JdtTypeProvider.java:260)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.doFindObjectType(JdtTypeProvider.java:208)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.findObjectType(JdtTypeProvider.java:196)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.doFindTypeByName(JdtTypeProvider.java:154)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.findTypeByName(JdtTypeProvider.java:163)
+	at org.eclipse.xtext.common.types.xtext.AbstractTypeScope.getSingleElement(AbstractTypeScope.java:60)
+	at org.eclipse.xtext.common.types.xtext.AbstractTypeScope.getSingleElement(AbstractTypeScope.java:55)
+	at org.eclipse.xtend.core.scoping.LocalResourceFilteringTypeScope.getSingleElement(LocalResourceFilteringTypeScope.java:43)
+	at org.eclipse.xtend.core.scoping.RecordingTypeScope.getSingleElement(RecordingTypeScope.java:52)
+	at org.eclipse.xtext.scoping.impl.AbstractScope.getSingleElement(AbstractScope.java:109)
+	at org.eclipse.xtext.linking.impl.DefaultLinkingService.getLinkedObjects(DefaultLinkingService.java:115)
+	at org.eclipse.xtext.linking.lazy.LazyLinkingResource.getEObject(LazyLinkingResource.java:266)
+	at org.eclipse.xtext.xbase.resource.BatchLinkableResource.getEObject(BatchLinkableResource.java:120)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.getEObject(ResourceSetImpl.java:223)
+	at org.eclipse.emf.ecore.util.EcoreUtil.resolve(EcoreUtil.java:209)
+	at org.eclipse.emf.ecore.util.EcoreUtil.resolve(EcoreUtil.java:269)
+	at org.eclipse.emf.ecore.impl.BasicEObjectImpl.eResolveProxy(BasicEObjectImpl.java:1516)
+	at org.eclipse.xtext.xtype.impl.XImportDeclarationImpl.getImportedType(XImportDeclarationImpl.java:262)
+	at org.eclipse.xtend.core.scoping.XtendImportedNamespaceScopeProvider.getImportScope(XtendImportedNamespaceScopeProvider.java:285)
+	at org.eclipse.xtend.core.scoping.XtendImportedNamespaceScopeProvider.access$2(XtendImportedNamespaceScopeProvider.java:263)
+	at org.eclipse.xtend.core.scoping.XtendImportedNamespaceScopeProvider$1.get(XtendImportedNamespaceScopeProvider.java:132)
+	at org.eclipse.xtend.core.scoping.XtendImportedNamespaceScopeProvider$1.get(XtendImportedNamespaceScopeProvider.java:1)
+	at org.eclipse.xtext.util.OnChangeEvictingCache.get(OnChangeEvictingCache.java:79)
+	at org.eclipse.xtend.core.scoping.XtendImportedNamespaceScopeProvider.getScope(XtendImportedNamespaceScopeProvider.java:120)
+	at org.eclipse.xtext.xbase.scoping.batch.TypeScopes.createTypeScope(TypeScopes.java:60)
+	at org.eclipse.xtext.xbase.scoping.batch.XbaseBatchScopeProvider.getScope(XbaseBatchScopeProvider.java:113)
+	at org.eclipse.xtext.xbase.annotations.typesystem.XbaseWithAnnotationsBatchScopeProvider.getScope(XbaseWithAnnotationsBatchScopeProvider.java:54)
+	at org.eclipse.xtext.linking.impl.DefaultLinkingService.getScope(DefaultLinkingService.java:59)
+	at org.eclipse.xtext.linking.impl.DefaultLinkingService.getLinkedObjects(DefaultLinkingService.java:108)
+	at org.eclipse.xtext.linking.lazy.LazyLinkingResource.getEObject(LazyLinkingResource.java:266)
+	at org.eclipse.xtext.xbase.resource.BatchLinkableResource.getEObject(BatchLinkableResource.java:120)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.getEObject(ResourceSetImpl.java:223)
+	at org.eclipse.emf.ecore.util.EcoreUtil.resolve(EcoreUtil.java:209)
+	at org.eclipse.emf.ecore.util.EcoreUtil.resolve(EcoreUtil.java:269)
+	at org.eclipse.emf.ecore.impl.BasicEObjectImpl.eResolveProxy(BasicEObjectImpl.java:1516)
+	at org.eclipse.xtext.common.types.impl.JvmTypeReferenceImplCustom.eResolveProxy(JvmTypeReferenceImplCustom.java:32)
+	at org.eclipse.xtext.common.types.impl.JvmParameterizedTypeReferenceImpl.getType(JvmParameterizedTypeReferenceImpl.java:114)
+	at org.eclipse.xtext.xbase.typesystem.references.LightweightTypeReferenceFactory.getType(LightweightTypeReferenceFactory.java:243)
+	at org.eclipse.xtext.xbase.typesystem.references.LightweightTypeReferenceFactory.doVisitParameterizedTypeReference(LightweightTypeReferenceFactory.java:174)
+	at org.eclipse.xtext.xbase.typesystem.references.LightweightTypeReferenceFactory.doVisitParameterizedTypeReference(LightweightTypeReferenceFactory.java:53)
+	at org.eclipse.xtext.common.types.impl.JvmParameterizedTypeReferenceImplCustom.accept(JvmParameterizedTypeReferenceImplCustom.java:54)
+	at org.eclipse.xtext.common.types.util.AbstractTypeReferenceVisitor.visit(AbstractTypeReferenceVisitor.java:35)
+	at org.eclipse.xtext.xbase.typesystem.references.LightweightTypeReferenceFactory.toLightweightReference(LightweightTypeReferenceFactory.java:84)
+	at org.eclipse.xtext.xbase.typesystem.references.StandardTypeReferenceOwner.toLightweightTypeReference(StandardTypeReferenceOwner.java:118)
+	at org.eclipse.xtext.xbase.typesystem.override.AbstractResolvedFeature.getResolvedReference(AbstractResolvedFeature.java:80)
+	at org.eclipse.xtext.xbase.typesystem.override.AbstractResolvedOperation.getResolvedReturnType(AbstractResolvedOperation.java:173)
+	at org.eclipse.xtend.core.typesystem.XtendReentrantTypeResolver.getReturnTypeOfOverriddenOperation(XtendReentrantTypeResolver.java:941)
+	at org.eclipse.xtext.xbase.typesystem.internal.OperationBodyComputationState.getExpectedType(OperationBodyComputationState.java:52)
+	at org.eclipse.xtext.xbase.typesystem.internal.AbstractRootTypeComputationState.createExpressionComputationState(AbstractRootTypeComputationState.java:78)
+	at org.eclipse.xtext.xbase.typesystem.internal.AbstractTypeComputationState.doComputeTypes(AbstractTypeComputationState.java:120)
+	at org.eclipse.xtext.xbase.typesystem.internal.AbstractTypeComputationState.computeTypes(AbstractTypeComputationState.java:110)
+	at org.eclipse.xtext.xbase.typesystem.internal.AbstractRootTypeComputationState.computeTypes(AbstractRootTypeComputationState.java:33)
+	at org.eclipse.xtext.xbase.typesystem.internal.LogicalContainerAwareReentrantTypeResolver._computeTypes(LogicalContainerAwareReentrantTypeResolver.java:852)
+	at org.eclipse.xtend.core.typesystem.XtendReentrantTypeResolver._computeTypes(XtendReentrantTypeResolver.java:613)
+	at org.eclipse.xtext.xbase.typesystem.internal.LogicalContainerAwareReentrantTypeResolver.computeTypes(LogicalContainerAwareReentrantTypeResolver.java:717)
+	at org.eclipse.xtext.xbase.typesystem.internal.LogicalContainerAwareReentrantTypeResolver.computeMemberTypes(LogicalContainerAwareReentrantTypeResolver.java:922)
+	at org.eclipse.xtext.xbase.typesystem.internal.LogicalContainerAwareReentrantTypeResolver._computeTypes(LogicalContainerAwareReentrantTypeResolver.java:911)
+	at org.eclipse.xtext.xbase.typesystem.internal.LogicalContainerAwareReentrantTypeResolver.computeTypes(LogicalContainerAwareReentrantTypeResolver.java:711)
+	at org.eclipse.xtext.xbase.typesystem.internal.LogicalContainerAwareReentrantTypeResolver.computeTypes(LogicalContainerAwareReentrantTypeResolver.java:703)
+	at org.eclipse.xtend.core.typesystem.XtendReentrantTypeResolver.computeTypes(XtendReentrantTypeResolver.java:383)
+	at org.eclipse.xtext.xbase.typesystem.internal.DefaultReentrantTypeResolver.resolve(DefaultReentrantTypeResolver.java:165)
+	at org.eclipse.xtext.xbase.typesystem.internal.DefaultReentrantTypeResolver.reentrantResolve(DefaultReentrantTypeResolver.java:140)
+	at org.eclipse.xtext.xbase.typesystem.internal.CompoundReentrantTypeResolver.reentrantResolve(CompoundReentrantTypeResolver.java:80)
+	at org.eclipse.xtext.xbase.typesystem.internal.CachingBatchTypeResolver$LazyResolvedTypes.resolveTypes(CachingBatchTypeResolver.java:81)
+	at org.eclipse.xtext.xbase.typesystem.internal.CachingBatchTypeResolver$2.process(CachingBatchTypeResolver.java:58)
+	at org.eclipse.xtext.xbase.typesystem.internal.CachingBatchTypeResolver$2.process(CachingBatchTypeResolver.java:54)
+	at org.eclipse.xtext.util.concurrent.IUnitOfWork$Void.exec(IUnitOfWork.java:38)
+	at org.eclipse.xtext.util.OnChangeEvictingCache.execWithoutCacheClear(OnChangeEvictingCache.java:145)
+	at org.eclipse.xtext.xbase.typesystem.internal.CachingBatchTypeResolver.doResolveTypes(CachingBatchTypeResolver.java:54)
+	at org.eclipse.xtext.xbase.typesystem.internal.AbstractBatchTypeResolver.resolveTypes(AbstractBatchTypeResolver.java:70)
+	at org.eclipse.xtext.xbase.resource.BatchLinkingService.resolveBatched(BatchLinkingService.java:61)
+	at org.eclipse.xtext.xbase.resource.BatchLinkingService.resolveBatched(BatchLinkingService.java:42)
+	at org.eclipse.xtext.xbase.resource.BatchLinkableResource.getEObject(BatchLinkableResource.java:118)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.getEObject(ResourceSetImpl.java:223)
+	at org.eclipse.emf.ecore.util.EcoreUtil.resolve(EcoreUtil.java:209)
+	at org.eclipse.emf.ecore.util.EcoreUtil.resolve(EcoreUtil.java:253)
+	at org.eclipse.xtext.findReferences.ReferenceFinder.resolveInternalProxy(ReferenceFinder.java:257)
+	at org.eclipse.xtext.findReferences.ReferenceFinder.toValidInstanceOrNull(ReferenceFinder.java:251)
+	at org.eclipse.xtext.findReferences.ReferenceFinder.findLocalReferencesFromElement(ReferenceFinder.java:233)
+	at org.eclipse.xtend.core.findReferences.XtendReferenceFinder.findLocalReferencesFromElement(XtendReferenceFinder.java:99)
+	at org.eclipse.xtext.findReferences.ReferenceFinder.findLocalReferencesFromElement(ReferenceFinder.java:208)
+	at org.eclipse.xtend.core.findReferences.XtendReferenceFinder.findLocalReferencesFromElement(XtendReferenceFinder.java:99)
+	at org.eclipse.xtext.findReferences.ReferenceFinder.findLocalReferencesFromElement(ReferenceFinder.java:214)
+	at org.eclipse.xtend.core.findReferences.XtendReferenceFinder.findLocalReferencesFromElement(XtendReferenceFinder.java:99)
+	at org.eclipse.xtext.findReferences.ReferenceFinder.findLocalReferencesFromElement(ReferenceFinder.java:208)
+	at org.eclipse.xtend.core.findReferences.XtendReferenceFinder.findLocalReferencesFromElement(XtendReferenceFinder.java:99)
+	at org.eclipse.xtext.findReferences.ReferenceFinder.findLocalReferencesFromElement(ReferenceFinder.java:208)
+	at org.eclipse.xtend.core.findReferences.XtendReferenceFinder.findLocalReferencesFromElement(XtendReferenceFinder.java:99)
+	at org.eclipse.xtext.findReferences.ReferenceFinder.findReferences(ReferenceFinder.java:140)
+	at org.eclipse.xtext.findReferences.ReferenceFinder.findReferences(ReferenceFinder.java:126)
+	at org.eclipse.xtext.ui.refactoring.ui.DefaultLinkedPositionGroupCalculator.getLinkedPositionGroup(DefaultLinkedPositionGroupCalculator.java:170)
+	at org.eclipse.xtext.ui.refactoring.ui.RenameRefactoringController$1.run(RenameRefactoringController.java:147)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.apache.log4j 4 0 2022-05-03 23:02:42.128
+!MESSAGE org.eclipse.xtext.xbase.resource.BatchLinkableResource  - resolution of uriFragment '|2' failed.
+
+!STACK 0
+java.lang.IllegalStateException: A different resource with the URI 'java:/Objects/dk.sdu.gms.dds.deviceDefinition.Sensor' was already registered.
+	at org.eclipse.xtext.resource.XtextResourceSet.registerURI(XtextResourceSet.java:138)
+	at org.eclipse.xtext.resource.SynchronizedXtextResourceSet.registerURI(SynchronizedXtextResourceSet.java:53)
+	at org.eclipse.xtext.resource.XtextResourceSet$ResourcesList.inverseAdd(XtextResourceSet.java:153)
+	at org.eclipse.xtext.resource.XtextResourceSet$ResourcesList.inverseAdd(XtextResourceSet.java:147)
+	at org.eclipse.emf.common.notify.impl.NotifyingListImpl.addUnique(NotifyingListImpl.java:286)
+	at org.eclipse.xtext.resource.SynchronizedXtextResourceSet$1.addUnique(SynchronizedXtextResourceSet.java:363)
+	at org.eclipse.xtext.resource.SynchronizedXtextResourceSet$1.addUnique(SynchronizedXtextResourceSet.java:92)
+	at org.eclipse.emf.common.util.AbstractEList.add(AbstractEList.java:304)
+	at org.eclipse.xtext.resource.SynchronizedXtextResourceSet$1.add(SynchronizedXtextResourceSet.java:113)
+	at org.eclipse.xtext.resource.SynchronizedXtextResourceSet$1.add(SynchronizedXtextResourceSet.java:92)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.createResource(JdtTypeProvider.java:296)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.createResourceAndFindType(JdtTypeProvider.java:289)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.findObjectTypeInJavaProject(JdtTypeProvider.java:273)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.doFindObjectType(JdtTypeProvider.java:216)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.findObjectType(JdtTypeProvider.java:196)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.doFindTypeByName(JdtTypeProvider.java:154)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.findTypeByName(JdtTypeProvider.java:163)
+	at org.eclipse.xtext.common.types.xtext.AbstractTypeScope.getSingleElement(AbstractTypeScope.java:60)
+	at org.eclipse.xtext.common.types.xtext.AbstractTypeScope.getSingleElement(AbstractTypeScope.java:55)
+	at org.eclipse.xtend.core.scoping.LocalResourceFilteringTypeScope.getSingleElement(LocalResourceFilteringTypeScope.java:43)
+	at org.eclipse.xtend.core.scoping.RecordingTypeScope.getSingleElement(RecordingTypeScope.java:52)
+	at org.eclipse.xtext.scoping.impl.AbstractScope.getSingleElement(AbstractScope.java:109)
+	at org.eclipse.xtext.linking.impl.DefaultLinkingService.getLinkedObjects(DefaultLinkingService.java:115)
+	at org.eclipse.xtext.linking.lazy.LazyLinkingResource.getEObject(LazyLinkingResource.java:266)
+	at org.eclipse.xtext.xbase.resource.BatchLinkableResource.getEObject(BatchLinkableResource.java:120)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.getEObject(ResourceSetImpl.java:223)
+	at org.eclipse.emf.ecore.util.EcoreUtil.resolve(EcoreUtil.java:209)
+	at org.eclipse.emf.ecore.util.EcoreUtil.resolve(EcoreUtil.java:269)
+	at org.eclipse.emf.ecore.impl.BasicEObjectImpl.eResolveProxy(BasicEObjectImpl.java:1516)
+	at org.eclipse.xtext.xtype.impl.XImportDeclarationImpl.getImportedType(XImportDeclarationImpl.java:262)
+	at org.eclipse.xtend.core.scoping.XtendImportedNamespaceScopeProvider.getImportScope(XtendImportedNamespaceScopeProvider.java:285)
+	at org.eclipse.xtend.core.scoping.XtendImportedNamespaceScopeProvider.access$2(XtendImportedNamespaceScopeProvider.java:263)
+	at org.eclipse.xtend.core.scoping.XtendImportedNamespaceScopeProvider$1.get(XtendImportedNamespaceScopeProvider.java:132)
+	at org.eclipse.xtend.core.scoping.XtendImportedNamespaceScopeProvider$1.get(XtendImportedNamespaceScopeProvider.java:1)
+	at org.eclipse.xtext.util.OnChangeEvictingCache.get(OnChangeEvictingCache.java:79)
+	at org.eclipse.xtend.core.scoping.XtendImportedNamespaceScopeProvider.getScope(XtendImportedNamespaceScopeProvider.java:120)
+	at org.eclipse.xtext.xbase.scoping.batch.TypeScopes.createTypeScope(TypeScopes.java:60)
+	at org.eclipse.xtext.xbase.scoping.batch.XbaseBatchScopeProvider.getScope(XbaseBatchScopeProvider.java:113)
+	at org.eclipse.xtext.xbase.annotations.typesystem.XbaseWithAnnotationsBatchScopeProvider.getScope(XbaseWithAnnotationsBatchScopeProvider.java:54)
+	at org.eclipse.xtext.linking.impl.DefaultLinkingService.getScope(DefaultLinkingService.java:59)
+	at org.eclipse.xtext.linking.impl.DefaultLinkingService.getLinkedObjects(DefaultLinkingService.java:108)
+	at org.eclipse.xtext.linking.lazy.LazyLinkingResource.getEObject(LazyLinkingResource.java:266)
+	at org.eclipse.xtext.xbase.resource.BatchLinkableResource.getEObject(BatchLinkableResource.java:120)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.getEObject(ResourceSetImpl.java:223)
+	at org.eclipse.emf.ecore.util.EcoreUtil.resolve(EcoreUtil.java:209)
+	at org.eclipse.emf.ecore.util.EcoreUtil.resolve(EcoreUtil.java:269)
+	at org.eclipse.emf.ecore.impl.BasicEObjectImpl.eResolveProxy(BasicEObjectImpl.java:1516)
+	at org.eclipse.xtext.common.types.impl.JvmTypeReferenceImplCustom.eResolveProxy(JvmTypeReferenceImplCustom.java:32)
+	at org.eclipse.xtext.common.types.impl.JvmParameterizedTypeReferenceImpl.getType(JvmParameterizedTypeReferenceImpl.java:114)
+	at org.eclipse.xtext.xbase.typesystem.references.LightweightTypeReferenceFactory.getType(LightweightTypeReferenceFactory.java:243)
+	at org.eclipse.xtext.xbase.typesystem.references.LightweightTypeReferenceFactory.doVisitParameterizedTypeReference(LightweightTypeReferenceFactory.java:174)
+	at org.eclipse.xtext.xbase.typesystem.references.LightweightTypeReferenceFactory.doVisitParameterizedTypeReference(LightweightTypeReferenceFactory.java:53)
+	at org.eclipse.xtext.common.types.impl.JvmParameterizedTypeReferenceImplCustom.accept(JvmParameterizedTypeReferenceImplCustom.java:54)
+	at org.eclipse.xtext.common.types.util.AbstractTypeReferenceVisitor.visit(AbstractTypeReferenceVisitor.java:35)
+	at org.eclipse.xtext.xbase.typesystem.references.LightweightTypeReferenceFactory.toLightweightReference(LightweightTypeReferenceFactory.java:84)
+	at org.eclipse.xtext.xbase.typesystem.references.StandardTypeReferenceOwner.toLightweightTypeReference(StandardTypeReferenceOwner.java:118)
+	at org.eclipse.xtext.xbase.typesystem.override.AbstractResolvedFeature.getResolvedReference(AbstractResolvedFeature.java:80)
+	at org.eclipse.xtext.xbase.typesystem.override.AbstractResolvedOperation.getResolvedReturnType(AbstractResolvedOperation.java:173)
+	at org.eclipse.xtend.core.typesystem.XtendReentrantTypeResolver.getReturnTypeOfOverriddenOperation(XtendReentrantTypeResolver.java:941)
+	at org.eclipse.xtext.xbase.typesystem.internal.OperationBodyComputationState.getExpectedType(OperationBodyComputationState.java:52)
+	at org.eclipse.xtext.xbase.typesystem.internal.AbstractRootTypeComputationState.createExpressionComputationState(AbstractRootTypeComputationState.java:78)
+	at org.eclipse.xtext.xbase.typesystem.internal.AbstractTypeComputationState.doComputeTypes(AbstractTypeComputationState.java:120)
+	at org.eclipse.xtext.xbase.typesystem.internal.AbstractTypeComputationState.computeTypes(AbstractTypeComputationState.java:110)
+	at org.eclipse.xtext.xbase.typesystem.internal.AbstractRootTypeComputationState.computeTypes(AbstractRootTypeComputationState.java:33)
+	at org.eclipse.xtext.xbase.typesystem.internal.LogicalContainerAwareReentrantTypeResolver._computeTypes(LogicalContainerAwareReentrantTypeResolver.java:852)
+	at org.eclipse.xtend.core.typesystem.XtendReentrantTypeResolver._computeTypes(XtendReentrantTypeResolver.java:613)
+	at org.eclipse.xtext.xbase.typesystem.internal.LogicalContainerAwareReentrantTypeResolver.computeTypes(LogicalContainerAwareReentrantTypeResolver.java:717)
+	at org.eclipse.xtext.xbase.typesystem.internal.LogicalContainerAwareReentrantTypeResolver.computeMemberTypes(LogicalContainerAwareReentrantTypeResolver.java:922)
+	at org.eclipse.xtext.xbase.typesystem.internal.LogicalContainerAwareReentrantTypeResolver._computeTypes(LogicalContainerAwareReentrantTypeResolver.java:911)
+	at org.eclipse.xtext.xbase.typesystem.internal.LogicalContainerAwareReentrantTypeResolver.computeTypes(LogicalContainerAwareReentrantTypeResolver.java:711)
+	at org.eclipse.xtext.xbase.typesystem.internal.LogicalContainerAwareReentrantTypeResolver.computeTypes(LogicalContainerAwareReentrantTypeResolver.java:703)
+	at org.eclipse.xtend.core.typesystem.XtendReentrantTypeResolver.computeTypes(XtendReentrantTypeResolver.java:383)
+	at org.eclipse.xtext.xbase.typesystem.internal.DefaultReentrantTypeResolver.resolve(DefaultReentrantTypeResolver.java:165)
+	at org.eclipse.xtext.xbase.typesystem.internal.DefaultReentrantTypeResolver.reentrantResolve(DefaultReentrantTypeResolver.java:140)
+	at org.eclipse.xtext.xbase.typesystem.internal.CompoundReentrantTypeResolver.reentrantResolve(CompoundReentrantTypeResolver.java:80)
+	at org.eclipse.xtext.xbase.typesystem.internal.CachingBatchTypeResolver$LazyResolvedTypes.resolveTypes(CachingBatchTypeResolver.java:81)
+	at org.eclipse.xtext.xbase.typesystem.internal.CachingBatchTypeResolver$2.process(CachingBatchTypeResolver.java:58)
+	at org.eclipse.xtext.xbase.typesystem.internal.CachingBatchTypeResolver$2.process(CachingBatchTypeResolver.java:54)
+	at org.eclipse.xtext.util.concurrent.IUnitOfWork$Void.exec(IUnitOfWork.java:38)
+	at org.eclipse.xtext.util.OnChangeEvictingCache.execWithoutCacheClear(OnChangeEvictingCache.java:145)
+	at org.eclipse.xtext.xbase.typesystem.internal.CachingBatchTypeResolver.doResolveTypes(CachingBatchTypeResolver.java:54)
+	at org.eclipse.xtext.xbase.typesystem.internal.AbstractBatchTypeResolver.resolveTypes(AbstractBatchTypeResolver.java:70)
+	at org.eclipse.xtext.xbase.resource.BatchLinkingService.resolveBatched(BatchLinkingService.java:61)
+	at org.eclipse.xtext.xbase.resource.BatchLinkingService.resolveBatched(BatchLinkingService.java:42)
+	at org.eclipse.xtext.xbase.resource.BatchLinkableResource.getEObject(BatchLinkableResource.java:118)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.getEObject(ResourceSetImpl.java:223)
+	at org.eclipse.emf.ecore.util.EcoreUtil.resolve(EcoreUtil.java:209)
+	at org.eclipse.emf.ecore.util.EcoreUtil.resolve(EcoreUtil.java:253)
+	at org.eclipse.xtext.findReferences.ReferenceFinder.resolveInternalProxy(ReferenceFinder.java:257)
+	at org.eclipse.xtext.findReferences.ReferenceFinder.toValidInstanceOrNull(ReferenceFinder.java:251)
+	at org.eclipse.xtext.findReferences.ReferenceFinder.findLocalReferencesFromElement(ReferenceFinder.java:233)
+	at org.eclipse.xtend.core.findReferences.XtendReferenceFinder.findLocalReferencesFromElement(XtendReferenceFinder.java:99)
+	at org.eclipse.xtext.findReferences.ReferenceFinder.findLocalReferencesFromElement(ReferenceFinder.java:208)
+	at org.eclipse.xtend.core.findReferences.XtendReferenceFinder.findLocalReferencesFromElement(XtendReferenceFinder.java:99)
+	at org.eclipse.xtext.findReferences.ReferenceFinder.findLocalReferencesFromElement(ReferenceFinder.java:214)
+	at org.eclipse.xtend.core.findReferences.XtendReferenceFinder.findLocalReferencesFromElement(XtendReferenceFinder.java:99)
+	at org.eclipse.xtext.findReferences.ReferenceFinder.findLocalReferencesFromElement(ReferenceFinder.java:208)
+	at org.eclipse.xtend.core.findReferences.XtendReferenceFinder.findLocalReferencesFromElement(XtendReferenceFinder.java:99)
+	at org.eclipse.xtext.findReferences.ReferenceFinder.findLocalReferencesFromElement(ReferenceFinder.java:208)
+	at org.eclipse.xtend.core.findReferences.XtendReferenceFinder.findLocalReferencesFromElement(XtendReferenceFinder.java:99)
+	at org.eclipse.xtext.findReferences.ReferenceFinder.findReferences(ReferenceFinder.java:140)
+	at org.eclipse.xtext.findReferences.ReferenceFinder.findReferences(ReferenceFinder.java:126)
+	at org.eclipse.xtext.ui.refactoring.ui.DefaultLinkedPositionGroupCalculator.getLinkedPositionGroup(DefaultLinkedPositionGroupCalculator.java:170)
+	at org.eclipse.xtext.ui.refactoring.ui.RenameRefactoringController$1.run(RenameRefactoringController.java:147)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.apache.log4j 4 0 2022-05-03 23:02:43.899
+!MESSAGE org.eclipse.xtext.xbase.resource.BatchLinkableResource  - resolution of uriFragment '|1' failed.
+
+!STACK 0
+java.lang.IllegalStateException: A different resource with the URI 'java:/Objects/dk.sdu.gms.dds.deviceDefinition.Sensor' was already registered.
+	at org.eclipse.xtext.resource.XtextResourceSet.registerURI(XtextResourceSet.java:138)
+	at org.eclipse.xtext.resource.SynchronizedXtextResourceSet.registerURI(SynchronizedXtextResourceSet.java:53)
+	at org.eclipse.xtext.resource.XtextResourceSet$ResourcesList.inverseAdd(XtextResourceSet.java:153)
+	at org.eclipse.xtext.resource.XtextResourceSet$ResourcesList.inverseAdd(XtextResourceSet.java:147)
+	at org.eclipse.emf.common.notify.impl.NotifyingListImpl.addUnique(NotifyingListImpl.java:286)
+	at org.eclipse.xtext.resource.SynchronizedXtextResourceSet$1.addUnique(SynchronizedXtextResourceSet.java:363)
+	at org.eclipse.xtext.resource.SynchronizedXtextResourceSet$1.addUnique(SynchronizedXtextResourceSet.java:92)
+	at org.eclipse.emf.common.util.AbstractEList.add(AbstractEList.java:304)
+	at org.eclipse.xtext.resource.SynchronizedXtextResourceSet$1.add(SynchronizedXtextResourceSet.java:113)
+	at org.eclipse.xtext.resource.SynchronizedXtextResourceSet$1.add(SynchronizedXtextResourceSet.java:92)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.createResource(JdtTypeProvider.java:296)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.createResourceAndFindType(JdtTypeProvider.java:289)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.findObjectTypeInJavaProject(JdtTypeProvider.java:273)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.doFindObjectType(JdtTypeProvider.java:216)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.findObjectType(JdtTypeProvider.java:196)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.doFindTypeByName(JdtTypeProvider.java:154)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.findTypeByName(JdtTypeProvider.java:163)
+	at org.eclipse.xtext.common.types.xtext.AbstractTypeScope.getSingleElement(AbstractTypeScope.java:60)
+	at org.eclipse.xtext.common.types.xtext.AbstractTypeScope.getSingleElement(AbstractTypeScope.java:55)
+	at org.eclipse.xtend.core.scoping.LocalResourceFilteringTypeScope.getSingleElement(LocalResourceFilteringTypeScope.java:43)
+	at org.eclipse.xtend.core.scoping.RecordingTypeScope.getSingleElement(RecordingTypeScope.java:52)
+	at org.eclipse.xtext.scoping.impl.AbstractScope.getSingleElement(AbstractScope.java:109)
+	at org.eclipse.xtext.linking.impl.DefaultLinkingService.getLinkedObjects(DefaultLinkingService.java:115)
+	at org.eclipse.xtext.linking.lazy.LazyLinkingResource.getEObject(LazyLinkingResource.java:266)
+	at org.eclipse.xtext.xbase.resource.BatchLinkableResource.getEObject(BatchLinkableResource.java:120)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.getEObject(ResourceSetImpl.java:223)
+	at org.eclipse.emf.ecore.util.EcoreUtil.resolve(EcoreUtil.java:209)
+	at org.eclipse.emf.ecore.util.EcoreUtil.resolve(EcoreUtil.java:269)
+	at org.eclipse.emf.ecore.impl.BasicEObjectImpl.eResolveProxy(BasicEObjectImpl.java:1516)
+	at org.eclipse.xtext.xtype.impl.XImportDeclarationImpl.getImportedType(XImportDeclarationImpl.java:262)
+	at org.eclipse.xtend.core.scoping.XtendImportedNamespaceScopeProvider.getImportScope(XtendImportedNamespaceScopeProvider.java:285)
+	at org.eclipse.xtend.core.scoping.XtendImportedNamespaceScopeProvider.access$2(XtendImportedNamespaceScopeProvider.java:263)
+	at org.eclipse.xtend.core.scoping.XtendImportedNamespaceScopeProvider$1.get(XtendImportedNamespaceScopeProvider.java:132)
+	at org.eclipse.xtend.core.scoping.XtendImportedNamespaceScopeProvider$1.get(XtendImportedNamespaceScopeProvider.java:1)
+	at org.eclipse.xtext.util.OnChangeEvictingCache.get(OnChangeEvictingCache.java:79)
+	at org.eclipse.xtend.core.scoping.XtendImportedNamespaceScopeProvider.getScope(XtendImportedNamespaceScopeProvider.java:120)
+	at org.eclipse.xtext.xbase.scoping.batch.TypeScopes.createTypeScope(TypeScopes.java:60)
+	at org.eclipse.xtext.xbase.scoping.batch.XbaseBatchScopeProvider.getScope(XbaseBatchScopeProvider.java:113)
+	at org.eclipse.xtext.xbase.annotations.typesystem.XbaseWithAnnotationsBatchScopeProvider.getScope(XbaseWithAnnotationsBatchScopeProvider.java:54)
+	at org.eclipse.xtext.linking.impl.DefaultLinkingService.getScope(DefaultLinkingService.java:59)
+	at org.eclipse.xtext.linking.impl.DefaultLinkingService.getLinkedObjects(DefaultLinkingService.java:108)
+	at org.eclipse.xtext.linking.lazy.LazyLinkingResource.getEObject(LazyLinkingResource.java:266)
+	at org.eclipse.xtext.xbase.resource.BatchLinkableResource.getEObject(BatchLinkableResource.java:120)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.getEObject(ResourceSetImpl.java:223)
+	at org.eclipse.emf.ecore.util.EcoreUtil.resolve(EcoreUtil.java:209)
+	at org.eclipse.emf.ecore.util.EcoreUtil.resolve(EcoreUtil.java:269)
+	at org.eclipse.emf.ecore.impl.BasicEObjectImpl.eResolveProxy(BasicEObjectImpl.java:1516)
+	at org.eclipse.xtext.common.types.impl.JvmTypeReferenceImplCustom.eResolveProxy(JvmTypeReferenceImplCustom.java:32)
+	at org.eclipse.xtext.common.types.impl.JvmParameterizedTypeReferenceImpl.getType(JvmParameterizedTypeReferenceImpl.java:114)
+	at org.eclipse.xtend.core.jvmmodel.XtendJvmModelInferrer.initialize(XtendJvmModelInferrer.java:389)
+	at org.eclipse.xtend.core.jvmmodel.XtendJvmModelInferrer$5.run(XtendJvmModelInferrer.java:279)
+	at org.eclipse.xtend.core.jvmmodel.XtendJvmModelInferrer$3.run(XtendJvmModelInferrer.java:219)
+	at org.eclipse.xtext.xbase.resource.BatchLinkableResource.ensureJvmMembersInitialized(BatchLinkableResource.java:232)
+	at org.eclipse.xtext.common.types.impl.JvmDeclaredTypeImplCustom.checkPendingInitialization(JvmDeclaredTypeImplCustom.java:546)
+	at org.eclipse.xtext.common.types.impl.JvmDeclaredTypeImplCustom.eContents(JvmDeclaredTypeImplCustom.java:553)
+	at org.eclipse.emf.ecore.util.EcoreUtil$ProperContentIterator.<init>(EcoreUtil.java:1354)
+	at org.eclipse.emf.ecore.util.EcoreUtil$5.getChildren(EcoreUtil.java:1296)
+	at org.eclipse.emf.common.util.AbstractTreeIterator.next(AbstractTreeIterator.java:138)
+	at org.eclipse.xtext.resource.impl.DefaultResourceDescription.computeExportedObjects(DefaultResourceDescription.java:89)
+	at org.eclipse.xtend.core.resource.XtendResourceDescription.getLookUp(XtendResourceDescription.java:65)
+	at org.eclipse.xtext.resource.impl.AbstractResourceDescription.getExportedObjects(AbstractResourceDescription.java:51)
+	at org.eclipse.xtext.resource.impl.AbstractCompoundSelectable$4.apply(AbstractCompoundSelectable.java:76)
+	at org.eclipse.xtext.resource.impl.AbstractCompoundSelectable$4.apply(AbstractCompoundSelectable.java:72)
+	at com.google.common.collect.Iterators$6.transform(Iterators.java:783)
+	at com.google.common.collect.TransformedIterator.next(TransformedIterator.java:47)
+	at com.google.common.collect.TransformedIterator.next(TransformedIterator.java:47)
+	at com.google.common.collect.Iterators$ConcatenatedIterator.hasNext(Iterators.java:1333)
+	at org.eclipse.xtext.common.types.access.impl.IndexedJvmTypeAccess.getIndexedJvmType(IndexedJvmTypeAccess.java:110)
+	at org.eclipse.xtext.common.types.access.impl.IndexedJvmTypeAccess.getIndexedJvmType(IndexedJvmTypeAccess.java:94)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.findObjectTypeInIndex(JdtTypeProvider.java:589)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.findLoadedOrDerivedObjectType(JdtTypeProvider.java:260)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.doFindObjectType(JdtTypeProvider.java:208)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.findObjectType(JdtTypeProvider.java:196)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.doFindTypeByName(JdtTypeProvider.java:154)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.findTypeByName(JdtTypeProvider.java:163)
+	at org.eclipse.xtext.common.types.xtext.AbstractTypeScope.getSingleElement(AbstractTypeScope.java:60)
+	at org.eclipse.xtext.common.types.xtext.AbstractTypeScope.getSingleElement(AbstractTypeScope.java:55)
+	at org.eclipse.xtend.core.scoping.LocalResourceFilteringTypeScope.getSingleElement(LocalResourceFilteringTypeScope.java:43)
+	at org.eclipse.xtend.core.scoping.RecordingTypeScope.getSingleElement(RecordingTypeScope.java:52)
+	at org.eclipse.xtext.scoping.impl.AbstractScope.getSingleElement(AbstractScope.java:109)
+	at org.eclipse.xtext.linking.impl.DefaultLinkingService.getLinkedObjects(DefaultLinkingService.java:115)
+	at org.eclipse.xtext.linking.lazy.LazyLinkingResource.getEObject(LazyLinkingResource.java:266)
+	at org.eclipse.xtext.xbase.resource.BatchLinkableResource.getEObject(BatchLinkableResource.java:120)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.getEObject(ResourceSetImpl.java:223)
+	at org.eclipse.emf.ecore.util.EcoreUtil.resolve(EcoreUtil.java:209)
+	at org.eclipse.emf.ecore.util.EcoreUtil.resolve(EcoreUtil.java:253)
+	at org.eclipse.xtext.findReferences.ReferenceFinder.resolveInternalProxy(ReferenceFinder.java:257)
+	at org.eclipse.xtext.findReferences.ReferenceFinder.toValidInstanceOrNull(ReferenceFinder.java:251)
+	at org.eclipse.xtext.findReferences.ReferenceFinder.findLocalReferencesFromElement(ReferenceFinder.java:233)
+	at org.eclipse.xtend.core.findReferences.XtendReferenceFinder.findLocalReferencesFromElement(XtendReferenceFinder.java:99)
+	at org.eclipse.xtext.findReferences.ReferenceFinder.findLocalReferencesFromElement(ReferenceFinder.java:208)
+	at org.eclipse.xtend.core.findReferences.XtendReferenceFinder.findLocalReferencesFromElement(XtendReferenceFinder.java:99)
+	at org.eclipse.xtext.findReferences.ReferenceFinder.findLocalReferencesFromElement(ReferenceFinder.java:214)
+	at org.eclipse.xtend.core.findReferences.XtendReferenceFinder.findLocalReferencesFromElement(XtendReferenceFinder.java:99)
+	at org.eclipse.xtext.findReferences.ReferenceFinder.findReferences(ReferenceFinder.java:140)
+	at org.eclipse.xtext.findReferences.ReferenceFinder.findReferences(ReferenceFinder.java:126)
+	at org.eclipse.xtend.core.findReferences.XtendReferenceFinder.lambda$1(XtendReferenceFinder.java:82)
+	at org.eclipse.xtext.ui.editor.findrefs.ResourceAccess.readOnly(ResourceAccess.java:75)
+	at org.eclipse.xtend.core.findReferences.XtendReferenceFinder.findReferencesInDescription(XtendReferenceFinder.java:85)
+	at org.eclipse.xtext.findReferences.ReferenceFinder.findReferences(ReferenceFinder.java:157)
+	at org.eclipse.xtext.findReferences.ReferenceFinder.findAllReferences(ReferenceFinder.java:182)
+	at org.eclipse.xtext.ui.refactoring.impl.ReferenceUpdaterDispatcher.createReferenceUpdates(ReferenceUpdaterDispatcher.java:73)
+	at org.eclipse.xtext.ui.refactoring.impl.RenameElementProcessor.checkFinalConditions(RenameElementProcessor.java:263)
+	at org.eclipse.xtext.xbase.ui.jvmmodel.refactoring.jdt.CombinedJvmJdtRenameProcessor.checkFinalConditions(CombinedJvmJdtRenameProcessor.java:126)
+	at org.eclipse.ltk.core.refactoring.participants.ProcessorBasedRefactoring.checkFinalConditions(ProcessorBasedRefactoring.java:226)
+	at org.eclipse.ltk.core.refactoring.Refactoring.checkAllConditions(Refactoring.java:165)
+	at org.eclipse.xtext.ui.refactoring.ui.RenameRefactoringExecuter$CheckConditionsAndCreateChangeRunnable.run(RenameRefactoringExecuter.java:144)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2315)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2340)
+	at org.eclipse.xtext.ui.refactoring.ui.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:84)
+	at org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:434)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:352)
+	at org.eclipse.ui.internal.WorkbenchWindow.lambda$7(WorkbenchWindow.java:2345)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:74)
+	at org.eclipse.ui.internal.WorkbenchWindow.run(WorkbenchWindow.java:2343)
+	at org.eclipse.xtext.ui.refactoring.ui.RenameRefactoringExecuter.execute(RenameRefactoringExecuter.java:98)
+	at org.eclipse.xtext.ui.refactoring.ui.DefaultRenameSupport.startDirectRefactoring(DefaultRenameSupport.java:99)
+	at org.eclipse.xtext.ui.refactoring.ui.RenameRefactoringController.startDirectRefactoring(RenameRefactoringController.java:204)
+	at org.eclipse.xtext.ui.refactoring.ui.RenameRefactoringController.startRefactoring(RenameRefactoringController.java:117)
+	at org.eclipse.xtext.ui.refactoring.ui.RenameLinkedMode$EditorSynchronizer.left(RenameLinkedMode.java:168)
+	at org.eclipse.jface.text.link.LinkedModeModel.exit(LinkedModeModel.java:338)
+	at org.eclipse.jface.text.link.LinkedModeUI.lambda$2(LinkedModeUI.java:1172)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4035)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3635)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1155)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+
+!ENTRY org.apache.log4j 4 0 2022-05-03 23:02:43.901
+!MESSAGE org.eclipse.xtext.xbase.resource.BatchLinkableResource  - resolution of uriFragment '|2' failed.
+
+!STACK 0
+java.lang.IllegalStateException: A different resource with the URI 'java:/Objects/dk.sdu.gms.dds.deviceDefinition.Sensor' was already registered.
+	at org.eclipse.xtext.resource.XtextResourceSet.registerURI(XtextResourceSet.java:138)
+	at org.eclipse.xtext.resource.SynchronizedXtextResourceSet.registerURI(SynchronizedXtextResourceSet.java:53)
+	at org.eclipse.xtext.resource.XtextResourceSet$ResourcesList.inverseAdd(XtextResourceSet.java:153)
+	at org.eclipse.xtext.resource.XtextResourceSet$ResourcesList.inverseAdd(XtextResourceSet.java:147)
+	at org.eclipse.emf.common.notify.impl.NotifyingListImpl.addUnique(NotifyingListImpl.java:286)
+	at org.eclipse.xtext.resource.SynchronizedXtextResourceSet$1.addUnique(SynchronizedXtextResourceSet.java:363)
+	at org.eclipse.xtext.resource.SynchronizedXtextResourceSet$1.addUnique(SynchronizedXtextResourceSet.java:92)
+	at org.eclipse.emf.common.util.AbstractEList.add(AbstractEList.java:304)
+	at org.eclipse.xtext.resource.SynchronizedXtextResourceSet$1.add(SynchronizedXtextResourceSet.java:113)
+	at org.eclipse.xtext.resource.SynchronizedXtextResourceSet$1.add(SynchronizedXtextResourceSet.java:92)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.createResource(JdtTypeProvider.java:296)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.createResourceAndFindType(JdtTypeProvider.java:289)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.findObjectTypeInJavaProject(JdtTypeProvider.java:273)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.doFindObjectType(JdtTypeProvider.java:216)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.findObjectType(JdtTypeProvider.java:196)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.doFindTypeByName(JdtTypeProvider.java:154)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.findTypeByName(JdtTypeProvider.java:163)
+	at org.eclipse.xtext.common.types.xtext.AbstractTypeScope.getSingleElement(AbstractTypeScope.java:60)
+	at org.eclipse.xtext.common.types.xtext.AbstractTypeScope.getSingleElement(AbstractTypeScope.java:55)
+	at org.eclipse.xtend.core.scoping.LocalResourceFilteringTypeScope.getSingleElement(LocalResourceFilteringTypeScope.java:43)
+	at org.eclipse.xtend.core.scoping.RecordingTypeScope.getSingleElement(RecordingTypeScope.java:52)
+	at org.eclipse.xtext.scoping.impl.AbstractScope.getSingleElement(AbstractScope.java:109)
+	at org.eclipse.xtext.linking.impl.DefaultLinkingService.getLinkedObjects(DefaultLinkingService.java:115)
+	at org.eclipse.xtext.linking.lazy.LazyLinkingResource.getEObject(LazyLinkingResource.java:266)
+	at org.eclipse.xtext.xbase.resource.BatchLinkableResource.getEObject(BatchLinkableResource.java:120)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.getEObject(ResourceSetImpl.java:223)
+	at org.eclipse.emf.ecore.util.EcoreUtil.resolve(EcoreUtil.java:209)
+	at org.eclipse.emf.ecore.util.EcoreUtil.resolve(EcoreUtil.java:253)
+	at org.eclipse.xtext.findReferences.ReferenceFinder.resolveInternalProxy(ReferenceFinder.java:257)
+	at org.eclipse.xtext.findReferences.ReferenceFinder.toValidInstanceOrNull(ReferenceFinder.java:251)
+	at org.eclipse.xtext.findReferences.ReferenceFinder.findLocalReferencesFromElement(ReferenceFinder.java:233)
+	at org.eclipse.xtend.core.findReferences.XtendReferenceFinder.findLocalReferencesFromElement(XtendReferenceFinder.java:99)
+	at org.eclipse.xtext.findReferences.ReferenceFinder.findLocalReferencesFromElement(ReferenceFinder.java:208)
+	at org.eclipse.xtend.core.findReferences.XtendReferenceFinder.findLocalReferencesFromElement(XtendReferenceFinder.java:99)
+	at org.eclipse.xtext.findReferences.ReferenceFinder.findLocalReferencesFromElement(ReferenceFinder.java:214)
+	at org.eclipse.xtend.core.findReferences.XtendReferenceFinder.findLocalReferencesFromElement(XtendReferenceFinder.java:99)
+	at org.eclipse.xtext.findReferences.ReferenceFinder.findReferences(ReferenceFinder.java:140)
+	at org.eclipse.xtext.findReferences.ReferenceFinder.findReferences(ReferenceFinder.java:126)
+	at org.eclipse.xtend.core.findReferences.XtendReferenceFinder.lambda$1(XtendReferenceFinder.java:82)
+	at org.eclipse.xtext.ui.editor.findrefs.ResourceAccess.readOnly(ResourceAccess.java:75)
+	at org.eclipse.xtend.core.findReferences.XtendReferenceFinder.findReferencesInDescription(XtendReferenceFinder.java:85)
+	at org.eclipse.xtext.findReferences.ReferenceFinder.findReferences(ReferenceFinder.java:157)
+	at org.eclipse.xtext.findReferences.ReferenceFinder.findAllReferences(ReferenceFinder.java:182)
+	at org.eclipse.xtext.ui.refactoring.impl.ReferenceUpdaterDispatcher.createReferenceUpdates(ReferenceUpdaterDispatcher.java:73)
+	at org.eclipse.xtext.ui.refactoring.impl.RenameElementProcessor.checkFinalConditions(RenameElementProcessor.java:263)
+	at org.eclipse.xtext.xbase.ui.jvmmodel.refactoring.jdt.CombinedJvmJdtRenameProcessor.checkFinalConditions(CombinedJvmJdtRenameProcessor.java:126)
+	at org.eclipse.ltk.core.refactoring.participants.ProcessorBasedRefactoring.checkFinalConditions(ProcessorBasedRefactoring.java:226)
+	at org.eclipse.ltk.core.refactoring.Refactoring.checkAllConditions(Refactoring.java:165)
+	at org.eclipse.xtext.ui.refactoring.ui.RenameRefactoringExecuter$CheckConditionsAndCreateChangeRunnable.run(RenameRefactoringExecuter.java:144)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2315)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2340)
+	at org.eclipse.xtext.ui.refactoring.ui.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:84)
+	at org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:434)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:352)
+	at org.eclipse.ui.internal.WorkbenchWindow.lambda$7(WorkbenchWindow.java:2345)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:74)
+	at org.eclipse.ui.internal.WorkbenchWindow.run(WorkbenchWindow.java:2343)
+	at org.eclipse.xtext.ui.refactoring.ui.RenameRefactoringExecuter.execute(RenameRefactoringExecuter.java:98)
+	at org.eclipse.xtext.ui.refactoring.ui.DefaultRenameSupport.startDirectRefactoring(DefaultRenameSupport.java:99)
+	at org.eclipse.xtext.ui.refactoring.ui.RenameRefactoringController.startDirectRefactoring(RenameRefactoringController.java:204)
+	at org.eclipse.xtext.ui.refactoring.ui.RenameRefactoringController.startRefactoring(RenameRefactoringController.java:117)
+	at org.eclipse.xtext.ui.refactoring.ui.RenameLinkedMode$EditorSynchronizer.left(RenameLinkedMode.java:168)
+	at org.eclipse.jface.text.link.LinkedModeModel.exit(LinkedModeModel.java:338)
+	at org.eclipse.jface.text.link.LinkedModeUI.lambda$2(LinkedModeUI.java:1172)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4035)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3635)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1155)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+
+!ENTRY org.apache.log4j 4 0 2022-05-03 23:02:59.803
+!MESSAGE org.eclipse.xtext.xbase.resource.BatchLinkableResource  - resolution of uriFragment '|1' failed.
+
+!STACK 0
+java.lang.IllegalStateException: A different resource with the URI 'java:/Objects/dk.sdu.gms.dds.deviceDefinition.Sensor' was already registered.
+	at org.eclipse.xtext.resource.XtextResourceSet.registerURI(XtextResourceSet.java:138)
+	at org.eclipse.xtext.resource.SynchronizedXtextResourceSet.registerURI(SynchronizedXtextResourceSet.java:53)
+	at org.eclipse.xtext.resource.XtextResourceSet$ResourcesList.inverseAdd(XtextResourceSet.java:153)
+	at org.eclipse.xtext.resource.XtextResourceSet$ResourcesList.inverseAdd(XtextResourceSet.java:147)
+	at org.eclipse.emf.common.notify.impl.NotifyingListImpl.addUnique(NotifyingListImpl.java:286)
+	at org.eclipse.xtext.resource.SynchronizedXtextResourceSet$1.addUnique(SynchronizedXtextResourceSet.java:363)
+	at org.eclipse.xtext.resource.SynchronizedXtextResourceSet$1.addUnique(SynchronizedXtextResourceSet.java:92)
+	at org.eclipse.emf.common.util.AbstractEList.add(AbstractEList.java:304)
+	at org.eclipse.xtext.resource.SynchronizedXtextResourceSet$1.add(SynchronizedXtextResourceSet.java:113)
+	at org.eclipse.xtext.resource.SynchronizedXtextResourceSet$1.add(SynchronizedXtextResourceSet.java:92)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.createResource(JdtTypeProvider.java:296)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.createResourceAndFindType(JdtTypeProvider.java:289)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.findObjectTypeInJavaProject(JdtTypeProvider.java:273)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.doFindObjectType(JdtTypeProvider.java:216)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.findObjectType(JdtTypeProvider.java:196)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.doFindTypeByName(JdtTypeProvider.java:154)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.findTypeByName(JdtTypeProvider.java:163)
+	at org.eclipse.xtext.common.types.xtext.AbstractTypeScope.getSingleElement(AbstractTypeScope.java:60)
+	at org.eclipse.xtext.common.types.xtext.AbstractTypeScope.getSingleElement(AbstractTypeScope.java:55)
+	at org.eclipse.xtend.core.scoping.LocalResourceFilteringTypeScope.getSingleElement(LocalResourceFilteringTypeScope.java:43)
+	at org.eclipse.xtend.core.scoping.RecordingTypeScope.getSingleElement(RecordingTypeScope.java:52)
+	at org.eclipse.xtext.scoping.impl.AbstractScope.getSingleElement(AbstractScope.java:109)
+	at org.eclipse.xtext.linking.impl.DefaultLinkingService.getLinkedObjects(DefaultLinkingService.java:115)
+	at org.eclipse.xtext.linking.lazy.LazyLinkingResource.getEObject(LazyLinkingResource.java:266)
+	at org.eclipse.xtext.xbase.resource.BatchLinkableResource.getEObject(BatchLinkableResource.java:120)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.getEObject(ResourceSetImpl.java:223)
+	at org.eclipse.emf.ecore.util.EcoreUtil.resolve(EcoreUtil.java:209)
+	at org.eclipse.emf.ecore.util.EcoreUtil.resolve(EcoreUtil.java:269)
+	at org.eclipse.emf.ecore.impl.BasicEObjectImpl.eResolveProxy(BasicEObjectImpl.java:1516)
+	at org.eclipse.xtext.xtype.impl.XImportDeclarationImpl.getImportedType(XImportDeclarationImpl.java:262)
+	at org.eclipse.xtend.core.scoping.XtendImportedNamespaceScopeProvider.getImportScope(XtendImportedNamespaceScopeProvider.java:285)
+	at org.eclipse.xtend.core.scoping.XtendImportedNamespaceScopeProvider.access$2(XtendImportedNamespaceScopeProvider.java:263)
+	at org.eclipse.xtend.core.scoping.XtendImportedNamespaceScopeProvider$1.get(XtendImportedNamespaceScopeProvider.java:132)
+	at org.eclipse.xtend.core.scoping.XtendImportedNamespaceScopeProvider$1.get(XtendImportedNamespaceScopeProvider.java:1)
+	at org.eclipse.xtext.util.OnChangeEvictingCache.get(OnChangeEvictingCache.java:79)
+	at org.eclipse.xtend.core.scoping.XtendImportedNamespaceScopeProvider.getScope(XtendImportedNamespaceScopeProvider.java:120)
+	at org.eclipse.xtext.xbase.scoping.batch.TypeScopes.createTypeScope(TypeScopes.java:60)
+	at org.eclipse.xtext.xbase.scoping.batch.XbaseBatchScopeProvider.getScope(XbaseBatchScopeProvider.java:113)
+	at org.eclipse.xtext.xbase.annotations.typesystem.XbaseWithAnnotationsBatchScopeProvider.getScope(XbaseWithAnnotationsBatchScopeProvider.java:54)
+	at org.eclipse.xtext.linking.impl.DefaultLinkingService.getScope(DefaultLinkingService.java:59)
+	at org.eclipse.xtext.linking.impl.DefaultLinkingService.getLinkedObjects(DefaultLinkingService.java:108)
+	at org.eclipse.xtext.linking.lazy.LazyLinkingResource.getEObject(LazyLinkingResource.java:266)
+	at org.eclipse.xtext.xbase.resource.BatchLinkableResource.getEObject(BatchLinkableResource.java:120)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.getEObject(ResourceSetImpl.java:223)
+	at org.eclipse.emf.ecore.util.EcoreUtil.resolve(EcoreUtil.java:209)
+	at org.eclipse.emf.ecore.util.EcoreUtil.resolve(EcoreUtil.java:269)
+	at org.eclipse.emf.ecore.impl.BasicEObjectImpl.eResolveProxy(BasicEObjectImpl.java:1516)
+	at org.eclipse.xtext.common.types.impl.JvmTypeReferenceImplCustom.eResolveProxy(JvmTypeReferenceImplCustom.java:32)
+	at org.eclipse.xtext.common.types.impl.JvmParameterizedTypeReferenceImpl.getType(JvmParameterizedTypeReferenceImpl.java:114)
+	at org.eclipse.xtend.core.jvmmodel.XtendJvmModelInferrer.initialize(XtendJvmModelInferrer.java:389)
+	at org.eclipse.xtend.core.jvmmodel.XtendJvmModelInferrer$5.run(XtendJvmModelInferrer.java:279)
+	at org.eclipse.xtend.core.jvmmodel.XtendJvmModelInferrer$3.run(XtendJvmModelInferrer.java:219)
+	at org.eclipse.xtext.xbase.resource.BatchLinkableResource.ensureJvmMembersInitialized(BatchLinkableResource.java:232)
+	at org.eclipse.xtext.xbase.jvmmodel.JvmModelAssociator.getOrInstall(JvmModelAssociator.java:113)
+	at org.eclipse.xtext.xbase.jvmmodel.JvmModelAssociator.targetToSourceMap(JvmModelAssociator.java:211)
+	at org.eclipse.xtext.xbase.jvmmodel.JvmModelAssociator.getPrimarySourceElement(JvmModelAssociator.java:361)
+	at org.eclipse.xtext.xbase.jvmmodel.JvmLocationInFileProvider.convertToSource(JvmLocationInFileProvider.java:68)
+	at org.eclipse.xtext.xbase.jvmmodel.JvmLocationInFileProvider.getFullTextRegion(JvmLocationInFileProvider.java:39)
+	at org.eclipse.xtext.ui.refactoring.impl.DefaultRenameStrategy.getOriginalNameRegion(DefaultRenameStrategy.java:80)
+	at org.eclipse.xtext.ui.refactoring.impl.DefaultRenameStrategy.initialize(DefaultRenameStrategy.java:55)
+	at org.eclipse.xtend.ide.refactoring.XtendRenameStrategy.initialize(XtendRenameStrategy.java:50)
+	at org.eclipse.xtext.ui.refactoring.impl.DefaultRenameStrategyProvider.get(DefaultRenameStrategyProvider.java:35)
+	at org.eclipse.xtend.ide.refactoring.XtendRenameStrategyProvider.get(XtendRenameStrategyProvider.java:28)
+	at org.eclipse.xtext.common.types.ui.refactoring.participant.JvmMemberRenameStrategy$Provider.get(JvmMemberRenameStrategy.java:133)
+	at org.eclipse.xtext.ui.refactoring.ui.DefaultLinkedPositionGroupCalculator.getLinkedPositionGroup(DefaultLinkedPositionGroupCalculator.java:126)
+	at org.eclipse.xtext.ui.refactoring.ui.RenameRefactoringController$1.run(RenameRefactoringController.java:147)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.apache.log4j 4 0 2022-05-03 23:03:01.298
+!MESSAGE org.eclipse.xtext.xbase.resource.BatchLinkableResource  - resolution of uriFragment '|1' failed.
+
+!STACK 0
+java.lang.IllegalStateException: A different resource with the URI 'java:/Objects/dk.sdu.gms.dds.deviceDefinition.Sensor' was already registered.
+	at org.eclipse.xtext.resource.XtextResourceSet.registerURI(XtextResourceSet.java:138)
+	at org.eclipse.xtext.resource.SynchronizedXtextResourceSet.registerURI(SynchronizedXtextResourceSet.java:53)
+	at org.eclipse.xtext.resource.XtextResourceSet$ResourcesList.inverseAdd(XtextResourceSet.java:153)
+	at org.eclipse.xtext.resource.XtextResourceSet$ResourcesList.inverseAdd(XtextResourceSet.java:147)
+	at org.eclipse.emf.common.notify.impl.NotifyingListImpl.addUnique(NotifyingListImpl.java:286)
+	at org.eclipse.xtext.resource.SynchronizedXtextResourceSet$1.addUnique(SynchronizedXtextResourceSet.java:363)
+	at org.eclipse.xtext.resource.SynchronizedXtextResourceSet$1.addUnique(SynchronizedXtextResourceSet.java:92)
+	at org.eclipse.emf.common.util.AbstractEList.add(AbstractEList.java:304)
+	at org.eclipse.xtext.resource.SynchronizedXtextResourceSet$1.add(SynchronizedXtextResourceSet.java:113)
+	at org.eclipse.xtext.resource.SynchronizedXtextResourceSet$1.add(SynchronizedXtextResourceSet.java:92)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.createResource(JdtTypeProvider.java:296)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.createResourceAndFindType(JdtTypeProvider.java:289)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.findObjectTypeInJavaProject(JdtTypeProvider.java:273)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.doFindObjectType(JdtTypeProvider.java:216)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.findObjectType(JdtTypeProvider.java:196)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.doFindTypeByName(JdtTypeProvider.java:154)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.findTypeByName(JdtTypeProvider.java:163)
+	at org.eclipse.xtext.common.types.xtext.AbstractTypeScope.getSingleElement(AbstractTypeScope.java:60)
+	at org.eclipse.xtext.common.types.xtext.AbstractTypeScope.getSingleElement(AbstractTypeScope.java:55)
+	at org.eclipse.xtend.core.scoping.LocalResourceFilteringTypeScope.getSingleElement(LocalResourceFilteringTypeScope.java:43)
+	at org.eclipse.xtend.core.scoping.RecordingTypeScope.getSingleElement(RecordingTypeScope.java:52)
+	at org.eclipse.xtext.scoping.impl.AbstractScope.getSingleElement(AbstractScope.java:109)
+	at org.eclipse.xtext.linking.impl.DefaultLinkingService.getLinkedObjects(DefaultLinkingService.java:115)
+	at org.eclipse.xtext.linking.lazy.LazyLinkingResource.getEObject(LazyLinkingResource.java:266)
+	at org.eclipse.xtext.xbase.resource.BatchLinkableResource.getEObject(BatchLinkableResource.java:120)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.getEObject(ResourceSetImpl.java:223)
+	at org.eclipse.emf.ecore.util.EcoreUtil.resolve(EcoreUtil.java:209)
+	at org.eclipse.emf.ecore.util.EcoreUtil.resolve(EcoreUtil.java:269)
+	at org.eclipse.emf.ecore.impl.BasicEObjectImpl.eResolveProxy(BasicEObjectImpl.java:1516)
+	at org.eclipse.xtext.xtype.impl.XImportDeclarationImpl.getImportedType(XImportDeclarationImpl.java:262)
+	at org.eclipse.xtend.core.scoping.XtendImportedNamespaceScopeProvider.getImportScope(XtendImportedNamespaceScopeProvider.java:285)
+	at org.eclipse.xtend.core.scoping.XtendImportedNamespaceScopeProvider.access$2(XtendImportedNamespaceScopeProvider.java:263)
+	at org.eclipse.xtend.core.scoping.XtendImportedNamespaceScopeProvider$1.get(XtendImportedNamespaceScopeProvider.java:132)
+	at org.eclipse.xtend.core.scoping.XtendImportedNamespaceScopeProvider$1.get(XtendImportedNamespaceScopeProvider.java:1)
+	at org.eclipse.xtext.util.OnChangeEvictingCache.get(OnChangeEvictingCache.java:79)
+	at org.eclipse.xtend.core.scoping.XtendImportedNamespaceScopeProvider.getScope(XtendImportedNamespaceScopeProvider.java:120)
+	at org.eclipse.xtext.xbase.scoping.batch.TypeScopes.createTypeScope(TypeScopes.java:60)
+	at org.eclipse.xtext.xbase.scoping.batch.XbaseBatchScopeProvider.getScope(XbaseBatchScopeProvider.java:113)
+	at org.eclipse.xtext.xbase.annotations.typesystem.XbaseWithAnnotationsBatchScopeProvider.getScope(XbaseWithAnnotationsBatchScopeProvider.java:54)
+	at org.eclipse.xtext.linking.impl.DefaultLinkingService.getScope(DefaultLinkingService.java:59)
+	at org.eclipse.xtext.linking.impl.DefaultLinkingService.getLinkedObjects(DefaultLinkingService.java:108)
+	at org.eclipse.xtext.linking.lazy.LazyLinkingResource.getEObject(LazyLinkingResource.java:266)
+	at org.eclipse.xtext.xbase.resource.BatchLinkableResource.getEObject(BatchLinkableResource.java:120)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.getEObject(ResourceSetImpl.java:223)
+	at org.eclipse.emf.ecore.util.EcoreUtil.resolve(EcoreUtil.java:209)
+	at org.eclipse.emf.ecore.util.EcoreUtil.resolve(EcoreUtil.java:269)
+	at org.eclipse.emf.ecore.impl.BasicEObjectImpl.eResolveProxy(BasicEObjectImpl.java:1516)
+	at org.eclipse.xtext.common.types.impl.JvmTypeReferenceImplCustom.eResolveProxy(JvmTypeReferenceImplCustom.java:32)
+	at org.eclipse.xtext.common.types.impl.JvmParameterizedTypeReferenceImpl.getType(JvmParameterizedTypeReferenceImpl.java:114)
+	at org.eclipse.xtend.core.jvmmodel.XtendJvmModelInferrer.initialize(XtendJvmModelInferrer.java:389)
+	at org.eclipse.xtend.core.jvmmodel.XtendJvmModelInferrer$5.run(XtendJvmModelInferrer.java:279)
+	at org.eclipse.xtend.core.jvmmodel.XtendJvmModelInferrer$3.run(XtendJvmModelInferrer.java:219)
+	at org.eclipse.xtext.xbase.resource.BatchLinkableResource.ensureJvmMembersInitialized(BatchLinkableResource.java:232)
+	at org.eclipse.xtext.xbase.jvmmodel.JvmModelAssociator.getOrInstall(JvmModelAssociator.java:113)
+	at org.eclipse.xtext.xbase.jvmmodel.JvmModelAssociator.targetToSourceMap(JvmModelAssociator.java:211)
+	at org.eclipse.xtext.xbase.jvmmodel.JvmModelAssociator.getPrimarySourceElement(JvmModelAssociator.java:361)
+	at org.eclipse.xtext.xbase.jvmmodel.JvmLocationInFileProvider.convertToSource(JvmLocationInFileProvider.java:68)
+	at org.eclipse.xtext.xbase.jvmmodel.JvmLocationInFileProvider.getFullTextRegion(JvmLocationInFileProvider.java:39)
+	at org.eclipse.xtext.ui.refactoring.impl.DefaultRenameStrategy.getOriginalNameRegion(DefaultRenameStrategy.java:80)
+	at org.eclipse.xtext.ui.refactoring.impl.DefaultRenameStrategy.initialize(DefaultRenameStrategy.java:55)
+	at org.eclipse.xtend.ide.refactoring.XtendRenameStrategy.initialize(XtendRenameStrategy.java:50)
+	at org.eclipse.xtext.ui.refactoring.impl.DefaultRenameStrategyProvider.get(DefaultRenameStrategyProvider.java:35)
+	at org.eclipse.xtend.ide.refactoring.XtendRenameStrategyProvider.get(XtendRenameStrategyProvider.java:28)
+	at org.eclipse.xtext.common.types.ui.refactoring.participant.JvmMemberRenameStrategy$Provider.get(JvmMemberRenameStrategy.java:133)
+	at org.eclipse.xtext.ui.refactoring.impl.RenameElementProcessor.createRenameElementStrategy(RenameElementProcessor.java:165)
+	at org.eclipse.xtext.ui.refactoring.impl.RenameElementProcessor.initialize(RenameElementProcessor.java:123)
+	at org.eclipse.xtext.xbase.ui.jvmmodel.refactoring.jdt.CombinedJvmJdtRenameProcessor.initialize(CombinedJvmJdtRenameProcessor.java:62)
+	at org.eclipse.xtext.xbase.ui.jvmmodel.refactoring.jdt.CombinedJvmJdtRenameRefactoringProvider.getRenameProcessor(CombinedJvmJdtRenameRefactoringProvider.java:56)
+	at org.eclipse.xtext.xbase.ui.jvmmodel.refactoring.jdt.CombinedJvmJdtRenameRefactoringProvider.getRenameRefactoring(CombinedJvmJdtRenameRefactoringProvider.java:39)
+	at org.eclipse.xtext.ui.refactoring.ui.DefaultRenameSupport.initialize(DefaultRenameSupport.java:69)
+	at org.eclipse.xtext.ui.refactoring.ui.DefaultRenameSupport$Factory.create(DefaultRenameSupport.java:37)
+	at org.eclipse.xtext.common.types.ui.refactoring.JdtRenameSupport$Factory.create(JdtRenameSupport.java:51)
+	at org.eclipse.xtext.ui.refactoring.ui.RenameRefactoringController.createRenameSupport(RenameRefactoringController.java:252)
+	at org.eclipse.xtext.ui.refactoring.ui.RenameRefactoringController.startDirectRefactoring(RenameRefactoringController.java:202)
+	at org.eclipse.xtext.ui.refactoring.ui.RenameRefactoringController.startRefactoring(RenameRefactoringController.java:117)
+	at org.eclipse.xtext.ui.refactoring.ui.RenameLinkedMode$EditorSynchronizer.left(RenameLinkedMode.java:168)
+	at org.eclipse.jface.text.link.LinkedModeModel.exit(LinkedModeModel.java:338)
+	at org.eclipse.jface.text.link.LinkedModeUI.lambda$2(LinkedModeUI.java:1172)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4035)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3635)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1155)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+
+!ENTRY org.apache.log4j 4 0 2022-05-03 23:03:03.801
+!MESSAGE org.eclipse.xtext.xbase.resource.BatchLinkableResource  - resolution of uriFragment '|1' failed.
+
+!STACK 0
+java.lang.IllegalStateException: A different resource with the URI 'java:/Objects/dk.sdu.gms.dds.deviceDefinition.Sensor' was already registered.
+	at org.eclipse.xtext.resource.XtextResourceSet.registerURI(XtextResourceSet.java:138)
+	at org.eclipse.xtext.resource.SynchronizedXtextResourceSet.registerURI(SynchronizedXtextResourceSet.java:53)
+	at org.eclipse.xtext.resource.XtextResourceSet$ResourcesList.inverseAdd(XtextResourceSet.java:153)
+	at org.eclipse.xtext.resource.XtextResourceSet$ResourcesList.inverseAdd(XtextResourceSet.java:147)
+	at org.eclipse.emf.common.notify.impl.NotifyingListImpl.addUnique(NotifyingListImpl.java:286)
+	at org.eclipse.xtext.resource.SynchronizedXtextResourceSet$1.addUnique(SynchronizedXtextResourceSet.java:363)
+	at org.eclipse.xtext.resource.SynchronizedXtextResourceSet$1.addUnique(SynchronizedXtextResourceSet.java:92)
+	at org.eclipse.emf.common.util.AbstractEList.add(AbstractEList.java:304)
+	at org.eclipse.xtext.resource.SynchronizedXtextResourceSet$1.add(SynchronizedXtextResourceSet.java:113)
+	at org.eclipse.xtext.resource.SynchronizedXtextResourceSet$1.add(SynchronizedXtextResourceSet.java:92)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.createResource(JdtTypeProvider.java:296)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.createResourceAndFindType(JdtTypeProvider.java:289)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.findObjectTypeInJavaProject(JdtTypeProvider.java:273)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.doFindObjectType(JdtTypeProvider.java:216)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.findObjectType(JdtTypeProvider.java:196)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.doFindTypeByName(JdtTypeProvider.java:154)
+	at org.eclipse.xtext.common.types.access.jdt.JdtTypeProvider.findTypeByName(JdtTypeProvider.java:163)
+	at org.eclipse.xtext.common.types.xtext.AbstractTypeScope.getSingleElement(AbstractTypeScope.java:60)
+	at org.eclipse.xtext.common.types.xtext.AbstractTypeScope.getSingleElement(AbstractTypeScope.java:55)
+	at org.eclipse.xtend.core.scoping.LocalResourceFilteringTypeScope.getSingleElement(LocalResourceFilteringTypeScope.java:43)
+	at org.eclipse.xtend.core.scoping.RecordingTypeScope.getSingleElement(RecordingTypeScope.java:52)
+	at org.eclipse.xtext.scoping.impl.AbstractScope.getSingleElement(AbstractScope.java:109)
+	at org.eclipse.xtext.linking.impl.DefaultLinkingService.getLinkedObjects(DefaultLinkingService.java:115)
+	at org.eclipse.xtext.linking.lazy.LazyLinkingResource.getEObject(LazyLinkingResource.java:266)
+	at org.eclipse.xtext.xbase.resource.BatchLinkableResource.getEObject(BatchLinkableResource.java:120)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.getEObject(ResourceSetImpl.java:223)
+	at org.eclipse.emf.ecore.util.EcoreUtil.resolve(EcoreUtil.java:209)
+	at org.eclipse.emf.ecore.util.EcoreUtil.resolve(EcoreUtil.java:269)
+	at org.eclipse.emf.ecore.impl.BasicEObjectImpl.eResolveProxy(BasicEObjectImpl.java:1516)
+	at org.eclipse.xtext.xtype.impl.XImportDeclarationImpl.getImportedType(XImportDeclarationImpl.java:262)
+	at org.eclipse.xtend.core.scoping.XtendImportedNamespaceScopeProvider.getImportScope(XtendImportedNamespaceScopeProvider.java:285)
+	at org.eclipse.xtend.core.scoping.XtendImportedNamespaceScopeProvider.access$2(XtendImportedNamespaceScopeProvider.java:263)
+	at org.eclipse.xtend.core.scoping.XtendImportedNamespaceScopeProvider$1.get(XtendImportedNamespaceScopeProvider.java:132)
+	at org.eclipse.xtend.core.scoping.XtendImportedNamespaceScopeProvider$1.get(XtendImportedNamespaceScopeProvider.java:1)
+	at org.eclipse.xtext.util.OnChangeEvictingCache.get(OnChangeEvictingCache.java:79)
+	at org.eclipse.xtend.core.scoping.XtendImportedNamespaceScopeProvider.getScope(XtendImportedNamespaceScopeProvider.java:120)
+	at org.eclipse.xtext.xbase.scoping.batch.TypeScopes.createTypeScope(TypeScopes.java:60)
+	at org.eclipse.xtext.xbase.scoping.batch.XbaseBatchScopeProvider.getScope(XbaseBatchScopeProvider.java:113)
+	at org.eclipse.xtext.xbase.annotations.typesystem.XbaseWithAnnotationsBatchScopeProvider.getScope(XbaseWithAnnotationsBatchScopeProvider.java:54)
+	at org.eclipse.xtext.linking.impl.DefaultLinkingService.getScope(DefaultLinkingService.java:59)
+	at org.eclipse.xtext.linking.impl.DefaultLinkingService.getLinkedObjects(DefaultLinkingService.java:108)
+	at org.eclipse.xtext.linking.lazy.LazyLinkingResource.getEObject(LazyLinkingResource.java:266)
+	at org.eclipse.xtext.xbase.resource.BatchLinkableResource.getEObject(BatchLinkableResource.java:120)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.getEObject(ResourceSetImpl.java:223)
+	at org.eclipse.emf.ecore.util.EcoreUtil.resolve(EcoreUtil.java:209)
+	at org.eclipse.emf.ecore.util.EcoreUtil.resolve(EcoreUtil.java:269)
+	at org.eclipse.emf.ecore.impl.BasicEObjectImpl.eResolveProxy(BasicEObjectImpl.java:1516)
+	at org.eclipse.xtext.common.types.impl.JvmTypeReferenceImplCustom.eResolveProxy(JvmTypeReferenceImplCustom.java:32)
+	at org.eclipse.xtext.common.types.impl.JvmParameterizedTypeReferenceImpl.getType(JvmParameterizedTypeReferenceImpl.java:114)
+	at org.eclipse.xtend.core.jvmmodel.XtendJvmModelInferrer.initialize(XtendJvmModelInferrer.java:389)
+	at org.eclipse.xtend.core.jvmmodel.XtendJvmModelInferrer$5.run(XtendJvmModelInferrer.java:279)
+	at org.eclipse.xtend.core.jvmmodel.XtendJvmModelInferrer$3.run(XtendJvmModelInferrer.java:219)
+	at org.eclipse.xtext.xbase.resource.BatchLinkableResource.ensureJvmMembersInitialized(BatchLinkableResource.java:232)
+	at org.eclipse.xtext.xbase.jvmmodel.JvmModelAssociator.getOrInstall(JvmModelAssociator.java:113)
+	at org.eclipse.xtext.xbase.jvmmodel.JvmModelAssociator.targetToSourceMap(JvmModelAssociator.java:211)
+	at org.eclipse.xtext.xbase.jvmmodel.JvmModelAssociator.getPrimarySourceElement(JvmModelAssociator.java:361)
+	at org.eclipse.xtext.xbase.jvmmodel.JvmLocationInFileProvider.convertToSource(JvmLocationInFileProvider.java:68)
+	at org.eclipse.xtext.xbase.jvmmodel.JvmLocationInFileProvider.getFullTextRegion(JvmLocationInFileProvider.java:39)
+	at org.eclipse.xtext.ui.refactoring.impl.DefaultRenameStrategy.getOriginalNameRegion(DefaultRenameStrategy.java:80)
+	at org.eclipse.xtext.ui.refactoring.impl.DefaultRenameStrategy.initialize(DefaultRenameStrategy.java:55)
+	at org.eclipse.xtend.ide.refactoring.XtendRenameStrategy.initialize(XtendRenameStrategy.java:50)
+	at org.eclipse.xtext.ui.refactoring.impl.DefaultRenameStrategyProvider.get(DefaultRenameStrategyProvider.java:35)
+	at org.eclipse.xtend.ide.refactoring.XtendRenameStrategyProvider.get(XtendRenameStrategyProvider.java:28)
+	at org.eclipse.xtext.common.types.ui.refactoring.participant.JvmMemberRenameStrategy$Provider.get(JvmMemberRenameStrategy.java:133)
+	at org.eclipse.xtext.ui.refactoring.impl.RenameElementProcessor.createRenameElementStrategy(RenameElementProcessor.java:165)
+	at org.eclipse.xtext.ui.refactoring.impl.RenameElementProcessor.initialize(RenameElementProcessor.java:123)
+	at org.eclipse.xtext.xbase.ui.jvmmodel.refactoring.jdt.JdtRenameRefactoringParticipantProcessor.initialize(JdtRenameRefactoringParticipantProcessor.java:38)
+	at org.eclipse.xtext.xbase.ui.jvmmodel.refactoring.jdt.CombinedJvmJdtRenameRefactoringProvider.getRenameProcessor(CombinedJvmJdtRenameRefactoringProvider.java:56)
+	at org.eclipse.xtext.ui.refactoring.impl.AbstractProcessorBasedRenameParticipant.getRenameProcessor(AbstractProcessorBasedRenameParticipant.java:117)
+	at org.eclipse.xtext.common.types.ui.refactoring.participant.JdtRenameParticipant.getRenameProcessor(JdtRenameParticipant.java:97)
+	at org.eclipse.xtext.ui.refactoring.impl.AbstractProcessorBasedRenameParticipant.getRenameProcessors(AbstractProcessorBasedRenameParticipant.java:104)
+	at org.eclipse.xtext.ui.refactoring.impl.AbstractProcessorBasedRenameParticipant.initialize(AbstractProcessorBasedRenameParticipant.java:86)
+	at org.eclipse.ltk.core.refactoring.participants.RefactoringParticipant.initialize(RefactoringParticipant.java:108)
+	at org.eclipse.ltk.core.refactoring.participants.ParticipantExtensionPoint.getParticipants(ParticipantExtensionPoint.java:103)
+	at org.eclipse.ltk.core.refactoring.participants.ParticipantManager.loadRenameParticipants(ParticipantManager.java:77)
+	at org.eclipse.jdt.internal.corext.refactoring.rename.RenameModifications.loadParticipants(RenameModifications.java:198)
+	at org.eclipse.jdt.internal.corext.refactoring.rename.JavaRenameProcessor.loadParticipants(JavaRenameProcessor.java:44)
+	at org.eclipse.xtext.xbase.ui.jvmmodel.refactoring.jdt.CombinedJvmJdtRenameProcessor.loadParticipants(CombinedJvmJdtRenameProcessor.java:173)
+	at org.eclipse.ltk.core.refactoring.participants.ProcessorBasedRefactoring.checkFinalConditions(ProcessorBasedRefactoring.java:235)
+	at org.eclipse.ltk.core.refactoring.Refactoring.checkAllConditions(Refactoring.java:165)
+	at org.eclipse.xtext.ui.refactoring.ui.RenameRefactoringExecuter$CheckConditionsAndCreateChangeRunnable.run(RenameRefactoringExecuter.java:144)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2315)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2340)
+	at org.eclipse.xtext.ui.refactoring.ui.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:84)
+	at org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:434)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:352)
+	at org.eclipse.ui.internal.WorkbenchWindow.lambda$7(WorkbenchWindow.java:2345)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:74)
+	at org.eclipse.ui.internal.WorkbenchWindow.run(WorkbenchWindow.java:2343)
+	at org.eclipse.xtext.ui.refactoring.ui.RenameRefactoringExecuter.execute(RenameRefactoringExecuter.java:98)
+	at org.eclipse.xtext.ui.refactoring.ui.DefaultRenameSupport.startDirectRefactoring(DefaultRenameSupport.java:99)
+	at org.eclipse.xtext.ui.refactoring.ui.RenameRefactoringController.startDirectRefactoring(RenameRefactoringController.java:204)
+	at org.eclipse.xtext.ui.refactoring.ui.RenameRefactoringController.startRefactoring(RenameRefactoringController.java:117)
+	at org.eclipse.xtext.ui.refactoring.ui.RenameLinkedMode$EditorSynchronizer.left(RenameLinkedMode.java:168)
+	at org.eclipse.jface.text.link.LinkedModeModel.exit(LinkedModeModel.java:338)
+	at org.eclipse.jface.text.link.LinkedModeUI.lambda$2(LinkedModeUI.java:1172)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4035)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3635)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1155)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)

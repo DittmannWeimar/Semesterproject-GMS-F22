@@ -1,14 +1,15 @@
 package dk.sdu.gms.dds.generator
 
 import dk.sdu.gms.dds.deviceDefinition.Worker
-import dk.sdu.gms.dds.deviceDefinition.Gateway
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import static dk.sdu.gms.dds.Utils.*
+import dk.sdu.gms.dds.DeviceDefinition
+import java.util.ArrayList
 
 public class WorkerGenerator {
 	
 	public static def generateWorker(Worker worker, IFileSystemAccess2 fsa) {
-		
+		fsa.generateFile(worker.mac.replace(':', '') + "/" + worker.mac.replace(':', '') + ".ino", generateCode(worker));
 	}
 	
 	public static def generateCode (Worker worker) '''
@@ -16,32 +17,30 @@ public class WorkerGenerator {
 	#include <esp_wifi.h>
 	#include <WiFi.h>
 	#include <Wire.h>
-	
-	#include <Adafruit_AM2320.h>
-	
-	#include "DHT.h"
-	#define DHTTYPE DHT11   // DHT 11
-	
-	uint8_t gatewayAddress[] = {0x84, 0xCC, 0xA8, 0x2D, 0xDE, 0x3C};
+		
+	// GENERATED DIRECTIVES
+	«FOR device : worker.devices»
+	«val generatedDirectives = new ArrayList<Class<?>>()»
+	«IF !generatedDirectives.contains(device.getClass())»
+	«DeviceDefinition.getDefinition(device).generateDirectives()»	
+	«{ generatedDirectives.add(device.getClass()); "" /* lol gross */ }»
+	«ENDIF»
+	«ENDFOR»
+	«val bytes = macAsBytes(gateway(worker).mac)»
+	uint8_t gatewayAddress[] = {«bytes.get(0)», «bytes.get(1)», «bytes.get(2)», «bytes.get(3)», «bytes.get(4)», «bytes.get(5)»};
 	esp_now_peer_info_t gatewayInfo;
 	
 	enum MESSAGE_TYPE { Ping, Setting, Sample };
-	float sampleRate = 0.5;
 	
-	// Readings cache
-	float temperature;
-	float humidity;
-	int moisture;
+	// GENERATED SETTINGS
+	«FOR setting : settings(worker)»
+	float «getBindingName(setting)»;
+	«ENDFOR»
 	
-	int dhtPin = 4;
-	DHT dht(dhtPin, DHTTYPE);
-	int soilPin = 32;
-	
-	int ledPin = 26;
-	int pumpPin = 25;
-	
-	float ledTemperatureThreshold = 30;
-	float pumpMoistureThreshold = 800;
+	// GENERATED INITIALIZATIONS
+	«FOR device : worker.devices»
+	«DeviceDefinition.getDefinition(device).generateInitializers(device)»
+	«ENDFOR»
 	
 	const int freq = 5000;
 	const int ledChannel = 0;
@@ -52,12 +51,6 @@ public class WorkerGenerator {
 	int espnow_channel = 0;
 	
 	void setup() {
-	   // Set pinModes
-	  pinMode(ledPin, OUTPUT);
-	  pinMode(pumpPin, OUTPUT);
-	  pinMode(soilPin, INPUT);
-	
-	  
 	  WiFi.mode(WIFI_STA);
 	  WiFi.disconnect();
 	
@@ -95,15 +88,6 @@ public class WorkerGenerator {
 	  Serial.print("Worker starting with MAC address ");
 	  Serial.println(WiFi.macAddress());
 	
-	  ledcSetup(ledChannel, freq, resolution);
-	  
-	  // attach the channel to the GPIO to be controlled
-	  ledcAttachPin(ledPin, ledChannel);
-	
-	  Serial.println("Initializing DHT sensor..");
-	  dht.begin();
-	  Serial.println("DHT initiated");
-	
 	  // Init ESP-NOW
 	  if (esp_now_init() != ESP_OK) {
 	    Serial.println("Error initializing ESP-NOW");
@@ -129,18 +113,17 @@ public class WorkerGenerator {
 	  
 	  // Register for a callback function that will be called when data is received
 	  esp_now_register_recv_cb(OnDataRecv);
+	  
+	  // GENERATED SETUP
+		«FOR device : worker.devices»
+	  	«DeviceDefinition.getDefinition(device).generateSetup(device)»
+	  	«ENDFOR»
 	}
-	
-	
-	
 	
 	typedef struct message_base {
 	  MESSAGE_TYPE type;
 	} message_base;
 	message_base baseMessage;
-	
-	
-	
 	
 	typedef struct message_setting : message_base {
 	  int setting;
@@ -148,96 +131,29 @@ public class WorkerGenerator {
 	} message_setting;
 	message_setting settingMessage;
 	
-	
-	
-	
 	typedef struct message_sample : message_base {
-	    float temp;
-	    float hum;
-	    float moist;
+		«FOR sample: getWorkersSampleNames(gateway(worker))»
+		float «sample»;
+		«ENDFOR»
 	} message_sample;
 	message_sample sampleMessage;
-	
-	
-	
-	
+
 	void loop() {
 	  // put your main code here, to run repeatedly:
-	  int sampleDelay = 1.0 / sampleRate * 1000;
-	  delay(max(sampleDelay, 1000));
-	  sampleSoil();
-	  sampleDHT();
-	  check_actuators();
+	  float value = 0;
+	  
+	  «FOR device : worker.devices»
+	  «DeviceDefinition.getDefinition(device).generateLoop(device)»
+	  «ENDFOR»
+
 	  send_message(gatewayAddress, (uint8_t *) &sampleMessage, sizeof(sampleMessage));
+	  delay(«worker.sleepTime * getTimeUnitMsMultiplier(worker.timeUnit)»);
 	}
-	
-	
-	
-	
-	
-	void sampleSoil(){
-	  moisture = analogRead(soilPin);
-	  Serial.println(moisture);
-	  sampleMessage.moist = moisture;
-	}
-	
-	
-	void sampleDHT () {
-	  Serial.println("Sampling..");
-	
-	  // Reading temperature or humidity takes about 250 milliseconds!
-	  // Sensor readings may also be up to 2 seconds 'old' (its a very slow sensor)
-	  //humidity = dht.getHumidity();
-	  // Read temperature as Celsius (the default)
-	  temperature = dht.readTemperature();
-	  humidity = dht.readHumidity();
-	  
-	
-	  // Check if any reads failed and exit early (to try again).
-	  if (isnan(humidity) && isnan(temperature)) {
-	    Serial.println(F("Failed to read from DHT sensor!"));
-	    return;
-	  }
-	
-	  sampleMessage.type = Sample;
-	  sampleMessage.temp = temperature;
-	  sampleMessage.hum = humidity;
-	  // Read moisture
-	}
-	
-	
-	
-	
-	void check_actuators() {
-	  if (temperature > ledTemperatureThreshold) {
-	    ledcWrite(ledChannel, 255);    
-	  }else{
-	    ledcWrite(ledChannel, 0);    
-	  }
-	
-	  if(pumpMoistureThreshold > moisture){
-	    digitalWrite(pumpPin, HIGH);
-	  } else {
-	    digitalWrite(pumpPin, LOW);
-	  }
-	
-	  Serial.print(String(pumpMoistureThreshold) + " > " + String(moisture));
-	  
-	}
-	
-	
-	
-	
-	
 	
 	void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
 	  Serial.print("Last Packet Send Status:\t");
 	  Serial.println(status == ESP_NOW_SEND_SUCCESS ? "Delivery Success" : "Delivery Fail");
 	}
-	
-	
-	
-	
 	
 	void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {  
 	  memcpy(&baseMessage, incomingData, sizeof(baseMessage));
@@ -254,14 +170,7 @@ public class WorkerGenerator {
 	      handle_setting(mac, incomingData, len);
 	      break;
 	  }
-	
-	  check_actuators();
 	}
-	
-	
-	
-	
-	
 	
 	void print_mac(const uint8_t * mac) {
 	  String result = "";
@@ -282,25 +191,14 @@ public class WorkerGenerator {
 	  send_message(mac, incomingData, len);
 	}
 	
-	
-	
-	
-	
-	
 	void handle_setting(const uint8_t * mac, const uint8_t *incomingData, int len) {
 	  memcpy(&settingMessage, incomingData, sizeof(settingMessage));
-	  if (settingMessage.setting == 0) {
-	    ledTemperatureThreshold = settingMessage.newValue;
+	  «FOR setting : settings(worker)»
+	  if (settingMessage.setting == «indexOfSetting(setting)») {
+	  	«getBindingName(setting)» = settingMessage.newValue;
 	  }
-	  if (settingMessage.setting == 1) {
-	    pumpMoistureThreshold = settingMessage.newValue;
-	  }
+	  «ENDFOR»
 	}
-	
-	
-	
-	
-	
 	
 	void send_message(const uint8_t * mac, const uint8_t *incomingData, int len) {
 	  esp_err_t result = esp_now_send(mac, incomingData, len);

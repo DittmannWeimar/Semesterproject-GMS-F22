@@ -9,7 +9,7 @@ import dk.sdu.gms.dds.deviceDefinition.Sensor
 import dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage
 import org.eclipse.xtext.validation.Check
 import dk.sdu.gms.dds.ActuatorDefinition
-import dk.sdu.gms.dds.SensorDefinition
+import dk.sdu.gms.dds.sensors.SensorDefinition
 
 /**
  * This class contains custom validation rules. 
@@ -21,8 +21,8 @@ class DeviceDefinitionValidator extends AbstractDeviceDefinitionValidator {
 	@Check
 	def deviceExists (Device device) {
 		val exists = switch (device) {
-			case Actuator: ActuatorDefinition.getDefinition(device.type) !== null
-			case Sensor: SensorDefinition.getDefinition(device.type) !== null
+			case Actuator: ActuatorDefinition.getActuatorDefinition(device as Actuator) !== null
+			case Sensor: SensorDefinition.getSensorDefinition(device as Sensor) !== null
 		}
 		
 		if (!exists) {
@@ -33,15 +33,15 @@ class DeviceDefinitionValidator extends AbstractDeviceDefinitionValidator {
 	@Check // Yes this code is gross, shut up.
 	def checkDevicePins (Device device) {
 		val hasAllPins = switch (device) {
-			case Actuator: device.pins.size() == ActuatorDefinition.getDefinition(device.type).pinCount
-			case Sensor: device.pins.size() == SensorDefinition.getDefinition(device.type).pinCount
+			case Actuator: device.pins.size() == ActuatorDefinition.getActuatorDefinition(device as Actuator).pinCount
+			case Sensor: device.pins.size() == SensorDefinition.getSensorDefinition(device as Sensor).pinCount
 		}
 		
 		if (!hasAllPins) {
 			switch (device) {
-				case Actuator: warning('Device needs ' + ActuatorDefinition.getDefinition(device.type).pinCount + " pins", 
+				case Actuator: warning('Device needs ' + ActuatorDefinition.getActuatorDefinition(device as Actuator).pinCount + " pins", 
 					DeviceDefinitionPackage.Literals.DEVICE__PINS)
-				case Sensor: warning('Device needs ' + SensorDefinition.getDefinition(device.type).pinCount + " pins", 
+				case Sensor: warning('Device needs ' + SensorDefinition.getSensorDefinition(device as Sensor).pinCount + " pins", 
 					DeviceDefinitionPackage.Literals.DEVICE__PINS)
 			}
 		}

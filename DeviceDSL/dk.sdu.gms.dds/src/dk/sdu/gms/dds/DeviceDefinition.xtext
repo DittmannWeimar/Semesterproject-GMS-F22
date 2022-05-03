@@ -25,10 +25,9 @@ Gateway:
 ;
 
 Worker:
-	'Worker' name=ID ':'
-	'mac' mac = MAC
-	('sleep' 'for' sleepTime = INT timeUnit += TimeUnit)?
-	('broadcast' 'for' broadcastTime = INT timeUnit += TimeUnit)?
+	'Worker' (name=ID) ':'
+	('mac' mac = MAC)
+	('sleep' 'for' sleepTime = INT timeUnit = TimeUnit)?
 	devices += Device*
 ;
 
@@ -36,31 +35,25 @@ Device:
 	Sensor | Actuator
 ;
 
-terminal MAC:
-	HEXBYTE ':' HEXBYTE ':' HEXBYTE ':' HEXBYTE ':' HEXBYTE ':' HEXBYTE
-;
-
-terminal fragment HEXBYTE:
-	('0'..'9'|'A'..'F')('0'..'9'|'A'..'F')
-;
-
 Sensor:
 	'Sensor' type = ID name=ID ':'
-	'pins' pins += INT* (',' pins += INT)*
-	'rate' sampleRate = Primitive
+	('pins' pins += INT* (',' pins += INT)*)?
 	(outputs += SensorOutput)*
 	(settings += Setting)*
-	('behavior' behavior += SampleBehavior)?
 	('sample' 'if' predicate += Exp)?
 	('graph' graph = [Graph])?
 ;
 
-SampleBehavior:
-	type = ID '(' args += Primary* (',' pins += Primary)* ')'
-;
-
 TimeUnit:
 	{Second} ('second'|'seconds') | {Minute} ('minute'|'minutes') | {Hour} ('hour'|'hours')
+;
+
+terminal MAC:
+	HEXBYTE (':') HEXBYTE (':') HEXBYTE (':') HEXBYTE (':') HEXBYTE (':') HEXBYTE
+;
+
+terminal fragment HEXBYTE:
+	('0'..'9'|'A'..'F')('0'..'9'|'A'..'F')
 ;
 
 Binding:

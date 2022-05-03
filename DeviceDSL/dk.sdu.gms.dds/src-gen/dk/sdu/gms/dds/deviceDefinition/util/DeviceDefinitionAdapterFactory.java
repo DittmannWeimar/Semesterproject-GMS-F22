@@ -34,7 +34,6 @@ import dk.sdu.gms.dds.deviceDefinition.Or;
 import dk.sdu.gms.dds.deviceDefinition.Parenthesis;
 import dk.sdu.gms.dds.deviceDefinition.Plus;
 import dk.sdu.gms.dds.deviceDefinition.Primitive;
-import dk.sdu.gms.dds.deviceDefinition.SampleBehavior;
 import dk.sdu.gms.dds.deviceDefinition.Second;
 import dk.sdu.gms.dds.deviceDefinition.Sensor;
 import dk.sdu.gms.dds.deviceDefinition.SensorOutput;
@@ -145,11 +144,6 @@ public class DeviceDefinitionAdapterFactory extends AdapterFactoryImpl
       public Adapter caseSensor(Sensor object)
       {
         return createSensorAdapter();
-      }
-      @Override
-      public Adapter caseSampleBehavior(SampleBehavior object)
-      {
-        return createSampleBehaviorAdapter();
       }
       @Override
       public Adapter caseTimeUnit(TimeUnit object)
@@ -434,21 +428,6 @@ public class DeviceDefinitionAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createSensorAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link dk.sdu.gms.dds.deviceDefinition.SampleBehavior <em>Sample Behavior</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see dk.sdu.gms.dds.deviceDefinition.SampleBehavior
-   * @generated
-   */
-  public Adapter createSampleBehaviorAdapter()
   {
     return null;
   }

@@ -31,7 +31,6 @@ import dk.sdu.gms.dds.deviceDefinition.OnOff;
 import dk.sdu.gms.dds.deviceDefinition.Or;
 import dk.sdu.gms.dds.deviceDefinition.Parenthesis;
 import dk.sdu.gms.dds.deviceDefinition.Plus;
-import dk.sdu.gms.dds.deviceDefinition.SampleBehavior;
 import dk.sdu.gms.dds.deviceDefinition.Second;
 import dk.sdu.gms.dds.deviceDefinition.Sensor;
 import dk.sdu.gms.dds.deviceDefinition.SensorOutput;
@@ -142,9 +141,6 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 				return; 
 			case DeviceDefinitionPackage.PLUS:
 				sequence_Exp(context, (Plus) semanticObject); 
-				return; 
-			case DeviceDefinitionPackage.SAMPLE_BEHAVIOR:
-				sequence_SampleBehavior(context, (SampleBehavior) semanticObject); 
 				return; 
 			case DeviceDefinitionPackage.SECOND:
 				sequence_TimeUnit(context, (Second) semanticObject); 
@@ -977,20 +973,6 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     SampleBehavior returns SampleBehavior
-	 *
-	 * Constraint:
-	 *     (type=ID args+=Primary* pins+=Primary*)
-	 * </pre>
-	 */
-	protected void sequence_SampleBehavior(ISerializationContext context, SampleBehavior semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
 	 *     Binding returns SensorOutput
 	 *     SensorOutput returns SensorOutput
 	 *
@@ -1015,10 +997,8 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 	 *         name=ID 
 	 *         pins+=INT* 
 	 *         pins+=INT* 
-	 *         sampleRate=Primitive 
 	 *         outputs+=SensorOutput* 
 	 *         settings+=Setting* 
-	 *         behavior+=SampleBehavior? 
 	 *         predicate+=Exp? 
 	 *         graph=[Graph|ID]?
 	 *     )
@@ -1156,7 +1136,7 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 	 *     Worker returns Worker
 	 *
 	 * Constraint:
-	 *     (name=ID mac=MAC (sleepTime=INT timeUnit+=TimeUnit)? (broadcastTime=INT timeUnit+=TimeUnit)? devices+=Device*)
+	 *     (name=ID mac=MAC (sleepTime=INT timeUnit=TimeUnit)? devices+=Device*)
 	 * </pre>
 	 */
 	protected void sequence_Worker(ISerializationContext context, Worker semanticObject) {

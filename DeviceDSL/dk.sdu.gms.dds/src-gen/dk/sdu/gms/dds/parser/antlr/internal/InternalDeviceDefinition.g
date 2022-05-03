@@ -530,42 +530,44 @@ ruleWorker returns [EObject current=null]
 		{
 			newLeafNode(otherlv_2, grammarAccess.getWorkerAccess().getColonKeyword_2());
 		}
-		otherlv_3='mac'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getWorkerAccess().getMacKeyword_3());
-		}
 		(
+			otherlv_3='mac'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getWorkerAccess().getMacKeyword_3_0());
+			}
 			(
-				lv_mac_4_0=RULE_MAC
-				{
-					newLeafNode(lv_mac_4_0, grammarAccess.getWorkerAccess().getMacMACTerminalRuleCall_4_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getWorkerRule());
+				(
+					lv_mac_4_0=RULE_MAC
+					{
+						newLeafNode(lv_mac_4_0, grammarAccess.getWorkerAccess().getMacMACTerminalRuleCall_3_1_0());
 					}
-					setWithLastConsumed(
-						$current,
-						"mac",
-						lv_mac_4_0,
-						"dk.sdu.gms.dds.DeviceDefinition.MAC");
-				}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getWorkerRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"mac",
+							lv_mac_4_0,
+							"dk.sdu.gms.dds.DeviceDefinition.MAC");
+					}
+				)
 			)
 		)
 		(
 			otherlv_5='sleep'
 			{
-				newLeafNode(otherlv_5, grammarAccess.getWorkerAccess().getSleepKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getWorkerAccess().getSleepKeyword_4_0());
 			}
 			otherlv_6='for'
 			{
-				newLeafNode(otherlv_6, grammarAccess.getWorkerAccess().getForKeyword_5_1());
+				newLeafNode(otherlv_6, grammarAccess.getWorkerAccess().getForKeyword_4_1());
 			}
 			(
 				(
 					lv_sleepTime_7_0=RULE_INT
 					{
-						newLeafNode(lv_sleepTime_7_0, grammarAccess.getWorkerAccess().getSleepTimeINTTerminalRuleCall_5_2_0());
+						newLeafNode(lv_sleepTime_7_0, grammarAccess.getWorkerAccess().getSleepTimeINTTerminalRuleCall_4_2_0());
 					}
 					{
 						if ($current==null) {
@@ -582,14 +584,14 @@ ruleWorker returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getWorkerAccess().getTimeUnitTimeUnitParserRuleCall_5_3_0());
+						newCompositeNode(grammarAccess.getWorkerAccess().getTimeUnitTimeUnitParserRuleCall_4_3_0());
 					}
 					lv_timeUnit_8_0=ruleTimeUnit
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getWorkerRule());
 						}
-						add(
+						set(
 							$current,
 							"timeUnit",
 							lv_timeUnit_8_0,
@@ -600,58 +602,11 @@ ruleWorker returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_9='broadcast'
-			{
-				newLeafNode(otherlv_9, grammarAccess.getWorkerAccess().getBroadcastKeyword_6_0());
-			}
-			otherlv_10='for'
-			{
-				newLeafNode(otherlv_10, grammarAccess.getWorkerAccess().getForKeyword_6_1());
-			}
-			(
-				(
-					lv_broadcastTime_11_0=RULE_INT
-					{
-						newLeafNode(lv_broadcastTime_11_0, grammarAccess.getWorkerAccess().getBroadcastTimeINTTerminalRuleCall_6_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getWorkerRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"broadcastTime",
-							lv_broadcastTime_11_0,
-							"org.eclipse.xtext.common.Terminals.INT");
-					}
-				)
-			)
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getWorkerAccess().getTimeUnitTimeUnitParserRuleCall_6_3_0());
-					}
-					lv_timeUnit_12_0=ruleTimeUnit
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getWorkerRule());
-						}
-						add(
-							$current,
-							"timeUnit",
-							lv_timeUnit_12_0,
-							"dk.sdu.gms.dds.DeviceDefinition.TimeUnit");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
 			(
 				{
-					newCompositeNode(grammarAccess.getWorkerAccess().getDevicesDeviceParserRuleCall_7_0());
+					newCompositeNode(grammarAccess.getWorkerAccess().getDevicesDeviceParserRuleCall_5_0());
 				}
-				lv_devices_13_0=ruleDevice
+				lv_devices_9_0=ruleDevice
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getWorkerRule());
@@ -659,7 +614,7 @@ ruleWorker returns [EObject current=null]
 					add(
 						$current,
 						"devices",
-						lv_devices_13_0,
+						lv_devices_9_0,
 						"dk.sdu.gms.dds.DeviceDefinition.Device");
 					afterParserOrEnumRuleCall();
 				}
@@ -764,38 +719,16 @@ ruleSensor returns [EObject current=null]
 		{
 			newLeafNode(otherlv_3, grammarAccess.getSensorAccess().getColonKeyword_3());
 		}
-		otherlv_4='pins'
-		{
-			newLeafNode(otherlv_4, grammarAccess.getSensorAccess().getPinsKeyword_4());
-		}
 		(
-			(
-				lv_pins_5_0=RULE_INT
-				{
-					newLeafNode(lv_pins_5_0, grammarAccess.getSensorAccess().getPinsINTTerminalRuleCall_5_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getSensorRule());
-					}
-					addWithLastConsumed(
-						$current,
-						"pins",
-						lv_pins_5_0,
-						"org.eclipse.xtext.common.Terminals.INT");
-				}
-			)
-		)*
-		(
-			otherlv_6=','
+			otherlv_4='pins'
 			{
-				newLeafNode(otherlv_6, grammarAccess.getSensorAccess().getCommaKeyword_6_0());
+				newLeafNode(otherlv_4, grammarAccess.getSensorAccess().getPinsKeyword_4_0());
 			}
 			(
 				(
-					lv_pins_7_0=RULE_INT
+					lv_pins_5_0=RULE_INT
 					{
-						newLeafNode(lv_pins_7_0, grammarAccess.getSensorAccess().getPinsINTTerminalRuleCall_6_1_0());
+						newLeafNode(lv_pins_5_0, grammarAccess.getSensorAccess().getPinsINTTerminalRuleCall_4_1_0());
 					}
 					{
 						if ($current==null) {
@@ -804,41 +737,42 @@ ruleSensor returns [EObject current=null]
 						addWithLastConsumed(
 							$current,
 							"pins",
-							lv_pins_7_0,
+							lv_pins_5_0,
 							"org.eclipse.xtext.common.Terminals.INT");
 					}
 				)
-			)
-		)*
-		otherlv_8='rate'
-		{
-			newLeafNode(otherlv_8, grammarAccess.getSensorAccess().getRateKeyword_7());
-		}
+			)*
+			(
+				otherlv_6=','
+				{
+					newLeafNode(otherlv_6, grammarAccess.getSensorAccess().getCommaKeyword_4_2_0());
+				}
+				(
+					(
+						lv_pins_7_0=RULE_INT
+						{
+							newLeafNode(lv_pins_7_0, grammarAccess.getSensorAccess().getPinsINTTerminalRuleCall_4_2_1_0());
+						}
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getSensorRule());
+							}
+							addWithLastConsumed(
+								$current,
+								"pins",
+								lv_pins_7_0,
+								"org.eclipse.xtext.common.Terminals.INT");
+						}
+					)
+				)
+			)*
+		)?
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSensorAccess().getSampleRatePrimitiveParserRuleCall_8_0());
+					newCompositeNode(grammarAccess.getSensorAccess().getOutputsSensorOutputParserRuleCall_5_0());
 				}
-				lv_sampleRate_9_0=rulePrimitive
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getSensorRule());
-					}
-					set(
-						$current,
-						"sampleRate",
-						lv_sampleRate_9_0,
-						"dk.sdu.gms.dds.DeviceDefinition.Primitive");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getSensorAccess().getOutputsSensorOutputParserRuleCall_9_0());
-				}
-				lv_outputs_10_0=ruleSensorOutput
+				lv_outputs_8_0=ruleSensorOutput
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSensorRule());
@@ -846,7 +780,7 @@ ruleSensor returns [EObject current=null]
 					add(
 						$current,
 						"outputs",
-						lv_outputs_10_0,
+						lv_outputs_8_0,
 						"dk.sdu.gms.dds.DeviceDefinition.SensorOutput");
 					afterParserOrEnumRuleCall();
 				}
@@ -855,9 +789,9 @@ ruleSensor returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSensorAccess().getSettingsSettingParserRuleCall_10_0());
+					newCompositeNode(grammarAccess.getSensorAccess().getSettingsSettingParserRuleCall_6_0());
 				}
-				lv_settings_11_0=ruleSetting
+				lv_settings_9_0=ruleSetting
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSensorRule());
@@ -865,52 +799,27 @@ ruleSensor returns [EObject current=null]
 					add(
 						$current,
 						"settings",
-						lv_settings_11_0,
+						lv_settings_9_0,
 						"dk.sdu.gms.dds.DeviceDefinition.Setting");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
 		(
-			otherlv_12='behavior'
+			otherlv_10='sample'
 			{
-				newLeafNode(otherlv_12, grammarAccess.getSensorAccess().getBehaviorKeyword_11_0());
+				newLeafNode(otherlv_10, grammarAccess.getSensorAccess().getSampleKeyword_7_0());
+			}
+			otherlv_11='if'
+			{
+				newLeafNode(otherlv_11, grammarAccess.getSensorAccess().getIfKeyword_7_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getSensorAccess().getBehaviorSampleBehaviorParserRuleCall_11_1_0());
+						newCompositeNode(grammarAccess.getSensorAccess().getPredicateExpParserRuleCall_7_2_0());
 					}
-					lv_behavior_13_0=ruleSampleBehavior
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getSensorRule());
-						}
-						add(
-							$current,
-							"behavior",
-							lv_behavior_13_0,
-							"dk.sdu.gms.dds.DeviceDefinition.SampleBehavior");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
-			otherlv_14='sample'
-			{
-				newLeafNode(otherlv_14, grammarAccess.getSensorAccess().getSampleKeyword_12_0());
-			}
-			otherlv_15='if'
-			{
-				newLeafNode(otherlv_15, grammarAccess.getSensorAccess().getIfKeyword_12_1());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getSensorAccess().getPredicateExpParserRuleCall_12_2_0());
-					}
-					lv_predicate_16_0=ruleExp
+					lv_predicate_12_0=ruleExp
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getSensorRule());
@@ -918,7 +827,7 @@ ruleSensor returns [EObject current=null]
 						add(
 							$current,
 							"predicate",
-							lv_predicate_16_0,
+							lv_predicate_12_0,
 							"dk.sdu.gms.dds.DeviceDefinition.Exp");
 						afterParserOrEnumRuleCall();
 					}
@@ -926,9 +835,9 @@ ruleSensor returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_17='graph'
+			otherlv_13='graph'
 			{
-				newLeafNode(otherlv_17, grammarAccess.getSensorAccess().getGraphKeyword_13_0());
+				newLeafNode(otherlv_13, grammarAccess.getSensorAccess().getGraphKeyword_8_0());
 			}
 			(
 				(
@@ -937,102 +846,13 @@ ruleSensor returns [EObject current=null]
 							$current = createModelElement(grammarAccess.getSensorRule());
 						}
 					}
-					otherlv_18=RULE_ID
+					otherlv_14=RULE_ID
 					{
-						newLeafNode(otherlv_18, grammarAccess.getSensorAccess().getGraphGraphCrossReference_13_1_0());
+						newLeafNode(otherlv_14, grammarAccess.getSensorAccess().getGraphGraphCrossReference_8_1_0());
 					}
 				)
 			)
 		)?
-	)
-;
-
-// Entry rule entryRuleSampleBehavior
-entryRuleSampleBehavior returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getSampleBehaviorRule()); }
-	iv_ruleSampleBehavior=ruleSampleBehavior
-	{ $current=$iv_ruleSampleBehavior.current; }
-	EOF;
-
-// Rule SampleBehavior
-ruleSampleBehavior returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			(
-				lv_type_0_0=RULE_ID
-				{
-					newLeafNode(lv_type_0_0, grammarAccess.getSampleBehaviorAccess().getTypeIDTerminalRuleCall_0_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getSampleBehaviorRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"type",
-						lv_type_0_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
-		otherlv_1='('
-		{
-			newLeafNode(otherlv_1, grammarAccess.getSampleBehaviorAccess().getLeftParenthesisKeyword_1());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getSampleBehaviorAccess().getArgsPrimaryParserRuleCall_2_0());
-				}
-				lv_args_2_0=rulePrimary
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getSampleBehaviorRule());
-					}
-					add(
-						$current,
-						"args",
-						lv_args_2_0,
-						"dk.sdu.gms.dds.DeviceDefinition.Primary");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
-		(
-			otherlv_3=','
-			{
-				newLeafNode(otherlv_3, grammarAccess.getSampleBehaviorAccess().getCommaKeyword_3_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getSampleBehaviorAccess().getPinsPrimaryParserRuleCall_3_1_0());
-					}
-					lv_pins_4_0=rulePrimary
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getSampleBehaviorRule());
-						}
-						add(
-							$current,
-							"pins",
-							lv_pins_4_0,
-							"dk.sdu.gms.dds.DeviceDefinition.Primary");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)*
-		otherlv_5=')'
-		{
-			newLeafNode(otherlv_5, grammarAccess.getSampleBehaviorAccess().getRightParenthesisKeyword_4());
-		}
 	)
 ;
 

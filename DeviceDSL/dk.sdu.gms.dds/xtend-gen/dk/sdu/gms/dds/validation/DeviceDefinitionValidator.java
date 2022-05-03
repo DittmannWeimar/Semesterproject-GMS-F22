@@ -5,11 +5,11 @@ package dk.sdu.gms.dds.validation;
 
 import com.google.common.base.Objects;
 import dk.sdu.gms.dds.ActuatorDefinition;
-import dk.sdu.gms.dds.SensorDefinition;
 import dk.sdu.gms.dds.deviceDefinition.Actuator;
 import dk.sdu.gms.dds.deviceDefinition.Device;
 import dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage;
 import dk.sdu.gms.dds.deviceDefinition.Sensor;
+import dk.sdu.gms.dds.sensors.SensorDefinition;
 import org.eclipse.xtext.validation.Check;
 
 /**
@@ -27,14 +27,14 @@ public class DeviceDefinitionValidator extends AbstractDeviceDefinitionValidator
       boolean _matched = false;
       if (Objects.equal(device, Actuator.class)) {
         _matched=true;
-        ActuatorDefinition _definition = ActuatorDefinition.getDefinition(device.getType());
-        _switchResult = (_definition != null);
+        ActuatorDefinition _actuatorDefinition = ActuatorDefinition.getActuatorDefinition(((Actuator) device));
+        _switchResult = (_actuatorDefinition != null);
       }
       if (!_matched) {
         if (Objects.equal(device, Sensor.class)) {
           _matched=true;
-          SensorDefinition _definition_1 = SensorDefinition.getDefinition(device.getType());
-          _switchResult = (_definition_1 != null);
+          SensorDefinition _sensorDefinition = SensorDefinition.getSensorDefinition(((Sensor) device));
+          _switchResult = (_sensorDefinition != null);
         }
       }
       final boolean exists = _switchResult;
@@ -54,13 +54,13 @@ public class DeviceDefinitionValidator extends AbstractDeviceDefinitionValidator
     if (Objects.equal(device, Actuator.class)) {
       _matched=true;
       int _size = device.getPins().size();
-      _switchResult = (_size == ActuatorDefinition.getDefinition(device.getType()).pinCount);
+      _switchResult = (_size == ActuatorDefinition.getActuatorDefinition(((Actuator) device)).pinCount);
     }
     if (!_matched) {
       if (Objects.equal(device, Sensor.class)) {
         _matched=true;
         int _size_1 = device.getPins().size();
-        _switchResult = (_size_1 == SensorDefinition.getDefinition(device.getType()).pinCount);
+        _switchResult = (_size_1 == SensorDefinition.getSensorDefinition(((Sensor) device)).pinCount);
       }
     }
     final boolean hasAllPins = _switchResult;
@@ -68,13 +68,13 @@ public class DeviceDefinitionValidator extends AbstractDeviceDefinitionValidator
       boolean _matched_1 = false;
       if (Objects.equal(device, Actuator.class)) {
         _matched_1=true;
-        this.warning((("Device needs " + Integer.valueOf(ActuatorDefinition.getDefinition(device.getType()).pinCount)) + " pins"), 
+        this.warning((("Device needs " + Integer.valueOf(ActuatorDefinition.getActuatorDefinition(((Actuator) device)).pinCount)) + " pins"), 
           DeviceDefinitionPackage.Literals.DEVICE__PINS);
       }
       if (!_matched_1) {
         if (Objects.equal(device, Sensor.class)) {
           _matched_1=true;
-          this.warning((("Device needs " + Integer.valueOf(SensorDefinition.getDefinition(device.getType()).pinCount)) + " pins"), 
+          this.warning((("Device needs " + Integer.valueOf(SensorDefinition.getSensorDefinition(((Sensor) device)).pinCount)) + " pins"), 
             DeviceDefinitionPackage.Literals.DEVICE__PINS);
         }
       }

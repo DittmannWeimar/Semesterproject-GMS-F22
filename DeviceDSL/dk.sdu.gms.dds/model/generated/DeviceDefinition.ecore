@@ -31,9 +31,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mac" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sleepTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="timeUnit" upperBound="-1"
-        eType="#//TimeUnit" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="broadcastTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timeUnit" eType="#//TimeUnit"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="devices" upperBound="-1"
         eType="#//Device" containment="true"/>
   </eClassifiers>
@@ -46,22 +45,11 @@
         eType="#//Setting" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Sensor" eSuperTypes="#//Device">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sampleRate" eType="#//Primitive"
-        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="outputs" upperBound="-1"
         eType="#//SensorOutput" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="behavior" upperBound="-1"
-        eType="#//SampleBehavior" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="predicate" upperBound="-1"
         eType="#//Expression" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="graph" eType="#//Graph"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SampleBehavior">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="args" upperBound="-1" eType="#//Expression"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="pins" upperBound="-1" eType="#//Expression"
-        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TimeUnit"/>
   <eClassifiers xsi:type="ecore:EClass" name="Binding">

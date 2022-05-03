@@ -78,15 +78,6 @@ public interface DeviceDefinitionFactory extends EFactory
   Sensor createSensor();
 
   /**
-   * Returns a new object of class '<em>Sample Behavior</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Sample Behavior</em>'.
-   * @generated
-   */
-  SampleBehavior createSampleBehavior();
-
-  /**
    * Returns a new object of class '<em>Time Unit</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

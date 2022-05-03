@@ -33,7 +33,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Worker/mac"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Worker/sleepTime"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Worker/timeUnit"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Worker/broadcastTime"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Worker/devices"/>
     </genClasses>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Device">
@@ -43,16 +42,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Device/settings"/>
     </genClasses>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Sensor">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Sensor/sampleRate"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Sensor/outputs"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Sensor/behavior"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Sensor/predicate"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Sensor/graph"/>
-    </genClasses>
-    <genClasses ecoreClass="DeviceDefinition.ecore#//SampleBehavior">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//SampleBehavior/type"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//SampleBehavior/args"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//SampleBehavior/pins"/>
     </genClasses>
     <genClasses ecoreClass="DeviceDefinition.ecore#//TimeUnit"/>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Binding">

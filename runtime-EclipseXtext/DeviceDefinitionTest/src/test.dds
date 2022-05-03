@@ -1,43 +1,31 @@
 System:
 	wifi "Chronos" with password "fizzfyr13"
 	mqtt "vald.io:3001" with username "kristian" and password "1234"
+	
 	Gateway test_gateway:
 		mac 11:22:33:44:55:66
+		
 		Worker test_worker1:
-			mac 55:44:22:5D:99:22
-			sleep for 10 minutes
-			broadcast for 20 seconds
+		
+			mac 55:55:55:55:55:00
+			sleep for 10
+			 minutes
 			
 			Sensor TemperatureHumidity temp1:
-				pins 1, 2
-				rate 10
+				pins 4
 				out "temperature" as temp with mapping call pow(2, value)
 				out "humidity" as hum
-				behavior avarage(100)
 				sample if temp1.temp == TRUE
 				graph temperatureGraph
-				
-			Sensor Moisture moist1:
-				pins 5,6,7,8
-				rate 1
-				out as moisture
-				
-			Actuator LED led1:
-				pins 3
-				setting threshold = 2
-				setting brightness = 0.35
-				when temp1.temp > threshold + moist1.moisture * 2
-				
-			Actuator Pump pump1:
-				pins 9,10,11,12
-				setting pumpTime = 10
-				on moist1.moisture < 10 + led1.brightness
-				off 2 + 10 < moist1.moisture > 20
 			
-			Actuator Pump pump2:
-				pins 9,10,11,12
-				setting pumpTime = 10
-				on moist1.moisture < 10 run for 10 minutes
+			Sensor Moisture mois:
+				pins 5
+				out as moisture
+				setting threshold = 5
+				sample if temp1.hum > threshold
+								
+			Sensor Dummy dummy:
+				out as dummy with mapping value + 20
 	
 	Graph Line temperatureGraph:
 		category "basics"
