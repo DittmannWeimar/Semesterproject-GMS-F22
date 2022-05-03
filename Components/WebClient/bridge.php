@@ -1,7 +1,8 @@
 <?php
 
-$apiRoot = "http://www.localhost:3000/$type/$gateway/$worker/$topic";
+$apiHost = $_ENV["API_HOST"];
 
+$apiRoot = $apiHost + "/$type/$gateway/$worker/$topic";
 
 $ch = curl_init();
 
