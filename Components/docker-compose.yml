@@ -4,6 +4,7 @@ services:
   api:
     build: API/
     image: lomztein/gms-api:latest
+    restart: always
     ports:
      - "3000:3010"
     networks:
@@ -22,6 +23,7 @@ services:
   adapter:
     build: Adapter/
     image: lomztein/gms-adapter:latest
+    restart: always
     depends_on:
      - mongo
      - mosquitto
@@ -37,12 +39,26 @@ services:
 
   webclient:
     build: WebClient/
-    image: lomztein/gms-webclient:latest
-    d
+    restart: always
+    depends_on:
+     - mongo
+     - mosquito
+     - api
+    environment:
+     - MQTT_HOST=mqtt://mosquitto:1883
+     - MQTT_USERNAME=kristian
+     - MQTT_PASSWORD=1234
+     - API_HOST=http://api:3000
+    networks:
+     - frontend
+     - backend
+    ports:
+     - 3003:80
      
   mosquitto:
     image: eclipse-mosquitto
     container_name: mosquitto
+    restart: always
     ports:
      - "3001:1883"
      - "3002:8081"
@@ -54,6 +70,7 @@ services:
   mongo:
     build: MongoDB/
     image: lomztein/gms-mongo:latest
+    restart: always
     container_name: mongo
     networks:
      - backend
