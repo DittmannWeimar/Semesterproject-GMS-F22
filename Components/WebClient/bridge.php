@@ -1,25 +1,25 @@
 <?php
 
-$apiHost = $_ENV["API_HOST"];
+$type = $_GET['type'];
+$gateway = $_GET['gateway'];
+$workers = $_GET['workers'];
+$topic = $_GET['topic'];
 
-$apiRoot = $apiHost + "/$type/$gateway/$worker/$topic";
+if (!isset($_ENV["API_HOST"])) {
+    $apiRoot = "http://www.localhost:3000/$type/$gateway/$workers/$topic";
+} else {
+    $apiHost = $_ENV["API_HOST"];
+    $apiRoot = $apiHost + "/$type/$gateway/$worker/$topic";
+}
 
-$ch = curl_init();
+$options = array(
+    'http' => array(
+        'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+        'method'  => 'GET'
+    ),
+);
 
-// set url
-curl_setopt($ch, CURLOPT_URL, $apiRoot);
+$context  = stream_context_create($options);
+$result = file_get_contents($apiRoot, false, $context);
 
-//return the transfer as a string
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-
-// $output contains the output string
-$output = curl_exec($ch);
-
-// close curl resource to free up system resources
-curl_close($ch);
-
-echo $output;
-
-
-
-?>
+echo $result;

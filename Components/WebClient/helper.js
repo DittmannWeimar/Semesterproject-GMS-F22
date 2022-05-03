@@ -2,7 +2,7 @@ var categorySubfolder = "category-pages/";
 
 function addCategory(name) {
     var categoryBinding = _createCategoryJSBinding(name)
-    $('#navbar-categories').append(`<li id = ${categoryBinding.name}><a href="${"/"+categorySubfolder+categoryBinding.id+".php"}"> ${categoryBinding.name} </a></li>`)
+    $('#navbar-categories').append(`<li id = ${categoryBinding.name}><a href="${"/" + categorySubfolder + categoryBinding.id + ".php"}"> ${categoryBinding.name} </a></li>`)
 }
 
 function _createCategoryJSBinding(name) {
@@ -22,24 +22,24 @@ $(document).ready(function () {
 var apiUrlRoot = "http://localhost/Bridge/";
 function _getData(type, gateway, worker, topic) {
     var actualUrl = apiUrlRoot + type + "/" + gateway + "/" + worker + "/" + topic;
-    console.log("Requesting data from: "+actualUrl);
+    console.log("Requesting data from: " + actualUrl);
     return new Promise((resolve, reject) => {
         $.ajax({
-          url: actualUrl,
-          type: 'GET',
-          data: {},
-          success: function (data) {
-            resolve(JSON.parse(data))
-          },
-          error: function (error) {
-            reject(error)
-          },
+            url: actualUrl,
+            type: 'GET',
+            data: {},
+            success: function (data) {
+                resolve(JSON.parse(data))
+            },
+            error: function (error) {
+                reject(error)
+            },
         })
-      })
+    })
 }
 
 async function test() {
-    console.log("requesting..."+apiUrlRoot)
+    console.log("requesting..." + apiUrlRoot)
     var testResponse = await _getData("triggers", "*", "*", "pumpActivated");
     var firstEntry = testResponse[0]
     console.log("Response:" + testResponse)
@@ -49,12 +49,22 @@ async function test() {
 
 
 //MQTT!
+var isTestingLocally = true;
 var mqtt;
 var reconnectTimeout = 2000;
-var host = process.env.MQTT_HOST.split(":")[0]
-var port = process.env.MQTT_HOST.split(":")[1]
-var username = process.env.MQTT_USERNAME
-var pw = process.env.MQTT_PASSWORD
+var host = "localhost"
+var port = "8081"
+var username = "kristian"
+var pw = "1234"
+
+if (!isTestingLocally) {
+    mqtt;
+    reconnectTimeout = 2000;
+    host = process.env.MQTT_HOST.split(":")[0]
+    port = process.env.MQTT_HOST.split(":")[1]
+    username = process.env.MQTT_USERNAME
+    pw = process.env.MQTT_PASSWORD
+}
 
 function _onConnect(callback = null) {
     console.log("Connected to MQTT!");
@@ -102,6 +112,6 @@ function MQTTSend(topic, message) {
     })
 }
 
-$( document ).ready(function() {
+$(document).ready(function () {
     test();
 });

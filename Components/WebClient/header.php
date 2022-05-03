@@ -1,10 +1,7 @@
 <?php
-
-function globalReq($req) {
-    echo __DIR__ . "/" . $req;
-}
-
+phpinfo();
 ?>
+
 
 <!-- JQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
