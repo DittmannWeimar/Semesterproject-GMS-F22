@@ -42,7 +42,7 @@ services:
     restart: always
     depends_on:
      - mongo
-     - mosquito
+     - mosquitto
      - api
     environment:
      - MQTT_HOST=mqtt://mosquitto:1883
