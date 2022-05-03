@@ -11,6 +11,9 @@ require_once("{$_SERVER['DOCUMENT_ROOT']}/router.php");
 // The output -> Index
 get('/', 'index.php');
 
+
+get('/Bridge/$type/$gateway/$worker/$topic', '/Bridge.php');
+
 get('/Moisture', '/category-pages/Moisture.php');
 get('/WaterLevels', '/category-pages/WaterLevels.php');
 

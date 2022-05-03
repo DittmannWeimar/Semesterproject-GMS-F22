@@ -11,17 +11,48 @@ function _createCategoryJSBinding(name) {
     }
 }
 
-$( document ).ready(function() {
+$(document).ready(function () {
     addCategory("Moisture");
     addCategory("Water Levels");
 });
 
+//API Call
+var apiUrlRoot = "http://localhost/Bridge/";
+function _getData(type, gateway, worker, topic) {
+    var actualUrl = apiUrlRoot + type + "/" + gateway + "/" + worker + "/" + topic;
+    console.log("Requesting data from: "+actualUrl);
+    return new Promise((resolve, reject) => {
+        $.ajax({
+          url: actualUrl,
+          type: 'GET',
+          data: {},
+          success: function (data) {
+            resolve(JSON.parse(data))
+          },
+          error: function (error) {
+            reject(error)
+          },
+        })
+      })
+}
+
+async function test() {
+    console.log("requesting..."+apiUrlRoot)
+    var testResponse = await _getData("triggers", "*", "*", "pumpActivated");
+    var firstEntry = testResponse[0]
+    console.log("Response:" + testResponse)
+    console.log("ID:" + firstEntry._id)
+    console.log("Message:" + firstEntry.message)
+}
+
+
+//MQTT!
 var mqtt;
 var reconnectTimeout = 2000;
 var host = "localhost";
-var port = 8081;
+var port = 3002;
 
-function onConnect(callback=null) {
+function _onConnect(callback = null) {
     console.log("Connected to MQTT!");
     // Subscribe to topics
     mqtt.subscribe("MQTT");
@@ -33,23 +64,40 @@ function onConnect(callback=null) {
         console.log("Retained:  " + message.retained);
         // Read Only, set if message might be a duplicate sent from broker
         console.log("Duplicate: " + message.duplicate);
-      }
+    }
 
     callback();
 }
 
 function MQTTConnect(callback) {
-    console.log("Connecting to "+host+":"+port);
     mqtt = new Paho.MQTT.Client(host, port, "/ws", "kristian");
     var options = {
         timeout: 5,
-        onSuccess: () => onConnect(callback),
+        onSuccess: () => _onConnect(callback),
         onFailure: () => {
             console.log("MQTT Failed to connect..");
         },
-        userName:"kristian",
-        password:"1234"
+        userName: "kristian",
+        password: "1234"
     }
 
     mqtt.connect(options)
 }
+
+function MQTTSend(topic, message) {
+    console.log("Sending message");
+    console.log("Topic: " + topic);
+    console.log("Message: " + message);
+
+    // Connect and send
+    MQTTConnect((x) => {
+        message = new Paho.MQTT.Message(message);
+        message.destinationName = topic;
+
+        mqtt.send(message)
+    })
+}
+
+$( document ).ready(function() {
+    test();
+});

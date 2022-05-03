@@ -14,6 +14,9 @@
             <canvas id="myChart"></canvas>
             <div>
                 <button id="myChart-all" class="btn btn-link">All</button>
+                <button id="myChart-year" class="btn btn-link">Last Year</button>
+                <button id="myChart-month" class="btn btn-link">Last Month</button>
+                <button id="myChart-week" class="btn btn-link">Last Week</button>
                 <button id="myChart-24-hour" class="btn btn-link">24 Hours</button>
                 <button id="myChart-last-hour" class="btn btn-link">Last Hour</button>
             </div>
