@@ -22,7 +22,6 @@ import dk.sdu.gms.dds.deviceDefinition.Graph;
 import dk.sdu.gms.dds.deviceDefinition.Greater;
 import dk.sdu.gms.dds.deviceDefinition.GreaterOrEquals;
 import dk.sdu.gms.dds.deviceDefinition.Hour;
-import dk.sdu.gms.dds.deviceDefinition.Import;
 import dk.sdu.gms.dds.deviceDefinition.IntPrimitive;
 import dk.sdu.gms.dds.deviceDefinition.InternalVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.Lesser;
@@ -125,13 +124,6 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   private EClass bindingEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass importEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -444,7 +436,7 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EReference getSystem_Imports()
+  public EReference getSystem_Gateway()
   {
     return (EReference)systemEClass.getEStructuralFeatures().get(0);
   }
@@ -455,20 +447,9 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EReference getSystem_Gateway()
-  {
-    return (EReference)systemEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EReference getSystem_Graphs()
   {
-    return (EReference)systemEClass.getEStructuralFeatures().get(2);
+    return (EReference)systemEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -488,9 +469,9 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EReference getGraph_Type()
+  public EAttribute getGraph_Type()
   {
-    return (EReference)graphEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)graphEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -686,9 +667,9 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EReference getDevice_Type()
+  public EAttribute getDevice_Type()
   {
-    return (EReference)deviceEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)deviceEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -711,6 +692,17 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
   public EAttribute getDevice_Pins()
   {
     return (EAttribute)deviceEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDevice_Settings()
+  {
+    return (EReference)deviceEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -796,9 +788,9 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EReference getSampleBehavior_Type()
+  public EAttribute getSampleBehavior_Type()
   {
-    return (EReference)sampleBehaviorEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)sampleBehaviorEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -862,28 +854,6 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EClass getImport()
-  {
-    return importEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getImport_Name()
-  {
-    return (EAttribute)importEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EClass getSensorOutput()
   {
     return sensorOutputEClass;
@@ -928,20 +898,9 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EReference getActuator_Settings()
-  {
-    return (EReference)actuatorEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EReference getActuator_Trigger()
   {
-    return (EReference)actuatorEClass.getEStructuralFeatures().get(1);
+    return (EReference)actuatorEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1016,9 +975,9 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EReference getExternalCall_Func()
+  public EAttribute getExternalCall_Func()
   {
-    return (EReference)externalCallEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)externalCallEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1724,12 +1683,11 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
 
     // Create classes and their features
     systemEClass = createEClass(SYSTEM);
-    createEReference(systemEClass, SYSTEM__IMPORTS);
     createEReference(systemEClass, SYSTEM__GATEWAY);
     createEReference(systemEClass, SYSTEM__GRAPHS);
 
     graphEClass = createEClass(GRAPH);
-    createEReference(graphEClass, GRAPH__TYPE);
+    createEAttribute(graphEClass, GRAPH__TYPE);
     createEAttribute(graphEClass, GRAPH__NAME);
     createEAttribute(graphEClass, GRAPH__CATEGORY);
     createEAttribute(graphEClass, GRAPH__TITLE);
@@ -1750,9 +1708,10 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     createEReference(workerEClass, WORKER__DEVICES);
 
     deviceEClass = createEClass(DEVICE);
-    createEReference(deviceEClass, DEVICE__TYPE);
+    createEAttribute(deviceEClass, DEVICE__TYPE);
     createEAttribute(deviceEClass, DEVICE__NAME);
     createEAttribute(deviceEClass, DEVICE__PINS);
+    createEReference(deviceEClass, DEVICE__SETTINGS);
 
     sensorEClass = createEClass(SENSOR);
     createEReference(sensorEClass, SENSOR__SAMPLE_RATE);
@@ -1762,7 +1721,7 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     createEReference(sensorEClass, SENSOR__GRAPH);
 
     sampleBehaviorEClass = createEClass(SAMPLE_BEHAVIOR);
-    createEReference(sampleBehaviorEClass, SAMPLE_BEHAVIOR__TYPE);
+    createEAttribute(sampleBehaviorEClass, SAMPLE_BEHAVIOR__TYPE);
     createEReference(sampleBehaviorEClass, SAMPLE_BEHAVIOR__ARGS);
     createEReference(sampleBehaviorEClass, SAMPLE_BEHAVIOR__PINS);
 
@@ -1771,15 +1730,11 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     bindingEClass = createEClass(BINDING);
     createEAttribute(bindingEClass, BINDING__NAME);
 
-    importEClass = createEClass(IMPORT);
-    createEAttribute(importEClass, IMPORT__NAME);
-
     sensorOutputEClass = createEClass(SENSOR_OUTPUT);
     createEAttribute(sensorOutputEClass, SENSOR_OUTPUT__OUTPUT);
     createEReference(sensorOutputEClass, SENSOR_OUTPUT__MAPPING);
 
     actuatorEClass = createEClass(ACTUATOR);
-    createEReference(actuatorEClass, ACTUATOR__SETTINGS);
     createEReference(actuatorEClass, ACTUATOR__TRIGGER);
 
     triggerEClass = createEClass(TRIGGER);
@@ -1792,7 +1747,7 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     expressionEClass = createEClass(EXPRESSION);
 
     externalCallEClass = createEClass(EXTERNAL_CALL);
-    createEReference(externalCallEClass, EXTERNAL_CALL__FUNC);
+    createEAttribute(externalCallEClass, EXTERNAL_CALL__FUNC);
     createEReference(externalCallEClass, EXTERNAL_CALL__ARGS);
 
     internalVariableUseEClass = createEClass(INTERNAL_VARIABLE_USE);
@@ -1946,12 +1901,11 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
 
     // Initialize classes and features; add operations and parameters
     initEClass(systemEClass, dk.sdu.gms.dds.deviceDefinition.System.class, "System", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSystem_Imports(), this.getImport(), null, "imports", null, 0, -1, dk.sdu.gms.dds.deviceDefinition.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSystem_Gateway(), this.getGateway(), null, "gateway", null, 0, 1, dk.sdu.gms.dds.deviceDefinition.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSystem_Graphs(), this.getGraph(), null, "graphs", null, 0, -1, dk.sdu.gms.dds.deviceDefinition.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(graphEClass, Graph.class, "Graph", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getGraph_Type(), this.getImport(), null, "type", null, 0, 1, Graph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGraph_Type(), ecorePackage.getEString(), "type", null, 0, 1, Graph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGraph_Name(), ecorePackage.getEString(), "name", null, 0, 1, Graph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGraph_Category(), ecorePackage.getEString(), "category", null, 0, 1, Graph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGraph_Title(), ecorePackage.getEString(), "title", null, 0, 1, Graph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1972,9 +1926,10 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     initEReference(getWorker_Devices(), this.getDevice(), null, "devices", null, 0, -1, Worker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(deviceEClass, Device.class, "Device", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDevice_Type(), this.getImport(), null, "type", null, 0, 1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDevice_Type(), ecorePackage.getEString(), "type", null, 0, 1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDevice_Name(), ecorePackage.getEString(), "name", null, 0, 1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDevice_Pins(), ecorePackage.getEInt(), "pins", null, 0, -1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDevice_Settings(), this.getSetting(), null, "settings", null, 0, -1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(sensorEClass, Sensor.class, "Sensor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSensor_SampleRate(), this.getPrimitive(), null, "sampleRate", null, 0, 1, Sensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1984,7 +1939,7 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     initEReference(getSensor_Graph(), this.getGraph(), null, "graph", null, 0, 1, Sensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(sampleBehaviorEClass, SampleBehavior.class, "SampleBehavior", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSampleBehavior_Type(), this.getImport(), null, "type", null, 0, 1, SampleBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSampleBehavior_Type(), ecorePackage.getEString(), "type", null, 0, 1, SampleBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSampleBehavior_Args(), this.getExpression(), null, "args", null, 0, -1, SampleBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSampleBehavior_Pins(), this.getExpression(), null, "pins", null, 0, -1, SampleBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1993,15 +1948,11 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     initEClass(bindingEClass, Binding.class, "Binding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getBinding_Name(), ecorePackage.getEString(), "name", null, 0, 1, Binding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getImport_Name(), ecorePackage.getEString(), "name", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(sensorOutputEClass, SensorOutput.class, "SensorOutput", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSensorOutput_Output(), ecorePackage.getEString(), "output", null, 0, 1, SensorOutput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSensorOutput_Mapping(), this.getExpression(), null, "mapping", null, 0, 1, SensorOutput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(actuatorEClass, Actuator.class, "Actuator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getActuator_Settings(), this.getSetting(), null, "settings", null, 0, -1, Actuator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getActuator_Trigger(), this.getTrigger(), null, "trigger", null, 0, 1, Actuator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(triggerEClass, Trigger.class, "Trigger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2014,7 +1965,7 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(externalCallEClass, ExternalCall.class, "ExternalCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getExternalCall_Func(), this.getImport(), null, "func", null, 0, 1, ExternalCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getExternalCall_Func(), ecorePackage.getEString(), "func", null, 0, 1, ExternalCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExternalCall_Args(), this.getExpression(), null, "args", null, 0, -1, ExternalCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(internalVariableUseEClass, InternalVariableUse.class, "InternalVariableUse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

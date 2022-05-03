@@ -3,14 +3,13 @@ grammar dk.sdu.gms.dds.DeviceDefinition with org.eclipse.xtext.common.Terminals
 generate deviceDefinition "http://www.sdu.dk/gms/dds/DeviceDefinition"
 
 System:
-	(imports += Import)*
 	'System' ':'
 	gateway = Gateway
 	graphs += Graph*
 ;
 
 Graph:
-	'Graph' type = [Import] name=ID ':'
+	'Graph' type = ID name=ID ':'
 	'category' category = STRING
 	'title' title = STRING
 	'x' xlabel = STRING
@@ -36,7 +35,7 @@ Device:
 ;
 
 terminal MAC:
-	HEXBYTE ('-'|':') HEXBYTE ('-'|':') HEXBYTE ('-'|':') HEXBYTE ('-'|':') HEXBYTE ('-'|':') HEXBYTE
+	HEXBYTE ':' HEXBYTE ':' HEXBYTE ':' HEXBYTE ':' HEXBYTE ':' HEXBYTE
 ;
 
 terminal fragment HEXBYTE:
@@ -44,17 +43,18 @@ terminal fragment HEXBYTE:
 ;
 
 Sensor:
-	'Sensor' type = [Import] (name=ID)? ':'
+	'Sensor' type = ID (name=ID)? ':'
 	'pins' pins += INT* (',' pins += INT)*
 	'rate' sampleRate = Primitive
 	(outputs += SensorOutput)*
+	(settings += Setting)*
 	('behavior' behavior += SampleBehavior)?
 	('sample' 'if' predicate += Exp)?
 	('graph' graph = [Graph])?
 ;
 
 SampleBehavior:
-	type = [Import] '(' args += Primary* (',' pins += Primary)* ')'
+	type = ID '(' args += Primary* (',' pins += Primary)* ')'
 ;
 
 TimeUnit:
@@ -65,16 +65,12 @@ Binding:
 	SensorOutput | Setting
 ;
 
-Import:
-	'import' name=ID
-;
-
 SensorOutput:
 	'out' (output=STRING)? 'as' name=ID ('with' 'mapping' mapping = Exp)?
 ;
 
 Actuator:
-	'Actuator' type = [Import] (name=ID)? ':'
+	'Actuator' type = ID (name=ID)? ':'
 	'pins' pins += INT* (',' pins += INT)* 
 	settings += Setting*
 	trigger = Trigger
@@ -126,7 +122,7 @@ Primary returns Expression:
 ;
 
 ExternalCall:
-	'call' func = [Import] '(' args += Exp? (',' args += Exp)* ')'
+	'call' func = ID '(' args += Exp? (',' args += Exp)* ')'
 ;
 
 InternalVariableUse:

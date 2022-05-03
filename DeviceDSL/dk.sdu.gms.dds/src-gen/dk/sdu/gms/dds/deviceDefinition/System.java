@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dk.sdu.gms.dds.deviceDefinition.System#getImports <em>Imports</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.System#getGateway <em>Gateway</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.System#getGraphs <em>Graphs</em>}</li>
  * </ul>
@@ -27,18 +26,6 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface System extends EObject
 {
-  /**
-   * Returns the value of the '<em><b>Imports</b></em>' containment reference list.
-   * The list contents are of type {@link dk.sdu.gms.dds.deviceDefinition.Import}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Imports</em>' containment reference list.
-   * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getSystem_Imports()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Import> getImports();
-
   /**
    * Returns the value of the '<em><b>Gateway</b></em>' containment reference.
    * <!-- begin-user-doc -->

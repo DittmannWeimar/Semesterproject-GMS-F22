@@ -5,23 +5,15 @@ package dk.sdu.gms.dds.deviceDefinition.impl;
 
 import dk.sdu.gms.dds.deviceDefinition.Actuator;
 import dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage;
-import dk.sdu.gms.dds.deviceDefinition.Setting;
 import dk.sdu.gms.dds.deviceDefinition.Trigger;
-
-import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +23,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.ActuatorImpl#getSettings <em>Settings</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.ActuatorImpl#getTrigger <em>Trigger</em>}</li>
  * </ul>
  *
@@ -39,16 +30,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class ActuatorImpl extends DeviceImpl implements Actuator
 {
-  /**
-   * The cached value of the '{@link #getSettings() <em>Settings</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSettings()
-   * @generated
-   * @ordered
-   */
-  protected EList<Setting> settings;
-
   /**
    * The cached value of the '{@link #getTrigger() <em>Trigger</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -78,21 +59,6 @@ public class ActuatorImpl extends DeviceImpl implements Actuator
   protected EClass eStaticClass()
   {
     return DeviceDefinitionPackage.Literals.ACTUATOR;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<Setting> getSettings()
-  {
-    if (settings == null)
-    {
-      settings = new EObjectContainmentEList<Setting>(Setting.class, this, DeviceDefinitionPackage.ACTUATOR__SETTINGS);
-    }
-    return settings;
   }
 
   /**
@@ -155,8 +121,6 @@ public class ActuatorImpl extends DeviceImpl implements Actuator
   {
     switch (featureID)
     {
-      case DeviceDefinitionPackage.ACTUATOR__SETTINGS:
-        return ((InternalEList<?>)getSettings()).basicRemove(otherEnd, msgs);
       case DeviceDefinitionPackage.ACTUATOR__TRIGGER:
         return basicSetTrigger(null, msgs);
     }
@@ -173,8 +137,6 @@ public class ActuatorImpl extends DeviceImpl implements Actuator
   {
     switch (featureID)
     {
-      case DeviceDefinitionPackage.ACTUATOR__SETTINGS:
-        return getSettings();
       case DeviceDefinitionPackage.ACTUATOR__TRIGGER:
         return getTrigger();
     }
@@ -186,16 +148,11 @@ public class ActuatorImpl extends DeviceImpl implements Actuator
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case DeviceDefinitionPackage.ACTUATOR__SETTINGS:
-        getSettings().clear();
-        getSettings().addAll((Collection<? extends Setting>)newValue);
-        return;
       case DeviceDefinitionPackage.ACTUATOR__TRIGGER:
         setTrigger((Trigger)newValue);
         return;
@@ -213,9 +170,6 @@ public class ActuatorImpl extends DeviceImpl implements Actuator
   {
     switch (featureID)
     {
-      case DeviceDefinitionPackage.ACTUATOR__SETTINGS:
-        getSettings().clear();
-        return;
       case DeviceDefinitionPackage.ACTUATOR__TRIGGER:
         setTrigger((Trigger)null);
         return;
@@ -233,8 +187,6 @@ public class ActuatorImpl extends DeviceImpl implements Actuator
   {
     switch (featureID)
     {
-      case DeviceDefinitionPackage.ACTUATOR__SETTINGS:
-        return settings != null && !settings.isEmpty();
       case DeviceDefinitionPackage.ACTUATOR__TRIGGER:
         return trigger != null;
     }

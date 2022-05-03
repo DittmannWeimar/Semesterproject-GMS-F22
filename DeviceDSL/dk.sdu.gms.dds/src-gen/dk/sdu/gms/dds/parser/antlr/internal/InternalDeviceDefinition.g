@@ -76,39 +76,20 @@ ruleSystem returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getSystemAccess().getImportsImportParserRuleCall_0_0());
-				}
-				lv_imports_0_0=ruleImport
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getSystemRule());
-					}
-					add(
-						$current,
-						"imports",
-						lv_imports_0_0,
-						"dk.sdu.gms.dds.DeviceDefinition.Import");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
-		otherlv_1='System'
+		otherlv_0='System'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getSystemAccess().getSystemKeyword_1());
+			newLeafNode(otherlv_0, grammarAccess.getSystemAccess().getSystemKeyword_0());
 		}
-		otherlv_2=':'
+		otherlv_1=':'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getSystemAccess().getColonKeyword_2());
+			newLeafNode(otherlv_1, grammarAccess.getSystemAccess().getColonKeyword_1());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSystemAccess().getGatewayGatewayParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getSystemAccess().getGatewayGatewayParserRuleCall_2_0());
 				}
-				lv_gateway_3_0=ruleGateway
+				lv_gateway_2_0=ruleGateway
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSystemRule());
@@ -116,7 +97,7 @@ ruleSystem returns [EObject current=null]
 					set(
 						$current,
 						"gateway",
-						lv_gateway_3_0,
+						lv_gateway_2_0,
 						"dk.sdu.gms.dds.DeviceDefinition.Gateway");
 					afterParserOrEnumRuleCall();
 				}
@@ -125,9 +106,9 @@ ruleSystem returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSystemAccess().getGraphsGraphParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getSystemAccess().getGraphsGraphParserRuleCall_3_0());
 				}
-				lv_graphs_4_0=ruleGraph
+				lv_graphs_3_0=ruleGraph
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSystemRule());
@@ -135,7 +116,7 @@ ruleSystem returns [EObject current=null]
 					add(
 						$current,
 						"graphs",
-						lv_graphs_4_0,
+						lv_graphs_3_0,
 						"dk.sdu.gms.dds.DeviceDefinition.Graph");
 					afterParserOrEnumRuleCall();
 				}
@@ -166,14 +147,19 @@ ruleGraph returns [EObject current=null]
 		}
 		(
 			(
+				lv_type_1_0=RULE_ID
+				{
+					newLeafNode(lv_type_1_0, grammarAccess.getGraphAccess().getTypeIDTerminalRuleCall_1_0());
+				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getGraphRule());
 					}
-				}
-				otherlv_1=RULE_ID
-				{
-					newLeafNode(otherlv_1, grammarAccess.getGraphAccess().getTypeImportCrossReference_1_0());
+					setWithLastConsumed(
+						$current,
+						"type",
+						lv_type_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
@@ -614,14 +600,19 @@ ruleSensor returns [EObject current=null]
 		}
 		(
 			(
+				lv_type_1_0=RULE_ID
+				{
+					newLeafNode(lv_type_1_0, grammarAccess.getSensorAccess().getTypeIDTerminalRuleCall_1_0());
+				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getSensorRule());
 					}
-				}
-				otherlv_1=RULE_ID
-				{
-					newLeafNode(otherlv_1, grammarAccess.getSensorAccess().getTypeImportCrossReference_1_0());
+					setWithLastConsumed(
+						$current,
+						"type",
+						lv_type_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
@@ -736,16 +727,35 @@ ruleSensor returns [EObject current=null]
 			)
 		)*
 		(
-			otherlv_11='behavior'
+			(
+				{
+					newCompositeNode(grammarAccess.getSensorAccess().getSettingsSettingParserRuleCall_10_0());
+				}
+				lv_settings_11_0=ruleSetting
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getSensorRule());
+					}
+					add(
+						$current,
+						"settings",
+						lv_settings_11_0,
+						"dk.sdu.gms.dds.DeviceDefinition.Setting");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		(
+			otherlv_12='behavior'
 			{
-				newLeafNode(otherlv_11, grammarAccess.getSensorAccess().getBehaviorKeyword_10_0());
+				newLeafNode(otherlv_12, grammarAccess.getSensorAccess().getBehaviorKeyword_11_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getSensorAccess().getBehaviorSampleBehaviorParserRuleCall_10_1_0());
+						newCompositeNode(grammarAccess.getSensorAccess().getBehaviorSampleBehaviorParserRuleCall_11_1_0());
 					}
-					lv_behavior_12_0=ruleSampleBehavior
+					lv_behavior_13_0=ruleSampleBehavior
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getSensorRule());
@@ -753,7 +763,7 @@ ruleSensor returns [EObject current=null]
 						add(
 							$current,
 							"behavior",
-							lv_behavior_12_0,
+							lv_behavior_13_0,
 							"dk.sdu.gms.dds.DeviceDefinition.SampleBehavior");
 						afterParserOrEnumRuleCall();
 					}
@@ -761,20 +771,20 @@ ruleSensor returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_13='sample'
+			otherlv_14='sample'
 			{
-				newLeafNode(otherlv_13, grammarAccess.getSensorAccess().getSampleKeyword_11_0());
+				newLeafNode(otherlv_14, grammarAccess.getSensorAccess().getSampleKeyword_12_0());
 			}
-			otherlv_14='if'
+			otherlv_15='if'
 			{
-				newLeafNode(otherlv_14, grammarAccess.getSensorAccess().getIfKeyword_11_1());
+				newLeafNode(otherlv_15, grammarAccess.getSensorAccess().getIfKeyword_12_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getSensorAccess().getPredicateExpParserRuleCall_11_2_0());
+						newCompositeNode(grammarAccess.getSensorAccess().getPredicateExpParserRuleCall_12_2_0());
 					}
-					lv_predicate_15_0=ruleExp
+					lv_predicate_16_0=ruleExp
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getSensorRule());
@@ -782,7 +792,7 @@ ruleSensor returns [EObject current=null]
 						add(
 							$current,
 							"predicate",
-							lv_predicate_15_0,
+							lv_predicate_16_0,
 							"dk.sdu.gms.dds.DeviceDefinition.Exp");
 						afterParserOrEnumRuleCall();
 					}
@@ -790,9 +800,9 @@ ruleSensor returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_16='graph'
+			otherlv_17='graph'
 			{
-				newLeafNode(otherlv_16, grammarAccess.getSensorAccess().getGraphKeyword_12_0());
+				newLeafNode(otherlv_17, grammarAccess.getSensorAccess().getGraphKeyword_13_0());
 			}
 			(
 				(
@@ -801,9 +811,9 @@ ruleSensor returns [EObject current=null]
 							$current = createModelElement(grammarAccess.getSensorRule());
 						}
 					}
-					otherlv_17=RULE_ID
+					otherlv_18=RULE_ID
 					{
-						newLeafNode(otherlv_17, grammarAccess.getSensorAccess().getGraphGraphCrossReference_12_1_0());
+						newLeafNode(otherlv_18, grammarAccess.getSensorAccess().getGraphGraphCrossReference_13_1_0());
 					}
 				)
 			)
@@ -829,14 +839,19 @@ ruleSampleBehavior returns [EObject current=null]
 	(
 		(
 			(
+				lv_type_0_0=RULE_ID
+				{
+					newLeafNode(lv_type_0_0, grammarAccess.getSampleBehaviorAccess().getTypeIDTerminalRuleCall_0_0());
+				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getSampleBehaviorRule());
 					}
-				}
-				otherlv_0=RULE_ID
-				{
-					newLeafNode(otherlv_0, grammarAccess.getSampleBehaviorAccess().getTypeImportCrossReference_0_0());
+					setWithLastConsumed(
+						$current,
+						"type",
+						lv_type_0_0,
+						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
@@ -976,47 +991,6 @@ ruleTimeUnit returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleImport
-entryRuleImport returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getImportRule()); }
-	iv_ruleImport=ruleImport
-	{ $current=$iv_ruleImport.current; }
-	EOF;
-
-// Rule Import
-ruleImport returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='import'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getImportAccess().getImportKeyword_0());
-		}
-		(
-			(
-				lv_name_1_0=RULE_ID
-				{
-					newLeafNode(lv_name_1_0, grammarAccess.getImportAccess().getNameIDTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getImportRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"name",
-						lv_name_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
-	)
-;
-
 // Entry rule entryRuleSensorOutput
 entryRuleSensorOutput returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getSensorOutputRule()); }
@@ -1131,14 +1105,19 @@ ruleActuator returns [EObject current=null]
 		}
 		(
 			(
+				lv_type_1_0=RULE_ID
+				{
+					newLeafNode(lv_type_1_0, grammarAccess.getActuatorAccess().getTypeIDTerminalRuleCall_1_0());
+				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getActuatorRule());
 					}
-				}
-				otherlv_1=RULE_ID
-				{
-					newLeafNode(otherlv_1, grammarAccess.getActuatorAccess().getTypeImportCrossReference_1_0());
+					setWithLastConsumed(
+						$current,
+						"type",
+						lv_type_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
@@ -2128,14 +2107,19 @@ ruleExternalCall returns [EObject current=null]
 		}
 		(
 			(
+				lv_func_1_0=RULE_ID
+				{
+					newLeafNode(lv_func_1_0, grammarAccess.getExternalCallAccess().getFuncIDTerminalRuleCall_1_0());
+				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getExternalCallRule());
 					}
-				}
-				otherlv_1=RULE_ID
-				{
-					newLeafNode(otherlv_1, grammarAccess.getExternalCallAccess().getFuncImportCrossReference_1_0());
+					setWithLastConsumed(
+						$current,
+						"func",
+						lv_func_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
@@ -2362,7 +2346,7 @@ ruleParenthesis returns [EObject current=null]
 	)
 ;
 
-RULE_MAC : RULE_HEXBYTE ('-'|':') RULE_HEXBYTE ('-'|':') RULE_HEXBYTE ('-'|':') RULE_HEXBYTE ('-'|':') RULE_HEXBYTE ('-'|':') RULE_HEXBYTE;
+RULE_MAC : RULE_HEXBYTE ':' RULE_HEXBYTE ':' RULE_HEXBYTE ':' RULE_HEXBYTE ':' RULE_HEXBYTE ':' RULE_HEXBYTE;
 
 fragment RULE_HEXBYTE : ('0'..'9'|'A'..'F') ('0'..'9'|'A'..'F');
 

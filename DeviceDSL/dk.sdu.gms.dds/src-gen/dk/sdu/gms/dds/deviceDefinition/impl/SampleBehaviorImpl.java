@@ -5,7 +5,6 @@ package dk.sdu.gms.dds.deviceDefinition.impl;
 
 import dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage;
 import dk.sdu.gms.dds.deviceDefinition.Expression;
-import dk.sdu.gms.dds.deviceDefinition.Import;
 import dk.sdu.gms.dds.deviceDefinition.SampleBehavior;
 
 import java.util.Collection;
@@ -42,14 +41,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class SampleBehaviorImpl extends MinimalEObjectImpl.Container implements SampleBehavior
 {
   /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' reference.
+   * The default value of the '{@link #getType() <em>Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getType()
    * @generated
    * @ordered
    */
-  protected Import type;
+  protected static final String TYPE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getType()
+   * @generated
+   * @ordered
+   */
+  protected String type = TYPE_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getArgs() <em>Args</em>}' containment reference list.
@@ -98,27 +107,7 @@ public class SampleBehaviorImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    */
   @Override
-  public Import getType()
-  {
-    if (type != null && type.eIsProxy())
-    {
-      InternalEObject oldType = (InternalEObject)type;
-      type = (Import)eResolveProxy(oldType);
-      if (type != oldType)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, DeviceDefinitionPackage.SAMPLE_BEHAVIOR__TYPE, oldType, type));
-      }
-    }
-    return type;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Import basicGetType()
+  public String getType()
   {
     return type;
   }
@@ -129,9 +118,9 @@ public class SampleBehaviorImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    */
   @Override
-  public void setType(Import newType)
+  public void setType(String newType)
   {
-    Import oldType = type;
+    String oldType = type;
     type = newType;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, DeviceDefinitionPackage.SAMPLE_BEHAVIOR__TYPE, oldType, type));
@@ -196,8 +185,7 @@ public class SampleBehaviorImpl extends MinimalEObjectImpl.Container implements 
     switch (featureID)
     {
       case DeviceDefinitionPackage.SAMPLE_BEHAVIOR__TYPE:
-        if (resolve) return getType();
-        return basicGetType();
+        return getType();
       case DeviceDefinitionPackage.SAMPLE_BEHAVIOR__ARGS:
         return getArgs();
       case DeviceDefinitionPackage.SAMPLE_BEHAVIOR__PINS:
@@ -218,7 +206,7 @@ public class SampleBehaviorImpl extends MinimalEObjectImpl.Container implements 
     switch (featureID)
     {
       case DeviceDefinitionPackage.SAMPLE_BEHAVIOR__TYPE:
-        setType((Import)newValue);
+        setType((String)newValue);
         return;
       case DeviceDefinitionPackage.SAMPLE_BEHAVIOR__ARGS:
         getArgs().clear();
@@ -243,7 +231,7 @@ public class SampleBehaviorImpl extends MinimalEObjectImpl.Container implements 
     switch (featureID)
     {
       case DeviceDefinitionPackage.SAMPLE_BEHAVIOR__TYPE:
-        setType((Import)null);
+        setType(TYPE_EDEFAULT);
         return;
       case DeviceDefinitionPackage.SAMPLE_BEHAVIOR__ARGS:
         getArgs().clear();
@@ -266,13 +254,30 @@ public class SampleBehaviorImpl extends MinimalEObjectImpl.Container implements 
     switch (featureID)
     {
       case DeviceDefinitionPackage.SAMPLE_BEHAVIOR__TYPE:
-        return type != null;
+        return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
       case DeviceDefinitionPackage.SAMPLE_BEHAVIOR__ARGS:
         return args != null && !args.isEmpty();
       case DeviceDefinitionPackage.SAMPLE_BEHAVIOR__PINS:
         return pins != null && !pins.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (type: ");
+    result.append(type);
+    result.append(')');
+    return result.toString();
   }
 
 } //SampleBehaviorImpl

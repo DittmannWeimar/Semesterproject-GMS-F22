@@ -5,11 +5,12 @@ package dk.sdu.gms.dds.deviceDefinition.impl;
 
 import dk.sdu.gms.dds.deviceDefinition.Device;
 import dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage;
-import dk.sdu.gms.dds.deviceDefinition.Import;
+import dk.sdu.gms.dds.deviceDefinition.Setting;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -20,6 +21,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,6 +35,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.DeviceImpl#getType <em>Type</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.DeviceImpl#getName <em>Name</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.DeviceImpl#getPins <em>Pins</em>}</li>
+ *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.DeviceImpl#getSettings <em>Settings</em>}</li>
  * </ul>
  *
  * @generated
@@ -39,14 +43,24 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 public class DeviceImpl extends MinimalEObjectImpl.Container implements Device
 {
   /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' reference.
+   * The default value of the '{@link #getType() <em>Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getType()
    * @generated
    * @ordered
    */
-  protected Import type;
+  protected static final String TYPE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getType()
+   * @generated
+   * @ordered
+   */
+  protected String type = TYPE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -79,6 +93,16 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device
   protected EList<Integer> pins;
 
   /**
+   * The cached value of the '{@link #getSettings() <em>Settings</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSettings()
+   * @generated
+   * @ordered
+   */
+  protected EList<Setting> settings;
+
+  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -105,27 +129,7 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device
    * @generated
    */
   @Override
-  public Import getType()
-  {
-    if (type != null && type.eIsProxy())
-    {
-      InternalEObject oldType = (InternalEObject)type;
-      type = (Import)eResolveProxy(oldType);
-      if (type != oldType)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, DeviceDefinitionPackage.DEVICE__TYPE, oldType, type));
-      }
-    }
-    return type;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Import basicGetType()
+  public String getType()
   {
     return type;
   }
@@ -136,9 +140,9 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device
    * @generated
    */
   @Override
-  public void setType(Import newType)
+  public void setType(String newType)
   {
-    Import oldType = type;
+    String oldType = type;
     type = newType;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, DeviceDefinitionPackage.DEVICE__TYPE, oldType, type));
@@ -190,17 +194,49 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device
    * @generated
    */
   @Override
+  public EList<Setting> getSettings()
+  {
+    if (settings == null)
+    {
+      settings = new EObjectContainmentEList<Setting>(Setting.class, this, DeviceDefinitionPackage.DEVICE__SETTINGS);
+    }
+    return settings;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case DeviceDefinitionPackage.DEVICE__SETTINGS:
+        return ((InternalEList<?>)getSettings()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
       case DeviceDefinitionPackage.DEVICE__TYPE:
-        if (resolve) return getType();
-        return basicGetType();
+        return getType();
       case DeviceDefinitionPackage.DEVICE__NAME:
         return getName();
       case DeviceDefinitionPackage.DEVICE__PINS:
         return getPins();
+      case DeviceDefinitionPackage.DEVICE__SETTINGS:
+        return getSettings();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -217,7 +253,7 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device
     switch (featureID)
     {
       case DeviceDefinitionPackage.DEVICE__TYPE:
-        setType((Import)newValue);
+        setType((String)newValue);
         return;
       case DeviceDefinitionPackage.DEVICE__NAME:
         setName((String)newValue);
@@ -225,6 +261,10 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device
       case DeviceDefinitionPackage.DEVICE__PINS:
         getPins().clear();
         getPins().addAll((Collection<? extends Integer>)newValue);
+        return;
+      case DeviceDefinitionPackage.DEVICE__SETTINGS:
+        getSettings().clear();
+        getSettings().addAll((Collection<? extends Setting>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -241,13 +281,16 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device
     switch (featureID)
     {
       case DeviceDefinitionPackage.DEVICE__TYPE:
-        setType((Import)null);
+        setType(TYPE_EDEFAULT);
         return;
       case DeviceDefinitionPackage.DEVICE__NAME:
         setName(NAME_EDEFAULT);
         return;
       case DeviceDefinitionPackage.DEVICE__PINS:
         getPins().clear();
+        return;
+      case DeviceDefinitionPackage.DEVICE__SETTINGS:
+        getSettings().clear();
         return;
     }
     super.eUnset(featureID);
@@ -264,11 +307,13 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device
     switch (featureID)
     {
       case DeviceDefinitionPackage.DEVICE__TYPE:
-        return type != null;
+        return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
       case DeviceDefinitionPackage.DEVICE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case DeviceDefinitionPackage.DEVICE__PINS:
         return pins != null && !pins.isEmpty();
+      case DeviceDefinitionPackage.DEVICE__SETTINGS:
+        return settings != null && !settings.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -284,7 +329,9 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
+    result.append(" (type: ");
+    result.append(type);
+    result.append(", name: ");
     result.append(name);
     result.append(", pins: ");
     result.append(pins);

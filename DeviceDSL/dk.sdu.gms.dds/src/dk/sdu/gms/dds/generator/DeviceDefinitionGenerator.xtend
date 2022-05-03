@@ -16,10 +16,23 @@ import org.eclipse.xtext.generator.IGeneratorContext
 class DeviceDefinitionGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(Greeting)
-//				.map[name]
-//				.join(', '))
+		val system = resource.allContents.filter(dk.sdu.gms.dds.deviceDefinition.System).next();
+		
+		val common = CommonGenerator.common;
+		
+		// Generate gateway
+		val gatewayNetworking = GatewayGenerator.generateNetworking(system.gateway)
+		
+		fsa.generateFile('common.ino', common)
+		fsa.generateFile('gateway.ino', gatewayNetworking)
+		
+		for (worker : system.gateway.workers) {
+			val functionality = WorkerGenerator.generateFunctionality(worker);
+			val networking = WorkerGenerator.generateNetworking(worker);
+			
+			fsa.generateFile(worker.mac + '/common.ino', common)
+			fsa.generateFile(worker.mac + '/functionality.ino', functionality)
+			fsa.generateFile(worker.mac + '/networking.ino', networking)
+		}
 	}
 }

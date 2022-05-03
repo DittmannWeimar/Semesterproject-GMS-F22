@@ -22,7 +22,6 @@ import dk.sdu.gms.dds.deviceDefinition.Graph;
 import dk.sdu.gms.dds.deviceDefinition.Greater;
 import dk.sdu.gms.dds.deviceDefinition.GreaterOrEquals;
 import dk.sdu.gms.dds.deviceDefinition.Hour;
-import dk.sdu.gms.dds.deviceDefinition.Import;
 import dk.sdu.gms.dds.deviceDefinition.IntPrimitive;
 import dk.sdu.gms.dds.deviceDefinition.InternalVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.Lesser;
@@ -117,7 +116,6 @@ public class DeviceDefinitionFactoryImpl extends EFactoryImpl implements DeviceD
       case DeviceDefinitionPackage.SAMPLE_BEHAVIOR: return createSampleBehavior();
       case DeviceDefinitionPackage.TIME_UNIT: return createTimeUnit();
       case DeviceDefinitionPackage.BINDING: return createBinding();
-      case DeviceDefinitionPackage.IMPORT: return createImport();
       case DeviceDefinitionPackage.SENSOR_OUTPUT: return createSensorOutput();
       case DeviceDefinitionPackage.ACTUATOR: return createActuator();
       case DeviceDefinitionPackage.TRIGGER: return createTrigger();
@@ -262,18 +260,6 @@ public class DeviceDefinitionFactoryImpl extends EFactoryImpl implements DeviceD
   {
     BindingImpl binding = new BindingImpl();
     return binding;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Import createImport()
-  {
-    ImportImpl import_ = new ImportImpl();
-    return import_;
   }
 
   /**

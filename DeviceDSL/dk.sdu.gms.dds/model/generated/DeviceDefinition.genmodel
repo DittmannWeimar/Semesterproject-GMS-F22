@@ -7,12 +7,11 @@
   <genPackages prefix="DeviceDefinition" basePackage="dk.sdu.gms.dds" disposableProviderFactory="true"
       fileExtensions="dds" ecorePackage="DeviceDefinition.ecore#/">
     <genClasses ecoreClass="DeviceDefinition.ecore#//System">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//System/imports"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//System/gateway"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//System/graphs"/>
     </genClasses>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Graph">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Graph/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Graph/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Graph/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Graph/category"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Graph/title"/>
@@ -33,9 +32,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Worker/devices"/>
     </genClasses>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Device">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Device/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Device/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Device/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Device/pins"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Device/settings"/>
     </genClasses>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Sensor">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Sensor/sampleRate"/>
@@ -45,7 +45,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Sensor/graph"/>
     </genClasses>
     <genClasses ecoreClass="DeviceDefinition.ecore#//SampleBehavior">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//SampleBehavior/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//SampleBehavior/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//SampleBehavior/args"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//SampleBehavior/pins"/>
     </genClasses>
@@ -53,15 +53,11 @@
     <genClasses ecoreClass="DeviceDefinition.ecore#//Binding">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Binding/name"/>
     </genClasses>
-    <genClasses ecoreClass="DeviceDefinition.ecore#//Import">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Import/name"/>
-    </genClasses>
     <genClasses ecoreClass="DeviceDefinition.ecore#//SensorOutput">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//SensorOutput/output"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//SensorOutput/mapping"/>
     </genClasses>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Actuator">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Actuator/settings"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Actuator/trigger"/>
     </genClasses>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Trigger"/>
@@ -71,7 +67,7 @@
     <genClasses ecoreClass="DeviceDefinition.ecore#//Primitive"/>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Expression"/>
     <genClasses ecoreClass="DeviceDefinition.ecore#//ExternalCall">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//ExternalCall/func"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//ExternalCall/func"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//ExternalCall/args"/>
     </genClasses>
     <genClasses ecoreClass="DeviceDefinition.ecore#//InternalVariableUse"/>

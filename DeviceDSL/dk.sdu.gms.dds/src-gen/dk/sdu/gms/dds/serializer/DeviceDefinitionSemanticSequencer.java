@@ -19,7 +19,6 @@ import dk.sdu.gms.dds.deviceDefinition.Graph;
 import dk.sdu.gms.dds.deviceDefinition.Greater;
 import dk.sdu.gms.dds.deviceDefinition.GreaterOrEquals;
 import dk.sdu.gms.dds.deviceDefinition.Hour;
-import dk.sdu.gms.dds.deviceDefinition.Import;
 import dk.sdu.gms.dds.deviceDefinition.IntPrimitive;
 import dk.sdu.gms.dds.deviceDefinition.InternalVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.Lesser;
@@ -108,9 +107,6 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 			case DeviceDefinitionPackage.HOUR:
 				sequence_TimeUnit(context, (Hour) semanticObject); 
 				return; 
-			case DeviceDefinitionPackage.IMPORT:
-				sequence_Import(context, (Import) semanticObject); 
-				return; 
 			case DeviceDefinitionPackage.INT_PRIMITIVE:
 				sequence_Primitive(context, (IntPrimitive) semanticObject); 
 				return; 
@@ -187,7 +183,7 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 	 *
 	 * Constraint:
 	 *     (
-	 *         type=[Import|ID] 
+	 *         type=ID 
 	 *         name=ID? 
 	 *         pins+=INT* 
 	 *         pins+=INT* 
@@ -560,7 +556,7 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 	 *     ExternalCall returns ExternalCall
 	 *
 	 * Constraint:
-	 *     (func=[Import|ID] args+=Exp? args+=Exp*)
+	 *     (func=ID args+=Exp? args+=Exp*)
 	 * </pre>
 	 */
 	protected void sequence_ExternalCall(ISerializationContext context, ExternalCall semanticObject) {
@@ -688,7 +684,7 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 	 *
 	 * Constraint:
 	 *     (
-	 *         type=[Import|ID] 
+	 *         type=ID 
 	 *         name=ID 
 	 *         category=STRING 
 	 *         title=STRING 
@@ -713,32 +709,12 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeviceDefinitionPackage.Literals.GRAPH__YLABEL));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getGraphAccess().getTypeImportIDTerminalRuleCall_1_0_1(), semanticObject.eGet(DeviceDefinitionPackage.Literals.GRAPH__TYPE, false));
+		feeder.accept(grammarAccess.getGraphAccess().getTypeIDTerminalRuleCall_1_0(), semanticObject.getType());
 		feeder.accept(grammarAccess.getGraphAccess().getNameIDTerminalRuleCall_2_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getGraphAccess().getCategorySTRINGTerminalRuleCall_5_0(), semanticObject.getCategory());
 		feeder.accept(grammarAccess.getGraphAccess().getTitleSTRINGTerminalRuleCall_7_0(), semanticObject.getTitle());
 		feeder.accept(grammarAccess.getGraphAccess().getXlabelSTRINGTerminalRuleCall_9_0(), semanticObject.getXlabel());
 		feeder.accept(grammarAccess.getGraphAccess().getYlabelSTRINGTerminalRuleCall_11_0(), semanticObject.getYlabel());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Import returns Import
-	 *
-	 * Constraint:
-	 *     name=ID
-	 * </pre>
-	 */
-	protected void sequence_Import(ISerializationContext context, Import semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, DeviceDefinitionPackage.Literals.IMPORT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeviceDefinitionPackage.Literals.IMPORT__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getImportAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
@@ -1004,7 +980,7 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 	 *     SampleBehavior returns SampleBehavior
 	 *
 	 * Constraint:
-	 *     (type=[Import|ID] args+=Primary* pins+=Primary*)
+	 *     (type=ID args+=Primary* pins+=Primary*)
 	 * </pre>
 	 */
 	protected void sequence_SampleBehavior(ISerializationContext context, SampleBehavior semanticObject) {
@@ -1035,12 +1011,13 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 	 *
 	 * Constraint:
 	 *     (
-	 *         type=[Import|ID] 
+	 *         type=ID 
 	 *         name=ID? 
 	 *         pins+=INT* 
 	 *         pins+=INT* 
 	 *         sampleRate=Primitive 
 	 *         outputs+=SensorOutput* 
+	 *         settings+=Setting* 
 	 *         behavior+=SampleBehavior? 
 	 *         predicate+=Exp? 
 	 *         graph=[Graph|ID]?
@@ -1082,7 +1059,7 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 	 *     System returns System
 	 *
 	 * Constraint:
-	 *     (imports+=Import* gateway=Gateway graphs+=Graph*)
+	 *     (gateway=Gateway graphs+=Graph*)
 	 * </pre>
 	 */
 	protected void sequence_System(ISerializationContext context, dk.sdu.gms.dds.deviceDefinition.System semanticObject) {

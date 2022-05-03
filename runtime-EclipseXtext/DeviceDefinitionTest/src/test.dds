@@ -1,19 +1,9 @@
-import Temperature
-import TemperatureHumidity
-import Moisture
-import Pump
-import avarage
-import LED
-import Line
-import pow
-import time
-
 System:
 
 	Gateway test_gateway:
 		mac 11:22:33:44:55:66
 		Worker test_worker1:
-			mac AA:BB:CC:DD:EE:FF
+			mac 55-44-22-5D-99-22
 			sleep for 10 minutes
 			broadcast for 20 seconds
 			

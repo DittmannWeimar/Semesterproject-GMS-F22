@@ -3,7 +3,6 @@
  */
 package dk.sdu.gms.dds.deviceDefinition;
 
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,7 +13,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Actuator#getSettings <em>Settings</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Actuator#getTrigger <em>Trigger</em>}</li>
  * </ul>
  *
@@ -24,18 +22,6 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Actuator extends Device
 {
-  /**
-   * Returns the value of the '<em><b>Settings</b></em>' containment reference list.
-   * The list contents are of type {@link dk.sdu.gms.dds.deviceDefinition.Setting}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Settings</em>' containment reference list.
-   * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getActuator_Settings()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Setting> getSettings();
-
   /**
    * Returns the value of the '<em><b>Trigger</b></em>' containment reference.
    * <!-- begin-user-doc -->

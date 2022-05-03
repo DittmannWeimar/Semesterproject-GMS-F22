@@ -6,7 +6,6 @@ package dk.sdu.gms.dds.deviceDefinition.impl;
 import dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage;
 import dk.sdu.gms.dds.deviceDefinition.Gateway;
 import dk.sdu.gms.dds.deviceDefinition.Graph;
-import dk.sdu.gms.dds.deviceDefinition.Import;
 
 import java.util.Collection;
 
@@ -32,7 +31,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.SystemImpl#getImports <em>Imports</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.SystemImpl#getGateway <em>Gateway</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.SystemImpl#getGraphs <em>Graphs</em>}</li>
  * </ul>
@@ -41,16 +39,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class SystemImpl extends MinimalEObjectImpl.Container implements dk.sdu.gms.dds.deviceDefinition.System
 {
-  /**
-   * The cached value of the '{@link #getImports() <em>Imports</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getImports()
-   * @generated
-   * @ordered
-   */
-  protected EList<Import> imports;
-
   /**
    * The cached value of the '{@link #getGateway() <em>Gateway</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -90,21 +78,6 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements dk.sdu.g
   protected EClass eStaticClass()
   {
     return DeviceDefinitionPackage.Literals.SYSTEM;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<Import> getImports()
-  {
-    if (imports == null)
-    {
-      imports = new EObjectContainmentEList<Import>(Import.class, this, DeviceDefinitionPackage.SYSTEM__IMPORTS);
-    }
-    return imports;
   }
 
   /**
@@ -182,8 +155,6 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements dk.sdu.g
   {
     switch (featureID)
     {
-      case DeviceDefinitionPackage.SYSTEM__IMPORTS:
-        return ((InternalEList<?>)getImports()).basicRemove(otherEnd, msgs);
       case DeviceDefinitionPackage.SYSTEM__GATEWAY:
         return basicSetGateway(null, msgs);
       case DeviceDefinitionPackage.SYSTEM__GRAPHS:
@@ -202,8 +173,6 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements dk.sdu.g
   {
     switch (featureID)
     {
-      case DeviceDefinitionPackage.SYSTEM__IMPORTS:
-        return getImports();
       case DeviceDefinitionPackage.SYSTEM__GATEWAY:
         return getGateway();
       case DeviceDefinitionPackage.SYSTEM__GRAPHS:
@@ -223,10 +192,6 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements dk.sdu.g
   {
     switch (featureID)
     {
-      case DeviceDefinitionPackage.SYSTEM__IMPORTS:
-        getImports().clear();
-        getImports().addAll((Collection<? extends Import>)newValue);
-        return;
       case DeviceDefinitionPackage.SYSTEM__GATEWAY:
         setGateway((Gateway)newValue);
         return;
@@ -248,9 +213,6 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements dk.sdu.g
   {
     switch (featureID)
     {
-      case DeviceDefinitionPackage.SYSTEM__IMPORTS:
-        getImports().clear();
-        return;
       case DeviceDefinitionPackage.SYSTEM__GATEWAY:
         setGateway((Gateway)null);
         return;
@@ -271,8 +233,6 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements dk.sdu.g
   {
     switch (featureID)
     {
-      case DeviceDefinitionPackage.SYSTEM__IMPORTS:
-        return imports != null && !imports.isEmpty();
       case DeviceDefinitionPackage.SYSTEM__GATEWAY:
         return gateway != null;
       case DeviceDefinitionPackage.SYSTEM__GRAPHS:

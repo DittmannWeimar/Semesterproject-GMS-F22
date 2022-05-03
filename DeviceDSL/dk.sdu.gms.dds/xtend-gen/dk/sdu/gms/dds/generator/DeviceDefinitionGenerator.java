@@ -3,6 +3,9 @@
  */
 package dk.sdu.gms.dds.generator;
 
+import com.google.common.collect.Iterators;
+import dk.sdu.gms.dds.deviceDefinition.Worker;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
@@ -17,5 +20,26 @@ import org.eclipse.xtext.generator.IGeneratorContext;
 public class DeviceDefinitionGenerator extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    final dk.sdu.gms.dds.deviceDefinition.System system = Iterators.<dk.sdu.gms.dds.deviceDefinition.System>filter(resource.getAllContents(), dk.sdu.gms.dds.deviceDefinition.System.class).next();
+    final CharSequence common = CommonGenerator.getCommon();
+    final CharSequence gatewayNetworking = GatewayGenerator.generateNetworking(system.getGateway());
+    fsa.generateFile("common.ino", common);
+    fsa.generateFile("gateway.ino", gatewayNetworking);
+    EList<Worker> _workers = system.getGateway().getWorkers();
+    for (final Worker worker : _workers) {
+      {
+        final CharSequence functionality = WorkerGenerator.generateFunctionality(worker);
+        final CharSequence networking = WorkerGenerator.generateNetworking(worker);
+        String _mac = worker.getMac();
+        String _plus = (_mac + "/common.ino");
+        fsa.generateFile(_plus, common);
+        String _mac_1 = worker.getMac();
+        String _plus_1 = (_mac_1 + "/functionality.ino");
+        fsa.generateFile(_plus_1, functionality);
+        String _mac_2 = worker.getMac();
+        String _plus_2 = (_mac_2 + "/networking.ino");
+        fsa.generateFile(_plus_2, networking);
+      }
+    }
   }
 }
