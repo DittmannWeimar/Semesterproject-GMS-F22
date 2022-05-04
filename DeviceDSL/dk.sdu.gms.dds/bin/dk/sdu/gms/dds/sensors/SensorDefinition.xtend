@@ -39,9 +39,6 @@ abstract class SensorDefinition extends DeviceDefinition {
 	}
 	
 	public def CharSequence generateInitializers (Sensor sensor) '''
-	«FOR pin : sensor.pins»
-	int «getPinName(sensor, pin)» = «pin»;
-	«ENDFOR»
 	«FOR output : sensor.outputs»
 	float «getBindingName(output)»;
 	«ENDFOR»
@@ -51,7 +48,9 @@ abstract class SensorDefinition extends DeviceDefinition {
 		return generateSetup(device as Sensor);
 	}
 	
-	public def CharSequence generateSetup (Sensor sensor) { }
+	public def CharSequence generateSetup (Sensor sensor) '''
+	«generatePinsSetup(sensor.pins)»
+	'''
 	
 	public override def CharSequence generateLoop (Device device) {
 		return generateLoop(device as Sensor);
@@ -72,10 +71,12 @@ abstract class SensorDefinition extends DeviceDefinition {
 	protected def generateIfPredicate(Sensor sensor, CharSequence content)'''
 	«IF sensor.predicate.size() != 0»
 	if ((bool)(«generateExpression(sensor.predicate.get(0))»)) {
-	«ENDIF»
+		«ENDIF»
+		«content»
+		«IF sensor.predicate.size() != 0»	
+		}
+	«ELSE»
 	«content»
-	«IF sensor.predicate.size() != 0»	
-	}
 	«ENDIF»
 	'''
 	
@@ -86,10 +87,6 @@ abstract class SensorDefinition extends DeviceDefinition {
 	value = «getBindingName(output)»;
 	«getBindingName(output)» = «generateExpression(output.mapping)»;
 	'''
-	
-	protected def getPinName (Sensor sensor, int pinNumber) {
-		sensor.name + "_pin" + pinNumber;
-	}
 	
 	protected def getSampleType (Sensor sensor, SensorOutput output) {
 		outputs.get(sensor.outputs.indexOf(output));

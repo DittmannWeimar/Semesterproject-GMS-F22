@@ -410,11 +410,11 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
 		private final Keyword cPinsKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Assignment cPinsAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cPinsINTTerminalRuleCall_4_1_0 = (RuleCall)cPinsAssignment_4_1.eContents().get(0);
+		private final RuleCall cPinsPinParserRuleCall_4_1_0 = (RuleCall)cPinsAssignment_4_1.eContents().get(0);
 		private final Group cGroup_4_2 = (Group)cGroup_4.eContents().get(2);
 		private final Keyword cCommaKeyword_4_2_0 = (Keyword)cGroup_4_2.eContents().get(0);
 		private final Assignment cPinsAssignment_4_2_1 = (Assignment)cGroup_4_2.eContents().get(1);
-		private final RuleCall cPinsINTTerminalRuleCall_4_2_1_0 = (RuleCall)cPinsAssignment_4_2_1.eContents().get(0);
+		private final RuleCall cPinsPinParserRuleCall_4_2_1_0 = (RuleCall)cPinsAssignment_4_2_1.eContents().get(0);
 		private final Assignment cOutputsAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cOutputsSensorOutputParserRuleCall_5_0 = (RuleCall)cOutputsAssignment_5.eContents().get(0);
 		private final Assignment cSettingsAssignment_6 = (Assignment)cGroup.eContents().get(6);
@@ -432,7 +432,7 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		
 		//Sensor:
 		//    'Sensor' type = ID name=ID ':'
-		//    ('pins' pins += INT* (',' pins += INT)*)?
+		//    ('pins' pins += Pin* (',' pins += Pin)*)?
 		//    (outputs += SensorOutput)*
 		//    (settings += Setting)*
 		//    ('sample' 'if' predicate += Exp)?
@@ -441,7 +441,7 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Sensor' type = ID name=ID ':'
-		//('pins' pins += INT* (',' pins += INT)*)?
+		//('pins' pins += Pin* (',' pins += Pin)*)?
 		//(outputs += SensorOutput)*
 		//(settings += Setting)*
 		//('sample' 'if' predicate += Exp)?
@@ -466,29 +466,29 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		//':'
 		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
 		
-		//('pins' pins += INT* (',' pins += INT)*)?
+		//('pins' pins += Pin* (',' pins += Pin)*)?
 		public Group getGroup_4() { return cGroup_4; }
 		
 		//'pins'
 		public Keyword getPinsKeyword_4_0() { return cPinsKeyword_4_0; }
 		
-		//pins += INT*
+		//pins += Pin*
 		public Assignment getPinsAssignment_4_1() { return cPinsAssignment_4_1; }
 		
-		//INT
-		public RuleCall getPinsINTTerminalRuleCall_4_1_0() { return cPinsINTTerminalRuleCall_4_1_0; }
+		//Pin
+		public RuleCall getPinsPinParserRuleCall_4_1_0() { return cPinsPinParserRuleCall_4_1_0; }
 		
-		//(',' pins += INT)*
+		//(',' pins += Pin)*
 		public Group getGroup_4_2() { return cGroup_4_2; }
 		
 		//','
 		public Keyword getCommaKeyword_4_2_0() { return cCommaKeyword_4_2_0; }
 		
-		//pins += INT
+		//pins += Pin
 		public Assignment getPinsAssignment_4_2_1() { return cPinsAssignment_4_2_1; }
 		
-		//INT
-		public RuleCall getPinsINTTerminalRuleCall_4_2_1_0() { return cPinsINTTerminalRuleCall_4_2_1_0; }
+		//Pin
+		public RuleCall getPinsPinParserRuleCall_4_2_1_0() { return cPinsPinParserRuleCall_4_2_1_0; }
 		
 		//(outputs += SensorOutput)*
 		public Assignment getOutputsAssignment_5() { return cOutputsAssignment_5; }
@@ -531,6 +531,94 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		
 		//ID
 		public RuleCall getGraphGraphIDTerminalRuleCall_8_1_0_1() { return cGraphGraphIDTerminalRuleCall_8_1_0_1; }
+	}
+	public class PinElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.gms.dds.DeviceDefinition.Pin");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cTypePinTypeParserRuleCall_0_0 = (RuleCall)cTypeAssignment_0.eContents().get(0);
+		private final Assignment cNumberAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNumberINTTerminalRuleCall_1_0 = (RuleCall)cNumberAssignment_1.eContents().get(0);
+		
+		//Pin:
+		//    type = PinType number = INT
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//type = PinType number = INT
+		public Group getGroup() { return cGroup; }
+		
+		//type = PinType
+		public Assignment getTypeAssignment_0() { return cTypeAssignment_0; }
+		
+		//PinType
+		public RuleCall getTypePinTypeParserRuleCall_0_0() { return cTypePinTypeParserRuleCall_0_0; }
+		
+		//number = INT
+		public Assignment getNumberAssignment_1() { return cNumberAssignment_1; }
+		
+		//INT
+		public RuleCall getNumberINTTerminalRuleCall_1_0() { return cNumberINTTerminalRuleCall_1_0; }
+	}
+	public class PinTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.gms.dds.DeviceDefinition.PinType");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Action cADCAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final Keyword cAdcKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Action cDACAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Keyword cDacKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Action cGenericInAction_2_0 = (Action)cGroup_2.eContents().get(0);
+		private final Keyword cInKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
+		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
+		private final Action cGenericOutAction_3_0 = (Action)cGroup_3.eContents().get(0);
+		private final Keyword cOutKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		
+		//PinType:
+		//    {ADC} 'adc' | {DAC} 'dac' | {GenericIn} 'in' | {GenericOut} 'out'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{ADC} 'adc' | {DAC} 'dac' | {GenericIn} 'in' | {GenericOut} 'out'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//{ADC} 'adc'
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//{ADC}
+		public Action getADCAction_0_0() { return cADCAction_0_0; }
+		
+		//'adc'
+		public Keyword getAdcKeyword_0_1() { return cAdcKeyword_0_1; }
+		
+		//{DAC} 'dac'
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//{DAC}
+		public Action getDACAction_1_0() { return cDACAction_1_0; }
+		
+		//'dac'
+		public Keyword getDacKeyword_1_1() { return cDacKeyword_1_1; }
+		
+		//{GenericIn} 'in'
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//{GenericIn}
+		public Action getGenericInAction_2_0() { return cGenericInAction_2_0; }
+		
+		//'in'
+		public Keyword getInKeyword_2_1() { return cInKeyword_2_1; }
+		
+		//{GenericOut} 'out'
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//{GenericOut}
+		public Action getGenericOutAction_3_0() { return cGenericOutAction_3_0; }
+		
+		//'out'
+		public Keyword getOutKeyword_3_1() { return cOutKeyword_3_1; }
 	}
 	public class TimeUnitElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.gms.dds.DeviceDefinition.TimeUnit");
@@ -691,11 +779,11 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Keyword cPinsKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cPinsAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cPinsINTTerminalRuleCall_5_0 = (RuleCall)cPinsAssignment_5.eContents().get(0);
+		private final RuleCall cPinsPinParserRuleCall_5_0 = (RuleCall)cPinsAssignment_5.eContents().get(0);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
 		private final Keyword cCommaKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Assignment cPinsAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final RuleCall cPinsINTTerminalRuleCall_6_1_0 = (RuleCall)cPinsAssignment_6_1.eContents().get(0);
+		private final RuleCall cPinsPinParserRuleCall_6_1_0 = (RuleCall)cPinsAssignment_6_1.eContents().get(0);
 		private final Assignment cSettingsAssignment_7 = (Assignment)cGroup.eContents().get(7);
 		private final RuleCall cSettingsSettingParserRuleCall_7_0 = (RuleCall)cSettingsAssignment_7.eContents().get(0);
 		private final Assignment cTriggerAssignment_8 = (Assignment)cGroup.eContents().get(8);
@@ -703,14 +791,14 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		
 		//Actuator:
 		//    'Actuator' type = ID name=ID ':'
-		//    'pins' pins += INT* (',' pins += INT)*
+		//    'pins' pins += Pin* (',' pins += Pin)*
 		//    settings += Setting*
 		//    trigger = Trigger
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Actuator' type = ID name=ID ':'
-		//'pins' pins += INT* (',' pins += INT)*
+		//'pins' pins += Pin* (',' pins += Pin)*
 		//settings += Setting*
 		//trigger = Trigger
 		public Group getGroup() { return cGroup; }
@@ -736,23 +824,23 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		//'pins'
 		public Keyword getPinsKeyword_4() { return cPinsKeyword_4; }
 		
-		//pins += INT*
+		//pins += Pin*
 		public Assignment getPinsAssignment_5() { return cPinsAssignment_5; }
 		
-		//INT
-		public RuleCall getPinsINTTerminalRuleCall_5_0() { return cPinsINTTerminalRuleCall_5_0; }
+		//Pin
+		public RuleCall getPinsPinParserRuleCall_5_0() { return cPinsPinParserRuleCall_5_0; }
 		
-		//(',' pins += INT)*
+		//(',' pins += Pin)*
 		public Group getGroup_6() { return cGroup_6; }
 		
 		//','
 		public Keyword getCommaKeyword_6_0() { return cCommaKeyword_6_0; }
 		
-		//pins += INT
+		//pins += Pin
 		public Assignment getPinsAssignment_6_1() { return cPinsAssignment_6_1; }
 		
-		//INT
-		public RuleCall getPinsINTTerminalRuleCall_6_1_0() { return cPinsINTTerminalRuleCall_6_1_0; }
+		//Pin
+		public RuleCall getPinsPinParserRuleCall_6_1_0() { return cPinsPinParserRuleCall_6_1_0; }
 		
 		//settings += Setting*
 		public Assignment getSettingsAssignment_7() { return cSettingsAssignment_7; }
@@ -1528,6 +1616,8 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 	private final WorkerElements pWorker;
 	private final DeviceElements pDevice;
 	private final SensorElements pSensor;
+	private final PinElements pPin;
+	private final PinTypeElements pPinType;
 	private final TimeUnitElements pTimeUnit;
 	private final TerminalRule tMAC;
 	private final TerminalRule tHEXBYTE;
@@ -1566,6 +1656,8 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		this.pWorker = new WorkerElements();
 		this.pDevice = new DeviceElements();
 		this.pSensor = new SensorElements();
+		this.pPin = new PinElements();
+		this.pPinType = new PinTypeElements();
 		this.pTimeUnit = new TimeUnitElements();
 		this.tMAC = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.gms.dds.DeviceDefinition.MAC");
 		this.tHEXBYTE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.gms.dds.DeviceDefinition.HEXBYTE");
@@ -1687,7 +1779,7 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 	
 	//Sensor:
 	//    'Sensor' type = ID name=ID ':'
-	//    ('pins' pins += INT* (',' pins += INT)*)?
+	//    ('pins' pins += Pin* (',' pins += Pin)*)?
 	//    (outputs += SensorOutput)*
 	//    (settings += Setting)*
 	//    ('sample' 'if' predicate += Exp)?
@@ -1699,6 +1791,28 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 	
 	public ParserRule getSensorRule() {
 		return getSensorAccess().getRule();
+	}
+	
+	//Pin:
+	//    type = PinType number = INT
+	//;
+	public PinElements getPinAccess() {
+		return pPin;
+	}
+	
+	public ParserRule getPinRule() {
+		return getPinAccess().getRule();
+	}
+	
+	//PinType:
+	//    {ADC} 'adc' | {DAC} 'dac' | {GenericIn} 'in' | {GenericOut} 'out'
+	//;
+	public PinTypeElements getPinTypeAccess() {
+		return pPinType;
+	}
+	
+	public ParserRule getPinTypeRule() {
+		return getPinTypeAccess().getRule();
 	}
 	
 	//TimeUnit:
@@ -1750,7 +1864,7 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 	
 	//Actuator:
 	//    'Actuator' type = ID name=ID ':'
-	//    'pins' pins += INT* (',' pins += INT)*
+	//    'pins' pins += Pin* (',' pins += Pin)*
 	//    settings += Setting*
 	//    trigger = Trigger
 	//;

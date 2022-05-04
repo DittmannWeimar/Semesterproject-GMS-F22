@@ -5,6 +5,7 @@ package dk.sdu.gms.dds.deviceDefinition.impl;
 
 import dk.sdu.gms.dds.deviceDefinition.Device;
 import dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage;
+import dk.sdu.gms.dds.deviceDefinition.Pin;
 import dk.sdu.gms.dds.deviceDefinition.Setting;
 
 import java.util.Collection;
@@ -20,7 +21,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -83,14 +83,14 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getPins() <em>Pins</em>}' attribute list.
+   * The cached value of the '{@link #getPins() <em>Pins</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getPins()
    * @generated
    * @ordered
    */
-  protected EList<Integer> pins;
+  protected EList<Pin> pins;
 
   /**
    * The cached value of the '{@link #getSettings() <em>Settings</em>}' containment reference list.
@@ -179,11 +179,11 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device
    * @generated
    */
   @Override
-  public EList<Integer> getPins()
+  public EList<Pin> getPins()
   {
     if (pins == null)
     {
-      pins = new EDataTypeEList<Integer>(Integer.class, this, DeviceDefinitionPackage.DEVICE__PINS);
+      pins = new EObjectContainmentEList<Pin>(Pin.class, this, DeviceDefinitionPackage.DEVICE__PINS);
     }
     return pins;
   }
@@ -213,6 +213,8 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device
   {
     switch (featureID)
     {
+      case DeviceDefinitionPackage.DEVICE__PINS:
+        return ((InternalEList<?>)getPins()).basicRemove(otherEnd, msgs);
       case DeviceDefinitionPackage.DEVICE__SETTINGS:
         return ((InternalEList<?>)getSettings()).basicRemove(otherEnd, msgs);
     }
@@ -260,7 +262,7 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device
         return;
       case DeviceDefinitionPackage.DEVICE__PINS:
         getPins().clear();
-        getPins().addAll((Collection<? extends Integer>)newValue);
+        getPins().addAll((Collection<? extends Pin>)newValue);
         return;
       case DeviceDefinitionPackage.DEVICE__SETTINGS:
         getSettings().clear();
@@ -333,8 +335,6 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device
     result.append(type);
     result.append(", name: ");
     result.append(name);
-    result.append(", pins: ");
-    result.append(pins);
     result.append(')');
     return result.toString();
   }

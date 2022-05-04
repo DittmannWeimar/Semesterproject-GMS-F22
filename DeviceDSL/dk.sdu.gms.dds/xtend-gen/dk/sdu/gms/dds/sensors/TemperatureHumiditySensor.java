@@ -16,6 +16,9 @@ public class TemperatureHumiditySensor extends SensorDefinition {
   @Override
   public CharSequence generateDirectives() {
     StringConcatenation _builder = new StringConcatenation();
+    CharSequence _generateDirectives = super.generateDirectives();
+    _builder.append(_generateDirectives);
+    _builder.newLineIfNotEmpty();
     _builder.append("#include \"DHT.h\"");
     _builder.newLine();
     _builder.append("#define DHTTYPE DHT11");
@@ -26,16 +29,16 @@ public class TemperatureHumiditySensor extends SensorDefinition {
   @Override
   public CharSequence generateInitializers(final Sensor sensor) {
     StringConcatenation _builder = new StringConcatenation();
+    CharSequence _generateInitializers = super.generateInitializers(sensor);
+    _builder.append(_generateInitializers);
+    _builder.newLineIfNotEmpty();
     _builder.append("DHT ");
     String _variablePrefix = Utils.getVariablePrefix(sensor);
     _builder.append(_variablePrefix);
     _builder.append("dht(");
-    Integer _get = sensor.getPins().get(0);
-    _builder.append(_get);
+    int _number = sensor.getPins().get(0).getNumber();
+    _builder.append(_number);
     _builder.append(", DHTTYPE);");
-    _builder.newLineIfNotEmpty();
-    CharSequence _generateInitializers = super.generateInitializers(sensor);
-    _builder.append(_generateInitializers);
     _builder.newLineIfNotEmpty();
     return _builder;
   }
@@ -43,6 +46,9 @@ public class TemperatureHumiditySensor extends SensorDefinition {
   @Override
   public CharSequence generateSetup(final Sensor sensor) {
     StringConcatenation _builder = new StringConcatenation();
+    CharSequence _generateSetup = super.generateSetup(sensor);
+    _builder.append(_generateSetup);
+    _builder.newLineIfNotEmpty();
     String _variablePrefix = Utils.getVariablePrefix(sensor);
     _builder.append(_variablePrefix);
     _builder.append("dht.begin();");

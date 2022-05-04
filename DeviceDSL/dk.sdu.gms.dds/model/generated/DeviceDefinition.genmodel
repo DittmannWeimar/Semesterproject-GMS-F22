@@ -38,7 +38,7 @@
     <genClasses ecoreClass="DeviceDefinition.ecore#//Device">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Device/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Device/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Device/pins"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Device/pins"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Device/settings"/>
     </genClasses>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Sensor">
@@ -46,6 +46,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Sensor/predicate"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Sensor/graph"/>
     </genClasses>
+    <genClasses ecoreClass="DeviceDefinition.ecore#//Pin">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Pin/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Pin/number"/>
+    </genClasses>
+    <genClasses ecoreClass="DeviceDefinition.ecore#//PinType"/>
     <genClasses ecoreClass="DeviceDefinition.ecore#//TimeUnit"/>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Binding">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Binding/name"/>
@@ -77,6 +82,10 @@
     <genClasses ecoreClass="DeviceDefinition.ecore#//Parenthesis">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Parenthesis/exp"/>
     </genClasses>
+    <genClasses ecoreClass="DeviceDefinition.ecore#//ADC"/>
+    <genClasses ecoreClass="DeviceDefinition.ecore#//DAC"/>
+    <genClasses ecoreClass="DeviceDefinition.ecore#//GenericIn"/>
+    <genClasses ecoreClass="DeviceDefinition.ecore#//GenericOut"/>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Second"/>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Minute"/>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Hour"/>

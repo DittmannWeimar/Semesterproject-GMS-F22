@@ -37,11 +37,19 @@ Device:
 
 Sensor:
 	'Sensor' type = ID name=ID ':'
-	('pins' pins += INT* (',' pins += INT)*)?
+	('pins' pins += Pin* (',' pins += Pin)*)?
 	(outputs += SensorOutput)*
 	(settings += Setting)*
 	('sample' 'if' predicate += Exp)?
 	('graph' graph = [Graph])?
+;
+
+Pin:
+	type = PinType number = INT
+;
+
+PinType:
+	{ADC} 'adc' | {DAC} 'dac' | {GenericIn} 'in' | {GenericOut} 'out' 
 ;
 
 TimeUnit:
@@ -66,7 +74,7 @@ SensorOutput:
 
 Actuator:
 	'Actuator' type = ID name=ID ':'
-	'pins' pins += INT* (',' pins += INT)* 
+	'pins' pins += Pin* (',' pins += Pin)* 
 	settings += Setting*
 	trigger = Trigger
 ;

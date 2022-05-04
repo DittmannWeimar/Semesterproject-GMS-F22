@@ -12,16 +12,20 @@ esp_now_peer_info_t gatewayInfo;
 enum MESSAGE_TYPE { Ping, Setting, Sample };
 
 // GENERATED SETTINGS
-float mois_threshold;
+float mois_threshold = 5;
+float led1_brightness = 0.5;
+float led2_brightness = 0.5;
+float led3_brightness = 0.5;
 
 // GENERATED INITIALIZATIONS
-DHT temp1_dht(4, DHTTYPE);
-int temp1_pin4 = 4;
 float temp1_temperature;
 float temp1_humidity;
-int mois_pin5 = 5;
+DHT temp1_dht(4, DHTTYPE);
 float mois_moisture;
 float dummy_zero;
+bool led1_enabled = false;
+bool led2_enabled = false;
+bool led3_enabled = false;
 
 const int freq = 5000;
 const int ledChannel = 0;
@@ -63,6 +67,13 @@ void setup() {
 
  
   Serial.begin(115200);
+  
+  ledcSetup(0, freq, resolution);
+  ledcAttachPin(25, 0);
+  pinMode(25, OUTPUT);
+  ledcSetup(1, freq, resolution);
+  ledcAttachPin(26, 1);
+  pinMode(26, OUTPUT);
  
   // Set device as a Wi-Fi Station
   WiFi.mode(WIFI_STA);
@@ -96,8 +107,11 @@ void setup() {
   esp_now_register_recv_cb(OnDataRecv);
   
   // GENERATED SETUP
+pinMode(4, INPUT);
 temp1_dht.begin();
 Serial.println("DHT sensor initialized!");
+pinMode(5, INPUT);
+pinMode(9, OUTPUT);
 }
 
 typedef struct message_base {
@@ -124,21 +138,39 @@ void loop() {
   float value = 0;
   
   if ((bool)(temp1_temperature == true)) {
-  temp1_temperature = temp1_dht.readTemperature();
-  value = temp1_temperature;
-  temp1_temperature = pow(2, value);
-  sampleMessage.test_worker1_temp1_temperature = temp1_temperature;
-  temp1_humidity = temp1_dht.readHumidity();
-  sampleMessage.test_worker1_temp1_humidity = temp1_humidity;
-  }
+  	temp1_temperature = temp1_dht.readTemperature();
+  	value = temp1_temperature;
+  	temp1_temperature = pow(2, value);
+  	sampleMessage.test_worker1_temp1_temperature = temp1_temperature;
+  	temp1_humidity = temp1_dht.readHumidity();
+  	sampleMessage.test_worker1_temp1_humidity = temp1_humidity;
+  	}
   if ((bool)(temp1_humidity > mois_threshold)) {
-  mois_moisture = analogRead(mois_pin5);
-  sampleMessage.test_worker1_mois_moisture = mois_moisture;
-  }
+  	mois_moisture = digitalRead(5);
+  	sampleMessage.test_worker1_mois_moisture = mois_moisture;
+  	}
+  	dummy_zero = 0;
+  	value = dummy_zero;
+  	dummy_zero = value + 20;
+  	sampleMessage.test_worker1_dummy_zero = dummy_zero;
   dummy_zero = 0;
   value = dummy_zero;
   dummy_zero = value + 20;
   sampleMessage.test_worker1_dummy_zero = dummy_zero;
+  led1_enabled = (bool)(mois_moisture > 800);
+  ledcWrite(0, (float)(led1_enabled) * led1_brightness);
+  led2_enabled = (bool)(mois_moisture > 800);
+  ledcWrite(1, (float)(led2_enabled) * led2_brightness);
+  delay(2000);
+  led2_enabled = false;
+  ledcWrite(1, (float)(led2_enabled) * led2_brightness);
+  if (led3_enabled == false && (bool)(mois_moisture > 800)) {
+  	led3_enabled = true;
+  }
+  if (led3_enabled == true && (bool)(mois_moisture < 200)) {
+  	led3_enabled = false;
+  }
+  digitalWrite(9, led3_enabled);
 
   send_message(gatewayAddress, (uint8_t *) &sampleMessage, sizeof(sampleMessage));
   delay(600000);
@@ -189,6 +221,15 @@ void handle_setting(const uint8_t * mac, const uint8_t *incomingData, int len) {
   memcpy(&settingMessage, incomingData, sizeof(settingMessage));
   if (settingMessage.setting == 0) {
   	mois_threshold = settingMessage.newValue;
+  }
+  if (settingMessage.setting == 1) {
+  	led1_brightness = settingMessage.newValue;
+  }
+  if (settingMessage.setting == 2) {
+  	led2_brightness = settingMessage.newValue;
+  }
+  if (settingMessage.setting == 3) {
+  	led3_brightness = settingMessage.newValue;
   }
 }
 

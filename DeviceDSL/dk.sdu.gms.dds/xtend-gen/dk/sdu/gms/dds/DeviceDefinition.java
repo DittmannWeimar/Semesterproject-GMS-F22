@@ -1,5 +1,6 @@
 package dk.sdu.gms.dds;
 
+import dk.sdu.gms.dds.actuators.ActuatorDefinition;
 import dk.sdu.gms.dds.deviceDefinition.Actuator;
 import dk.sdu.gms.dds.deviceDefinition.Device;
 import dk.sdu.gms.dds.deviceDefinition.Sensor;

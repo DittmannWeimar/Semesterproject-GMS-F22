@@ -13,16 +13,18 @@ class TemperatureHumiditySensor extends SensorDefinition {
 	}
 	
 	override generateDirectives() '''
+	«super.generateDirectives()»
 	#include "DHT.h"
 	#define DHTTYPE DHT11
 	'''
 	
 	override generateInitializers(Sensor sensor) '''
-	DHT «getVariablePrefix(sensor)»dht(«sensor.pins.get(0)», DHTTYPE);
 	«super.generateInitializers(sensor)»
+	DHT «getVariablePrefix(sensor)»dht(«sensor.pins.get(0).number», DHTTYPE);
 	'''
 	
 	override generateSetup(Sensor sensor) '''
+	«super.generateSetup(sensor)»
 	«getVariablePrefix(sensor)»dht.begin();
 	Serial.println("DHT sensor initialized!");
 	'''

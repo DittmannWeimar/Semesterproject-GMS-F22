@@ -1,5 +1,6 @@
 package dk.sdu.gms.dds;
 
+import dk.sdu.gms.dds.deviceDefinition.ADC;
 import dk.sdu.gms.dds.deviceDefinition.Actuator;
 import dk.sdu.gms.dds.deviceDefinition.And;
 import dk.sdu.gms.dds.deviceDefinition.Binding;
@@ -13,6 +14,8 @@ import dk.sdu.gms.dds.deviceDefinition.Expression;
 import dk.sdu.gms.dds.deviceDefinition.ExternalCall;
 import dk.sdu.gms.dds.deviceDefinition.ExternalVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.Gateway;
+import dk.sdu.gms.dds.deviceDefinition.GenericIn;
+import dk.sdu.gms.dds.deviceDefinition.GenericOut;
 import dk.sdu.gms.dds.deviceDefinition.Greater;
 import dk.sdu.gms.dds.deviceDefinition.GreaterOrEquals;
 import dk.sdu.gms.dds.deviceDefinition.Hour;
@@ -26,6 +29,8 @@ import dk.sdu.gms.dds.deviceDefinition.Mult;
 import dk.sdu.gms.dds.deviceDefinition.NotEquals;
 import dk.sdu.gms.dds.deviceDefinition.Or;
 import dk.sdu.gms.dds.deviceDefinition.Parenthesis;
+import dk.sdu.gms.dds.deviceDefinition.Pin;
+import dk.sdu.gms.dds.deviceDefinition.PinType;
 import dk.sdu.gms.dds.deviceDefinition.Plus;
 import dk.sdu.gms.dds.deviceDefinition.Primitive;
 import dk.sdu.gms.dds.deviceDefinition.Second;
@@ -39,11 +44,16 @@ import dk.sdu.gms.dds.deviceDefinition.Worker;
 import dk.sdu.gms.dds.sensors.SensorDefinition;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtend2.lib.StringConcatenation;
+import org.eclipse.xtext.xbase.lib.Conversions;
 
 @SuppressWarnings("all")
 public class Utils {
+  public static int[] dacPins = { 25, 26 };
+  
   public static ArrayList<String> createSettingIndex(final Gateway gateway) {
     final ArrayList<String> list = new ArrayList<String>();
     EList<Worker> _workers = gateway.getWorkers();
@@ -382,15 +392,20 @@ public class Utils {
     return (_variablePrefix + _outputName);
   }
   
+  public static String _getBindingName(final Setting setting) {
+    String _variablePrefix = Utils.getVariablePrefix(setting);
+    String _name = setting.getName();
+    return (_variablePrefix + _name);
+  }
+  
   public static String _getVariablePrefix(final Sensor sensor) {
     String _name = sensor.getName();
     return (_name + "_");
   }
   
-  public static String _getBindingName(final Setting setting) {
-    String _variablePrefix = Utils.getVariablePrefix(setting);
-    String _name = setting.getName();
-    return (_variablePrefix + _name);
+  public static String _getVariablePrefix(final Actuator actuator) {
+    String _name = actuator.getName();
+    return (_name + "_");
   }
   
   public static String _getVariablePrefix(final Setting setting) {
@@ -438,6 +453,79 @@ public class Utils {
     return _switchResult;
   }
   
+  public static CharSequence getDacPinVariableName(final int pin) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("dacPin");
+    _builder.append(pin);
+    return _builder;
+  }
+  
+  public static CharSequence getDacChannelName(final int channel) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("dacChannel");
+    _builder.append(channel);
+    return _builder;
+  }
+  
+  public static int pinNumberToDacChannel(final int pin) {
+    return ((List<Integer>)Conversions.doWrapArray(Utils.dacPins)).indexOf(Integer.valueOf(pin));
+  }
+  
+  public static CharSequence generatePinsSetup(final List<Pin> pins) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      for(final Pin pin : pins) {
+        {
+          if (((pin.getType() instanceof ADC) || (pin.getType() instanceof GenericIn))) {
+            _builder.append("pinMode(");
+            int _number = pin.getNumber();
+            _builder.append(_number);
+            _builder.append(", INPUT);");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+        {
+          PinType _type = pin.getType();
+          if ((_type instanceof GenericOut)) {
+            _builder.append("pinMode(");
+            int _number_1 = pin.getNumber();
+            _builder.append(_number_1);
+            _builder.append(", OUTPUT);");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+      }
+    }
+    return _builder;
+  }
+  
+  public static Setting findSettingByName(final Device device, final String name) {
+    EList<Setting> _switchResult = null;
+    boolean _matched = false;
+    if (device instanceof Sensor) {
+      _matched=true;
+      _switchResult = ((Sensor)device).getSettings();
+    }
+    if (!_matched) {
+      if (device instanceof Actuator) {
+        _matched=true;
+        _switchResult = ((Actuator)device).getSettings();
+      }
+    }
+    final EList<Setting> settings = _switchResult;
+    for (final Setting setting : settings) {
+      boolean _equals = setting.getName().equals(name);
+      if (_equals) {
+        return setting;
+      }
+    }
+    return null;
+  }
+  
+  public static String getSettingBindingBySettingName(final Device device, final String name) {
+    return Utils.getBindingName(Utils.findSettingByName(device, name));
+  }
+  
   public static String getSampleMessageName(final SensorOutput output) {
     return _getSampleMessageName(output);
   }
@@ -453,14 +541,16 @@ public class Utils {
     }
   }
   
-  public static String getVariablePrefix(final EObject sensor) {
-    if (sensor instanceof Sensor) {
-      return _getVariablePrefix((Sensor)sensor);
-    } else if (sensor instanceof Setting) {
-      return _getVariablePrefix((Setting)sensor);
+  public static String getVariablePrefix(final EObject actuator) {
+    if (actuator instanceof Actuator) {
+      return _getVariablePrefix((Actuator)actuator);
+    } else if (actuator instanceof Sensor) {
+      return _getVariablePrefix((Sensor)actuator);
+    } else if (actuator instanceof Setting) {
+      return _getVariablePrefix((Setting)actuator);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(sensor).toString());
+        Arrays.<Object>asList(actuator).toString());
     }
   }
 }

@@ -39,8 +39,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Device">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pins" unique="false" upperBound="-1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pins" upperBound="-1" eType="#//Pin"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="settings" upperBound="-1"
         eType="#//Setting" containment="true"/>
   </eClassifiers>
@@ -51,6 +51,12 @@
         eType="#//Expression" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="graph" eType="#//Graph"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Pin">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//PinType"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PinType"/>
   <eClassifiers xsi:type="ecore:EClass" name="TimeUnit"/>
   <eClassifiers xsi:type="ecore:EClass" name="Binding">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -87,6 +93,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="exp" eType="#//Expression"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ADC" eSuperTypes="#//PinType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DAC" eSuperTypes="#//PinType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GenericIn" eSuperTypes="#//PinType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GenericOut" eSuperTypes="#//PinType"/>
   <eClassifiers xsi:type="ecore:EClass" name="Second" eSuperTypes="#//TimeUnit"/>
   <eClassifiers xsi:type="ecore:EClass" name="Minute" eSuperTypes="#//TimeUnit"/>
   <eClassifiers xsi:type="ecore:EClass" name="Hour" eSuperTypes="#//TimeUnit"/>

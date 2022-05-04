@@ -726,19 +726,20 @@ ruleSensor returns [EObject current=null]
 			}
 			(
 				(
-					lv_pins_5_0=RULE_INT
 					{
-						newLeafNode(lv_pins_5_0, grammarAccess.getSensorAccess().getPinsINTTerminalRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getSensorAccess().getPinsPinParserRuleCall_4_1_0());
 					}
+					lv_pins_5_0=rulePin
 					{
 						if ($current==null) {
-							$current = createModelElement(grammarAccess.getSensorRule());
+							$current = createModelElementForParent(grammarAccess.getSensorRule());
 						}
-						addWithLastConsumed(
+						add(
 							$current,
 							"pins",
 							lv_pins_5_0,
-							"org.eclipse.xtext.common.Terminals.INT");
+							"dk.sdu.gms.dds.DeviceDefinition.Pin");
+						afterParserOrEnumRuleCall();
 					}
 				)
 			)*
@@ -749,19 +750,20 @@ ruleSensor returns [EObject current=null]
 				}
 				(
 					(
-						lv_pins_7_0=RULE_INT
 						{
-							newLeafNode(lv_pins_7_0, grammarAccess.getSensorAccess().getPinsINTTerminalRuleCall_4_2_1_0());
+							newCompositeNode(grammarAccess.getSensorAccess().getPinsPinParserRuleCall_4_2_1_0());
 						}
+						lv_pins_7_0=rulePin
 						{
 							if ($current==null) {
-								$current = createModelElement(grammarAccess.getSensorRule());
+								$current = createModelElementForParent(grammarAccess.getSensorRule());
 							}
-							addWithLastConsumed(
+							add(
 								$current,
 								"pins",
 								lv_pins_7_0,
-								"org.eclipse.xtext.common.Terminals.INT");
+								"dk.sdu.gms.dds.DeviceDefinition.Pin");
+							afterParserOrEnumRuleCall();
 						}
 					)
 				)
@@ -853,6 +855,136 @@ ruleSensor returns [EObject current=null]
 				)
 			)
 		)?
+	)
+;
+
+// Entry rule entryRulePin
+entryRulePin returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getPinRule()); }
+	iv_rulePin=rulePin
+	{ $current=$iv_rulePin.current; }
+	EOF;
+
+// Rule Pin
+rulePin returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getPinAccess().getTypePinTypeParserRuleCall_0_0());
+				}
+				lv_type_0_0=rulePinType
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getPinRule());
+					}
+					set(
+						$current,
+						"type",
+						lv_type_0_0,
+						"dk.sdu.gms.dds.DeviceDefinition.PinType");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				lv_number_1_0=RULE_INT
+				{
+					newLeafNode(lv_number_1_0, grammarAccess.getPinAccess().getNumberINTTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getPinRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"number",
+						lv_number_1_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRulePinType
+entryRulePinType returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getPinTypeRule()); }
+	iv_rulePinType=rulePinType
+	{ $current=$iv_rulePinType.current; }
+	EOF;
+
+// Rule PinType
+rulePinType returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getPinTypeAccess().getADCAction_0_0(),
+						$current);
+				}
+			)
+			otherlv_1='adc'
+			{
+				newLeafNode(otherlv_1, grammarAccess.getPinTypeAccess().getAdcKeyword_0_1());
+			}
+		)
+		    |
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getPinTypeAccess().getDACAction_1_0(),
+						$current);
+				}
+			)
+			otherlv_3='dac'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getPinTypeAccess().getDacKeyword_1_1());
+			}
+		)
+		    |
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getPinTypeAccess().getGenericInAction_2_0(),
+						$current);
+				}
+			)
+			otherlv_5='in'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getPinTypeAccess().getInKeyword_2_1());
+			}
+		)
+		    |
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getPinTypeAccess().getGenericOutAction_3_0(),
+						$current);
+				}
+			)
+			otherlv_7='out'
+			{
+				newLeafNode(otherlv_7, grammarAccess.getPinTypeAccess().getOutKeyword_3_1());
+			}
+		)
 	)
 ;
 
@@ -1095,19 +1227,20 @@ ruleActuator returns [EObject current=null]
 		}
 		(
 			(
-				lv_pins_5_0=RULE_INT
 				{
-					newLeafNode(lv_pins_5_0, grammarAccess.getActuatorAccess().getPinsINTTerminalRuleCall_5_0());
+					newCompositeNode(grammarAccess.getActuatorAccess().getPinsPinParserRuleCall_5_0());
 				}
+				lv_pins_5_0=rulePin
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getActuatorRule());
+						$current = createModelElementForParent(grammarAccess.getActuatorRule());
 					}
-					addWithLastConsumed(
+					add(
 						$current,
 						"pins",
 						lv_pins_5_0,
-						"org.eclipse.xtext.common.Terminals.INT");
+						"dk.sdu.gms.dds.DeviceDefinition.Pin");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
@@ -1118,19 +1251,20 @@ ruleActuator returns [EObject current=null]
 			}
 			(
 				(
-					lv_pins_7_0=RULE_INT
 					{
-						newLeafNode(lv_pins_7_0, grammarAccess.getActuatorAccess().getPinsINTTerminalRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getActuatorAccess().getPinsPinParserRuleCall_6_1_0());
 					}
+					lv_pins_7_0=rulePin
 					{
 						if ($current==null) {
-							$current = createModelElement(grammarAccess.getActuatorRule());
+							$current = createModelElementForParent(grammarAccess.getActuatorRule());
 						}
-						addWithLastConsumed(
+						add(
 							$current,
 							"pins",
 							lv_pins_7_0,
-							"org.eclipse.xtext.common.Terminals.INT");
+							"dk.sdu.gms.dds.DeviceDefinition.Pin");
+						afterParserOrEnumRuleCall();
 					}
 				)
 			)

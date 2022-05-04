@@ -4,10 +4,12 @@
 package dk.sdu.gms.dds.serializer;
 
 import com.google.inject.Inject;
+import dk.sdu.gms.dds.deviceDefinition.ADC;
 import dk.sdu.gms.dds.deviceDefinition.Actuator;
 import dk.sdu.gms.dds.deviceDefinition.And;
 import dk.sdu.gms.dds.deviceDefinition.BooleanFalse;
 import dk.sdu.gms.dds.deviceDefinition.BooleanTrue;
+import dk.sdu.gms.dds.deviceDefinition.DAC;
 import dk.sdu.gms.dds.deviceDefinition.DecimalPrimitive;
 import dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage;
 import dk.sdu.gms.dds.deviceDefinition.Div;
@@ -15,6 +17,8 @@ import dk.sdu.gms.dds.deviceDefinition.Equals;
 import dk.sdu.gms.dds.deviceDefinition.ExternalCall;
 import dk.sdu.gms.dds.deviceDefinition.ExternalVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.Gateway;
+import dk.sdu.gms.dds.deviceDefinition.GenericIn;
+import dk.sdu.gms.dds.deviceDefinition.GenericOut;
 import dk.sdu.gms.dds.deviceDefinition.Graph;
 import dk.sdu.gms.dds.deviceDefinition.Greater;
 import dk.sdu.gms.dds.deviceDefinition.GreaterOrEquals;
@@ -30,6 +34,7 @@ import dk.sdu.gms.dds.deviceDefinition.NotEquals;
 import dk.sdu.gms.dds.deviceDefinition.OnOff;
 import dk.sdu.gms.dds.deviceDefinition.Or;
 import dk.sdu.gms.dds.deviceDefinition.Parenthesis;
+import dk.sdu.gms.dds.deviceDefinition.Pin;
 import dk.sdu.gms.dds.deviceDefinition.Plus;
 import dk.sdu.gms.dds.deviceDefinition.Second;
 import dk.sdu.gms.dds.deviceDefinition.Sensor;
@@ -64,6 +69,9 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == DeviceDefinitionPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case DeviceDefinitionPackage.ADC:
+				sequence_PinType(context, (ADC) semanticObject); 
+				return; 
 			case DeviceDefinitionPackage.ACTUATOR:
 				sequence_Actuator(context, (Actuator) semanticObject); 
 				return; 
@@ -75,6 +83,9 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 				return; 
 			case DeviceDefinitionPackage.BOOLEAN_TRUE:
 				sequence_Primitive(context, (BooleanTrue) semanticObject); 
+				return; 
+			case DeviceDefinitionPackage.DAC:
+				sequence_PinType(context, (DAC) semanticObject); 
 				return; 
 			case DeviceDefinitionPackage.DECIMAL_PRIMITIVE:
 				sequence_Primitive(context, (DecimalPrimitive) semanticObject); 
@@ -93,6 +104,12 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 				return; 
 			case DeviceDefinitionPackage.GATEWAY:
 				sequence_Gateway(context, (Gateway) semanticObject); 
+				return; 
+			case DeviceDefinitionPackage.GENERIC_IN:
+				sequence_PinType(context, (GenericIn) semanticObject); 
+				return; 
+			case DeviceDefinitionPackage.GENERIC_OUT:
+				sequence_PinType(context, (GenericOut) semanticObject); 
 				return; 
 			case DeviceDefinitionPackage.GRAPH:
 				sequence_Graph(context, (Graph) semanticObject); 
@@ -139,6 +156,9 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 			case DeviceDefinitionPackage.PARENTHESIS:
 				sequence_Parenthesis(context, (Parenthesis) semanticObject); 
 				return; 
+			case DeviceDefinitionPackage.PIN:
+				sequence_Pin(context, (Pin) semanticObject); 
+				return; 
 			case DeviceDefinitionPackage.PLUS:
 				sequence_Exp(context, (Plus) semanticObject); 
 				return; 
@@ -181,8 +201,8 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 	 *     (
 	 *         type=ID 
 	 *         name=ID 
-	 *         pins+=INT* 
-	 *         pins+=INT* 
+	 *         pins+=Pin* 
+	 *         pins+=Pin* 
 	 *         settings+=Setting* 
 	 *         trigger=Trigger
 	 *     )
@@ -797,6 +817,85 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     PinType returns ADC
+	 *
+	 * Constraint:
+	 *     {ADC}
+	 * </pre>
+	 */
+	protected void sequence_PinType(ISerializationContext context, ADC semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     PinType returns DAC
+	 *
+	 * Constraint:
+	 *     {DAC}
+	 * </pre>
+	 */
+	protected void sequence_PinType(ISerializationContext context, DAC semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     PinType returns GenericIn
+	 *
+	 * Constraint:
+	 *     {GenericIn}
+	 * </pre>
+	 */
+	protected void sequence_PinType(ISerializationContext context, GenericIn semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     PinType returns GenericOut
+	 *
+	 * Constraint:
+	 *     {GenericOut}
+	 * </pre>
+	 */
+	protected void sequence_PinType(ISerializationContext context, GenericOut semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Pin returns Pin
+	 *
+	 * Constraint:
+	 *     (type=PinType number=INT)
+	 * </pre>
+	 */
+	protected void sequence_Pin(ISerializationContext context, Pin semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, DeviceDefinitionPackage.Literals.PIN__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeviceDefinitionPackage.Literals.PIN__TYPE));
+			if (transientValues.isValueTransient(semanticObject, DeviceDefinitionPackage.Literals.PIN__NUMBER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeviceDefinitionPackage.Literals.PIN__NUMBER));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPinAccess().getTypePinTypeParserRuleCall_0_0(), semanticObject.getType());
+		feeder.accept(grammarAccess.getPinAccess().getNumberINTTerminalRuleCall_1_0(), semanticObject.getNumber());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     Exp returns Value
 	 *     Exp.Plus_1_0_0_0 returns Value
 	 *     Exp.Minus_1_0_1_0 returns Value
@@ -995,8 +1094,8 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 	 *     (
 	 *         type=ID 
 	 *         name=ID 
-	 *         pins+=INT* 
-	 *         pins+=INT* 
+	 *         pins+=Pin* 
+	 *         pins+=Pin* 
 	 *         outputs+=SensorOutput* 
 	 *         settings+=Setting* 
 	 *         predicate+=Exp? 

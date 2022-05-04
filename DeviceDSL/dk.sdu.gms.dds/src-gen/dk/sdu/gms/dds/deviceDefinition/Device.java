@@ -73,16 +73,16 @@ public interface Device extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Pins</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.Integer}.
+   * Returns the value of the '<em><b>Pins</b></em>' containment reference list.
+   * The list contents are of type {@link dk.sdu.gms.dds.deviceDefinition.Pin}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Pins</em>' attribute list.
+   * @return the value of the '<em>Pins</em>' containment reference list.
    * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getDevice_Pins()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<Integer> getPins();
+  EList<Pin> getPins();
 
   /**
    * Returns the value of the '<em><b>Settings</b></em>' containment reference list.

@@ -78,6 +78,24 @@ public interface DeviceDefinitionFactory extends EFactory
   Sensor createSensor();
 
   /**
+   * Returns a new object of class '<em>Pin</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Pin</em>'.
+   * @generated
+   */
+  Pin createPin();
+
+  /**
+   * Returns a new object of class '<em>Pin Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Pin Type</em>'.
+   * @generated
+   */
+  PinType createPinType();
+
+  /**
    * Returns a new object of class '<em>Time Unit</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -193,6 +211,42 @@ public interface DeviceDefinitionFactory extends EFactory
    * @generated
    */
   Parenthesis createParenthesis();
+
+  /**
+   * Returns a new object of class '<em>ADC</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>ADC</em>'.
+   * @generated
+   */
+  ADC createADC();
+
+  /**
+   * Returns a new object of class '<em>DAC</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>DAC</em>'.
+   * @generated
+   */
+  DAC createDAC();
+
+  /**
+   * Returns a new object of class '<em>Generic In</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Generic In</em>'.
+   * @generated
+   */
+  GenericIn createGenericIn();
+
+  /**
+   * Returns a new object of class '<em>Generic Out</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Generic Out</em>'.
+   * @generated
+   */
+  GenericOut createGenericOut();
 
   /**
    * Returns a new object of class '<em>Second</em>'.

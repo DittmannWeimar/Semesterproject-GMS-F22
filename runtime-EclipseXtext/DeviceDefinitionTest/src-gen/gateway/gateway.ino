@@ -43,7 +43,7 @@ EspMQTTClient client(
   "vald.io",
   "kristian",
   "1234",
-  "gms-gateway-07ef3659-f200-487b-9881-d12a38b5d4ab",
+  "gms-gateway-f79c7fea-beac-44c8-b712-d3d0e11d1d26",
   3001
 );
 
@@ -126,6 +126,15 @@ void onConnectionEstablished()
 {
 	client.subscribe("settings/" + WiFi.macAddress() + "/55:55:55:55:55:00/mois_threshold", [](const String &payload) {
 	set_worker_setting(0, 0, String(payload).toFloat());
+	});
+	client.subscribe("settings/" + WiFi.macAddress() + "/55:55:55:55:55:00/led1_brightness", [](const String &payload) {
+	set_worker_setting(1, 0, String(payload).toFloat());
+	});
+	client.subscribe("settings/" + WiFi.macAddress() + "/55:55:55:55:55:00/led2_brightness", [](const String &payload) {
+	set_worker_setting(2, 0, String(payload).toFloat());
+	});
+	client.subscribe("settings/" + WiFi.macAddress() + "/55:55:55:55:55:00/led3_brightness", [](const String &payload) {
+	set_worker_setting(3, 0, String(payload).toFloat());
 	});
 }
 

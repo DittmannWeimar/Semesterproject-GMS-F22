@@ -351,7 +351,7 @@ public interface DeviceDefinitionPackage extends EPackage
   int DEVICE__NAME = 1;
 
   /**
-   * The feature id for the '<em><b>Pins</b></em>' attribute list.
+   * The feature id for the '<em><b>Pins</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -406,7 +406,7 @@ public interface DeviceDefinitionPackage extends EPackage
   int SENSOR__NAME = DEVICE__NAME;
 
   /**
-   * The feature id for the '<em><b>Pins</b></em>' attribute list.
+   * The feature id for the '<em><b>Pins</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -460,6 +460,62 @@ public interface DeviceDefinitionPackage extends EPackage
   int SENSOR_FEATURE_COUNT = DEVICE_FEATURE_COUNT + 3;
 
   /**
+   * The meta object id for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.PinImpl <em>Pin</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.gms.dds.deviceDefinition.impl.PinImpl
+   * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getPin()
+   * @generated
+   */
+  int PIN = 6;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PIN__TYPE = 0;
+
+  /**
+   * The feature id for the '<em><b>Number</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PIN__NUMBER = 1;
+
+  /**
+   * The number of structural features of the '<em>Pin</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PIN_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.PinTypeImpl <em>Pin Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.gms.dds.deviceDefinition.impl.PinTypeImpl
+   * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getPinType()
+   * @generated
+   */
+  int PIN_TYPE = 7;
+
+  /**
+   * The number of structural features of the '<em>Pin Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PIN_TYPE_FEATURE_COUNT = 0;
+
+  /**
    * The meta object id for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.TimeUnitImpl <em>Time Unit</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -467,7 +523,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getTimeUnit()
    * @generated
    */
-  int TIME_UNIT = 6;
+  int TIME_UNIT = 8;
 
   /**
    * The number of structural features of the '<em>Time Unit</em>' class.
@@ -486,7 +542,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getBinding()
    * @generated
    */
-  int BINDING = 7;
+  int BINDING = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -514,7 +570,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getSensorOutput()
    * @generated
    */
-  int SENSOR_OUTPUT = 8;
+  int SENSOR_OUTPUT = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -560,7 +616,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getActuator()
    * @generated
    */
-  int ACTUATOR = 9;
+  int ACTUATOR = 11;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -581,7 +637,7 @@ public interface DeviceDefinitionPackage extends EPackage
   int ACTUATOR__NAME = DEVICE__NAME;
 
   /**
-   * The feature id for the '<em><b>Pins</b></em>' attribute list.
+   * The feature id for the '<em><b>Pins</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -624,7 +680,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getTrigger()
    * @generated
    */
-  int TRIGGER = 10;
+  int TRIGGER = 12;
 
   /**
    * The number of structural features of the '<em>Trigger</em>' class.
@@ -643,7 +699,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getSetting()
    * @generated
    */
-  int SETTING = 11;
+  int SETTING = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -680,7 +736,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getExpression()
    * @generated
    */
-  int EXPRESSION = 13;
+  int EXPRESSION = 15;
 
   /**
    * The number of structural features of the '<em>Expression</em>' class.
@@ -699,7 +755,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getPrimitive()
    * @generated
    */
-  int PRIMITIVE = 12;
+  int PRIMITIVE = 14;
 
   /**
    * The number of structural features of the '<em>Primitive</em>' class.
@@ -718,7 +774,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getExternalCall()
    * @generated
    */
-  int EXTERNAL_CALL = 14;
+  int EXTERNAL_CALL = 16;
 
   /**
    * The feature id for the '<em><b>Func</b></em>' attribute.
@@ -755,7 +811,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getVariableUse()
    * @generated
    */
-  int VARIABLE_USE = 17;
+  int VARIABLE_USE = 19;
 
   /**
    * The feature id for the '<em><b>Ref</b></em>' reference.
@@ -783,7 +839,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getInternalVariableUse()
    * @generated
    */
-  int INTERNAL_VARIABLE_USE = 15;
+  int INTERNAL_VARIABLE_USE = 17;
 
   /**
    * The feature id for the '<em><b>Ref</b></em>' reference.
@@ -811,7 +867,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getExternalVariableUse()
    * @generated
    */
-  int EXTERNAL_VARIABLE_USE = 16;
+  int EXTERNAL_VARIABLE_USE = 18;
 
   /**
    * The feature id for the '<em><b>Ref</b></em>' reference.
@@ -848,7 +904,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getParenthesis()
    * @generated
    */
-  int PARENTHESIS = 18;
+  int PARENTHESIS = 20;
 
   /**
    * The feature id for the '<em><b>Exp</b></em>' containment reference.
@@ -869,6 +925,82 @@ public interface DeviceDefinitionPackage extends EPackage
   int PARENTHESIS_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.ADCImpl <em>ADC</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.gms.dds.deviceDefinition.impl.ADCImpl
+   * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getADC()
+   * @generated
+   */
+  int ADC = 21;
+
+  /**
+   * The number of structural features of the '<em>ADC</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADC_FEATURE_COUNT = PIN_TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.DACImpl <em>DAC</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.gms.dds.deviceDefinition.impl.DACImpl
+   * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getDAC()
+   * @generated
+   */
+  int DAC = 22;
+
+  /**
+   * The number of structural features of the '<em>DAC</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DAC_FEATURE_COUNT = PIN_TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.GenericInImpl <em>Generic In</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.gms.dds.deviceDefinition.impl.GenericInImpl
+   * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getGenericIn()
+   * @generated
+   */
+  int GENERIC_IN = 23;
+
+  /**
+   * The number of structural features of the '<em>Generic In</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERIC_IN_FEATURE_COUNT = PIN_TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.GenericOutImpl <em>Generic Out</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.gms.dds.deviceDefinition.impl.GenericOutImpl
+   * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getGenericOut()
+   * @generated
+   */
+  int GENERIC_OUT = 24;
+
+  /**
+   * The number of structural features of the '<em>Generic Out</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERIC_OUT_FEATURE_COUNT = PIN_TYPE_FEATURE_COUNT + 0;
+
+  /**
    * The meta object id for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.SecondImpl <em>Second</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -876,7 +1008,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getSecond()
    * @generated
    */
-  int SECOND = 19;
+  int SECOND = 25;
 
   /**
    * The number of structural features of the '<em>Second</em>' class.
@@ -895,7 +1027,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getMinute()
    * @generated
    */
-  int MINUTE = 20;
+  int MINUTE = 26;
 
   /**
    * The number of structural features of the '<em>Minute</em>' class.
@@ -914,7 +1046,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getHour()
    * @generated
    */
-  int HOUR = 21;
+  int HOUR = 27;
 
   /**
    * The number of structural features of the '<em>Hour</em>' class.
@@ -933,7 +1065,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getWhen()
    * @generated
    */
-  int WHEN = 22;
+  int WHEN = 28;
 
   /**
    * The feature id for the '<em><b>Exp</b></em>' containment reference.
@@ -961,7 +1093,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getOnOff()
    * @generated
    */
-  int ON_OFF = 23;
+  int ON_OFF = 29;
 
   /**
    * The feature id for the '<em><b>On Exp</b></em>' containment reference.
@@ -1016,7 +1148,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getDecimalPrimitive()
    * @generated
    */
-  int DECIMAL_PRIMITIVE = 24;
+  int DECIMAL_PRIMITIVE = 30;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1044,7 +1176,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getIntPrimitive()
    * @generated
    */
-  int INT_PRIMITIVE = 25;
+  int INT_PRIMITIVE = 31;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1072,7 +1204,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getBooleanTrue()
    * @generated
    */
-  int BOOLEAN_TRUE = 26;
+  int BOOLEAN_TRUE = 32;
 
   /**
    * The number of structural features of the '<em>Boolean True</em>' class.
@@ -1091,7 +1223,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getBooleanFalse()
    * @generated
    */
-  int BOOLEAN_FALSE = 27;
+  int BOOLEAN_FALSE = 33;
 
   /**
    * The number of structural features of the '<em>Boolean False</em>' class.
@@ -1110,7 +1242,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getPlus()
    * @generated
    */
-  int PLUS = 28;
+  int PLUS = 34;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1147,7 +1279,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getMinus()
    * @generated
    */
-  int MINUS = 29;
+  int MINUS = 35;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1184,7 +1316,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getMult()
    * @generated
    */
-  int MULT = 30;
+  int MULT = 36;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1221,7 +1353,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getDiv()
    * @generated
    */
-  int DIV = 31;
+  int DIV = 37;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1258,7 +1390,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getGreater()
    * @generated
    */
-  int GREATER = 32;
+  int GREATER = 38;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1295,7 +1427,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getLesser()
    * @generated
    */
-  int LESSER = 33;
+  int LESSER = 39;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1332,7 +1464,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getGreaterOrEquals()
    * @generated
    */
-  int GREATER_OR_EQUALS = 34;
+  int GREATER_OR_EQUALS = 40;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1369,7 +1501,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getLesserOrEquals()
    * @generated
    */
-  int LESSER_OR_EQUALS = 35;
+  int LESSER_OR_EQUALS = 41;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1406,7 +1538,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getEquals()
    * @generated
    */
-  int EQUALS = 36;
+  int EQUALS = 42;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1443,7 +1575,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getNotEquals()
    * @generated
    */
-  int NOT_EQUALS = 37;
+  int NOT_EQUALS = 43;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1480,7 +1612,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getAnd()
    * @generated
    */
-  int AND = 38;
+  int AND = 44;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1517,7 +1649,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getOr()
    * @generated
    */
-  int OR = 39;
+  int OR = 45;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1554,7 +1686,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getValue()
    * @generated
    */
-  int VALUE = 40;
+  int VALUE = 46;
 
   /**
    * The number of structural features of the '<em>Value</em>' class.
@@ -1870,15 +2002,15 @@ public interface DeviceDefinitionPackage extends EPackage
   EAttribute getDevice_Name();
 
   /**
-   * Returns the meta object for the attribute list '{@link dk.sdu.gms.dds.deviceDefinition.Device#getPins <em>Pins</em>}'.
+   * Returns the meta object for the containment reference list '{@link dk.sdu.gms.dds.deviceDefinition.Device#getPins <em>Pins</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Pins</em>'.
+   * @return the meta object for the containment reference list '<em>Pins</em>'.
    * @see dk.sdu.gms.dds.deviceDefinition.Device#getPins()
    * @see #getDevice()
    * @generated
    */
-  EAttribute getDevice_Pins();
+  EReference getDevice_Pins();
 
   /**
    * Returns the meta object for the containment reference list '{@link dk.sdu.gms.dds.deviceDefinition.Device#getSettings <em>Settings</em>}'.
@@ -1933,6 +2065,48 @@ public interface DeviceDefinitionPackage extends EPackage
    * @generated
    */
   EReference getSensor_Graph();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.gms.dds.deviceDefinition.Pin <em>Pin</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Pin</em>'.
+   * @see dk.sdu.gms.dds.deviceDefinition.Pin
+   * @generated
+   */
+  EClass getPin();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.gms.dds.deviceDefinition.Pin#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see dk.sdu.gms.dds.deviceDefinition.Pin#getType()
+   * @see #getPin()
+   * @generated
+   */
+  EReference getPin_Type();
+
+  /**
+   * Returns the meta object for the attribute '{@link dk.sdu.gms.dds.deviceDefinition.Pin#getNumber <em>Number</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Number</em>'.
+   * @see dk.sdu.gms.dds.deviceDefinition.Pin#getNumber()
+   * @see #getPin()
+   * @generated
+   */
+  EAttribute getPin_Number();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.gms.dds.deviceDefinition.PinType <em>Pin Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Pin Type</em>'.
+   * @see dk.sdu.gms.dds.deviceDefinition.PinType
+   * @generated
+   */
+  EClass getPinType();
 
   /**
    * Returns the meta object for class '{@link dk.sdu.gms.dds.deviceDefinition.TimeUnit <em>Time Unit</em>}'.
@@ -2173,6 +2347,46 @@ public interface DeviceDefinitionPackage extends EPackage
    * @generated
    */
   EReference getParenthesis_Exp();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.gms.dds.deviceDefinition.ADC <em>ADC</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>ADC</em>'.
+   * @see dk.sdu.gms.dds.deviceDefinition.ADC
+   * @generated
+   */
+  EClass getADC();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.gms.dds.deviceDefinition.DAC <em>DAC</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>DAC</em>'.
+   * @see dk.sdu.gms.dds.deviceDefinition.DAC
+   * @generated
+   */
+  EClass getDAC();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.gms.dds.deviceDefinition.GenericIn <em>Generic In</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Generic In</em>'.
+   * @see dk.sdu.gms.dds.deviceDefinition.GenericIn
+   * @generated
+   */
+  EClass getGenericIn();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.gms.dds.deviceDefinition.GenericOut <em>Generic Out</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Generic Out</em>'.
+   * @see dk.sdu.gms.dds.deviceDefinition.GenericOut
+   * @generated
+   */
+  EClass getGenericOut();
 
   /**
    * Returns the meta object for class '{@link dk.sdu.gms.dds.deviceDefinition.Second <em>Second</em>}'.
@@ -2993,12 +3207,12 @@ public interface DeviceDefinitionPackage extends EPackage
     EAttribute DEVICE__NAME = eINSTANCE.getDevice_Name();
 
     /**
-     * The meta object literal for the '<em><b>Pins</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Pins</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DEVICE__PINS = eINSTANCE.getDevice_Pins();
+    EReference DEVICE__PINS = eINSTANCE.getDevice_Pins();
 
     /**
      * The meta object literal for the '<em><b>Settings</b></em>' containment reference list feature.
@@ -3041,6 +3255,42 @@ public interface DeviceDefinitionPackage extends EPackage
      * @generated
      */
     EReference SENSOR__GRAPH = eINSTANCE.getSensor_Graph();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.PinImpl <em>Pin</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.gms.dds.deviceDefinition.impl.PinImpl
+     * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getPin()
+     * @generated
+     */
+    EClass PIN = eINSTANCE.getPin();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PIN__TYPE = eINSTANCE.getPin_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Number</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PIN__NUMBER = eINSTANCE.getPin_Number();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.PinTypeImpl <em>Pin Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.gms.dds.deviceDefinition.impl.PinTypeImpl
+     * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getPinType()
+     * @generated
+     */
+    EClass PIN_TYPE = eINSTANCE.getPinType();
 
     /**
      * The meta object literal for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.TimeUnitImpl <em>Time Unit</em>}' class.
@@ -3251,6 +3501,46 @@ public interface DeviceDefinitionPackage extends EPackage
      * @generated
      */
     EReference PARENTHESIS__EXP = eINSTANCE.getParenthesis_Exp();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.ADCImpl <em>ADC</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.gms.dds.deviceDefinition.impl.ADCImpl
+     * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getADC()
+     * @generated
+     */
+    EClass ADC = eINSTANCE.getADC();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.DACImpl <em>DAC</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.gms.dds.deviceDefinition.impl.DACImpl
+     * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getDAC()
+     * @generated
+     */
+    EClass DAC = eINSTANCE.getDAC();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.GenericInImpl <em>Generic In</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.gms.dds.deviceDefinition.impl.GenericInImpl
+     * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getGenericIn()
+     * @generated
+     */
+    EClass GENERIC_IN = eINSTANCE.getGenericIn();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.GenericOutImpl <em>Generic Out</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.gms.dds.deviceDefinition.impl.GenericOutImpl
+     * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getGenericOut()
+     * @generated
+     */
+    EClass GENERIC_OUT = eINSTANCE.getGenericOut();
 
     /**
      * The meta object literal for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.SecondImpl <em>Second</em>}' class.

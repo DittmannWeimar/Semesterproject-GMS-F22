@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
+import org.eclipse.xtext.xbase.lib.ExclusiveRange;
 
 @SuppressWarnings("all")
 public class WorkerGenerator {
@@ -95,6 +96,9 @@ public class WorkerGenerator {
         _builder.append("float ");
         String _bindingName = Utils.getBindingName(setting);
         _builder.append(_bindingName);
+        _builder.append(" = ");
+        String _generateExpression = Utils.generateExpression(setting.getValue());
+        _builder.append(_generateExpression);
         _builder.append(";");
         _builder.newLineIfNotEmpty();
       }
@@ -209,6 +213,33 @@ public class WorkerGenerator {
     _builder.append("  ");
     _builder.append("Serial.begin(115200);");
     _builder.newLine();
+    _builder.append("  ");
+    _builder.newLine();
+    {
+      int _length = Utils.dacPins.length;
+      ExclusiveRange _doubleDotLessThan = new ExclusiveRange(0, _length, true);
+      for(final Integer i : _doubleDotLessThan) {
+        _builder.append("  ");
+        _builder.append("ledcSetup(");
+        _builder.append(i, "  ");
+        _builder.append(", freq, resolution);");
+        _builder.newLineIfNotEmpty();
+        _builder.append("  ");
+        _builder.append("ledcAttachPin(");
+        int _get_6 = Utils.dacPins[(i).intValue()];
+        _builder.append(_get_6, "  ");
+        _builder.append(", ");
+        _builder.append(i, "  ");
+        _builder.append(");");
+        _builder.newLineIfNotEmpty();
+        _builder.append("  ");
+        _builder.append("pinMode(");
+        int _get_7 = Utils.dacPins[(i).intValue()];
+        _builder.append(_get_7, "  ");
+        _builder.append(", OUTPUT);");
+        _builder.newLineIfNotEmpty();
+      }
+    }
     _builder.append(" ");
     _builder.newLine();
     _builder.append("  ");

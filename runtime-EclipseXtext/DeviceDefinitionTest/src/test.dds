@@ -12,20 +12,35 @@ System:
 			 minutes
 			
 			Sensor TemperatureHumidity temp1:
-				pins 4
+				pins in 4
 				out "temperature" as temp with mapping call pow(2, value)
 				out "humidity" as hum
 				sample if temp1.temp == TRUE
 				graph temperatureGraph
 			
 			Sensor Moisture mois:
-				pins 5
+				pins in 5
 				out as moisture
 				setting threshold = 5
 				sample if temp1.hum > threshold
 								
 			Sensor Dummy dummy:
 				out as dummy with mapping value + 20
+				
+			Actuator LED led1:
+				pins dac 25
+				setting brightness = 0.5
+				when mois.moisture > 800
+				
+			Actuator LED led2:
+				pins dac 26
+				setting brightness = 0.5
+				on mois.moisture > 800 run for 2 seconds
+				
+			Actuator LED led3:
+				pins out 9
+				setting brightness = 0.5
+				on mois.moisture > 800 off mois.moisture < 200
 	
 	Graph Line temperatureGraph:
 		category "basics"

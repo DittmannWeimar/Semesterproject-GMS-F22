@@ -3,11 +3,13 @@
  */
 package dk.sdu.gms.dds.deviceDefinition.util;
 
+import dk.sdu.gms.dds.deviceDefinition.ADC;
 import dk.sdu.gms.dds.deviceDefinition.Actuator;
 import dk.sdu.gms.dds.deviceDefinition.And;
 import dk.sdu.gms.dds.deviceDefinition.Binding;
 import dk.sdu.gms.dds.deviceDefinition.BooleanFalse;
 import dk.sdu.gms.dds.deviceDefinition.BooleanTrue;
+import dk.sdu.gms.dds.deviceDefinition.DAC;
 import dk.sdu.gms.dds.deviceDefinition.DecimalPrimitive;
 import dk.sdu.gms.dds.deviceDefinition.Device;
 import dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage;
@@ -17,6 +19,8 @@ import dk.sdu.gms.dds.deviceDefinition.Expression;
 import dk.sdu.gms.dds.deviceDefinition.ExternalCall;
 import dk.sdu.gms.dds.deviceDefinition.ExternalVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.Gateway;
+import dk.sdu.gms.dds.deviceDefinition.GenericIn;
+import dk.sdu.gms.dds.deviceDefinition.GenericOut;
 import dk.sdu.gms.dds.deviceDefinition.Graph;
 import dk.sdu.gms.dds.deviceDefinition.Greater;
 import dk.sdu.gms.dds.deviceDefinition.GreaterOrEquals;
@@ -32,6 +36,8 @@ import dk.sdu.gms.dds.deviceDefinition.NotEquals;
 import dk.sdu.gms.dds.deviceDefinition.OnOff;
 import dk.sdu.gms.dds.deviceDefinition.Or;
 import dk.sdu.gms.dds.deviceDefinition.Parenthesis;
+import dk.sdu.gms.dds.deviceDefinition.Pin;
+import dk.sdu.gms.dds.deviceDefinition.PinType;
 import dk.sdu.gms.dds.deviceDefinition.Plus;
 import dk.sdu.gms.dds.deviceDefinition.Primitive;
 import dk.sdu.gms.dds.deviceDefinition.Second;
@@ -156,6 +162,20 @@ public class DeviceDefinitionSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case DeviceDefinitionPackage.PIN:
+      {
+        Pin pin = (Pin)theEObject;
+        T result = casePin(pin);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceDefinitionPackage.PIN_TYPE:
+      {
+        PinType pinType = (PinType)theEObject;
+        T result = casePinType(pinType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case DeviceDefinitionPackage.TIME_UNIT:
       {
         TimeUnit timeUnit = (TimeUnit)theEObject;
@@ -255,6 +275,38 @@ public class DeviceDefinitionSwitch<T> extends Switch<T>
         Parenthesis parenthesis = (Parenthesis)theEObject;
         T result = caseParenthesis(parenthesis);
         if (result == null) result = caseExpression(parenthesis);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceDefinitionPackage.ADC:
+      {
+        ADC adc = (ADC)theEObject;
+        T result = caseADC(adc);
+        if (result == null) result = casePinType(adc);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceDefinitionPackage.DAC:
+      {
+        DAC dac = (DAC)theEObject;
+        T result = caseDAC(dac);
+        if (result == null) result = casePinType(dac);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceDefinitionPackage.GENERIC_IN:
+      {
+        GenericIn genericIn = (GenericIn)theEObject;
+        T result = caseGenericIn(genericIn);
+        if (result == null) result = casePinType(genericIn);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceDefinitionPackage.GENERIC_OUT:
+      {
+        GenericOut genericOut = (GenericOut)theEObject;
+        T result = caseGenericOut(genericOut);
+        if (result == null) result = casePinType(genericOut);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -539,6 +591,38 @@ public class DeviceDefinitionSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Pin</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Pin</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePin(Pin object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Pin Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Pin Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePinType(PinType object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Time Unit</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -742,6 +826,70 @@ public class DeviceDefinitionSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseParenthesis(Parenthesis object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>ADC</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>ADC</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseADC(ADC object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>DAC</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>DAC</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDAC(DAC object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Generic In</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Generic In</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGenericIn(GenericIn object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Generic Out</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Generic Out</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGenericOut(GenericOut object)
   {
     return null;
   }

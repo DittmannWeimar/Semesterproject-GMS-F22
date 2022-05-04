@@ -47,18 +47,6 @@ public abstract class SensorDefinition extends DeviceDefinition {
   public CharSequence generateInitializers(final Sensor sensor) {
     StringConcatenation _builder = new StringConcatenation();
     {
-      EList<Integer> _pins = sensor.getPins();
-      for(final Integer pin : _pins) {
-        _builder.append("int ");
-        String _pinName = this.getPinName(sensor, (pin).intValue());
-        _builder.append(_pinName);
-        _builder.append(" = ");
-        _builder.append(pin);
-        _builder.append(";");
-        _builder.newLineIfNotEmpty();
-      }
-    }
-    {
       EList<SensorOutput> _outputs = sensor.getOutputs();
       for(final SensorOutput output : _outputs) {
         _builder.append("float ");
@@ -77,7 +65,11 @@ public abstract class SensorDefinition extends DeviceDefinition {
   }
   
   public CharSequence generateSetup(final Sensor sensor) {
-    return null;
+    StringConcatenation _builder = new StringConcatenation();
+    CharSequence _generatePinsSetup = Utils.generatePinsSetup(sensor.getPins());
+    _builder.append(_generatePinsSetup);
+    _builder.newLineIfNotEmpty();
+    return _builder;
   }
   
   @Override
@@ -129,14 +121,19 @@ public abstract class SensorDefinition extends DeviceDefinition {
         _builder.newLineIfNotEmpty();
       }
     }
-    _builder.append(content);
+    _builder.append("\t");
+    _builder.append(content, "\t");
     _builder.newLineIfNotEmpty();
     {
       int _size_1 = sensor.getPredicate().size();
       boolean _notEquals_1 = (_size_1 != 0);
       if (_notEquals_1) {
+        _builder.append("\t");
         _builder.append("}");
         _builder.newLine();
+      } else {
+        _builder.append(content);
+        _builder.newLineIfNotEmpty();
       }
     }
     return _builder;
@@ -167,12 +164,6 @@ public abstract class SensorDefinition extends DeviceDefinition {
     _builder.append(";");
     _builder.newLineIfNotEmpty();
     return _builder;
-  }
-  
-  protected String getPinName(final Sensor sensor, final int pinNumber) {
-    String _name = sensor.getName();
-    String _plus = (_name + "_pin");
-    return (_plus + Integer.valueOf(pinNumber));
   }
   
   protected String getSampleType(final Sensor sensor, final SensorOutput output) {

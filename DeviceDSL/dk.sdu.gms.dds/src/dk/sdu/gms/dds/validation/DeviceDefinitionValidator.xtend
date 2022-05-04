@@ -8,8 +8,9 @@ import dk.sdu.gms.dds.deviceDefinition.Actuator
 import dk.sdu.gms.dds.deviceDefinition.Sensor
 import dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage
 import org.eclipse.xtext.validation.Check
-import dk.sdu.gms.dds.ActuatorDefinition
 import dk.sdu.gms.dds.sensors.SensorDefinition
+import dk.sdu.gms.dds.actuators.ActuatorDefinition
+import dk.sdu.gms.dds.DeviceDefinition
 
 /**
  * This class contains custom validation rules. 
@@ -20,13 +21,9 @@ class DeviceDefinitionValidator extends AbstractDeviceDefinitionValidator {
 	
 	@Check
 	def deviceExists (Device device) {
-		val exists = switch (device) {
-			case Actuator: ActuatorDefinition.getActuatorDefinition(device as Actuator) !== null
-			case Sensor: SensorDefinition.getSensorDefinition(device as Sensor) !== null
-		}
-		
-		if (!exists) {
-			//error('Device not defined', DeviceDefinitionPackage.Literals.DEVICE__TYPE)
+		val definition = DeviceDefinition.getDefinition(device);
+		if (definition === null) {
+			error('Unknown device \"' + device.type + "\"", DeviceDefinitionPackage.Literals.DEVICE__TYPE)
 		}
 	}
 

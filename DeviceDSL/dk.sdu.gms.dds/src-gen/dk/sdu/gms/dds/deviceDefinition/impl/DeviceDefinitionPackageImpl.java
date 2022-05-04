@@ -18,6 +18,8 @@ import dk.sdu.gms.dds.deviceDefinition.Expression;
 import dk.sdu.gms.dds.deviceDefinition.ExternalCall;
 import dk.sdu.gms.dds.deviceDefinition.ExternalVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.Gateway;
+import dk.sdu.gms.dds.deviceDefinition.GenericIn;
+import dk.sdu.gms.dds.deviceDefinition.GenericOut;
 import dk.sdu.gms.dds.deviceDefinition.Graph;
 import dk.sdu.gms.dds.deviceDefinition.Greater;
 import dk.sdu.gms.dds.deviceDefinition.GreaterOrEquals;
@@ -33,6 +35,8 @@ import dk.sdu.gms.dds.deviceDefinition.NotEquals;
 import dk.sdu.gms.dds.deviceDefinition.OnOff;
 import dk.sdu.gms.dds.deviceDefinition.Or;
 import dk.sdu.gms.dds.deviceDefinition.Parenthesis;
+import dk.sdu.gms.dds.deviceDefinition.Pin;
+import dk.sdu.gms.dds.deviceDefinition.PinType;
 import dk.sdu.gms.dds.deviceDefinition.Plus;
 import dk.sdu.gms.dds.deviceDefinition.Primitive;
 import dk.sdu.gms.dds.deviceDefinition.Second;
@@ -102,6 +106,20 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   private EClass sensorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass pinEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass pinTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -193,6 +211,34 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   private EClass parenthesisEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass adcEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass dacEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass genericInEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass genericOutEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -725,9 +771,9 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EAttribute getDevice_Pins()
+  public EReference getDevice_Pins()
   {
-    return (EAttribute)deviceEClass.getEStructuralFeatures().get(2);
+    return (EReference)deviceEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -783,6 +829,50 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
   public EReference getSensor_Graph()
   {
     return (EReference)sensorEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getPin()
+  {
+    return pinEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getPin_Type()
+  {
+    return (EReference)pinEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getPin_Number()
+  {
+    return (EAttribute)pinEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getPinType()
+  {
+    return pinTypeEClass;
   }
 
   /**
@@ -1036,6 +1126,50 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
   public EReference getParenthesis_Exp()
   {
     return (EReference)parenthesisEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getADC()
+  {
+    return adcEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDAC()
+  {
+    return dacEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getGenericIn()
+  {
+    return genericInEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getGenericOut()
+  {
+    return genericOutEClass;
   }
 
   /**
@@ -1684,13 +1818,19 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     deviceEClass = createEClass(DEVICE);
     createEAttribute(deviceEClass, DEVICE__TYPE);
     createEAttribute(deviceEClass, DEVICE__NAME);
-    createEAttribute(deviceEClass, DEVICE__PINS);
+    createEReference(deviceEClass, DEVICE__PINS);
     createEReference(deviceEClass, DEVICE__SETTINGS);
 
     sensorEClass = createEClass(SENSOR);
     createEReference(sensorEClass, SENSOR__OUTPUTS);
     createEReference(sensorEClass, SENSOR__PREDICATE);
     createEReference(sensorEClass, SENSOR__GRAPH);
+
+    pinEClass = createEClass(PIN);
+    createEReference(pinEClass, PIN__TYPE);
+    createEAttribute(pinEClass, PIN__NUMBER);
+
+    pinTypeEClass = createEClass(PIN_TYPE);
 
     timeUnitEClass = createEClass(TIME_UNIT);
 
@@ -1727,6 +1867,14 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
 
     parenthesisEClass = createEClass(PARENTHESIS);
     createEReference(parenthesisEClass, PARENTHESIS__EXP);
+
+    adcEClass = createEClass(ADC);
+
+    dacEClass = createEClass(DAC);
+
+    genericInEClass = createEClass(GENERIC_IN);
+
+    genericOutEClass = createEClass(GENERIC_OUT);
 
     secondEClass = createEClass(SECOND);
 
@@ -1843,6 +1991,10 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     externalVariableUseEClass.getESuperTypes().add(this.getVariableUse());
     variableUseEClass.getESuperTypes().add(this.getExpression());
     parenthesisEClass.getESuperTypes().add(this.getExpression());
+    adcEClass.getESuperTypes().add(this.getPinType());
+    dacEClass.getESuperTypes().add(this.getPinType());
+    genericInEClass.getESuperTypes().add(this.getPinType());
+    genericOutEClass.getESuperTypes().add(this.getPinType());
     secondEClass.getESuperTypes().add(this.getTimeUnit());
     minuteEClass.getESuperTypes().add(this.getTimeUnit());
     hourEClass.getESuperTypes().add(this.getTimeUnit());
@@ -1899,13 +2051,19 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     initEClass(deviceEClass, Device.class, "Device", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDevice_Type(), ecorePackage.getEString(), "type", null, 0, 1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDevice_Name(), ecorePackage.getEString(), "name", null, 0, 1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDevice_Pins(), ecorePackage.getEInt(), "pins", null, 0, -1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDevice_Pins(), this.getPin(), null, "pins", null, 0, -1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDevice_Settings(), this.getSetting(), null, "settings", null, 0, -1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(sensorEClass, Sensor.class, "Sensor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSensor_Outputs(), this.getSensorOutput(), null, "outputs", null, 0, -1, Sensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSensor_Predicate(), this.getExpression(), null, "predicate", null, 0, -1, Sensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSensor_Graph(), this.getGraph(), null, "graph", null, 0, 1, Sensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(pinEClass, Pin.class, "Pin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPin_Type(), this.getPinType(), null, "type", null, 0, 1, Pin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPin_Number(), ecorePackage.getEInt(), "number", null, 0, 1, Pin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(pinTypeEClass, PinType.class, "PinType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(timeUnitEClass, TimeUnit.class, "TimeUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1942,6 +2100,14 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
 
     initEClass(parenthesisEClass, Parenthesis.class, "Parenthesis", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getParenthesis_Exp(), this.getExpression(), null, "exp", null, 0, 1, Parenthesis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(adcEClass, dk.sdu.gms.dds.deviceDefinition.ADC.class, "ADC", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(dacEClass, dk.sdu.gms.dds.deviceDefinition.DAC.class, "DAC", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(genericInEClass, GenericIn.class, "GenericIn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(genericOutEClass, GenericOut.class, "GenericOut", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(secondEClass, Second.class, "Second", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

@@ -3,11 +3,13 @@
  */
 package dk.sdu.gms.dds.deviceDefinition.impl;
 
+import dk.sdu.gms.dds.deviceDefinition.ADC;
 import dk.sdu.gms.dds.deviceDefinition.Actuator;
 import dk.sdu.gms.dds.deviceDefinition.And;
 import dk.sdu.gms.dds.deviceDefinition.Binding;
 import dk.sdu.gms.dds.deviceDefinition.BooleanFalse;
 import dk.sdu.gms.dds.deviceDefinition.BooleanTrue;
+import dk.sdu.gms.dds.deviceDefinition.DAC;
 import dk.sdu.gms.dds.deviceDefinition.DecimalPrimitive;
 import dk.sdu.gms.dds.deviceDefinition.Device;
 import dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionFactory;
@@ -18,6 +20,8 @@ import dk.sdu.gms.dds.deviceDefinition.Expression;
 import dk.sdu.gms.dds.deviceDefinition.ExternalCall;
 import dk.sdu.gms.dds.deviceDefinition.ExternalVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.Gateway;
+import dk.sdu.gms.dds.deviceDefinition.GenericIn;
+import dk.sdu.gms.dds.deviceDefinition.GenericOut;
 import dk.sdu.gms.dds.deviceDefinition.Graph;
 import dk.sdu.gms.dds.deviceDefinition.Greater;
 import dk.sdu.gms.dds.deviceDefinition.GreaterOrEquals;
@@ -33,6 +37,8 @@ import dk.sdu.gms.dds.deviceDefinition.NotEquals;
 import dk.sdu.gms.dds.deviceDefinition.OnOff;
 import dk.sdu.gms.dds.deviceDefinition.Or;
 import dk.sdu.gms.dds.deviceDefinition.Parenthesis;
+import dk.sdu.gms.dds.deviceDefinition.Pin;
+import dk.sdu.gms.dds.deviceDefinition.PinType;
 import dk.sdu.gms.dds.deviceDefinition.Plus;
 import dk.sdu.gms.dds.deviceDefinition.Primitive;
 import dk.sdu.gms.dds.deviceDefinition.Second;
@@ -112,6 +118,8 @@ public class DeviceDefinitionFactoryImpl extends EFactoryImpl implements DeviceD
       case DeviceDefinitionPackage.WORKER: return createWorker();
       case DeviceDefinitionPackage.DEVICE: return createDevice();
       case DeviceDefinitionPackage.SENSOR: return createSensor();
+      case DeviceDefinitionPackage.PIN: return createPin();
+      case DeviceDefinitionPackage.PIN_TYPE: return createPinType();
       case DeviceDefinitionPackage.TIME_UNIT: return createTimeUnit();
       case DeviceDefinitionPackage.BINDING: return createBinding();
       case DeviceDefinitionPackage.SENSOR_OUTPUT: return createSensorOutput();
@@ -125,6 +133,10 @@ public class DeviceDefinitionFactoryImpl extends EFactoryImpl implements DeviceD
       case DeviceDefinitionPackage.EXTERNAL_VARIABLE_USE: return createExternalVariableUse();
       case DeviceDefinitionPackage.VARIABLE_USE: return createVariableUse();
       case DeviceDefinitionPackage.PARENTHESIS: return createParenthesis();
+      case DeviceDefinitionPackage.ADC: return createADC();
+      case DeviceDefinitionPackage.DAC: return createDAC();
+      case DeviceDefinitionPackage.GENERIC_IN: return createGenericIn();
+      case DeviceDefinitionPackage.GENERIC_OUT: return createGenericOut();
       case DeviceDefinitionPackage.SECOND: return createSecond();
       case DeviceDefinitionPackage.MINUTE: return createMinute();
       case DeviceDefinitionPackage.HOUR: return createHour();
@@ -222,6 +234,30 @@ public class DeviceDefinitionFactoryImpl extends EFactoryImpl implements DeviceD
   {
     SensorImpl sensor = new SensorImpl();
     return sensor;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Pin createPin()
+  {
+    PinImpl pin = new PinImpl();
+    return pin;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PinType createPinType()
+  {
+    PinTypeImpl pinType = new PinTypeImpl();
+    return pinType;
   }
 
   /**
@@ -378,6 +414,54 @@ public class DeviceDefinitionFactoryImpl extends EFactoryImpl implements DeviceD
   {
     ParenthesisImpl parenthesis = new ParenthesisImpl();
     return parenthesis;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ADC createADC()
+  {
+    ADCImpl adc = new ADCImpl();
+    return adc;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DAC createDAC()
+  {
+    DACImpl dac = new DACImpl();
+    return dac;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public GenericIn createGenericIn()
+  {
+    GenericInImpl genericIn = new GenericInImpl();
+    return genericIn;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public GenericOut createGenericOut()
+  {
+    GenericOutImpl genericOut = new GenericOutImpl();
+    return genericOut;
   }
 
   /**

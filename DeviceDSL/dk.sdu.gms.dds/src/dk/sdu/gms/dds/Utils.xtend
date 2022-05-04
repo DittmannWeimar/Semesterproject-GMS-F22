@@ -37,8 +37,16 @@ import dk.sdu.gms.dds.deviceDefinition.BooleanFalse
 import dk.sdu.gms.dds.deviceDefinition.InternalVariableUse
 import dk.sdu.gms.dds.deviceDefinition.ExternalVariableUse
 import dk.sdu.gms.dds.deviceDefinition.Value
+import java.util.List
+import dk.sdu.gms.dds.deviceDefinition.Pin
+import dk.sdu.gms.dds.deviceDefinition.GenericOut
+import dk.sdu.gms.dds.deviceDefinition.ADC
+import dk.sdu.gms.dds.deviceDefinition.GenericIn
+import java.util.Arrays
 
 class Utils {
+	
+	public static int[] dacPins = #[25, 26]
 	
 	public static def createSettingIndex (Gateway gateway) {
 		val list = new ArrayList<String>();
@@ -192,12 +200,16 @@ class Utils {
 		getVariablePrefix(sensor(output)) + getOutputName(sensor(output), output);
 	}
 	
+	public static dispatch def getBindingName (Setting setting) {
+		getVariablePrefix(setting) + setting.name;
+	}
+	
 	public static dispatch def getVariablePrefix (Sensor sensor) {
 		sensor.name + "_"
 	}
 	
-	public static dispatch def getBindingName (Setting setting) {
-		getVariablePrefix(setting) + setting.name;
+	public static dispatch def getVariablePrefix (Actuator actuator) {
+		actuator.name + "_"
 	}
 	
 	public static dispatch def getVariablePrefix (Setting setting) {
@@ -214,5 +226,43 @@ class Utils {
 			Minute: 1000 * 60
 			Hour: 1000 * 60 * 60
 		}
+	}
+	
+	public static def getDacPinVariableName(int pin) 
+	'''dacPin«pin»'''
+	
+	public static def getDacChannelName(int channel)
+	'''dacChannel«channel»'''
+	
+	public static def pinNumberToDacChannel(int pin) {
+		return dacPins.indexOf(pin);
+	}
+		
+	public static def generatePinsSetup(List<Pin> pins) '''
+	«FOR pin : pins»
+	«IF pin.type instanceof ADC || pin.type instanceof GenericIn»
+	pinMode(«pin.number», INPUT);
+	«ENDIF»
+	«IF pin.type instanceof GenericOut»
+	pinMode(«pin.number», OUTPUT);
+	«ENDIF»
+	«ENDFOR»
+	'''
+	
+	public static def findSettingByName (Device device, String name) {
+		val settings = switch (device) {
+			Sensor: device.settings
+			Actuator: device.settings
+		}
+		for (setting : settings) {
+			if (setting.name.equals(name)) {
+				return setting;
+			}
+		}
+		return null;
+	}
+	
+	public static def getSettingBindingBySettingName(Device device, String name) {
+		return getBindingName(findSettingByName(device, name));
 	}
 }

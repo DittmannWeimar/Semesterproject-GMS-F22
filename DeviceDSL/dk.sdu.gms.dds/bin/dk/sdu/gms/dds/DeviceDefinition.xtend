@@ -4,6 +4,7 @@ import dk.sdu.gms.dds.deviceDefinition.Device
 import dk.sdu.gms.dds.sensors.SensorDefinition
 import dk.sdu.gms.dds.deviceDefinition.Sensor
 import dk.sdu.gms.dds.deviceDefinition.Actuator
+import dk.sdu.gms.dds.actuators.ActuatorDefinition
 
 public abstract class DeviceDefinition {
 	

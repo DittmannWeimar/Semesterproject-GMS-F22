@@ -34,7 +34,7 @@ public class WorkerGenerator {
 	
 	// GENERATED SETTINGS
 	«FOR setting : settings(worker)»
-	float «getBindingName(setting)»;
+	float «getBindingName(setting)» = «generateExpression(setting.value)»;
 	«ENDFOR»
 	
 	// GENERATED INITIALIZATIONS
@@ -82,6 +82,12 @@ public class WorkerGenerator {
 	
 	 
 	  Serial.begin(115200);
+	  
+	  «FOR i : 0 ..< dacPins.length»
+	  ledcSetup(«i», freq, resolution);
+	  ledcAttachPin(«dacPins.get(i)», «i»);
+	  pinMode(«dacPins.get(i)», OUTPUT);
+	  «ENDFOR»
 	 
 	  // Set device as a Wi-Fi Station
 	  WiFi.mode(WIFI_STA);
