@@ -30,7 +30,7 @@ import org.eclipse.xtext.scoping.Scopes;
 public class DeviceDefinitionScopeProvider extends AbstractDeviceDefinitionScopeProvider {
   @Override
   public IScope getScope(final EObject context, final EReference reference) {
-    if (((context instanceof ExternalVariableUse) && reference.getName().equals("ref"))) {
+    if (((context instanceof ExternalVariableUse) && Objects.equal(reference, DeviceDefinitionPackage.Literals.VARIABLE_USE__REF))) {
       final Device obj = ((ExternalVariableUse) context).getObj();
       if ((obj instanceof Sensor)) {
         return Scopes.scopeFor(Stream.<Binding>concat(((Sensor)obj).getSettings().stream(), ((Sensor)obj).getOutputs().stream()).collect(Collectors.<Binding>toList()));

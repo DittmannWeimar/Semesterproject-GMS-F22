@@ -135,8 +135,10 @@ void loop() {
   sampleMessage.pump_worker_temperatureHumidity_temperature = temperatureHumidity_temperature;
   temperatureHumidity_humidity = temperatureHumidity_dht.readHumidity();
   sampleMessage.pump_worker_temperatureHumidity_humidity = temperatureHumidity_humidity;
-  moisture_sample = analogRead(32);
-  sampleMessage.pump_worker_moisture_sample = moisture_sample;
+  if ((bool)(temperatureHumidity_humidity > 20)) {
+  	moisture_sample = analogRead(32);
+  	sampleMessage.pump_worker_moisture_sample = moisture_sample;
+  }
   
   sampleMessage.type = Sample;
   send_message(gatewayAddress, (uint8_t *) &sampleMessage, sizeof(sampleMessage));

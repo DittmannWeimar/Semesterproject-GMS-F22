@@ -5,7 +5,6 @@ INDEX VERSION 1.131+C:\Users\Lomzie\Documents\Github\Semesterproject-GMS-F22\Dev
 3165146314.index
 921704774.index
 4064806791.index
-1242123223.index
 3983064938.index
 2663699722.index
 4147018463.index
@@ -19,10 +18,8 @@ INDEX VERSION 1.131+C:\Users\Lomzie\Documents\Github\Semesterproject-GMS-F22\Dev
 1426473514.index
 2211994619.index
 3387082055.index
-3168372564.index
 1681048112.index
 373095729.index
-1458198293.index
 2995196617.index
 1973127858.index
 3066170577.index
@@ -91,10 +88,8 @@ INDEX VERSION 1.131+C:\Users\Lomzie\Documents\Github\Semesterproject-GMS-F22\Dev
 102342844.index
 2446989679.index
 2206170885.index
-760091825.index
 1032145985.index
 2406171585.index
 3827236830.index
-682106642.index
 561962779.index
 3803203301.index
