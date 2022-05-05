@@ -20,6 +20,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="xlabel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ylabel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outputs" upperBound="-1"
+        eType="#//Expression" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Gateway">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -49,7 +51,6 @@
         eType="#//SensorOutput" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="predicate" upperBound="-1"
         eType="#//Expression" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="graph" eType="#//Graph"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Pin">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//PinType"
@@ -85,6 +86,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="InternalVariableUse" eSuperTypes="#//VariableUse"/>
   <eClassifiers xsi:type="ecore:EClass" name="ExternalVariableUse" eSuperTypes="#//VariableUse">
     <eStructuralFeatures xsi:type="ecore:EReference" name="obj" eType="#//Device"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GraphVariableUse" eSuperTypes="#//VariableUse">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="worker" eType="#//Worker"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="device" eType="#//Device"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VariableUse" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//Binding"/>

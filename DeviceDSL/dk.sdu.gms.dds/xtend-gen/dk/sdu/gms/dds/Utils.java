@@ -114,9 +114,17 @@ public class Utils {
     return ((Gateway) _eContainer);
   }
   
-  public static dk.sdu.gms.dds.deviceDefinition.System system(final Gateway gateway) {
-    EObject _eContainer = gateway.eContainer();
-    return ((dk.sdu.gms.dds.deviceDefinition.System) _eContainer);
+  public static dk.sdu.gms.dds.deviceDefinition.System system(final EObject obj) {
+    EObject current = obj;
+    while ((current.eContainer() != null)) {
+      {
+        current = current.eContainer();
+        if ((current instanceof dk.sdu.gms.dds.deviceDefinition.System)) {
+          return ((dk.sdu.gms.dds.deviceDefinition.System)current);
+        }
+      }
+    }
+    return null;
   }
   
   public static int indexOf(final Gateway gateway, final Worker worker) {
@@ -551,6 +559,17 @@ public class Utils {
       }
     }
     return false;
+  }
+  
+  public static String getSampleMqttTopic(final SensorOutput output) {
+    String _mac = Utils.system(output).getGateway().getMac();
+    String _plus = ("samples/" + _mac);
+    String _plus_1 = (_plus + "/");
+    String _mac_1 = Utils.worker(Utils.sensor(output)).getMac();
+    String _plus_2 = (_plus_1 + _mac_1);
+    String _plus_3 = (_plus_2 + "/");
+    String _sampleMqttSubject = Utils.getSampleMqttSubject(output);
+    return (_plus_3 + _sampleMqttSubject);
   }
   
   public static String getSampleMessageName(final SensorOutput output) {

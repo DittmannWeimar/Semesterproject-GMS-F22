@@ -3,10 +3,18 @@
  */
 package dk.sdu.gms.dds.scoping;
 
+import com.google.common.base.Objects;
+import dk.sdu.gms.dds.Utils;
 import dk.sdu.gms.dds.deviceDefinition.Actuator;
+import dk.sdu.gms.dds.deviceDefinition.Binding;
 import dk.sdu.gms.dds.deviceDefinition.Device;
+import dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage;
 import dk.sdu.gms.dds.deviceDefinition.ExternalVariableUse;
+import dk.sdu.gms.dds.deviceDefinition.GraphVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.Sensor;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.scoping.IScope;
@@ -25,10 +33,40 @@ public class DeviceDefinitionScopeProvider extends AbstractDeviceDefinitionScope
     if (((context instanceof ExternalVariableUse) && reference.getName().equals("ref"))) {
       final Device obj = ((ExternalVariableUse) context).getObj();
       if ((obj instanceof Sensor)) {
-        return Scopes.scopeFor(((Sensor) obj).getOutputs());
+        return Scopes.scopeFor(Stream.<Binding>concat(((Sensor)obj).getSettings().stream(), ((Sensor)obj).getOutputs().stream()).collect(Collectors.<Binding>toList()));
       }
       if ((obj instanceof Actuator)) {
         return Scopes.scopeFor(((Actuator) obj).getSettings());
+      }
+    }
+    if ((context instanceof GraphVariableUse)) {
+      boolean _equals = Objects.equal(reference, DeviceDefinitionPackage.Literals.GRAPH_VARIABLE_USE__WORKER);
+      if (_equals) {
+        return Scopes.scopeFor(Utils.system(context).getGateway().getWorkers());
+      }
+      boolean _equals_1 = Objects.equal(reference, DeviceDefinitionPackage.Literals.GRAPH_VARIABLE_USE__DEVICE);
+      if (_equals_1) {
+        final Predicate<Device> _function = (Device x) -> {
+          return (x instanceof Sensor);
+        };
+        return Scopes.scopeFor(((GraphVariableUse)context).getWorker().getDevices().stream().filter(_function).collect(Collectors.<Device>toList()));
+      }
+      boolean _equals_2 = Objects.equal(reference, DeviceDefinitionPackage.Literals.VARIABLE_USE__REF);
+      if (_equals_2) {
+        final Device device = ((GraphVariableUse)context).getDevice();
+        IScope _switchResult = null;
+        boolean _matched = false;
+        if (device instanceof Sensor) {
+          _matched=true;
+          _switchResult = Scopes.scopeFor(Stream.<Binding>concat(((Sensor)device).getSettings().stream(), ((Sensor)device).getOutputs().stream()).collect(Collectors.<Binding>toList()));
+        }
+        if (!_matched) {
+          if (device instanceof Actuator) {
+            _matched=true;
+            _switchResult = Scopes.scopeFor(((Actuator)device).getSettings());
+          }
+        }
+        return _switchResult;
       }
     }
     return super.getScope(context, reference);

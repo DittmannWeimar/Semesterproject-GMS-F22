@@ -16,6 +16,7 @@ Graph:
 	'title' title = STRING
 	'x' xlabel = STRING
 	'y' ylabel = STRING
+	('sample' outputs += Exp)+
 ;
 	
 Gateway:
@@ -41,7 +42,6 @@ Sensor:
 	(outputs += SensorOutput)*
 	(settings += Setting)*
 	('sample' 'if' predicate += Exp)?
-	('graph' graph = [Graph])?
 ;
 
 Pin:
@@ -136,8 +136,12 @@ ExternalVariableUse:
 	obj = [Device] ('.'|'->') ref = [Binding] 
 ;
 
+GraphVariableUse:
+	worker = [Worker] ('.'|'->') device = [Device] ('.'|'->') ref = [Binding]
+;
+
 VariableUse:
-	InternalVariableUse | ExternalVariableUse
+	InternalVariableUse | ExternalVariableUse | GraphVariableUse
 ;
 
 Parenthesis:

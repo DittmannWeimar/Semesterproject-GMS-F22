@@ -195,6 +195,15 @@ public interface DeviceDefinitionFactory extends EFactory
   ExternalVariableUse createExternalVariableUse();
 
   /**
+   * Returns a new object of class '<em>Graph Variable Use</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Graph Variable Use</em>'.
+   * @generated
+   */
+  GraphVariableUse createGraphVariableUse();
+
+  /**
    * Returns a new object of class '<em>Variable Use</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

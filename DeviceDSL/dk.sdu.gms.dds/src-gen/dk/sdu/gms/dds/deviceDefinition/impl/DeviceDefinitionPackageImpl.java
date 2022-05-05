@@ -21,6 +21,7 @@ import dk.sdu.gms.dds.deviceDefinition.Gateway;
 import dk.sdu.gms.dds.deviceDefinition.GenericIn;
 import dk.sdu.gms.dds.deviceDefinition.GenericOut;
 import dk.sdu.gms.dds.deviceDefinition.Graph;
+import dk.sdu.gms.dds.deviceDefinition.GraphVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.Greater;
 import dk.sdu.gms.dds.deviceDefinition.GreaterOrEquals;
 import dk.sdu.gms.dds.deviceDefinition.Hour;
@@ -197,6 +198,13 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   private EClass externalVariableUseEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass graphVariableUseEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -628,6 +636,17 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
+  public EReference getGraph_Outputs()
+  {
+    return (EReference)graphEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getGateway()
   {
     return gatewayEClass;
@@ -818,17 +837,6 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
   public EReference getSensor_Predicate()
   {
     return (EReference)sensorEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getSensor_Graph()
-  {
-    return (EReference)sensorEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1082,6 +1090,39 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
   public EReference getExternalVariableUse_Obj()
   {
     return (EReference)externalVariableUseEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getGraphVariableUse()
+  {
+    return graphVariableUseEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getGraphVariableUse_Worker()
+  {
+    return (EReference)graphVariableUseEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getGraphVariableUse_Device()
+  {
+    return (EReference)graphVariableUseEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1802,6 +1843,7 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     createEAttribute(graphEClass, GRAPH__TITLE);
     createEAttribute(graphEClass, GRAPH__XLABEL);
     createEAttribute(graphEClass, GRAPH__YLABEL);
+    createEReference(graphEClass, GRAPH__OUTPUTS);
 
     gatewayEClass = createEClass(GATEWAY);
     createEAttribute(gatewayEClass, GATEWAY__NAME);
@@ -1824,7 +1866,6 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     sensorEClass = createEClass(SENSOR);
     createEReference(sensorEClass, SENSOR__OUTPUTS);
     createEReference(sensorEClass, SENSOR__PREDICATE);
-    createEReference(sensorEClass, SENSOR__GRAPH);
 
     pinEClass = createEClass(PIN);
     createEReference(pinEClass, PIN__TYPE);
@@ -1861,6 +1902,10 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
 
     externalVariableUseEClass = createEClass(EXTERNAL_VARIABLE_USE);
     createEReference(externalVariableUseEClass, EXTERNAL_VARIABLE_USE__OBJ);
+
+    graphVariableUseEClass = createEClass(GRAPH_VARIABLE_USE);
+    createEReference(graphVariableUseEClass, GRAPH_VARIABLE_USE__WORKER);
+    createEReference(graphVariableUseEClass, GRAPH_VARIABLE_USE__DEVICE);
 
     variableUseEClass = createEClass(VARIABLE_USE);
     createEReference(variableUseEClass, VARIABLE_USE__REF);
@@ -1989,6 +2034,7 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     externalCallEClass.getESuperTypes().add(this.getExpression());
     internalVariableUseEClass.getESuperTypes().add(this.getVariableUse());
     externalVariableUseEClass.getESuperTypes().add(this.getVariableUse());
+    graphVariableUseEClass.getESuperTypes().add(this.getVariableUse());
     variableUseEClass.getESuperTypes().add(this.getExpression());
     parenthesisEClass.getESuperTypes().add(this.getExpression());
     adcEClass.getESuperTypes().add(this.getPinType());
@@ -2035,6 +2081,7 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     initEAttribute(getGraph_Title(), ecorePackage.getEString(), "title", null, 0, 1, Graph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGraph_Xlabel(), ecorePackage.getEString(), "xlabel", null, 0, 1, Graph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGraph_Ylabel(), ecorePackage.getEString(), "ylabel", null, 0, 1, Graph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGraph_Outputs(), this.getExpression(), null, "outputs", null, 0, -1, Graph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(gatewayEClass, Gateway.class, "Gateway", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getGateway_Name(), ecorePackage.getEString(), "name", null, 0, 1, Gateway.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2057,7 +2104,6 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     initEClass(sensorEClass, Sensor.class, "Sensor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSensor_Outputs(), this.getSensorOutput(), null, "outputs", null, 0, -1, Sensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSensor_Predicate(), this.getExpression(), null, "predicate", null, 0, -1, Sensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSensor_Graph(), this.getGraph(), null, "graph", null, 0, 1, Sensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(pinEClass, Pin.class, "Pin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getPin_Type(), this.getPinType(), null, "type", null, 0, 1, Pin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2094,6 +2140,10 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
 
     initEClass(externalVariableUseEClass, ExternalVariableUse.class, "ExternalVariableUse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getExternalVariableUse_Obj(), this.getDevice(), null, "obj", null, 0, 1, ExternalVariableUse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(graphVariableUseEClass, GraphVariableUse.class, "GraphVariableUse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getGraphVariableUse_Worker(), this.getWorker(), null, "worker", null, 0, 1, GraphVariableUse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGraphVariableUse_Device(), this.getDevice(), null, "device", null, 0, 1, GraphVariableUse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(variableUseEClass, VariableUse.class, "VariableUse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getVariableUse_Ref(), this.getBinding(), null, "ref", null, 0, 1, VariableUse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

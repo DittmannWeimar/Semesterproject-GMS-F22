@@ -42,7 +42,7 @@ EspMQTTClient client(
   "vald.io",
   "kristian",
   "1234",
-  "gms-gateway-ac364695-46a3-41f9-8e3a-8f389fdd2d03",
+  "gms-gateway-a94341af-bbd0-4f9a-a0c0-aab04ac5ac9e",
   3001
 );
 
@@ -198,11 +198,20 @@ void print_mac(const uint8_t* mac) {
 String mac_to_string(const uint8_t* mac) {
   String result = "";
   for (int i = 0; i < 6; i++) {
-    result += String(mac[i], HEX);
+    result += hex8_to_string(mac[i]);
     if (i != 6 - 1) {
       result += ":";
     }
   }
+  return result;
+}
+
+String hex8_to_string(uint8_t data) // prints 8-bit data in hex with leading zeroes
+{
+  String result = "";
+  if (data < 0x10) { result = result + "0"; }
+  result += String(data ,HEX);
+  result.toUpperCase();
   return result;
 }
 

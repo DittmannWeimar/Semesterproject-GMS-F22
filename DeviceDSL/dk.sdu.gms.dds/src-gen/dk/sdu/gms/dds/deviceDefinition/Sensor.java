@@ -16,7 +16,6 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Sensor#getOutputs <em>Outputs</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Sensor#getPredicate <em>Predicate</em>}</li>
- *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Sensor#getGraph <em>Graph</em>}</li>
  * </ul>
  *
  * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getSensor()
@@ -48,27 +47,5 @@ public interface Sensor extends Device
    * @generated
    */
   EList<Expression> getPredicate();
-
-  /**
-   * Returns the value of the '<em><b>Graph</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Graph</em>' reference.
-   * @see #setGraph(Graph)
-   * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getSensor_Graph()
-   * @model
-   * @generated
-   */
-  Graph getGraph();
-
-  /**
-   * Sets the value of the '{@link dk.sdu.gms.dds.deviceDefinition.Sensor#getGraph <em>Graph</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Graph</em>' reference.
-   * @see #getGraph()
-   * @generated
-   */
-  void setGraph(Graph value);
 
 } // Sensor

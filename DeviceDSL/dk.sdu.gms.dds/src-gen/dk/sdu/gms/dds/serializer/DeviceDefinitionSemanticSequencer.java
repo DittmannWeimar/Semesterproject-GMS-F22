@@ -20,6 +20,7 @@ import dk.sdu.gms.dds.deviceDefinition.Gateway;
 import dk.sdu.gms.dds.deviceDefinition.GenericIn;
 import dk.sdu.gms.dds.deviceDefinition.GenericOut;
 import dk.sdu.gms.dds.deviceDefinition.Graph;
+import dk.sdu.gms.dds.deviceDefinition.GraphVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.Greater;
 import dk.sdu.gms.dds.deviceDefinition.GreaterOrEquals;
 import dk.sdu.gms.dds.deviceDefinition.Hour;
@@ -113,6 +114,9 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 				return; 
 			case DeviceDefinitionPackage.GRAPH:
 				sequence_Graph(context, (Graph) semanticObject); 
+				return; 
+			case DeviceDefinitionPackage.GRAPH_VARIABLE_USE:
+				sequence_GraphVariableUse(context, (GraphVariableUse) semanticObject); 
 				return; 
 			case DeviceDefinitionPackage.GREATER:
 				sequence_Compare(context, (Greater) semanticObject); 
@@ -696,6 +700,52 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     Exp returns GraphVariableUse
+	 *     Exp.Plus_1_0_0_0 returns GraphVariableUse
+	 *     Exp.Minus_1_0_1_0 returns GraphVariableUse
+	 *     Factor returns GraphVariableUse
+	 *     Factor.Mult_1_0_0_0 returns GraphVariableUse
+	 *     Factor.Div_1_0_1_0 returns GraphVariableUse
+	 *     Compare returns GraphVariableUse
+	 *     Compare.Greater_1_0_0_0 returns GraphVariableUse
+	 *     Compare.Lesser_1_0_1_0 returns GraphVariableUse
+	 *     CompareOrEquals returns GraphVariableUse
+	 *     CompareOrEquals.GreaterOrEquals_1_0_0_0 returns GraphVariableUse
+	 *     CompareOrEquals.LesserOrEquals_1_0_1_0 returns GraphVariableUse
+	 *     EqualsOrNotEquals returns GraphVariableUse
+	 *     EqualsOrNotEquals.Equals_1_0_0_0 returns GraphVariableUse
+	 *     EqualsOrNotEquals.NotEquals_1_0_1_0 returns GraphVariableUse
+	 *     AndOr returns GraphVariableUse
+	 *     AndOr.And_1_0_0_0 returns GraphVariableUse
+	 *     AndOr.Or_1_0_1_0 returns GraphVariableUse
+	 *     Primary returns GraphVariableUse
+	 *     GraphVariableUse returns GraphVariableUse
+	 *     VariableUse returns GraphVariableUse
+	 *
+	 * Constraint:
+	 *     (worker=[Worker|ID] device=[Device|ID] ref=[Binding|ID])
+	 * </pre>
+	 */
+	protected void sequence_GraphVariableUse(ISerializationContext context, GraphVariableUse semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, DeviceDefinitionPackage.Literals.GRAPH_VARIABLE_USE__WORKER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeviceDefinitionPackage.Literals.GRAPH_VARIABLE_USE__WORKER));
+			if (transientValues.isValueTransient(semanticObject, DeviceDefinitionPackage.Literals.GRAPH_VARIABLE_USE__DEVICE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeviceDefinitionPackage.Literals.GRAPH_VARIABLE_USE__DEVICE));
+			if (transientValues.isValueTransient(semanticObject, DeviceDefinitionPackage.Literals.VARIABLE_USE__REF) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeviceDefinitionPackage.Literals.VARIABLE_USE__REF));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getGraphVariableUseAccess().getWorkerWorkerIDTerminalRuleCall_0_0_1(), semanticObject.eGet(DeviceDefinitionPackage.Literals.GRAPH_VARIABLE_USE__WORKER, false));
+		feeder.accept(grammarAccess.getGraphVariableUseAccess().getDeviceDeviceIDTerminalRuleCall_2_0_1(), semanticObject.eGet(DeviceDefinitionPackage.Literals.GRAPH_VARIABLE_USE__DEVICE, false));
+		feeder.accept(grammarAccess.getGraphVariableUseAccess().getRefBindingIDTerminalRuleCall_4_0_1(), semanticObject.eGet(DeviceDefinitionPackage.Literals.VARIABLE_USE__REF, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     Graph returns Graph
 	 *
 	 * Constraint:
@@ -705,33 +755,13 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 	 *         category=STRING 
 	 *         title=STRING 
 	 *         xlabel=STRING 
-	 *         ylabel=STRING
+	 *         ylabel=STRING 
+	 *         outputs+=Exp+
 	 *     )
 	 * </pre>
 	 */
 	protected void sequence_Graph(ISerializationContext context, Graph semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, DeviceDefinitionPackage.Literals.GRAPH__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeviceDefinitionPackage.Literals.GRAPH__TYPE));
-			if (transientValues.isValueTransient(semanticObject, DeviceDefinitionPackage.Literals.GRAPH__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeviceDefinitionPackage.Literals.GRAPH__NAME));
-			if (transientValues.isValueTransient(semanticObject, DeviceDefinitionPackage.Literals.GRAPH__CATEGORY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeviceDefinitionPackage.Literals.GRAPH__CATEGORY));
-			if (transientValues.isValueTransient(semanticObject, DeviceDefinitionPackage.Literals.GRAPH__TITLE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeviceDefinitionPackage.Literals.GRAPH__TITLE));
-			if (transientValues.isValueTransient(semanticObject, DeviceDefinitionPackage.Literals.GRAPH__XLABEL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeviceDefinitionPackage.Literals.GRAPH__XLABEL));
-			if (transientValues.isValueTransient(semanticObject, DeviceDefinitionPackage.Literals.GRAPH__YLABEL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeviceDefinitionPackage.Literals.GRAPH__YLABEL));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getGraphAccess().getTypeIDTerminalRuleCall_1_0(), semanticObject.getType());
-		feeder.accept(grammarAccess.getGraphAccess().getNameIDTerminalRuleCall_2_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getGraphAccess().getCategorySTRINGTerminalRuleCall_5_0(), semanticObject.getCategory());
-		feeder.accept(grammarAccess.getGraphAccess().getTitleSTRINGTerminalRuleCall_7_0(), semanticObject.getTitle());
-		feeder.accept(grammarAccess.getGraphAccess().getXlabelSTRINGTerminalRuleCall_9_0(), semanticObject.getXlabel());
-		feeder.accept(grammarAccess.getGraphAccess().getYlabelSTRINGTerminalRuleCall_11_0(), semanticObject.getYlabel());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -1098,8 +1128,7 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 	 *         pins+=Pin* 
 	 *         outputs+=SensorOutput* 
 	 *         settings+=Setting* 
-	 *         predicate+=Exp? 
-	 *         graph=[Graph|ID]?
+	 *         predicate+=Exp?
 	 *     )
 	 * </pre>
 	 */

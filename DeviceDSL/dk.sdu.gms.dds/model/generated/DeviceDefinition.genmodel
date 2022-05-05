@@ -22,6 +22,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Graph/title"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Graph/xlabel"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Graph/ylabel"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Graph/outputs"/>
     </genClasses>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Gateway">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Gateway/name"/>
@@ -44,7 +45,6 @@
     <genClasses ecoreClass="DeviceDefinition.ecore#//Sensor">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Sensor/outputs"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Sensor/predicate"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Sensor/graph"/>
     </genClasses>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Pin">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Pin/type"/>
@@ -75,6 +75,10 @@
     <genClasses ecoreClass="DeviceDefinition.ecore#//InternalVariableUse"/>
     <genClasses ecoreClass="DeviceDefinition.ecore#//ExternalVariableUse">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//ExternalVariableUse/obj"/>
+    </genClasses>
+    <genClasses ecoreClass="DeviceDefinition.ecore#//GraphVariableUse">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//GraphVariableUse/worker"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//GraphVariableUse/device"/>
     </genClasses>
     <genClasses ecoreClass="DeviceDefinition.ecore#//VariableUse">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//VariableUse/ref"/>

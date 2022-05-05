@@ -221,11 +221,20 @@ public class GatewayGenerator {
 		String mac_to_string(const uint8_t* mac) {
 		  String result = "";
 		  for (int i = 0; i < 6; i++) {
-		    result += String(mac[i], HEX);
+		    result += hex8_to_string(mac[i]);
 		    if (i != 6 - 1) {
 		      result += ":";
 		    }
 		  }
+		  return result;
+		}
+		
+		String hex8_to_string(uint8_t data) // prints 8-bit data in hex with leading zeroes
+		{
+		  String result = "";
+		  if (data < 0x10) { result = result + "0"; }
+		  result += String(data ,HEX);
+		  result.toUpperCase();
 		  return result;
 		}
 		

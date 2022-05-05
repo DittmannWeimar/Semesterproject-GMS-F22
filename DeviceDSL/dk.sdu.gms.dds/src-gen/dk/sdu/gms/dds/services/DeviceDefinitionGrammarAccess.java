@@ -169,6 +169,10 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		private final Keyword cYKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		private final Assignment cYlabelAssignment_11 = (Assignment)cGroup.eContents().get(11);
 		private final RuleCall cYlabelSTRINGTerminalRuleCall_11_0 = (RuleCall)cYlabelAssignment_11.eContents().get(0);
+		private final Group cGroup_12 = (Group)cGroup.eContents().get(12);
+		private final Keyword cSampleKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
+		private final Assignment cOutputsAssignment_12_1 = (Assignment)cGroup_12.eContents().get(1);
+		private final RuleCall cOutputsExpParserRuleCall_12_1_0 = (RuleCall)cOutputsAssignment_12_1.eContents().get(0);
 		
 		//Graph:
 		//    'Graph' type = ID name=ID ':'
@@ -176,6 +180,7 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		//    'title' title = STRING
 		//    'x' xlabel = STRING
 		//    'y' ylabel = STRING
+		//    ('sample' outputs += Exp)+
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -184,6 +189,7 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		//'title' title = STRING
 		//'x' xlabel = STRING
 		//'y' ylabel = STRING
+		//('sample' outputs += Exp)+
 		public Group getGroup() { return cGroup; }
 		
 		//'Graph'
@@ -239,6 +245,18 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		
 		//STRING
 		public RuleCall getYlabelSTRINGTerminalRuleCall_11_0() { return cYlabelSTRINGTerminalRuleCall_11_0; }
+		
+		//('sample' outputs += Exp)+
+		public Group getGroup_12() { return cGroup_12; }
+		
+		//'sample'
+		public Keyword getSampleKeyword_12_0() { return cSampleKeyword_12_0; }
+		
+		//outputs += Exp
+		public Assignment getOutputsAssignment_12_1() { return cOutputsAssignment_12_1; }
+		
+		//Exp
+		public RuleCall getOutputsExpParserRuleCall_12_1_0() { return cOutputsExpParserRuleCall_12_1_0; }
 	}
 	public class GatewayElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.gms.dds.DeviceDefinition.Gateway");
@@ -424,11 +442,6 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		private final Keyword cIfKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
 		private final Assignment cPredicateAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
 		private final RuleCall cPredicateExpParserRuleCall_7_2_0 = (RuleCall)cPredicateAssignment_7_2.eContents().get(0);
-		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Keyword cGraphKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
-		private final Assignment cGraphAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
-		private final CrossReference cGraphGraphCrossReference_8_1_0 = (CrossReference)cGraphAssignment_8_1.eContents().get(0);
-		private final RuleCall cGraphGraphIDTerminalRuleCall_8_1_0_1 = (RuleCall)cGraphGraphCrossReference_8_1_0.eContents().get(1);
 		
 		//Sensor:
 		//    'Sensor' type = ID name=ID ':'
@@ -436,7 +449,6 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		//    (outputs += SensorOutput)*
 		//    (settings += Setting)*
 		//    ('sample' 'if' predicate += Exp)?
-		//    ('graph' graph = [Graph])?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -445,7 +457,6 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		//(outputs += SensorOutput)*
 		//(settings += Setting)*
 		//('sample' 'if' predicate += Exp)?
-		//('graph' graph = [Graph])?
 		public Group getGroup() { return cGroup; }
 		
 		//'Sensor'
@@ -516,21 +527,6 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		
 		//Exp
 		public RuleCall getPredicateExpParserRuleCall_7_2_0() { return cPredicateExpParserRuleCall_7_2_0; }
-		
-		//('graph' graph = [Graph])?
-		public Group getGroup_8() { return cGroup_8; }
-		
-		//'graph'
-		public Keyword getGraphKeyword_8_0() { return cGraphKeyword_8_0; }
-		
-		//graph = [Graph]
-		public Assignment getGraphAssignment_8_1() { return cGraphAssignment_8_1; }
-		
-		//[Graph]
-		public CrossReference getGraphGraphCrossReference_8_1_0() { return cGraphGraphCrossReference_8_1_0; }
-		
-		//ID
-		public RuleCall getGraphGraphIDTerminalRuleCall_8_1_0_1() { return cGraphGraphIDTerminalRuleCall_8_1_0_1; }
 	}
 	public class PinElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.gms.dds.DeviceDefinition.Pin");
@@ -1560,18 +1556,91 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		//ID
 		public RuleCall getRefBindingIDTerminalRuleCall_2_0_1() { return cRefBindingIDTerminalRuleCall_2_0_1; }
 	}
+	public class GraphVariableUseElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.gms.dds.DeviceDefinition.GraphVariableUse");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cWorkerAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final CrossReference cWorkerWorkerCrossReference_0_0 = (CrossReference)cWorkerAssignment_0.eContents().get(0);
+		private final RuleCall cWorkerWorkerIDTerminalRuleCall_0_0_1 = (RuleCall)cWorkerWorkerCrossReference_0_0.eContents().get(1);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final Keyword cFullStopKeyword_1_0 = (Keyword)cAlternatives_1.eContents().get(0);
+		private final Keyword cHyphenMinusGreaterThanSignKeyword_1_1 = (Keyword)cAlternatives_1.eContents().get(1);
+		private final Assignment cDeviceAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cDeviceDeviceCrossReference_2_0 = (CrossReference)cDeviceAssignment_2.eContents().get(0);
+		private final RuleCall cDeviceDeviceIDTerminalRuleCall_2_0_1 = (RuleCall)cDeviceDeviceCrossReference_2_0.eContents().get(1);
+		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
+		private final Keyword cFullStopKeyword_3_0 = (Keyword)cAlternatives_3.eContents().get(0);
+		private final Keyword cHyphenMinusGreaterThanSignKeyword_3_1 = (Keyword)cAlternatives_3.eContents().get(1);
+		private final Assignment cRefAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final CrossReference cRefBindingCrossReference_4_0 = (CrossReference)cRefAssignment_4.eContents().get(0);
+		private final RuleCall cRefBindingIDTerminalRuleCall_4_0_1 = (RuleCall)cRefBindingCrossReference_4_0.eContents().get(1);
+		
+		//GraphVariableUse:
+		//    worker = [Worker] ('.'|'->') device = [Device] ('.'|'->') ref = [Binding]
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//worker = [Worker] ('.'|'->') device = [Device] ('.'|'->') ref = [Binding]
+		public Group getGroup() { return cGroup; }
+		
+		//worker = [Worker]
+		public Assignment getWorkerAssignment_0() { return cWorkerAssignment_0; }
+		
+		//[Worker]
+		public CrossReference getWorkerWorkerCrossReference_0_0() { return cWorkerWorkerCrossReference_0_0; }
+		
+		//ID
+		public RuleCall getWorkerWorkerIDTerminalRuleCall_0_0_1() { return cWorkerWorkerIDTerminalRuleCall_0_0_1; }
+		
+		//('.'|'->')
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+		
+		//'.'
+		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
+		
+		//'->'
+		public Keyword getHyphenMinusGreaterThanSignKeyword_1_1() { return cHyphenMinusGreaterThanSignKeyword_1_1; }
+		
+		//device = [Device]
+		public Assignment getDeviceAssignment_2() { return cDeviceAssignment_2; }
+		
+		//[Device]
+		public CrossReference getDeviceDeviceCrossReference_2_0() { return cDeviceDeviceCrossReference_2_0; }
+		
+		//ID
+		public RuleCall getDeviceDeviceIDTerminalRuleCall_2_0_1() { return cDeviceDeviceIDTerminalRuleCall_2_0_1; }
+		
+		//('.'|'->')
+		public Alternatives getAlternatives_3() { return cAlternatives_3; }
+		
+		//'.'
+		public Keyword getFullStopKeyword_3_0() { return cFullStopKeyword_3_0; }
+		
+		//'->'
+		public Keyword getHyphenMinusGreaterThanSignKeyword_3_1() { return cHyphenMinusGreaterThanSignKeyword_3_1; }
+		
+		//ref = [Binding]
+		public Assignment getRefAssignment_4() { return cRefAssignment_4; }
+		
+		//[Binding]
+		public CrossReference getRefBindingCrossReference_4_0() { return cRefBindingCrossReference_4_0; }
+		
+		//ID
+		public RuleCall getRefBindingIDTerminalRuleCall_4_0_1() { return cRefBindingIDTerminalRuleCall_4_0_1; }
+	}
 	public class VariableUseElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.gms.dds.DeviceDefinition.VariableUse");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cInternalVariableUseParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cExternalVariableUseParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cGraphVariableUseParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//VariableUse:
-		//    InternalVariableUse | ExternalVariableUse
+		//    InternalVariableUse | ExternalVariableUse | GraphVariableUse
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//InternalVariableUse | ExternalVariableUse
+		//InternalVariableUse | ExternalVariableUse | GraphVariableUse
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//InternalVariableUse
@@ -1579,6 +1648,9 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		
 		//ExternalVariableUse
 		public RuleCall getExternalVariableUseParserRuleCall_1() { return cExternalVariableUseParserRuleCall_1; }
+		
+		//GraphVariableUse
+		public RuleCall getGraphVariableUseParserRuleCall_2() { return cGraphVariableUseParserRuleCall_2; }
 	}
 	public class ParenthesisElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.gms.dds.DeviceDefinition.Parenthesis");
@@ -1638,6 +1710,7 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 	private final ExternalCallElements pExternalCall;
 	private final InternalVariableUseElements pInternalVariableUse;
 	private final ExternalVariableUseElements pExternalVariableUse;
+	private final GraphVariableUseElements pGraphVariableUse;
 	private final VariableUseElements pVariableUse;
 	private final ParenthesisElements pParenthesis;
 	
@@ -1678,6 +1751,7 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		this.pExternalCall = new ExternalCallElements();
 		this.pInternalVariableUse = new InternalVariableUseElements();
 		this.pExternalVariableUse = new ExternalVariableUseElements();
+		this.pGraphVariableUse = new GraphVariableUseElements();
 		this.pVariableUse = new VariableUseElements();
 		this.pParenthesis = new ParenthesisElements();
 	}
@@ -1730,6 +1804,7 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 	//    'title' title = STRING
 	//    'x' xlabel = STRING
 	//    'y' ylabel = STRING
+	//    ('sample' outputs += Exp)+
 	//;
 	public GraphElements getGraphAccess() {
 		return pGraph;
@@ -1783,7 +1858,6 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 	//    (outputs += SensorOutput)*
 	//    (settings += Setting)*
 	//    ('sample' 'if' predicate += Exp)?
-	//    ('graph' graph = [Graph])?
 	//;
 	public SensorElements getSensorAccess() {
 		return pSensor;
@@ -2027,8 +2101,19 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		return getExternalVariableUseAccess().getRule();
 	}
 	
+	//GraphVariableUse:
+	//    worker = [Worker] ('.'|'->') device = [Device] ('.'|'->') ref = [Binding]
+	//;
+	public GraphVariableUseElements getGraphVariableUseAccess() {
+		return pGraphVariableUse;
+	}
+	
+	public ParserRule getGraphVariableUseRule() {
+		return getGraphVariableUseAccess().getRule();
+	}
+	
 	//VariableUse:
-	//    InternalVariableUse | ExternalVariableUse
+	//    InternalVariableUse | ExternalVariableUse | GraphVariableUse
 	//;
 	public VariableUseElements getVariableUseAccess() {
 		return pVariableUse;

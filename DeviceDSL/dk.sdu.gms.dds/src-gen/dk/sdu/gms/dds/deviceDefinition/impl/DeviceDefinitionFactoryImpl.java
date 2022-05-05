@@ -23,6 +23,7 @@ import dk.sdu.gms.dds.deviceDefinition.Gateway;
 import dk.sdu.gms.dds.deviceDefinition.GenericIn;
 import dk.sdu.gms.dds.deviceDefinition.GenericOut;
 import dk.sdu.gms.dds.deviceDefinition.Graph;
+import dk.sdu.gms.dds.deviceDefinition.GraphVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.Greater;
 import dk.sdu.gms.dds.deviceDefinition.GreaterOrEquals;
 import dk.sdu.gms.dds.deviceDefinition.Hour;
@@ -131,6 +132,7 @@ public class DeviceDefinitionFactoryImpl extends EFactoryImpl implements DeviceD
       case DeviceDefinitionPackage.EXTERNAL_CALL: return createExternalCall();
       case DeviceDefinitionPackage.INTERNAL_VARIABLE_USE: return createInternalVariableUse();
       case DeviceDefinitionPackage.EXTERNAL_VARIABLE_USE: return createExternalVariableUse();
+      case DeviceDefinitionPackage.GRAPH_VARIABLE_USE: return createGraphVariableUse();
       case DeviceDefinitionPackage.VARIABLE_USE: return createVariableUse();
       case DeviceDefinitionPackage.PARENTHESIS: return createParenthesis();
       case DeviceDefinitionPackage.ADC: return createADC();
@@ -390,6 +392,18 @@ public class DeviceDefinitionFactoryImpl extends EFactoryImpl implements DeviceD
   {
     ExternalVariableUseImpl externalVariableUse = new ExternalVariableUseImpl();
     return externalVariableUse;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public GraphVariableUse createGraphVariableUse()
+  {
+    GraphVariableUseImpl graphVariableUse = new GraphVariableUseImpl();
+    return graphVariableUse;
   }
 
   /**

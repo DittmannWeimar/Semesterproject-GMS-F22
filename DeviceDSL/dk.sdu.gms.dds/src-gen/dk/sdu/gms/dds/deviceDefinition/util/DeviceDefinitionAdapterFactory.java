@@ -22,6 +22,7 @@ import dk.sdu.gms.dds.deviceDefinition.Gateway;
 import dk.sdu.gms.dds.deviceDefinition.GenericIn;
 import dk.sdu.gms.dds.deviceDefinition.GenericOut;
 import dk.sdu.gms.dds.deviceDefinition.Graph;
+import dk.sdu.gms.dds.deviceDefinition.GraphVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.Greater;
 import dk.sdu.gms.dds.deviceDefinition.GreaterOrEquals;
 import dk.sdu.gms.dds.deviceDefinition.Hour;
@@ -215,6 +216,11 @@ public class DeviceDefinitionAdapterFactory extends AdapterFactoryImpl
       public Adapter caseExternalVariableUse(ExternalVariableUse object)
       {
         return createExternalVariableUseAdapter();
+      }
+      @Override
+      public Adapter caseGraphVariableUse(GraphVariableUse object)
+      {
+        return createGraphVariableUseAdapter();
       }
       @Override
       public Adapter caseVariableUse(VariableUse object)
@@ -659,6 +665,21 @@ public class DeviceDefinitionAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createExternalVariableUseAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dk.sdu.gms.dds.deviceDefinition.GraphVariableUse <em>Graph Variable Use</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dk.sdu.gms.dds.deviceDefinition.GraphVariableUse
+   * @generated
+   */
+  public Adapter createGraphVariableUseAdapter()
   {
     return null;
   }

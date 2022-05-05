@@ -399,6 +399,31 @@ ruleGraph returns [EObject current=null]
 				}
 			)
 		)
+		(
+			otherlv_12='sample'
+			{
+				newLeafNode(otherlv_12, grammarAccess.getGraphAccess().getSampleKeyword_12_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getGraphAccess().getOutputsExpParserRuleCall_12_1_0());
+					}
+					lv_outputs_13_0=ruleExp
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getGraphRule());
+						}
+						add(
+							$current,
+							"outputs",
+							lv_outputs_13_0,
+							"dk.sdu.gms.dds.DeviceDefinition.Exp");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)+
 	)
 ;
 
@@ -832,25 +857,6 @@ ruleSensor returns [EObject current=null]
 							lv_predicate_12_0,
 							"dk.sdu.gms.dds.DeviceDefinition.Exp");
 						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
-			otherlv_13='graph'
-			{
-				newLeafNode(otherlv_13, grammarAccess.getSensorAccess().getGraphKeyword_8_0());
-			}
-			(
-				(
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getSensorRule());
-						}
-					}
-					otherlv_14=RULE_ID
-					{
-						newLeafNode(otherlv_14, grammarAccess.getSensorAccess().getGraphGraphCrossReference_8_1_0());
 					}
 				)
 			)
@@ -2344,6 +2350,86 @@ ruleExternalVariableUse returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleGraphVariableUse
+entryRuleGraphVariableUse returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getGraphVariableUseRule()); }
+	iv_ruleGraphVariableUse=ruleGraphVariableUse
+	{ $current=$iv_ruleGraphVariableUse.current; }
+	EOF;
+
+// Rule GraphVariableUse
+ruleGraphVariableUse returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGraphVariableUseRule());
+					}
+				}
+				otherlv_0=RULE_ID
+				{
+					newLeafNode(otherlv_0, grammarAccess.getGraphVariableUseAccess().getWorkerWorkerCrossReference_0_0());
+				}
+			)
+		)
+		(
+			otherlv_1='.'
+			{
+				newLeafNode(otherlv_1, grammarAccess.getGraphVariableUseAccess().getFullStopKeyword_1_0());
+			}
+			    |
+			otherlv_2='->'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getGraphVariableUseAccess().getHyphenMinusGreaterThanSignKeyword_1_1());
+			}
+		)
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGraphVariableUseRule());
+					}
+				}
+				otherlv_3=RULE_ID
+				{
+					newLeafNode(otherlv_3, grammarAccess.getGraphVariableUseAccess().getDeviceDeviceCrossReference_2_0());
+				}
+			)
+		)
+		(
+			otherlv_4='.'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getGraphVariableUseAccess().getFullStopKeyword_3_0());
+			}
+			    |
+			otherlv_5='->'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getGraphVariableUseAccess().getHyphenMinusGreaterThanSignKeyword_3_1());
+			}
+		)
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGraphVariableUseRule());
+					}
+				}
+				otherlv_6=RULE_ID
+				{
+					newLeafNode(otherlv_6, grammarAccess.getGraphVariableUseAccess().getRefBindingCrossReference_4_0());
+				}
+			)
+		)
+	)
+;
+
 // Entry rule entryRuleVariableUse
 entryRuleVariableUse returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getVariableUseRule()); }
@@ -2375,6 +2461,15 @@ ruleVariableUse returns [EObject current=null]
 		this_ExternalVariableUse_1=ruleExternalVariableUse
 		{
 			$current = $this_ExternalVariableUse_1.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getVariableUseAccess().getGraphVariableUseParserRuleCall_2());
+		}
+		this_GraphVariableUse_2=ruleGraphVariableUse
+		{
+			$current = $this_GraphVariableUse_2.current;
 			afterParserOrEnumRuleCall();
 		}
 	)

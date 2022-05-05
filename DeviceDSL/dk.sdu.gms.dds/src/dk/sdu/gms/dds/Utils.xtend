@@ -43,6 +43,7 @@ import dk.sdu.gms.dds.deviceDefinition.GenericOut
 import dk.sdu.gms.dds.deviceDefinition.ADC
 import dk.sdu.gms.dds.deviceDefinition.GenericIn
 import java.util.Arrays
+import org.eclipse.emf.ecore.EObject
 
 class Utils {
 	
@@ -96,8 +97,15 @@ class Utils {
 		worker.eContainer as Gateway; 
 	}
 	
-	public static def system (Gateway gateway) {
-		return gateway.eContainer as dk.sdu.gms.dds.deviceDefinition.System
+	public static def system (EObject obj) {
+		var current = obj;
+		while (current.eContainer !== null) {
+			current = current.eContainer;
+			if (current instanceof dk.sdu.gms.dds.deviceDefinition.System) {
+				return current;
+			}
+		}
+		return null;
 	}
 	
 	public static def indexOf (Gateway gateway, Worker worker) {
@@ -286,5 +294,9 @@ class Utils {
 			}
 		}
 		return false;
+	}
+	
+	public static def getSampleMqttTopic (SensorOutput output) {
+		return 'samples/' + system(output).gateway.mac + '/' + output.sensor.worker.mac + '/' + getSampleMqttSubject(output)
 	}
 }

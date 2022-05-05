@@ -3,6 +3,8 @@
  */
 package dk.sdu.gms.dds.deviceDefinition;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -20,6 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Graph#getTitle <em>Title</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Graph#getXlabel <em>Xlabel</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Graph#getYlabel <em>Ylabel</em>}</li>
+ *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Graph#getOutputs <em>Outputs</em>}</li>
  * </ul>
  *
  * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getGraph()
@@ -159,5 +162,17 @@ public interface Graph extends EObject
    * @generated
    */
   void setYlabel(String value);
+
+  /**
+   * Returns the value of the '<em><b>Outputs</b></em>' containment reference list.
+   * The list contents are of type {@link dk.sdu.gms.dds.deviceDefinition.Expression}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Outputs</em>' containment reference list.
+   * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getGraph_Outputs()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Expression> getOutputs();
 
 } // Graph
