@@ -11,12 +11,28 @@ System:
 ;
 
 Graph:
-	'Graph' type = ID name=ID ':'
+	'Graph' ':'
 	'category' category = STRING
 	'title' title = STRING
 	'x' xlabel = STRING
 	'y' ylabel = STRING
-	('sample' outputs += Exp)+
+	(lines += GraphLine)+
+;
+
+GraphLine:
+	'line' output = Exp
+	('legend' legend = STRING)?
+	('color' color = Color)?
+;
+
+Color:
+	{RGB} '(' red = DECIMAL ',' green = DECIMAL ',' blue = DECIMAL ')' |
+	{Preset} preset = ColorPreset |
+	{Random} 'random'
+;
+
+enum ColorPreset:
+	Red='red' | Green='green' | Blue='blue' | Yellow='yellow'
 ;
 	
 Gateway:

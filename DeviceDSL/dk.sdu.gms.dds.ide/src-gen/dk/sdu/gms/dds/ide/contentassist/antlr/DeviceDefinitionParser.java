@@ -31,6 +31,7 @@ public class DeviceDefinitionParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, DeviceDefinitionGrammarAccess grammarAccess) {
+			builder.put(grammarAccess.getColorAccess().getAlternatives(), "rule__Color__Alternatives");
 			builder.put(grammarAccess.getDeviceAccess().getAlternatives(), "rule__Device__Alternatives");
 			builder.put(grammarAccess.getPinTypeAccess().getAlternatives(), "rule__PinType__Alternatives");
 			builder.put(grammarAccess.getTimeUnitAccess().getAlternatives(), "rule__TimeUnit__Alternatives");
@@ -52,11 +53,17 @@ public class DeviceDefinitionParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getGraphVariableUseAccess().getAlternatives_1(), "rule__GraphVariableUse__Alternatives_1");
 			builder.put(grammarAccess.getGraphVariableUseAccess().getAlternatives_3(), "rule__GraphVariableUse__Alternatives_3");
 			builder.put(grammarAccess.getVariableUseAccess().getAlternatives(), "rule__VariableUse__Alternatives");
+			builder.put(grammarAccess.getColorPresetAccess().getAlternatives(), "rule__ColorPreset__Alternatives");
 			builder.put(grammarAccess.getSystemAccess().getGroup(), "rule__System__Group__0");
 			builder.put(grammarAccess.getSystemAccess().getGroup_4(), "rule__System__Group_4__0");
 			builder.put(grammarAccess.getSystemAccess().getGroup_7(), "rule__System__Group_7__0");
 			builder.put(grammarAccess.getGraphAccess().getGroup(), "rule__Graph__Group__0");
-			builder.put(grammarAccess.getGraphAccess().getGroup_12(), "rule__Graph__Group_12__0");
+			builder.put(grammarAccess.getGraphLineAccess().getGroup(), "rule__GraphLine__Group__0");
+			builder.put(grammarAccess.getGraphLineAccess().getGroup_2(), "rule__GraphLine__Group_2__0");
+			builder.put(grammarAccess.getGraphLineAccess().getGroup_3(), "rule__GraphLine__Group_3__0");
+			builder.put(grammarAccess.getColorAccess().getGroup_0(), "rule__Color__Group_0__0");
+			builder.put(grammarAccess.getColorAccess().getGroup_1(), "rule__Color__Group_1__0");
+			builder.put(grammarAccess.getColorAccess().getGroup_2(), "rule__Color__Group_2__0");
 			builder.put(grammarAccess.getGatewayAccess().getGroup(), "rule__Gateway__Group__0");
 			builder.put(grammarAccess.getWorkerAccess().getGroup(), "rule__Worker__Group__0");
 			builder.put(grammarAccess.getWorkerAccess().getGroup_3(), "rule__Worker__Group_3__0");
@@ -123,13 +130,18 @@ public class DeviceDefinitionParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getSystemAccess().getMqttPasswordAssignment_7_5(), "rule__System__MqttPasswordAssignment_7_5");
 			builder.put(grammarAccess.getSystemAccess().getGatewayAssignment_8(), "rule__System__GatewayAssignment_8");
 			builder.put(grammarAccess.getSystemAccess().getGraphsAssignment_9(), "rule__System__GraphsAssignment_9");
-			builder.put(grammarAccess.getGraphAccess().getTypeAssignment_1(), "rule__Graph__TypeAssignment_1");
-			builder.put(grammarAccess.getGraphAccess().getNameAssignment_2(), "rule__Graph__NameAssignment_2");
-			builder.put(grammarAccess.getGraphAccess().getCategoryAssignment_5(), "rule__Graph__CategoryAssignment_5");
-			builder.put(grammarAccess.getGraphAccess().getTitleAssignment_7(), "rule__Graph__TitleAssignment_7");
-			builder.put(grammarAccess.getGraphAccess().getXlabelAssignment_9(), "rule__Graph__XlabelAssignment_9");
-			builder.put(grammarAccess.getGraphAccess().getYlabelAssignment_11(), "rule__Graph__YlabelAssignment_11");
-			builder.put(grammarAccess.getGraphAccess().getOutputsAssignment_12_1(), "rule__Graph__OutputsAssignment_12_1");
+			builder.put(grammarAccess.getGraphAccess().getCategoryAssignment_3(), "rule__Graph__CategoryAssignment_3");
+			builder.put(grammarAccess.getGraphAccess().getTitleAssignment_5(), "rule__Graph__TitleAssignment_5");
+			builder.put(grammarAccess.getGraphAccess().getXlabelAssignment_7(), "rule__Graph__XlabelAssignment_7");
+			builder.put(grammarAccess.getGraphAccess().getYlabelAssignment_9(), "rule__Graph__YlabelAssignment_9");
+			builder.put(grammarAccess.getGraphAccess().getLinesAssignment_10(), "rule__Graph__LinesAssignment_10");
+			builder.put(grammarAccess.getGraphLineAccess().getOutputAssignment_1(), "rule__GraphLine__OutputAssignment_1");
+			builder.put(grammarAccess.getGraphLineAccess().getLegendAssignment_2_1(), "rule__GraphLine__LegendAssignment_2_1");
+			builder.put(grammarAccess.getGraphLineAccess().getColorAssignment_3_1(), "rule__GraphLine__ColorAssignment_3_1");
+			builder.put(grammarAccess.getColorAccess().getRedAssignment_0_2(), "rule__Color__RedAssignment_0_2");
+			builder.put(grammarAccess.getColorAccess().getGreenAssignment_0_4(), "rule__Color__GreenAssignment_0_4");
+			builder.put(grammarAccess.getColorAccess().getBlueAssignment_0_6(), "rule__Color__BlueAssignment_0_6");
+			builder.put(grammarAccess.getColorAccess().getPresetAssignment_1_1(), "rule__Color__PresetAssignment_1_1");
 			builder.put(grammarAccess.getGatewayAccess().getNameAssignment_1(), "rule__Gateway__NameAssignment_1");
 			builder.put(grammarAccess.getGatewayAccess().getMacAssignment_4(), "rule__Gateway__MacAssignment_4");
 			builder.put(grammarAccess.getGatewayAccess().getWorkersAssignment_5(), "rule__Gateway__WorkersAssignment_5");

@@ -9,6 +9,7 @@ import dk.sdu.gms.dds.deviceDefinition.And;
 import dk.sdu.gms.dds.deviceDefinition.Binding;
 import dk.sdu.gms.dds.deviceDefinition.BooleanFalse;
 import dk.sdu.gms.dds.deviceDefinition.BooleanTrue;
+import dk.sdu.gms.dds.deviceDefinition.Color;
 import dk.sdu.gms.dds.deviceDefinition.DAC;
 import dk.sdu.gms.dds.deviceDefinition.DecimalPrimitive;
 import dk.sdu.gms.dds.deviceDefinition.Device;
@@ -22,6 +23,7 @@ import dk.sdu.gms.dds.deviceDefinition.Gateway;
 import dk.sdu.gms.dds.deviceDefinition.GenericIn;
 import dk.sdu.gms.dds.deviceDefinition.GenericOut;
 import dk.sdu.gms.dds.deviceDefinition.Graph;
+import dk.sdu.gms.dds.deviceDefinition.GraphLine;
 import dk.sdu.gms.dds.deviceDefinition.GraphVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.Greater;
 import dk.sdu.gms.dds.deviceDefinition.GreaterOrEquals;
@@ -40,7 +42,10 @@ import dk.sdu.gms.dds.deviceDefinition.Parenthesis;
 import dk.sdu.gms.dds.deviceDefinition.Pin;
 import dk.sdu.gms.dds.deviceDefinition.PinType;
 import dk.sdu.gms.dds.deviceDefinition.Plus;
+import dk.sdu.gms.dds.deviceDefinition.Preset;
 import dk.sdu.gms.dds.deviceDefinition.Primitive;
+import dk.sdu.gms.dds.deviceDefinition.RGB;
+import dk.sdu.gms.dds.deviceDefinition.Random;
 import dk.sdu.gms.dds.deviceDefinition.Second;
 import dk.sdu.gms.dds.deviceDefinition.Sensor;
 import dk.sdu.gms.dds.deviceDefinition.SensorOutput;
@@ -131,6 +136,16 @@ public class DeviceDefinitionAdapterFactory extends AdapterFactoryImpl
       public Adapter caseGraph(Graph object)
       {
         return createGraphAdapter();
+      }
+      @Override
+      public Adapter caseGraphLine(GraphLine object)
+      {
+        return createGraphLineAdapter();
+      }
+      @Override
+      public Adapter caseColor(Color object)
+      {
+        return createColorAdapter();
       }
       @Override
       public Adapter caseGateway(Gateway object)
@@ -231,6 +246,21 @@ public class DeviceDefinitionAdapterFactory extends AdapterFactoryImpl
       public Adapter caseParenthesis(Parenthesis object)
       {
         return createParenthesisAdapter();
+      }
+      @Override
+      public Adapter caseRGB(RGB object)
+      {
+        return createRGBAdapter();
+      }
+      @Override
+      public Adapter casePreset(Preset object)
+      {
+        return createPresetAdapter();
+      }
+      @Override
+      public Adapter caseRandom(Random object)
+      {
+        return createRandomAdapter();
       }
       @Override
       public Adapter caseADC(ADC object)
@@ -410,6 +440,36 @@ public class DeviceDefinitionAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createGraphAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dk.sdu.gms.dds.deviceDefinition.GraphLine <em>Graph Line</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dk.sdu.gms.dds.deviceDefinition.GraphLine
+   * @generated
+   */
+  public Adapter createGraphLineAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dk.sdu.gms.dds.deviceDefinition.Color <em>Color</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dk.sdu.gms.dds.deviceDefinition.Color
+   * @generated
+   */
+  public Adapter createColorAdapter()
   {
     return null;
   }
@@ -710,6 +770,51 @@ public class DeviceDefinitionAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createParenthesisAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dk.sdu.gms.dds.deviceDefinition.RGB <em>RGB</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dk.sdu.gms.dds.deviceDefinition.RGB
+   * @generated
+   */
+  public Adapter createRGBAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dk.sdu.gms.dds.deviceDefinition.Preset <em>Preset</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dk.sdu.gms.dds.deviceDefinition.Preset
+   * @generated
+   */
+  public Adapter createPresetAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dk.sdu.gms.dds.deviceDefinition.Random <em>Random</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dk.sdu.gms.dds.deviceDefinition.Random
+   * @generated
+   */
+  public Adapter createRandomAdapter()
   {
     return null;
   }

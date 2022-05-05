@@ -4,8 +4,8 @@
 package dk.sdu.gms.dds.deviceDefinition.impl;
 
 import dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage;
-import dk.sdu.gms.dds.deviceDefinition.Expression;
 import dk.sdu.gms.dds.deviceDefinition.Graph;
+import dk.sdu.gms.dds.deviceDefinition.GraphLine;
 
 import java.util.Collection;
 
@@ -31,59 +31,17 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.GraphImpl#getType <em>Type</em>}</li>
- *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.GraphImpl#getName <em>Name</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.GraphImpl#getCategory <em>Category</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.GraphImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.GraphImpl#getXlabel <em>Xlabel</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.GraphImpl#getYlabel <em>Ylabel</em>}</li>
- *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.GraphImpl#getOutputs <em>Outputs</em>}</li>
+ *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.GraphImpl#getLines <em>Lines</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class GraphImpl extends MinimalEObjectImpl.Container implements Graph
 {
-  /**
-   * The default value of the '{@link #getType() <em>Type</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getType()
-   * @generated
-   * @ordered
-   */
-  protected static final String TYPE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getType()
-   * @generated
-   * @ordered
-   */
-  protected String type = TYPE_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
   /**
    * The default value of the '{@link #getCategory() <em>Category</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -165,14 +123,14 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph
   protected String ylabel = YLABEL_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getOutputs() <em>Outputs</em>}' containment reference list.
+   * The cached value of the '{@link #getLines() <em>Lines</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOutputs()
+   * @see #getLines()
    * @generated
    * @ordered
    */
-  protected EList<Expression> outputs;
+  protected EList<GraphLine> lines;
 
   /**
    * <!-- begin-user-doc -->
@@ -193,56 +151,6 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph
   protected EClass eStaticClass()
   {
     return DeviceDefinitionPackage.Literals.GRAPH;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getType()
-  {
-    return type;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setType(String newType)
-  {
-    String oldType = type;
-    type = newType;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DeviceDefinitionPackage.GRAPH__TYPE, oldType, type));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DeviceDefinitionPackage.GRAPH__NAME, oldName, name));
   }
 
   /**
@@ -351,13 +259,13 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph
    * @generated
    */
   @Override
-  public EList<Expression> getOutputs()
+  public EList<GraphLine> getLines()
   {
-    if (outputs == null)
+    if (lines == null)
     {
-      outputs = new EObjectContainmentEList<Expression>(Expression.class, this, DeviceDefinitionPackage.GRAPH__OUTPUTS);
+      lines = new EObjectContainmentEList<GraphLine>(GraphLine.class, this, DeviceDefinitionPackage.GRAPH__LINES);
     }
-    return outputs;
+    return lines;
   }
 
   /**
@@ -370,8 +278,8 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph
   {
     switch (featureID)
     {
-      case DeviceDefinitionPackage.GRAPH__OUTPUTS:
-        return ((InternalEList<?>)getOutputs()).basicRemove(otherEnd, msgs);
+      case DeviceDefinitionPackage.GRAPH__LINES:
+        return ((InternalEList<?>)getLines()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -386,10 +294,6 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph
   {
     switch (featureID)
     {
-      case DeviceDefinitionPackage.GRAPH__TYPE:
-        return getType();
-      case DeviceDefinitionPackage.GRAPH__NAME:
-        return getName();
       case DeviceDefinitionPackage.GRAPH__CATEGORY:
         return getCategory();
       case DeviceDefinitionPackage.GRAPH__TITLE:
@@ -398,8 +302,8 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph
         return getXlabel();
       case DeviceDefinitionPackage.GRAPH__YLABEL:
         return getYlabel();
-      case DeviceDefinitionPackage.GRAPH__OUTPUTS:
-        return getOutputs();
+      case DeviceDefinitionPackage.GRAPH__LINES:
+        return getLines();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -415,12 +319,6 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph
   {
     switch (featureID)
     {
-      case DeviceDefinitionPackage.GRAPH__TYPE:
-        setType((String)newValue);
-        return;
-      case DeviceDefinitionPackage.GRAPH__NAME:
-        setName((String)newValue);
-        return;
       case DeviceDefinitionPackage.GRAPH__CATEGORY:
         setCategory((String)newValue);
         return;
@@ -433,9 +331,9 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph
       case DeviceDefinitionPackage.GRAPH__YLABEL:
         setYlabel((String)newValue);
         return;
-      case DeviceDefinitionPackage.GRAPH__OUTPUTS:
-        getOutputs().clear();
-        getOutputs().addAll((Collection<? extends Expression>)newValue);
+      case DeviceDefinitionPackage.GRAPH__LINES:
+        getLines().clear();
+        getLines().addAll((Collection<? extends GraphLine>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -451,12 +349,6 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph
   {
     switch (featureID)
     {
-      case DeviceDefinitionPackage.GRAPH__TYPE:
-        setType(TYPE_EDEFAULT);
-        return;
-      case DeviceDefinitionPackage.GRAPH__NAME:
-        setName(NAME_EDEFAULT);
-        return;
       case DeviceDefinitionPackage.GRAPH__CATEGORY:
         setCategory(CATEGORY_EDEFAULT);
         return;
@@ -469,8 +361,8 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph
       case DeviceDefinitionPackage.GRAPH__YLABEL:
         setYlabel(YLABEL_EDEFAULT);
         return;
-      case DeviceDefinitionPackage.GRAPH__OUTPUTS:
-        getOutputs().clear();
+      case DeviceDefinitionPackage.GRAPH__LINES:
+        getLines().clear();
         return;
     }
     super.eUnset(featureID);
@@ -486,10 +378,6 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph
   {
     switch (featureID)
     {
-      case DeviceDefinitionPackage.GRAPH__TYPE:
-        return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
-      case DeviceDefinitionPackage.GRAPH__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case DeviceDefinitionPackage.GRAPH__CATEGORY:
         return CATEGORY_EDEFAULT == null ? category != null : !CATEGORY_EDEFAULT.equals(category);
       case DeviceDefinitionPackage.GRAPH__TITLE:
@@ -498,8 +386,8 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph
         return XLABEL_EDEFAULT == null ? xlabel != null : !XLABEL_EDEFAULT.equals(xlabel);
       case DeviceDefinitionPackage.GRAPH__YLABEL:
         return YLABEL_EDEFAULT == null ? ylabel != null : !YLABEL_EDEFAULT.equals(ylabel);
-      case DeviceDefinitionPackage.GRAPH__OUTPUTS:
-        return outputs != null && !outputs.isEmpty();
+      case DeviceDefinitionPackage.GRAPH__LINES:
+        return lines != null && !lines.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -515,11 +403,7 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (type: ");
-    result.append(type);
-    result.append(", name: ");
-    result.append(name);
-    result.append(", category: ");
+    result.append(" (category: ");
     result.append(category);
     result.append(", title: ");
     result.append(title);

@@ -8,6 +8,8 @@ import dk.sdu.gms.dds.deviceDefinition.And;
 import dk.sdu.gms.dds.deviceDefinition.Binding;
 import dk.sdu.gms.dds.deviceDefinition.BooleanFalse;
 import dk.sdu.gms.dds.deviceDefinition.BooleanTrue;
+import dk.sdu.gms.dds.deviceDefinition.Color;
+import dk.sdu.gms.dds.deviceDefinition.ColorPreset;
 import dk.sdu.gms.dds.deviceDefinition.DecimalPrimitive;
 import dk.sdu.gms.dds.deviceDefinition.Device;
 import dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionFactory;
@@ -21,6 +23,7 @@ import dk.sdu.gms.dds.deviceDefinition.Gateway;
 import dk.sdu.gms.dds.deviceDefinition.GenericIn;
 import dk.sdu.gms.dds.deviceDefinition.GenericOut;
 import dk.sdu.gms.dds.deviceDefinition.Graph;
+import dk.sdu.gms.dds.deviceDefinition.GraphLine;
 import dk.sdu.gms.dds.deviceDefinition.GraphVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.Greater;
 import dk.sdu.gms.dds.deviceDefinition.GreaterOrEquals;
@@ -39,7 +42,9 @@ import dk.sdu.gms.dds.deviceDefinition.Parenthesis;
 import dk.sdu.gms.dds.deviceDefinition.Pin;
 import dk.sdu.gms.dds.deviceDefinition.PinType;
 import dk.sdu.gms.dds.deviceDefinition.Plus;
+import dk.sdu.gms.dds.deviceDefinition.Preset;
 import dk.sdu.gms.dds.deviceDefinition.Primitive;
+import dk.sdu.gms.dds.deviceDefinition.Random;
 import dk.sdu.gms.dds.deviceDefinition.Second;
 import dk.sdu.gms.dds.deviceDefinition.Sensor;
 import dk.sdu.gms.dds.deviceDefinition.SensorOutput;
@@ -53,6 +58,7 @@ import dk.sdu.gms.dds.deviceDefinition.Worker;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -79,6 +85,20 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   private EClass graphEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass graphLineEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass colorEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -219,6 +239,27 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   private EClass parenthesisEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass rgbEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass presetEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass randomEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -403,6 +444,13 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
   private EClass valueEClass = null;
 
   /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum colorPresetEEnum = null;
+
+  /**
    * Creates an instance of the model <b>Package</b>, registered with
    * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
    * package URI value.
@@ -570,7 +618,7 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EAttribute getGraph_Type()
+  public EAttribute getGraph_Category()
   {
     return (EAttribute)graphEClass.getEStructuralFeatures().get(0);
   }
@@ -581,7 +629,7 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EAttribute getGraph_Name()
+  public EAttribute getGraph_Title()
   {
     return (EAttribute)graphEClass.getEStructuralFeatures().get(1);
   }
@@ -592,7 +640,7 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EAttribute getGraph_Category()
+  public EAttribute getGraph_Xlabel()
   {
     return (EAttribute)graphEClass.getEStructuralFeatures().get(2);
   }
@@ -603,7 +651,7 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EAttribute getGraph_Title()
+  public EAttribute getGraph_Ylabel()
   {
     return (EAttribute)graphEClass.getEStructuralFeatures().get(3);
   }
@@ -614,9 +662,9 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EAttribute getGraph_Xlabel()
+  public EReference getGraph_Lines()
   {
-    return (EAttribute)graphEClass.getEStructuralFeatures().get(4);
+    return (EReference)graphEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -625,9 +673,9 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EAttribute getGraph_Ylabel()
+  public EClass getGraphLine()
   {
-    return (EAttribute)graphEClass.getEStructuralFeatures().get(5);
+    return graphLineEClass;
   }
 
   /**
@@ -636,9 +684,42 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EReference getGraph_Outputs()
+  public EReference getGraphLine_Output()
   {
-    return (EReference)graphEClass.getEStructuralFeatures().get(6);
+    return (EReference)graphLineEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getGraphLine_Legend()
+  {
+    return (EAttribute)graphLineEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getGraphLine_Color()
+  {
+    return (EReference)graphLineEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getColor()
+  {
+    return colorEClass;
   }
 
   /**
@@ -1167,6 +1248,83 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
   public EReference getParenthesis_Exp()
   {
     return (EReference)parenthesisEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getRGB()
+  {
+    return rgbEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getRGB_Red()
+  {
+    return (EAttribute)rgbEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getRGB_Green()
+  {
+    return (EAttribute)rgbEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getRGB_Blue()
+  {
+    return (EAttribute)rgbEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getPreset()
+  {
+    return presetEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getPreset_Preset()
+  {
+    return (EAttribute)presetEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getRandom()
+  {
+    return randomEClass;
   }
 
   /**
@@ -1802,6 +1960,17 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
+  public EEnum getColorPreset()
+  {
+    return colorPresetEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public DeviceDefinitionFactory getDeviceDefinitionFactory()
   {
     return (DeviceDefinitionFactory)getEFactoryInstance();
@@ -1837,13 +2006,18 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     createEReference(systemEClass, SYSTEM__GRAPHS);
 
     graphEClass = createEClass(GRAPH);
-    createEAttribute(graphEClass, GRAPH__TYPE);
-    createEAttribute(graphEClass, GRAPH__NAME);
     createEAttribute(graphEClass, GRAPH__CATEGORY);
     createEAttribute(graphEClass, GRAPH__TITLE);
     createEAttribute(graphEClass, GRAPH__XLABEL);
     createEAttribute(graphEClass, GRAPH__YLABEL);
-    createEReference(graphEClass, GRAPH__OUTPUTS);
+    createEReference(graphEClass, GRAPH__LINES);
+
+    graphLineEClass = createEClass(GRAPH_LINE);
+    createEReference(graphLineEClass, GRAPH_LINE__OUTPUT);
+    createEAttribute(graphLineEClass, GRAPH_LINE__LEGEND);
+    createEReference(graphLineEClass, GRAPH_LINE__COLOR);
+
+    colorEClass = createEClass(COLOR);
 
     gatewayEClass = createEClass(GATEWAY);
     createEAttribute(gatewayEClass, GATEWAY__NAME);
@@ -1912,6 +2086,16 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
 
     parenthesisEClass = createEClass(PARENTHESIS);
     createEReference(parenthesisEClass, PARENTHESIS__EXP);
+
+    rgbEClass = createEClass(RGB);
+    createEAttribute(rgbEClass, RGB__RED);
+    createEAttribute(rgbEClass, RGB__GREEN);
+    createEAttribute(rgbEClass, RGB__BLUE);
+
+    presetEClass = createEClass(PRESET);
+    createEAttribute(presetEClass, PRESET__PRESET);
+
+    randomEClass = createEClass(RANDOM);
 
     adcEClass = createEClass(ADC);
 
@@ -1995,6 +2179,9 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     createEReference(orEClass, OR__RIGHT);
 
     valueEClass = createEClass(VALUE);
+
+    // Create enums
+    colorPresetEEnum = createEEnum(COLOR_PRESET);
   }
 
   /**
@@ -2037,6 +2224,9 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     graphVariableUseEClass.getESuperTypes().add(this.getVariableUse());
     variableUseEClass.getESuperTypes().add(this.getExpression());
     parenthesisEClass.getESuperTypes().add(this.getExpression());
+    rgbEClass.getESuperTypes().add(this.getColor());
+    presetEClass.getESuperTypes().add(this.getColor());
+    randomEClass.getESuperTypes().add(this.getColor());
     adcEClass.getESuperTypes().add(this.getPinType());
     dacEClass.getESuperTypes().add(this.getPinType());
     genericInEClass.getESuperTypes().add(this.getPinType());
@@ -2075,13 +2265,18 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     initEReference(getSystem_Graphs(), this.getGraph(), null, "graphs", null, 0, -1, dk.sdu.gms.dds.deviceDefinition.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(graphEClass, Graph.class, "Graph", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getGraph_Type(), ecorePackage.getEString(), "type", null, 0, 1, Graph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGraph_Name(), ecorePackage.getEString(), "name", null, 0, 1, Graph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGraph_Category(), ecorePackage.getEString(), "category", null, 0, 1, Graph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGraph_Title(), ecorePackage.getEString(), "title", null, 0, 1, Graph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGraph_Xlabel(), ecorePackage.getEString(), "xlabel", null, 0, 1, Graph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGraph_Ylabel(), ecorePackage.getEString(), "ylabel", null, 0, 1, Graph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGraph_Outputs(), this.getExpression(), null, "outputs", null, 0, -1, Graph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGraph_Lines(), this.getGraphLine(), null, "lines", null, 0, -1, Graph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(graphLineEClass, GraphLine.class, "GraphLine", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getGraphLine_Output(), this.getExpression(), null, "output", null, 0, 1, GraphLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGraphLine_Legend(), ecorePackage.getEString(), "legend", null, 0, 1, GraphLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGraphLine_Color(), this.getColor(), null, "color", null, 0, 1, GraphLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(colorEClass, Color.class, "Color", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(gatewayEClass, Gateway.class, "Gateway", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getGateway_Name(), ecorePackage.getEString(), "name", null, 0, 1, Gateway.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2150,6 +2345,16 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
 
     initEClass(parenthesisEClass, Parenthesis.class, "Parenthesis", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getParenthesis_Exp(), this.getExpression(), null, "exp", null, 0, 1, Parenthesis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(rgbEClass, dk.sdu.gms.dds.deviceDefinition.RGB.class, "RGB", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRGB_Red(), ecorePackage.getEString(), "red", null, 0, 1, dk.sdu.gms.dds.deviceDefinition.RGB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRGB_Green(), ecorePackage.getEString(), "green", null, 0, 1, dk.sdu.gms.dds.deviceDefinition.RGB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRGB_Blue(), ecorePackage.getEString(), "blue", null, 0, 1, dk.sdu.gms.dds.deviceDefinition.RGB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(presetEClass, Preset.class, "Preset", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPreset_Preset(), this.getColorPreset(), "preset", null, 0, 1, Preset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(randomEClass, Random.class, "Random", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(adcEClass, dk.sdu.gms.dds.deviceDefinition.ADC.class, "ADC", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2233,6 +2438,13 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     initEReference(getOr_Right(), this.getExpression(), null, "right", null, 0, 1, Or.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(valueEClass, Value.class, "Value", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    // Initialize enums and add enum literals
+    initEEnum(colorPresetEEnum, ColorPreset.class, "ColorPreset");
+    addEEnumLiteral(colorPresetEEnum, ColorPreset.RED);
+    addEEnumLiteral(colorPresetEEnum, ColorPreset.GREEN);
+    addEEnumLiteral(colorPresetEEnum, ColorPreset.BLUE);
+    addEEnumLiteral(colorPresetEEnum, ColorPreset.YELLOW);
 
     // Create resource
     createResource(eNS_URI);

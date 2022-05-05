@@ -20,6 +20,7 @@ import dk.sdu.gms.dds.deviceDefinition.Gateway;
 import dk.sdu.gms.dds.deviceDefinition.GenericIn;
 import dk.sdu.gms.dds.deviceDefinition.GenericOut;
 import dk.sdu.gms.dds.deviceDefinition.Graph;
+import dk.sdu.gms.dds.deviceDefinition.GraphLine;
 import dk.sdu.gms.dds.deviceDefinition.GraphVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.Greater;
 import dk.sdu.gms.dds.deviceDefinition.GreaterOrEquals;
@@ -37,6 +38,9 @@ import dk.sdu.gms.dds.deviceDefinition.Or;
 import dk.sdu.gms.dds.deviceDefinition.Parenthesis;
 import dk.sdu.gms.dds.deviceDefinition.Pin;
 import dk.sdu.gms.dds.deviceDefinition.Plus;
+import dk.sdu.gms.dds.deviceDefinition.Preset;
+import dk.sdu.gms.dds.deviceDefinition.RGB;
+import dk.sdu.gms.dds.deviceDefinition.Random;
 import dk.sdu.gms.dds.deviceDefinition.Second;
 import dk.sdu.gms.dds.deviceDefinition.Sensor;
 import dk.sdu.gms.dds.deviceDefinition.SensorOutput;
@@ -115,6 +119,9 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 			case DeviceDefinitionPackage.GRAPH:
 				sequence_Graph(context, (Graph) semanticObject); 
 				return; 
+			case DeviceDefinitionPackage.GRAPH_LINE:
+				sequence_GraphLine(context, (GraphLine) semanticObject); 
+				return; 
 			case DeviceDefinitionPackage.GRAPH_VARIABLE_USE:
 				sequence_GraphVariableUse(context, (GraphVariableUse) semanticObject); 
 				return; 
@@ -165,6 +172,15 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 				return; 
 			case DeviceDefinitionPackage.PLUS:
 				sequence_Exp(context, (Plus) semanticObject); 
+				return; 
+			case DeviceDefinitionPackage.PRESET:
+				sequence_Color(context, (Preset) semanticObject); 
+				return; 
+			case DeviceDefinitionPackage.RGB:
+				sequence_Color(context, (RGB) semanticObject); 
+				return; 
+			case DeviceDefinitionPackage.RANDOM:
+				sequence_Color(context, (Random) semanticObject); 
 				return; 
 			case DeviceDefinitionPackage.SECOND:
 				sequence_TimeUnit(context, (Second) semanticObject); 
@@ -294,6 +310,66 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 		feeder.accept(grammarAccess.getAndOrAccess().getOrLeftAction_1_0_1_0(), semanticObject.getLeft());
 		feeder.accept(grammarAccess.getAndOrAccess().getRightPrimaryParserRuleCall_1_1_0(), semanticObject.getRight());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Color returns Preset
+	 *
+	 * Constraint:
+	 *     preset=ColorPreset
+	 * </pre>
+	 */
+	protected void sequence_Color(ISerializationContext context, Preset semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, DeviceDefinitionPackage.Literals.PRESET__PRESET) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeviceDefinitionPackage.Literals.PRESET__PRESET));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getColorAccess().getPresetColorPresetEnumRuleCall_1_1_0(), semanticObject.getPreset());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Color returns RGB
+	 *
+	 * Constraint:
+	 *     (red=DECIMAL green=DECIMAL blue=DECIMAL)
+	 * </pre>
+	 */
+	protected void sequence_Color(ISerializationContext context, RGB semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, DeviceDefinitionPackage.Literals.RGB__RED) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeviceDefinitionPackage.Literals.RGB__RED));
+			if (transientValues.isValueTransient(semanticObject, DeviceDefinitionPackage.Literals.RGB__GREEN) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeviceDefinitionPackage.Literals.RGB__GREEN));
+			if (transientValues.isValueTransient(semanticObject, DeviceDefinitionPackage.Literals.RGB__BLUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeviceDefinitionPackage.Literals.RGB__BLUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getColorAccess().getRedDECIMALTerminalRuleCall_0_2_0(), semanticObject.getRed());
+		feeder.accept(grammarAccess.getColorAccess().getGreenDECIMALTerminalRuleCall_0_4_0(), semanticObject.getGreen());
+		feeder.accept(grammarAccess.getColorAccess().getBlueDECIMALTerminalRuleCall_0_6_0(), semanticObject.getBlue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Color returns Random
+	 *
+	 * Constraint:
+	 *     {Random}
+	 * </pre>
+	 */
+	protected void sequence_Color(ISerializationContext context, Random semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -700,6 +776,20 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     GraphLine returns GraphLine
+	 *
+	 * Constraint:
+	 *     (output=Exp legend=STRING? color=Color?)
+	 * </pre>
+	 */
+	protected void sequence_GraphLine(ISerializationContext context, GraphLine semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     Exp returns GraphVariableUse
 	 *     Exp.Plus_1_0_0_0 returns GraphVariableUse
 	 *     Exp.Minus_1_0_1_0 returns GraphVariableUse
@@ -749,15 +839,7 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 	 *     Graph returns Graph
 	 *
 	 * Constraint:
-	 *     (
-	 *         type=ID 
-	 *         name=ID 
-	 *         category=STRING 
-	 *         title=STRING 
-	 *         xlabel=STRING 
-	 *         ylabel=STRING 
-	 *         outputs+=Exp+
-	 *     )
+	 *     (category=STRING title=STRING xlabel=STRING ylabel=STRING lines+=GraphLine+)
 	 * </pre>
 	 */
 	protected void sequence_Graph(ISerializationContext context, Graph semanticObject) {

@@ -9,6 +9,7 @@ import dk.sdu.gms.dds.deviceDefinition.And;
 import dk.sdu.gms.dds.deviceDefinition.Binding;
 import dk.sdu.gms.dds.deviceDefinition.BooleanFalse;
 import dk.sdu.gms.dds.deviceDefinition.BooleanTrue;
+import dk.sdu.gms.dds.deviceDefinition.Color;
 import dk.sdu.gms.dds.deviceDefinition.DAC;
 import dk.sdu.gms.dds.deviceDefinition.DecimalPrimitive;
 import dk.sdu.gms.dds.deviceDefinition.Device;
@@ -22,6 +23,7 @@ import dk.sdu.gms.dds.deviceDefinition.Gateway;
 import dk.sdu.gms.dds.deviceDefinition.GenericIn;
 import dk.sdu.gms.dds.deviceDefinition.GenericOut;
 import dk.sdu.gms.dds.deviceDefinition.Graph;
+import dk.sdu.gms.dds.deviceDefinition.GraphLine;
 import dk.sdu.gms.dds.deviceDefinition.GraphVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.Greater;
 import dk.sdu.gms.dds.deviceDefinition.GreaterOrEquals;
@@ -40,7 +42,10 @@ import dk.sdu.gms.dds.deviceDefinition.Parenthesis;
 import dk.sdu.gms.dds.deviceDefinition.Pin;
 import dk.sdu.gms.dds.deviceDefinition.PinType;
 import dk.sdu.gms.dds.deviceDefinition.Plus;
+import dk.sdu.gms.dds.deviceDefinition.Preset;
 import dk.sdu.gms.dds.deviceDefinition.Primitive;
+import dk.sdu.gms.dds.deviceDefinition.RGB;
+import dk.sdu.gms.dds.deviceDefinition.Random;
 import dk.sdu.gms.dds.deviceDefinition.Second;
 import dk.sdu.gms.dds.deviceDefinition.Sensor;
 import dk.sdu.gms.dds.deviceDefinition.SensorOutput;
@@ -131,6 +136,20 @@ public class DeviceDefinitionSwitch<T> extends Switch<T>
       {
         Graph graph = (Graph)theEObject;
         T result = caseGraph(graph);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceDefinitionPackage.GRAPH_LINE:
+      {
+        GraphLine graphLine = (GraphLine)theEObject;
+        T result = caseGraphLine(graphLine);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceDefinitionPackage.COLOR:
+      {
+        Color color = (Color)theEObject;
+        T result = caseColor(color);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -285,6 +304,30 @@ public class DeviceDefinitionSwitch<T> extends Switch<T>
         Parenthesis parenthesis = (Parenthesis)theEObject;
         T result = caseParenthesis(parenthesis);
         if (result == null) result = caseExpression(parenthesis);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceDefinitionPackage.RGB:
+      {
+        RGB rgb = (RGB)theEObject;
+        T result = caseRGB(rgb);
+        if (result == null) result = caseColor(rgb);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceDefinitionPackage.PRESET:
+      {
+        Preset preset = (Preset)theEObject;
+        T result = casePreset(preset);
+        if (result == null) result = caseColor(preset);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceDefinitionPackage.RANDOM:
+      {
+        Random random = (Random)theEObject;
+        T result = caseRandom(random);
+        if (result == null) result = caseColor(random);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -532,6 +575,38 @@ public class DeviceDefinitionSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseGraph(Graph object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Graph Line</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Graph Line</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGraphLine(GraphLine object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Color</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Color</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseColor(Color object)
   {
     return null;
   }
@@ -852,6 +927,54 @@ public class DeviceDefinitionSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseParenthesis(Parenthesis object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>RGB</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>RGB</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRGB(RGB object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Preset</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Preset</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePreset(Preset object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Random</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Random</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRandom(Random object)
   {
     return null;
   }

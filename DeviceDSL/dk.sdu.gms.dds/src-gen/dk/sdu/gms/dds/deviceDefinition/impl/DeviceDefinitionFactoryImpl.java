@@ -9,6 +9,8 @@ import dk.sdu.gms.dds.deviceDefinition.And;
 import dk.sdu.gms.dds.deviceDefinition.Binding;
 import dk.sdu.gms.dds.deviceDefinition.BooleanFalse;
 import dk.sdu.gms.dds.deviceDefinition.BooleanTrue;
+import dk.sdu.gms.dds.deviceDefinition.Color;
+import dk.sdu.gms.dds.deviceDefinition.ColorPreset;
 import dk.sdu.gms.dds.deviceDefinition.DAC;
 import dk.sdu.gms.dds.deviceDefinition.DecimalPrimitive;
 import dk.sdu.gms.dds.deviceDefinition.Device;
@@ -23,6 +25,7 @@ import dk.sdu.gms.dds.deviceDefinition.Gateway;
 import dk.sdu.gms.dds.deviceDefinition.GenericIn;
 import dk.sdu.gms.dds.deviceDefinition.GenericOut;
 import dk.sdu.gms.dds.deviceDefinition.Graph;
+import dk.sdu.gms.dds.deviceDefinition.GraphLine;
 import dk.sdu.gms.dds.deviceDefinition.GraphVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.Greater;
 import dk.sdu.gms.dds.deviceDefinition.GreaterOrEquals;
@@ -41,7 +44,10 @@ import dk.sdu.gms.dds.deviceDefinition.Parenthesis;
 import dk.sdu.gms.dds.deviceDefinition.Pin;
 import dk.sdu.gms.dds.deviceDefinition.PinType;
 import dk.sdu.gms.dds.deviceDefinition.Plus;
+import dk.sdu.gms.dds.deviceDefinition.Preset;
 import dk.sdu.gms.dds.deviceDefinition.Primitive;
+import dk.sdu.gms.dds.deviceDefinition.RGB;
+import dk.sdu.gms.dds.deviceDefinition.Random;
 import dk.sdu.gms.dds.deviceDefinition.Second;
 import dk.sdu.gms.dds.deviceDefinition.Sensor;
 import dk.sdu.gms.dds.deviceDefinition.SensorOutput;
@@ -54,6 +60,7 @@ import dk.sdu.gms.dds.deviceDefinition.When;
 import dk.sdu.gms.dds.deviceDefinition.Worker;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -115,6 +122,8 @@ public class DeviceDefinitionFactoryImpl extends EFactoryImpl implements DeviceD
     {
       case DeviceDefinitionPackage.SYSTEM: return createSystem();
       case DeviceDefinitionPackage.GRAPH: return createGraph();
+      case DeviceDefinitionPackage.GRAPH_LINE: return createGraphLine();
+      case DeviceDefinitionPackage.COLOR: return createColor();
       case DeviceDefinitionPackage.GATEWAY: return createGateway();
       case DeviceDefinitionPackage.WORKER: return createWorker();
       case DeviceDefinitionPackage.DEVICE: return createDevice();
@@ -135,6 +144,9 @@ public class DeviceDefinitionFactoryImpl extends EFactoryImpl implements DeviceD
       case DeviceDefinitionPackage.GRAPH_VARIABLE_USE: return createGraphVariableUse();
       case DeviceDefinitionPackage.VARIABLE_USE: return createVariableUse();
       case DeviceDefinitionPackage.PARENTHESIS: return createParenthesis();
+      case DeviceDefinitionPackage.RGB: return createRGB();
+      case DeviceDefinitionPackage.PRESET: return createPreset();
+      case DeviceDefinitionPackage.RANDOM: return createRandom();
       case DeviceDefinitionPackage.ADC: return createADC();
       case DeviceDefinitionPackage.DAC: return createDAC();
       case DeviceDefinitionPackage.GENERIC_IN: return createGenericIn();
@@ -172,6 +184,40 @@ public class DeviceDefinitionFactoryImpl extends EFactoryImpl implements DeviceD
    * @generated
    */
   @Override
+  public Object createFromString(EDataType eDataType, String initialValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case DeviceDefinitionPackage.COLOR_PRESET:
+        return createColorPresetFromString(eDataType, initialValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String convertToString(EDataType eDataType, Object instanceValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case DeviceDefinitionPackage.COLOR_PRESET:
+        return convertColorPresetToString(eDataType, instanceValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public dk.sdu.gms.dds.deviceDefinition.System createSystem()
   {
     SystemImpl system = new SystemImpl();
@@ -188,6 +234,30 @@ public class DeviceDefinitionFactoryImpl extends EFactoryImpl implements DeviceD
   {
     GraphImpl graph = new GraphImpl();
     return graph;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public GraphLine createGraphLine()
+  {
+    GraphLineImpl graphLine = new GraphLineImpl();
+    return graphLine;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Color createColor()
+  {
+    ColorImpl color = new ColorImpl();
+    return color;
   }
 
   /**
@@ -428,6 +498,42 @@ public class DeviceDefinitionFactoryImpl extends EFactoryImpl implements DeviceD
   {
     ParenthesisImpl parenthesis = new ParenthesisImpl();
     return parenthesis;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public RGB createRGB()
+  {
+    RGBImpl rgb = new RGBImpl();
+    return rgb;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Preset createPreset()
+  {
+    PresetImpl preset = new PresetImpl();
+    return preset;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Random createRandom()
+  {
+    RandomImpl random = new RandomImpl();
+    return random;
   }
 
   /**
@@ -740,6 +846,28 @@ public class DeviceDefinitionFactoryImpl extends EFactoryImpl implements DeviceD
   {
     ValueImpl value = new ValueImpl();
     return value;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ColorPreset createColorPresetFromString(EDataType eDataType, String initialValue)
+  {
+    ColorPreset result = ColorPreset.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertColorPresetToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
   }
 
   /**
