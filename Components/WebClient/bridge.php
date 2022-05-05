@@ -1,5 +1,7 @@
 <?php
 
+$apiHost = getenv("API_HOST");
+
 $type = $_GET['type'];
 $gateway = $_GET['gateway'];
 $worker = $_GET['worker'];
@@ -9,11 +11,10 @@ $to = $_GET['to'];
 
 $queryArguments = "$type/$gateway/$worker/$topic?from=$from&to=$to";
 
-if (!isset($_ENV["API_HOST"])) {
+if (!isset($apiHost)) {
     $apiRoot = "http://localhost:3000/$queryArguments";
 } else {
-    $apiHost = $_ENV["API_HOST"];
-    $apiRoot = $apiHost + "/$queryArguments";
+    $apiRoot = $apiHost . "/$queryArguments";
 }
 
 $options = array(

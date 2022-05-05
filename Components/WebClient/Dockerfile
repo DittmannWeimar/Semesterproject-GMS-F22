@@ -1,4 +1,4 @@
-FROM php:latest
-COPY . /usr/src/myapp
+FROM httpd:2.4
+COPY . /usr/local/apache2/htdocs/
 WORKDIR /usr/src/myapp
-CMD [ "php", "-S", "0.0.0.0:3003"]
+CMD [ "php", "-S", "localhost:3003"]
