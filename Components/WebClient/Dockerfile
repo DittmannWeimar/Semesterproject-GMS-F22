@@ -1,4 +1,4 @@
 FROM php:latest
 COPY . /usr/src/myapp
 WORKDIR /usr/src/myapp
-CMD [ "php", "./routes.php" ]
+CMD [ "php", "-S", "0.0.0.0:3003"]

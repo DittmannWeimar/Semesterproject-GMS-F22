@@ -86,22 +86,4 @@ $(document).ready(function () {
     });
 
     updateChart('chart-worker1', 'samples', '*', 'worker1', 'Humidity', Date.now());
-    /*
-    var currentX = 0;
-    var currentY = 100;
-    setInterval(function () {
-        chart1Data.labels.push(currentX++);
-        chart1Data.datasets[0].data.push(currentY -= 1);
-
-        if (currentY > 50) {
-            chart1Data.datasets[0].borderColor.push('rgba(99, 255, 132, 1)');
-        } else if (currentY < 15) {
-            chart1Data.datasets[0].borderColor.push('rgba(255, 99, 132, 1)');
-        } else {
-            chart1Data.datasets[0].borderColor.push('rgba(255, 255, 132, 1)');
-        }
-
-        chart1.update();
-        //this code runs every second 
-    }, 1000);*/
 });
