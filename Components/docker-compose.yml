@@ -38,22 +38,25 @@ services:
      - MONGO_DATABASE=gms
 
   webclient:
-    build: WebClient/
+    image: php:7.2-apache
+    ports:
+      - 3003:80
+    volumes:
+      - ./WebClient:/var/www/html
     restart: always
     depends_on:
      - mongo
      - mosquitto
      - api
     environment:
-     - MQTT_HOST=mqtt://mosquitto:1883
+     - MQTT_HOST=mqtt://mosquitto:3002
+     - MQTT_CLIENT_SIDE=mqtt://localhost:3002
      - MQTT_USERNAME=kristian
      - MQTT_PASSWORD=1234
-     - API_HOST=http://api:3000
+     - API_HOST=http://api:3010
     networks:
      - frontend
      - backend
-    ports:
-     - 3003:80
      
   mosquitto:
     image: eclipse-mosquitto

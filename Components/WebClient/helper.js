@@ -18,8 +18,11 @@ $(document).ready(function () {
     addCategory("Water Levels");
 });
 
+
 //API Call
-var apiUrlRoot = "http://localhost/Bridge.php";
+var apiUrlRoot = "http://"+location.host+"/Bridge.php";
+console.log("API URL: "+apiUrlRoot)
+
 function _getData(type, gateway, worker, topic, from = 0, to = Number.MAX_SAFE_INTEGER) {
     var actualUrl = apiUrlRoot + "?type="+type+"&gateway="+gateway+"&worker="+worker+"&topic="+topic+"&from="+from+"&to="+to;
     return new Promise((resolve, reject) => {
@@ -39,10 +42,10 @@ function _getData(type, gateway, worker, topic, from = 0, to = Number.MAX_SAFE_I
 
 
 //MQTT!
-var isTestingLocally = true;
+var isTestingLocally = false;
 var mqtt;
 var reconnectTimeout = 2000;
-var host = "localhost"
+var host = location.host
 var port = 3002
 var username = "kristian"
 var pw = "1234"
@@ -50,11 +53,15 @@ var pw = "1234"
 if (!isTestingLocally) {
     mqtt;
     reconnectTimeout = 2000;
-    host = process.env.MQTT_HOST.split(":")[0]
-    port = process.env.MQTT_HOST.split(":")[1]
-    username = process.env.MQTT_USERNAME
-    pw = process.env.MQTT_PASSWORD
+    host = MQTT_HOST.split(":")[1]
+    port = parseInt(MQTT_HOST.split(":")[2])
+    username = MQTT_USERNAME
+    pw = MQTT_PASSWORD
 }
+
+console.log("MQTT");
+console.log("Host: "+host);
+console.log("Port: "+port);
 
 function _onConnect(callback = null) {
     console.log("Connected to MQTT!");
