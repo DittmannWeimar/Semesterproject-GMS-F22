@@ -19,10 +19,9 @@ $(document).ready(function () {
 });
 
 //API Call
-var apiUrlRoot = "http://localhost/Bridge/";
-function _getData(type, gateway, worker, topic) {
-    var actualUrl = apiUrlRoot + type + "/" + gateway + "/" + worker + "/" + topic;
-    console.log("Requesting data from: " + actualUrl);
+var apiUrlRoot = "http://localhost/Bridge.php";
+function _getData(type, gateway, worker, topic, from = 0, to = Number.MAX_SAFE_INTEGER) {
+    var actualUrl = apiUrlRoot + "?type="+type+"&gateway="+gateway+"&worker="+worker+"&topic="+topic+"&from="+from+"&to="+to;
     return new Promise((resolve, reject) => {
         $.ajax({
             url: actualUrl,
@@ -38,22 +37,13 @@ function _getData(type, gateway, worker, topic) {
     })
 }
 
-async function test() {
-    console.log("requesting..." + apiUrlRoot)
-    var testResponse = await _getData("triggers", "*", "*", "pumpActivated");
-    var firstEntry = testResponse[0]
-    console.log("Response:" + testResponse)
-    console.log("ID:" + firstEntry._id)
-    console.log("Message:" + firstEntry.message)
-}
-
 
 //MQTT!
 var isTestingLocally = true;
 var mqtt;
 var reconnectTimeout = 2000;
 var host = "localhost"
-var port = "8081"
+var port = 3002
 var username = "kristian"
 var pw = "1234"
 
@@ -69,18 +59,8 @@ if (!isTestingLocally) {
 function _onConnect(callback = null) {
     console.log("Connected to MQTT!");
     // Subscribe to topics
-    mqtt.subscribe("MQTT");
 
-    mqtt.onMessageArrived = function (message) {
-        console.log("Message Arrived: " + message.payloadString);
-        console.log("Topic:     " + message.destinationName);
-        console.log("QoS:       " + message.qos);
-        console.log("Retained:  " + message.retained);
-        // Read Only, set if message might be a duplicate sent from broker
-        console.log("Duplicate: " + message.duplicate);
-    }
-
-    callback();
+    callback(mqtt);
 }
 
 function MQTTConnect(callback) {
@@ -111,7 +91,3 @@ function MQTTSend(topic, message) {
         mqtt.send(message)
     })
 }
-
-$(document).ready(function () {
-    test();
-});

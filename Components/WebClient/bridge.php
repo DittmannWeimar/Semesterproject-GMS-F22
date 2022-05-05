@@ -2,14 +2,18 @@
 
 $type = $_GET['type'];
 $gateway = $_GET['gateway'];
-$workers = $_GET['workers'];
+$worker = $_GET['worker'];
 $topic = $_GET['topic'];
+$from = $_GET['from'];
+$to = $_GET['to'];
+
+$queryArguments = "$type/$gateway/$worker/$topic?from=$from&to=$to";
 
 if (!isset($_ENV["API_HOST"])) {
-    $apiRoot = "http://www.localhost:3000/$type/$gateway/$workers/$topic";
+    $apiRoot = "http://localhost:3000/$queryArguments";
 } else {
     $apiHost = $_ENV["API_HOST"];
-    $apiRoot = $apiHost + "/$type/$gateway/$worker/$topic";
+    $apiRoot = $apiHost + "/$queryArguments";
 }
 
 $options = array(

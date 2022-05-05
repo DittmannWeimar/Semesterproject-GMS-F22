@@ -13,3 +13,13 @@
   justify-content: center;
   padding: 32px;
 }
+
+.centered {
+  font-family: arial;
+  font-size: 24px;
+  width: 100%;
+}
+
+.centered h3 {
+  text-align: center;
+}
