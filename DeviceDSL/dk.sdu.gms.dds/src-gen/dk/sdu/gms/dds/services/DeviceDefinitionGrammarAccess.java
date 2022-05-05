@@ -27,60 +27,133 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 	public class SystemElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.gms.dds.DeviceDefinition.System");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cImportsAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cImportsImportParserRuleCall_0_0 = (RuleCall)cImportsAssignment_0.eContents().get(0);
-		private final Keyword cSystemKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cGatewayAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cGatewayGatewayParserRuleCall_3_0 = (RuleCall)cGatewayAssignment_3.eContents().get(0);
-		private final Assignment cGraphsAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cGraphsGraphParserRuleCall_4_0 = (RuleCall)cGraphsAssignment_4.eContents().get(0);
+		private final Keyword cSystemKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cWifiKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cWifiSsidAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cWifiSsidSTRINGTerminalRuleCall_3_0 = (RuleCall)cWifiSsidAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cWithKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cPasswordKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Assignment cWifiPasswordAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cWifiPasswordSTRINGTerminalRuleCall_4_2_0 = (RuleCall)cWifiPasswordAssignment_4_2.eContents().get(0);
+		private final Keyword cMqttKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cMqttHostAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cMqttHostSTRINGTerminalRuleCall_6_0 = (RuleCall)cMqttHostAssignment_6.eContents().get(0);
+		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+		private final Keyword cWithKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Keyword cUsernameKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
+		private final Assignment cMqttUsernameAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
+		private final RuleCall cMqttUsernameSTRINGTerminalRuleCall_7_2_0 = (RuleCall)cMqttUsernameAssignment_7_2.eContents().get(0);
+		private final Keyword cAndKeyword_7_3 = (Keyword)cGroup_7.eContents().get(3);
+		private final Keyword cPasswordKeyword_7_4 = (Keyword)cGroup_7.eContents().get(4);
+		private final Assignment cMqttPasswordAssignment_7_5 = (Assignment)cGroup_7.eContents().get(5);
+		private final RuleCall cMqttPasswordSTRINGTerminalRuleCall_7_5_0 = (RuleCall)cMqttPasswordAssignment_7_5.eContents().get(0);
+		private final Assignment cGatewayAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cGatewayGatewayParserRuleCall_8_0 = (RuleCall)cGatewayAssignment_8.eContents().get(0);
+		private final Assignment cGraphsAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cGraphsGraphParserRuleCall_9_0 = (RuleCall)cGraphsAssignment_9.eContents().get(0);
 		
 		//System:
-		//    (imports += Import)*
 		//    'System' ':'
+		//    'wifi' wifiSsid = STRING ('with' 'password' wifiPassword = STRING)?
+		//    'mqtt' mqttHost = STRING ('with' 'username' mqttUsername = STRING 'and' 'password' mqttPassword = STRING)?
 		//    gateway = Gateway
 		//    graphs += Graph*
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(imports += Import)*
 		//'System' ':'
+		//'wifi' wifiSsid = STRING ('with' 'password' wifiPassword = STRING)?
+		//'mqtt' mqttHost = STRING ('with' 'username' mqttUsername = STRING 'and' 'password' mqttPassword = STRING)?
 		//gateway = Gateway
 		//graphs += Graph*
 		public Group getGroup() { return cGroup; }
 		
-		//(imports += Import)*
-		public Assignment getImportsAssignment_0() { return cImportsAssignment_0; }
-		
-		//Import
-		public RuleCall getImportsImportParserRuleCall_0_0() { return cImportsImportParserRuleCall_0_0; }
-		
 		//'System'
-		public Keyword getSystemKeyword_1() { return cSystemKeyword_1; }
+		public Keyword getSystemKeyword_0() { return cSystemKeyword_0; }
 		
 		//':'
-		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
+		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+		
+		//'wifi'
+		public Keyword getWifiKeyword_2() { return cWifiKeyword_2; }
+		
+		//wifiSsid = STRING
+		public Assignment getWifiSsidAssignment_3() { return cWifiSsidAssignment_3; }
+		
+		//STRING
+		public RuleCall getWifiSsidSTRINGTerminalRuleCall_3_0() { return cWifiSsidSTRINGTerminalRuleCall_3_0; }
+		
+		//('with' 'password' wifiPassword = STRING)?
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//'with'
+		public Keyword getWithKeyword_4_0() { return cWithKeyword_4_0; }
+		
+		//'password'
+		public Keyword getPasswordKeyword_4_1() { return cPasswordKeyword_4_1; }
+		
+		//wifiPassword = STRING
+		public Assignment getWifiPasswordAssignment_4_2() { return cWifiPasswordAssignment_4_2; }
+		
+		//STRING
+		public RuleCall getWifiPasswordSTRINGTerminalRuleCall_4_2_0() { return cWifiPasswordSTRINGTerminalRuleCall_4_2_0; }
+		
+		//'mqtt'
+		public Keyword getMqttKeyword_5() { return cMqttKeyword_5; }
+		
+		//mqttHost = STRING
+		public Assignment getMqttHostAssignment_6() { return cMqttHostAssignment_6; }
+		
+		//STRING
+		public RuleCall getMqttHostSTRINGTerminalRuleCall_6_0() { return cMqttHostSTRINGTerminalRuleCall_6_0; }
+		
+		//('with' 'username' mqttUsername = STRING 'and' 'password' mqttPassword = STRING)?
+		public Group getGroup_7() { return cGroup_7; }
+		
+		//'with'
+		public Keyword getWithKeyword_7_0() { return cWithKeyword_7_0; }
+		
+		//'username'
+		public Keyword getUsernameKeyword_7_1() { return cUsernameKeyword_7_1; }
+		
+		//mqttUsername = STRING
+		public Assignment getMqttUsernameAssignment_7_2() { return cMqttUsernameAssignment_7_2; }
+		
+		//STRING
+		public RuleCall getMqttUsernameSTRINGTerminalRuleCall_7_2_0() { return cMqttUsernameSTRINGTerminalRuleCall_7_2_0; }
+		
+		//'and'
+		public Keyword getAndKeyword_7_3() { return cAndKeyword_7_3; }
+		
+		//'password'
+		public Keyword getPasswordKeyword_7_4() { return cPasswordKeyword_7_4; }
+		
+		//mqttPassword = STRING
+		public Assignment getMqttPasswordAssignment_7_5() { return cMqttPasswordAssignment_7_5; }
+		
+		//STRING
+		public RuleCall getMqttPasswordSTRINGTerminalRuleCall_7_5_0() { return cMqttPasswordSTRINGTerminalRuleCall_7_5_0; }
 		
 		//gateway = Gateway
-		public Assignment getGatewayAssignment_3() { return cGatewayAssignment_3; }
+		public Assignment getGatewayAssignment_8() { return cGatewayAssignment_8; }
 		
 		//Gateway
-		public RuleCall getGatewayGatewayParserRuleCall_3_0() { return cGatewayGatewayParserRuleCall_3_0; }
+		public RuleCall getGatewayGatewayParserRuleCall_8_0() { return cGatewayGatewayParserRuleCall_8_0; }
 		
 		//graphs += Graph*
-		public Assignment getGraphsAssignment_4() { return cGraphsAssignment_4; }
+		public Assignment getGraphsAssignment_9() { return cGraphsAssignment_9; }
 		
 		//Graph
-		public RuleCall getGraphsGraphParserRuleCall_4_0() { return cGraphsGraphParserRuleCall_4_0; }
+		public RuleCall getGraphsGraphParserRuleCall_9_0() { return cGraphsGraphParserRuleCall_9_0; }
 	}
 	public class GraphElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.gms.dds.DeviceDefinition.Graph");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cGraphKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cTypeImportCrossReference_1_0 = (CrossReference)cTypeAssignment_1.eContents().get(0);
-		private final RuleCall cTypeImportIDTerminalRuleCall_1_0_1 = (RuleCall)cTypeImportCrossReference_1_0.eContents().get(1);
+		private final RuleCall cTypeIDTerminalRuleCall_1_0 = (RuleCall)cTypeAssignment_1.eContents().get(0);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
@@ -98,7 +171,7 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		private final RuleCall cYlabelSTRINGTerminalRuleCall_11_0 = (RuleCall)cYlabelAssignment_11.eContents().get(0);
 		
 		//Graph:
-		//    'Graph' type = [Import] name=ID ':'
+		//    'Graph' type = ID name=ID ':'
 		//    'category' category = STRING
 		//    'title' title = STRING
 		//    'x' xlabel = STRING
@@ -106,7 +179,7 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Graph' type = [Import] name=ID ':'
+		//'Graph' type = ID name=ID ':'
 		//'category' category = STRING
 		//'title' title = STRING
 		//'x' xlabel = STRING
@@ -116,14 +189,11 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		//'Graph'
 		public Keyword getGraphKeyword_0() { return cGraphKeyword_0; }
 		
-		//type = [Import]
+		//type = ID
 		public Assignment getTypeAssignment_1() { return cTypeAssignment_1; }
 		
-		//[Import]
-		public CrossReference getTypeImportCrossReference_1_0() { return cTypeImportCrossReference_1_0; }
-		
 		//ID
-		public RuleCall getTypeImportIDTerminalRuleCall_1_0_1() { return cTypeImportIDTerminalRuleCall_1_0_1; }
+		public RuleCall getTypeIDTerminalRuleCall_1_0() { return cTypeIDTerminalRuleCall_1_0; }
 		
 		//name=ID
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
@@ -229,46 +299,38 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cMacKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cMacAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cMacMACTerminalRuleCall_4_0 = (RuleCall)cMacAssignment_4.eContents().get(0);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cSleepKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Keyword cForKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
-		private final Assignment cSleepTimeAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
-		private final RuleCall cSleepTimeINTTerminalRuleCall_5_2_0 = (RuleCall)cSleepTimeAssignment_5_2.eContents().get(0);
-		private final Assignment cTimeUnitAssignment_5_3 = (Assignment)cGroup_5.eContents().get(3);
-		private final RuleCall cTimeUnitTimeUnitParserRuleCall_5_3_0 = (RuleCall)cTimeUnitAssignment_5_3.eContents().get(0);
-		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cBroadcastKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Keyword cForKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
-		private final Assignment cBroadcastTimeAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
-		private final RuleCall cBroadcastTimeINTTerminalRuleCall_6_2_0 = (RuleCall)cBroadcastTimeAssignment_6_2.eContents().get(0);
-		private final Assignment cTimeUnitAssignment_6_3 = (Assignment)cGroup_6.eContents().get(3);
-		private final RuleCall cTimeUnitTimeUnitParserRuleCall_6_3_0 = (RuleCall)cTimeUnitAssignment_6_3.eContents().get(0);
-		private final Assignment cDevicesAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cDevicesDeviceParserRuleCall_7_0 = (RuleCall)cDevicesAssignment_7.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cMacKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cMacAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cMacMACTerminalRuleCall_3_1_0 = (RuleCall)cMacAssignment_3_1.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cSleepKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cForKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Assignment cSleepTimeAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cSleepTimeINTTerminalRuleCall_4_2_0 = (RuleCall)cSleepTimeAssignment_4_2.eContents().get(0);
+		private final Assignment cTimeUnitAssignment_4_3 = (Assignment)cGroup_4.eContents().get(3);
+		private final RuleCall cTimeUnitTimeUnitParserRuleCall_4_3_0 = (RuleCall)cTimeUnitAssignment_4_3.eContents().get(0);
+		private final Assignment cDevicesAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cDevicesDeviceParserRuleCall_5_0 = (RuleCall)cDevicesAssignment_5.eContents().get(0);
 		
 		//Worker:
-		//    'Worker' name=ID ':'
-		//    'mac' mac = MAC
-		//    ('sleep' 'for' sleepTime = INT timeUnit += TimeUnit)?
-		//    ('broadcast' 'for' broadcastTime = INT timeUnit += TimeUnit)?
+		//    'Worker' (name=ID) ':'
+		//    ('mac' mac = MAC)
+		//    ('sleep' 'for' sleepTime = INT timeUnit = TimeUnit)?
 		//    devices += Device*
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Worker' name=ID ':'
-		//'mac' mac = MAC
-		//('sleep' 'for' sleepTime = INT timeUnit += TimeUnit)?
-		//('broadcast' 'for' broadcastTime = INT timeUnit += TimeUnit)?
+		//'Worker' (name=ID) ':'
+		//('mac' mac = MAC)
+		//('sleep' 'for' sleepTime = INT timeUnit = TimeUnit)?
 		//devices += Device*
 		public Group getGroup() { return cGroup; }
 		
 		//'Worker'
 		public Keyword getWorkerKeyword_0() { return cWorkerKeyword_0; }
 		
-		//name=ID
+		//(name=ID)
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//ID
@@ -277,62 +339,44 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		//':'
 		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 		
+		//('mac' mac = MAC)
+		public Group getGroup_3() { return cGroup_3; }
+		
 		//'mac'
-		public Keyword getMacKeyword_3() { return cMacKeyword_3; }
+		public Keyword getMacKeyword_3_0() { return cMacKeyword_3_0; }
 		
 		//mac = MAC
-		public Assignment getMacAssignment_4() { return cMacAssignment_4; }
+		public Assignment getMacAssignment_3_1() { return cMacAssignment_3_1; }
 		
 		//MAC
-		public RuleCall getMacMACTerminalRuleCall_4_0() { return cMacMACTerminalRuleCall_4_0; }
+		public RuleCall getMacMACTerminalRuleCall_3_1_0() { return cMacMACTerminalRuleCall_3_1_0; }
 		
-		//('sleep' 'for' sleepTime = INT timeUnit += TimeUnit)?
-		public Group getGroup_5() { return cGroup_5; }
+		//('sleep' 'for' sleepTime = INT timeUnit = TimeUnit)?
+		public Group getGroup_4() { return cGroup_4; }
 		
 		//'sleep'
-		public Keyword getSleepKeyword_5_0() { return cSleepKeyword_5_0; }
+		public Keyword getSleepKeyword_4_0() { return cSleepKeyword_4_0; }
 		
 		//'for'
-		public Keyword getForKeyword_5_1() { return cForKeyword_5_1; }
+		public Keyword getForKeyword_4_1() { return cForKeyword_4_1; }
 		
 		//sleepTime = INT
-		public Assignment getSleepTimeAssignment_5_2() { return cSleepTimeAssignment_5_2; }
+		public Assignment getSleepTimeAssignment_4_2() { return cSleepTimeAssignment_4_2; }
 		
 		//INT
-		public RuleCall getSleepTimeINTTerminalRuleCall_5_2_0() { return cSleepTimeINTTerminalRuleCall_5_2_0; }
+		public RuleCall getSleepTimeINTTerminalRuleCall_4_2_0() { return cSleepTimeINTTerminalRuleCall_4_2_0; }
 		
-		//timeUnit += TimeUnit
-		public Assignment getTimeUnitAssignment_5_3() { return cTimeUnitAssignment_5_3; }
-		
-		//TimeUnit
-		public RuleCall getTimeUnitTimeUnitParserRuleCall_5_3_0() { return cTimeUnitTimeUnitParserRuleCall_5_3_0; }
-		
-		//('broadcast' 'for' broadcastTime = INT timeUnit += TimeUnit)?
-		public Group getGroup_6() { return cGroup_6; }
-		
-		//'broadcast'
-		public Keyword getBroadcastKeyword_6_0() { return cBroadcastKeyword_6_0; }
-		
-		//'for'
-		public Keyword getForKeyword_6_1() { return cForKeyword_6_1; }
-		
-		//broadcastTime = INT
-		public Assignment getBroadcastTimeAssignment_6_2() { return cBroadcastTimeAssignment_6_2; }
-		
-		//INT
-		public RuleCall getBroadcastTimeINTTerminalRuleCall_6_2_0() { return cBroadcastTimeINTTerminalRuleCall_6_2_0; }
-		
-		//timeUnit += TimeUnit
-		public Assignment getTimeUnitAssignment_6_3() { return cTimeUnitAssignment_6_3; }
+		//timeUnit = TimeUnit
+		public Assignment getTimeUnitAssignment_4_3() { return cTimeUnitAssignment_4_3; }
 		
 		//TimeUnit
-		public RuleCall getTimeUnitTimeUnitParserRuleCall_6_3_0() { return cTimeUnitTimeUnitParserRuleCall_6_3_0; }
+		public RuleCall getTimeUnitTimeUnitParserRuleCall_4_3_0() { return cTimeUnitTimeUnitParserRuleCall_4_3_0; }
 		
 		//devices += Device*
-		public Assignment getDevicesAssignment_7() { return cDevicesAssignment_7; }
+		public Assignment getDevicesAssignment_5() { return cDevicesAssignment_5; }
 		
 		//Device
-		public RuleCall getDevicesDeviceParserRuleCall_7_0() { return cDevicesDeviceParserRuleCall_7_0; }
+		public RuleCall getDevicesDeviceParserRuleCall_5_0() { return cDevicesDeviceParserRuleCall_5_0; }
 	}
 	public class DeviceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.gms.dds.DeviceDefinition.Device");
@@ -359,54 +403,47 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cSensorKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cTypeImportCrossReference_1_0 = (CrossReference)cTypeAssignment_1.eContents().get(0);
-		private final RuleCall cTypeImportIDTerminalRuleCall_1_0_1 = (RuleCall)cTypeImportCrossReference_1_0.eContents().get(1);
+		private final RuleCall cTypeIDTerminalRuleCall_1_0 = (RuleCall)cTypeAssignment_1.eContents().get(0);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cPinsKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cPinsAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cPinsINTTerminalRuleCall_5_0 = (RuleCall)cPinsAssignment_5.eContents().get(0);
-		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cCommaKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cPinsAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final RuleCall cPinsINTTerminalRuleCall_6_1_0 = (RuleCall)cPinsAssignment_6_1.eContents().get(0);
-		private final Keyword cRateKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Assignment cSampleRateAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cSampleRatePrimitiveParserRuleCall_8_0 = (RuleCall)cSampleRateAssignment_8.eContents().get(0);
-		private final Assignment cOutputsAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cOutputsSensorOutputParserRuleCall_9_0 = (RuleCall)cOutputsAssignment_9.eContents().get(0);
-		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
-		private final Keyword cBehaviorKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
-		private final Assignment cBehaviorAssignment_10_1 = (Assignment)cGroup_10.eContents().get(1);
-		private final RuleCall cBehaviorSampleBehaviorParserRuleCall_10_1_0 = (RuleCall)cBehaviorAssignment_10_1.eContents().get(0);
-		private final Group cGroup_11 = (Group)cGroup.eContents().get(11);
-		private final Keyword cSampleKeyword_11_0 = (Keyword)cGroup_11.eContents().get(0);
-		private final Keyword cIfKeyword_11_1 = (Keyword)cGroup_11.eContents().get(1);
-		private final Assignment cPredicateAssignment_11_2 = (Assignment)cGroup_11.eContents().get(2);
-		private final RuleCall cPredicateExpParserRuleCall_11_2_0 = (RuleCall)cPredicateAssignment_11_2.eContents().get(0);
-		private final Group cGroup_12 = (Group)cGroup.eContents().get(12);
-		private final Keyword cGraphKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
-		private final Assignment cGraphAssignment_12_1 = (Assignment)cGroup_12.eContents().get(1);
-		private final CrossReference cGraphGraphCrossReference_12_1_0 = (CrossReference)cGraphAssignment_12_1.eContents().get(0);
-		private final RuleCall cGraphGraphIDTerminalRuleCall_12_1_0_1 = (RuleCall)cGraphGraphCrossReference_12_1_0.eContents().get(1);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cPinsKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cPinsAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cPinsPinParserRuleCall_4_1_0 = (RuleCall)cPinsAssignment_4_1.eContents().get(0);
+		private final Group cGroup_4_2 = (Group)cGroup_4.eContents().get(2);
+		private final Keyword cCommaKeyword_4_2_0 = (Keyword)cGroup_4_2.eContents().get(0);
+		private final Assignment cPinsAssignment_4_2_1 = (Assignment)cGroup_4_2.eContents().get(1);
+		private final RuleCall cPinsPinParserRuleCall_4_2_1_0 = (RuleCall)cPinsAssignment_4_2_1.eContents().get(0);
+		private final Assignment cOutputsAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cOutputsSensorOutputParserRuleCall_5_0 = (RuleCall)cOutputsAssignment_5.eContents().get(0);
+		private final Assignment cSettingsAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cSettingsSettingParserRuleCall_6_0 = (RuleCall)cSettingsAssignment_6.eContents().get(0);
+		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+		private final Keyword cSampleKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Keyword cIfKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
+		private final Assignment cPredicateAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
+		private final RuleCall cPredicateExpParserRuleCall_7_2_0 = (RuleCall)cPredicateAssignment_7_2.eContents().get(0);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final Keyword cGraphKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Assignment cGraphAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
+		private final CrossReference cGraphGraphCrossReference_8_1_0 = (CrossReference)cGraphAssignment_8_1.eContents().get(0);
+		private final RuleCall cGraphGraphIDTerminalRuleCall_8_1_0_1 = (RuleCall)cGraphGraphCrossReference_8_1_0.eContents().get(1);
 		
 		//Sensor:
-		//    'Sensor' type = [Import] (name=ID)? ':'
-		//    'pins' pins += INT* (',' pins += INT)*
-		//    'rate' sampleRate = Primitive
+		//    'Sensor' type = ID name=ID ':'
+		//    ('pins' pins += Pin* (',' pins += Pin)*)?
 		//    (outputs += SensorOutput)*
-		//    ('behavior' behavior += SampleBehavior)?
+		//    (settings += Setting)*
 		//    ('sample' 'if' predicate += Exp)?
 		//    ('graph' graph = [Graph])?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Sensor' type = [Import] (name=ID)? ':'
-		//'pins' pins += INT* (',' pins += INT)*
-		//'rate' sampleRate = Primitive
+		//'Sensor' type = ID name=ID ':'
+		//('pins' pins += Pin* (',' pins += Pin)*)?
 		//(outputs += SensorOutput)*
-		//('behavior' behavior += SampleBehavior)?
+		//(settings += Setting)*
 		//('sample' 'if' predicate += Exp)?
 		//('graph' graph = [Graph])?
 		public Group getGroup() { return cGroup; }
@@ -414,16 +451,13 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		//'Sensor'
 		public Keyword getSensorKeyword_0() { return cSensorKeyword_0; }
 		
-		//type = [Import]
+		//type = ID
 		public Assignment getTypeAssignment_1() { return cTypeAssignment_1; }
 		
-		//[Import]
-		public CrossReference getTypeImportCrossReference_1_0() { return cTypeImportCrossReference_1_0; }
-		
 		//ID
-		public RuleCall getTypeImportIDTerminalRuleCall_1_0_1() { return cTypeImportIDTerminalRuleCall_1_0_1; }
+		public RuleCall getTypeIDTerminalRuleCall_1_0() { return cTypeIDTerminalRuleCall_1_0; }
 		
-		//(name=ID)?
+		//name=ID
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
 		//ID
@@ -432,139 +466,159 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		//':'
 		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
 		
+		//('pins' pins += Pin* (',' pins += Pin)*)?
+		public Group getGroup_4() { return cGroup_4; }
+		
 		//'pins'
-		public Keyword getPinsKeyword_4() { return cPinsKeyword_4; }
+		public Keyword getPinsKeyword_4_0() { return cPinsKeyword_4_0; }
 		
-		//pins += INT*
-		public Assignment getPinsAssignment_5() { return cPinsAssignment_5; }
+		//pins += Pin*
+		public Assignment getPinsAssignment_4_1() { return cPinsAssignment_4_1; }
 		
-		//INT
-		public RuleCall getPinsINTTerminalRuleCall_5_0() { return cPinsINTTerminalRuleCall_5_0; }
+		//Pin
+		public RuleCall getPinsPinParserRuleCall_4_1_0() { return cPinsPinParserRuleCall_4_1_0; }
 		
-		//(',' pins += INT)*
-		public Group getGroup_6() { return cGroup_6; }
+		//(',' pins += Pin)*
+		public Group getGroup_4_2() { return cGroup_4_2; }
 		
 		//','
-		public Keyword getCommaKeyword_6_0() { return cCommaKeyword_6_0; }
+		public Keyword getCommaKeyword_4_2_0() { return cCommaKeyword_4_2_0; }
 		
-		//pins += INT
-		public Assignment getPinsAssignment_6_1() { return cPinsAssignment_6_1; }
+		//pins += Pin
+		public Assignment getPinsAssignment_4_2_1() { return cPinsAssignment_4_2_1; }
 		
-		//INT
-		public RuleCall getPinsINTTerminalRuleCall_6_1_0() { return cPinsINTTerminalRuleCall_6_1_0; }
-		
-		//'rate'
-		public Keyword getRateKeyword_7() { return cRateKeyword_7; }
-		
-		//sampleRate = Primitive
-		public Assignment getSampleRateAssignment_8() { return cSampleRateAssignment_8; }
-		
-		//Primitive
-		public RuleCall getSampleRatePrimitiveParserRuleCall_8_0() { return cSampleRatePrimitiveParserRuleCall_8_0; }
+		//Pin
+		public RuleCall getPinsPinParserRuleCall_4_2_1_0() { return cPinsPinParserRuleCall_4_2_1_0; }
 		
 		//(outputs += SensorOutput)*
-		public Assignment getOutputsAssignment_9() { return cOutputsAssignment_9; }
+		public Assignment getOutputsAssignment_5() { return cOutputsAssignment_5; }
 		
 		//SensorOutput
-		public RuleCall getOutputsSensorOutputParserRuleCall_9_0() { return cOutputsSensorOutputParserRuleCall_9_0; }
+		public RuleCall getOutputsSensorOutputParserRuleCall_5_0() { return cOutputsSensorOutputParserRuleCall_5_0; }
 		
-		//('behavior' behavior += SampleBehavior)?
-		public Group getGroup_10() { return cGroup_10; }
+		//(settings += Setting)*
+		public Assignment getSettingsAssignment_6() { return cSettingsAssignment_6; }
 		
-		//'behavior'
-		public Keyword getBehaviorKeyword_10_0() { return cBehaviorKeyword_10_0; }
-		
-		//behavior += SampleBehavior
-		public Assignment getBehaviorAssignment_10_1() { return cBehaviorAssignment_10_1; }
-		
-		//SampleBehavior
-		public RuleCall getBehaviorSampleBehaviorParserRuleCall_10_1_0() { return cBehaviorSampleBehaviorParserRuleCall_10_1_0; }
+		//Setting
+		public RuleCall getSettingsSettingParserRuleCall_6_0() { return cSettingsSettingParserRuleCall_6_0; }
 		
 		//('sample' 'if' predicate += Exp)?
-		public Group getGroup_11() { return cGroup_11; }
+		public Group getGroup_7() { return cGroup_7; }
 		
 		//'sample'
-		public Keyword getSampleKeyword_11_0() { return cSampleKeyword_11_0; }
+		public Keyword getSampleKeyword_7_0() { return cSampleKeyword_7_0; }
 		
 		//'if'
-		public Keyword getIfKeyword_11_1() { return cIfKeyword_11_1; }
+		public Keyword getIfKeyword_7_1() { return cIfKeyword_7_1; }
 		
 		//predicate += Exp
-		public Assignment getPredicateAssignment_11_2() { return cPredicateAssignment_11_2; }
+		public Assignment getPredicateAssignment_7_2() { return cPredicateAssignment_7_2; }
 		
 		//Exp
-		public RuleCall getPredicateExpParserRuleCall_11_2_0() { return cPredicateExpParserRuleCall_11_2_0; }
+		public RuleCall getPredicateExpParserRuleCall_7_2_0() { return cPredicateExpParserRuleCall_7_2_0; }
 		
 		//('graph' graph = [Graph])?
-		public Group getGroup_12() { return cGroup_12; }
+		public Group getGroup_8() { return cGroup_8; }
 		
 		//'graph'
-		public Keyword getGraphKeyword_12_0() { return cGraphKeyword_12_0; }
+		public Keyword getGraphKeyword_8_0() { return cGraphKeyword_8_0; }
 		
 		//graph = [Graph]
-		public Assignment getGraphAssignment_12_1() { return cGraphAssignment_12_1; }
+		public Assignment getGraphAssignment_8_1() { return cGraphAssignment_8_1; }
 		
 		//[Graph]
-		public CrossReference getGraphGraphCrossReference_12_1_0() { return cGraphGraphCrossReference_12_1_0; }
+		public CrossReference getGraphGraphCrossReference_8_1_0() { return cGraphGraphCrossReference_8_1_0; }
 		
 		//ID
-		public RuleCall getGraphGraphIDTerminalRuleCall_12_1_0_1() { return cGraphGraphIDTerminalRuleCall_12_1_0_1; }
+		public RuleCall getGraphGraphIDTerminalRuleCall_8_1_0_1() { return cGraphGraphIDTerminalRuleCall_8_1_0_1; }
 	}
-	public class SampleBehaviorElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.gms.dds.DeviceDefinition.SampleBehavior");
+	public class PinElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.gms.dds.DeviceDefinition.Pin");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final CrossReference cTypeImportCrossReference_0_0 = (CrossReference)cTypeAssignment_0.eContents().get(0);
-		private final RuleCall cTypeImportIDTerminalRuleCall_0_0_1 = (RuleCall)cTypeImportCrossReference_0_0.eContents().get(1);
-		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cArgsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cArgsPrimaryParserRuleCall_2_0 = (RuleCall)cArgsAssignment_2.eContents().get(0);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cCommaKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cPinsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cPinsPrimaryParserRuleCall_3_1_0 = (RuleCall)cPinsAssignment_3_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final RuleCall cTypePinTypeParserRuleCall_0_0 = (RuleCall)cTypeAssignment_0.eContents().get(0);
+		private final Assignment cNumberAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNumberINTTerminalRuleCall_1_0 = (RuleCall)cNumberAssignment_1.eContents().get(0);
 		
-		//SampleBehavior:
-		//    type = [Import] '(' args += Primary* (',' pins += Primary)* ')'
+		//Pin:
+		//    type = PinType number = INT
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//type = [Import] '(' args += Primary* (',' pins += Primary)* ')'
+		//type = PinType number = INT
 		public Group getGroup() { return cGroup; }
 		
-		//type = [Import]
+		//type = PinType
 		public Assignment getTypeAssignment_0() { return cTypeAssignment_0; }
 		
-		//[Import]
-		public CrossReference getTypeImportCrossReference_0_0() { return cTypeImportCrossReference_0_0; }
+		//PinType
+		public RuleCall getTypePinTypeParserRuleCall_0_0() { return cTypePinTypeParserRuleCall_0_0; }
 		
-		//ID
-		public RuleCall getTypeImportIDTerminalRuleCall_0_0_1() { return cTypeImportIDTerminalRuleCall_0_0_1; }
+		//number = INT
+		public Assignment getNumberAssignment_1() { return cNumberAssignment_1; }
 		
-		//'('
-		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		//INT
+		public RuleCall getNumberINTTerminalRuleCall_1_0() { return cNumberINTTerminalRuleCall_1_0; }
+	}
+	public class PinTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.gms.dds.DeviceDefinition.PinType");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Action cADCAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final Keyword cAdcKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Action cDACAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Keyword cDacKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Action cGenericInAction_2_0 = (Action)cGroup_2.eContents().get(0);
+		private final Keyword cInKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
+		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
+		private final Action cGenericOutAction_3_0 = (Action)cGroup_3.eContents().get(0);
+		private final Keyword cOutKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
 		
-		//args += Primary*
-		public Assignment getArgsAssignment_2() { return cArgsAssignment_2; }
+		//PinType:
+		//    {ADC} 'adc' | {DAC} 'dac' | {GenericIn} 'in' | {GenericOut} 'out'
+		//;
+		@Override public ParserRule getRule() { return rule; }
 		
-		//Primary
-		public RuleCall getArgsPrimaryParserRuleCall_2_0() { return cArgsPrimaryParserRuleCall_2_0; }
+		//{ADC} 'adc' | {DAC} 'dac' | {GenericIn} 'in' | {GenericOut} 'out'
+		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//(',' pins += Primary)*
+		//{ADC} 'adc'
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//{ADC}
+		public Action getADCAction_0_0() { return cADCAction_0_0; }
+		
+		//'adc'
+		public Keyword getAdcKeyword_0_1() { return cAdcKeyword_0_1; }
+		
+		//{DAC} 'dac'
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//{DAC}
+		public Action getDACAction_1_0() { return cDACAction_1_0; }
+		
+		//'dac'
+		public Keyword getDacKeyword_1_1() { return cDacKeyword_1_1; }
+		
+		//{GenericIn} 'in'
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//{GenericIn}
+		public Action getGenericInAction_2_0() { return cGenericInAction_2_0; }
+		
+		//'in'
+		public Keyword getInKeyword_2_1() { return cInKeyword_2_1; }
+		
+		//{GenericOut} 'out'
 		public Group getGroup_3() { return cGroup_3; }
 		
-		//','
-		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
+		//{GenericOut}
+		public Action getGenericOutAction_3_0() { return cGenericOutAction_3_0; }
 		
-		//pins += Primary
-		public Assignment getPinsAssignment_3_1() { return cPinsAssignment_3_1; }
-		
-		//Primary
-		public RuleCall getPinsPrimaryParserRuleCall_3_1_0() { return cPinsPrimaryParserRuleCall_3_1_0; }
-		
-		//')'
-		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
+		//'out'
+		public Keyword getOutKeyword_3_1() { return cOutKeyword_3_1; }
 	}
 	public class TimeUnitElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.gms.dds.DeviceDefinition.TimeUnit");
@@ -640,43 +694,23 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 	}
 	public class BindingElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.gms.dds.DeviceDefinition.Binding");
-		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cSensorOutputParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cSettingParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//Binding:
-		//    name=ID
+		//    SensorOutput | Setting
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID
-		public Assignment getNameAssignment() { return cNameAssignment; }
+		//SensorOutput | Setting
+		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_0() { return cNameIDTerminalRuleCall_0; }
-	}
-	public class ImportElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.gms.dds.DeviceDefinition.Import");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cImportKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		//SensorOutput
+		public RuleCall getSensorOutputParserRuleCall_0() { return cSensorOutputParserRuleCall_0; }
 		
-		//Import:
-		//    'import' name=ID
-		//;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'import' name=ID
-		public Group getGroup() { return cGroup; }
-		
-		//'import'
-		public Keyword getImportKeyword_0() { return cImportKeyword_0; }
-		
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		//Setting
+		public RuleCall getSettingParserRuleCall_1() { return cSettingParserRuleCall_1; }
 	}
 	public class SensorOutputElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.gms.dds.DeviceDefinition.SensorOutput");
@@ -685,8 +719,8 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		private final Assignment cOutputAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cOutputSTRINGTerminalRuleCall_1_0 = (RuleCall)cOutputAssignment_1.eContents().get(0);
 		private final Keyword cAsKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cBindingAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cBindingBindingParserRuleCall_3_0 = (RuleCall)cBindingAssignment_3.eContents().get(0);
+		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cNameIDTerminalRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
 		private final Keyword cWithKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Keyword cMappingKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
@@ -694,11 +728,11 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		private final RuleCall cMappingExpParserRuleCall_4_2_0 = (RuleCall)cMappingAssignment_4_2.eContents().get(0);
 		
 		//SensorOutput:
-		//    'out' (output=STRING)? 'as' binding = Binding ('with' 'mapping' mapping = Exp)?
+		//    'out' (output=STRING)? 'as' name=ID ('with' 'mapping' mapping = Exp)?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'out' (output=STRING)? 'as' binding = Binding ('with' 'mapping' mapping = Exp)?
+		//'out' (output=STRING)? 'as' name=ID ('with' 'mapping' mapping = Exp)?
 		public Group getGroup() { return cGroup; }
 		
 		//'out'
@@ -713,11 +747,11 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		//'as'
 		public Keyword getAsKeyword_2() { return cAsKeyword_2; }
 		
-		//binding = Binding
-		public Assignment getBindingAssignment_3() { return cBindingAssignment_3; }
+		//name=ID
+		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
 		
-		//Binding
-		public RuleCall getBindingBindingParserRuleCall_3_0() { return cBindingBindingParserRuleCall_3_0; }
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_3_0() { return cNameIDTerminalRuleCall_3_0; }
 		
 		//('with' 'mapping' mapping = Exp)?
 		public Group getGroup_4() { return cGroup_4; }
@@ -739,52 +773,46 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cActuatorKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cTypeImportCrossReference_1_0 = (CrossReference)cTypeAssignment_1.eContents().get(0);
-		private final RuleCall cTypeImportIDTerminalRuleCall_1_0_1 = (RuleCall)cTypeImportCrossReference_1_0.eContents().get(1);
+		private final RuleCall cTypeIDTerminalRuleCall_1_0 = (RuleCall)cTypeAssignment_1.eContents().get(0);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Keyword cPinsKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cPinsAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cPinsINTTerminalRuleCall_5_0 = (RuleCall)cPinsAssignment_5.eContents().get(0);
+		private final RuleCall cPinsPinParserRuleCall_5_0 = (RuleCall)cPinsAssignment_5.eContents().get(0);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
 		private final Keyword cCommaKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Assignment cPinsAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final RuleCall cPinsINTTerminalRuleCall_6_1_0 = (RuleCall)cPinsAssignment_6_1.eContents().get(0);
+		private final RuleCall cPinsPinParserRuleCall_6_1_0 = (RuleCall)cPinsAssignment_6_1.eContents().get(0);
 		private final Assignment cSettingsAssignment_7 = (Assignment)cGroup.eContents().get(7);
 		private final RuleCall cSettingsSettingParserRuleCall_7_0 = (RuleCall)cSettingsAssignment_7.eContents().get(0);
-		private final Keyword cTriggerKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Keyword cOnKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final Assignment cExpAssignment_10 = (Assignment)cGroup.eContents().get(10);
-		private final RuleCall cExpExpParserRuleCall_10_0 = (RuleCall)cExpAssignment_10.eContents().get(0);
+		private final Assignment cTriggerAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cTriggerTriggerParserRuleCall_8_0 = (RuleCall)cTriggerAssignment_8.eContents().get(0);
 		
 		//Actuator:
-		//    'Actuator' type = [Import] (name=ID)? ':'
-		//    'pins' pins += INT* (',' pins += INT)*
+		//    'Actuator' type = ID name=ID ':'
+		//    'pins' pins += Pin* (',' pins += Pin)*
 		//    settings += Setting*
-		//    'trigger' 'on' exp = Exp
+		//    trigger = Trigger
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Actuator' type = [Import] (name=ID)? ':'
-		//'pins' pins += INT* (',' pins += INT)*
+		//'Actuator' type = ID name=ID ':'
+		//'pins' pins += Pin* (',' pins += Pin)*
 		//settings += Setting*
-		//'trigger' 'on' exp = Exp
+		//trigger = Trigger
 		public Group getGroup() { return cGroup; }
 		
 		//'Actuator'
 		public Keyword getActuatorKeyword_0() { return cActuatorKeyword_0; }
 		
-		//type = [Import]
+		//type = ID
 		public Assignment getTypeAssignment_1() { return cTypeAssignment_1; }
 		
-		//[Import]
-		public CrossReference getTypeImportCrossReference_1_0() { return cTypeImportCrossReference_1_0; }
-		
 		//ID
-		public RuleCall getTypeImportIDTerminalRuleCall_1_0_1() { return cTypeImportIDTerminalRuleCall_1_0_1; }
+		public RuleCall getTypeIDTerminalRuleCall_1_0() { return cTypeIDTerminalRuleCall_1_0; }
 		
-		//(name=ID)?
+		//name=ID
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
 		//ID
@@ -796,23 +824,23 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		//'pins'
 		public Keyword getPinsKeyword_4() { return cPinsKeyword_4; }
 		
-		//pins += INT*
+		//pins += Pin*
 		public Assignment getPinsAssignment_5() { return cPinsAssignment_5; }
 		
-		//INT
-		public RuleCall getPinsINTTerminalRuleCall_5_0() { return cPinsINTTerminalRuleCall_5_0; }
+		//Pin
+		public RuleCall getPinsPinParserRuleCall_5_0() { return cPinsPinParserRuleCall_5_0; }
 		
-		//(',' pins += INT)*
+		//(',' pins += Pin)*
 		public Group getGroup_6() { return cGroup_6; }
 		
 		//','
 		public Keyword getCommaKeyword_6_0() { return cCommaKeyword_6_0; }
 		
-		//pins += INT
+		//pins += Pin
 		public Assignment getPinsAssignment_6_1() { return cPinsAssignment_6_1; }
 		
-		//INT
-		public RuleCall getPinsINTTerminalRuleCall_6_1_0() { return cPinsINTTerminalRuleCall_6_1_0; }
+		//Pin
+		public RuleCall getPinsPinParserRuleCall_6_1_0() { return cPinsPinParserRuleCall_6_1_0; }
 		
 		//settings += Setting*
 		public Assignment getSettingsAssignment_7() { return cSettingsAssignment_7; }
@@ -820,44 +848,140 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		//Setting
 		public RuleCall getSettingsSettingParserRuleCall_7_0() { return cSettingsSettingParserRuleCall_7_0; }
 		
-		//'trigger'
-		public Keyword getTriggerKeyword_8() { return cTriggerKeyword_8; }
+		//trigger = Trigger
+		public Assignment getTriggerAssignment_8() { return cTriggerAssignment_8; }
 		
-		//'on'
-		public Keyword getOnKeyword_9() { return cOnKeyword_9; }
+		//Trigger
+		public RuleCall getTriggerTriggerParserRuleCall_8_0() { return cTriggerTriggerParserRuleCall_8_0; }
+	}
+	public class TriggerElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.gms.dds.DeviceDefinition.Trigger");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Action cWhenAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final Keyword cWhenKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Assignment cExpAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final RuleCall cExpExpParserRuleCall_0_2_0 = (RuleCall)cExpAssignment_0_2.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Action cOnOffAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Keyword cOnKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cOnExpAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cOnExpExpParserRuleCall_1_2_0 = (RuleCall)cOnExpAssignment_1_2.eContents().get(0);
+		private final Alternatives cAlternatives_1_3 = (Alternatives)cGroup_1.eContents().get(3);
+		private final Group cGroup_1_3_0 = (Group)cAlternatives_1_3.eContents().get(0);
+		private final Keyword cOffKeyword_1_3_0_0 = (Keyword)cGroup_1_3_0.eContents().get(0);
+		private final Assignment cOffExpAssignment_1_3_0_1 = (Assignment)cGroup_1_3_0.eContents().get(1);
+		private final RuleCall cOffExpExpParserRuleCall_1_3_0_1_0 = (RuleCall)cOffExpAssignment_1_3_0_1.eContents().get(0);
+		private final Group cGroup_1_3_1 = (Group)cAlternatives_1_3.eContents().get(1);
+		private final Keyword cRunKeyword_1_3_1_0 = (Keyword)cGroup_1_3_1.eContents().get(0);
+		private final Keyword cForKeyword_1_3_1_1 = (Keyword)cGroup_1_3_1.eContents().get(1);
+		private final Assignment cTimeAssignment_1_3_1_2 = (Assignment)cGroup_1_3_1.eContents().get(2);
+		private final RuleCall cTimeINTTerminalRuleCall_1_3_1_2_0 = (RuleCall)cTimeAssignment_1_3_1_2.eContents().get(0);
+		private final Assignment cUnitAssignment_1_3_1_3 = (Assignment)cGroup_1_3_1.eContents().get(3);
+		private final RuleCall cUnitTimeUnitParserRuleCall_1_3_1_3_0 = (RuleCall)cUnitAssignment_1_3_1_3.eContents().get(0);
+		
+		//Trigger:
+		//    {When} 'when' exp = Exp
+		//     | {OnOff} 'on' onExp = Exp (('off' offExp = Exp) | ('run' 'for' time=INT unit=TimeUnit))
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{When} 'when' exp = Exp
+		// | {OnOff} 'on' onExp = Exp (('off' offExp = Exp) | ('run' 'for' time=INT unit=TimeUnit))
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//{When} 'when' exp = Exp
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//{When}
+		public Action getWhenAction_0_0() { return cWhenAction_0_0; }
+		
+		//'when'
+		public Keyword getWhenKeyword_0_1() { return cWhenKeyword_0_1; }
 		
 		//exp = Exp
-		public Assignment getExpAssignment_10() { return cExpAssignment_10; }
+		public Assignment getExpAssignment_0_2() { return cExpAssignment_0_2; }
 		
 		//Exp
-		public RuleCall getExpExpParserRuleCall_10_0() { return cExpExpParserRuleCall_10_0; }
+		public RuleCall getExpExpParserRuleCall_0_2_0() { return cExpExpParserRuleCall_0_2_0; }
+		
+		//{OnOff} 'on' onExp = Exp (('off' offExp = Exp) | ('run' 'for' time=INT unit=TimeUnit))
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//{OnOff}
+		public Action getOnOffAction_1_0() { return cOnOffAction_1_0; }
+		
+		//'on'
+		public Keyword getOnKeyword_1_1() { return cOnKeyword_1_1; }
+		
+		//onExp = Exp
+		public Assignment getOnExpAssignment_1_2() { return cOnExpAssignment_1_2; }
+		
+		//Exp
+		public RuleCall getOnExpExpParserRuleCall_1_2_0() { return cOnExpExpParserRuleCall_1_2_0; }
+		
+		//(('off' offExp = Exp) | ('run' 'for' time=INT unit=TimeUnit))
+		public Alternatives getAlternatives_1_3() { return cAlternatives_1_3; }
+		
+		//('off' offExp = Exp)
+		public Group getGroup_1_3_0() { return cGroup_1_3_0; }
+		
+		//'off'
+		public Keyword getOffKeyword_1_3_0_0() { return cOffKeyword_1_3_0_0; }
+		
+		//offExp = Exp
+		public Assignment getOffExpAssignment_1_3_0_1() { return cOffExpAssignment_1_3_0_1; }
+		
+		//Exp
+		public RuleCall getOffExpExpParserRuleCall_1_3_0_1_0() { return cOffExpExpParserRuleCall_1_3_0_1_0; }
+		
+		//('run' 'for' time=INT unit=TimeUnit)
+		public Group getGroup_1_3_1() { return cGroup_1_3_1; }
+		
+		//'run'
+		public Keyword getRunKeyword_1_3_1_0() { return cRunKeyword_1_3_1_0; }
+		
+		//'for'
+		public Keyword getForKeyword_1_3_1_1() { return cForKeyword_1_3_1_1; }
+		
+		//time=INT
+		public Assignment getTimeAssignment_1_3_1_2() { return cTimeAssignment_1_3_1_2; }
+		
+		//INT
+		public RuleCall getTimeINTTerminalRuleCall_1_3_1_2_0() { return cTimeINTTerminalRuleCall_1_3_1_2_0; }
+		
+		//unit=TimeUnit
+		public Assignment getUnitAssignment_1_3_1_3() { return cUnitAssignment_1_3_1_3; }
+		
+		//TimeUnit
+		public RuleCall getUnitTimeUnitParserRuleCall_1_3_1_3_0() { return cUnitTimeUnitParserRuleCall_1_3_1_3_0; }
 	}
 	public class SettingElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.gms.dds.DeviceDefinition.Setting");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cSettingKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cBindingAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cBindingBindingParserRuleCall_1_0 = (RuleCall)cBindingAssignment_1.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cValuePrimitiveParserRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
 		
 		//Setting:
-		//    'setting' binding = Binding '=' value=Primitive
+		//    'setting' name=ID '=' value=Primitive
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'setting' binding = Binding '=' value=Primitive
+		//'setting' name=ID '=' value=Primitive
 		public Group getGroup() { return cGroup; }
 		
 		//'setting'
 		public Keyword getSettingKeyword_0() { return cSettingKeyword_0; }
 		
-		//binding = Binding
-		public Assignment getBindingAssignment_1() { return cBindingAssignment_1; }
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
-		//Binding
-		public RuleCall getBindingBindingParserRuleCall_1_0() { return cBindingBindingParserRuleCall_1_0; }
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
 		//'='
 		public Keyword getEqualsSignKeyword_2() { return cEqualsSignKeyword_2; }
@@ -1279,13 +1403,16 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		private final RuleCall cParenthesisParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cVariableUseParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cExternalCallParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
+		private final Action cValueAction_4_0 = (Action)cGroup_4.eContents().get(0);
+		private final Keyword cValueKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
 		
 		//Primary returns Expression:
-		//     Primitive | Parenthesis | VariableUse | ExternalCall
+		//     Primitive | Parenthesis | VariableUse | ExternalCall | {Value} 'value'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Primitive | Parenthesis | VariableUse | ExternalCall
+		//Primitive | Parenthesis | VariableUse | ExternalCall | {Value} 'value'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//Primitive
@@ -1299,14 +1426,22 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		
 		//ExternalCall
 		public RuleCall getExternalCallParserRuleCall_3() { return cExternalCallParserRuleCall_3; }
+		
+		//{Value} 'value'
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//{Value}
+		public Action getValueAction_4_0() { return cValueAction_4_0; }
+		
+		//'value'
+		public Keyword getValueKeyword_4_1() { return cValueKeyword_4_1; }
 	}
 	public class ExternalCallElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.gms.dds.DeviceDefinition.ExternalCall");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cCallKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cFuncAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cFuncImportCrossReference_1_0 = (CrossReference)cFuncAssignment_1.eContents().get(0);
-		private final RuleCall cFuncImportIDTerminalRuleCall_1_0_1 = (RuleCall)cFuncImportCrossReference_1_0.eContents().get(1);
+		private final RuleCall cFuncIDTerminalRuleCall_1_0 = (RuleCall)cFuncAssignment_1.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cArgsAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cArgsExpParserRuleCall_3_0 = (RuleCall)cArgsAssignment_3.eContents().get(0);
@@ -1317,24 +1452,21 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//ExternalCall:
-		//    'call' func = [Import] '(' args += Exp? (',' args += Exp)* ')'
+		//    'call' func = ID '(' args += Exp? (',' args += Exp)* ')'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'call' func = [Import] '(' args += Exp? (',' args += Exp)* ')'
+		//'call' func = ID '(' args += Exp? (',' args += Exp)* ')'
 		public Group getGroup() { return cGroup; }
 		
 		//'call'
 		public Keyword getCallKeyword_0() { return cCallKeyword_0; }
 		
-		//func = [Import]
+		//func = ID
 		public Assignment getFuncAssignment_1() { return cFuncAssignment_1; }
 		
-		//[Import]
-		public CrossReference getFuncImportCrossReference_1_0() { return cFuncImportCrossReference_1_0; }
-		
 		//ID
-		public RuleCall getFuncImportIDTerminalRuleCall_1_0_1() { return cFuncImportIDTerminalRuleCall_1_0_1; }
+		public RuleCall getFuncIDTerminalRuleCall_1_0() { return cFuncIDTerminalRuleCall_1_0; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
@@ -1483,15 +1615,16 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 	private final GatewayElements pGateway;
 	private final WorkerElements pWorker;
 	private final DeviceElements pDevice;
+	private final SensorElements pSensor;
+	private final PinElements pPin;
+	private final PinTypeElements pPinType;
+	private final TimeUnitElements pTimeUnit;
 	private final TerminalRule tMAC;
 	private final TerminalRule tHEXBYTE;
-	private final SensorElements pSensor;
-	private final SampleBehaviorElements pSampleBehavior;
-	private final TimeUnitElements pTimeUnit;
 	private final BindingElements pBinding;
-	private final ImportElements pImport;
 	private final SensorOutputElements pSensorOutput;
 	private final ActuatorElements pActuator;
+	private final TriggerElements pTrigger;
 	private final SettingElements pSetting;
 	private final TerminalRule tDECIMAL;
 	private final PrimitiveElements pPrimitive;
@@ -1522,15 +1655,16 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		this.pGateway = new GatewayElements();
 		this.pWorker = new WorkerElements();
 		this.pDevice = new DeviceElements();
+		this.pSensor = new SensorElements();
+		this.pPin = new PinElements();
+		this.pPinType = new PinTypeElements();
+		this.pTimeUnit = new TimeUnitElements();
 		this.tMAC = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.gms.dds.DeviceDefinition.MAC");
 		this.tHEXBYTE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.gms.dds.DeviceDefinition.HEXBYTE");
-		this.pSensor = new SensorElements();
-		this.pSampleBehavior = new SampleBehaviorElements();
-		this.pTimeUnit = new TimeUnitElements();
 		this.pBinding = new BindingElements();
-		this.pImport = new ImportElements();
 		this.pSensorOutput = new SensorOutputElements();
 		this.pActuator = new ActuatorElements();
+		this.pTrigger = new TriggerElements();
 		this.pSetting = new SettingElements();
 		this.tDECIMAL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.gms.dds.DeviceDefinition.DECIMAL");
 		this.pPrimitive = new PrimitiveElements();
@@ -1576,8 +1710,9 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 
 	
 	//System:
-	//    (imports += Import)*
 	//    'System' ':'
+	//    'wifi' wifiSsid = STRING ('with' 'password' wifiPassword = STRING)?
+	//    'mqtt' mqttHost = STRING ('with' 'username' mqttUsername = STRING 'and' 'password' mqttPassword = STRING)?
 	//    gateway = Gateway
 	//    graphs += Graph*
 	//;
@@ -1590,7 +1725,7 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 	}
 	
 	//Graph:
-	//    'Graph' type = [Import] name=ID ':'
+	//    'Graph' type = ID name=ID ':'
 	//    'category' category = STRING
 	//    'title' title = STRING
 	//    'x' xlabel = STRING
@@ -1618,10 +1753,9 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 	}
 	
 	//Worker:
-	//    'Worker' name=ID ':'
-	//    'mac' mac = MAC
-	//    ('sleep' 'for' sleepTime = INT timeUnit += TimeUnit)?
-	//    ('broadcast' 'for' broadcastTime = INT timeUnit += TimeUnit)?
+	//    'Worker' (name=ID) ':'
+	//    ('mac' mac = MAC)
+	//    ('sleep' 'for' sleepTime = INT timeUnit = TimeUnit)?
 	//    devices += Device*
 	//;
 	public WorkerElements getWorkerAccess() {
@@ -1643,26 +1777,11 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		return getDeviceAccess().getRule();
 	}
 	
-	//terminal MAC:
-	//    HEXBYTE ('-'|':') HEXBYTE ('-'|':') HEXBYTE ('-'|':') HEXBYTE ('-'|':') HEXBYTE ('-'|':') HEXBYTE
-	//;
-	public TerminalRule getMACRule() {
-		return tMAC;
-	}
-	
-	//terminal fragment HEXBYTE:
-	//    ('0'..'9'|'A'..'F')('0'..'9'|'A'..'F')
-	//;
-	public TerminalRule getHEXBYTERule() {
-		return tHEXBYTE;
-	}
-	
 	//Sensor:
-	//    'Sensor' type = [Import] (name=ID)? ':'
-	//    'pins' pins += INT* (',' pins += INT)*
-	//    'rate' sampleRate = Primitive
+	//    'Sensor' type = ID name=ID ':'
+	//    ('pins' pins += Pin* (',' pins += Pin)*)?
 	//    (outputs += SensorOutput)*
-	//    ('behavior' behavior += SampleBehavior)?
+	//    (settings += Setting)*
 	//    ('sample' 'if' predicate += Exp)?
 	//    ('graph' graph = [Graph])?
 	//;
@@ -1674,15 +1793,26 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		return getSensorAccess().getRule();
 	}
 	
-	//SampleBehavior:
-	//    type = [Import] '(' args += Primary* (',' pins += Primary)* ')'
+	//Pin:
+	//    type = PinType number = INT
 	//;
-	public SampleBehaviorElements getSampleBehaviorAccess() {
-		return pSampleBehavior;
+	public PinElements getPinAccess() {
+		return pPin;
 	}
 	
-	public ParserRule getSampleBehaviorRule() {
-		return getSampleBehaviorAccess().getRule();
+	public ParserRule getPinRule() {
+		return getPinAccess().getRule();
+	}
+	
+	//PinType:
+	//    {ADC} 'adc' | {DAC} 'dac' | {GenericIn} 'in' | {GenericOut} 'out'
+	//;
+	public PinTypeElements getPinTypeAccess() {
+		return pPinType;
+	}
+	
+	public ParserRule getPinTypeRule() {
+		return getPinTypeAccess().getRule();
 	}
 	
 	//TimeUnit:
@@ -1696,8 +1826,22 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		return getTimeUnitAccess().getRule();
 	}
 	
+	//terminal MAC:
+	//    HEXBYTE (':') HEXBYTE (':') HEXBYTE (':') HEXBYTE (':') HEXBYTE (':') HEXBYTE
+	//;
+	public TerminalRule getMACRule() {
+		return tMAC;
+	}
+	
+	//terminal fragment HEXBYTE:
+	//    ('0'..'9'|'A'..'F')('0'..'9'|'A'..'F')
+	//;
+	public TerminalRule getHEXBYTERule() {
+		return tHEXBYTE;
+	}
+	
 	//Binding:
-	//    name=ID
+	//    SensorOutput | Setting
 	//;
 	public BindingElements getBindingAccess() {
 		return pBinding;
@@ -1707,19 +1851,8 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		return getBindingAccess().getRule();
 	}
 	
-	//Import:
-	//    'import' name=ID
-	//;
-	public ImportElements getImportAccess() {
-		return pImport;
-	}
-	
-	public ParserRule getImportRule() {
-		return getImportAccess().getRule();
-	}
-	
 	//SensorOutput:
-	//    'out' (output=STRING)? 'as' binding = Binding ('with' 'mapping' mapping = Exp)?
+	//    'out' (output=STRING)? 'as' name=ID ('with' 'mapping' mapping = Exp)?
 	//;
 	public SensorOutputElements getSensorOutputAccess() {
 		return pSensorOutput;
@@ -1730,10 +1863,10 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 	}
 	
 	//Actuator:
-	//    'Actuator' type = [Import] (name=ID)? ':'
-	//    'pins' pins += INT* (',' pins += INT)*
+	//    'Actuator' type = ID name=ID ':'
+	//    'pins' pins += Pin* (',' pins += Pin)*
 	//    settings += Setting*
-	//    'trigger' 'on' exp = Exp
+	//    trigger = Trigger
 	//;
 	public ActuatorElements getActuatorAccess() {
 		return pActuator;
@@ -1743,8 +1876,20 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		return getActuatorAccess().getRule();
 	}
 	
+	//Trigger:
+	//    {When} 'when' exp = Exp
+	//     | {OnOff} 'on' onExp = Exp (('off' offExp = Exp) | ('run' 'for' time=INT unit=TimeUnit))
+	//;
+	public TriggerElements getTriggerAccess() {
+		return pTrigger;
+	}
+	
+	public ParserRule getTriggerRule() {
+		return getTriggerAccess().getRule();
+	}
+	
 	//Setting:
-	//    'setting' binding = Binding '=' value=Primitive
+	//    'setting' name=ID '=' value=Primitive
 	//;
 	public SettingElements getSettingAccess() {
 		return pSetting;
@@ -1839,7 +1984,7 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 	}
 	
 	//Primary returns Expression:
-	//     Primitive | Parenthesis | VariableUse | ExternalCall
+	//     Primitive | Parenthesis | VariableUse | ExternalCall | {Value} 'value'
 	//;
 	public PrimaryElements getPrimaryAccess() {
 		return pPrimary;
@@ -1850,7 +1995,7 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 	}
 	
 	//ExternalCall:
-	//    'call' func = [Import] '(' args += Exp? (',' args += Exp)* ')'
+	//    'call' func = ID '(' args += Exp? (',' args += Exp)* ')'
 	//;
 	public ExternalCallElements getExternalCallAccess() {
 		return pExternalCall;

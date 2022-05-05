@@ -6,7 +6,6 @@ package dk.sdu.gms.dds.deviceDefinition.impl;
 import dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage;
 import dk.sdu.gms.dds.deviceDefinition.Expression;
 import dk.sdu.gms.dds.deviceDefinition.ExternalCall;
-import dk.sdu.gms.dds.deviceDefinition.Import;
 
 import java.util.Collection;
 
@@ -40,14 +39,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ExternalCallImpl extends ExpressionImpl implements ExternalCall
 {
   /**
-   * The cached value of the '{@link #getFunc() <em>Func</em>}' reference.
+   * The default value of the '{@link #getFunc() <em>Func</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getFunc()
    * @generated
    * @ordered
    */
-  protected Import func;
+  protected static final String FUNC_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getFunc() <em>Func</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFunc()
+   * @generated
+   * @ordered
+   */
+  protected String func = FUNC_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getArgs() <em>Args</em>}' containment reference list.
@@ -86,27 +95,7 @@ public class ExternalCallImpl extends ExpressionImpl implements ExternalCall
    * @generated
    */
   @Override
-  public Import getFunc()
-  {
-    if (func != null && func.eIsProxy())
-    {
-      InternalEObject oldFunc = (InternalEObject)func;
-      func = (Import)eResolveProxy(oldFunc);
-      if (func != oldFunc)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, DeviceDefinitionPackage.EXTERNAL_CALL__FUNC, oldFunc, func));
-      }
-    }
-    return func;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Import basicGetFunc()
+  public String getFunc()
   {
     return func;
   }
@@ -117,9 +106,9 @@ public class ExternalCallImpl extends ExpressionImpl implements ExternalCall
    * @generated
    */
   @Override
-  public void setFunc(Import newFunc)
+  public void setFunc(String newFunc)
   {
-    Import oldFunc = func;
+    String oldFunc = func;
     func = newFunc;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, DeviceDefinitionPackage.EXTERNAL_CALL__FUNC, oldFunc, func));
@@ -167,8 +156,7 @@ public class ExternalCallImpl extends ExpressionImpl implements ExternalCall
     switch (featureID)
     {
       case DeviceDefinitionPackage.EXTERNAL_CALL__FUNC:
-        if (resolve) return getFunc();
-        return basicGetFunc();
+        return getFunc();
       case DeviceDefinitionPackage.EXTERNAL_CALL__ARGS:
         return getArgs();
     }
@@ -187,7 +175,7 @@ public class ExternalCallImpl extends ExpressionImpl implements ExternalCall
     switch (featureID)
     {
       case DeviceDefinitionPackage.EXTERNAL_CALL__FUNC:
-        setFunc((Import)newValue);
+        setFunc((String)newValue);
         return;
       case DeviceDefinitionPackage.EXTERNAL_CALL__ARGS:
         getArgs().clear();
@@ -208,7 +196,7 @@ public class ExternalCallImpl extends ExpressionImpl implements ExternalCall
     switch (featureID)
     {
       case DeviceDefinitionPackage.EXTERNAL_CALL__FUNC:
-        setFunc((Import)null);
+        setFunc(FUNC_EDEFAULT);
         return;
       case DeviceDefinitionPackage.EXTERNAL_CALL__ARGS:
         getArgs().clear();
@@ -228,11 +216,28 @@ public class ExternalCallImpl extends ExpressionImpl implements ExternalCall
     switch (featureID)
     {
       case DeviceDefinitionPackage.EXTERNAL_CALL__FUNC:
-        return func != null;
+        return FUNC_EDEFAULT == null ? func != null : !FUNC_EDEFAULT.equals(func);
       case DeviceDefinitionPackage.EXTERNAL_CALL__ARGS:
         return args != null && !args.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (func: ");
+    result.append(func);
+    result.append(')');
+    return result.toString();
   }
 
 } //ExternalCallImpl

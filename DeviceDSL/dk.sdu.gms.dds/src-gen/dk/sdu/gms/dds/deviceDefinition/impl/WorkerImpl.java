@@ -36,7 +36,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.WorkerImpl#getMac <em>Mac</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.WorkerImpl#getSleepTime <em>Sleep Time</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.WorkerImpl#getTimeUnit <em>Time Unit</em>}</li>
- *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.WorkerImpl#getBroadcastTime <em>Broadcast Time</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.WorkerImpl#getDevices <em>Devices</em>}</li>
  * </ul>
  *
@@ -105,34 +104,14 @@ public class WorkerImpl extends MinimalEObjectImpl.Container implements Worker
   protected int sleepTime = SLEEP_TIME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getTimeUnit() <em>Time Unit</em>}' containment reference list.
+   * The cached value of the '{@link #getTimeUnit() <em>Time Unit</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getTimeUnit()
    * @generated
    * @ordered
    */
-  protected EList<TimeUnit> timeUnit;
-
-  /**
-   * The default value of the '{@link #getBroadcastTime() <em>Broadcast Time</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getBroadcastTime()
-   * @generated
-   * @ordered
-   */
-  protected static final int BROADCAST_TIME_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getBroadcastTime() <em>Broadcast Time</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getBroadcastTime()
-   * @generated
-   * @ordered
-   */
-  protected int broadcastTime = BROADCAST_TIME_EDEFAULT;
+  protected TimeUnit timeUnit;
 
   /**
    * The cached value of the '{@link #getDevices() <em>Devices</em>}' containment reference list.
@@ -246,12 +225,8 @@ public class WorkerImpl extends MinimalEObjectImpl.Container implements Worker
    * @generated
    */
   @Override
-  public EList<TimeUnit> getTimeUnit()
+  public TimeUnit getTimeUnit()
   {
-    if (timeUnit == null)
-    {
-      timeUnit = new EObjectContainmentEList<TimeUnit>(TimeUnit.class, this, DeviceDefinitionPackage.WORKER__TIME_UNIT);
-    }
     return timeUnit;
   }
 
@@ -260,10 +235,16 @@ public class WorkerImpl extends MinimalEObjectImpl.Container implements Worker
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public int getBroadcastTime()
+  public NotificationChain basicSetTimeUnit(TimeUnit newTimeUnit, NotificationChain msgs)
   {
-    return broadcastTime;
+    TimeUnit oldTimeUnit = timeUnit;
+    timeUnit = newTimeUnit;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeviceDefinitionPackage.WORKER__TIME_UNIT, oldTimeUnit, newTimeUnit);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -272,12 +253,20 @@ public class WorkerImpl extends MinimalEObjectImpl.Container implements Worker
    * @generated
    */
   @Override
-  public void setBroadcastTime(int newBroadcastTime)
+  public void setTimeUnit(TimeUnit newTimeUnit)
   {
-    int oldBroadcastTime = broadcastTime;
-    broadcastTime = newBroadcastTime;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DeviceDefinitionPackage.WORKER__BROADCAST_TIME, oldBroadcastTime, broadcastTime));
+    if (newTimeUnit != timeUnit)
+    {
+      NotificationChain msgs = null;
+      if (timeUnit != null)
+        msgs = ((InternalEObject)timeUnit).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeviceDefinitionPackage.WORKER__TIME_UNIT, null, msgs);
+      if (newTimeUnit != null)
+        msgs = ((InternalEObject)newTimeUnit).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeviceDefinitionPackage.WORKER__TIME_UNIT, null, msgs);
+      msgs = basicSetTimeUnit(newTimeUnit, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceDefinitionPackage.WORKER__TIME_UNIT, newTimeUnit, newTimeUnit));
   }
 
   /**
@@ -306,7 +295,7 @@ public class WorkerImpl extends MinimalEObjectImpl.Container implements Worker
     switch (featureID)
     {
       case DeviceDefinitionPackage.WORKER__TIME_UNIT:
-        return ((InternalEList<?>)getTimeUnit()).basicRemove(otherEnd, msgs);
+        return basicSetTimeUnit(null, msgs);
       case DeviceDefinitionPackage.WORKER__DEVICES:
         return ((InternalEList<?>)getDevices()).basicRemove(otherEnd, msgs);
     }
@@ -331,8 +320,6 @@ public class WorkerImpl extends MinimalEObjectImpl.Container implements Worker
         return getSleepTime();
       case DeviceDefinitionPackage.WORKER__TIME_UNIT:
         return getTimeUnit();
-      case DeviceDefinitionPackage.WORKER__BROADCAST_TIME:
-        return getBroadcastTime();
       case DeviceDefinitionPackage.WORKER__DEVICES:
         return getDevices();
     }
@@ -360,11 +347,7 @@ public class WorkerImpl extends MinimalEObjectImpl.Container implements Worker
         setSleepTime((Integer)newValue);
         return;
       case DeviceDefinitionPackage.WORKER__TIME_UNIT:
-        getTimeUnit().clear();
-        getTimeUnit().addAll((Collection<? extends TimeUnit>)newValue);
-        return;
-      case DeviceDefinitionPackage.WORKER__BROADCAST_TIME:
-        setBroadcastTime((Integer)newValue);
+        setTimeUnit((TimeUnit)newValue);
         return;
       case DeviceDefinitionPackage.WORKER__DEVICES:
         getDevices().clear();
@@ -394,10 +377,7 @@ public class WorkerImpl extends MinimalEObjectImpl.Container implements Worker
         setSleepTime(SLEEP_TIME_EDEFAULT);
         return;
       case DeviceDefinitionPackage.WORKER__TIME_UNIT:
-        getTimeUnit().clear();
-        return;
-      case DeviceDefinitionPackage.WORKER__BROADCAST_TIME:
-        setBroadcastTime(BROADCAST_TIME_EDEFAULT);
+        setTimeUnit((TimeUnit)null);
         return;
       case DeviceDefinitionPackage.WORKER__DEVICES:
         getDevices().clear();
@@ -423,9 +403,7 @@ public class WorkerImpl extends MinimalEObjectImpl.Container implements Worker
       case DeviceDefinitionPackage.WORKER__SLEEP_TIME:
         return sleepTime != SLEEP_TIME_EDEFAULT;
       case DeviceDefinitionPackage.WORKER__TIME_UNIT:
-        return timeUnit != null && !timeUnit.isEmpty();
-      case DeviceDefinitionPackage.WORKER__BROADCAST_TIME:
-        return broadcastTime != BROADCAST_TIME_EDEFAULT;
+        return timeUnit != null;
       case DeviceDefinitionPackage.WORKER__DEVICES:
         return devices != null && !devices.isEmpty();
     }
@@ -449,8 +427,6 @@ public class WorkerImpl extends MinimalEObjectImpl.Container implements Worker
     result.append(mac);
     result.append(", sleepTime: ");
     result.append(sleepTime);
-    result.append(", broadcastTime: ");
-    result.append(broadcastTime);
     result.append(')');
     return result.toString();
   }

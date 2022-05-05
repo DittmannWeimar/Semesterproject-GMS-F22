@@ -22,6 +22,7 @@ public class DeviceDefinitionSyntacticSequencer extends AbstractSyntacticSequenc
 
 	protected DeviceDefinitionGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_ExternalVariableUse_FullStopKeyword_1_0_or_HyphenMinusGreaterThanSignKeyword_1_1;
+	protected AbstractElementAlias match_Sensor_PinsKeyword_4_0_q;
 	protected AbstractElementAlias match_TimeUnit_HourKeyword_2_1_0_or_HoursKeyword_2_1_1;
 	protected AbstractElementAlias match_TimeUnit_MinuteKeyword_1_1_0_or_MinutesKeyword_1_1_1;
 	protected AbstractElementAlias match_TimeUnit_SecondKeyword_0_1_0_or_SecondsKeyword_0_1_1;
@@ -30,6 +31,7 @@ public class DeviceDefinitionSyntacticSequencer extends AbstractSyntacticSequenc
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (DeviceDefinitionGrammarAccess) access;
 		match_ExternalVariableUse_FullStopKeyword_1_0_or_HyphenMinusGreaterThanSignKeyword_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getExternalVariableUseAccess().getFullStopKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getExternalVariableUseAccess().getHyphenMinusGreaterThanSignKeyword_1_1()));
+		match_Sensor_PinsKeyword_4_0_q = new TokenAlias(false, true, grammarAccess.getSensorAccess().getPinsKeyword_4_0());
 		match_TimeUnit_HourKeyword_2_1_0_or_HoursKeyword_2_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getTimeUnitAccess().getHourKeyword_2_1_0()), new TokenAlias(false, false, grammarAccess.getTimeUnitAccess().getHoursKeyword_2_1_1()));
 		match_TimeUnit_MinuteKeyword_1_1_0_or_MinutesKeyword_1_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getTimeUnitAccess().getMinuteKeyword_1_1_0()), new TokenAlias(false, false, grammarAccess.getTimeUnitAccess().getMinutesKeyword_1_1_1()));
 		match_TimeUnit_SecondKeyword_0_1_0_or_SecondsKeyword_0_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getTimeUnitAccess().getSecondKeyword_0_1_0()), new TokenAlias(false, false, grammarAccess.getTimeUnitAccess().getSecondsKeyword_0_1_1()));
@@ -49,6 +51,8 @@ public class DeviceDefinitionSyntacticSequencer extends AbstractSyntacticSequenc
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
 			if (match_ExternalVariableUse_FullStopKeyword_1_0_or_HyphenMinusGreaterThanSignKeyword_1_1.equals(syntax))
 				emit_ExternalVariableUse_FullStopKeyword_1_0_or_HyphenMinusGreaterThanSignKeyword_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Sensor_PinsKeyword_4_0_q.equals(syntax))
+				emit_Sensor_PinsKeyword_4_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_TimeUnit_HourKeyword_2_1_0_or_HoursKeyword_2_1_1.equals(syntax))
 				emit_TimeUnit_HourKeyword_2_1_0_or_HoursKeyword_2_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_TimeUnit_MinuteKeyword_1_1_0_or_MinutesKeyword_1_1_1.equals(syntax))
@@ -70,6 +74,24 @@ public class DeviceDefinitionSyntacticSequencer extends AbstractSyntacticSequenc
 	 * </pre>
 	 */
 	protected void emit_ExternalVariableUse_FullStopKeyword_1_0_or_HyphenMinusGreaterThanSignKeyword_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     'pins'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     name=ID ':' (ambiguity) 'graph' graph=[Graph|ID]
+	 *     name=ID ':' (ambiguity) 'sample' 'if' predicate+=Exp
+	 *     name=ID ':' (ambiguity) (rule end)
+	 *     name=ID ':' (ambiguity) outputs+=SensorOutput
+	 *     name=ID ':' (ambiguity) settings+=Setting
+	 
+	 * </pre>
+	 */
+	protected void emit_Sensor_PinsKeyword_4_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

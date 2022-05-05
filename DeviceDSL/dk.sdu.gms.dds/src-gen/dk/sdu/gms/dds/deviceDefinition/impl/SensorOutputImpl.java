@@ -3,7 +3,6 @@
  */
 package dk.sdu.gms.dds.deviceDefinition.impl;
 
-import dk.sdu.gms.dds.deviceDefinition.Binding;
 import dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage;
 import dk.sdu.gms.dds.deviceDefinition.Expression;
 import dk.sdu.gms.dds.deviceDefinition.SensorOutput;
@@ -15,7 +14,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,13 +24,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.SensorOutputImpl#getOutput <em>Output</em>}</li>
- *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.SensorOutputImpl#getBinding <em>Binding</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.SensorOutputImpl#getMapping <em>Mapping</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class SensorOutputImpl extends MinimalEObjectImpl.Container implements SensorOutput
+public class SensorOutputImpl extends BindingImpl implements SensorOutput
 {
   /**
    * The default value of the '{@link #getOutput() <em>Output</em>}' attribute.
@@ -53,16 +50,6 @@ public class SensorOutputImpl extends MinimalEObjectImpl.Container implements Se
    * @ordered
    */
   protected String output = OUTPUT_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getBinding() <em>Binding</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getBinding()
-   * @generated
-   * @ordered
-   */
-  protected Binding binding;
 
   /**
    * The cached value of the '{@link #getMapping() <em>Mapping</em>}' containment reference.
@@ -126,56 +113,6 @@ public class SensorOutputImpl extends MinimalEObjectImpl.Container implements Se
    * @generated
    */
   @Override
-  public Binding getBinding()
-  {
-    return binding;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetBinding(Binding newBinding, NotificationChain msgs)
-  {
-    Binding oldBinding = binding;
-    binding = newBinding;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeviceDefinitionPackage.SENSOR_OUTPUT__BINDING, oldBinding, newBinding);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setBinding(Binding newBinding)
-  {
-    if (newBinding != binding)
-    {
-      NotificationChain msgs = null;
-      if (binding != null)
-        msgs = ((InternalEObject)binding).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeviceDefinitionPackage.SENSOR_OUTPUT__BINDING, null, msgs);
-      if (newBinding != null)
-        msgs = ((InternalEObject)newBinding).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeviceDefinitionPackage.SENSOR_OUTPUT__BINDING, null, msgs);
-      msgs = basicSetBinding(newBinding, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DeviceDefinitionPackage.SENSOR_OUTPUT__BINDING, newBinding, newBinding));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public Expression getMapping()
   {
     return mapping;
@@ -230,8 +167,6 @@ public class SensorOutputImpl extends MinimalEObjectImpl.Container implements Se
   {
     switch (featureID)
     {
-      case DeviceDefinitionPackage.SENSOR_OUTPUT__BINDING:
-        return basicSetBinding(null, msgs);
       case DeviceDefinitionPackage.SENSOR_OUTPUT__MAPPING:
         return basicSetMapping(null, msgs);
     }
@@ -250,8 +185,6 @@ public class SensorOutputImpl extends MinimalEObjectImpl.Container implements Se
     {
       case DeviceDefinitionPackage.SENSOR_OUTPUT__OUTPUT:
         return getOutput();
-      case DeviceDefinitionPackage.SENSOR_OUTPUT__BINDING:
-        return getBinding();
       case DeviceDefinitionPackage.SENSOR_OUTPUT__MAPPING:
         return getMapping();
     }
@@ -270,9 +203,6 @@ public class SensorOutputImpl extends MinimalEObjectImpl.Container implements Se
     {
       case DeviceDefinitionPackage.SENSOR_OUTPUT__OUTPUT:
         setOutput((String)newValue);
-        return;
-      case DeviceDefinitionPackage.SENSOR_OUTPUT__BINDING:
-        setBinding((Binding)newValue);
         return;
       case DeviceDefinitionPackage.SENSOR_OUTPUT__MAPPING:
         setMapping((Expression)newValue);
@@ -294,9 +224,6 @@ public class SensorOutputImpl extends MinimalEObjectImpl.Container implements Se
       case DeviceDefinitionPackage.SENSOR_OUTPUT__OUTPUT:
         setOutput(OUTPUT_EDEFAULT);
         return;
-      case DeviceDefinitionPackage.SENSOR_OUTPUT__BINDING:
-        setBinding((Binding)null);
-        return;
       case DeviceDefinitionPackage.SENSOR_OUTPUT__MAPPING:
         setMapping((Expression)null);
         return;
@@ -316,8 +243,6 @@ public class SensorOutputImpl extends MinimalEObjectImpl.Container implements Se
     {
       case DeviceDefinitionPackage.SENSOR_OUTPUT__OUTPUT:
         return OUTPUT_EDEFAULT == null ? output != null : !OUTPUT_EDEFAULT.equals(output);
-      case DeviceDefinitionPackage.SENSOR_OUTPUT__BINDING:
-        return binding != null;
       case DeviceDefinitionPackage.SENSOR_OUTPUT__MAPPING:
         return mapping != null;
     }

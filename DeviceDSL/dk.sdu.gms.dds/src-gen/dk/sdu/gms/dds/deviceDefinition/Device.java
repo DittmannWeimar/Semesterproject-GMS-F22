@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Device#getType <em>Type</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Device#getName <em>Name</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Device#getPins <em>Pins</em>}</li>
+ *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Device#getSettings <em>Settings</em>}</li>
  * </ul>
  *
  * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getDevice()
@@ -28,26 +29,26 @@ import org.eclipse.emf.ecore.EObject;
 public interface Device extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Type</b></em>' reference.
+   * Returns the value of the '<em><b>Type</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Type</em>' reference.
-   * @see #setType(Import)
+   * @return the value of the '<em>Type</em>' attribute.
+   * @see #setType(String)
    * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getDevice_Type()
    * @model
    * @generated
    */
-  Import getType();
+  String getType();
 
   /**
-   * Sets the value of the '{@link dk.sdu.gms.dds.deviceDefinition.Device#getType <em>Type</em>}' reference.
+   * Sets the value of the '{@link dk.sdu.gms.dds.deviceDefinition.Device#getType <em>Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Type</em>' reference.
+   * @param value the new value of the '<em>Type</em>' attribute.
    * @see #getType()
    * @generated
    */
-  void setType(Import value);
+  void setType(String value);
 
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -72,15 +73,27 @@ public interface Device extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Pins</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.Integer}.
+   * Returns the value of the '<em><b>Pins</b></em>' containment reference list.
+   * The list contents are of type {@link dk.sdu.gms.dds.deviceDefinition.Pin}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Pins</em>' attribute list.
+   * @return the value of the '<em>Pins</em>' containment reference list.
    * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getDevice_Pins()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<Integer> getPins();
+  EList<Pin> getPins();
+
+  /**
+   * Returns the value of the '<em><b>Settings</b></em>' containment reference list.
+   * The list contents are of type {@link dk.sdu.gms.dds.deviceDefinition.Setting}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Settings</em>' containment reference list.
+   * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getDevice_Settings()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Setting> getSettings();
 
 } // Device

@@ -6,8 +6,6 @@ package dk.sdu.gms.dds.deviceDefinition.impl;
 import dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage;
 import dk.sdu.gms.dds.deviceDefinition.Expression;
 import dk.sdu.gms.dds.deviceDefinition.Graph;
-import dk.sdu.gms.dds.deviceDefinition.Primitive;
-import dk.sdu.gms.dds.deviceDefinition.SampleBehavior;
 import dk.sdu.gms.dds.deviceDefinition.Sensor;
 import dk.sdu.gms.dds.deviceDefinition.SensorOutput;
 
@@ -34,9 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.SensorImpl#getSampleRate <em>Sample Rate</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.SensorImpl#getOutputs <em>Outputs</em>}</li>
- *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.SensorImpl#getBehavior <em>Behavior</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.SensorImpl#getPredicate <em>Predicate</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.SensorImpl#getGraph <em>Graph</em>}</li>
  * </ul>
@@ -46,16 +42,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class SensorImpl extends DeviceImpl implements Sensor
 {
   /**
-   * The cached value of the '{@link #getSampleRate() <em>Sample Rate</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSampleRate()
-   * @generated
-   * @ordered
-   */
-  protected Primitive sampleRate;
-
-  /**
    * The cached value of the '{@link #getOutputs() <em>Outputs</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -64,16 +50,6 @@ public class SensorImpl extends DeviceImpl implements Sensor
    * @ordered
    */
   protected EList<SensorOutput> outputs;
-
-  /**
-   * The cached value of the '{@link #getBehavior() <em>Behavior</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getBehavior()
-   * @generated
-   * @ordered
-   */
-  protected EList<SampleBehavior> behavior;
 
   /**
    * The cached value of the '{@link #getPredicate() <em>Predicate</em>}' containment reference list.
@@ -122,56 +98,6 @@ public class SensorImpl extends DeviceImpl implements Sensor
    * @generated
    */
   @Override
-  public Primitive getSampleRate()
-  {
-    return sampleRate;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetSampleRate(Primitive newSampleRate, NotificationChain msgs)
-  {
-    Primitive oldSampleRate = sampleRate;
-    sampleRate = newSampleRate;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeviceDefinitionPackage.SENSOR__SAMPLE_RATE, oldSampleRate, newSampleRate);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setSampleRate(Primitive newSampleRate)
-  {
-    if (newSampleRate != sampleRate)
-    {
-      NotificationChain msgs = null;
-      if (sampleRate != null)
-        msgs = ((InternalEObject)sampleRate).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeviceDefinitionPackage.SENSOR__SAMPLE_RATE, null, msgs);
-      if (newSampleRate != null)
-        msgs = ((InternalEObject)newSampleRate).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeviceDefinitionPackage.SENSOR__SAMPLE_RATE, null, msgs);
-      msgs = basicSetSampleRate(newSampleRate, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DeviceDefinitionPackage.SENSOR__SAMPLE_RATE, newSampleRate, newSampleRate));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EList<SensorOutput> getOutputs()
   {
     if (outputs == null)
@@ -179,21 +105,6 @@ public class SensorImpl extends DeviceImpl implements Sensor
       outputs = new EObjectContainmentEList<SensorOutput>(SensorOutput.class, this, DeviceDefinitionPackage.SENSOR__OUTPUTS);
     }
     return outputs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<SampleBehavior> getBehavior()
-  {
-    if (behavior == null)
-    {
-      behavior = new EObjectContainmentEList<SampleBehavior>(SampleBehavior.class, this, DeviceDefinitionPackage.SENSOR__BEHAVIOR);
-    }
-    return behavior;
   }
 
   /**
@@ -266,12 +177,8 @@ public class SensorImpl extends DeviceImpl implements Sensor
   {
     switch (featureID)
     {
-      case DeviceDefinitionPackage.SENSOR__SAMPLE_RATE:
-        return basicSetSampleRate(null, msgs);
       case DeviceDefinitionPackage.SENSOR__OUTPUTS:
         return ((InternalEList<?>)getOutputs()).basicRemove(otherEnd, msgs);
-      case DeviceDefinitionPackage.SENSOR__BEHAVIOR:
-        return ((InternalEList<?>)getBehavior()).basicRemove(otherEnd, msgs);
       case DeviceDefinitionPackage.SENSOR__PREDICATE:
         return ((InternalEList<?>)getPredicate()).basicRemove(otherEnd, msgs);
     }
@@ -288,12 +195,8 @@ public class SensorImpl extends DeviceImpl implements Sensor
   {
     switch (featureID)
     {
-      case DeviceDefinitionPackage.SENSOR__SAMPLE_RATE:
-        return getSampleRate();
       case DeviceDefinitionPackage.SENSOR__OUTPUTS:
         return getOutputs();
-      case DeviceDefinitionPackage.SENSOR__BEHAVIOR:
-        return getBehavior();
       case DeviceDefinitionPackage.SENSOR__PREDICATE:
         return getPredicate();
       case DeviceDefinitionPackage.SENSOR__GRAPH:
@@ -314,16 +217,9 @@ public class SensorImpl extends DeviceImpl implements Sensor
   {
     switch (featureID)
     {
-      case DeviceDefinitionPackage.SENSOR__SAMPLE_RATE:
-        setSampleRate((Primitive)newValue);
-        return;
       case DeviceDefinitionPackage.SENSOR__OUTPUTS:
         getOutputs().clear();
         getOutputs().addAll((Collection<? extends SensorOutput>)newValue);
-        return;
-      case DeviceDefinitionPackage.SENSOR__BEHAVIOR:
-        getBehavior().clear();
-        getBehavior().addAll((Collection<? extends SampleBehavior>)newValue);
         return;
       case DeviceDefinitionPackage.SENSOR__PREDICATE:
         getPredicate().clear();
@@ -346,14 +242,8 @@ public class SensorImpl extends DeviceImpl implements Sensor
   {
     switch (featureID)
     {
-      case DeviceDefinitionPackage.SENSOR__SAMPLE_RATE:
-        setSampleRate((Primitive)null);
-        return;
       case DeviceDefinitionPackage.SENSOR__OUTPUTS:
         getOutputs().clear();
-        return;
-      case DeviceDefinitionPackage.SENSOR__BEHAVIOR:
-        getBehavior().clear();
         return;
       case DeviceDefinitionPackage.SENSOR__PREDICATE:
         getPredicate().clear();
@@ -375,12 +265,8 @@ public class SensorImpl extends DeviceImpl implements Sensor
   {
     switch (featureID)
     {
-      case DeviceDefinitionPackage.SENSOR__SAMPLE_RATE:
-        return sampleRate != null;
       case DeviceDefinitionPackage.SENSOR__OUTPUTS:
         return outputs != null && !outputs.isEmpty();
-      case DeviceDefinitionPackage.SENSOR__BEHAVIOR:
-        return behavior != null && !behavior.isEmpty();
       case DeviceDefinitionPackage.SENSOR__PREDICATE:
         return predicate != null && !predicate.isEmpty();
       case DeviceDefinitionPackage.SENSOR__GRAPH:

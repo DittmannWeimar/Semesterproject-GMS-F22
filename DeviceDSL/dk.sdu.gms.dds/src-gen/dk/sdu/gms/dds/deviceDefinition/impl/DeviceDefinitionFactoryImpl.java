@@ -3,11 +3,13 @@
  */
 package dk.sdu.gms.dds.deviceDefinition.impl;
 
+import dk.sdu.gms.dds.deviceDefinition.ADC;
 import dk.sdu.gms.dds.deviceDefinition.Actuator;
 import dk.sdu.gms.dds.deviceDefinition.And;
 import dk.sdu.gms.dds.deviceDefinition.Binding;
 import dk.sdu.gms.dds.deviceDefinition.BooleanFalse;
 import dk.sdu.gms.dds.deviceDefinition.BooleanTrue;
+import dk.sdu.gms.dds.deviceDefinition.DAC;
 import dk.sdu.gms.dds.deviceDefinition.DecimalPrimitive;
 import dk.sdu.gms.dds.deviceDefinition.Device;
 import dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionFactory;
@@ -18,11 +20,12 @@ import dk.sdu.gms.dds.deviceDefinition.Expression;
 import dk.sdu.gms.dds.deviceDefinition.ExternalCall;
 import dk.sdu.gms.dds.deviceDefinition.ExternalVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.Gateway;
+import dk.sdu.gms.dds.deviceDefinition.GenericIn;
+import dk.sdu.gms.dds.deviceDefinition.GenericOut;
 import dk.sdu.gms.dds.deviceDefinition.Graph;
 import dk.sdu.gms.dds.deviceDefinition.Greater;
 import dk.sdu.gms.dds.deviceDefinition.GreaterOrEquals;
 import dk.sdu.gms.dds.deviceDefinition.Hour;
-import dk.sdu.gms.dds.deviceDefinition.Import;
 import dk.sdu.gms.dds.deviceDefinition.IntPrimitive;
 import dk.sdu.gms.dds.deviceDefinition.InternalVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.Lesser;
@@ -31,17 +34,22 @@ import dk.sdu.gms.dds.deviceDefinition.Minus;
 import dk.sdu.gms.dds.deviceDefinition.Minute;
 import dk.sdu.gms.dds.deviceDefinition.Mult;
 import dk.sdu.gms.dds.deviceDefinition.NotEquals;
+import dk.sdu.gms.dds.deviceDefinition.OnOff;
 import dk.sdu.gms.dds.deviceDefinition.Or;
 import dk.sdu.gms.dds.deviceDefinition.Parenthesis;
+import dk.sdu.gms.dds.deviceDefinition.Pin;
+import dk.sdu.gms.dds.deviceDefinition.PinType;
 import dk.sdu.gms.dds.deviceDefinition.Plus;
 import dk.sdu.gms.dds.deviceDefinition.Primitive;
-import dk.sdu.gms.dds.deviceDefinition.SampleBehavior;
 import dk.sdu.gms.dds.deviceDefinition.Second;
 import dk.sdu.gms.dds.deviceDefinition.Sensor;
 import dk.sdu.gms.dds.deviceDefinition.SensorOutput;
 import dk.sdu.gms.dds.deviceDefinition.Setting;
 import dk.sdu.gms.dds.deviceDefinition.TimeUnit;
+import dk.sdu.gms.dds.deviceDefinition.Trigger;
+import dk.sdu.gms.dds.deviceDefinition.Value;
 import dk.sdu.gms.dds.deviceDefinition.VariableUse;
+import dk.sdu.gms.dds.deviceDefinition.When;
 import dk.sdu.gms.dds.deviceDefinition.Worker;
 
 import org.eclipse.emf.ecore.EClass;
@@ -110,12 +118,13 @@ public class DeviceDefinitionFactoryImpl extends EFactoryImpl implements DeviceD
       case DeviceDefinitionPackage.WORKER: return createWorker();
       case DeviceDefinitionPackage.DEVICE: return createDevice();
       case DeviceDefinitionPackage.SENSOR: return createSensor();
-      case DeviceDefinitionPackage.SAMPLE_BEHAVIOR: return createSampleBehavior();
+      case DeviceDefinitionPackage.PIN: return createPin();
+      case DeviceDefinitionPackage.PIN_TYPE: return createPinType();
       case DeviceDefinitionPackage.TIME_UNIT: return createTimeUnit();
       case DeviceDefinitionPackage.BINDING: return createBinding();
-      case DeviceDefinitionPackage.IMPORT: return createImport();
       case DeviceDefinitionPackage.SENSOR_OUTPUT: return createSensorOutput();
       case DeviceDefinitionPackage.ACTUATOR: return createActuator();
+      case DeviceDefinitionPackage.TRIGGER: return createTrigger();
       case DeviceDefinitionPackage.SETTING: return createSetting();
       case DeviceDefinitionPackage.PRIMITIVE: return createPrimitive();
       case DeviceDefinitionPackage.EXPRESSION: return createExpression();
@@ -124,9 +133,15 @@ public class DeviceDefinitionFactoryImpl extends EFactoryImpl implements DeviceD
       case DeviceDefinitionPackage.EXTERNAL_VARIABLE_USE: return createExternalVariableUse();
       case DeviceDefinitionPackage.VARIABLE_USE: return createVariableUse();
       case DeviceDefinitionPackage.PARENTHESIS: return createParenthesis();
+      case DeviceDefinitionPackage.ADC: return createADC();
+      case DeviceDefinitionPackage.DAC: return createDAC();
+      case DeviceDefinitionPackage.GENERIC_IN: return createGenericIn();
+      case DeviceDefinitionPackage.GENERIC_OUT: return createGenericOut();
       case DeviceDefinitionPackage.SECOND: return createSecond();
       case DeviceDefinitionPackage.MINUTE: return createMinute();
       case DeviceDefinitionPackage.HOUR: return createHour();
+      case DeviceDefinitionPackage.WHEN: return createWhen();
+      case DeviceDefinitionPackage.ON_OFF: return createOnOff();
       case DeviceDefinitionPackage.DECIMAL_PRIMITIVE: return createDecimalPrimitive();
       case DeviceDefinitionPackage.INT_PRIMITIVE: return createIntPrimitive();
       case DeviceDefinitionPackage.BOOLEAN_TRUE: return createBooleanTrue();
@@ -143,6 +158,7 @@ public class DeviceDefinitionFactoryImpl extends EFactoryImpl implements DeviceD
       case DeviceDefinitionPackage.NOT_EQUALS: return createNotEquals();
       case DeviceDefinitionPackage.AND: return createAnd();
       case DeviceDefinitionPackage.OR: return createOr();
+      case DeviceDefinitionPackage.VALUE: return createValue();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -226,10 +242,22 @@ public class DeviceDefinitionFactoryImpl extends EFactoryImpl implements DeviceD
    * @generated
    */
   @Override
-  public SampleBehavior createSampleBehavior()
+  public Pin createPin()
   {
-    SampleBehaviorImpl sampleBehavior = new SampleBehaviorImpl();
-    return sampleBehavior;
+    PinImpl pin = new PinImpl();
+    return pin;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PinType createPinType()
+  {
+    PinTypeImpl pinType = new PinTypeImpl();
+    return pinType;
   }
 
   /**
@@ -262,18 +290,6 @@ public class DeviceDefinitionFactoryImpl extends EFactoryImpl implements DeviceD
    * @generated
    */
   @Override
-  public Import createImport()
-  {
-    ImportImpl import_ = new ImportImpl();
-    return import_;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public SensorOutput createSensorOutput()
   {
     SensorOutputImpl sensorOutput = new SensorOutputImpl();
@@ -290,6 +306,18 @@ public class DeviceDefinitionFactoryImpl extends EFactoryImpl implements DeviceD
   {
     ActuatorImpl actuator = new ActuatorImpl();
     return actuator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Trigger createTrigger()
+  {
+    TriggerImpl trigger = new TriggerImpl();
+    return trigger;
   }
 
   /**
@@ -394,6 +422,54 @@ public class DeviceDefinitionFactoryImpl extends EFactoryImpl implements DeviceD
    * @generated
    */
   @Override
+  public ADC createADC()
+  {
+    ADCImpl adc = new ADCImpl();
+    return adc;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DAC createDAC()
+  {
+    DACImpl dac = new DACImpl();
+    return dac;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public GenericIn createGenericIn()
+  {
+    GenericInImpl genericIn = new GenericInImpl();
+    return genericIn;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public GenericOut createGenericOut()
+  {
+    GenericOutImpl genericOut = new GenericOutImpl();
+    return genericOut;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Second createSecond()
   {
     SecondImpl second = new SecondImpl();
@@ -422,6 +498,30 @@ public class DeviceDefinitionFactoryImpl extends EFactoryImpl implements DeviceD
   {
     HourImpl hour = new HourImpl();
     return hour;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public When createWhen()
+  {
+    WhenImpl when = new WhenImpl();
+    return when;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public OnOff createOnOff()
+  {
+    OnOffImpl onOff = new OnOffImpl();
+    return onOff;
   }
 
   /**
@@ -614,6 +714,18 @@ public class DeviceDefinitionFactoryImpl extends EFactoryImpl implements DeviceD
   {
     OrImpl or = new OrImpl();
     return or;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Value createValue()
+  {
+    ValueImpl value = new ValueImpl();
+    return value;
   }
 
   /**
