@@ -5,12 +5,10 @@ package dk.sdu.gms.dds.deviceDefinition.impl;
 
 import dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage;
 import dk.sdu.gms.dds.deviceDefinition.Graph;
-import dk.sdu.gms.dds.deviceDefinition.Import;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -36,14 +34,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class GraphImpl extends MinimalEObjectImpl.Container implements Graph
 {
   /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' reference.
+   * The default value of the '{@link #getType() <em>Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getType()
    * @generated
    * @ordered
    */
-  protected Import type;
+  protected static final String TYPE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getType()
+   * @generated
+   * @ordered
+   */
+  protected String type = TYPE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -172,27 +180,7 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph
    * @generated
    */
   @Override
-  public Import getType()
-  {
-    if (type != null && type.eIsProxy())
-    {
-      InternalEObject oldType = (InternalEObject)type;
-      type = (Import)eResolveProxy(oldType);
-      if (type != oldType)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, DeviceDefinitionPackage.GRAPH__TYPE, oldType, type));
-      }
-    }
-    return type;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Import basicGetType()
+  public String getType()
   {
     return type;
   }
@@ -203,9 +191,9 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph
    * @generated
    */
   @Override
-  public void setType(Import newType)
+  public void setType(String newType)
   {
-    Import oldType = type;
+    String oldType = type;
     type = newType;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, DeviceDefinitionPackage.GRAPH__TYPE, oldType, type));
@@ -347,8 +335,7 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph
     switch (featureID)
     {
       case DeviceDefinitionPackage.GRAPH__TYPE:
-        if (resolve) return getType();
-        return basicGetType();
+        return getType();
       case DeviceDefinitionPackage.GRAPH__NAME:
         return getName();
       case DeviceDefinitionPackage.GRAPH__CATEGORY:
@@ -374,7 +361,7 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph
     switch (featureID)
     {
       case DeviceDefinitionPackage.GRAPH__TYPE:
-        setType((Import)newValue);
+        setType((String)newValue);
         return;
       case DeviceDefinitionPackage.GRAPH__NAME:
         setName((String)newValue);
@@ -406,7 +393,7 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph
     switch (featureID)
     {
       case DeviceDefinitionPackage.GRAPH__TYPE:
-        setType((Import)null);
+        setType(TYPE_EDEFAULT);
         return;
       case DeviceDefinitionPackage.GRAPH__NAME:
         setName(NAME_EDEFAULT);
@@ -438,7 +425,7 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph
     switch (featureID)
     {
       case DeviceDefinitionPackage.GRAPH__TYPE:
-        return type != null;
+        return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
       case DeviceDefinitionPackage.GRAPH__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case DeviceDefinitionPackage.GRAPH__CATEGORY:
@@ -464,7 +451,9 @@ public class GraphImpl extends MinimalEObjectImpl.Container implements Graph
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
+    result.append(" (type: ");
+    result.append(type);
+    result.append(", name: ");
     result.append(name);
     result.append(", category: ");
     result.append(category);

@@ -3,6 +3,9 @@
  */
 package dk.sdu.gms.dds.generator;
 
+import com.google.common.collect.Iterators;
+import dk.sdu.gms.dds.deviceDefinition.Worker;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
@@ -17,5 +20,12 @@ import org.eclipse.xtext.generator.IGeneratorContext;
 public class DeviceDefinitionGenerator extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    final dk.sdu.gms.dds.deviceDefinition.System system = Iterators.<dk.sdu.gms.dds.deviceDefinition.System>filter(resource.getAllContents(), dk.sdu.gms.dds.deviceDefinition.System.class).next();
+    GatewayGenerator.generateGateway(system.getGateway(), fsa);
+    WebClientGenerator.generateWebClient(system, fsa);
+    EList<Worker> _workers = system.getGateway().getWorkers();
+    for (final Worker worker : _workers) {
+      WorkerGenerator.generateWorker(worker, fsa);
+    }
   }
 }

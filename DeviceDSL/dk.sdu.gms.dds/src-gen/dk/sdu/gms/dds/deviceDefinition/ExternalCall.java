@@ -25,26 +25,26 @@ import org.eclipse.emf.common.util.EList;
 public interface ExternalCall extends Expression
 {
   /**
-   * Returns the value of the '<em><b>Func</b></em>' reference.
+   * Returns the value of the '<em><b>Func</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Func</em>' reference.
-   * @see #setFunc(Import)
+   * @return the value of the '<em>Func</em>' attribute.
+   * @see #setFunc(String)
    * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getExternalCall_Func()
    * @model
    * @generated
    */
-  Import getFunc();
+  String getFunc();
 
   /**
-   * Sets the value of the '{@link dk.sdu.gms.dds.deviceDefinition.ExternalCall#getFunc <em>Func</em>}' reference.
+   * Sets the value of the '{@link dk.sdu.gms.dds.deviceDefinition.ExternalCall#getFunc <em>Func</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Func</em>' reference.
+   * @param value the new value of the '<em>Func</em>' attribute.
    * @see #getFunc()
    * @generated
    */
-  void setFunc(Import value);
+  void setFunc(String value);
 
   /**
    * Returns the value of the '<em><b>Args</b></em>' containment reference list.

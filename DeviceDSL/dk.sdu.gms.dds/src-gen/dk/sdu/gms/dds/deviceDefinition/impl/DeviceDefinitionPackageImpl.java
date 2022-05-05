@@ -18,11 +18,12 @@ import dk.sdu.gms.dds.deviceDefinition.Expression;
 import dk.sdu.gms.dds.deviceDefinition.ExternalCall;
 import dk.sdu.gms.dds.deviceDefinition.ExternalVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.Gateway;
+import dk.sdu.gms.dds.deviceDefinition.GenericIn;
+import dk.sdu.gms.dds.deviceDefinition.GenericOut;
 import dk.sdu.gms.dds.deviceDefinition.Graph;
 import dk.sdu.gms.dds.deviceDefinition.Greater;
 import dk.sdu.gms.dds.deviceDefinition.GreaterOrEquals;
 import dk.sdu.gms.dds.deviceDefinition.Hour;
-import dk.sdu.gms.dds.deviceDefinition.Import;
 import dk.sdu.gms.dds.deviceDefinition.IntPrimitive;
 import dk.sdu.gms.dds.deviceDefinition.InternalVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.Lesser;
@@ -31,17 +32,22 @@ import dk.sdu.gms.dds.deviceDefinition.Minus;
 import dk.sdu.gms.dds.deviceDefinition.Minute;
 import dk.sdu.gms.dds.deviceDefinition.Mult;
 import dk.sdu.gms.dds.deviceDefinition.NotEquals;
+import dk.sdu.gms.dds.deviceDefinition.OnOff;
 import dk.sdu.gms.dds.deviceDefinition.Or;
 import dk.sdu.gms.dds.deviceDefinition.Parenthesis;
+import dk.sdu.gms.dds.deviceDefinition.Pin;
+import dk.sdu.gms.dds.deviceDefinition.PinType;
 import dk.sdu.gms.dds.deviceDefinition.Plus;
 import dk.sdu.gms.dds.deviceDefinition.Primitive;
-import dk.sdu.gms.dds.deviceDefinition.SampleBehavior;
 import dk.sdu.gms.dds.deviceDefinition.Second;
 import dk.sdu.gms.dds.deviceDefinition.Sensor;
 import dk.sdu.gms.dds.deviceDefinition.SensorOutput;
 import dk.sdu.gms.dds.deviceDefinition.Setting;
 import dk.sdu.gms.dds.deviceDefinition.TimeUnit;
+import dk.sdu.gms.dds.deviceDefinition.Trigger;
+import dk.sdu.gms.dds.deviceDefinition.Value;
 import dk.sdu.gms.dds.deviceDefinition.VariableUse;
+import dk.sdu.gms.dds.deviceDefinition.When;
 import dk.sdu.gms.dds.deviceDefinition.Worker;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -106,7 +112,14 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass sampleBehaviorEClass = null;
+  private EClass pinEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass pinTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -127,13 +140,6 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass importEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass sensorOutputEClass = null;
 
   /**
@@ -142,6 +148,13 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   private EClass actuatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass triggerEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -204,6 +217,34 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass adcEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass dacEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass genericInEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass genericOutEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass secondEClass = null;
 
   /**
@@ -219,6 +260,20 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   private EClass hourEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass whenEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass onOffEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -333,6 +388,13 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
   private EClass orEClass = null;
 
   /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass valueEClass = null;
+
+  /**
    * Creates an instance of the model <b>Package</b>, registered with
    * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
    * package URI value.
@@ -412,9 +474,53 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EReference getSystem_Imports()
+  public EAttribute getSystem_WifiSsid()
   {
-    return (EReference)systemEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)systemEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSystem_WifiPassword()
+  {
+    return (EAttribute)systemEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSystem_MqttHost()
+  {
+    return (EAttribute)systemEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSystem_MqttUsername()
+  {
+    return (EAttribute)systemEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSystem_MqttPassword()
+  {
+    return (EAttribute)systemEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -425,7 +531,7 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
   @Override
   public EReference getSystem_Gateway()
   {
-    return (EReference)systemEClass.getEStructuralFeatures().get(1);
+    return (EReference)systemEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -436,7 +542,7 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
   @Override
   public EReference getSystem_Graphs()
   {
-    return (EReference)systemEClass.getEStructuralFeatures().get(2);
+    return (EReference)systemEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -456,9 +562,9 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EReference getGraph_Type()
+  public EAttribute getGraph_Type()
   {
-    return (EReference)graphEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)graphEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -621,20 +727,9 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EAttribute getWorker_BroadcastTime()
-  {
-    return (EAttribute)workerEClass.getEStructuralFeatures().get(4);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EReference getWorker_Devices()
   {
-    return (EReference)workerEClass.getEStructuralFeatures().get(5);
+    return (EReference)workerEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -654,9 +749,9 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EReference getDevice_Type()
+  public EAttribute getDevice_Type()
   {
-    return (EReference)deviceEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)deviceEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -676,9 +771,20 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EAttribute getDevice_Pins()
+  public EReference getDevice_Pins()
   {
-    return (EAttribute)deviceEClass.getEStructuralFeatures().get(2);
+    return (EReference)deviceEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDevice_Settings()
+  {
+    return (EReference)deviceEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -698,7 +804,7 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EReference getSensor_SampleRate()
+  public EReference getSensor_Outputs()
   {
     return (EReference)sensorEClass.getEStructuralFeatures().get(0);
   }
@@ -709,7 +815,7 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EReference getSensor_Outputs()
+  public EReference getSensor_Predicate()
   {
     return (EReference)sensorEClass.getEStructuralFeatures().get(1);
   }
@@ -720,7 +826,7 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EReference getSensor_Behavior()
+  public EReference getSensor_Graph()
   {
     return (EReference)sensorEClass.getEStructuralFeatures().get(2);
   }
@@ -731,9 +837,9 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EReference getSensor_Predicate()
+  public EClass getPin()
   {
-    return (EReference)sensorEClass.getEStructuralFeatures().get(3);
+    return pinEClass;
   }
 
   /**
@@ -742,9 +848,9 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EReference getSensor_Graph()
+  public EReference getPin_Type()
   {
-    return (EReference)sensorEClass.getEStructuralFeatures().get(4);
+    return (EReference)pinEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -753,9 +859,9 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EClass getSampleBehavior()
+  public EAttribute getPin_Number()
   {
-    return sampleBehaviorEClass;
+    return (EAttribute)pinEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -764,31 +870,9 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EReference getSampleBehavior_Type()
+  public EClass getPinType()
   {
-    return (EReference)sampleBehaviorEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getSampleBehavior_Args()
-  {
-    return (EReference)sampleBehaviorEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getSampleBehavior_Pins()
-  {
-    return (EReference)sampleBehaviorEClass.getEStructuralFeatures().get(2);
+    return pinTypeEClass;
   }
 
   /**
@@ -830,28 +914,6 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EClass getImport()
-  {
-    return importEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getImport_Name()
-  {
-    return (EAttribute)importEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EClass getSensorOutput()
   {
     return sensorOutputEClass;
@@ -874,20 +936,9 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EReference getSensorOutput_Binding()
-  {
-    return (EReference)sensorOutputEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EReference getSensorOutput_Mapping()
   {
-    return (EReference)sensorOutputEClass.getEStructuralFeatures().get(2);
+    return (EReference)sensorOutputEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -907,7 +958,7 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EReference getActuator_Settings()
+  public EReference getActuator_Trigger()
   {
     return (EReference)actuatorEClass.getEStructuralFeatures().get(0);
   }
@@ -918,9 +969,9 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EReference getActuator_Exp()
+  public EClass getTrigger()
   {
-    return (EReference)actuatorEClass.getEStructuralFeatures().get(1);
+    return triggerEClass;
   }
 
   /**
@@ -940,20 +991,9 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EReference getSetting_Binding()
-  {
-    return (EReference)settingEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EReference getSetting_Value()
   {
-    return (EReference)settingEClass.getEStructuralFeatures().get(1);
+    return (EReference)settingEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -995,9 +1035,9 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EReference getExternalCall_Func()
+  public EAttribute getExternalCall_Func()
   {
-    return (EReference)externalCallEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)externalCallEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1094,6 +1134,50 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
+  public EClass getADC()
+  {
+    return adcEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDAC()
+  {
+    return dacEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getGenericIn()
+  {
+    return genericInEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getGenericOut()
+  {
+    return genericOutEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getSecond()
   {
     return secondEClass;
@@ -1119,6 +1203,83 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
   public EClass getHour()
   {
     return hourEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getWhen()
+  {
+    return whenEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getWhen_Exp()
+  {
+    return (EReference)whenEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getOnOff()
+  {
+    return onOffEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getOnOff_OnExp()
+  {
+    return (EReference)onOffEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getOnOff_OffExp()
+  {
+    return (EReference)onOffEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getOnOff_Time()
+  {
+    return (EAttribute)onOffEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getOnOff_Unit()
+  {
+    return (EReference)onOffEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1589,6 +1750,17 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
+  public EClass getValue()
+  {
+    return valueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public DeviceDefinitionFactory getDeviceDefinitionFactory()
   {
     return (DeviceDefinitionFactory)getEFactoryInstance();
@@ -1615,12 +1787,16 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
 
     // Create classes and their features
     systemEClass = createEClass(SYSTEM);
-    createEReference(systemEClass, SYSTEM__IMPORTS);
+    createEAttribute(systemEClass, SYSTEM__WIFI_SSID);
+    createEAttribute(systemEClass, SYSTEM__WIFI_PASSWORD);
+    createEAttribute(systemEClass, SYSTEM__MQTT_HOST);
+    createEAttribute(systemEClass, SYSTEM__MQTT_USERNAME);
+    createEAttribute(systemEClass, SYSTEM__MQTT_PASSWORD);
     createEReference(systemEClass, SYSTEM__GATEWAY);
     createEReference(systemEClass, SYSTEM__GRAPHS);
 
     graphEClass = createEClass(GRAPH);
-    createEReference(graphEClass, GRAPH__TYPE);
+    createEAttribute(graphEClass, GRAPH__TYPE);
     createEAttribute(graphEClass, GRAPH__NAME);
     createEAttribute(graphEClass, GRAPH__CATEGORY);
     createEAttribute(graphEClass, GRAPH__TITLE);
@@ -1637,45 +1813,40 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     createEAttribute(workerEClass, WORKER__MAC);
     createEAttribute(workerEClass, WORKER__SLEEP_TIME);
     createEReference(workerEClass, WORKER__TIME_UNIT);
-    createEAttribute(workerEClass, WORKER__BROADCAST_TIME);
     createEReference(workerEClass, WORKER__DEVICES);
 
     deviceEClass = createEClass(DEVICE);
-    createEReference(deviceEClass, DEVICE__TYPE);
+    createEAttribute(deviceEClass, DEVICE__TYPE);
     createEAttribute(deviceEClass, DEVICE__NAME);
-    createEAttribute(deviceEClass, DEVICE__PINS);
+    createEReference(deviceEClass, DEVICE__PINS);
+    createEReference(deviceEClass, DEVICE__SETTINGS);
 
     sensorEClass = createEClass(SENSOR);
-    createEReference(sensorEClass, SENSOR__SAMPLE_RATE);
     createEReference(sensorEClass, SENSOR__OUTPUTS);
-    createEReference(sensorEClass, SENSOR__BEHAVIOR);
     createEReference(sensorEClass, SENSOR__PREDICATE);
     createEReference(sensorEClass, SENSOR__GRAPH);
 
-    sampleBehaviorEClass = createEClass(SAMPLE_BEHAVIOR);
-    createEReference(sampleBehaviorEClass, SAMPLE_BEHAVIOR__TYPE);
-    createEReference(sampleBehaviorEClass, SAMPLE_BEHAVIOR__ARGS);
-    createEReference(sampleBehaviorEClass, SAMPLE_BEHAVIOR__PINS);
+    pinEClass = createEClass(PIN);
+    createEReference(pinEClass, PIN__TYPE);
+    createEAttribute(pinEClass, PIN__NUMBER);
+
+    pinTypeEClass = createEClass(PIN_TYPE);
 
     timeUnitEClass = createEClass(TIME_UNIT);
 
     bindingEClass = createEClass(BINDING);
     createEAttribute(bindingEClass, BINDING__NAME);
 
-    importEClass = createEClass(IMPORT);
-    createEAttribute(importEClass, IMPORT__NAME);
-
     sensorOutputEClass = createEClass(SENSOR_OUTPUT);
     createEAttribute(sensorOutputEClass, SENSOR_OUTPUT__OUTPUT);
-    createEReference(sensorOutputEClass, SENSOR_OUTPUT__BINDING);
     createEReference(sensorOutputEClass, SENSOR_OUTPUT__MAPPING);
 
     actuatorEClass = createEClass(ACTUATOR);
-    createEReference(actuatorEClass, ACTUATOR__SETTINGS);
-    createEReference(actuatorEClass, ACTUATOR__EXP);
+    createEReference(actuatorEClass, ACTUATOR__TRIGGER);
+
+    triggerEClass = createEClass(TRIGGER);
 
     settingEClass = createEClass(SETTING);
-    createEReference(settingEClass, SETTING__BINDING);
     createEReference(settingEClass, SETTING__VALUE);
 
     primitiveEClass = createEClass(PRIMITIVE);
@@ -1683,7 +1854,7 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     expressionEClass = createEClass(EXPRESSION);
 
     externalCallEClass = createEClass(EXTERNAL_CALL);
-    createEReference(externalCallEClass, EXTERNAL_CALL__FUNC);
+    createEAttribute(externalCallEClass, EXTERNAL_CALL__FUNC);
     createEReference(externalCallEClass, EXTERNAL_CALL__ARGS);
 
     internalVariableUseEClass = createEClass(INTERNAL_VARIABLE_USE);
@@ -1697,11 +1868,28 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     parenthesisEClass = createEClass(PARENTHESIS);
     createEReference(parenthesisEClass, PARENTHESIS__EXP);
 
+    adcEClass = createEClass(ADC);
+
+    dacEClass = createEClass(DAC);
+
+    genericInEClass = createEClass(GENERIC_IN);
+
+    genericOutEClass = createEClass(GENERIC_OUT);
+
     secondEClass = createEClass(SECOND);
 
     minuteEClass = createEClass(MINUTE);
 
     hourEClass = createEClass(HOUR);
+
+    whenEClass = createEClass(WHEN);
+    createEReference(whenEClass, WHEN__EXP);
+
+    onOffEClass = createEClass(ON_OFF);
+    createEReference(onOffEClass, ON_OFF__ON_EXP);
+    createEReference(onOffEClass, ON_OFF__OFF_EXP);
+    createEAttribute(onOffEClass, ON_OFF__TIME);
+    createEReference(onOffEClass, ON_OFF__UNIT);
 
     decimalPrimitiveEClass = createEClass(DECIMAL_PRIMITIVE);
     createEAttribute(decimalPrimitiveEClass, DECIMAL_PRIMITIVE__VALUE);
@@ -1760,6 +1948,8 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     orEClass = createEClass(OR);
     createEReference(orEClass, OR__LEFT);
     createEReference(orEClass, OR__RIGHT);
+
+    valueEClass = createEClass(VALUE);
   }
 
   /**
@@ -1792,16 +1982,24 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
 
     // Add supertypes to classes
     sensorEClass.getESuperTypes().add(this.getDevice());
+    sensorOutputEClass.getESuperTypes().add(this.getBinding());
     actuatorEClass.getESuperTypes().add(this.getDevice());
+    settingEClass.getESuperTypes().add(this.getBinding());
     primitiveEClass.getESuperTypes().add(this.getExpression());
     externalCallEClass.getESuperTypes().add(this.getExpression());
     internalVariableUseEClass.getESuperTypes().add(this.getVariableUse());
     externalVariableUseEClass.getESuperTypes().add(this.getVariableUse());
     variableUseEClass.getESuperTypes().add(this.getExpression());
     parenthesisEClass.getESuperTypes().add(this.getExpression());
+    adcEClass.getESuperTypes().add(this.getPinType());
+    dacEClass.getESuperTypes().add(this.getPinType());
+    genericInEClass.getESuperTypes().add(this.getPinType());
+    genericOutEClass.getESuperTypes().add(this.getPinType());
     secondEClass.getESuperTypes().add(this.getTimeUnit());
     minuteEClass.getESuperTypes().add(this.getTimeUnit());
     hourEClass.getESuperTypes().add(this.getTimeUnit());
+    whenEClass.getESuperTypes().add(this.getTrigger());
+    onOffEClass.getESuperTypes().add(this.getTrigger());
     decimalPrimitiveEClass.getESuperTypes().add(this.getPrimitive());
     intPrimitiveEClass.getESuperTypes().add(this.getPrimitive());
     booleanTrueEClass.getESuperTypes().add(this.getPrimitive());
@@ -1818,15 +2016,20 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     notEqualsEClass.getESuperTypes().add(this.getExpression());
     andEClass.getESuperTypes().add(this.getExpression());
     orEClass.getESuperTypes().add(this.getExpression());
+    valueEClass.getESuperTypes().add(this.getExpression());
 
     // Initialize classes and features; add operations and parameters
     initEClass(systemEClass, dk.sdu.gms.dds.deviceDefinition.System.class, "System", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSystem_Imports(), this.getImport(), null, "imports", null, 0, -1, dk.sdu.gms.dds.deviceDefinition.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSystem_WifiSsid(), ecorePackage.getEString(), "wifiSsid", null, 0, 1, dk.sdu.gms.dds.deviceDefinition.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSystem_WifiPassword(), ecorePackage.getEString(), "wifiPassword", null, 0, 1, dk.sdu.gms.dds.deviceDefinition.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSystem_MqttHost(), ecorePackage.getEString(), "mqttHost", null, 0, 1, dk.sdu.gms.dds.deviceDefinition.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSystem_MqttUsername(), ecorePackage.getEString(), "mqttUsername", null, 0, 1, dk.sdu.gms.dds.deviceDefinition.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSystem_MqttPassword(), ecorePackage.getEString(), "mqttPassword", null, 0, 1, dk.sdu.gms.dds.deviceDefinition.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSystem_Gateway(), this.getGateway(), null, "gateway", null, 0, 1, dk.sdu.gms.dds.deviceDefinition.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSystem_Graphs(), this.getGraph(), null, "graphs", null, 0, -1, dk.sdu.gms.dds.deviceDefinition.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(graphEClass, Graph.class, "Graph", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getGraph_Type(), this.getImport(), null, "type", null, 0, 1, Graph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGraph_Type(), ecorePackage.getEString(), "type", null, 0, 1, Graph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGraph_Name(), ecorePackage.getEString(), "name", null, 0, 1, Graph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGraph_Category(), ecorePackage.getEString(), "category", null, 0, 1, Graph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGraph_Title(), ecorePackage.getEString(), "title", null, 0, 1, Graph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1842,46 +2045,41 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     initEAttribute(getWorker_Name(), ecorePackage.getEString(), "name", null, 0, 1, Worker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getWorker_Mac(), ecorePackage.getEString(), "mac", null, 0, 1, Worker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getWorker_SleepTime(), ecorePackage.getEInt(), "sleepTime", null, 0, 1, Worker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getWorker_TimeUnit(), this.getTimeUnit(), null, "timeUnit", null, 0, -1, Worker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getWorker_BroadcastTime(), ecorePackage.getEInt(), "broadcastTime", null, 0, 1, Worker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWorker_TimeUnit(), this.getTimeUnit(), null, "timeUnit", null, 0, 1, Worker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getWorker_Devices(), this.getDevice(), null, "devices", null, 0, -1, Worker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(deviceEClass, Device.class, "Device", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDevice_Type(), this.getImport(), null, "type", null, 0, 1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDevice_Type(), ecorePackage.getEString(), "type", null, 0, 1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDevice_Name(), ecorePackage.getEString(), "name", null, 0, 1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDevice_Pins(), ecorePackage.getEInt(), "pins", null, 0, -1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDevice_Pins(), this.getPin(), null, "pins", null, 0, -1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDevice_Settings(), this.getSetting(), null, "settings", null, 0, -1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(sensorEClass, Sensor.class, "Sensor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSensor_SampleRate(), this.getPrimitive(), null, "sampleRate", null, 0, 1, Sensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSensor_Outputs(), this.getSensorOutput(), null, "outputs", null, 0, -1, Sensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSensor_Behavior(), this.getSampleBehavior(), null, "behavior", null, 0, -1, Sensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSensor_Predicate(), this.getExpression(), null, "predicate", null, 0, -1, Sensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSensor_Graph(), this.getGraph(), null, "graph", null, 0, 1, Sensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(sampleBehaviorEClass, SampleBehavior.class, "SampleBehavior", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSampleBehavior_Type(), this.getImport(), null, "type", null, 0, 1, SampleBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSampleBehavior_Args(), this.getExpression(), null, "args", null, 0, -1, SampleBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSampleBehavior_Pins(), this.getExpression(), null, "pins", null, 0, -1, SampleBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(pinEClass, Pin.class, "Pin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPin_Type(), this.getPinType(), null, "type", null, 0, 1, Pin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPin_Number(), ecorePackage.getEInt(), "number", null, 0, 1, Pin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(pinTypeEClass, PinType.class, "PinType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(timeUnitEClass, TimeUnit.class, "TimeUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(bindingEClass, Binding.class, "Binding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getBinding_Name(), ecorePackage.getEString(), "name", null, 0, 1, Binding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getImport_Name(), ecorePackage.getEString(), "name", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(sensorOutputEClass, SensorOutput.class, "SensorOutput", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSensorOutput_Output(), ecorePackage.getEString(), "output", null, 0, 1, SensorOutput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSensorOutput_Binding(), this.getBinding(), null, "binding", null, 0, 1, SensorOutput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSensorOutput_Mapping(), this.getExpression(), null, "mapping", null, 0, 1, SensorOutput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(actuatorEClass, Actuator.class, "Actuator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getActuator_Settings(), this.getSetting(), null, "settings", null, 0, -1, Actuator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getActuator_Exp(), this.getExpression(), null, "exp", null, 0, 1, Actuator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getActuator_Trigger(), this.getTrigger(), null, "trigger", null, 0, 1, Actuator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(triggerEClass, Trigger.class, "Trigger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(settingEClass, Setting.class, "Setting", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSetting_Binding(), this.getBinding(), null, "binding", null, 0, 1, Setting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSetting_Value(), this.getPrimitive(), null, "value", null, 0, 1, Setting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(primitiveEClass, Primitive.class, "Primitive", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1889,7 +2087,7 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(externalCallEClass, ExternalCall.class, "ExternalCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getExternalCall_Func(), this.getImport(), null, "func", null, 0, 1, ExternalCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getExternalCall_Func(), ecorePackage.getEString(), "func", null, 0, 1, ExternalCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExternalCall_Args(), this.getExpression(), null, "args", null, 0, -1, ExternalCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(internalVariableUseEClass, InternalVariableUse.class, "InternalVariableUse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1903,11 +2101,28 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     initEClass(parenthesisEClass, Parenthesis.class, "Parenthesis", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getParenthesis_Exp(), this.getExpression(), null, "exp", null, 0, 1, Parenthesis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(adcEClass, dk.sdu.gms.dds.deviceDefinition.ADC.class, "ADC", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(dacEClass, dk.sdu.gms.dds.deviceDefinition.DAC.class, "DAC", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(genericInEClass, GenericIn.class, "GenericIn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(genericOutEClass, GenericOut.class, "GenericOut", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
     initEClass(secondEClass, Second.class, "Second", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(minuteEClass, Minute.class, "Minute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(hourEClass, Hour.class, "Hour", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(whenEClass, When.class, "When", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getWhen_Exp(), this.getExpression(), null, "exp", null, 0, 1, When.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(onOffEClass, OnOff.class, "OnOff", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getOnOff_OnExp(), this.getExpression(), null, "onExp", null, 0, 1, OnOff.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getOnOff_OffExp(), this.getExpression(), null, "offExp", null, 0, 1, OnOff.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getOnOff_Time(), ecorePackage.getEInt(), "time", null, 0, 1, OnOff.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getOnOff_Unit(), this.getTimeUnit(), null, "unit", null, 0, 1, OnOff.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(decimalPrimitiveEClass, DecimalPrimitive.class, "DecimalPrimitive", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDecimalPrimitive_Value(), ecorePackage.getEString(), "value", null, 0, 1, DecimalPrimitive.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1966,6 +2181,8 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     initEClass(orEClass, Or.class, "Or", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getOr_Left(), this.getExpression(), null, "left", null, 0, 1, Or.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getOr_Right(), this.getExpression(), null, "right", null, 0, 1, Or.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(valueEClass, Value.class, "Value", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     // Create resource
     createResource(eNS_URI);

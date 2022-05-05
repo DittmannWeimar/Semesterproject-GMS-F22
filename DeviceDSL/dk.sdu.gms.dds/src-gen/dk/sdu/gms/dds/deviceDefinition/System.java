@@ -16,7 +16,11 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dk.sdu.gms.dds.deviceDefinition.System#getImports <em>Imports</em>}</li>
+ *   <li>{@link dk.sdu.gms.dds.deviceDefinition.System#getWifiSsid <em>Wifi Ssid</em>}</li>
+ *   <li>{@link dk.sdu.gms.dds.deviceDefinition.System#getWifiPassword <em>Wifi Password</em>}</li>
+ *   <li>{@link dk.sdu.gms.dds.deviceDefinition.System#getMqttHost <em>Mqtt Host</em>}</li>
+ *   <li>{@link dk.sdu.gms.dds.deviceDefinition.System#getMqttUsername <em>Mqtt Username</em>}</li>
+ *   <li>{@link dk.sdu.gms.dds.deviceDefinition.System#getMqttPassword <em>Mqtt Password</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.System#getGateway <em>Gateway</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.System#getGraphs <em>Graphs</em>}</li>
  * </ul>
@@ -28,16 +32,114 @@ import org.eclipse.emf.ecore.EObject;
 public interface System extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Imports</b></em>' containment reference list.
-   * The list contents are of type {@link dk.sdu.gms.dds.deviceDefinition.Import}.
+   * Returns the value of the '<em><b>Wifi Ssid</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Imports</em>' containment reference list.
-   * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getSystem_Imports()
-   * @model containment="true"
+   * @return the value of the '<em>Wifi Ssid</em>' attribute.
+   * @see #setWifiSsid(String)
+   * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getSystem_WifiSsid()
+   * @model
    * @generated
    */
-  EList<Import> getImports();
+  String getWifiSsid();
+
+  /**
+   * Sets the value of the '{@link dk.sdu.gms.dds.deviceDefinition.System#getWifiSsid <em>Wifi Ssid</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Wifi Ssid</em>' attribute.
+   * @see #getWifiSsid()
+   * @generated
+   */
+  void setWifiSsid(String value);
+
+  /**
+   * Returns the value of the '<em><b>Wifi Password</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Wifi Password</em>' attribute.
+   * @see #setWifiPassword(String)
+   * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getSystem_WifiPassword()
+   * @model
+   * @generated
+   */
+  String getWifiPassword();
+
+  /**
+   * Sets the value of the '{@link dk.sdu.gms.dds.deviceDefinition.System#getWifiPassword <em>Wifi Password</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Wifi Password</em>' attribute.
+   * @see #getWifiPassword()
+   * @generated
+   */
+  void setWifiPassword(String value);
+
+  /**
+   * Returns the value of the '<em><b>Mqtt Host</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Mqtt Host</em>' attribute.
+   * @see #setMqttHost(String)
+   * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getSystem_MqttHost()
+   * @model
+   * @generated
+   */
+  String getMqttHost();
+
+  /**
+   * Sets the value of the '{@link dk.sdu.gms.dds.deviceDefinition.System#getMqttHost <em>Mqtt Host</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Mqtt Host</em>' attribute.
+   * @see #getMqttHost()
+   * @generated
+   */
+  void setMqttHost(String value);
+
+  /**
+   * Returns the value of the '<em><b>Mqtt Username</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Mqtt Username</em>' attribute.
+   * @see #setMqttUsername(String)
+   * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getSystem_MqttUsername()
+   * @model
+   * @generated
+   */
+  String getMqttUsername();
+
+  /**
+   * Sets the value of the '{@link dk.sdu.gms.dds.deviceDefinition.System#getMqttUsername <em>Mqtt Username</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Mqtt Username</em>' attribute.
+   * @see #getMqttUsername()
+   * @generated
+   */
+  void setMqttUsername(String value);
+
+  /**
+   * Returns the value of the '<em><b>Mqtt Password</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Mqtt Password</em>' attribute.
+   * @see #setMqttPassword(String)
+   * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getSystem_MqttPassword()
+   * @model
+   * @generated
+   */
+  String getMqttPassword();
+
+  /**
+   * Sets the value of the '{@link dk.sdu.gms.dds.deviceDefinition.System#getMqttPassword <em>Mqtt Password</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Mqtt Password</em>' attribute.
+   * @see #getMqttPassword()
+   * @generated
+   */
+  void setMqttPassword(String value);
 
   /**
    * Returns the value of the '<em><b>Gateway</b></em>' containment reference.

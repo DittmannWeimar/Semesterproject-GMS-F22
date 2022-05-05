@@ -14,9 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Sensor#getSampleRate <em>Sample Rate</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Sensor#getOutputs <em>Outputs</em>}</li>
- *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Sensor#getBehavior <em>Behavior</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Sensor#getPredicate <em>Predicate</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Sensor#getGraph <em>Graph</em>}</li>
  * </ul>
@@ -28,28 +26,6 @@ import org.eclipse.emf.common.util.EList;
 public interface Sensor extends Device
 {
   /**
-   * Returns the value of the '<em><b>Sample Rate</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Sample Rate</em>' containment reference.
-   * @see #setSampleRate(Primitive)
-   * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getSensor_SampleRate()
-   * @model containment="true"
-   * @generated
-   */
-  Primitive getSampleRate();
-
-  /**
-   * Sets the value of the '{@link dk.sdu.gms.dds.deviceDefinition.Sensor#getSampleRate <em>Sample Rate</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Sample Rate</em>' containment reference.
-   * @see #getSampleRate()
-   * @generated
-   */
-  void setSampleRate(Primitive value);
-
-  /**
    * Returns the value of the '<em><b>Outputs</b></em>' containment reference list.
    * The list contents are of type {@link dk.sdu.gms.dds.deviceDefinition.SensorOutput}.
    * <!-- begin-user-doc -->
@@ -60,18 +36,6 @@ public interface Sensor extends Device
    * @generated
    */
   EList<SensorOutput> getOutputs();
-
-  /**
-   * Returns the value of the '<em><b>Behavior</b></em>' containment reference list.
-   * The list contents are of type {@link dk.sdu.gms.dds.deviceDefinition.SampleBehavior}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Behavior</em>' containment reference list.
-   * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getSensor_Behavior()
-   * @model containment="true"
-   * @generated
-   */
-  EList<SampleBehavior> getBehavior();
 
   /**
    * Returns the value of the '<em><b>Predicate</b></em>' containment reference list.

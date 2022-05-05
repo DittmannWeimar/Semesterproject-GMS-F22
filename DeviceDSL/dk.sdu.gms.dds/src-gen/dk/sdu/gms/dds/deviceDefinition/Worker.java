@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Worker#getMac <em>Mac</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Worker#getSleepTime <em>Sleep Time</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Worker#getTimeUnit <em>Time Unit</em>}</li>
- *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Worker#getBroadcastTime <em>Broadcast Time</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Worker#getDevices <em>Devices</em>}</li>
  * </ul>
  *
@@ -97,38 +96,26 @@ public interface Worker extends EObject
   void setSleepTime(int value);
 
   /**
-   * Returns the value of the '<em><b>Time Unit</b></em>' containment reference list.
-   * The list contents are of type {@link dk.sdu.gms.dds.deviceDefinition.TimeUnit}.
+   * Returns the value of the '<em><b>Time Unit</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Time Unit</em>' containment reference list.
+   * @return the value of the '<em>Time Unit</em>' containment reference.
+   * @see #setTimeUnit(TimeUnit)
    * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getWorker_TimeUnit()
    * @model containment="true"
    * @generated
    */
-  EList<TimeUnit> getTimeUnit();
+  TimeUnit getTimeUnit();
 
   /**
-   * Returns the value of the '<em><b>Broadcast Time</b></em>' attribute.
+   * Sets the value of the '{@link dk.sdu.gms.dds.deviceDefinition.Worker#getTimeUnit <em>Time Unit</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Broadcast Time</em>' attribute.
-   * @see #setBroadcastTime(int)
-   * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getWorker_BroadcastTime()
-   * @model
+   * @param value the new value of the '<em>Time Unit</em>' containment reference.
+   * @see #getTimeUnit()
    * @generated
    */
-  int getBroadcastTime();
-
-  /**
-   * Sets the value of the '{@link dk.sdu.gms.dds.deviceDefinition.Worker#getBroadcastTime <em>Broadcast Time</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Broadcast Time</em>' attribute.
-   * @see #getBroadcastTime()
-   * @generated
-   */
-  void setBroadcastTime(int value);
+  void setTimeUnit(TimeUnit value);
 
   /**
    * Returns the value of the '<em><b>Devices</b></em>' containment reference list.

@@ -3,14 +3,15 @@ grammar dk.sdu.gms.dds.DeviceDefinition with org.eclipse.xtext.common.Terminals
 generate deviceDefinition "http://www.sdu.dk/gms/dds/DeviceDefinition"
 
 System:
-	(imports += Import)*
 	'System' ':'
+	'wifi' wifiSsid = STRING ('with' 'password' wifiPassword = STRING)?
+	'mqtt' mqttHost = STRING ('with' 'username' mqttUsername = STRING 'and' 'password' mqttPassword = STRING)?
 	gateway = Gateway
 	graphs += Graph*
 ;
 
 Graph:
-	'Graph' type = [Import] name=ID ':'
+	'Graph' type = ID name=ID ':'
 	'category' category = STRING
 	'title' title = STRING
 	'x' xlabel = STRING
@@ -24,10 +25,9 @@ Gateway:
 ;
 
 Worker:
-	'Worker' name=ID ':'
-	'mac' mac = MAC
-	('sleep' 'for' sleepTime = INT timeUnit += TimeUnit)?
-	('broadcast' 'for' broadcastTime = INT timeUnit += TimeUnit)?
+	'Worker' (name=ID) ':'
+	('mac' mac = MAC)
+	('sleep' 'for' sleepTime = INT timeUnit = TimeUnit)?
 	devices += Device*
 ;
 
@@ -35,53 +35,57 @@ Device:
 	Sensor | Actuator
 ;
 
-terminal MAC:
-	HEXBYTE ('-'|':') HEXBYTE ('-'|':') HEXBYTE ('-'|':') HEXBYTE ('-'|':') HEXBYTE ('-'|':') HEXBYTE
-;
-
-terminal fragment HEXBYTE:
-	('0'..'9'|'A'..'F')('0'..'9'|'A'..'F')
-;
-
 Sensor:
-	'Sensor' type = [Import] (name=ID)? ':'
-	'pins' pins += INT* (',' pins += INT)*
-	'rate' sampleRate = Primitive
+	'Sensor' type = ID name=ID ':'
+	('pins' pins += Pin* (',' pins += Pin)*)?
 	(outputs += SensorOutput)*
-	('behavior' behavior += SampleBehavior)?
+	(settings += Setting)*
 	('sample' 'if' predicate += Exp)?
 	('graph' graph = [Graph])?
 ;
 
-SampleBehavior:
-	type = [Import] '(' args += Primary* (',' pins += Primary)* ')'
+Pin:
+	type = PinType number = INT
+;
+
+PinType:
+	{ADC} 'adc' | {DAC} 'dac' | {GenericIn} 'in' | {GenericOut} 'out' 
 ;
 
 TimeUnit:
 	{Second} ('second'|'seconds') | {Minute} ('minute'|'minutes') | {Hour} ('hour'|'hours')
 ;
 
-Binding:
-	name=ID
+terminal MAC:
+	HEXBYTE (':') HEXBYTE (':') HEXBYTE (':') HEXBYTE (':') HEXBYTE (':') HEXBYTE
 ;
 
-Import:
-	'import' name=ID
+terminal fragment HEXBYTE:
+	('0'..'9'|'A'..'F')('0'..'9'|'A'..'F')
+;
+
+Binding:
+	SensorOutput | Setting
 ;
 
 SensorOutput:
-	'out' (output=STRING)? 'as' binding = Binding ('with' 'mapping' mapping = Exp)?
+	'out' (output=STRING)? 'as' name=ID ('with' 'mapping' mapping = Exp)?
 ;
 
 Actuator:
-	'Actuator' type = [Import] (name=ID)? ':'
-	'pins' pins += INT* (',' pins += INT)* 
+	'Actuator' type = ID name=ID ':'
+	'pins' pins += Pin* (',' pins += Pin)* 
 	settings += Setting*
-	'trigger' 'on' exp = Exp
+	trigger = Trigger
+;
+
+Trigger:
+	{When} 'when' exp = Exp
+	 | {OnOff} 'on' onExp = Exp (('off' offExp = Exp) | ('run' 'for' time=INT unit=TimeUnit))
 ;
 
 Setting:
-	'setting' binding = Binding '=' value=Primitive
+	'setting' name=ID '=' value=Primitive
 ;
 
 terminal DECIMAL:
@@ -117,11 +121,11 @@ AndOr returns Expression:
 ;
 
 Primary returns Expression:
-	 Primitive | Parenthesis | VariableUse | ExternalCall
+	 Primitive | Parenthesis | VariableUse | ExternalCall | {Value} 'value'
 ;
 
 ExternalCall:
-	'call' func = [Import] '(' args += Exp? (',' args += Exp)* ')'
+	'call' func = ID '(' args += Exp? (',' args += Exp)* ')'
 ;
 
 InternalVariableUse:

@@ -78,13 +78,22 @@ public interface DeviceDefinitionFactory extends EFactory
   Sensor createSensor();
 
   /**
-   * Returns a new object of class '<em>Sample Behavior</em>'.
+   * Returns a new object of class '<em>Pin</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Sample Behavior</em>'.
+   * @return a new object of class '<em>Pin</em>'.
    * @generated
    */
-  SampleBehavior createSampleBehavior();
+  Pin createPin();
+
+  /**
+   * Returns a new object of class '<em>Pin Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Pin Type</em>'.
+   * @generated
+   */
+  PinType createPinType();
 
   /**
    * Returns a new object of class '<em>Time Unit</em>'.
@@ -105,15 +114,6 @@ public interface DeviceDefinitionFactory extends EFactory
   Binding createBinding();
 
   /**
-   * Returns a new object of class '<em>Import</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Import</em>'.
-   * @generated
-   */
-  Import createImport();
-
-  /**
    * Returns a new object of class '<em>Sensor Output</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -130,6 +130,15 @@ public interface DeviceDefinitionFactory extends EFactory
    * @generated
    */
   Actuator createActuator();
+
+  /**
+   * Returns a new object of class '<em>Trigger</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Trigger</em>'.
+   * @generated
+   */
+  Trigger createTrigger();
 
   /**
    * Returns a new object of class '<em>Setting</em>'.
@@ -204,6 +213,42 @@ public interface DeviceDefinitionFactory extends EFactory
   Parenthesis createParenthesis();
 
   /**
+   * Returns a new object of class '<em>ADC</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>ADC</em>'.
+   * @generated
+   */
+  ADC createADC();
+
+  /**
+   * Returns a new object of class '<em>DAC</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>DAC</em>'.
+   * @generated
+   */
+  DAC createDAC();
+
+  /**
+   * Returns a new object of class '<em>Generic In</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Generic In</em>'.
+   * @generated
+   */
+  GenericIn createGenericIn();
+
+  /**
+   * Returns a new object of class '<em>Generic Out</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Generic Out</em>'.
+   * @generated
+   */
+  GenericOut createGenericOut();
+
+  /**
    * Returns a new object of class '<em>Second</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -229,6 +274,24 @@ public interface DeviceDefinitionFactory extends EFactory
    * @generated
    */
   Hour createHour();
+
+  /**
+   * Returns a new object of class '<em>When</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>When</em>'.
+   * @generated
+   */
+  When createWhen();
+
+  /**
+   * Returns a new object of class '<em>On Off</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>On Off</em>'.
+   * @generated
+   */
+  OnOff createOnOff();
 
   /**
    * Returns a new object of class '<em>Decimal Primitive</em>'.
@@ -373,6 +436,15 @@ public interface DeviceDefinitionFactory extends EFactory
    * @generated
    */
   Or createOr();
+
+  /**
+   * Returns a new object of class '<em>Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Value</em>'.
+   * @generated
+   */
+  Value createValue();
 
   /**
    * Returns the package supported by this factory.

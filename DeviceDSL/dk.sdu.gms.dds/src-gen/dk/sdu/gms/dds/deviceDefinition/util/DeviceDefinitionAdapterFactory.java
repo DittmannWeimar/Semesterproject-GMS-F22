@@ -3,11 +3,13 @@
  */
 package dk.sdu.gms.dds.deviceDefinition.util;
 
+import dk.sdu.gms.dds.deviceDefinition.ADC;
 import dk.sdu.gms.dds.deviceDefinition.Actuator;
 import dk.sdu.gms.dds.deviceDefinition.And;
 import dk.sdu.gms.dds.deviceDefinition.Binding;
 import dk.sdu.gms.dds.deviceDefinition.BooleanFalse;
 import dk.sdu.gms.dds.deviceDefinition.BooleanTrue;
+import dk.sdu.gms.dds.deviceDefinition.DAC;
 import dk.sdu.gms.dds.deviceDefinition.DecimalPrimitive;
 import dk.sdu.gms.dds.deviceDefinition.Device;
 import dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage;
@@ -17,11 +19,12 @@ import dk.sdu.gms.dds.deviceDefinition.Expression;
 import dk.sdu.gms.dds.deviceDefinition.ExternalCall;
 import dk.sdu.gms.dds.deviceDefinition.ExternalVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.Gateway;
+import dk.sdu.gms.dds.deviceDefinition.GenericIn;
+import dk.sdu.gms.dds.deviceDefinition.GenericOut;
 import dk.sdu.gms.dds.deviceDefinition.Graph;
 import dk.sdu.gms.dds.deviceDefinition.Greater;
 import dk.sdu.gms.dds.deviceDefinition.GreaterOrEquals;
 import dk.sdu.gms.dds.deviceDefinition.Hour;
-import dk.sdu.gms.dds.deviceDefinition.Import;
 import dk.sdu.gms.dds.deviceDefinition.IntPrimitive;
 import dk.sdu.gms.dds.deviceDefinition.InternalVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.Lesser;
@@ -30,17 +33,22 @@ import dk.sdu.gms.dds.deviceDefinition.Minus;
 import dk.sdu.gms.dds.deviceDefinition.Minute;
 import dk.sdu.gms.dds.deviceDefinition.Mult;
 import dk.sdu.gms.dds.deviceDefinition.NotEquals;
+import dk.sdu.gms.dds.deviceDefinition.OnOff;
 import dk.sdu.gms.dds.deviceDefinition.Or;
 import dk.sdu.gms.dds.deviceDefinition.Parenthesis;
+import dk.sdu.gms.dds.deviceDefinition.Pin;
+import dk.sdu.gms.dds.deviceDefinition.PinType;
 import dk.sdu.gms.dds.deviceDefinition.Plus;
 import dk.sdu.gms.dds.deviceDefinition.Primitive;
-import dk.sdu.gms.dds.deviceDefinition.SampleBehavior;
 import dk.sdu.gms.dds.deviceDefinition.Second;
 import dk.sdu.gms.dds.deviceDefinition.Sensor;
 import dk.sdu.gms.dds.deviceDefinition.SensorOutput;
 import dk.sdu.gms.dds.deviceDefinition.Setting;
 import dk.sdu.gms.dds.deviceDefinition.TimeUnit;
+import dk.sdu.gms.dds.deviceDefinition.Trigger;
+import dk.sdu.gms.dds.deviceDefinition.Value;
 import dk.sdu.gms.dds.deviceDefinition.VariableUse;
+import dk.sdu.gms.dds.deviceDefinition.When;
 import dk.sdu.gms.dds.deviceDefinition.Worker;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -144,9 +152,14 @@ public class DeviceDefinitionAdapterFactory extends AdapterFactoryImpl
         return createSensorAdapter();
       }
       @Override
-      public Adapter caseSampleBehavior(SampleBehavior object)
+      public Adapter casePin(Pin object)
       {
-        return createSampleBehaviorAdapter();
+        return createPinAdapter();
+      }
+      @Override
+      public Adapter casePinType(PinType object)
+      {
+        return createPinTypeAdapter();
       }
       @Override
       public Adapter caseTimeUnit(TimeUnit object)
@@ -159,11 +172,6 @@ public class DeviceDefinitionAdapterFactory extends AdapterFactoryImpl
         return createBindingAdapter();
       }
       @Override
-      public Adapter caseImport(Import object)
-      {
-        return createImportAdapter();
-      }
-      @Override
       public Adapter caseSensorOutput(SensorOutput object)
       {
         return createSensorOutputAdapter();
@@ -172,6 +180,11 @@ public class DeviceDefinitionAdapterFactory extends AdapterFactoryImpl
       public Adapter caseActuator(Actuator object)
       {
         return createActuatorAdapter();
+      }
+      @Override
+      public Adapter caseTrigger(Trigger object)
+      {
+        return createTriggerAdapter();
       }
       @Override
       public Adapter caseSetting(Setting object)
@@ -214,6 +227,26 @@ public class DeviceDefinitionAdapterFactory extends AdapterFactoryImpl
         return createParenthesisAdapter();
       }
       @Override
+      public Adapter caseADC(ADC object)
+      {
+        return createADCAdapter();
+      }
+      @Override
+      public Adapter caseDAC(DAC object)
+      {
+        return createDACAdapter();
+      }
+      @Override
+      public Adapter caseGenericIn(GenericIn object)
+      {
+        return createGenericInAdapter();
+      }
+      @Override
+      public Adapter caseGenericOut(GenericOut object)
+      {
+        return createGenericOutAdapter();
+      }
+      @Override
       public Adapter caseSecond(Second object)
       {
         return createSecondAdapter();
@@ -227,6 +260,16 @@ public class DeviceDefinitionAdapterFactory extends AdapterFactoryImpl
       public Adapter caseHour(Hour object)
       {
         return createHourAdapter();
+      }
+      @Override
+      public Adapter caseWhen(When object)
+      {
+        return createWhenAdapter();
+      }
+      @Override
+      public Adapter caseOnOff(OnOff object)
+      {
+        return createOnOffAdapter();
       }
       @Override
       public Adapter caseDecimalPrimitive(DecimalPrimitive object)
@@ -307,6 +350,11 @@ public class DeviceDefinitionAdapterFactory extends AdapterFactoryImpl
       public Adapter caseOr(Or object)
       {
         return createOrAdapter();
+      }
+      @Override
+      public Adapter caseValue(Value object)
+      {
+        return createValueAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -421,16 +469,31 @@ public class DeviceDefinitionAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link dk.sdu.gms.dds.deviceDefinition.SampleBehavior <em>Sample Behavior</em>}'.
+   * Creates a new adapter for an object of class '{@link dk.sdu.gms.dds.deviceDefinition.Pin <em>Pin</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see dk.sdu.gms.dds.deviceDefinition.SampleBehavior
+   * @see dk.sdu.gms.dds.deviceDefinition.Pin
    * @generated
    */
-  public Adapter createSampleBehaviorAdapter()
+  public Adapter createPinAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dk.sdu.gms.dds.deviceDefinition.PinType <em>Pin Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dk.sdu.gms.dds.deviceDefinition.PinType
+   * @generated
+   */
+  public Adapter createPinTypeAdapter()
   {
     return null;
   }
@@ -466,21 +529,6 @@ public class DeviceDefinitionAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link dk.sdu.gms.dds.deviceDefinition.Import <em>Import</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see dk.sdu.gms.dds.deviceDefinition.Import
-   * @generated
-   */
-  public Adapter createImportAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link dk.sdu.gms.dds.deviceDefinition.SensorOutput <em>Sensor Output</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -506,6 +554,21 @@ public class DeviceDefinitionAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createActuatorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dk.sdu.gms.dds.deviceDefinition.Trigger <em>Trigger</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dk.sdu.gms.dds.deviceDefinition.Trigger
+   * @generated
+   */
+  public Adapter createTriggerAdapter()
   {
     return null;
   }
@@ -631,6 +694,66 @@ public class DeviceDefinitionAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link dk.sdu.gms.dds.deviceDefinition.ADC <em>ADC</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dk.sdu.gms.dds.deviceDefinition.ADC
+   * @generated
+   */
+  public Adapter createADCAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dk.sdu.gms.dds.deviceDefinition.DAC <em>DAC</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dk.sdu.gms.dds.deviceDefinition.DAC
+   * @generated
+   */
+  public Adapter createDACAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dk.sdu.gms.dds.deviceDefinition.GenericIn <em>Generic In</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dk.sdu.gms.dds.deviceDefinition.GenericIn
+   * @generated
+   */
+  public Adapter createGenericInAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dk.sdu.gms.dds.deviceDefinition.GenericOut <em>Generic Out</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dk.sdu.gms.dds.deviceDefinition.GenericOut
+   * @generated
+   */
+  public Adapter createGenericOutAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link dk.sdu.gms.dds.deviceDefinition.Second <em>Second</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -671,6 +794,36 @@ public class DeviceDefinitionAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createHourAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dk.sdu.gms.dds.deviceDefinition.When <em>When</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dk.sdu.gms.dds.deviceDefinition.When
+   * @generated
+   */
+  public Adapter createWhenAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dk.sdu.gms.dds.deviceDefinition.OnOff <em>On Off</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dk.sdu.gms.dds.deviceDefinition.OnOff
+   * @generated
+   */
+  public Adapter createOnOffAdapter()
   {
     return null;
   }
@@ -911,6 +1064,21 @@ public class DeviceDefinitionAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createOrAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dk.sdu.gms.dds.deviceDefinition.Value <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dk.sdu.gms.dds.deviceDefinition.Value
+   * @generated
+   */
+  public Adapter createValueAdapter()
   {
     return null;
   }
