@@ -13,7 +13,7 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
 public abstract class ActuatorDefinition extends DeviceDefinition {
-  public static ActuatorDefinition[] Actuators = new ActuatorDefinition[] { new LEDActuator() };
+  public static ActuatorDefinition[] Actuators = new ActuatorDefinition[] { new GenericActuator() };
   
   public static ActuatorDefinition getActuatorDefinition(final Actuator actuator) {
     for (final ActuatorDefinition s : ActuatorDefinition.Actuators) {

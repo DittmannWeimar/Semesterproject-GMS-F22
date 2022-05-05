@@ -11,7 +11,7 @@ abstract class SensorDefinition extends DeviceDefinition {
 	
 	public static SensorDefinition[] Sensors = #[
 		new TemperatureHumiditySensor(),
-		new MoistureSensor(),
+		new GenericSensor(),
 		new DummySensor()
 	];
 	
@@ -71,10 +71,10 @@ abstract class SensorDefinition extends DeviceDefinition {
 	protected def generateIfPredicate(Sensor sensor, CharSequence content)'''
 	«IF sensor.predicate.size() != 0»
 	if ((bool)(«generateExpression(sensor.predicate.get(0))»)) {
-		«ENDIF»
 		«content»
 		«IF sensor.predicate.size() != 0»	
-		}
+	}
+	«ENDIF»
 	«ELSE»
 	«content»
 	«ENDIF»

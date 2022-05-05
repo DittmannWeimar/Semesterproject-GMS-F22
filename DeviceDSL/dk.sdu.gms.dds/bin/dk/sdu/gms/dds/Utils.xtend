@@ -112,22 +112,26 @@ class Utils {
 		return bytes;
 	}
 	
-	public static def getWorkersSampleNames(Gateway gateway) {
-		val sampleNames = new ArrayList<String>();
+	public static def getWorkerSensorOutputs(Gateway gateway) {
+		val outputs = new ArrayList<SensorOutput>();
 		for (worker: gateway.workers) {
 			for (device : worker.devices) {
 				if (device instanceof Sensor) {
 					for (output: device.outputs) {
-						sampleNames.add(getSampleMessageName(output))
+						outputs.add(output);
 					}
 				}
 			}
 		}
-		return sampleNames;
+		return outputs;
 	}
 	
 	public static dispatch def getSampleMessageName (SensorOutput output) {
 		output.sensor.worker.name + "_" + output.sensor.name + "_" + getOutputName(output.sensor, output)
+	}
+	
+	public static dispatch def getSampleMqttSubject (SensorOutput output) {
+		output.sensor.name + "," + getOutputName(output.sensor, output)
 	}
 	
 	public static def getOutputName (Sensor sensor, SensorOutput output) {
@@ -264,5 +268,23 @@ class Utils {
 	
 	public static def getSettingBindingBySettingName(Device device, String name) {
 		return getBindingName(findSettingByName(device, name));
+	}
+	
+	public static def hasSensors (Worker worker) {
+		for (device : worker.devices) {
+			if (device instanceof Sensor) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public static def hasActuators (Worker worker) {
+		for (device : worker.devices) {
+			if (device instanceof Actuator) {
+				return true;
+			}
+		}
+		return false;
 	}
 }

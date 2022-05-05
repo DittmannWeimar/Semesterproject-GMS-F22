@@ -3,6 +3,7 @@ package dk.sdu.gms.dds.generator;
 import dk.sdu.gms.dds.DeviceDefinition;
 import dk.sdu.gms.dds.Utils;
 import dk.sdu.gms.dds.deviceDefinition.Device;
+import dk.sdu.gms.dds.deviceDefinition.SensorOutput;
 import dk.sdu.gms.dds.deviceDefinition.Setting;
 import dk.sdu.gms.dds.deviceDefinition.Worker;
 import java.util.ArrayList;
@@ -367,11 +368,12 @@ public class WorkerGenerator {
     _builder.append("typedef struct message_sample : message_base {");
     _builder.newLine();
     {
-      ArrayList<String> _workersSampleNames = Utils.getWorkersSampleNames(Utils.gateway(worker));
-      for(final String sample : _workersSampleNames) {
+      ArrayList<SensorOutput> _workerSensorOutputs = Utils.getWorkerSensorOutputs(Utils.gateway(worker));
+      for(final SensorOutput output : _workerSensorOutputs) {
         _builder.append("\t");
         _builder.append("float ");
-        _builder.append(sample, "\t");
+        String _sampleMessageName = Utils.getSampleMessageName(output);
+        _builder.append(_sampleMessageName, "\t");
         _builder.append(";");
         _builder.newLineIfNotEmpty();
       }
@@ -385,6 +387,19 @@ public class WorkerGenerator {
     _builder.newLine();
     _builder.append("  ");
     _builder.append("// put your main code here, to run repeatedly:");
+    _builder.newLine();
+    {
+      ArrayList<SensorOutput> _workerSensorOutputs_1 = Utils.getWorkerSensorOutputs(Utils.gateway(worker));
+      for(final SensorOutput output_1 : _workerSensorOutputs_1) {
+        _builder.append("  ");
+        _builder.append("sampleMessage.");
+        String _sampleMessageName_1 = Utils.getSampleMessageName(output_1);
+        _builder.append(_sampleMessageName_1, "  ");
+        _builder.append(" = 1.0 / 0.0;");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("  ");
     _builder.newLine();
     _builder.append("  ");
     _builder.append("float value = 0;");
@@ -400,10 +415,19 @@ public class WorkerGenerator {
         _builder.newLineIfNotEmpty();
       }
     }
-    _builder.newLine();
     _builder.append("  ");
-    _builder.append("send_message(gatewayAddress, (uint8_t *) &sampleMessage, sizeof(sampleMessage));");
     _builder.newLine();
+    {
+      boolean _hasSensors = Utils.hasSensors(worker);
+      if (_hasSensors) {
+        _builder.append("  ");
+        _builder.append("sampleMessage.type = Sample;");
+        _builder.newLine();
+        _builder.append("  ");
+        _builder.append("send_message(gatewayAddress, (uint8_t *) &sampleMessage, sizeof(sampleMessage));");
+        _builder.newLine();
+      }
+    }
     _builder.append("  ");
     _builder.append("delay(");
     int _sleepTime = worker.getSleepTime();

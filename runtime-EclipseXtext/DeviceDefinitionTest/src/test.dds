@@ -2,45 +2,33 @@ System:
 	wifi "Chronos" with password "fizzfyr13"
 	mqtt "vald.io:3001" with username "kristian" and password "1234"
 	
-	Gateway test_gateway:
-		mac 11:22:33:44:55:66
+	Gateway main_gateway:
+		mac 58:BF:25:E0:77:98
 		
-		Worker test_worker1:
+		Worker pump_worker:
 		
-			mac 55:55:55:55:55:00
-			sleep for 10
-			 minutes
-			
-			Sensor TemperatureHumidity temp1:
-				pins in 4
-				out "temperature" as temp with mapping call pow(2, value)
-				out "humidity" as hum
-				sample if temp1.temp == TRUE
-				graph temperatureGraph
-			
-			Sensor Moisture mois:
-				pins in 5
-				out as moisture
-				setting threshold = 5
-				sample if temp1.hum > threshold
+			mac 10:97:BD:D5:3E:64
+			sleep for 2 seconds
 								
-			Sensor Dummy dummy:
-				out as dummy with mapping value + 20
+			Sensor TemperatureHumidity temperatureHumidity:
+				pins adc 4
+				out "temperature" as temp
+				out "humidity" as humi
+			
+			Sensor Generic moisture:
+				pins adc 32
+				out as moisture
 				
-			Actuator LED led1:
+		Worker led_worker:
+		
+			mac 10:97:BD:D4:4E:8C
+			sleep for 1 seconds
+			
+			Actuator Generic led:
 				pins dac 25
-				setting brightness = 0.5
-				when mois.moisture > 800
-				
-			Actuator LED led2:
-				pins dac 26
-				setting brightness = 0.5
-				on mois.moisture > 800 run for 2 seconds
-				
-			Actuator LED led3:
-				pins out 9
-				setting brightness = 0.5
-				on mois.moisture > 800 off mois.moisture < 200
+				setting power = 128
+				setting frequency = 1
+				when call sin(call millis() / ((1.0 / frequency)) * 1000.0) > 0
 	
 	Graph Line temperatureGraph:
 		category "basics"

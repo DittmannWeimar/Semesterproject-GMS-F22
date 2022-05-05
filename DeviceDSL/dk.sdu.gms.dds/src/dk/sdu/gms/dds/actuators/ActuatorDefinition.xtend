@@ -12,7 +12,7 @@ import dk.sdu.gms.dds.deviceDefinition.OnOff
 abstract class ActuatorDefinition extends DeviceDefinition {
 	
 	public static ActuatorDefinition[] Actuators = #[
-		new LEDActuator()
+		new GenericActuator()
 	];
 	
 	public static def ActuatorDefinition getActuatorDefinition(Actuator actuator) {

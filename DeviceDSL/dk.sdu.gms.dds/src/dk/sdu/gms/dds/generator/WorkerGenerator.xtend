@@ -138,21 +138,28 @@ public class WorkerGenerator {
 	message_setting settingMessage;
 	
 	typedef struct message_sample : message_base {
-		«FOR sample: getWorkersSampleNames(gateway(worker))»
-		float «sample»;
+		«FOR output: getWorkerSensorOutputs(gateway(worker))»
+		float «getSampleMessageName(output)»;
 		«ENDFOR»
 	} message_sample;
 	message_sample sampleMessage;
 
 	void loop() {
 	  // put your main code here, to run repeatedly:
+	  «FOR output: getWorkerSensorOutputs(gateway(worker))»
+	  sampleMessage.«getSampleMessageName(output)» = 1.0 / 0.0;
+	  «ENDFOR»
+	  
 	  float value = 0;
 	  
 	  «FOR device : worker.devices»
 	  «DeviceDefinition.getDefinition(device).generateLoop(device)»
 	  «ENDFOR»
-
+	  
+	  «IF hasSensors(worker)»
+	  sampleMessage.type = Sample;
 	  send_message(gatewayAddress, (uint8_t *) &sampleMessage, sizeof(sampleMessage));
+	  «ENDIF»
 	  delay(«worker.sleepTime * getTimeUnitMsMultiplier(worker.timeUnit)»);
 	}
 	

@@ -2,6 +2,7 @@ package dk.sdu.gms.dds.generator;
 
 import dk.sdu.gms.dds.Utils;
 import dk.sdu.gms.dds.deviceDefinition.Gateway;
+import dk.sdu.gms.dds.deviceDefinition.SensorOutput;
 import dk.sdu.gms.dds.deviceDefinition.Setting;
 import dk.sdu.gms.dds.deviceDefinition.Worker;
 import java.util.ArrayList;
@@ -78,11 +79,12 @@ public class GatewayGenerator {
     _builder.append("typedef struct message_sample : message_base {");
     _builder.newLine();
     {
-      ArrayList<String> _workersSampleNames = Utils.getWorkersSampleNames(gateway);
-      for(final String sample : _workersSampleNames) {
+      ArrayList<SensorOutput> _workerSensorOutputs = Utils.getWorkerSensorOutputs(gateway);
+      for(final SensorOutput output : _workerSensorOutputs) {
         _builder.append("\t");
         _builder.append("float ");
-        _builder.append(sample, "\t");
+        String _sampleMessageName = Utils.getSampleMessageName(output);
+        _builder.append(_sampleMessageName, "\t");
         _builder.append(";");
         _builder.newLineIfNotEmpty();
       }
@@ -643,19 +645,22 @@ public class GatewayGenerator {
     _builder.append("  ");
     _builder.newLine();
     {
-      ArrayList<String> _workersSampleNames_1 = Utils.getWorkersSampleNames(gateway);
-      for(final String sampleName : _workersSampleNames_1) {
+      ArrayList<SensorOutput> _workerSensorOutputs_1 = Utils.getWorkerSensorOutputs(gateway);
+      for(final SensorOutput output_1 : _workerSensorOutputs_1) {
         _builder.append("  ");
         _builder.append("if (!isnan(sampleMessage.");
-        _builder.append(sampleName, "  ");
+        String _sampleMessageName_1 = Utils.getSampleMessageName(output_1);
+        _builder.append(_sampleMessageName_1, "  ");
         _builder.append(")) {");
         _builder.newLineIfNotEmpty();
         _builder.append("  ");
         _builder.append("\t");
         _builder.append("client.publish(get_topic(\"samples\", mac, \"");
-        _builder.append(sampleName, "  \t");
+        String _sampleMqttSubject = Utils.getSampleMqttSubject(output_1);
+        _builder.append(_sampleMqttSubject, "  \t");
         _builder.append("\"), String(sampleMessage.");
-        _builder.append(sampleName, "  \t");
+        String _sampleMessageName_2 = Utils.getSampleMessageName(output_1);
+        _builder.append(_sampleMessageName_2, "  \t");
         _builder.append("));");
         _builder.newLineIfNotEmpty();
         _builder.append("  ");

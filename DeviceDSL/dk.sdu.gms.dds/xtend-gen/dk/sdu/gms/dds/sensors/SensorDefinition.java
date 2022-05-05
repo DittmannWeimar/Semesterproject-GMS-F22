@@ -11,7 +11,7 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
 public abstract class SensorDefinition extends DeviceDefinition {
-  public static SensorDefinition[] Sensors = new SensorDefinition[] { new TemperatureHumiditySensor(), new MoistureSensor(), new DummySensor() };
+  public static SensorDefinition[] Sensors = new SensorDefinition[] { new TemperatureHumiditySensor(), new GenericSensor(), new DummySensor() };
   
   public static SensorDefinition getSensorDefinition(final Sensor sensor) {
     for (final SensorDefinition s : SensorDefinition.Sensors) {
@@ -119,18 +119,17 @@ public abstract class SensorDefinition extends DeviceDefinition {
         _builder.append(_generateExpression);
         _builder.append(")) {");
         _builder.newLineIfNotEmpty();
-      }
-    }
-    _builder.append("\t");
-    _builder.append(content, "\t");
-    _builder.newLineIfNotEmpty();
-    {
-      int _size_1 = sensor.getPredicate().size();
-      boolean _notEquals_1 = (_size_1 != 0);
-      if (_notEquals_1) {
         _builder.append("\t");
-        _builder.append("}");
-        _builder.newLine();
+        _builder.append(content, "\t");
+        _builder.newLineIfNotEmpty();
+        {
+          int _size_1 = sensor.getPredicate().size();
+          boolean _notEquals_1 = (_size_1 != 0);
+          if (_notEquals_1) {
+            _builder.append("}");
+            _builder.newLine();
+          }
+        }
       } else {
         _builder.append(content);
         _builder.newLineIfNotEmpty();

@@ -8,7 +8,7 @@ typedef struct worker_info {
 	esp_now_peer_info_t info;
 };
 
-const int numWorkers = 1;
+const int numWorkers = 2;
 struct worker_info workers[numWorkers];
 worker_info null_worker;
 
@@ -26,10 +26,9 @@ typedef struct message_setting : message_base {
 message_setting settingMessage;
 
 typedef struct message_sample : message_base {
-	float test_worker1_temp1_temperature;
-	float test_worker1_temp1_humidity;
-	float test_worker1_mois_moisture;
-	float test_worker1_dummy_zero;
+	float pump_worker_temperatureHumidity_temperature;
+	float pump_worker_temperatureHumidity_humidity;
+	float pump_worker_moisture_sample;
 } message_sample;
 message_sample sampleMessage;
 
@@ -43,7 +42,7 @@ EspMQTTClient client(
   "vald.io",
   "kristian",
   "1234",
-  "gms-gateway-f79c7fea-beac-44c8-b712-d3d0e11d1d26",
+  "gms-gateway-ac364695-46a3-41f9-8e3a-8f389fdd2d03",
   3001
 );
 
@@ -96,10 +95,14 @@ void setup() {
 }
 
 void populate_worker_infos () {
-		set_mac_bytes(workers[0].address, 0x55, 0x55, 0x55, 0x55, 0x55, 0x00);
+		set_mac_bytes(workers[0].address, 0x10, 0x97, 0xBD, 0xD5, 0x3E, 0x64);
 		memcpy(workers[0].info.peer_addr, workers[0].address, 6);
 		workers[0].info.channel = 0;  
 		workers[0].info.encrypt = false;
+		set_mac_bytes(workers[1].address, 0x10, 0x97, 0xBD, 0xD4, 0x4E, 0x8C);
+		memcpy(workers[1].info.peer_addr, workers[1].address, 6);
+		workers[1].info.channel = 0;  
+		workers[1].info.encrypt = false;
 }
 
 void set_mac_bytes(uint8_t arr[6], uint8_t b0, uint8_t b1, uint8_t b2, uint8_t b3, uint8_t b4, uint8_t b5) {
@@ -124,17 +127,11 @@ int32_t getWiFiChannel(const char *ssid) {
 
 void onConnectionEstablished()
 {
-	client.subscribe("settings/" + WiFi.macAddress() + "/55:55:55:55:55:00/mois_threshold", [](const String &payload) {
-	set_worker_setting(0, 0, String(payload).toFloat());
+	client.subscribe("settings/" + WiFi.macAddress() + "/10:97:BD:D4:4E:8C/led_power", [](const String &payload) {
+	set_worker_setting(0, 1, String(payload).toFloat());
 	});
-	client.subscribe("settings/" + WiFi.macAddress() + "/55:55:55:55:55:00/led1_brightness", [](const String &payload) {
-	set_worker_setting(1, 0, String(payload).toFloat());
-	});
-	client.subscribe("settings/" + WiFi.macAddress() + "/55:55:55:55:55:00/led2_brightness", [](const String &payload) {
-	set_worker_setting(2, 0, String(payload).toFloat());
-	});
-	client.subscribe("settings/" + WiFi.macAddress() + "/55:55:55:55:55:00/led3_brightness", [](const String &payload) {
-	set_worker_setting(3, 0, String(payload).toFloat());
+	client.subscribe("settings/" + WiFi.macAddress() + "/10:97:BD:D4:4E:8C/led_frequency", [](const String &payload) {
+	set_worker_setting(1, 1, String(payload).toFloat());
 	});
 }
 
@@ -224,17 +221,14 @@ void handle_sample(const uint8_t* mac, const uint8_t *incomingData, int len) {
   print_mac(mac);
   Serial.println("");
   
-  if (!isnan(sampleMessage.test_worker1_temp1_temperature)) {
-  	client.publish(get_topic("samples", mac, "test_worker1_temp1_temperature"), String(sampleMessage.test_worker1_temp1_temperature));
+  if (!isnan(sampleMessage.pump_worker_temperatureHumidity_temperature)) {
+  	client.publish(get_topic("samples", mac, "temperatureHumidity,temperature"), String(sampleMessage.pump_worker_temperatureHumidity_temperature));
   }
-  if (!isnan(sampleMessage.test_worker1_temp1_humidity)) {
-  	client.publish(get_topic("samples", mac, "test_worker1_temp1_humidity"), String(sampleMessage.test_worker1_temp1_humidity));
+  if (!isnan(sampleMessage.pump_worker_temperatureHumidity_humidity)) {
+  	client.publish(get_topic("samples", mac, "temperatureHumidity,humidity"), String(sampleMessage.pump_worker_temperatureHumidity_humidity));
   }
-  if (!isnan(sampleMessage.test_worker1_mois_moisture)) {
-  	client.publish(get_topic("samples", mac, "test_worker1_mois_moisture"), String(sampleMessage.test_worker1_mois_moisture));
-  }
-  if (!isnan(sampleMessage.test_worker1_dummy_zero)) {
-  	client.publish(get_topic("samples", mac, "test_worker1_dummy_zero"), String(sampleMessage.test_worker1_dummy_zero));
+  if (!isnan(sampleMessage.pump_worker_moisture_sample)) {
+  	client.publish(get_topic("samples", mac, "moisture,sample"), String(sampleMessage.pump_worker_moisture_sample));
   }
 }
 

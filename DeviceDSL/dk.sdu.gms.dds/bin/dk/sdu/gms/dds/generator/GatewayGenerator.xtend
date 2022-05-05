@@ -45,8 +45,8 @@ public class GatewayGenerator {
 		message_setting settingMessage;
 		
 		typedef struct message_sample : message_base {
-			«FOR sample: getWorkersSampleNames(gateway)»
-				float «sample»;
+			«FOR output: getWorkerSensorOutputs(gateway)»
+				float «getSampleMessageName(output)»;
 		    «ENDFOR»
 		} message_sample;
 		message_sample sampleMessage;
@@ -244,9 +244,9 @@ public class GatewayGenerator {
 		  print_mac(mac);
 		  Serial.println("");
 		  
-		  «FOR sampleName : getWorkersSampleNames(gateway)»
-		  if (!isnan(sampleMessage.«sampleName»)) {
-		  	client.publish(get_topic("samples", mac, "«sampleName»"), String(sampleMessage.«sampleName»));
+		  «FOR output : getWorkerSensorOutputs(gateway)»
+		  if (!isnan(sampleMessage.«getSampleMessageName(output)»)) {
+		  	client.publish(get_topic("samples", mac, "«getSampleMqttSubject(output)»"), String(sampleMessage.«getSampleMessageName(output)»));
 		  }
 		  «ENDFOR»
 		}

@@ -133,8 +133,8 @@ public class Utils {
     return bytes;
   }
   
-  public static ArrayList<String> getWorkersSampleNames(final Gateway gateway) {
-    final ArrayList<String> sampleNames = new ArrayList<String>();
+  public static ArrayList<SensorOutput> getWorkerSensorOutputs(final Gateway gateway) {
+    final ArrayList<SensorOutput> outputs = new ArrayList<SensorOutput>();
     EList<Worker> _workers = gateway.getWorkers();
     for (final Worker worker : _workers) {
       EList<Device> _devices = worker.getDevices();
@@ -142,12 +142,12 @@ public class Utils {
         if ((device instanceof Sensor)) {
           EList<SensorOutput> _outputs = ((Sensor)device).getOutputs();
           for (final SensorOutput output : _outputs) {
-            sampleNames.add(Utils.getSampleMessageName(output));
+            outputs.add(output);
           }
         }
       }
     }
-    return sampleNames;
+    return outputs;
   }
   
   public static String _getSampleMessageName(final SensorOutput output) {
@@ -158,6 +158,13 @@ public class Utils {
     String _plus_2 = (_plus_1 + "_");
     String _outputName = Utils.getOutputName(Utils.sensor(output), output);
     return (_plus_2 + _outputName);
+  }
+  
+  public static String _getSampleMqttSubject(final SensorOutput output) {
+    String _name = Utils.sensor(output).getName();
+    String _plus = (_name + ",");
+    String _outputName = Utils.getOutputName(Utils.sensor(output), output);
+    return (_plus + _outputName);
   }
   
   public static String getOutputName(final Sensor sensor, final SensorOutput output) {
@@ -526,8 +533,32 @@ public class Utils {
     return Utils.getBindingName(Utils.findSettingByName(device, name));
   }
   
+  public static boolean hasSensors(final Worker worker) {
+    EList<Device> _devices = worker.getDevices();
+    for (final Device device : _devices) {
+      if ((device instanceof Sensor)) {
+        return true;
+      }
+    }
+    return false;
+  }
+  
+  public static boolean hasActuators(final Worker worker) {
+    EList<Device> _devices = worker.getDevices();
+    for (final Device device : _devices) {
+      if ((device instanceof Actuator)) {
+        return true;
+      }
+    }
+    return false;
+  }
+  
   public static String getSampleMessageName(final SensorOutput output) {
     return _getSampleMessageName(output);
+  }
+  
+  public static String getSampleMqttSubject(final SensorOutput output) {
+    return _getSampleMqttSubject(output);
   }
   
   public static String getBindingName(final Binding output) {
