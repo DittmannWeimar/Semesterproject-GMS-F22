@@ -9,8 +9,14 @@ import dk.sdu.gms.dds.actuators.ActuatorDefinition;
 import dk.sdu.gms.dds.deviceDefinition.Actuator;
 import dk.sdu.gms.dds.deviceDefinition.Device;
 import dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage;
+import dk.sdu.gms.dds.deviceDefinition.ExternalVariableUse;
+import dk.sdu.gms.dds.deviceDefinition.Graph;
+import dk.sdu.gms.dds.deviceDefinition.GraphVariableUse;
+import dk.sdu.gms.dds.deviceDefinition.InternalVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.Sensor;
+import dk.sdu.gms.dds.deviceDefinition.VariableUse;
 import dk.sdu.gms.dds.sensors.SensorDefinition;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.validation.Check;
 
 /**
@@ -63,5 +69,46 @@ public class DeviceDefinitionValidator extends AbstractDeviceDefinitionValidator
         }
       }
     }
+  }
+  
+  @Check
+  public void checkGraphVariableUse(final VariableUse use) {
+    final boolean hgp = this.hasGraphParent(use);
+    boolean _matched = false;
+    if (use instanceof InternalVariableUse) {
+      _matched=true;
+      if (hgp) {
+        this.error("Can only reference worker variables from the same worker.", DeviceDefinitionPackage.Literals.VARIABLE_USE__REF);
+      }
+    }
+    if (!_matched) {
+      if (use instanceof ExternalVariableUse) {
+        _matched=true;
+        if (hgp) {
+          this.error("Can only reference worker variables from the same worker.", DeviceDefinitionPackage.Literals.VARIABLE_USE__REF);
+        }
+      }
+    }
+    if (!_matched) {
+      if (use instanceof GraphVariableUse) {
+        _matched=true;
+        if ((!hgp)) {
+          this.error("Can only reference other device variables from graphs.", DeviceDefinitionPackage.Literals.VARIABLE_USE__REF);
+        }
+      }
+    }
+  }
+  
+  public boolean hasGraphParent(final EObject obj) {
+    EObject current = obj;
+    while ((current.eContainer() != null)) {
+      {
+        current = current.eContainer();
+        if ((current instanceof Graph)) {
+          return true;
+        }
+      }
+    }
+    return false;
   }
 }

@@ -11,11 +11,28 @@ System:
 ;
 
 Graph:
-	'Graph' type = ID name=ID ':'
+	'Graph' ':'
 	'category' category = STRING
 	'title' title = STRING
 	'x' xlabel = STRING
 	'y' ylabel = STRING
+	(lines += GraphLine)+
+;
+
+GraphLine:
+	'line' output = Exp
+	('legend' legend = STRING)?
+	('color' color = Color)?
+;
+
+Color:
+	{RGB} '(' red = DECIMAL ',' green = DECIMAL ',' blue = DECIMAL ')' |
+	{Preset} preset = ColorPreset |
+	{Random} 'random'
+;
+
+enum ColorPreset:
+	Red='red' | Green='green' | Blue='blue' | Yellow='yellow'
 ;
 	
 Gateway:
@@ -41,7 +58,6 @@ Sensor:
 	(outputs += SensorOutput)*
 	(settings += Setting)*
 	('sample' 'if' predicate += Exp)?
-	('graph' graph = [Graph])?
 ;
 
 Pin:
@@ -136,8 +152,12 @@ ExternalVariableUse:
 	obj = [Device] ('.'|'->') ref = [Binding] 
 ;
 
+GraphVariableUse:
+	worker = [Worker] ('.'|'->') device = [Device] ('.'|'->') ref = [Binding]
+;
+
 VariableUse:
-	InternalVariableUse | ExternalVariableUse
+	InternalVariableUse | ExternalVariableUse | GraphVariableUse
 ;
 
 Parenthesis:

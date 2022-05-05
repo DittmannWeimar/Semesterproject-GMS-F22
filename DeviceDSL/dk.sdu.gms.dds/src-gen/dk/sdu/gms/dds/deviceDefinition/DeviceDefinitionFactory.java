@@ -42,6 +42,24 @@ public interface DeviceDefinitionFactory extends EFactory
   Graph createGraph();
 
   /**
+   * Returns a new object of class '<em>Graph Line</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Graph Line</em>'.
+   * @generated
+   */
+  GraphLine createGraphLine();
+
+  /**
+   * Returns a new object of class '<em>Color</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Color</em>'.
+   * @generated
+   */
+  Color createColor();
+
+  /**
    * Returns a new object of class '<em>Gateway</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -195,6 +213,15 @@ public interface DeviceDefinitionFactory extends EFactory
   ExternalVariableUse createExternalVariableUse();
 
   /**
+   * Returns a new object of class '<em>Graph Variable Use</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Graph Variable Use</em>'.
+   * @generated
+   */
+  GraphVariableUse createGraphVariableUse();
+
+  /**
    * Returns a new object of class '<em>Variable Use</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -211,6 +238,33 @@ public interface DeviceDefinitionFactory extends EFactory
    * @generated
    */
   Parenthesis createParenthesis();
+
+  /**
+   * Returns a new object of class '<em>RGB</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>RGB</em>'.
+   * @generated
+   */
+  RGB createRGB();
+
+  /**
+   * Returns a new object of class '<em>Preset</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Preset</em>'.
+   * @generated
+   */
+  Preset createPreset();
+
+  /**
+   * Returns a new object of class '<em>Random</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Random</em>'.
+   * @generated
+   */
+  Random createRandom();
 
   /**
    * Returns a new object of class '<em>ADC</em>'.

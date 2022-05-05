@@ -23,6 +23,7 @@ import org.eclipse.xtext.parser.*;
 import org.eclipse.xtext.parser.impl.*;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
@@ -271,55 +272,19 @@ ruleGraph returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getGraphAccess().getGraphKeyword_0());
 		}
-		(
-			(
-				lv_type_1_0=RULE_ID
-				{
-					newLeafNode(lv_type_1_0, grammarAccess.getGraphAccess().getTypeIDTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getGraphRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"type",
-						lv_type_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
-		(
-			(
-				lv_name_2_0=RULE_ID
-				{
-					newLeafNode(lv_name_2_0, grammarAccess.getGraphAccess().getNameIDTerminalRuleCall_2_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getGraphRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"name",
-						lv_name_2_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
-		otherlv_3=':'
+		otherlv_1=':'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getGraphAccess().getColonKeyword_3());
+			newLeafNode(otherlv_1, grammarAccess.getGraphAccess().getColonKeyword_1());
 		}
-		otherlv_4='category'
+		otherlv_2='category'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getGraphAccess().getCategoryKeyword_4());
+			newLeafNode(otherlv_2, grammarAccess.getGraphAccess().getCategoryKeyword_2());
 		}
 		(
 			(
-				lv_category_5_0=RULE_STRING
+				lv_category_3_0=RULE_STRING
 				{
-					newLeafNode(lv_category_5_0, grammarAccess.getGraphAccess().getCategorySTRINGTerminalRuleCall_5_0());
+					newLeafNode(lv_category_3_0, grammarAccess.getGraphAccess().getCategorySTRINGTerminalRuleCall_3_0());
 				}
 				{
 					if ($current==null) {
@@ -328,20 +293,20 @@ ruleGraph returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"category",
-						lv_category_5_0,
+						lv_category_3_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_6='title'
+		otherlv_4='title'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getGraphAccess().getTitleKeyword_6());
+			newLeafNode(otherlv_4, grammarAccess.getGraphAccess().getTitleKeyword_4());
 		}
 		(
 			(
-				lv_title_7_0=RULE_STRING
+				lv_title_5_0=RULE_STRING
 				{
-					newLeafNode(lv_title_7_0, grammarAccess.getGraphAccess().getTitleSTRINGTerminalRuleCall_7_0());
+					newLeafNode(lv_title_5_0, grammarAccess.getGraphAccess().getTitleSTRINGTerminalRuleCall_5_0());
 				}
 				{
 					if ($current==null) {
@@ -350,20 +315,20 @@ ruleGraph returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"title",
-						lv_title_7_0,
+						lv_title_5_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_8='x'
+		otherlv_6='x'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getGraphAccess().getXKeyword_8());
+			newLeafNode(otherlv_6, grammarAccess.getGraphAccess().getXKeyword_6());
 		}
 		(
 			(
-				lv_xlabel_9_0=RULE_STRING
+				lv_xlabel_7_0=RULE_STRING
 				{
-					newLeafNode(lv_xlabel_9_0, grammarAccess.getGraphAccess().getXlabelSTRINGTerminalRuleCall_9_0());
+					newLeafNode(lv_xlabel_7_0, grammarAccess.getGraphAccess().getXlabelSTRINGTerminalRuleCall_7_0());
 				}
 				{
 					if ($current==null) {
@@ -372,20 +337,20 @@ ruleGraph returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"xlabel",
-						lv_xlabel_9_0,
+						lv_xlabel_7_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_10='y'
+		otherlv_8='y'
 		{
-			newLeafNode(otherlv_10, grammarAccess.getGraphAccess().getYKeyword_10());
+			newLeafNode(otherlv_8, grammarAccess.getGraphAccess().getYKeyword_8());
 		}
 		(
 			(
-				lv_ylabel_11_0=RULE_STRING
+				lv_ylabel_9_0=RULE_STRING
 				{
-					newLeafNode(lv_ylabel_11_0, grammarAccess.getGraphAccess().getYlabelSTRINGTerminalRuleCall_11_0());
+					newLeafNode(lv_ylabel_9_0, grammarAccess.getGraphAccess().getYlabelSTRINGTerminalRuleCall_9_0());
 				}
 				{
 					if ($current==null) {
@@ -394,10 +359,261 @@ ruleGraph returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"ylabel",
-						lv_ylabel_11_0,
+						lv_ylabel_9_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getGraphAccess().getLinesGraphLineParserRuleCall_10_0());
+				}
+				lv_lines_10_0=ruleGraphLine
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getGraphRule());
+					}
+					add(
+						$current,
+						"lines",
+						lv_lines_10_0,
+						"dk.sdu.gms.dds.DeviceDefinition.GraphLine");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)+
+	)
+;
+
+// Entry rule entryRuleGraphLine
+entryRuleGraphLine returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getGraphLineRule()); }
+	iv_ruleGraphLine=ruleGraphLine
+	{ $current=$iv_ruleGraphLine.current; }
+	EOF;
+
+// Rule GraphLine
+ruleGraphLine returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='line'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getGraphLineAccess().getLineKeyword_0());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getGraphLineAccess().getOutputExpParserRuleCall_1_0());
+				}
+				lv_output_1_0=ruleExp
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getGraphLineRule());
+					}
+					set(
+						$current,
+						"output",
+						lv_output_1_0,
+						"dk.sdu.gms.dds.DeviceDefinition.Exp");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_2='legend'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getGraphLineAccess().getLegendKeyword_2_0());
+			}
+			(
+				(
+					lv_legend_3_0=RULE_STRING
+					{
+						newLeafNode(lv_legend_3_0, grammarAccess.getGraphLineAccess().getLegendSTRINGTerminalRuleCall_2_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getGraphLineRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"legend",
+							lv_legend_3_0,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+				)
+			)
+		)?
+		(
+			otherlv_4='color'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getGraphLineAccess().getColorKeyword_3_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getGraphLineAccess().getColorColorParserRuleCall_3_1_0());
+					}
+					lv_color_5_0=ruleColor
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getGraphLineRule());
+						}
+						set(
+							$current,
+							"color",
+							lv_color_5_0,
+							"dk.sdu.gms.dds.DeviceDefinition.Color");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+	)
+;
+
+// Entry rule entryRuleColor
+entryRuleColor returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getColorRule()); }
+	iv_ruleColor=ruleColor
+	{ $current=$iv_ruleColor.current; }
+	EOF;
+
+// Rule Color
+ruleColor returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getColorAccess().getRGBAction_0_0(),
+						$current);
+				}
+			)
+			otherlv_1='('
+			{
+				newLeafNode(otherlv_1, grammarAccess.getColorAccess().getLeftParenthesisKeyword_0_1());
+			}
+			(
+				(
+					lv_red_2_0=RULE_DECIMAL
+					{
+						newLeafNode(lv_red_2_0, grammarAccess.getColorAccess().getRedDECIMALTerminalRuleCall_0_2_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getColorRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"red",
+							lv_red_2_0,
+							"dk.sdu.gms.dds.DeviceDefinition.DECIMAL");
+					}
+				)
+			)
+			otherlv_3=','
+			{
+				newLeafNode(otherlv_3, grammarAccess.getColorAccess().getCommaKeyword_0_3());
+			}
+			(
+				(
+					lv_green_4_0=RULE_DECIMAL
+					{
+						newLeafNode(lv_green_4_0, grammarAccess.getColorAccess().getGreenDECIMALTerminalRuleCall_0_4_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getColorRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"green",
+							lv_green_4_0,
+							"dk.sdu.gms.dds.DeviceDefinition.DECIMAL");
+					}
+				)
+			)
+			otherlv_5=','
+			{
+				newLeafNode(otherlv_5, grammarAccess.getColorAccess().getCommaKeyword_0_5());
+			}
+			(
+				(
+					lv_blue_6_0=RULE_DECIMAL
+					{
+						newLeafNode(lv_blue_6_0, grammarAccess.getColorAccess().getBlueDECIMALTerminalRuleCall_0_6_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getColorRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"blue",
+							lv_blue_6_0,
+							"dk.sdu.gms.dds.DeviceDefinition.DECIMAL");
+					}
+				)
+			)
+			otherlv_7=')'
+			{
+				newLeafNode(otherlv_7, grammarAccess.getColorAccess().getRightParenthesisKeyword_0_7());
+			}
+		)
+		    |
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getColorAccess().getPresetAction_1_0(),
+						$current);
+				}
+			)
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getColorAccess().getPresetColorPresetEnumRuleCall_1_1_0());
+					}
+					lv_preset_9_0=ruleColorPreset
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getColorRule());
+						}
+						set(
+							$current,
+							"preset",
+							lv_preset_9_0,
+							"dk.sdu.gms.dds.DeviceDefinition.ColorPreset");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)
+		    |
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getColorAccess().getRandomAction_2_0(),
+						$current);
+				}
+			)
+			otherlv_11='random'
+			{
+				newLeafNode(otherlv_11, grammarAccess.getColorAccess().getRandomKeyword_2_1());
+			}
 		)
 	)
 ;
@@ -832,25 +1048,6 @@ ruleSensor returns [EObject current=null]
 							lv_predicate_12_0,
 							"dk.sdu.gms.dds.DeviceDefinition.Exp");
 						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
-			otherlv_13='graph'
-			{
-				newLeafNode(otherlv_13, grammarAccess.getSensorAccess().getGraphKeyword_8_0());
-			}
-			(
-				(
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getSensorRule());
-						}
-					}
-					otherlv_14=RULE_ID
-					{
-						newLeafNode(otherlv_14, grammarAccess.getSensorAccess().getGraphGraphCrossReference_8_1_0());
 					}
 				)
 			)
@@ -2344,6 +2541,86 @@ ruleExternalVariableUse returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleGraphVariableUse
+entryRuleGraphVariableUse returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getGraphVariableUseRule()); }
+	iv_ruleGraphVariableUse=ruleGraphVariableUse
+	{ $current=$iv_ruleGraphVariableUse.current; }
+	EOF;
+
+// Rule GraphVariableUse
+ruleGraphVariableUse returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGraphVariableUseRule());
+					}
+				}
+				otherlv_0=RULE_ID
+				{
+					newLeafNode(otherlv_0, grammarAccess.getGraphVariableUseAccess().getWorkerWorkerCrossReference_0_0());
+				}
+			)
+		)
+		(
+			otherlv_1='.'
+			{
+				newLeafNode(otherlv_1, grammarAccess.getGraphVariableUseAccess().getFullStopKeyword_1_0());
+			}
+			    |
+			otherlv_2='->'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getGraphVariableUseAccess().getHyphenMinusGreaterThanSignKeyword_1_1());
+			}
+		)
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGraphVariableUseRule());
+					}
+				}
+				otherlv_3=RULE_ID
+				{
+					newLeafNode(otherlv_3, grammarAccess.getGraphVariableUseAccess().getDeviceDeviceCrossReference_2_0());
+				}
+			)
+		)
+		(
+			otherlv_4='.'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getGraphVariableUseAccess().getFullStopKeyword_3_0());
+			}
+			    |
+			otherlv_5='->'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getGraphVariableUseAccess().getHyphenMinusGreaterThanSignKeyword_3_1());
+			}
+		)
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGraphVariableUseRule());
+					}
+				}
+				otherlv_6=RULE_ID
+				{
+					newLeafNode(otherlv_6, grammarAccess.getGraphVariableUseAccess().getRefBindingCrossReference_4_0());
+				}
+			)
+		)
+	)
+;
+
 // Entry rule entryRuleVariableUse
 entryRuleVariableUse returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getVariableUseRule()); }
@@ -2375,6 +2652,15 @@ ruleVariableUse returns [EObject current=null]
 		this_ExternalVariableUse_1=ruleExternalVariableUse
 		{
 			$current = $this_ExternalVariableUse_1.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getVariableUseAccess().getGraphVariableUseParserRuleCall_2());
+		}
+		this_GraphVariableUse_2=ruleGraphVariableUse
+		{
+			$current = $this_GraphVariableUse_2.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -2423,6 +2709,49 @@ ruleParenthesis returns [EObject current=null]
 		{
 			newLeafNode(otherlv_2, grammarAccess.getParenthesisAccess().getRightParenthesisKeyword_2());
 		}
+	)
+;
+
+// Rule ColorPreset
+ruleColorPreset returns [Enumerator current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			enumLiteral_0='red'
+			{
+				$current = grammarAccess.getColorPresetAccess().getRedEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getColorPresetAccess().getRedEnumLiteralDeclaration_0());
+			}
+		)
+		    |
+		(
+			enumLiteral_1='green'
+			{
+				$current = grammarAccess.getColorPresetAccess().getGreenEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getColorPresetAccess().getGreenEnumLiteralDeclaration_1());
+			}
+		)
+		    |
+		(
+			enumLiteral_2='blue'
+			{
+				$current = grammarAccess.getColorPresetAccess().getBlueEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_2, grammarAccess.getColorPresetAccess().getBlueEnumLiteralDeclaration_2());
+			}
+		)
+		    |
+		(
+			enumLiteral_3='yellow'
+			{
+				$current = grammarAccess.getColorPresetAccess().getYellowEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_3, grammarAccess.getColorPresetAccess().getYellowEnumLiteralDeclaration_3());
+			}
+		)
 	)
 ;
 

@@ -5,21 +5,17 @@ package dk.sdu.gms.dds.deviceDefinition.impl;
 
 import dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage;
 import dk.sdu.gms.dds.deviceDefinition.Expression;
-import dk.sdu.gms.dds.deviceDefinition.Graph;
 import dk.sdu.gms.dds.deviceDefinition.Sensor;
 import dk.sdu.gms.dds.deviceDefinition.SensorOutput;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -34,7 +30,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.SensorImpl#getOutputs <em>Outputs</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.SensorImpl#getPredicate <em>Predicate</em>}</li>
- *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.SensorImpl#getGraph <em>Graph</em>}</li>
  * </ul>
  *
  * @generated
@@ -60,16 +55,6 @@ public class SensorImpl extends DeviceImpl implements Sensor
    * @ordered
    */
   protected EList<Expression> predicate;
-
-  /**
-   * The cached value of the '{@link #getGraph() <em>Graph</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getGraph()
-   * @generated
-   * @ordered
-   */
-  protected Graph graph;
 
   /**
    * <!-- begin-user-doc -->
@@ -128,51 +113,6 @@ public class SensorImpl extends DeviceImpl implements Sensor
    * @generated
    */
   @Override
-  public Graph getGraph()
-  {
-    if (graph != null && graph.eIsProxy())
-    {
-      InternalEObject oldGraph = (InternalEObject)graph;
-      graph = (Graph)eResolveProxy(oldGraph);
-      if (graph != oldGraph)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, DeviceDefinitionPackage.SENSOR__GRAPH, oldGraph, graph));
-      }
-    }
-    return graph;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Graph basicGetGraph()
-  {
-    return graph;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setGraph(Graph newGraph)
-  {
-    Graph oldGraph = graph;
-    graph = newGraph;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DeviceDefinitionPackage.SENSOR__GRAPH, oldGraph, graph));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -199,9 +139,6 @@ public class SensorImpl extends DeviceImpl implements Sensor
         return getOutputs();
       case DeviceDefinitionPackage.SENSOR__PREDICATE:
         return getPredicate();
-      case DeviceDefinitionPackage.SENSOR__GRAPH:
-        if (resolve) return getGraph();
-        return basicGetGraph();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -225,9 +162,6 @@ public class SensorImpl extends DeviceImpl implements Sensor
         getPredicate().clear();
         getPredicate().addAll((Collection<? extends Expression>)newValue);
         return;
-      case DeviceDefinitionPackage.SENSOR__GRAPH:
-        setGraph((Graph)newValue);
-        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -248,9 +182,6 @@ public class SensorImpl extends DeviceImpl implements Sensor
       case DeviceDefinitionPackage.SENSOR__PREDICATE:
         getPredicate().clear();
         return;
-      case DeviceDefinitionPackage.SENSOR__GRAPH:
-        setGraph((Graph)null);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -269,8 +200,6 @@ public class SensorImpl extends DeviceImpl implements Sensor
         return outputs != null && !outputs.isEmpty();
       case DeviceDefinitionPackage.SENSOR__PREDICATE:
         return predicate != null && !predicate.isEmpty();
-      case DeviceDefinitionPackage.SENSOR__GRAPH:
-        return graph != null;
     }
     return super.eIsSet(featureID);
   }

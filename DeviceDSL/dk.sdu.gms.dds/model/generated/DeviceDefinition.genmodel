@@ -6,6 +6,12 @@
     complianceLevel="8.0" copyrightFields="false" runtimeVersion="2.20">
   <genPackages prefix="DeviceDefinition" basePackage="dk.sdu.gms.dds" disposableProviderFactory="true"
       fileExtensions="dds" ecorePackage="DeviceDefinition.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="DeviceDefinition.ecore#//ColorPreset">
+      <genEnumLiterals ecoreEnumLiteral="DeviceDefinition.ecore#//ColorPreset/Red"/>
+      <genEnumLiterals ecoreEnumLiteral="DeviceDefinition.ecore#//ColorPreset/Green"/>
+      <genEnumLiterals ecoreEnumLiteral="DeviceDefinition.ecore#//ColorPreset/Blue"/>
+      <genEnumLiterals ecoreEnumLiteral="DeviceDefinition.ecore#//ColorPreset/Yellow"/>
+    </genEnums>
     <genClasses ecoreClass="DeviceDefinition.ecore#//System">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//System/wifiSsid"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//System/wifiPassword"/>
@@ -16,13 +22,18 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//System/graphs"/>
     </genClasses>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Graph">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Graph/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Graph/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Graph/category"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Graph/title"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Graph/xlabel"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Graph/ylabel"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Graph/lines"/>
     </genClasses>
+    <genClasses ecoreClass="DeviceDefinition.ecore#//GraphLine">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//GraphLine/output"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//GraphLine/legend"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//GraphLine/color"/>
+    </genClasses>
+    <genClasses ecoreClass="DeviceDefinition.ecore#//Color"/>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Gateway">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Gateway/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Gateway/mac"/>
@@ -44,7 +55,6 @@
     <genClasses ecoreClass="DeviceDefinition.ecore#//Sensor">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Sensor/outputs"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Sensor/predicate"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Sensor/graph"/>
     </genClasses>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Pin">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Pin/type"/>
@@ -76,12 +86,25 @@
     <genClasses ecoreClass="DeviceDefinition.ecore#//ExternalVariableUse">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//ExternalVariableUse/obj"/>
     </genClasses>
+    <genClasses ecoreClass="DeviceDefinition.ecore#//GraphVariableUse">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//GraphVariableUse/worker"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//GraphVariableUse/device"/>
+    </genClasses>
     <genClasses ecoreClass="DeviceDefinition.ecore#//VariableUse">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//VariableUse/ref"/>
     </genClasses>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Parenthesis">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Parenthesis/exp"/>
     </genClasses>
+    <genClasses ecoreClass="DeviceDefinition.ecore#//RGB">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//RGB/red"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//RGB/green"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//RGB/blue"/>
+    </genClasses>
+    <genClasses ecoreClass="DeviceDefinition.ecore#//Preset">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Preset/preset"/>
+    </genClasses>
+    <genClasses ecoreClass="DeviceDefinition.ecore#//Random"/>
     <genClasses ecoreClass="DeviceDefinition.ecore#//ADC"/>
     <genClasses ecoreClass="DeviceDefinition.ecore#//DAC"/>
     <genClasses ecoreClass="DeviceDefinition.ecore#//GenericIn"/>

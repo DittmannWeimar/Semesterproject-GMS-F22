@@ -11,6 +11,12 @@ import org.eclipse.xtext.validation.Check
 import dk.sdu.gms.dds.sensors.SensorDefinition
 import dk.sdu.gms.dds.actuators.ActuatorDefinition
 import dk.sdu.gms.dds.DeviceDefinition
+import dk.sdu.gms.dds.deviceDefinition.VariableUse
+import org.eclipse.emf.ecore.EObject
+import dk.sdu.gms.dds.deviceDefinition.InternalVariableUse
+import dk.sdu.gms.dds.deviceDefinition.ExternalVariableUse
+import dk.sdu.gms.dds.deviceDefinition.GraphVariableUse
+import dk.sdu.gms.dds.deviceDefinition.Graph
 
 /**
  * This class contains custom validation rules. 
@@ -44,4 +50,24 @@ class DeviceDefinitionValidator extends AbstractDeviceDefinitionValidator {
 		}
 	}
 	
+	@Check
+	def checkGraphVariableUse (VariableUse use) {
+		val hgp = hasGraphParent(use);
+		switch (use) {
+			InternalVariableUse: if (hgp) error('Can only reference worker variables from the same worker.', DeviceDefinitionPackage.Literals.VARIABLE_USE__REF)
+			ExternalVariableUse: if (hgp) error('Can only reference worker variables from the same worker.', DeviceDefinitionPackage.Literals.VARIABLE_USE__REF)
+			GraphVariableUse: if (!hgp) error('Can only reference other device variables from graphs.', DeviceDefinitionPackage.Literals.VARIABLE_USE__REF)
+		}
+	}
+	
+	def hasGraphParent (EObject obj) {
+		var current = obj;
+		while (current.eContainer !== null) {
+			current = current.eContainer;
+			if (current instanceof Graph) {
+				return true;
+			}
+		}
+		return false;
+	}
 }

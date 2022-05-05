@@ -30,8 +30,10 @@ System:
 				setting frequency = 1
 				when call sin(call millis() / ((1.0 / frequency)) * 1000.0) > 0
 	
-	Graph Line temperatureGraph:
+	Graph:
 		category "basics"
 		title "Temperature"
 		x "Time"
 		y "Degrees (C)"
+		line pump_worker.temperatureHumidity.temp + 5 legend "pump worker" color red
+		line pump_worker.temperatureHumidity.humi - 5 color (0.5, 0.5, 0.2)

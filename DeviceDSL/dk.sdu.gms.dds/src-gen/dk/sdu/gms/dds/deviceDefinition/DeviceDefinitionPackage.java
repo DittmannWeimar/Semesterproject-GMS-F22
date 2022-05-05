@@ -5,6 +5,7 @@ package dk.sdu.gms.dds.deviceDefinition;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -150,31 +151,13 @@ public interface DeviceDefinitionPackage extends EPackage
   int GRAPH = 1;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GRAPH__TYPE = 0;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GRAPH__NAME = 1;
-
-  /**
    * The feature id for the '<em><b>Category</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GRAPH__CATEGORY = 2;
+  int GRAPH__CATEGORY = 0;
 
   /**
    * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -183,7 +166,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GRAPH__TITLE = 3;
+  int GRAPH__TITLE = 1;
 
   /**
    * The feature id for the '<em><b>Xlabel</b></em>' attribute.
@@ -192,7 +175,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GRAPH__XLABEL = 4;
+  int GRAPH__XLABEL = 2;
 
   /**
    * The feature id for the '<em><b>Ylabel</b></em>' attribute.
@@ -201,7 +184,16 @@ public interface DeviceDefinitionPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GRAPH__YLABEL = 5;
+  int GRAPH__YLABEL = 3;
+
+  /**
+   * The feature id for the '<em><b>Lines</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GRAPH__LINES = 4;
 
   /**
    * The number of structural features of the '<em>Graph</em>' class.
@@ -210,7 +202,72 @@ public interface DeviceDefinitionPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GRAPH_FEATURE_COUNT = 6;
+  int GRAPH_FEATURE_COUNT = 5;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.GraphLineImpl <em>Graph Line</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.gms.dds.deviceDefinition.impl.GraphLineImpl
+   * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getGraphLine()
+   * @generated
+   */
+  int GRAPH_LINE = 2;
+
+  /**
+   * The feature id for the '<em><b>Output</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GRAPH_LINE__OUTPUT = 0;
+
+  /**
+   * The feature id for the '<em><b>Legend</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GRAPH_LINE__LEGEND = 1;
+
+  /**
+   * The feature id for the '<em><b>Color</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GRAPH_LINE__COLOR = 2;
+
+  /**
+   * The number of structural features of the '<em>Graph Line</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GRAPH_LINE_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.ColorImpl <em>Color</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.gms.dds.deviceDefinition.impl.ColorImpl
+   * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getColor()
+   * @generated
+   */
+  int COLOR = 3;
+
+  /**
+   * The number of structural features of the '<em>Color</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLOR_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.GatewayImpl <em>Gateway</em>}' class.
@@ -220,7 +277,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getGateway()
    * @generated
    */
-  int GATEWAY = 2;
+  int GATEWAY = 4;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -266,7 +323,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getWorker()
    * @generated
    */
-  int WORKER = 3;
+  int WORKER = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -330,7 +387,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getDevice()
    * @generated
    */
-  int DEVICE = 4;
+  int DEVICE = 6;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -385,7 +442,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getSensor()
    * @generated
    */
-  int SENSOR = 5;
+  int SENSOR = 7;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -442,22 +499,13 @@ public interface DeviceDefinitionPackage extends EPackage
   int SENSOR__PREDICATE = DEVICE_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Graph</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SENSOR__GRAPH = DEVICE_FEATURE_COUNT + 2;
-
-  /**
    * The number of structural features of the '<em>Sensor</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SENSOR_FEATURE_COUNT = DEVICE_FEATURE_COUNT + 3;
+  int SENSOR_FEATURE_COUNT = DEVICE_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.PinImpl <em>Pin</em>}' class.
@@ -467,7 +515,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getPin()
    * @generated
    */
-  int PIN = 6;
+  int PIN = 8;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -504,7 +552,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getPinType()
    * @generated
    */
-  int PIN_TYPE = 7;
+  int PIN_TYPE = 9;
 
   /**
    * The number of structural features of the '<em>Pin Type</em>' class.
@@ -523,7 +571,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getTimeUnit()
    * @generated
    */
-  int TIME_UNIT = 8;
+  int TIME_UNIT = 10;
 
   /**
    * The number of structural features of the '<em>Time Unit</em>' class.
@@ -542,7 +590,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getBinding()
    * @generated
    */
-  int BINDING = 9;
+  int BINDING = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -570,7 +618,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getSensorOutput()
    * @generated
    */
-  int SENSOR_OUTPUT = 10;
+  int SENSOR_OUTPUT = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -616,7 +664,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getActuator()
    * @generated
    */
-  int ACTUATOR = 11;
+  int ACTUATOR = 13;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -680,7 +728,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getTrigger()
    * @generated
    */
-  int TRIGGER = 12;
+  int TRIGGER = 14;
 
   /**
    * The number of structural features of the '<em>Trigger</em>' class.
@@ -699,7 +747,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getSetting()
    * @generated
    */
-  int SETTING = 13;
+  int SETTING = 15;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -736,7 +784,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getExpression()
    * @generated
    */
-  int EXPRESSION = 15;
+  int EXPRESSION = 17;
 
   /**
    * The number of structural features of the '<em>Expression</em>' class.
@@ -755,7 +803,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getPrimitive()
    * @generated
    */
-  int PRIMITIVE = 14;
+  int PRIMITIVE = 16;
 
   /**
    * The number of structural features of the '<em>Primitive</em>' class.
@@ -774,7 +822,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getExternalCall()
    * @generated
    */
-  int EXTERNAL_CALL = 16;
+  int EXTERNAL_CALL = 18;
 
   /**
    * The feature id for the '<em><b>Func</b></em>' attribute.
@@ -811,7 +859,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getVariableUse()
    * @generated
    */
-  int VARIABLE_USE = 19;
+  int VARIABLE_USE = 22;
 
   /**
    * The feature id for the '<em><b>Ref</b></em>' reference.
@@ -839,7 +887,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getInternalVariableUse()
    * @generated
    */
-  int INTERNAL_VARIABLE_USE = 17;
+  int INTERNAL_VARIABLE_USE = 19;
 
   /**
    * The feature id for the '<em><b>Ref</b></em>' reference.
@@ -867,7 +915,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getExternalVariableUse()
    * @generated
    */
-  int EXTERNAL_VARIABLE_USE = 18;
+  int EXTERNAL_VARIABLE_USE = 20;
 
   /**
    * The feature id for the '<em><b>Ref</b></em>' reference.
@@ -897,6 +945,52 @@ public interface DeviceDefinitionPackage extends EPackage
   int EXTERNAL_VARIABLE_USE_FEATURE_COUNT = VARIABLE_USE_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.GraphVariableUseImpl <em>Graph Variable Use</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.gms.dds.deviceDefinition.impl.GraphVariableUseImpl
+   * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getGraphVariableUse()
+   * @generated
+   */
+  int GRAPH_VARIABLE_USE = 21;
+
+  /**
+   * The feature id for the '<em><b>Ref</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GRAPH_VARIABLE_USE__REF = VARIABLE_USE__REF;
+
+  /**
+   * The feature id for the '<em><b>Worker</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GRAPH_VARIABLE_USE__WORKER = VARIABLE_USE_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Device</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GRAPH_VARIABLE_USE__DEVICE = VARIABLE_USE_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Graph Variable Use</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GRAPH_VARIABLE_USE_FEATURE_COUNT = VARIABLE_USE_FEATURE_COUNT + 2;
+
+  /**
    * The meta object id for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.ParenthesisImpl <em>Parenthesis</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -904,7 +998,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getParenthesis()
    * @generated
    */
-  int PARENTHESIS = 20;
+  int PARENTHESIS = 23;
 
   /**
    * The feature id for the '<em><b>Exp</b></em>' containment reference.
@@ -925,6 +1019,99 @@ public interface DeviceDefinitionPackage extends EPackage
   int PARENTHESIS_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.RGBImpl <em>RGB</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.gms.dds.deviceDefinition.impl.RGBImpl
+   * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getRGB()
+   * @generated
+   */
+  int RGB = 24;
+
+  /**
+   * The feature id for the '<em><b>Red</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RGB__RED = COLOR_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Green</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RGB__GREEN = COLOR_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Blue</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RGB__BLUE = COLOR_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>RGB</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RGB_FEATURE_COUNT = COLOR_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.PresetImpl <em>Preset</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.gms.dds.deviceDefinition.impl.PresetImpl
+   * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getPreset()
+   * @generated
+   */
+  int PRESET = 25;
+
+  /**
+   * The feature id for the '<em><b>Preset</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRESET__PRESET = COLOR_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Preset</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRESET_FEATURE_COUNT = COLOR_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.RandomImpl <em>Random</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.gms.dds.deviceDefinition.impl.RandomImpl
+   * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getRandom()
+   * @generated
+   */
+  int RANDOM = 26;
+
+  /**
+   * The number of structural features of the '<em>Random</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RANDOM_FEATURE_COUNT = COLOR_FEATURE_COUNT + 0;
+
+  /**
    * The meta object id for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.ADCImpl <em>ADC</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -932,7 +1119,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getADC()
    * @generated
    */
-  int ADC = 21;
+  int ADC = 27;
 
   /**
    * The number of structural features of the '<em>ADC</em>' class.
@@ -951,7 +1138,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getDAC()
    * @generated
    */
-  int DAC = 22;
+  int DAC = 28;
 
   /**
    * The number of structural features of the '<em>DAC</em>' class.
@@ -970,7 +1157,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getGenericIn()
    * @generated
    */
-  int GENERIC_IN = 23;
+  int GENERIC_IN = 29;
 
   /**
    * The number of structural features of the '<em>Generic In</em>' class.
@@ -989,7 +1176,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getGenericOut()
    * @generated
    */
-  int GENERIC_OUT = 24;
+  int GENERIC_OUT = 30;
 
   /**
    * The number of structural features of the '<em>Generic Out</em>' class.
@@ -1008,7 +1195,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getSecond()
    * @generated
    */
-  int SECOND = 25;
+  int SECOND = 31;
 
   /**
    * The number of structural features of the '<em>Second</em>' class.
@@ -1027,7 +1214,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getMinute()
    * @generated
    */
-  int MINUTE = 26;
+  int MINUTE = 32;
 
   /**
    * The number of structural features of the '<em>Minute</em>' class.
@@ -1046,7 +1233,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getHour()
    * @generated
    */
-  int HOUR = 27;
+  int HOUR = 33;
 
   /**
    * The number of structural features of the '<em>Hour</em>' class.
@@ -1065,7 +1252,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getWhen()
    * @generated
    */
-  int WHEN = 28;
+  int WHEN = 34;
 
   /**
    * The feature id for the '<em><b>Exp</b></em>' containment reference.
@@ -1093,7 +1280,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getOnOff()
    * @generated
    */
-  int ON_OFF = 29;
+  int ON_OFF = 35;
 
   /**
    * The feature id for the '<em><b>On Exp</b></em>' containment reference.
@@ -1148,7 +1335,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getDecimalPrimitive()
    * @generated
    */
-  int DECIMAL_PRIMITIVE = 30;
+  int DECIMAL_PRIMITIVE = 36;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1176,7 +1363,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getIntPrimitive()
    * @generated
    */
-  int INT_PRIMITIVE = 31;
+  int INT_PRIMITIVE = 37;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1204,7 +1391,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getBooleanTrue()
    * @generated
    */
-  int BOOLEAN_TRUE = 32;
+  int BOOLEAN_TRUE = 38;
 
   /**
    * The number of structural features of the '<em>Boolean True</em>' class.
@@ -1223,7 +1410,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getBooleanFalse()
    * @generated
    */
-  int BOOLEAN_FALSE = 33;
+  int BOOLEAN_FALSE = 39;
 
   /**
    * The number of structural features of the '<em>Boolean False</em>' class.
@@ -1242,7 +1429,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getPlus()
    * @generated
    */
-  int PLUS = 34;
+  int PLUS = 40;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1279,7 +1466,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getMinus()
    * @generated
    */
-  int MINUS = 35;
+  int MINUS = 41;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1316,7 +1503,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getMult()
    * @generated
    */
-  int MULT = 36;
+  int MULT = 42;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1353,7 +1540,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getDiv()
    * @generated
    */
-  int DIV = 37;
+  int DIV = 43;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1390,7 +1577,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getGreater()
    * @generated
    */
-  int GREATER = 38;
+  int GREATER = 44;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1427,7 +1614,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getLesser()
    * @generated
    */
-  int LESSER = 39;
+  int LESSER = 45;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1464,7 +1651,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getGreaterOrEquals()
    * @generated
    */
-  int GREATER_OR_EQUALS = 40;
+  int GREATER_OR_EQUALS = 46;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1501,7 +1688,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getLesserOrEquals()
    * @generated
    */
-  int LESSER_OR_EQUALS = 41;
+  int LESSER_OR_EQUALS = 47;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1538,7 +1725,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getEquals()
    * @generated
    */
-  int EQUALS = 42;
+  int EQUALS = 48;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1575,7 +1762,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getNotEquals()
    * @generated
    */
-  int NOT_EQUALS = 43;
+  int NOT_EQUALS = 49;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1612,7 +1799,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getAnd()
    * @generated
    */
-  int AND = 44;
+  int AND = 50;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1649,7 +1836,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getOr()
    * @generated
    */
-  int OR = 45;
+  int OR = 51;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1686,7 +1873,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getValue()
    * @generated
    */
-  int VALUE = 46;
+  int VALUE = 52;
 
   /**
    * The number of structural features of the '<em>Value</em>' class.
@@ -1696,6 +1883,16 @@ public interface DeviceDefinitionPackage extends EPackage
    * @ordered
    */
   int VALUE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.gms.dds.deviceDefinition.ColorPreset <em>Color Preset</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.gms.dds.deviceDefinition.ColorPreset
+   * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getColorPreset()
+   * @generated
+   */
+  int COLOR_PRESET = 53;
 
 
   /**
@@ -1796,28 +1993,6 @@ public interface DeviceDefinitionPackage extends EPackage
   EClass getGraph();
 
   /**
-   * Returns the meta object for the attribute '{@link dk.sdu.gms.dds.deviceDefinition.Graph#getType <em>Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Type</em>'.
-   * @see dk.sdu.gms.dds.deviceDefinition.Graph#getType()
-   * @see #getGraph()
-   * @generated
-   */
-  EAttribute getGraph_Type();
-
-  /**
-   * Returns the meta object for the attribute '{@link dk.sdu.gms.dds.deviceDefinition.Graph#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see dk.sdu.gms.dds.deviceDefinition.Graph#getName()
-   * @see #getGraph()
-   * @generated
-   */
-  EAttribute getGraph_Name();
-
-  /**
    * Returns the meta object for the attribute '{@link dk.sdu.gms.dds.deviceDefinition.Graph#getCategory <em>Category</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1860,6 +2035,70 @@ public interface DeviceDefinitionPackage extends EPackage
    * @generated
    */
   EAttribute getGraph_Ylabel();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dk.sdu.gms.dds.deviceDefinition.Graph#getLines <em>Lines</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Lines</em>'.
+   * @see dk.sdu.gms.dds.deviceDefinition.Graph#getLines()
+   * @see #getGraph()
+   * @generated
+   */
+  EReference getGraph_Lines();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.gms.dds.deviceDefinition.GraphLine <em>Graph Line</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Graph Line</em>'.
+   * @see dk.sdu.gms.dds.deviceDefinition.GraphLine
+   * @generated
+   */
+  EClass getGraphLine();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.gms.dds.deviceDefinition.GraphLine#getOutput <em>Output</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Output</em>'.
+   * @see dk.sdu.gms.dds.deviceDefinition.GraphLine#getOutput()
+   * @see #getGraphLine()
+   * @generated
+   */
+  EReference getGraphLine_Output();
+
+  /**
+   * Returns the meta object for the attribute '{@link dk.sdu.gms.dds.deviceDefinition.GraphLine#getLegend <em>Legend</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Legend</em>'.
+   * @see dk.sdu.gms.dds.deviceDefinition.GraphLine#getLegend()
+   * @see #getGraphLine()
+   * @generated
+   */
+  EAttribute getGraphLine_Legend();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.gms.dds.deviceDefinition.GraphLine#getColor <em>Color</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Color</em>'.
+   * @see dk.sdu.gms.dds.deviceDefinition.GraphLine#getColor()
+   * @see #getGraphLine()
+   * @generated
+   */
+  EReference getGraphLine_Color();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.gms.dds.deviceDefinition.Color <em>Color</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Color</em>'.
+   * @see dk.sdu.gms.dds.deviceDefinition.Color
+   * @generated
+   */
+  EClass getColor();
 
   /**
    * Returns the meta object for class '{@link dk.sdu.gms.dds.deviceDefinition.Gateway <em>Gateway</em>}'.
@@ -2054,17 +2293,6 @@ public interface DeviceDefinitionPackage extends EPackage
    * @generated
    */
   EReference getSensor_Predicate();
-
-  /**
-   * Returns the meta object for the reference '{@link dk.sdu.gms.dds.deviceDefinition.Sensor#getGraph <em>Graph</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Graph</em>'.
-   * @see dk.sdu.gms.dds.deviceDefinition.Sensor#getGraph()
-   * @see #getSensor()
-   * @generated
-   */
-  EReference getSensor_Graph();
 
   /**
    * Returns the meta object for class '{@link dk.sdu.gms.dds.deviceDefinition.Pin <em>Pin</em>}'.
@@ -2307,6 +2535,38 @@ public interface DeviceDefinitionPackage extends EPackage
   EReference getExternalVariableUse_Obj();
 
   /**
+   * Returns the meta object for class '{@link dk.sdu.gms.dds.deviceDefinition.GraphVariableUse <em>Graph Variable Use</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Graph Variable Use</em>'.
+   * @see dk.sdu.gms.dds.deviceDefinition.GraphVariableUse
+   * @generated
+   */
+  EClass getGraphVariableUse();
+
+  /**
+   * Returns the meta object for the reference '{@link dk.sdu.gms.dds.deviceDefinition.GraphVariableUse#getWorker <em>Worker</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Worker</em>'.
+   * @see dk.sdu.gms.dds.deviceDefinition.GraphVariableUse#getWorker()
+   * @see #getGraphVariableUse()
+   * @generated
+   */
+  EReference getGraphVariableUse_Worker();
+
+  /**
+   * Returns the meta object for the reference '{@link dk.sdu.gms.dds.deviceDefinition.GraphVariableUse#getDevice <em>Device</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Device</em>'.
+   * @see dk.sdu.gms.dds.deviceDefinition.GraphVariableUse#getDevice()
+   * @see #getGraphVariableUse()
+   * @generated
+   */
+  EReference getGraphVariableUse_Device();
+
+  /**
    * Returns the meta object for class '{@link dk.sdu.gms.dds.deviceDefinition.VariableUse <em>Variable Use</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2347,6 +2607,80 @@ public interface DeviceDefinitionPackage extends EPackage
    * @generated
    */
   EReference getParenthesis_Exp();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.gms.dds.deviceDefinition.RGB <em>RGB</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>RGB</em>'.
+   * @see dk.sdu.gms.dds.deviceDefinition.RGB
+   * @generated
+   */
+  EClass getRGB();
+
+  /**
+   * Returns the meta object for the attribute '{@link dk.sdu.gms.dds.deviceDefinition.RGB#getRed <em>Red</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Red</em>'.
+   * @see dk.sdu.gms.dds.deviceDefinition.RGB#getRed()
+   * @see #getRGB()
+   * @generated
+   */
+  EAttribute getRGB_Red();
+
+  /**
+   * Returns the meta object for the attribute '{@link dk.sdu.gms.dds.deviceDefinition.RGB#getGreen <em>Green</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Green</em>'.
+   * @see dk.sdu.gms.dds.deviceDefinition.RGB#getGreen()
+   * @see #getRGB()
+   * @generated
+   */
+  EAttribute getRGB_Green();
+
+  /**
+   * Returns the meta object for the attribute '{@link dk.sdu.gms.dds.deviceDefinition.RGB#getBlue <em>Blue</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Blue</em>'.
+   * @see dk.sdu.gms.dds.deviceDefinition.RGB#getBlue()
+   * @see #getRGB()
+   * @generated
+   */
+  EAttribute getRGB_Blue();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.gms.dds.deviceDefinition.Preset <em>Preset</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Preset</em>'.
+   * @see dk.sdu.gms.dds.deviceDefinition.Preset
+   * @generated
+   */
+  EClass getPreset();
+
+  /**
+   * Returns the meta object for the attribute '{@link dk.sdu.gms.dds.deviceDefinition.Preset#getPreset <em>Preset</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Preset</em>'.
+   * @see dk.sdu.gms.dds.deviceDefinition.Preset#getPreset()
+   * @see #getPreset()
+   * @generated
+   */
+  EAttribute getPreset_Preset();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.gms.dds.deviceDefinition.Random <em>Random</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Random</em>'.
+   * @see dk.sdu.gms.dds.deviceDefinition.Random
+   * @generated
+   */
+  EClass getRandom();
 
   /**
    * Returns the meta object for class '{@link dk.sdu.gms.dds.deviceDefinition.ADC <em>ADC</em>}'.
@@ -2950,6 +3284,16 @@ public interface DeviceDefinitionPackage extends EPackage
   EClass getValue();
 
   /**
+   * Returns the meta object for enum '{@link dk.sdu.gms.dds.deviceDefinition.ColorPreset <em>Color Preset</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Color Preset</em>'.
+   * @see dk.sdu.gms.dds.deviceDefinition.ColorPreset
+   * @generated
+   */
+  EEnum getColorPreset();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3049,22 +3393,6 @@ public interface DeviceDefinitionPackage extends EPackage
     EClass GRAPH = eINSTANCE.getGraph();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute GRAPH__TYPE = eINSTANCE.getGraph_Type();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute GRAPH__NAME = eINSTANCE.getGraph_Name();
-
-    /**
      * The meta object literal for the '<em><b>Category</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3095,6 +3423,58 @@ public interface DeviceDefinitionPackage extends EPackage
      * @generated
      */
     EAttribute GRAPH__YLABEL = eINSTANCE.getGraph_Ylabel();
+
+    /**
+     * The meta object literal for the '<em><b>Lines</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GRAPH__LINES = eINSTANCE.getGraph_Lines();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.GraphLineImpl <em>Graph Line</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.gms.dds.deviceDefinition.impl.GraphLineImpl
+     * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getGraphLine()
+     * @generated
+     */
+    EClass GRAPH_LINE = eINSTANCE.getGraphLine();
+
+    /**
+     * The meta object literal for the '<em><b>Output</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GRAPH_LINE__OUTPUT = eINSTANCE.getGraphLine_Output();
+
+    /**
+     * The meta object literal for the '<em><b>Legend</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GRAPH_LINE__LEGEND = eINSTANCE.getGraphLine_Legend();
+
+    /**
+     * The meta object literal for the '<em><b>Color</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GRAPH_LINE__COLOR = eINSTANCE.getGraphLine_Color();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.ColorImpl <em>Color</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.gms.dds.deviceDefinition.impl.ColorImpl
+     * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getColor()
+     * @generated
+     */
+    EClass COLOR = eINSTANCE.getColor();
 
     /**
      * The meta object literal for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.GatewayImpl <em>Gateway</em>}' class.
@@ -3247,14 +3627,6 @@ public interface DeviceDefinitionPackage extends EPackage
      * @generated
      */
     EReference SENSOR__PREDICATE = eINSTANCE.getSensor_Predicate();
-
-    /**
-     * The meta object literal for the '<em><b>Graph</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SENSOR__GRAPH = eINSTANCE.getSensor_Graph();
 
     /**
      * The meta object literal for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.PinImpl <em>Pin</em>}' class.
@@ -3467,6 +3839,32 @@ public interface DeviceDefinitionPackage extends EPackage
     EReference EXTERNAL_VARIABLE_USE__OBJ = eINSTANCE.getExternalVariableUse_Obj();
 
     /**
+     * The meta object literal for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.GraphVariableUseImpl <em>Graph Variable Use</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.gms.dds.deviceDefinition.impl.GraphVariableUseImpl
+     * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getGraphVariableUse()
+     * @generated
+     */
+    EClass GRAPH_VARIABLE_USE = eINSTANCE.getGraphVariableUse();
+
+    /**
+     * The meta object literal for the '<em><b>Worker</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GRAPH_VARIABLE_USE__WORKER = eINSTANCE.getGraphVariableUse_Worker();
+
+    /**
+     * The meta object literal for the '<em><b>Device</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GRAPH_VARIABLE_USE__DEVICE = eINSTANCE.getGraphVariableUse_Device();
+
+    /**
      * The meta object literal for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.VariableUseImpl <em>Variable Use</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3501,6 +3899,68 @@ public interface DeviceDefinitionPackage extends EPackage
      * @generated
      */
     EReference PARENTHESIS__EXP = eINSTANCE.getParenthesis_Exp();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.RGBImpl <em>RGB</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.gms.dds.deviceDefinition.impl.RGBImpl
+     * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getRGB()
+     * @generated
+     */
+    EClass RGB = eINSTANCE.getRGB();
+
+    /**
+     * The meta object literal for the '<em><b>Red</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RGB__RED = eINSTANCE.getRGB_Red();
+
+    /**
+     * The meta object literal for the '<em><b>Green</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RGB__GREEN = eINSTANCE.getRGB_Green();
+
+    /**
+     * The meta object literal for the '<em><b>Blue</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RGB__BLUE = eINSTANCE.getRGB_Blue();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.PresetImpl <em>Preset</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.gms.dds.deviceDefinition.impl.PresetImpl
+     * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getPreset()
+     * @generated
+     */
+    EClass PRESET = eINSTANCE.getPreset();
+
+    /**
+     * The meta object literal for the '<em><b>Preset</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PRESET__PRESET = eINSTANCE.getPreset_Preset();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.RandomImpl <em>Random</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.gms.dds.deviceDefinition.impl.RandomImpl
+     * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getRandom()
+     * @generated
+     */
+    EClass RANDOM = eINSTANCE.getRandom();
 
     /**
      * The meta object literal for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.ADCImpl <em>ADC</em>}' class.
@@ -4009,6 +4469,16 @@ public interface DeviceDefinitionPackage extends EPackage
      * @generated
      */
     EClass VALUE = eINSTANCE.getValue();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.gms.dds.deviceDefinition.ColorPreset <em>Color Preset</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.gms.dds.deviceDefinition.ColorPreset
+     * @see dk.sdu.gms.dds.deviceDefinition.impl.DeviceDefinitionPackageImpl#getColorPreset()
+     * @generated
+     */
+    EEnum COLOR_PRESET = eINSTANCE.getColorPreset();
 
   }
 

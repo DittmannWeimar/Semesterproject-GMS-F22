@@ -3,6 +3,8 @@
  */
 package dk.sdu.gms.dds.deviceDefinition;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,12 +16,11 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Graph#getType <em>Type</em>}</li>
- *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Graph#getName <em>Name</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Graph#getCategory <em>Category</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Graph#getTitle <em>Title</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Graph#getXlabel <em>Xlabel</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Graph#getYlabel <em>Ylabel</em>}</li>
+ *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Graph#getLines <em>Lines</em>}</li>
  * </ul>
  *
  * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getGraph()
@@ -28,50 +29,6 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Graph extends EObject
 {
-  /**
-   * Returns the value of the '<em><b>Type</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Type</em>' attribute.
-   * @see #setType(String)
-   * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getGraph_Type()
-   * @model
-   * @generated
-   */
-  String getType();
-
-  /**
-   * Sets the value of the '{@link dk.sdu.gms.dds.deviceDefinition.Graph#getType <em>Type</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Type</em>' attribute.
-   * @see #getType()
-   * @generated
-   */
-  void setType(String value);
-
-  /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getGraph_Name()
-   * @model
-   * @generated
-   */
-  String getName();
-
-  /**
-   * Sets the value of the '{@link dk.sdu.gms.dds.deviceDefinition.Graph#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
-   * @generated
-   */
-  void setName(String value);
-
   /**
    * Returns the value of the '<em><b>Category</b></em>' attribute.
    * <!-- begin-user-doc -->
@@ -159,5 +116,17 @@ public interface Graph extends EObject
    * @generated
    */
   void setYlabel(String value);
+
+  /**
+   * Returns the value of the '<em><b>Lines</b></em>' containment reference list.
+   * The list contents are of type {@link dk.sdu.gms.dds.deviceDefinition.GraphLine}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Lines</em>' containment reference list.
+   * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getGraph_Lines()
+   * @model containment="true"
+   * @generated
+   */
+  EList<GraphLine> getLines();
 
 } // Graph

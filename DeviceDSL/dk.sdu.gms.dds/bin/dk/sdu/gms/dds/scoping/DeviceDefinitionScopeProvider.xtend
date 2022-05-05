@@ -10,6 +10,11 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EReference
 import dk.sdu.gms.dds.deviceDefinition.Actuator
 import dk.sdu.gms.dds.deviceDefinition.Sensor
+import dk.sdu.gms.dds.deviceDefinition.Graph
+import dk.sdu.gms.dds.deviceDefinition.GraphVariableUse
+import static dk.sdu.gms.dds.Utils.*
+import java.util.stream.Collectors
+import java.util.stream.Stream
 
 /**
  * This class contains custom scoping description.
@@ -24,10 +29,26 @@ class DeviceDefinitionScopeProvider extends AbstractDeviceDefinitionScopeProvide
 		if (context instanceof ExternalVariableUse && reference.name.equals("ref")) {
 			val obj = (context as ExternalVariableUse).obj;
 			if (obj instanceof Sensor) {
-				return Scopes.scopeFor((obj as Sensor).outputs)
+				return Scopes.scopeFor(Stream.concat(obj.settings.stream(), obj.outputs.stream()).collect(Collectors.toList()))
 			}
 			if (obj instanceof Actuator) {
 				return Scopes.scopeFor((obj as Actuator).settings)
+			}
+		}
+		
+		if (context instanceof GraphVariableUse) {
+			if (reference == DeviceDefinitionPackage.Literals.GRAPH_VARIABLE_USE__WORKER) {
+				return Scopes.scopeFor(system(context).gateway.workers)
+			}
+			if (reference == DeviceDefinitionPackage.Literals.GRAPH_VARIABLE_USE__DEVICE) {
+				return Scopes.scopeFor(context.worker.devices.stream().filter(x | x instanceof Sensor).collect(Collectors.toList()))
+			}
+			if (reference == DeviceDefinitionPackage.Literals.VARIABLE_USE__REF) {
+				val device = context.device
+				return switch (device) {
+					Sensor: Scopes.scopeFor(Stream.concat(device.settings.stream(), device.outputs.stream()).collect(Collectors.toList()))
+					Actuator: Scopes.scopeFor(device.settings)
+				}
 			}
 		}
 		return super.getScope(context, reference);
