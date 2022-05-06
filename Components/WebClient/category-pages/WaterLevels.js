@@ -76,6 +76,13 @@ $(document).ready(function () {
         mqtt.subscribe("samples/gateway/worker1/Humidity");
 
         mqtt.onMessageArrived = function (message) {
+            console.log("Message Arrived: " + message.payloadString);
+            console.log("Topic:     " + message.destinationName);
+            console.log("QoS:       " + message.qos);
+            console.log("Retained:  " + message.retained);
+            // Read Only, set if message might be a duplicate sent from broker
+            console.log("Duplicate: " + message.duplicate);
+
             var now = Date.now();
             var date = new Date(now);
             xLabel = date.toLocaleTimeString();
@@ -83,7 +90,6 @@ $(document).ready(function () {
             chart1Data.labels.push(xLabel);
             chart1Data.datasets[0].data.push(message.payloadString);
             chart1.update();
-
         }
     });
 
