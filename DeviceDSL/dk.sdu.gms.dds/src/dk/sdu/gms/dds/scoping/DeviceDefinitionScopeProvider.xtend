@@ -26,7 +26,7 @@ class DeviceDefinitionScopeProvider extends AbstractDeviceDefinitionScopeProvide
 	
 	override getScope(EObject context, EReference reference) {
 		
-		if (context instanceof ExternalVariableUse && reference.name.equals("ref")) {
+		if (context instanceof ExternalVariableUse && reference == DeviceDefinitionPackage.Literals.VARIABLE_USE__REF) {
 			val obj = (context as ExternalVariableUse).obj;
 			if (obj instanceof Sensor) {
 				return Scopes.scopeFor(Stream.concat(obj.settings.stream(), obj.outputs.stream()).collect(Collectors.toList()))

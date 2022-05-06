@@ -18,6 +18,7 @@ System:
 			Sensor Generic moisture:
 				pins adc 32
 				out as moisture
+				sample if temperatureHumidity.humi > 20
 				
 		Worker led_worker:
 		
