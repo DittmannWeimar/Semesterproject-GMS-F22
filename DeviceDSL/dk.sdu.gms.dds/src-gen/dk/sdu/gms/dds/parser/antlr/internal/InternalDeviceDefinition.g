@@ -409,9 +409,9 @@ ruleGraphLine returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getGraphLineAccess().getOutputExpParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getGraphLineAccess().getOutputGraphVariableUseParserRuleCall_1_0());
 				}
-				lv_output_1_0=ruleExp
+				lv_output_1_0=ruleGraphVariableUse
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getGraphLineRule());
@@ -420,7 +420,7 @@ ruleGraphLine returns [EObject current=null]
 						$current,
 						"output",
 						lv_output_1_0,
-						"dk.sdu.gms.dds.DeviceDefinition.Exp");
+						"dk.sdu.gms.dds.DeviceDefinition.GraphVariableUse");
 					afterParserOrEnumRuleCall();
 				}
 			)

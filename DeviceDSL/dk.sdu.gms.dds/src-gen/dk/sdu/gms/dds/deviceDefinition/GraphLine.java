@@ -30,12 +30,12 @@ public interface GraphLine extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Output</em>' containment reference.
-   * @see #setOutput(Expression)
+   * @see #setOutput(GraphVariableUse)
    * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getGraphLine_Output()
    * @model containment="true"
    * @generated
    */
-  Expression getOutput();
+  GraphVariableUse getOutput();
 
   /**
    * Sets the value of the '{@link dk.sdu.gms.dds.deviceDefinition.GraphLine#getOutput <em>Output</em>}' containment reference.
@@ -45,7 +45,7 @@ public interface GraphLine extends EObject
    * @see #getOutput()
    * @generated
    */
-  void setOutput(Expression value);
+  void setOutput(GraphVariableUse value);
 
   /**
    * Returns the value of the '<em><b>Legend</b></em>' attribute.

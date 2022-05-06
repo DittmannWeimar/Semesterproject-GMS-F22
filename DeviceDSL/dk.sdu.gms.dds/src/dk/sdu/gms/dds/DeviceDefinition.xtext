@@ -20,7 +20,7 @@ Graph:
 ;
 
 GraphLine:
-	'line' output = Exp
+	'line' output = GraphVariableUse
 	('legend' legend = STRING)?
 	('color' color = Color)?
 ;

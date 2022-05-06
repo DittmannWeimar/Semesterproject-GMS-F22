@@ -241,7 +241,7 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cLineKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cOutputAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cOutputExpParserRuleCall_1_0 = (RuleCall)cOutputAssignment_1.eContents().get(0);
+		private final RuleCall cOutputGraphVariableUseParserRuleCall_1_0 = (RuleCall)cOutputAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Keyword cLegendKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Assignment cLegendAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
@@ -252,13 +252,13 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		private final RuleCall cColorColorParserRuleCall_3_1_0 = (RuleCall)cColorAssignment_3_1.eContents().get(0);
 		
 		//GraphLine:
-		//    'line' output = Exp
+		//    'line' output = GraphVariableUse
 		//    ('legend' legend = STRING)?
 		//    ('color' color = Color)?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'line' output = Exp
+		//'line' output = GraphVariableUse
 		//('legend' legend = STRING)?
 		//('color' color = Color)?
 		public Group getGroup() { return cGroup; }
@@ -266,11 +266,11 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		//'line'
 		public Keyword getLineKeyword_0() { return cLineKeyword_0; }
 		
-		//output = Exp
+		//output = GraphVariableUse
 		public Assignment getOutputAssignment_1() { return cOutputAssignment_1; }
 		
-		//Exp
-		public RuleCall getOutputExpParserRuleCall_1_0() { return cOutputExpParserRuleCall_1_0; }
+		//GraphVariableUse
+		public RuleCall getOutputGraphVariableUseParserRuleCall_1_0() { return cOutputGraphVariableUseParserRuleCall_1_0; }
 		
 		//('legend' legend = STRING)?
 		public Group getGroup_2() { return cGroup_2; }
@@ -1995,7 +1995,7 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 	}
 	
 	//GraphLine:
-	//    'line' output = Exp
+	//    'line' output = GraphVariableUse
 	//    ('legend' legend = STRING)?
 	//    ('color' color = Color)?
 	//;

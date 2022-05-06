@@ -22,7 +22,7 @@
         eType="#//GraphLine" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GraphLine">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="output" eType="#//Expression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="output" eType="#//GraphVariableUse"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="legend" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="color" eType="#//Color"

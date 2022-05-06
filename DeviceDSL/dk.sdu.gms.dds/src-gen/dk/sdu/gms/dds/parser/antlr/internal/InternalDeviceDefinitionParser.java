@@ -826,7 +826,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "ruleGraphLine"
-    // InternalDeviceDefinition.g:397:1: ruleGraphLine returns [EObject current=null] : (otherlv_0= 'line' ( (lv_output_1_0= ruleExp ) ) (otherlv_2= 'legend' ( (lv_legend_3_0= RULE_STRING ) ) )? (otherlv_4= 'color' ( (lv_color_5_0= ruleColor ) ) )? ) ;
+    // InternalDeviceDefinition.g:397:1: ruleGraphLine returns [EObject current=null] : (otherlv_0= 'line' ( (lv_output_1_0= ruleGraphVariableUse ) ) (otherlv_2= 'legend' ( (lv_legend_3_0= RULE_STRING ) ) )? (otherlv_4= 'color' ( (lv_color_5_0= ruleColor ) ) )? ) ;
     public final EObject ruleGraphLine() throws RecognitionException {
         EObject current = null;
 
@@ -843,27 +843,27 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
         	enterRule();
 
         try {
-            // InternalDeviceDefinition.g:403:2: ( (otherlv_0= 'line' ( (lv_output_1_0= ruleExp ) ) (otherlv_2= 'legend' ( (lv_legend_3_0= RULE_STRING ) ) )? (otherlv_4= 'color' ( (lv_color_5_0= ruleColor ) ) )? ) )
-            // InternalDeviceDefinition.g:404:2: (otherlv_0= 'line' ( (lv_output_1_0= ruleExp ) ) (otherlv_2= 'legend' ( (lv_legend_3_0= RULE_STRING ) ) )? (otherlv_4= 'color' ( (lv_color_5_0= ruleColor ) ) )? )
+            // InternalDeviceDefinition.g:403:2: ( (otherlv_0= 'line' ( (lv_output_1_0= ruleGraphVariableUse ) ) (otherlv_2= 'legend' ( (lv_legend_3_0= RULE_STRING ) ) )? (otherlv_4= 'color' ( (lv_color_5_0= ruleColor ) ) )? ) )
+            // InternalDeviceDefinition.g:404:2: (otherlv_0= 'line' ( (lv_output_1_0= ruleGraphVariableUse ) ) (otherlv_2= 'legend' ( (lv_legend_3_0= RULE_STRING ) ) )? (otherlv_4= 'color' ( (lv_color_5_0= ruleColor ) ) )? )
             {
-            // InternalDeviceDefinition.g:404:2: (otherlv_0= 'line' ( (lv_output_1_0= ruleExp ) ) (otherlv_2= 'legend' ( (lv_legend_3_0= RULE_STRING ) ) )? (otherlv_4= 'color' ( (lv_color_5_0= ruleColor ) ) )? )
-            // InternalDeviceDefinition.g:405:3: otherlv_0= 'line' ( (lv_output_1_0= ruleExp ) ) (otherlv_2= 'legend' ( (lv_legend_3_0= RULE_STRING ) ) )? (otherlv_4= 'color' ( (lv_color_5_0= ruleColor ) ) )?
+            // InternalDeviceDefinition.g:404:2: (otherlv_0= 'line' ( (lv_output_1_0= ruleGraphVariableUse ) ) (otherlv_2= 'legend' ( (lv_legend_3_0= RULE_STRING ) ) )? (otherlv_4= 'color' ( (lv_color_5_0= ruleColor ) ) )? )
+            // InternalDeviceDefinition.g:405:3: otherlv_0= 'line' ( (lv_output_1_0= ruleGraphVariableUse ) ) (otherlv_2= 'legend' ( (lv_legend_3_0= RULE_STRING ) ) )? (otherlv_4= 'color' ( (lv_color_5_0= ruleColor ) ) )?
             {
             otherlv_0=(Token)match(input,27,FOLLOW_19); 
 
             			newLeafNode(otherlv_0, grammarAccess.getGraphLineAccess().getLineKeyword_0());
             		
-            // InternalDeviceDefinition.g:409:3: ( (lv_output_1_0= ruleExp ) )
-            // InternalDeviceDefinition.g:410:4: (lv_output_1_0= ruleExp )
+            // InternalDeviceDefinition.g:409:3: ( (lv_output_1_0= ruleGraphVariableUse ) )
+            // InternalDeviceDefinition.g:410:4: (lv_output_1_0= ruleGraphVariableUse )
             {
-            // InternalDeviceDefinition.g:410:4: (lv_output_1_0= ruleExp )
-            // InternalDeviceDefinition.g:411:5: lv_output_1_0= ruleExp
+            // InternalDeviceDefinition.g:410:4: (lv_output_1_0= ruleGraphVariableUse )
+            // InternalDeviceDefinition.g:411:5: lv_output_1_0= ruleGraphVariableUse
             {
 
-            					newCompositeNode(grammarAccess.getGraphLineAccess().getOutputExpParserRuleCall_1_0());
+            					newCompositeNode(grammarAccess.getGraphLineAccess().getOutputGraphVariableUseParserRuleCall_1_0());
             				
             pushFollow(FOLLOW_20);
-            lv_output_1_0=ruleExp();
+            lv_output_1_0=ruleGraphVariableUse();
 
             state._fsp--;
 
@@ -875,7 +875,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
             						current,
             						"output",
             						lv_output_1_0,
-            						"dk.sdu.gms.dds.DeviceDefinition.Exp");
+            						"dk.sdu.gms.dds.DeviceDefinition.GraphVariableUse");
             					afterParserOrEnumRuleCall();
             				
 
@@ -1372,7 +1372,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
             // InternalDeviceDefinition.g:636:2: (otherlv_0= 'Gateway' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= 'mac' ( (lv_mac_4_0= RULE_MAC ) ) ( (lv_workers_5_0= ruleWorker ) )+ )
             // InternalDeviceDefinition.g:637:3: otherlv_0= 'Gateway' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= 'mac' ( (lv_mac_4_0= RULE_MAC ) ) ( (lv_workers_5_0= ruleWorker ) )+
             {
-            otherlv_0=(Token)match(input,34,FOLLOW_26); 
+            otherlv_0=(Token)match(input,34,FOLLOW_19); 
 
             			newLeafNode(otherlv_0, grammarAccess.getGatewayAccess().getGatewayKeyword_0());
             		
@@ -1402,11 +1402,11 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             }
 
-            otherlv_2=(Token)match(input,15,FOLLOW_27); 
+            otherlv_2=(Token)match(input,15,FOLLOW_26); 
 
             			newLeafNode(otherlv_2, grammarAccess.getGatewayAccess().getColonKeyword_2());
             		
-            otherlv_3=(Token)match(input,35,FOLLOW_28); 
+            otherlv_3=(Token)match(input,35,FOLLOW_27); 
 
             			newLeafNode(otherlv_3, grammarAccess.getGatewayAccess().getMacKeyword_3());
             		
@@ -1416,7 +1416,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
             // InternalDeviceDefinition.g:668:4: (lv_mac_4_0= RULE_MAC )
             // InternalDeviceDefinition.g:669:5: lv_mac_4_0= RULE_MAC
             {
-            lv_mac_4_0=(Token)match(input,RULE_MAC,FOLLOW_29); 
+            lv_mac_4_0=(Token)match(input,RULE_MAC,FOLLOW_28); 
 
             					newLeafNode(lv_mac_4_0, grammarAccess.getGatewayAccess().getMacMACTerminalRuleCall_4_0());
             				
@@ -1458,7 +1458,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             	    					newCompositeNode(grammarAccess.getGatewayAccess().getWorkersWorkerParserRuleCall_5_0());
             	    				
-            	    pushFollow(FOLLOW_30);
+            	    pushFollow(FOLLOW_29);
             	    lv_workers_5_0=ruleWorker();
 
             	    state._fsp--;
@@ -1576,7 +1576,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
             // InternalDeviceDefinition.g:722:2: (otherlv_0= 'Worker' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' (otherlv_3= 'mac' ( (lv_mac_4_0= RULE_MAC ) ) ) (otherlv_5= 'sleep' otherlv_6= 'for' ( (lv_sleepTime_7_0= RULE_INT ) ) ( (lv_timeUnit_8_0= ruleTimeUnit ) ) )? ( (lv_devices_9_0= ruleDevice ) )* )
             // InternalDeviceDefinition.g:723:3: otherlv_0= 'Worker' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' (otherlv_3= 'mac' ( (lv_mac_4_0= RULE_MAC ) ) ) (otherlv_5= 'sleep' otherlv_6= 'for' ( (lv_sleepTime_7_0= RULE_INT ) ) ( (lv_timeUnit_8_0= ruleTimeUnit ) ) )? ( (lv_devices_9_0= ruleDevice ) )*
             {
-            otherlv_0=(Token)match(input,36,FOLLOW_26); 
+            otherlv_0=(Token)match(input,36,FOLLOW_19); 
 
             			newLeafNode(otherlv_0, grammarAccess.getWorkerAccess().getWorkerKeyword_0());
             		
@@ -1606,14 +1606,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             }
 
-            otherlv_2=(Token)match(input,15,FOLLOW_27); 
+            otherlv_2=(Token)match(input,15,FOLLOW_26); 
 
             			newLeafNode(otherlv_2, grammarAccess.getWorkerAccess().getColonKeyword_2());
             		
             // InternalDeviceDefinition.g:749:3: (otherlv_3= 'mac' ( (lv_mac_4_0= RULE_MAC ) ) )
             // InternalDeviceDefinition.g:750:4: otherlv_3= 'mac' ( (lv_mac_4_0= RULE_MAC ) )
             {
-            otherlv_3=(Token)match(input,35,FOLLOW_28); 
+            otherlv_3=(Token)match(input,35,FOLLOW_27); 
 
             				newLeafNode(otherlv_3, grammarAccess.getWorkerAccess().getMacKeyword_3_0());
             			
@@ -1623,7 +1623,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
             // InternalDeviceDefinition.g:755:5: (lv_mac_4_0= RULE_MAC )
             // InternalDeviceDefinition.g:756:6: lv_mac_4_0= RULE_MAC
             {
-            lv_mac_4_0=(Token)match(input,RULE_MAC,FOLLOW_31); 
+            lv_mac_4_0=(Token)match(input,RULE_MAC,FOLLOW_30); 
 
             						newLeafNode(lv_mac_4_0, grammarAccess.getWorkerAccess().getMacMACTerminalRuleCall_3_1_0());
             					
@@ -1657,11 +1657,11 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                 case 1 :
                     // InternalDeviceDefinition.g:774:4: otherlv_5= 'sleep' otherlv_6= 'for' ( (lv_sleepTime_7_0= RULE_INT ) ) ( (lv_timeUnit_8_0= ruleTimeUnit ) )
                     {
-                    otherlv_5=(Token)match(input,37,FOLLOW_32); 
+                    otherlv_5=(Token)match(input,37,FOLLOW_31); 
 
                     				newLeafNode(otherlv_5, grammarAccess.getWorkerAccess().getSleepKeyword_4_0());
                     			
-                    otherlv_6=(Token)match(input,38,FOLLOW_33); 
+                    otherlv_6=(Token)match(input,38,FOLLOW_32); 
 
                     				newLeafNode(otherlv_6, grammarAccess.getWorkerAccess().getForKeyword_4_1());
                     			
@@ -1671,7 +1671,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                     // InternalDeviceDefinition.g:783:5: (lv_sleepTime_7_0= RULE_INT )
                     // InternalDeviceDefinition.g:784:6: lv_sleepTime_7_0= RULE_INT
                     {
-                    lv_sleepTime_7_0=(Token)match(input,RULE_INT,FOLLOW_34); 
+                    lv_sleepTime_7_0=(Token)match(input,RULE_INT,FOLLOW_33); 
 
                     						newLeafNode(lv_sleepTime_7_0, grammarAccess.getWorkerAccess().getSleepTimeINTTerminalRuleCall_4_2_0());
                     					
@@ -1700,7 +1700,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
                     						newCompositeNode(grammarAccess.getWorkerAccess().getTimeUnitTimeUnitParserRuleCall_4_3_0());
                     					
-                    pushFollow(FOLLOW_35);
+                    pushFollow(FOLLOW_34);
                     lv_timeUnit_8_0=ruleTimeUnit();
 
                     state._fsp--;
@@ -1749,7 +1749,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             	    					newCompositeNode(grammarAccess.getWorkerAccess().getDevicesDeviceParserRuleCall_5_0());
             	    				
-            	    pushFollow(FOLLOW_35);
+            	    pushFollow(FOLLOW_34);
             	    lv_devices_9_0=ruleDevice();
 
             	    state._fsp--;
@@ -1997,7 +1997,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
             // InternalDeviceDefinition.g:893:2: (otherlv_0= 'Sensor' ( (lv_type_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' (otherlv_4= 'pins' ( (lv_pins_5_0= rulePin ) )* (otherlv_6= ',' ( (lv_pins_7_0= rulePin ) ) )* )? ( (lv_outputs_8_0= ruleSensorOutput ) )* ( (lv_settings_9_0= ruleSetting ) )* (otherlv_10= 'sample' otherlv_11= 'if' ( (lv_predicate_12_0= ruleExp ) ) )? )
             // InternalDeviceDefinition.g:894:3: otherlv_0= 'Sensor' ( (lv_type_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' (otherlv_4= 'pins' ( (lv_pins_5_0= rulePin ) )* (otherlv_6= ',' ( (lv_pins_7_0= rulePin ) ) )* )? ( (lv_outputs_8_0= ruleSensorOutput ) )* ( (lv_settings_9_0= ruleSetting ) )* (otherlv_10= 'sample' otherlv_11= 'if' ( (lv_predicate_12_0= ruleExp ) ) )?
             {
-            otherlv_0=(Token)match(input,39,FOLLOW_26); 
+            otherlv_0=(Token)match(input,39,FOLLOW_19); 
 
             			newLeafNode(otherlv_0, grammarAccess.getSensorAccess().getSensorKeyword_0());
             		
@@ -2007,7 +2007,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
             // InternalDeviceDefinition.g:899:4: (lv_type_1_0= RULE_ID )
             // InternalDeviceDefinition.g:900:5: lv_type_1_0= RULE_ID
             {
-            lv_type_1_0=(Token)match(input,RULE_ID,FOLLOW_26); 
+            lv_type_1_0=(Token)match(input,RULE_ID,FOLLOW_19); 
 
             					newLeafNode(lv_type_1_0, grammarAccess.getSensorAccess().getTypeIDTerminalRuleCall_1_0());
             				
@@ -2053,7 +2053,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             }
 
-            otherlv_3=(Token)match(input,15,FOLLOW_36); 
+            otherlv_3=(Token)match(input,15,FOLLOW_35); 
 
             			newLeafNode(otherlv_3, grammarAccess.getSensorAccess().getColonKeyword_3());
             		
@@ -2068,7 +2068,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                 case 1 :
                     // InternalDeviceDefinition.g:939:4: otherlv_4= 'pins' ( (lv_pins_5_0= rulePin ) )* (otherlv_6= ',' ( (lv_pins_7_0= rulePin ) ) )*
                     {
-                    otherlv_4=(Token)match(input,40,FOLLOW_37); 
+                    otherlv_4=(Token)match(input,40,FOLLOW_36); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getSensorAccess().getPinsKeyword_4_0());
                     			
@@ -2102,7 +2102,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
                     	    						newCompositeNode(grammarAccess.getSensorAccess().getPinsPinParserRuleCall_4_1_0());
                     	    					
-                    	    pushFollow(FOLLOW_37);
+                    	    pushFollow(FOLLOW_36);
                     	    lv_pins_5_0=rulePin();
 
                     	    state._fsp--;
@@ -2145,7 +2145,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                     	case 1 :
                     	    // InternalDeviceDefinition.g:963:5: otherlv_6= ',' ( (lv_pins_7_0= rulePin ) )
                     	    {
-                    	    otherlv_6=(Token)match(input,31,FOLLOW_38); 
+                    	    otherlv_6=(Token)match(input,31,FOLLOW_37); 
 
                     	    					newLeafNode(otherlv_6, grammarAccess.getSensorAccess().getCommaKeyword_4_2_0());
                     	    				
@@ -2158,7 +2158,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
                     	    							newCompositeNode(grammarAccess.getSensorAccess().getPinsPinParserRuleCall_4_2_1_0());
                     	    						
-                    	    pushFollow(FOLLOW_39);
+                    	    pushFollow(FOLLOW_38);
                     	    lv_pins_7_0=rulePin();
 
                     	    state._fsp--;
@@ -2216,7 +2216,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             	    					newCompositeNode(grammarAccess.getSensorAccess().getOutputsSensorOutputParserRuleCall_5_0());
             	    				
-            	    pushFollow(FOLLOW_40);
+            	    pushFollow(FOLLOW_39);
             	    lv_outputs_8_0=ruleSensorOutput();
 
             	    state._fsp--;
@@ -2265,7 +2265,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             	    					newCompositeNode(grammarAccess.getSensorAccess().getSettingsSettingParserRuleCall_6_0());
             	    				
-            	    pushFollow(FOLLOW_41);
+            	    pushFollow(FOLLOW_40);
             	    lv_settings_9_0=ruleSetting();
 
             	    state._fsp--;
@@ -2304,11 +2304,11 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                 case 1 :
                     // InternalDeviceDefinition.g:1027:4: otherlv_10= 'sample' otherlv_11= 'if' ( (lv_predicate_12_0= ruleExp ) )
                     {
-                    otherlv_10=(Token)match(input,41,FOLLOW_42); 
+                    otherlv_10=(Token)match(input,41,FOLLOW_41); 
 
                     				newLeafNode(otherlv_10, grammarAccess.getSensorAccess().getSampleKeyword_7_0());
                     			
-                    otherlv_11=(Token)match(input,42,FOLLOW_19); 
+                    otherlv_11=(Token)match(input,42,FOLLOW_42); 
 
                     				newLeafNode(otherlv_11, grammarAccess.getSensorAccess().getIfKeyword_7_1());
                     			
@@ -2435,7 +2435,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             					newCompositeNode(grammarAccess.getPinAccess().getTypePinTypeParserRuleCall_0_0());
             				
-            pushFollow(FOLLOW_33);
+            pushFollow(FOLLOW_32);
             lv_type_0_0=rulePinType();
 
             state._fsp--;
@@ -3115,7 +3115,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             }
 
-            otherlv_2=(Token)match(input,53,FOLLOW_26); 
+            otherlv_2=(Token)match(input,53,FOLLOW_19); 
 
             			newLeafNode(otherlv_2, grammarAccess.getSensorOutputAccess().getAsKeyword_2());
             		
@@ -3160,7 +3160,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
                     				newLeafNode(otherlv_4, grammarAccess.getSensorOutputAccess().getWithKeyword_4_0());
                     			
-                    otherlv_5=(Token)match(input,54,FOLLOW_19); 
+                    otherlv_5=(Token)match(input,54,FOLLOW_42); 
 
                     				newLeafNode(otherlv_5, grammarAccess.getSensorOutputAccess().getMappingKeyword_4_1());
                     			
@@ -3289,7 +3289,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
             // InternalDeviceDefinition.g:1376:2: (otherlv_0= 'Actuator' ( (lv_type_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' otherlv_4= 'pins' ( (lv_pins_5_0= rulePin ) )* (otherlv_6= ',' ( (lv_pins_7_0= rulePin ) ) )* ( (lv_settings_8_0= ruleSetting ) )* ( (lv_trigger_9_0= ruleTrigger ) ) )
             // InternalDeviceDefinition.g:1377:3: otherlv_0= 'Actuator' ( (lv_type_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' otherlv_4= 'pins' ( (lv_pins_5_0= rulePin ) )* (otherlv_6= ',' ( (lv_pins_7_0= rulePin ) ) )* ( (lv_settings_8_0= ruleSetting ) )* ( (lv_trigger_9_0= ruleTrigger ) )
             {
-            otherlv_0=(Token)match(input,55,FOLLOW_26); 
+            otherlv_0=(Token)match(input,55,FOLLOW_19); 
 
             			newLeafNode(otherlv_0, grammarAccess.getActuatorAccess().getActuatorKeyword_0());
             		
@@ -3299,7 +3299,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
             // InternalDeviceDefinition.g:1382:4: (lv_type_1_0= RULE_ID )
             // InternalDeviceDefinition.g:1383:5: lv_type_1_0= RULE_ID
             {
-            lv_type_1_0=(Token)match(input,RULE_ID,FOLLOW_26); 
+            lv_type_1_0=(Token)match(input,RULE_ID,FOLLOW_19); 
 
             					newLeafNode(lv_type_1_0, grammarAccess.getActuatorAccess().getTypeIDTerminalRuleCall_1_0());
             				
@@ -3417,7 +3417,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
             	case 1 :
             	    // InternalDeviceDefinition.g:1445:4: otherlv_6= ',' ( (lv_pins_7_0= rulePin ) )
             	    {
-            	    otherlv_6=(Token)match(input,31,FOLLOW_38); 
+            	    otherlv_6=(Token)match(input,31,FOLLOW_37); 
 
             	    				newLeafNode(otherlv_6, grammarAccess.getActuatorAccess().getCommaKeyword_6_0());
             	    			
@@ -3660,7 +3660,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
                     }
 
-                    otherlv_1=(Token)match(input,56,FOLLOW_19); 
+                    otherlv_1=(Token)match(input,56,FOLLOW_42); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getTriggerAccess().getWhenKeyword_0_1());
                     			
@@ -3718,7 +3718,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
                     }
 
-                    otherlv_4=(Token)match(input,57,FOLLOW_19); 
+                    otherlv_4=(Token)match(input,57,FOLLOW_42); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getTriggerAccess().getOnKeyword_1_1());
                     			
@@ -3776,7 +3776,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                             // InternalDeviceDefinition.g:1591:5: (otherlv_6= 'off' ( (lv_offExp_7_0= ruleExp ) ) )
                             // InternalDeviceDefinition.g:1592:6: otherlv_6= 'off' ( (lv_offExp_7_0= ruleExp ) )
                             {
-                            otherlv_6=(Token)match(input,58,FOLLOW_19); 
+                            otherlv_6=(Token)match(input,58,FOLLOW_42); 
 
                             						newLeafNode(otherlv_6, grammarAccess.getTriggerAccess().getOffKeyword_1_3_0_0());
                             					
@@ -3823,11 +3823,11 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                             // InternalDeviceDefinition.g:1617:5: (otherlv_8= 'run' otherlv_9= 'for' ( (lv_time_10_0= RULE_INT ) ) ( (lv_unit_11_0= ruleTimeUnit ) ) )
                             // InternalDeviceDefinition.g:1618:6: otherlv_8= 'run' otherlv_9= 'for' ( (lv_time_10_0= RULE_INT ) ) ( (lv_unit_11_0= ruleTimeUnit ) )
                             {
-                            otherlv_8=(Token)match(input,59,FOLLOW_32); 
+                            otherlv_8=(Token)match(input,59,FOLLOW_31); 
 
                             						newLeafNode(otherlv_8, grammarAccess.getTriggerAccess().getRunKeyword_1_3_1_0());
                             					
-                            otherlv_9=(Token)match(input,38,FOLLOW_33); 
+                            otherlv_9=(Token)match(input,38,FOLLOW_32); 
 
                             						newLeafNode(otherlv_9, grammarAccess.getTriggerAccess().getForKeyword_1_3_1_1());
                             					
@@ -3837,7 +3837,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                             // InternalDeviceDefinition.g:1627:7: (lv_time_10_0= RULE_INT )
                             // InternalDeviceDefinition.g:1628:8: lv_time_10_0= RULE_INT
                             {
-                            lv_time_10_0=(Token)match(input,RULE_INT,FOLLOW_34); 
+                            lv_time_10_0=(Token)match(input,RULE_INT,FOLLOW_33); 
 
                             								newLeafNode(lv_time_10_0, grammarAccess.getTriggerAccess().getTimeINTTerminalRuleCall_1_3_1_2_0());
                             							
@@ -3982,7 +3982,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
             // InternalDeviceDefinition.g:1684:2: (otherlv_0= 'setting' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= rulePrimitive ) ) )
             // InternalDeviceDefinition.g:1685:3: otherlv_0= 'setting' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= rulePrimitive ) )
             {
-            otherlv_0=(Token)match(input,60,FOLLOW_26); 
+            otherlv_0=(Token)match(input,60,FOLLOW_19); 
 
             			newLeafNode(otherlv_0, grammarAccess.getSettingAccess().getSettingKeyword_0());
             		
@@ -4446,7 +4446,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             	            }
 
-            	            otherlv_2=(Token)match(input,64,FOLLOW_19); 
+            	            otherlv_2=(Token)match(input,64,FOLLOW_42); 
 
             	            						newLeafNode(otherlv_2, grammarAccess.getExpAccess().getPlusSignKeyword_1_0_0_1());
             	            					
@@ -4473,7 +4473,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             	            }
 
-            	            otherlv_4=(Token)match(input,65,FOLLOW_19); 
+            	            otherlv_4=(Token)match(input,65,FOLLOW_42); 
 
             	            						newLeafNode(otherlv_4, grammarAccess.getExpAccess().getHyphenMinusKeyword_1_0_1_1());
             	            					
@@ -4667,7 +4667,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             	            }
 
-            	            otherlv_2=(Token)match(input,66,FOLLOW_19); 
+            	            otherlv_2=(Token)match(input,66,FOLLOW_42); 
 
             	            						newLeafNode(otherlv_2, grammarAccess.getFactorAccess().getAsteriskKeyword_1_0_0_1());
             	            					
@@ -4694,7 +4694,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             	            }
 
-            	            otherlv_4=(Token)match(input,67,FOLLOW_19); 
+            	            otherlv_4=(Token)match(input,67,FOLLOW_42); 
 
             	            						newLeafNode(otherlv_4, grammarAccess.getFactorAccess().getSolidusKeyword_1_0_1_1());
             	            					
@@ -4888,7 +4888,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             	            }
 
-            	            otherlv_2=(Token)match(input,68,FOLLOW_19); 
+            	            otherlv_2=(Token)match(input,68,FOLLOW_42); 
 
             	            						newLeafNode(otherlv_2, grammarAccess.getCompareAccess().getGreaterThanSignKeyword_1_0_0_1());
             	            					
@@ -4915,7 +4915,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             	            }
 
-            	            otherlv_4=(Token)match(input,69,FOLLOW_19); 
+            	            otherlv_4=(Token)match(input,69,FOLLOW_42); 
 
             	            						newLeafNode(otherlv_4, grammarAccess.getCompareAccess().getLessThanSignKeyword_1_0_1_1());
             	            					
@@ -5109,7 +5109,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             	            }
 
-            	            otherlv_2=(Token)match(input,70,FOLLOW_19); 
+            	            otherlv_2=(Token)match(input,70,FOLLOW_42); 
 
             	            						newLeafNode(otherlv_2, grammarAccess.getCompareOrEqualsAccess().getGreaterThanSignEqualsSignKeyword_1_0_0_1());
             	            					
@@ -5136,7 +5136,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             	            }
 
-            	            otherlv_4=(Token)match(input,71,FOLLOW_19); 
+            	            otherlv_4=(Token)match(input,71,FOLLOW_42); 
 
             	            						newLeafNode(otherlv_4, grammarAccess.getCompareOrEqualsAccess().getLessThanSignEqualsSignKeyword_1_0_1_1());
             	            					
@@ -5330,7 +5330,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             	            }
 
-            	            otherlv_2=(Token)match(input,72,FOLLOW_19); 
+            	            otherlv_2=(Token)match(input,72,FOLLOW_42); 
 
             	            						newLeafNode(otherlv_2, grammarAccess.getEqualsOrNotEqualsAccess().getEqualsSignEqualsSignKeyword_1_0_0_1());
             	            					
@@ -5357,7 +5357,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             	            }
 
-            	            otherlv_4=(Token)match(input,73,FOLLOW_19); 
+            	            otherlv_4=(Token)match(input,73,FOLLOW_42); 
 
             	            						newLeafNode(otherlv_4, grammarAccess.getEqualsOrNotEqualsAccess().getExclamationMarkEqualsSignKeyword_1_0_1_1());
             	            					
@@ -5551,7 +5551,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             	            }
 
-            	            otherlv_2=(Token)match(input,21,FOLLOW_19); 
+            	            otherlv_2=(Token)match(input,21,FOLLOW_42); 
 
             	            						newLeafNode(otherlv_2, grammarAccess.getAndOrAccess().getAndKeyword_1_0_0_1());
             	            					
@@ -5578,7 +5578,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             	            }
 
-            	            otherlv_4=(Token)match(input,74,FOLLOW_19); 
+            	            otherlv_4=(Token)match(input,74,FOLLOW_42); 
 
             	            						newLeafNode(otherlv_4, grammarAccess.getAndOrAccess().getOrKeyword_1_0_1_1());
             	            					
@@ -5932,7 +5932,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
             // InternalDeviceDefinition.g:2380:2: (otherlv_0= 'call' ( (lv_func_1_0= RULE_ID ) ) otherlv_2= '(' ( (lv_args_3_0= ruleExp ) )? (otherlv_4= ',' ( (lv_args_5_0= ruleExp ) ) )* otherlv_6= ')' )
             // InternalDeviceDefinition.g:2381:3: otherlv_0= 'call' ( (lv_func_1_0= RULE_ID ) ) otherlv_2= '(' ( (lv_args_3_0= ruleExp ) )? (otherlv_4= ',' ( (lv_args_5_0= ruleExp ) ) )* otherlv_6= ')'
             {
-            otherlv_0=(Token)match(input,76,FOLLOW_26); 
+            otherlv_0=(Token)match(input,76,FOLLOW_19); 
 
             			newLeafNode(otherlv_0, grammarAccess.getExternalCallAccess().getCallKeyword_0());
             		
@@ -6023,7 +6023,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
             	case 1 :
             	    // InternalDeviceDefinition.g:2427:4: otherlv_4= ',' ( (lv_args_5_0= ruleExp ) )
             	    {
-            	    otherlv_4=(Token)match(input,31,FOLLOW_19); 
+            	    otherlv_4=(Token)match(input,31,FOLLOW_42); 
 
             	    				newLeafNode(otherlv_4, grammarAccess.getExternalCallAccess().getCommaKeyword_4_0());
             	    			
@@ -6280,7 +6280,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                 case 1 :
                     // InternalDeviceDefinition.g:2518:4: otherlv_1= '.'
                     {
-                    otherlv_1=(Token)match(input,77,FOLLOW_26); 
+                    otherlv_1=(Token)match(input,77,FOLLOW_19); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getExternalVariableUseAccess().getFullStopKeyword_1_0());
                     			
@@ -6290,7 +6290,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                 case 2 :
                     // InternalDeviceDefinition.g:2523:4: otherlv_2= '->'
                     {
-                    otherlv_2=(Token)match(input,78,FOLLOW_26); 
+                    otherlv_2=(Token)match(input,78,FOLLOW_19); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getExternalVariableUseAccess().getHyphenMinusGreaterThanSignKeyword_1_1());
                     			
@@ -6443,7 +6443,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                 case 1 :
                     // InternalDeviceDefinition.g:2574:4: otherlv_1= '.'
                     {
-                    otherlv_1=(Token)match(input,77,FOLLOW_26); 
+                    otherlv_1=(Token)match(input,77,FOLLOW_19); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getGraphVariableUseAccess().getFullStopKeyword_1_0());
                     			
@@ -6453,7 +6453,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                 case 2 :
                     // InternalDeviceDefinition.g:2579:4: otherlv_2= '->'
                     {
-                    otherlv_2=(Token)match(input,78,FOLLOW_26); 
+                    otherlv_2=(Token)match(input,78,FOLLOW_19); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getGraphVariableUseAccess().getHyphenMinusGreaterThanSignKeyword_1_1());
                     			
@@ -6504,7 +6504,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                 case 1 :
                     // InternalDeviceDefinition.g:2598:4: otherlv_4= '.'
                     {
-                    otherlv_4=(Token)match(input,77,FOLLOW_26); 
+                    otherlv_4=(Token)match(input,77,FOLLOW_19); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getGraphVariableUseAccess().getFullStopKeyword_3_0());
                     			
@@ -6514,7 +6514,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                 case 2 :
                     // InternalDeviceDefinition.g:2603:4: otherlv_5= '->'
                     {
-                    otherlv_5=(Token)match(input,78,FOLLOW_26); 
+                    otherlv_5=(Token)match(input,78,FOLLOW_19); 
 
                     				newLeafNode(otherlv_5, grammarAccess.getGraphVariableUseAccess().getHyphenMinusGreaterThanSignKeyword_3_1());
                     			
@@ -6631,9 +6631,6 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                 case EOF:
                 case 21:
                 case 22:
-                case 27:
-                case 28:
-                case 29:
                 case 31:
                 case 32:
                 case 36:
@@ -6666,11 +6663,11 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                     if ( (LA49_3==RULE_ID) ) {
                         int LA49_5 = input.LA(4);
 
-                        if ( (LA49_5==EOF||(LA49_5>=21 && LA49_5<=22)||(LA49_5>=27 && LA49_5<=29)||(LA49_5>=31 && LA49_5<=32)||LA49_5==36||LA49_5==39||LA49_5==41||LA49_5==46||LA49_5==55||(LA49_5>=58 && LA49_5<=60)||(LA49_5>=64 && LA49_5<=74)) ) {
-                            alt49=2;
-                        }
-                        else if ( ((LA49_5>=77 && LA49_5<=78)) ) {
+                        if ( ((LA49_5>=77 && LA49_5<=78)) ) {
                             alt49=3;
+                        }
+                        else if ( (LA49_5==EOF||(LA49_5>=21 && LA49_5<=22)||(LA49_5>=31 && LA49_5<=32)||LA49_5==36||LA49_5==39||LA49_5==41||LA49_5==46||LA49_5==55||(LA49_5>=58 && LA49_5<=60)||(LA49_5>=64 && LA49_5<=74)) ) {
+                            alt49=2;
                         }
                         else {
                             NoViableAltException nvae =
@@ -6694,11 +6691,11 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                     if ( (LA49_4==RULE_ID) ) {
                         int LA49_5 = input.LA(4);
 
-                        if ( (LA49_5==EOF||(LA49_5>=21 && LA49_5<=22)||(LA49_5>=27 && LA49_5<=29)||(LA49_5>=31 && LA49_5<=32)||LA49_5==36||LA49_5==39||LA49_5==41||LA49_5==46||LA49_5==55||(LA49_5>=58 && LA49_5<=60)||(LA49_5>=64 && LA49_5<=74)) ) {
-                            alt49=2;
-                        }
-                        else if ( ((LA49_5>=77 && LA49_5<=78)) ) {
+                        if ( ((LA49_5>=77 && LA49_5<=78)) ) {
                             alt49=3;
+                        }
+                        else if ( (LA49_5==EOF||(LA49_5>=21 && LA49_5<=22)||(LA49_5>=31 && LA49_5<=32)||LA49_5==36||LA49_5==39||LA49_5==41||LA49_5==46||LA49_5==55||(LA49_5>=58 && LA49_5<=60)||(LA49_5>=64 && LA49_5<=74)) ) {
+                            alt49=2;
                         }
                         else {
                             NoViableAltException nvae =
@@ -6862,7 +6859,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
             // InternalDeviceDefinition.g:2684:2: (otherlv_0= '(' ( (lv_exp_1_0= ruleExp ) ) otherlv_2= ')' )
             // InternalDeviceDefinition.g:2685:3: otherlv_0= '(' ( (lv_exp_1_0= ruleExp ) ) otherlv_2= ')'
             {
-            otherlv_0=(Token)match(input,30,FOLLOW_19); 
+            otherlv_0=(Token)match(input,30,FOLLOW_42); 
 
             			newLeafNode(otherlv_0, grammarAccess.getParenthesisAccess().getLeftParenthesisKeyword_0());
             		
@@ -7083,30 +7080,30 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000004000000L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000008000000L});
     public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000008000002L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0xC000000040000160L,0x0000000000001800L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000030000002L});
     public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000020000002L});
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000240000000L,0x0000000000078000L});
     public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000080000000L});
     public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000001000000002L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x008000A000000002L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x001F800000000000L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0080008000000002L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x1000430000000002L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x10007A0080000002L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000780000000000L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x1000420080000002L});
-    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x1000420000000002L});
-    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x1000020000000002L});
-    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000040000000000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000001000000002L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x008000A000000002L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x001F800000000000L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0080008000000002L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x1000430000000002L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x10007A0080000002L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000780000000000L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x1000420080000002L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x1000420000000002L});
+    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x1000020000000002L});
+    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000040000000000L});
+    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0xC000000040000160L,0x0000000000001800L});
     public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0020000000000010L});
     public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0020000000000000L});
     public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000000000020002L});
