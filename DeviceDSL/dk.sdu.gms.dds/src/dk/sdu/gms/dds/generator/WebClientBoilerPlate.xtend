@@ -1,7 +1,7 @@
 package dk.sdu.gms.dds.generator
 
 class WebClientBoilerPlate {
-	public static def String getCSS() '''
+	public static def String generateCSS() '''
 		.chart-container {
 		  width: 600px;
 		  height: auto;
@@ -29,7 +29,7 @@ class WebClientBoilerPlate {
 		}
 	'''
 	
-	public static def String getHeader() '''
+	public static def String generateHeader() '''
 	<?php
 	
 	$mqttHostServerSide = getenv("MQTT_HOST");
@@ -64,7 +64,7 @@ class WebClientBoilerPlate {
 	
 	'''
 	
-	public static def String getBridge() '''
+	public static def String generateBridge() '''
 	<?php
 	
 	$apiHost = getenv("API_HOST");
@@ -95,5 +95,54 @@ class WebClientBoilerPlate {
 	$result = file_get_contents($apiRoot, false, $context);
 	
 	echo $result;
+	'''
+	
+	def static String generateIndex() '''
+	<!DOCTYPE html>
+	<html>
+	
+	<head>
+	    <title>Green House Management System</title>
+	    <?php require "header.php" ?>
+	
+	    <script>
+	        MQTTConnect();
+	    </script>
+	</head>
+	
+	<body>
+	    <?php require "commonBody.php" ?>
+	
+	    <ul class="flex-container">
+	        <li class="chart-container">
+	            <h1>IoT Device 1</h1>
+	            <div>
+	                <input type="text" id="lightness"></input>
+	                
+	                <p>LED: </p><button onclick="MQTTSend('gateway/worker/setting', $('#lightness').val())">Toggle</button>
+	            </div>
+	        </li>
+	    </ul>
+	</body>
+	
+	</html>
+	'''
+	
+	def static String generateCommonBody() '''
+	<div class="navbar-default" role="navigation">
+	    <div class="navbar-header">
+	        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	            <span class="sr-only">links toggle button</span>
+	            <span class="mdl-color--white white icon-bar"></span>
+	            <span class="mdl-color--white white icon-bar"></span>
+	            <span class="mdl-color--white icon-bar"></span>
+	        </button>
+	        <a href="/"><span class="navbar-brand">Green House Management System</span></a>
+	    </div>
+	    <div class="navbar-collapse collapse">
+	        <ul class="nav navbar-nav" style="float: right;" id="navbar-categories">
+	        </ul>
+	    </div>
+	</div>
 	'''
 }

@@ -4,7 +4,7 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
 public class WebClientBoilerPlate {
-  public static String getCSS() {
+  public static String generateCSS() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append(".chart-container {");
     _builder.newLine();
@@ -70,7 +70,7 @@ public class WebClientBoilerPlate {
     return _builder.toString();
   }
   
-  public static String getHeader() {
+  public static String generateHeader() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<?php");
     _builder.newLine();
@@ -130,7 +130,7 @@ public class WebClientBoilerPlate {
     return _builder.toString();
   }
   
-  public static String getBridge() {
+  public static String generateBridge() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<?php");
     _builder.newLine();
@@ -190,6 +190,125 @@ public class WebClientBoilerPlate {
     _builder.newLine();
     _builder.newLine();
     _builder.append("echo $result;");
+    _builder.newLine();
+    return _builder.toString();
+  }
+  
+  public static String generateIndex() {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<!DOCTYPE html>");
+    _builder.newLine();
+    _builder.append("<html>");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("<head>");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("<title>Green House Management System</title>");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("<?php require \"header.php\" ?>");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("<script>");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("MQTTConnect();");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("</script>");
+    _builder.newLine();
+    _builder.append("</head>");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("<body>");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("<?php require \"commonBody.php\" ?>");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("<ul class=\"flex-container\">");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("<li class=\"chart-container\">");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("<h1>IoT Device 1</h1>");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("<div>");
+    _builder.newLine();
+    _builder.append("                ");
+    _builder.append("<input type=\"text\" id=\"lightness\"></input>");
+    _builder.newLine();
+    _builder.append("                ");
+    _builder.newLine();
+    _builder.append("                ");
+    _builder.append("<p>LED: </p><button onclick=\"MQTTSend(\'gateway/worker/setting\', $(\'#lightness\').val())\">Toggle</button>");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("</div>");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("</li>");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("</ul>");
+    _builder.newLine();
+    _builder.append("</body>");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("</html>");
+    _builder.newLine();
+    return _builder.toString();
+  }
+  
+  public static String generateCommonBody() {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<div class=\"navbar-default\" role=\"navigation\">");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("<div class=\"navbar-header\">");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("<button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".navbar-collapse\">");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("<span class=\"sr-only\">links toggle button</span>");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("<span class=\"mdl-color--white white icon-bar\"></span>");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("<span class=\"mdl-color--white white icon-bar\"></span>");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("<span class=\"mdl-color--white icon-bar\"></span>");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("</button>");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("<a href=\"/\"><span class=\"navbar-brand\">Green House Management System</span></a>");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("</div>");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("<div class=\"navbar-collapse collapse\">");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("<ul class=\"nav navbar-nav\" style=\"float: right;\" id=\"navbar-categories\">");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("</ul>");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("</div>");
+    _builder.newLine();
+    _builder.append("</div>");
     _builder.newLine();
     return _builder.toString();
   }
