@@ -74,8 +74,10 @@ public class WebClientGenerator {
     _builder.append("<?php require $_SERVER[\'DOCUMENT_ROOT\'] . \"/header.php\" ?>");
     _builder.newLine();
     _builder.append("    ");
-    _builder.append("<script src=\"WaterLevels.js\"></script>");
-    _builder.newLine();
+    _builder.append("<script src=\"");
+    _builder.append(category, "    ");
+    _builder.append(".js\"></script>");
+    _builder.newLineIfNotEmpty();
     _builder.append("</head>");
     _builder.newLine();
     _builder.newLine();
@@ -216,74 +218,75 @@ public class WebClientGenerator {
     _builder.append("    ");
     _builder.append("chart1.update();");
     _builder.newLine();
-    _builder.newLine();
     _builder.append("    ");
-    _builder.append("topics.forEach(topic => {");
     _builder.newLine();
-    _builder.append("    \t");
+    _builder.append("        ");
+    _builder.append("for (let i = 0; i < topics.length; i++) {");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("var topic = topics[i]");
+    _builder.newLine();
+    _builder.append("            ");
     _builder.append("splitTopic = topic.split(\"/\");");
     _builder.newLine();
-    _builder.append("        ");
+    _builder.append("            ");
     _builder.append("var response = await _getData(splitTopic[0], splitTopic[1], splitTopic[2], splitTopic[3], Date.now() - timeSinceNow, Date.now());");
     _builder.newLine();
+    _builder.append("    ");
     _builder.newLine();
-    _builder.append("        ");
+    _builder.append("            ");
     _builder.append("var chart1Data = chartIdToData[chartId];");
     _builder.newLine();
     _builder.append("    ");
     _builder.newLine();
-    _builder.append("        ");
+    _builder.append("            ");
     _builder.append("chart1Data.labels = [];");
     _builder.newLine();
-    _builder.append("        ");
+    _builder.append("            ");
     _builder.append("chart1Data.datasets[i].data = [];");
     _builder.newLine();
     _builder.append("    ");
     _builder.newLine();
-    _builder.append("        ");
+    _builder.append("            ");
     _builder.append("chart1Data.datasets[i].borderColor.push(\'rgba(99, 255, 132, 1)\');");
     _builder.newLine();
-    _builder.append("        ");
+    _builder.append("            ");
     _builder.append("response.forEach(res => {");
     _builder.newLine();
-    _builder.append("            ");
+    _builder.append("                ");
     _builder.append("var date = new Date(res.timestamp);");
     _builder.newLine();
-    _builder.append("            ");
+    _builder.append("                ");
     _builder.append("var xLabel;");
     _builder.newLine();
-    _builder.append("            ");
+    _builder.append("                ");
     _builder.append("if (new Date(Date.now()).toISOString().split(\'T\')[0] == date.toISOString().split(\'T\')[0]) {");
     _builder.newLine();
-    _builder.append("                ");
+    _builder.append("                    ");
     _builder.append("xLabel = date.toLocaleTimeString();");
     _builder.newLine();
-    _builder.append("            ");
+    _builder.append("                ");
     _builder.append("} else {");
     _builder.newLine();
-    _builder.append("                ");
+    _builder.append("                    ");
     _builder.append("xLabel = date.toLocaleDateString() + \"T\" + date.toLocaleTimeString();");
     _builder.newLine();
-    _builder.append("            ");
+    _builder.append("                ");
     _builder.append("}");
     _builder.newLine();
     _builder.append("    ");
     _builder.newLine();
-    _builder.append("            ");
+    _builder.append("                ");
     _builder.append("chart1Data.labels.push(xLabel);");
     _builder.newLine();
-    _builder.append("            ");
+    _builder.append("                ");
     _builder.append("chart1Data.datasets[i].data.push(res.message);");
     _builder.newLine();
-    _builder.append("        ");
+    _builder.append("            ");
     _builder.append("});");
     _builder.newLine();
-    _builder.newLine();
     _builder.append("        ");
-    _builder.append("i++;");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("});");
+    _builder.append("}");
     _builder.newLine();
     _builder.newLine();
     _builder.append("    ");
@@ -326,7 +329,7 @@ public class WebClientGenerator {
         _builder.append(" = new Chart(");
         String _generateVarName_3 = WebClientGenerator.generateVarName(graph);
         _builder.append(_generateVarName_3);
-        _builder.append("_context», {");
+        _builder.append("_context, {");
         _builder.newLineIfNotEmpty();
         _builder.append("    ");
         _builder.append("type: \'line\',");
@@ -354,8 +357,8 @@ public class WebClientGenerator {
         _builder.newLine();
         _builder.append("                    ");
         _builder.append("text: \"");
-        String _xlabel = graph.getXlabel();
-        _builder.append(_xlabel, "                    ");
+        String _ylabel = graph.getYlabel();
+        _builder.append(_ylabel, "                    ");
         _builder.append("\"");
         _builder.newLineIfNotEmpty();
         _builder.append("                ");
@@ -375,8 +378,8 @@ public class WebClientGenerator {
         _builder.newLine();
         _builder.append("                    ");
         _builder.append("text: \"");
-        String _ylabel = graph.getYlabel();
-        _builder.append(_ylabel, "                    ");
+        String _xlabel = graph.getXlabel();
+        _builder.append(_xlabel, "                    ");
         _builder.append("\"");
         _builder.newLineIfNotEmpty();
         _builder.append("                ");
@@ -481,37 +484,10 @@ public class WebClientGenerator {
     _builder.newLine();
     {
       for(final Graph graph_2 : values) {
-        {
-          EList<GraphLine> _lines_1 = graph_2.getLines();
-          for(final GraphLine line_1 : _lines_1) {
-            _builder.append("    \t        ");
-            _builder.append("if(message.destinationName == mqtt_topic_");
-            int _abs_2 = Math.abs(line_1.hashCode());
-            _builder.append(_abs_2, "    \t        ");
-            _builder.append(") {");
-            _builder.newLineIfNotEmpty();
-            _builder.append("    \t\t\t            ");
-            String _generateVarName_7 = WebClientGenerator.generateVarName(graph_2);
-            _builder.append(_generateVarName_7, "    \t\t\t            ");
-            _builder.append("_data.labels.push(xLabel);");
-            _builder.newLineIfNotEmpty();
-            _builder.append("    \t\t\t            ");
-            String _generateVarName_8 = WebClientGenerator.generateVarName(graph_2);
-            _builder.append(_generateVarName_8, "    \t\t\t            ");
-            _builder.append("_data.datasets[0].data.push(message.payloadString);");
-            _builder.newLineIfNotEmpty();
-            _builder.append("    \t\t\t            ");
-            String _generateVarName_9 = WebClientGenerator.generateVarName(graph_2);
-            _builder.append(_generateVarName_9, "    \t\t\t            ");
-            _builder.append(".update();");
-            _builder.newLineIfNotEmpty();
-            _builder.append("\t        \t\t\t");
-            _builder.append("}");
-            _builder.newLine();
-            _builder.append("\t        \t\t\t");
-            _builder.newLine();
-          }
-        }
+        _builder.append("    \t        ");
+        String _generate = WebClientGenerator.generate(graph_2.getLines(), graph_2);
+        _builder.append(_generate, "    \t        ");
+        _builder.newLineIfNotEmpty();
       }
     }
     _builder.append("        ");
@@ -844,6 +820,47 @@ public class WebClientGenerator {
   public static String generateVarName(final Graph sensorOutput) {
     int _abs = Math.abs(sensorOutput.hashCode());
     return ("graph_ref" + Integer.valueOf(_abs));
+  }
+  
+  public static String generate(final List<GraphLine> graphLines, final Graph graph) {
+    String _xblockexpression = null;
+    {
+      String result = "";
+      for (int i = 0; (i < graphLines.size()); i++) {
+        {
+          GraphLine graphLine = graphLines.get(i);
+          String _result = result;
+          StringConcatenation _builder = new StringConcatenation();
+          _builder.append("if(message.destinationName == mqtt_topic_");
+          int _abs = Math.abs(graphLine.hashCode());
+          _builder.append(_abs);
+          _builder.append(") {");
+          _builder.newLineIfNotEmpty();
+          _builder.append("\t\t            ");
+          String _generateVarName = WebClientGenerator.generateVarName(graph);
+          _builder.append(_generateVarName, "\t\t            ");
+          _builder.append("_data.labels.push(xLabel);");
+          _builder.newLineIfNotEmpty();
+          _builder.append("\t\t            ");
+          String _generateVarName_1 = WebClientGenerator.generateVarName(graph);
+          _builder.append(_generateVarName_1, "\t\t            ");
+          _builder.append("_data.datasets[");
+          _builder.append(i, "\t\t            ");
+          _builder.append("].data.push(message.payloadString);");
+          _builder.newLineIfNotEmpty();
+          _builder.append("\t\t            ");
+          String _generateVarName_2 = WebClientGenerator.generateVarName(graph);
+          _builder.append(_generateVarName_2, "\t\t            ");
+          _builder.append(".update();");
+          _builder.newLineIfNotEmpty();
+          _builder.append("}");
+          _builder.newLine();
+          result = (_result + _builder);
+        }
+      }
+      _xblockexpression = result;
+    }
+    return _xblockexpression;
   }
   
   public static String graphSettings(final Graph graph) {

@@ -58,7 +58,7 @@ class WebClientGenerator {
 	<head>
 	    <title>Green House Management System</title>
 	    <?php require $_SERVER['DOCUMENT_ROOT'] . "/header.php" ?>
-	    <script src="WaterLevels.js"></script>
+	    <script src="«category».js"></script>
 	</head>
 	
 	<body>
@@ -93,32 +93,31 @@ class WebClientGenerator {
 	    chart1 = chartIdToChart[chartId]
 	    
 	    chart1.update();
-	
-	    topics.forEach(topic => {
-	    	splitTopic = topic.split("/");
-	        var response = await _getData(splitTopic[0], splitTopic[1], splitTopic[2], splitTopic[3], Date.now() - timeSinceNow, Date.now());
-	
-	        var chart1Data = chartIdToData[chartId];
 	    
-	        chart1Data.labels = [];
-	        chart1Data.datasets[i].data = [];
-	    
-	        chart1Data.datasets[i].borderColor.push('rgba(99, 255, 132, 1)');
-	        response.forEach(res => {
-	            var date = new Date(res.timestamp);
-	            var xLabel;
-	            if (new Date(Date.now()).toISOString().split('T')[0] == date.toISOString().split('T')[0]) {
-	                xLabel = date.toLocaleTimeString();
-	            } else {
-	                xLabel = date.toLocaleDateString() + "T" + date.toLocaleTimeString();
-	            }
-	    
-	            chart1Data.labels.push(xLabel);
-	            chart1Data.datasets[i].data.push(res.message);
-	        });
-	
-	        i++;
-	    });
+        for (let i = 0; i < topics.length; i++) {
+            var topic = topics[i]
+            splitTopic = topic.split("/");
+            var response = await _getData(splitTopic[0], splitTopic[1], splitTopic[2], splitTopic[3], Date.now() - timeSinceNow, Date.now());
+    
+            var chart1Data = chartIdToData[chartId];
+    
+            chart1Data.labels = [];
+            chart1Data.datasets[i].data = [];
+    
+            chart1Data.datasets[i].borderColor.push('rgba(99, 255, 132, 1)');
+            response.forEach(res => {
+                var date = new Date(res.timestamp);
+                var xLabel;
+                if (new Date(Date.now()).toISOString().split('T')[0] == date.toISOString().split('T')[0]) {
+                    xLabel = date.toLocaleTimeString();
+                } else {
+                    xLabel = date.toLocaleDateString() + "T" + date.toLocaleTimeString();
+                }
+    
+                chart1Data.labels.push(xLabel);
+                chart1Data.datasets[i].data.push(res.message);
+            });
+        }
 	
 	    chart1.update();
 	}
@@ -131,7 +130,7 @@ class WebClientGenerator {
 	        datasets: [«graph.graphSettings»]
 	    }
 	
-	    «graph.generateVarName» = new Chart(«graph.generateVarName»_context», {
+	    «graph.generateVarName» = new Chart(«graph.generateVarName»_context, {
 	        type: 'line',
 	        data: «graph.generateVarName»_data,
 	        options: {
@@ -139,13 +138,13 @@ class WebClientGenerator {
 	                y: {
 	                    title: {
 	                        display: true,
-	                        text: "«graph.xlabel»"
+	                        text: "«graph.ylabel»"
 	                    }
 	                },
 	                x: {
 	                    title: {
 	                        display: true,
-	                        text: "«graph.ylabel»"
+	                        text: "«graph.xlabel»"
 	                    }
 	                }
 	            }
@@ -179,14 +178,7 @@ class WebClientGenerator {
 	            
 	            
     	        «FOR graph: values»
-    	        	«FOR line: graph.lines»
-    	        		if(message.destinationName == mqtt_topic_«Math.abs(line.hashCode)») {
-    			            «graph.generateVarName»_data.labels.push(xLabel);
-    			            «graph.generateVarName»_data.datasets[0].data.push(message.payloadString);
-    			            «graph.generateVarName».update();
-	        			}
-	        			
-        	        «ENDFOR»
+    	        	«graph.lines.generate(graph)»
     	        «ENDFOR»
 	        }
 	    });
@@ -338,6 +330,22 @@ class WebClientGenerator {
 	
 	def static String generateVarName(Graph sensorOutput) {
 		return "graph_ref"+Math.abs(sensorOutput.hashCode)
+	}
+	
+	def static String generate(List<GraphLine> graphLines, Graph graph) {
+		var result = ""
+		for(var i = 0; i < graphLines.size; i++) {
+			var graphLine = graphLines.get(i)
+			result+= '''
+				if(message.destinationName == mqtt_topic_«Math.abs(graphLine.hashCode)») {
+		            «graph.generateVarName»_data.labels.push(xLabel);
+		            «graph.generateVarName»_data.datasets[«i»].data.push(message.payloadString);
+		            «graph.generateVarName».update();
+				}
+			'''
+		}
+		
+		result
 	}
 	
 	def static String graphSettings(Graph graph) {
