@@ -4,8 +4,6 @@
 #include <Wire.h>
 	
 // GENERATED DIRECTIVES
-#include "DHT.h"
-#define DHTTYPE DHT11
 uint8_t gatewayAddress[] = {0x58, 0xBF, 0x25, 0xE0, 0x77, 0x98};
 esp_now_peer_info_t gatewayInfo;
 
@@ -14,10 +12,10 @@ enum MESSAGE_TYPE { Ping, Setting, Sample };
 // GENERATED SETTINGS
 
 // GENERATED INITIALIZATIONS
-float temperatureHumidity_temperature;
-float temperatureHumidity_humidity;
-DHT temperatureHumidity_dht(4, DHTTYPE);
-float moisture_sample;
+float dummy_zero;
+
+// GENERATED TIMERS
+uint64_t last_loop_time;
 
 const int freq = 5000;
 const int ledChannel = 0;
@@ -99,10 +97,6 @@ void setup() {
   esp_now_register_recv_cb(OnDataRecv);
   
   // GENERATED SETUP
-pinMode(4, INPUT);
-temperatureHumidity_dht.begin();
-Serial.println("DHT sensor initialized!");
-pinMode(32, INPUT);
 }
 
 typedef struct message_base {
@@ -117,32 +111,32 @@ typedef struct message_setting : message_base {
 message_setting settingMessage;
 
 typedef struct message_sample : message_base {
-	float pump_worker_temperatureHumidity_temperature;
-	float pump_worker_temperatureHumidity_humidity;
-	float pump_worker_moisture_sample;
+	float led_worker_dummy_zero;
 } message_sample;
 message_sample sampleMessage;
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  sampleMessage.pump_worker_temperatureHumidity_temperature = 1.0 / 0.0;
-  sampleMessage.pump_worker_temperatureHumidity_humidity = 1.0 / 0.0;
-  sampleMessage.pump_worker_moisture_sample = 1.0 / 0.0;
-  
-  float value = 0;
-  
-  temperatureHumidity_temperature = temperatureHumidity_dht.readTemperature();
-  sampleMessage.pump_worker_temperatureHumidity_temperature = temperatureHumidity_temperature;
-  temperatureHumidity_humidity = temperatureHumidity_dht.readHumidity();
-  sampleMessage.pump_worker_temperatureHumidity_humidity = temperatureHumidity_humidity;
-  if ((bool)(temperatureHumidity_humidity > 20)) {
-  	moisture_sample = analogRead(32);
-  	sampleMessage.pump_worker_moisture_sample = moisture_sample;
+  uint64_t current_time = esp_timer_get_time() / 1000ULL;
+  if (current_time > last_loop_time + 10000) {
+	
+    sampleMessage.led_worker_dummy_zero = 1.0 / 0.0;
+    
+    float value = 0;
+    
+    dummy_zero = 0;
+    value = dummy_zero;
+    dummy_zero = value + sin(millis() / 314.0) * 100.0;
+    sampleMessage.led_worker_dummy_zero = dummy_zero;
+    
+    sampleMessage.type = Sample;
+    send_message(gatewayAddress, (uint8_t *) &sampleMessage, sizeof(sampleMessage));
+    
+    last_loop_time = current_time;
   }
   
-  sampleMessage.type = Sample;
-  send_message(gatewayAddress, (uint8_t *) &sampleMessage, sizeof(sampleMessage));
-  delay(2000);
+
+  
+  delay(100);
 }
 
 void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {

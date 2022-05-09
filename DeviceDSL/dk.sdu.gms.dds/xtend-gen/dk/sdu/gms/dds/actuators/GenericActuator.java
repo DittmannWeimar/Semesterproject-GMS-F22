@@ -15,7 +15,7 @@ public class GenericActuator extends ActuatorDefinition {
   }
   
   @Override
-  protected CharSequence generateEnableActuatorCode(final Actuator actuator, final CharSequence enabledBoolString) {
+  public CharSequence generateEnableActuatorCode(final Actuator actuator, final CharSequence enabledBoolString) {
     CharSequence _xifexpression = null;
     PinType _type = actuator.getPins().get(0).getType();
     if ((_type instanceof DAC)) {

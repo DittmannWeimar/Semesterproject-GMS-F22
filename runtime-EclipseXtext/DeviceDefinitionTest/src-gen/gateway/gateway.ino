@@ -8,7 +8,7 @@ typedef struct worker_info {
 	esp_now_peer_info_t info;
 };
 
-const int numWorkers = 2;
+const int numWorkers = 1;
 struct worker_info workers[numWorkers];
 worker_info null_worker;
 
@@ -26,9 +26,7 @@ typedef struct message_setting : message_base {
 message_setting settingMessage;
 
 typedef struct message_sample : message_base {
-	float pump_worker_temperatureHumidity_temperature;
-	float pump_worker_temperatureHumidity_humidity;
-	float pump_worker_moisture_sample;
+	float led_worker_dummy_zero;
 } message_sample;
 message_sample sampleMessage;
 
@@ -42,7 +40,7 @@ EspMQTTClient client(
   "vald.io",
   "kristian",
   "1234",
-  "gms-gateway-ea583971-8506-4081-ab72-9a6592fa7fff",
+  "gms-gateway-3277d888-53ee-4809-8f9f-e7914c050376",
   3001
 );
 
@@ -99,10 +97,6 @@ void populate_worker_infos () {
 		memcpy(workers[0].info.peer_addr, workers[0].address, 6);
 		workers[0].info.channel = 0;  
 		workers[0].info.encrypt = false;
-		set_mac_bytes(workers[1].address, 0x10, 0x97, 0xBD, 0xD4, 0x4E, 0x8C);
-		memcpy(workers[1].info.peer_addr, workers[1].address, 6);
-		workers[1].info.channel = 0;  
-		workers[1].info.encrypt = false;
 }
 
 void set_mac_bytes(uint8_t arr[6], uint8_t b0, uint8_t b1, uint8_t b2, uint8_t b3, uint8_t b4, uint8_t b5) {
@@ -127,12 +121,6 @@ int32_t getWiFiChannel(const char *ssid) {
 
 void onConnectionEstablished()
 {
-	client.subscribe("settings/" + WiFi.macAddress() + "/10:97:BD:D4:4E:8C/led_power", [](const String &payload) {
-	set_worker_setting(0, 1, String(payload).toFloat());
-	});
-	client.subscribe("settings/" + WiFi.macAddress() + "/10:97:BD:D4:4E:8C/led_frequency", [](const String &payload) {
-	set_worker_setting(1, 1, String(payload).toFloat());
-	});
 }
 
 worker_info get_worker_info(const uint8_t* mac) {
@@ -230,14 +218,8 @@ void handle_sample(const uint8_t* mac, const uint8_t *incomingData, int len) {
   print_mac(mac);
   Serial.println("");
   
-  if (!isnan(sampleMessage.pump_worker_temperatureHumidity_temperature)) {
-  	client.publish(get_topic("samples", mac, "temperatureHumidity,temperature"), String(sampleMessage.pump_worker_temperatureHumidity_temperature));
-  }
-  if (!isnan(sampleMessage.pump_worker_temperatureHumidity_humidity)) {
-  	client.publish(get_topic("samples", mac, "temperatureHumidity,humidity"), String(sampleMessage.pump_worker_temperatureHumidity_humidity));
-  }
-  if (!isnan(sampleMessage.pump_worker_moisture_sample)) {
-  	client.publish(get_topic("samples", mac, "moisture,sample"), String(sampleMessage.pump_worker_moisture_sample));
+  if (!isnan(sampleMessage.led_worker_dummy_zero)) {
+  	client.publish(get_topic("samples", mac, "dummy,zero"), String(sampleMessage.led_worker_dummy_zero));
   }
 }
 

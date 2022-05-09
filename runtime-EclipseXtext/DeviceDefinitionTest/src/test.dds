@@ -4,37 +4,12 @@ System:
 	
 	Gateway main_gateway:
 		mac 58:BF:25:E0:77:98
-		
-		Worker pump_worker:
-		
-			mac 10:97:BD:D5:3E:64
-			sleep for 2 seconds
-								
-			Sensor TemperatureHumidity temperatureHumidity:
-				pins adc 4
-				out "temperature" as temp
-				out "humidity" as humi
-			
-			Sensor Generic moisture:
-				pins adc 32
-				out as moisture
-				sample if temperatureHumidity.humi > 20
 				
 		Worker led_worker:
 		
-			mac 10:97:BD:D4:4E:8C
-			sleep for 1 seconds
+			mac 10:97:BD:D5:3E:64
+			sleep for 10 seconds
 			
-			Actuator Generic led:
-				pins dac 25
-				setting power = 128
-				setting frequency = 1
-				when call sin(call millis() / ((1.0 / frequency)) * 1000.0) > 0
-	
-	Graph:
-		category "basics"
-		title "Temperature"
-		x "Time"
-		y "Degrees (C)"
-		line pump_worker.temperatureHumidity.temp + 5 legend "pump worker" color red
-		line pump_worker.temperatureHumidity.humi - 5 color (0.5, 0.5, 0.2)
+			Sensor Dummy dummy:
+				pins
+				out as dummy with mapping value + call sin(call millis() / 314.0) * 100.0

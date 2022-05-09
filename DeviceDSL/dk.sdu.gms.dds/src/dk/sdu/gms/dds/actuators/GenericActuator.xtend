@@ -12,7 +12,7 @@ class GenericActuator extends ActuatorDefinition {
 		requiredSettings = #["power"]
 	}
 	
-	override protected generateEnableActuatorCode(Actuator actuator, CharSequence enabledBoolString) {
+	override public generateEnableActuatorCode(Actuator actuator, CharSequence enabledBoolString) {
 		if (actuator.pins.get(0).type instanceof DAC) {
 			'''ledcWrite(«pinNumberToDacChannel(actuator.pins.get(0).number)», (float)(«enabledBoolString») * «getSettingBindingBySettingName(actuator, "power")»);'''
 		}else{

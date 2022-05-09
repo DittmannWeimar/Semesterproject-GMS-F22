@@ -5,6 +5,10 @@ import org.eclipse.xtext.generator.IFileSystemAccess2
 import static dk.sdu.gms.dds.Utils.*
 import dk.sdu.gms.dds.DeviceDefinition
 import java.util.ArrayList
+import java.util.stream.Collectors
+import dk.sdu.gms.dds.deviceDefinition.Actuator
+import dk.sdu.gms.dds.actuators.ActuatorDefinition
+import dk.sdu.gms.dds.deviceDefinition.OnOff
 
 public class WorkerGenerator {
 	
@@ -40,6 +44,14 @@ public class WorkerGenerator {
 	// GENERATED INITIALIZATIONS
 	«FOR device : worker.devices»
 	«DeviceDefinition.getDefinition(device).generateInitializers(device)»
+	«ENDFOR»
+	
+	// GENERATED TIMERS
+	uint64_t last_loop_time;
+	«FOR actuator : getTimedActuators(worker)»
+	«IF isTimed(actuator.trigger)»
+	uint64_t «getTimerName(actuator)»;
+	«ENDIF»
 	«ENDFOR»
 	
 	const int freq = 5000;
@@ -145,22 +157,36 @@ public class WorkerGenerator {
 	message_sample sampleMessage;
 
 	void loop() {
-	  // put your main code here, to run repeatedly:
-	  «FOR output: getWorkerSensorOutputs(gateway(worker))»
-	  sampleMessage.«getSampleMessageName(output)» = 1.0 / 0.0;
+	  uint64_t current_time = esp_timer_get_time() / 1000ULL;
+	  if (current_time > last_loop_time + «worker.sleepTime * getTimeUnitMsMultiplier(worker.timeUnit)») {
+		
+	    «FOR output: getWorkerSensorOutputs(gateway(worker))»
+	    sampleMessage.«getSampleMessageName(output)» = 1.0 / 0.0;
+	    «ENDFOR»
+	    
+	    float value = 0;
+	    
+	    «FOR device : worker.devices»
+	    «DeviceDefinition.getDefinition(device).generateLoop(device)»
+	    «ENDFOR»
+	    
+	    «IF hasSensors(worker)»
+	    sampleMessage.type = Sample;
+	    send_message(gatewayAddress, (uint8_t *) &sampleMessage, sizeof(sampleMessage));
+	    «ENDIF»
+	    
+	    last_loop_time = current_time;
+	  }
+	  
+	  «FOR actuator : getTimedActuators(worker)»
+	  if (current_time > «getTimerName(actuator)» + «(actuator.trigger as OnOff).time * getTimeUnitMsMultiplier((actuator.trigger as OnOff).unit)» && «getEnabledVariableName(actuator)») {
+	    «getEnabledVariableName(actuator)» = false;
+	    «ActuatorDefinition.getActuatorDefinition(actuator).generateEnableActuatorCode(actuator, getEnabledVariableName(actuator))»
+	  }
 	  «ENDFOR»
+
 	  
-	  float value = 0;
-	  
-	  «FOR device : worker.devices»
-	  «DeviceDefinition.getDefinition(device).generateLoop(device)»
-	  «ENDFOR»
-	  
-	  «IF hasSensors(worker)»
-	  sampleMessage.type = Sample;
-	  send_message(gatewayAddress, (uint8_t *) &sampleMessage, sizeof(sampleMessage));
-	  «ENDIF»
-	  delay(«worker.sleepTime * getTimeUnitMsMultiplier(worker.timeUnit)»);
+	  delay(100);
 	}
 	
 	void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {

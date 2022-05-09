@@ -52,10 +52,10 @@ abstract class ActuatorDefinition extends DeviceDefinition {
 	protected def CharSequence generateLoop(Actuator actuator) '''
 	«actuator.generateCheckLoop»
 	«actuator.generateEnableActuatorCode(getEnabledVariableName(actuator))»
-	«IF actuator.trigger.isTimed»
-	delay(«(actuator.trigger as OnOff).time * getTimeUnitMsMultiplier((actuator.trigger as OnOff).unit)»);
-	«getEnabledVariableName(actuator)» = false;
-	«actuator.generateEnableActuatorCode(getEnabledVariableName(actuator))»
+	«IF isTimed(actuator.trigger)»
+	if («getEnabledVariableName(actuator)») {
+	  «getTimerName(actuator)» = current_time;
+	}
 	«ENDIF»
 	'''
 	
@@ -64,7 +64,7 @@ abstract class ActuatorDefinition extends DeviceDefinition {
 		switch (trigger) {
 			When: generateWhenLoop(trigger.exp, actuator)
 			OnOff: {
-				val isTimed = trigger.isTimed;
+				val isTimed = isTimed(trigger);
 				if (isTimed) {
 					generateWhenLoop(trigger.onExp, actuator)
 				}else{
@@ -87,17 +87,6 @@ abstract class ActuatorDefinition extends DeviceDefinition {
 	}
 	'''
 	
-	protected def CharSequence generateEnableActuatorCode (Actuator actuator, CharSequence enabledBoolString)
-	
-	protected def CharSequence getEnabledVariableName(Actuator actuator)
-	'''«getVariablePrefix(actuator)»enabled'''
-	
-	protected def isTimed (Trigger trigger) {
-		if (trigger instanceof OnOff) {
-			return trigger.offExp === null;			
-		}
-		return false;
-	}
-
+	public def CharSequence generateEnableActuatorCode (Actuator actuator, CharSequence enabledBoolString)
 	
 }

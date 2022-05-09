@@ -44,6 +44,9 @@ import dk.sdu.gms.dds.deviceDefinition.ADC
 import dk.sdu.gms.dds.deviceDefinition.GenericIn
 import java.util.Arrays
 import org.eclipse.emf.ecore.EObject
+import dk.sdu.gms.dds.deviceDefinition.Trigger
+import dk.sdu.gms.dds.deviceDefinition.OnOff
+import java.util.stream.Collectors
 
 class Utils {
 	
@@ -232,6 +235,14 @@ class Utils {
 		}
 	}
 	
+	public static def getTimerName(Actuator actuator) {
+		getVariablePrefix(actuator) + "last_enable_time";
+	}
+	
+	public static def getTimedActuators(Worker worker) {
+		worker.devices.stream().filter (x | x instanceof Actuator).map(x | x as Actuator).filter(x | isTimed(x.trigger)).collect(Collectors.toList())
+	}
+	
 	public static def getTimeUnitMsMultiplier(TimeUnit unit) {
 		switch (unit) {
 			Second: 1000
@@ -298,5 +309,16 @@ class Utils {
 	
 	public static def getSampleMqttTopic (SensorOutput output) {
 		return 'samples/' + system(output).gateway.mac + '/' + output.sensor.worker.mac + '/' + getSampleMqttSubject(output)
+	}
+	
+	public static def isTimed (Trigger trigger) {
+		if (trigger instanceof OnOff) {
+			return trigger.offExp === null;			
+		}
+		return false;
+	}
+	
+	public static def CharSequence getEnabledVariableName(Actuator actuator) {
+		return '''«getVariablePrefix(actuator)»enabled'''
 	}
 }

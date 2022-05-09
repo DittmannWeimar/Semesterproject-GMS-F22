@@ -45,7 +45,7 @@ public abstract class ActuatorDefinition extends DeviceDefinition {
   protected CharSequence generateInitializers(final Actuator actuator) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("bool ");
-    CharSequence _enabledVariableName = this.getEnabledVariableName(actuator);
+    CharSequence _enabledVariableName = Utils.getEnabledVariableName(actuator);
     _builder.append(_enabledVariableName);
     _builder.append(" = false;");
     _builder.newLineIfNotEmpty();
@@ -75,28 +75,24 @@ public abstract class ActuatorDefinition extends DeviceDefinition {
     CharSequence _generateCheckLoop = this.generateCheckLoop(actuator);
     _builder.append(_generateCheckLoop);
     _builder.newLineIfNotEmpty();
-    CharSequence _generateEnableActuatorCode = this.generateEnableActuatorCode(actuator, this.getEnabledVariableName(actuator));
+    CharSequence _generateEnableActuatorCode = this.generateEnableActuatorCode(actuator, Utils.getEnabledVariableName(actuator));
     _builder.append(_generateEnableActuatorCode);
     _builder.newLineIfNotEmpty();
     {
-      boolean _isTimed = this.isTimed(actuator.getTrigger());
+      boolean _isTimed = Utils.isTimed(actuator.getTrigger());
       if (_isTimed) {
-        _builder.append("delay(");
-        Trigger _trigger = actuator.getTrigger();
-        int _time = ((OnOff) _trigger).getTime();
-        Trigger _trigger_1 = actuator.getTrigger();
-        int _timeUnitMsMultiplier = Utils.getTimeUnitMsMultiplier(((OnOff) _trigger_1).getUnit());
-        int _multiply = (_time * _timeUnitMsMultiplier);
-        _builder.append(_multiply);
-        _builder.append(");");
-        _builder.newLineIfNotEmpty();
-        CharSequence _enabledVariableName = this.getEnabledVariableName(actuator);
+        _builder.append("if (");
+        CharSequence _enabledVariableName = Utils.getEnabledVariableName(actuator);
         _builder.append(_enabledVariableName);
-        _builder.append(" = false;");
+        _builder.append(") {");
         _builder.newLineIfNotEmpty();
-        CharSequence _generateEnableActuatorCode_1 = this.generateEnableActuatorCode(actuator, this.getEnabledVariableName(actuator));
-        _builder.append(_generateEnableActuatorCode_1);
+        _builder.append("  ");
+        String _timerName = Utils.getTimerName(actuator);
+        _builder.append(_timerName, "  ");
+        _builder.append(" = current_time;");
         _builder.newLineIfNotEmpty();
+        _builder.append("}");
+        _builder.newLine();
       }
     }
     return _builder;
@@ -117,7 +113,7 @@ public abstract class ActuatorDefinition extends DeviceDefinition {
           _matched=true;
           CharSequence _xblockexpression_1 = null;
           {
-            final boolean isTimed = this.isTimed(trigger);
+            final boolean isTimed = Utils.isTimed(trigger);
             CharSequence _xifexpression = null;
             if (isTimed) {
               _xifexpression = this.generateWhenLoop(((OnOff)trigger).getOnExp(), actuator);
@@ -136,7 +132,7 @@ public abstract class ActuatorDefinition extends DeviceDefinition {
   
   protected CharSequence generateWhenLoop(final Expression whenExp, final Actuator actuator) {
     StringConcatenation _builder = new StringConcatenation();
-    CharSequence _enabledVariableName = this.getEnabledVariableName(actuator);
+    CharSequence _enabledVariableName = Utils.getEnabledVariableName(actuator);
     _builder.append(_enabledVariableName);
     _builder.append(" = (bool)(");
     String _generateExpression = Utils.generateExpression(whenExp);
@@ -149,7 +145,7 @@ public abstract class ActuatorDefinition extends DeviceDefinition {
   protected CharSequence generateOnOffLoop(final OnOff onOff, final Actuator actuator) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("if (");
-    CharSequence _enabledVariableName = this.getEnabledVariableName(actuator);
+    CharSequence _enabledVariableName = Utils.getEnabledVariableName(actuator);
     _builder.append(_enabledVariableName);
     _builder.append(" == false && (bool)(");
     String _generateExpression = Utils.generateExpression(onOff.getOnExp());
@@ -157,14 +153,14 @@ public abstract class ActuatorDefinition extends DeviceDefinition {
     _builder.append(")) {");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
-    CharSequence _enabledVariableName_1 = this.getEnabledVariableName(actuator);
+    CharSequence _enabledVariableName_1 = Utils.getEnabledVariableName(actuator);
     _builder.append(_enabledVariableName_1, "\t");
     _builder.append(" = true;");
     _builder.newLineIfNotEmpty();
     _builder.append("}");
     _builder.newLine();
     _builder.append("if (");
-    CharSequence _enabledVariableName_2 = this.getEnabledVariableName(actuator);
+    CharSequence _enabledVariableName_2 = Utils.getEnabledVariableName(actuator);
     _builder.append(_enabledVariableName_2);
     _builder.append(" == true && (bool)(");
     String _generateExpression_1 = Utils.generateExpression(onOff.getOffExp());
@@ -172,7 +168,7 @@ public abstract class ActuatorDefinition extends DeviceDefinition {
     _builder.append(")) {");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
-    CharSequence _enabledVariableName_3 = this.getEnabledVariableName(actuator);
+    CharSequence _enabledVariableName_3 = Utils.getEnabledVariableName(actuator);
     _builder.append(_enabledVariableName_3, "\t");
     _builder.append(" = false;");
     _builder.newLineIfNotEmpty();
@@ -181,21 +177,5 @@ public abstract class ActuatorDefinition extends DeviceDefinition {
     return _builder;
   }
   
-  protected abstract CharSequence generateEnableActuatorCode(final Actuator actuator, final CharSequence enabledBoolString);
-  
-  protected CharSequence getEnabledVariableName(final Actuator actuator) {
-    StringConcatenation _builder = new StringConcatenation();
-    String _variablePrefix = Utils.getVariablePrefix(actuator);
-    _builder.append(_variablePrefix);
-    _builder.append("enabled");
-    return _builder;
-  }
-  
-  protected boolean isTimed(final Trigger trigger) {
-    if ((trigger instanceof OnOff)) {
-      Expression _offExp = ((OnOff)trigger).getOffExp();
-      return (_offExp == null);
-    }
-    return false;
-  }
+  public abstract CharSequence generateEnableActuatorCode(final Actuator actuator, final CharSequence enabledBoolString);
 }

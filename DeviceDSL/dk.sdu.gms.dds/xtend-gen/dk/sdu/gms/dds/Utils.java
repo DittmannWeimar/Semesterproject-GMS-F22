@@ -27,6 +27,7 @@ import dk.sdu.gms.dds.deviceDefinition.Minus;
 import dk.sdu.gms.dds.deviceDefinition.Minute;
 import dk.sdu.gms.dds.deviceDefinition.Mult;
 import dk.sdu.gms.dds.deviceDefinition.NotEquals;
+import dk.sdu.gms.dds.deviceDefinition.OnOff;
 import dk.sdu.gms.dds.deviceDefinition.Or;
 import dk.sdu.gms.dds.deviceDefinition.Parenthesis;
 import dk.sdu.gms.dds.deviceDefinition.Pin;
@@ -38,6 +39,7 @@ import dk.sdu.gms.dds.deviceDefinition.Sensor;
 import dk.sdu.gms.dds.deviceDefinition.SensorOutput;
 import dk.sdu.gms.dds.deviceDefinition.Setting;
 import dk.sdu.gms.dds.deviceDefinition.TimeUnit;
+import dk.sdu.gms.dds.deviceDefinition.Trigger;
 import dk.sdu.gms.dds.deviceDefinition.Value;
 import dk.sdu.gms.dds.deviceDefinition.VariableUse;
 import dk.sdu.gms.dds.deviceDefinition.Worker;
@@ -45,6 +47,9 @@ import dk.sdu.gms.dds.sensors.SensorDefinition;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtend2.lib.StringConcatenation;
@@ -446,6 +451,24 @@ public class Utils {
     return _xblockexpression;
   }
   
+  public static String getTimerName(final Actuator actuator) {
+    String _variablePrefix = Utils.getVariablePrefix(actuator);
+    return (_variablePrefix + "last_enable_time");
+  }
+  
+  public static List<Actuator> getTimedActuators(final Worker worker) {
+    final Predicate<Device> _function = (Device x) -> {
+      return (x instanceof Actuator);
+    };
+    final Function<Device, Actuator> _function_1 = (Device x) -> {
+      return ((Actuator) x);
+    };
+    final Predicate<Actuator> _function_2 = (Actuator x) -> {
+      return Utils.isTimed(x.getTrigger());
+    };
+    return worker.getDevices().stream().filter(_function).<Actuator>map(_function_1).filter(_function_2).collect(Collectors.<Actuator>toList());
+  }
+  
   public static int getTimeUnitMsMultiplier(final TimeUnit unit) {
     int _switchResult = (int) 0;
     boolean _matched = false;
@@ -570,6 +593,22 @@ public class Utils {
     String _plus_3 = (_plus_2 + "/");
     String _sampleMqttSubject = Utils.getSampleMqttSubject(output);
     return (_plus_3 + _sampleMqttSubject);
+  }
+  
+  public static boolean isTimed(final Trigger trigger) {
+    if ((trigger instanceof OnOff)) {
+      Expression _offExp = ((OnOff)trigger).getOffExp();
+      return (_offExp == null);
+    }
+    return false;
+  }
+  
+  public static CharSequence getEnabledVariableName(final Actuator actuator) {
+    StringConcatenation _builder = new StringConcatenation();
+    String _variablePrefix = Utils.getVariablePrefix(actuator);
+    _builder.append(_variablePrefix);
+    _builder.append("enabled");
+    return _builder;
   }
   
   public static String getSampleMessageName(final SensorOutput output) {
