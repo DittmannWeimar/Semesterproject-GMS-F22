@@ -2,9 +2,14 @@ package dk.sdu.gms.dds.generator;
 
 import dk.sdu.gms.dds.Utils;
 import dk.sdu.gms.dds.deviceDefinition.Binding;
+import dk.sdu.gms.dds.deviceDefinition.Color;
+import dk.sdu.gms.dds.deviceDefinition.ColorPreset;
 import dk.sdu.gms.dds.deviceDefinition.Gateway;
 import dk.sdu.gms.dds.deviceDefinition.Graph;
 import dk.sdu.gms.dds.deviceDefinition.GraphLine;
+import dk.sdu.gms.dds.deviceDefinition.Preset;
+import dk.sdu.gms.dds.deviceDefinition.RGB;
+import dk.sdu.gms.dds.deviceDefinition.Random;
 import dk.sdu.gms.dds.deviceDefinition.SensorOutput;
 import dk.sdu.gms.dds.deviceDefinition.Worker;
 import java.util.ArrayList;
@@ -204,6 +209,8 @@ public class WebClientGenerator {
     _builder.newLine();
     _builder.append("var chartIdToChart = {};");
     _builder.newLine();
+    _builder.append("var chartIdToChartExtras = {};");
+    _builder.newLine();
     _builder.newLine();
     _builder.append("async function updateChart(chartId, topics, timeSinceNow) {");
     _builder.newLine();
@@ -217,6 +224,9 @@ public class WebClientGenerator {
     _builder.newLine();
     _builder.append("    ");
     _builder.append("chart1.update();");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("var chartExtras = chartIdToChartExtras[chartId]");
     _builder.newLine();
     _builder.append("    ");
     _builder.newLine();
@@ -248,7 +258,7 @@ public class WebClientGenerator {
     _builder.append("    ");
     _builder.newLine();
     _builder.append("            ");
-    _builder.append("chart1Data.datasets[i].borderColor.push(\'rgba(99, 255, 132, 1)\');");
+    _builder.append("chart1Data.datasets[i].borderColor.push(chartExtras.colors[i]);");
     _builder.newLine();
     _builder.append("            ");
     _builder.append("response.forEach(res => {");
@@ -414,6 +424,33 @@ public class WebClientGenerator {
         _builder.append(_generateVarName_6);
         _builder.append(";");
         _builder.newLineIfNotEmpty();
+        _builder.append("chartIdToChartExtras[\'chart-");
+        String _title_3 = graph.getTitle();
+        _builder.append(_title_3);
+        _builder.append("\'] = {}");
+        _builder.newLineIfNotEmpty();
+        _builder.append("chartIdToChartExtras[\'chart-");
+        String _title_4 = graph.getTitle();
+        _builder.append(_title_4);
+        _builder.append("\'].colors = [];");
+        _builder.newLineIfNotEmpty();
+        _builder.append("    \t");
+        _builder.newLine();
+        {
+          EList<GraphLine> _lines = graph.getLines();
+          for(final GraphLine line : _lines) {
+            _builder.append("chartIdToChartExtras[\'chart-");
+            String _title_5 = graph.getTitle();
+            _builder.append(_title_5);
+            _builder.append("\'].colors.push(\'rgba");
+            String _writeColor = WebClientGenerator.writeColor(line.getColor());
+            _builder.append(_writeColor);
+            _builder.append("\');");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+        _builder.append("        ");
+        _builder.newLine();
       }
     }
     _builder.append("\t");
@@ -427,18 +464,18 @@ public class WebClientGenerator {
     {
       for(final Graph graph_1 : values) {
         {
-          EList<GraphLine> _lines = graph_1.getLines();
-          for(final GraphLine line : _lines) {
+          EList<GraphLine> _lines_1 = graph_1.getLines();
+          for(final GraphLine line_1 : _lines_1) {
             _builder.append("var mqtt_topic_");
-            int _abs = Math.abs(line.hashCode());
+            int _abs = Math.abs(line_1.hashCode());
             _builder.append(_abs);
             _builder.append(" = \'");
-            String _topic = WebClientGenerator.getTopic(line);
+            String _topic = WebClientGenerator.getTopic(line_1);
             _builder.append(_topic);
             _builder.append("\';");
             _builder.newLineIfNotEmpty();
             _builder.append("mqtt.subscribe(mqtt_topic_");
-            int _abs_1 = Math.abs(line.hashCode());
+            int _abs_1 = Math.abs(line_1.hashCode());
             _builder.append(_abs_1);
             _builder.append(");");
             _builder.newLineIfNotEmpty();
@@ -501,8 +538,8 @@ public class WebClientGenerator {
       for(final Graph graph_3 : values) {
         _builder.append("\t");
         _builder.append("updateChart(\'chart-");
-        String _title_3 = graph_3.getTitle();
-        _builder.append(_title_3, "\t");
+        String _title_6 = graph_3.getTitle();
+        _builder.append(_title_6, "\t");
         _builder.append("\', [");
         String _graphTopics = WebClientGenerator.getGraphTopics(graph_3);
         _builder.append(_graphTopics, "\t");
@@ -757,6 +794,64 @@ public class WebClientGenerator {
     _builder.append("}");
     _builder.newLine();
     return _builder.toString();
+  }
+  
+  public static String writeColor(final Color color) {
+    if ((color instanceof Preset)) {
+      final ColorPreset preset = ((Preset)color).getPreset();
+      int _value = preset.getValue();
+      switch (_value) {
+        case ColorPreset.RED_VALUE:
+          return "(255, 0, 0, 255)";
+        case ColorPreset.BLUE_VALUE:
+          return "(0, 0, 255, 255)";
+        case ColorPreset.GREEN_VALUE:
+          return "(0, 255, 0, 255";
+        case ColorPreset.YELLOW_VALUE:
+          return "(255, 255, 0, 255)";
+        default:
+          throw new RuntimeException("Color is not supported!");
+      }
+    }
+    if ((color instanceof Random)) {
+      java.util.Random r = new java.util.Random();
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(");
+      int _nextInt = r.nextInt(256);
+      _builder.append(_nextInt);
+      _builder.append(", ");
+      int _nextInt_1 = r.nextInt(256);
+      _builder.append(_nextInt_1);
+      _builder.append(", ");
+      int _nextInt_2 = r.nextInt(256);
+      _builder.append(_nextInt_2);
+      _builder.append(", 255)");
+      return _builder.toString();
+    } else {
+      if ((color instanceof RGB)) {
+        StringConcatenation _builder_1 = new StringConcatenation();
+        _builder_1.append("(");
+        int _int8 = WebClientGenerator.toInt8(((RGB)color).getRed());
+        _builder_1.append(_int8);
+        _builder_1.append(", ");
+        int _int8_1 = WebClientGenerator.toInt8(((RGB)color).getGreen());
+        _builder_1.append(_int8_1);
+        _builder_1.append(", ");
+        int _int8_2 = WebClientGenerator.toInt8(((RGB)color).getBlue());
+        _builder_1.append(_int8_2);
+        _builder_1.append(", 255)");
+        return _builder_1.toString();
+      }
+    }
+    return null;
+  }
+  
+  public static int toInt8(final String v) {
+    float floatValue = Float.parseFloat(v);
+    if (((floatValue < 0) || (floatValue > 1))) {
+      throw new RuntimeException("Color value must be between 0 and 1!!");
+    }
+    return ((int) (floatValue * 256));
   }
   
   public static String getGraphTopics(final Graph graph) {

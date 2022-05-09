@@ -10,6 +10,11 @@ import dk.sdu.gms.dds.deviceDefinition.Gateway
 import dk.sdu.gms.dds.deviceDefinition.GraphLine
 import dk.sdu.gms.dds.deviceDefinition.SensorOutput
 import dk.sdu.gms.dds.Utils
+import dk.sdu.gms.dds.deviceDefinition.Color
+import dk.sdu.gms.dds.deviceDefinition.Preset
+import dk.sdu.gms.dds.deviceDefinition.ColorPreset
+import dk.sdu.gms.dds.deviceDefinition.Random
+import dk.sdu.gms.dds.deviceDefinition.RGB
 
 class WebClientGenerator {
 	public static def generateWebClient (dk.sdu.gms.dds.deviceDefinition.System system, IFileSystemAccess2 fsa) {
@@ -87,12 +92,14 @@ class WebClientGenerator {
 	def static String generateCategoryPageJavascript(String category, Gateway gateway, List<Graph> values) '''
 	var chartIdToData = {};
 	var chartIdToChart = {};
+	var chartIdToChartExtras = {};
 	
 	async function updateChart(chartId, topics, timeSinceNow) {
 	    var i = 0;
 	    chart1 = chartIdToChart[chartId]
 	    
 	    chart1.update();
+	    var chartExtras = chartIdToChartExtras[chartId]
 	    
         for (let i = 0; i < topics.length; i++) {
             var topic = topics[i]
@@ -104,7 +111,7 @@ class WebClientGenerator {
             chart1Data.labels = [];
             chart1Data.datasets[i].data = [];
     
-            chart1Data.datasets[i].borderColor.push('rgba(99, 255, 132, 1)');
+            chart1Data.datasets[i].borderColor.push(chartExtras.colors[i]);
             response.forEach(res => {
                 var date = new Date(res.timestamp);
                 var xLabel;
@@ -153,6 +160,13 @@ class WebClientGenerator {
 		
 	    chartIdToData['chart-«graph.title»'] = «graph.generateVarName»_data;
 	    chartIdToChart['chart-«graph.title»'] = «graph.generateVarName»;
+	    chartIdToChartExtras['chart-«graph.title»'] = {}
+	    chartIdToChartExtras['chart-«graph.title»'].colors = [];
+    	
+    	«FOR line: graph.lines»
+		    chartIdToChartExtras['chart-«graph.title»'].colors.push('rgba«line.color.writeColor»');
+        «ENDFOR»
+        
 		«ENDFOR»
 		
 	    MQTTConnect(mqtt => {
@@ -291,6 +305,39 @@ class WebClientGenerator {
 	    })
 	}
 	'''
+	
+	def static String writeColor(Color color) {
+		if(color instanceof Preset) {
+			val preset = color.preset
+			
+			switch(preset.value) {
+				case ColorPreset.RED_VALUE: return "(255, 0, 0, 255)"
+				case ColorPreset.BLUE_VALUE: return "(0, 0, 255, 255)"
+				case ColorPreset.GREEN_VALUE: return "(0, 255, 0, 255"
+				case ColorPreset.YELLOW_VALUE: return "(255, 255, 0, 255)"
+				default: throw new RuntimeException("Color is not supported!")
+			}
+		}
+		
+		if(color instanceof Random) {
+			var r = new java.util.Random();
+			
+			// Upper bound is exclusive
+			return '''(«r.nextInt(256)», «r.nextInt(256)», «r.nextInt(256)», 255)'''
+		} else if(color instanceof RGB) {
+			return '''(«color.red.toInt8», «color.green.toInt8», «color.blue.toInt8», 255)'''
+		}
+	}
+	
+	def static int toInt8(String v) {
+		var floatValue = Float.parseFloat(v)
+		
+		if(floatValue < 0 || floatValue > 1) {
+			throw new RuntimeException("Color value must be between 0 and 1!!")
+		}
+		
+		return (floatValue * 256) as int
+	}
 	
 	def static String getGraphTopics(Graph graph) {
 		var result = ""
