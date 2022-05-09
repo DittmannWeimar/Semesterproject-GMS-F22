@@ -4399,9 +4399,6 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                 case EOF:
                 case 33:
                 case 34:
-                case 39:
-                case 40:
-                case 41:
                 case 43:
                 case 44:
                 case 48:
@@ -4437,7 +4434,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                         if ( ((LA21_5>=20 && LA21_5<=21)) ) {
                             alt21=3;
                         }
-                        else if ( (LA21_5==EOF||(LA21_5>=33 && LA21_5<=34)||(LA21_5>=39 && LA21_5<=41)||(LA21_5>=43 && LA21_5<=44)||LA21_5==48||LA21_5==51||LA21_5==53||LA21_5==58||LA21_5==61||(LA21_5>=64 && LA21_5<=66)||(LA21_5>=70 && LA21_5<=80)) ) {
+                        else if ( (LA21_5==EOF||(LA21_5>=33 && LA21_5<=34)||(LA21_5>=43 && LA21_5<=44)||LA21_5==48||LA21_5==51||LA21_5==53||LA21_5==58||LA21_5==61||(LA21_5>=64 && LA21_5<=66)||(LA21_5>=70 && LA21_5<=80)) ) {
                             alt21=2;
                         }
                         else {
@@ -4465,7 +4462,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                         if ( ((LA21_5>=20 && LA21_5<=21)) ) {
                             alt21=3;
                         }
-                        else if ( (LA21_5==EOF||(LA21_5>=33 && LA21_5<=34)||(LA21_5>=39 && LA21_5<=41)||(LA21_5>=43 && LA21_5<=44)||LA21_5==48||LA21_5==51||LA21_5==53||LA21_5==58||LA21_5==61||(LA21_5>=64 && LA21_5<=66)||(LA21_5>=70 && LA21_5<=80)) ) {
+                        else if ( (LA21_5==EOF||(LA21_5>=33 && LA21_5<=34)||(LA21_5>=43 && LA21_5<=44)||LA21_5==48||LA21_5==51||LA21_5==53||LA21_5==58||LA21_5==61||(LA21_5>=64 && LA21_5<=66)||(LA21_5>=70 && LA21_5<=80)) ) {
                             alt21=2;
                         }
                         else {
@@ -8756,7 +8753,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:2688:1: ( rule__Gateway__Group__0__Impl rule__Gateway__Group__1 )
             // InternalDeviceDefinition.g:2689:2: rule__Gateway__Group__0__Impl rule__Gateway__Group__1
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_19);
             rule__Gateway__Group__0__Impl();
 
             state._fsp--;
@@ -8916,7 +8913,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:2742:1: ( rule__Gateway__Group__2__Impl rule__Gateway__Group__3 )
             // InternalDeviceDefinition.g:2743:2: rule__Gateway__Group__2__Impl rule__Gateway__Group__3
             {
-            pushFollow(FOLLOW_28);
+            pushFollow(FOLLOW_27);
             rule__Gateway__Group__2__Impl();
 
             state._fsp--;
@@ -8991,7 +8988,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:2769:1: ( rule__Gateway__Group__3__Impl rule__Gateway__Group__4 )
             // InternalDeviceDefinition.g:2770:2: rule__Gateway__Group__3__Impl rule__Gateway__Group__4
             {
-            pushFollow(FOLLOW_29);
+            pushFollow(FOLLOW_28);
             rule__Gateway__Group__3__Impl();
 
             state._fsp--;
@@ -9066,7 +9063,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:2796:1: ( rule__Gateway__Group__4__Impl rule__Gateway__Group__5 )
             // InternalDeviceDefinition.g:2797:2: rule__Gateway__Group__4__Impl rule__Gateway__Group__5
             {
-            pushFollow(FOLLOW_30);
+            pushFollow(FOLLOW_29);
             rule__Gateway__Group__4__Impl();
 
             state._fsp--;
@@ -9194,7 +9191,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:2838:3: ( rule__Gateway__WorkersAssignment_5 )
             // InternalDeviceDefinition.g:2838:4: rule__Gateway__WorkersAssignment_5
             {
-            pushFollow(FOLLOW_31);
+            pushFollow(FOLLOW_30);
             rule__Gateway__WorkersAssignment_5();
 
             state._fsp--;
@@ -9225,7 +9222,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             	case 1 :
             	    // InternalDeviceDefinition.g:2843:4: rule__Gateway__WorkersAssignment_5
             	    {
-            	    pushFollow(FOLLOW_31);
+            	    pushFollow(FOLLOW_30);
             	    rule__Gateway__WorkersAssignment_5();
 
             	    state._fsp--;
@@ -9274,7 +9271,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:2857:1: ( rule__Worker__Group__0__Impl rule__Worker__Group__1 )
             // InternalDeviceDefinition.g:2858:2: rule__Worker__Group__0__Impl rule__Worker__Group__1
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_19);
             rule__Worker__Group__0__Impl();
 
             state._fsp--;
@@ -9434,7 +9431,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:2911:1: ( rule__Worker__Group__2__Impl rule__Worker__Group__3 )
             // InternalDeviceDefinition.g:2912:2: rule__Worker__Group__2__Impl rule__Worker__Group__3
             {
-            pushFollow(FOLLOW_28);
+            pushFollow(FOLLOW_27);
             rule__Worker__Group__2__Impl();
 
             state._fsp--;
@@ -9509,7 +9506,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:2938:1: ( rule__Worker__Group__3__Impl rule__Worker__Group__4 )
             // InternalDeviceDefinition.g:2939:2: rule__Worker__Group__3__Impl rule__Worker__Group__4
             {
-            pushFollow(FOLLOW_32);
+            pushFollow(FOLLOW_31);
             rule__Worker__Group__3__Impl();
 
             state._fsp--;
@@ -9594,7 +9591,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:2965:1: ( rule__Worker__Group__4__Impl rule__Worker__Group__5 )
             // InternalDeviceDefinition.g:2966:2: rule__Worker__Group__4__Impl rule__Worker__Group__5
             {
-            pushFollow(FOLLOW_32);
+            pushFollow(FOLLOW_31);
             rule__Worker__Group__4__Impl();
 
             state._fsp--;
@@ -9742,7 +9739,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             	case 1 :
             	    // InternalDeviceDefinition.g:3006:3: rule__Worker__DevicesAssignment_5
             	    {
-            	    pushFollow(FOLLOW_33);
+            	    pushFollow(FOLLOW_32);
             	    rule__Worker__DevicesAssignment_5();
 
             	    state._fsp--;
@@ -9788,7 +9785,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:3019:1: ( rule__Worker__Group_3__0__Impl rule__Worker__Group_3__1 )
             // InternalDeviceDefinition.g:3020:2: rule__Worker__Group_3__0__Impl rule__Worker__Group_3__1
             {
-            pushFollow(FOLLOW_29);
+            pushFollow(FOLLOW_28);
             rule__Worker__Group_3__0__Impl();
 
             state._fsp--;
@@ -9943,7 +9940,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:3073:1: ( rule__Worker__Group_4__0__Impl rule__Worker__Group_4__1 )
             // InternalDeviceDefinition.g:3074:2: rule__Worker__Group_4__0__Impl rule__Worker__Group_4__1
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_33);
             rule__Worker__Group_4__0__Impl();
 
             state._fsp--;
@@ -10018,7 +10015,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:3100:1: ( rule__Worker__Group_4__1__Impl rule__Worker__Group_4__2 )
             // InternalDeviceDefinition.g:3101:2: rule__Worker__Group_4__1__Impl rule__Worker__Group_4__2
             {
-            pushFollow(FOLLOW_35);
+            pushFollow(FOLLOW_34);
             rule__Worker__Group_4__1__Impl();
 
             state._fsp--;
@@ -10093,7 +10090,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:3127:1: ( rule__Worker__Group_4__2__Impl rule__Worker__Group_4__3 )
             // InternalDeviceDefinition.g:3128:2: rule__Worker__Group_4__2__Impl rule__Worker__Group_4__3
             {
-            pushFollow(FOLLOW_36);
+            pushFollow(FOLLOW_35);
             rule__Worker__Group_4__2__Impl();
 
             state._fsp--;
@@ -10258,7 +10255,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:3181:1: ( rule__Sensor__Group__0__Impl rule__Sensor__Group__1 )
             // InternalDeviceDefinition.g:3182:2: rule__Sensor__Group__0__Impl rule__Sensor__Group__1
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_19);
             rule__Sensor__Group__0__Impl();
 
             state._fsp--;
@@ -10333,7 +10330,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:3208:1: ( rule__Sensor__Group__1__Impl rule__Sensor__Group__2 )
             // InternalDeviceDefinition.g:3209:2: rule__Sensor__Group__1__Impl rule__Sensor__Group__2
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_19);
             rule__Sensor__Group__1__Impl();
 
             state._fsp--;
@@ -10503,7 +10500,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:3262:1: ( rule__Sensor__Group__3__Impl rule__Sensor__Group__4 )
             // InternalDeviceDefinition.g:3263:2: rule__Sensor__Group__3__Impl rule__Sensor__Group__4
             {
-            pushFollow(FOLLOW_37);
+            pushFollow(FOLLOW_36);
             rule__Sensor__Group__3__Impl();
 
             state._fsp--;
@@ -10578,7 +10575,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:3289:1: ( rule__Sensor__Group__4__Impl rule__Sensor__Group__5 )
             // InternalDeviceDefinition.g:3290:2: rule__Sensor__Group__4__Impl rule__Sensor__Group__5
             {
-            pushFollow(FOLLOW_37);
+            pushFollow(FOLLOW_36);
             rule__Sensor__Group__4__Impl();
 
             state._fsp--;
@@ -10674,7 +10671,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:3316:1: ( rule__Sensor__Group__5__Impl rule__Sensor__Group__6 )
             // InternalDeviceDefinition.g:3317:2: rule__Sensor__Group__5__Impl rule__Sensor__Group__6
             {
-            pushFollow(FOLLOW_37);
+            pushFollow(FOLLOW_36);
             rule__Sensor__Group__5__Impl();
 
             state._fsp--;
@@ -10731,7 +10728,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             	case 1 :
             	    // InternalDeviceDefinition.g:3331:3: rule__Sensor__OutputsAssignment_5
             	    {
-            	    pushFollow(FOLLOW_38);
+            	    pushFollow(FOLLOW_37);
             	    rule__Sensor__OutputsAssignment_5();
 
             	    state._fsp--;
@@ -10777,7 +10774,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:3343:1: ( rule__Sensor__Group__6__Impl rule__Sensor__Group__7 )
             // InternalDeviceDefinition.g:3344:2: rule__Sensor__Group__6__Impl rule__Sensor__Group__7
             {
-            pushFollow(FOLLOW_37);
+            pushFollow(FOLLOW_36);
             rule__Sensor__Group__6__Impl();
 
             state._fsp--;
@@ -10834,7 +10831,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             	case 1 :
             	    // InternalDeviceDefinition.g:3358:3: rule__Sensor__SettingsAssignment_6
             	    {
-            	    pushFollow(FOLLOW_39);
+            	    pushFollow(FOLLOW_38);
             	    rule__Sensor__SettingsAssignment_6();
 
             	    state._fsp--;
@@ -10971,7 +10968,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:3397:1: ( rule__Sensor__Group_4__0__Impl rule__Sensor__Group_4__1 )
             // InternalDeviceDefinition.g:3398:2: rule__Sensor__Group_4__0__Impl rule__Sensor__Group_4__1
             {
-            pushFollow(FOLLOW_40);
+            pushFollow(FOLLOW_39);
             rule__Sensor__Group_4__0__Impl();
 
             state._fsp--;
@@ -11046,7 +11043,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:3424:1: ( rule__Sensor__Group_4__1__Impl rule__Sensor__Group_4__2 )
             // InternalDeviceDefinition.g:3425:2: rule__Sensor__Group_4__1__Impl rule__Sensor__Group_4__2
             {
-            pushFollow(FOLLOW_40);
+            pushFollow(FOLLOW_39);
             rule__Sensor__Group_4__1__Impl();
 
             state._fsp--;
@@ -11112,7 +11109,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             	case 1 :
             	    // InternalDeviceDefinition.g:3439:3: rule__Sensor__PinsAssignment_4_1
             	    {
-            	    pushFollow(FOLLOW_41);
+            	    pushFollow(FOLLOW_40);
             	    rule__Sensor__PinsAssignment_4_1();
 
             	    state._fsp--;
@@ -11210,7 +11207,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             	case 1 :
             	    // InternalDeviceDefinition.g:3465:3: rule__Sensor__Group_4_2__0
             	    {
-            	    pushFollow(FOLLOW_42);
+            	    pushFollow(FOLLOW_41);
             	    rule__Sensor__Group_4_2__0();
 
             	    state._fsp--;
@@ -11256,7 +11253,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:3478:1: ( rule__Sensor__Group_4_2__0__Impl rule__Sensor__Group_4_2__1 )
             // InternalDeviceDefinition.g:3479:2: rule__Sensor__Group_4_2__0__Impl rule__Sensor__Group_4_2__1
             {
-            pushFollow(FOLLOW_43);
+            pushFollow(FOLLOW_42);
             rule__Sensor__Group_4_2__0__Impl();
 
             state._fsp--;
@@ -11411,7 +11408,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:3532:1: ( rule__Sensor__Group_7__0__Impl rule__Sensor__Group_7__1 )
             // InternalDeviceDefinition.g:3533:2: rule__Sensor__Group_7__0__Impl rule__Sensor__Group_7__1
             {
-            pushFollow(FOLLOW_44);
+            pushFollow(FOLLOW_43);
             rule__Sensor__Group_7__0__Impl();
 
             state._fsp--;
@@ -11486,7 +11483,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:3559:1: ( rule__Sensor__Group_7__1__Impl rule__Sensor__Group_7__2 )
             // InternalDeviceDefinition.g:3560:2: rule__Sensor__Group_7__1__Impl rule__Sensor__Group_7__2
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_44);
             rule__Sensor__Group_7__1__Impl();
 
             state._fsp--;
@@ -11641,7 +11638,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:3613:1: ( rule__Pin__Group__0__Impl rule__Pin__Group__1 )
             // InternalDeviceDefinition.g:3614:2: rule__Pin__Group__0__Impl rule__Pin__Group__1
             {
-            pushFollow(FOLLOW_35);
+            pushFollow(FOLLOW_34);
             rule__Pin__Group__0__Impl();
 
             state._fsp--;
@@ -12241,7 +12238,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:3829:1: ( rule__PinType__Group_3__0__Impl rule__PinType__Group_3__1 )
             // InternalDeviceDefinition.g:3830:2: rule__PinType__Group_3__0__Impl rule__PinType__Group_3__1
             {
-            pushFollow(FOLLOW_43);
+            pushFollow(FOLLOW_42);
             rule__PinType__Group_3__0__Impl();
 
             state._fsp--;
@@ -12696,7 +12693,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:3991:1: ( rule__TimeUnit__Group_2__0__Impl rule__TimeUnit__Group_2__1 )
             // InternalDeviceDefinition.g:3992:2: rule__TimeUnit__Group_2__0__Impl rule__TimeUnit__Group_2__1
             {
-            pushFollow(FOLLOW_36);
+            pushFollow(FOLLOW_35);
             rule__TimeUnit__Group_2__0__Impl();
 
             state._fsp--;
@@ -13022,7 +13019,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:4099:1: ( rule__SensorOutput__Group__2__Impl rule__SensorOutput__Group__3 )
             // InternalDeviceDefinition.g:4100:2: rule__SensorOutput__Group__2__Impl rule__SensorOutput__Group__3
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_19);
             rule__SensorOutput__Group__2__Impl();
 
             state._fsp--;
@@ -13348,7 +13345,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:4207:1: ( rule__SensorOutput__Group_4__1__Impl rule__SensorOutput__Group_4__2 )
             // InternalDeviceDefinition.g:4208:2: rule__SensorOutput__Group_4__1__Impl rule__SensorOutput__Group_4__2
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_44);
             rule__SensorOutput__Group_4__1__Impl();
 
             state._fsp--;
@@ -13503,7 +13500,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:4261:1: ( rule__Actuator__Group__0__Impl rule__Actuator__Group__1 )
             // InternalDeviceDefinition.g:4262:2: rule__Actuator__Group__0__Impl rule__Actuator__Group__1
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_19);
             rule__Actuator__Group__0__Impl();
 
             state._fsp--;
@@ -13578,7 +13575,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:4288:1: ( rule__Actuator__Group__1__Impl rule__Actuator__Group__2 )
             // InternalDeviceDefinition.g:4289:2: rule__Actuator__Group__1__Impl rule__Actuator__Group__2
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_19);
             rule__Actuator__Group__1__Impl();
 
             state._fsp--;
@@ -13955,7 +13952,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             	case 1 :
             	    // InternalDeviceDefinition.g:4411:3: rule__Actuator__PinsAssignment_5
             	    {
-            	    pushFollow(FOLLOW_41);
+            	    pushFollow(FOLLOW_40);
             	    rule__Actuator__PinsAssignment_5();
 
             	    state._fsp--;
@@ -14058,7 +14055,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             	case 1 :
             	    // InternalDeviceDefinition.g:4438:3: rule__Actuator__Group_6__0
             	    {
-            	    pushFollow(FOLLOW_42);
+            	    pushFollow(FOLLOW_41);
             	    rule__Actuator__Group_6__0();
 
             	    state._fsp--;
@@ -14161,7 +14158,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             	case 1 :
             	    // InternalDeviceDefinition.g:4465:3: rule__Actuator__SettingsAssignment_7
             	    {
-            	    pushFollow(FOLLOW_39);
+            	    pushFollow(FOLLOW_38);
             	    rule__Actuator__SettingsAssignment_7();
 
             	    state._fsp--;
@@ -14287,7 +14284,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:4504:1: ( rule__Actuator__Group_6__0__Impl rule__Actuator__Group_6__1 )
             // InternalDeviceDefinition.g:4505:2: rule__Actuator__Group_6__0__Impl rule__Actuator__Group_6__1
             {
-            pushFollow(FOLLOW_43);
+            pushFollow(FOLLOW_42);
             rule__Actuator__Group_6__0__Impl();
 
             state._fsp--;
@@ -14517,7 +14514,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:4585:1: ( rule__Trigger__Group_0__1__Impl rule__Trigger__Group_0__2 )
             // InternalDeviceDefinition.g:4586:2: rule__Trigger__Group_0__1__Impl rule__Trigger__Group_0__2
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_44);
             rule__Trigger__Group_0__1__Impl();
 
             state._fsp--;
@@ -14747,7 +14744,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:4666:1: ( rule__Trigger__Group_1__1__Impl rule__Trigger__Group_1__2 )
             // InternalDeviceDefinition.g:4667:2: rule__Trigger__Group_1__1__Impl rule__Trigger__Group_1__2
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_44);
             rule__Trigger__Group_1__1__Impl();
 
             state._fsp--;
@@ -14987,7 +14984,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:4747:1: ( rule__Trigger__Group_1_3_0__0__Impl rule__Trigger__Group_1_3_0__1 )
             // InternalDeviceDefinition.g:4748:2: rule__Trigger__Group_1_3_0__0__Impl rule__Trigger__Group_1_3_0__1
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_44);
             rule__Trigger__Group_1_3_0__0__Impl();
 
             state._fsp--;
@@ -15142,7 +15139,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:4801:1: ( rule__Trigger__Group_1_3_1__0__Impl rule__Trigger__Group_1_3_1__1 )
             // InternalDeviceDefinition.g:4802:2: rule__Trigger__Group_1_3_1__0__Impl rule__Trigger__Group_1_3_1__1
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_33);
             rule__Trigger__Group_1_3_1__0__Impl();
 
             state._fsp--;
@@ -15217,7 +15214,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:4828:1: ( rule__Trigger__Group_1_3_1__1__Impl rule__Trigger__Group_1_3_1__2 )
             // InternalDeviceDefinition.g:4829:2: rule__Trigger__Group_1_3_1__1__Impl rule__Trigger__Group_1_3_1__2
             {
-            pushFollow(FOLLOW_35);
+            pushFollow(FOLLOW_34);
             rule__Trigger__Group_1_3_1__1__Impl();
 
             state._fsp--;
@@ -15292,7 +15289,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:4855:1: ( rule__Trigger__Group_1_3_1__2__Impl rule__Trigger__Group_1_3_1__3 )
             // InternalDeviceDefinition.g:4856:2: rule__Trigger__Group_1_3_1__2__Impl rule__Trigger__Group_1_3_1__3
             {
-            pushFollow(FOLLOW_36);
+            pushFollow(FOLLOW_35);
             rule__Trigger__Group_1_3_1__2__Impl();
 
             state._fsp--;
@@ -15457,7 +15454,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:4909:1: ( rule__Setting__Group__0__Impl rule__Setting__Group__1 )
             // InternalDeviceDefinition.g:4910:2: rule__Setting__Group__0__Impl rule__Setting__Group__1
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_19);
             rule__Setting__Group__0__Impl();
 
             state._fsp--;
@@ -15927,7 +15924,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:5071:1: ( rule__Primitive__Group_1__0__Impl rule__Primitive__Group_1__1 )
             // InternalDeviceDefinition.g:5072:2: rule__Primitive__Group_1__0__Impl rule__Primitive__Group_1__1
             {
-            pushFollow(FOLLOW_35);
+            pushFollow(FOLLOW_34);
             rule__Primitive__Group_1__0__Impl();
 
             state._fsp--;
@@ -16549,7 +16546,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:5287:1: ( rule__Exp__Group_1__0__Impl rule__Exp__Group_1__1 )
             // InternalDeviceDefinition.g:5288:2: rule__Exp__Group_1__0__Impl rule__Exp__Group_1__1
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_44);
             rule__Exp__Group_1__0__Impl();
 
             state._fsp--;
@@ -17181,7 +17178,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:5503:1: ( rule__Factor__Group_1__0__Impl rule__Factor__Group_1__1 )
             // InternalDeviceDefinition.g:5504:2: rule__Factor__Group_1__0__Impl rule__Factor__Group_1__1
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_44);
             rule__Factor__Group_1__0__Impl();
 
             state._fsp--;
@@ -17813,7 +17810,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:5719:1: ( rule__Compare__Group_1__0__Impl rule__Compare__Group_1__1 )
             // InternalDeviceDefinition.g:5720:2: rule__Compare__Group_1__0__Impl rule__Compare__Group_1__1
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_44);
             rule__Compare__Group_1__0__Impl();
 
             state._fsp--;
@@ -18445,7 +18442,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:5935:1: ( rule__CompareOrEquals__Group_1__0__Impl rule__CompareOrEquals__Group_1__1 )
             // InternalDeviceDefinition.g:5936:2: rule__CompareOrEquals__Group_1__0__Impl rule__CompareOrEquals__Group_1__1
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_44);
             rule__CompareOrEquals__Group_1__0__Impl();
 
             state._fsp--;
@@ -19077,7 +19074,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:6151:1: ( rule__EqualsOrNotEquals__Group_1__0__Impl rule__EqualsOrNotEquals__Group_1__1 )
             // InternalDeviceDefinition.g:6152:2: rule__EqualsOrNotEquals__Group_1__0__Impl rule__EqualsOrNotEquals__Group_1__1
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_44);
             rule__EqualsOrNotEquals__Group_1__0__Impl();
 
             state._fsp--;
@@ -19709,7 +19706,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:6367:1: ( rule__AndOr__Group_1__0__Impl rule__AndOr__Group_1__1 )
             // InternalDeviceDefinition.g:6368:2: rule__AndOr__Group_1__0__Impl rule__AndOr__Group_1__1
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_44);
             rule__AndOr__Group_1__0__Impl();
 
             state._fsp--;
@@ -20164,7 +20161,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:6529:1: ( rule__Primary__Group_4__0__Impl rule__Primary__Group_4__1 )
             // InternalDeviceDefinition.g:6530:2: rule__Primary__Group_4__0__Impl rule__Primary__Group_4__1
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_44);
             rule__Primary__Group_4__0__Impl();
 
             state._fsp--;
@@ -20309,7 +20306,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:6583:1: ( rule__ExternalCall__Group__0__Impl rule__ExternalCall__Group__1 )
             // InternalDeviceDefinition.g:6584:2: rule__ExternalCall__Group__0__Impl rule__ExternalCall__Group__1
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_19);
             rule__ExternalCall__Group__0__Impl();
 
             state._fsp--;
@@ -20697,7 +20694,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             	case 1 :
             	    // InternalDeviceDefinition.g:6706:3: rule__ExternalCall__Group_4__0
             	    {
-            	    pushFollow(FOLLOW_42);
+            	    pushFollow(FOLLOW_41);
             	    rule__ExternalCall__Group_4__0();
 
             	    state._fsp--;
@@ -20813,7 +20810,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:6745:1: ( rule__ExternalCall__Group_4__0__Impl rule__ExternalCall__Group_4__1 )
             // InternalDeviceDefinition.g:6746:2: rule__ExternalCall__Group_4__0__Impl rule__ExternalCall__Group_4__1
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_44);
             rule__ExternalCall__Group_4__0__Impl();
 
             state._fsp--;
@@ -21053,7 +21050,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:6826:1: ( rule__ExternalVariableUse__Group__1__Impl rule__ExternalVariableUse__Group__2 )
             // InternalDeviceDefinition.g:6827:2: rule__ExternalVariableUse__Group__1__Impl rule__ExternalVariableUse__Group__2
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_19);
             rule__ExternalVariableUse__Group__1__Impl();
 
             state._fsp--;
@@ -21303,7 +21300,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:6907:1: ( rule__GraphVariableUse__Group__1__Impl rule__GraphVariableUse__Group__2 )
             // InternalDeviceDefinition.g:6908:2: rule__GraphVariableUse__Group__1__Impl rule__GraphVariableUse__Group__2
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_19);
             rule__GraphVariableUse__Group__1__Impl();
 
             state._fsp--;
@@ -21473,7 +21470,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:6961:1: ( rule__GraphVariableUse__Group__3__Impl rule__GraphVariableUse__Group__4 )
             // InternalDeviceDefinition.g:6962:2: rule__GraphVariableUse__Group__3__Impl rule__GraphVariableUse__Group__4
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_19);
             rule__GraphVariableUse__Group__3__Impl();
 
             state._fsp--;
@@ -21638,7 +21635,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             // InternalDeviceDefinition.g:7015:1: ( rule__Parenthesis__Group__0__Impl rule__Parenthesis__Group__1 )
             // InternalDeviceDefinition.g:7016:2: rule__Parenthesis__Group__0__Impl rule__Parenthesis__Group__1
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_44);
             rule__Parenthesis__Group__0__Impl();
 
             state._fsp--;
@@ -22315,25 +22312,25 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__GraphLine__OutputAssignment_1"
-    // InternalDeviceDefinition.g:7272:1: rule__GraphLine__OutputAssignment_1 : ( ruleExp ) ;
+    // InternalDeviceDefinition.g:7272:1: rule__GraphLine__OutputAssignment_1 : ( ruleGraphVariableUse ) ;
     public final void rule__GraphLine__OutputAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7276:1: ( ( ruleExp ) )
-            // InternalDeviceDefinition.g:7277:2: ( ruleExp )
+            // InternalDeviceDefinition.g:7276:1: ( ( ruleGraphVariableUse ) )
+            // InternalDeviceDefinition.g:7277:2: ( ruleGraphVariableUse )
             {
-            // InternalDeviceDefinition.g:7277:2: ( ruleExp )
-            // InternalDeviceDefinition.g:7278:3: ruleExp
+            // InternalDeviceDefinition.g:7277:2: ( ruleGraphVariableUse )
+            // InternalDeviceDefinition.g:7278:3: ruleGraphVariableUse
             {
-             before(grammarAccess.getGraphLineAccess().getOutputExpParserRuleCall_1_0()); 
+             before(grammarAccess.getGraphLineAccess().getOutputGraphVariableUseParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
-            ruleExp();
+            ruleGraphVariableUse();
 
             state._fsp--;
 
-             after(grammarAccess.getGraphLineAccess().getOutputExpParserRuleCall_1_0()); 
+             after(grammarAccess.getGraphLineAccess().getOutputGraphVariableUseParserRuleCall_1_0()); 
 
             }
 
@@ -24654,7 +24651,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000004000000000L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000008000000000L});
     public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000008000000002L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000040000000160L,0x0000000000060030L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000030000000000L});
     public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000240003C00000L});
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000040000000000L});
@@ -24662,24 +24659,24 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
     public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000080000000000L});
     public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000100000000000L});
     public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000003C00000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000800000000000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0001000000000000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0001000000000002L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x200A000000000000L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x2008000000000002L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0004000000000000L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x00000000000FC000L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0430000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0400000000000002L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000004L});
-    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0780080000000000L});
-    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0780000000000002L});
-    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000080000000002L});
-    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0780000000000000L});
-    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0040000000000000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000800000000000L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0001000000000000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0001000000000002L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x200A000000000000L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x2008000000000002L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0004000000000000L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x00000000000FC000L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0430000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0400000000000002L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000004L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0780080000000000L});
+    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0780000000000002L});
+    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000080000000002L});
+    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0780000000000000L});
+    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0040000000000000L});
+    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000040000000160L,0x0000000000060030L});
     public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0080000000000000L});
     public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0100000000000000L});
     public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0200000000000000L});

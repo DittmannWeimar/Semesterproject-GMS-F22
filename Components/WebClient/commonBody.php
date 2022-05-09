@@ -6,7 +6,7 @@
             <span class="mdl-color--white white icon-bar"></span>
             <span class="mdl-color--white icon-bar"></span>
         </button>
-        <a href="#"><span class="navbar-brand">Green House Management System</span></a>
+        <a href="/"><span class="navbar-brand">Green House Management System</span></a>
     </div>
     <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav" style="float: right;" id="navbar-categories">

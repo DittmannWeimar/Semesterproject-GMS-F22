@@ -5,8 +5,8 @@ package dk.sdu.gms.dds.deviceDefinition.impl;
 
 import dk.sdu.gms.dds.deviceDefinition.Color;
 import dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage;
-import dk.sdu.gms.dds.deviceDefinition.Expression;
 import dk.sdu.gms.dds.deviceDefinition.GraphLine;
+import dk.sdu.gms.dds.deviceDefinition.GraphVariableUse;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -42,7 +42,7 @@ public class GraphLineImpl extends MinimalEObjectImpl.Container implements Graph
    * @generated
    * @ordered
    */
-  protected Expression output;
+  protected GraphVariableUse output;
 
   /**
    * The default value of the '{@link #getLegend() <em>Legend</em>}' attribute.
@@ -101,7 +101,7 @@ public class GraphLineImpl extends MinimalEObjectImpl.Container implements Graph
    * @generated
    */
   @Override
-  public Expression getOutput()
+  public GraphVariableUse getOutput()
   {
     return output;
   }
@@ -111,9 +111,9 @@ public class GraphLineImpl extends MinimalEObjectImpl.Container implements Graph
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetOutput(Expression newOutput, NotificationChain msgs)
+  public NotificationChain basicSetOutput(GraphVariableUse newOutput, NotificationChain msgs)
   {
-    Expression oldOutput = output;
+    GraphVariableUse oldOutput = output;
     output = newOutput;
     if (eNotificationRequired())
     {
@@ -129,7 +129,7 @@ public class GraphLineImpl extends MinimalEObjectImpl.Container implements Graph
    * @generated
    */
   @Override
-  public void setOutput(Expression newOutput)
+  public void setOutput(GraphVariableUse newOutput)
   {
     if (newOutput != output)
     {
@@ -269,7 +269,7 @@ public class GraphLineImpl extends MinimalEObjectImpl.Container implements Graph
     switch (featureID)
     {
       case DeviceDefinitionPackage.GRAPH_LINE__OUTPUT:
-        setOutput((Expression)newValue);
+        setOutput((GraphVariableUse)newValue);
         return;
       case DeviceDefinitionPackage.GRAPH_LINE__LEGEND:
         setLegend((String)newValue);
@@ -292,7 +292,7 @@ public class GraphLineImpl extends MinimalEObjectImpl.Container implements Graph
     switch (featureID)
     {
       case DeviceDefinitionPackage.GRAPH_LINE__OUTPUT:
-        setOutput((Expression)null);
+        setOutput((GraphVariableUse)null);
         return;
       case DeviceDefinitionPackage.GRAPH_LINE__LEGEND:
         setLegend(LEGEND_EDEFAULT);

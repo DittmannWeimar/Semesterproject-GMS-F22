@@ -7275,9 +7275,9 @@ rule__GraphLine__OutputAssignment_1
 	}
 :
 	(
-		{ before(grammarAccess.getGraphLineAccess().getOutputExpParserRuleCall_1_0()); }
-		ruleExp
-		{ after(grammarAccess.getGraphLineAccess().getOutputExpParserRuleCall_1_0()); }
+		{ before(grammarAccess.getGraphLineAccess().getOutputGraphVariableUseParserRuleCall_1_0()); }
+		ruleGraphVariableUse
+		{ after(grammarAccess.getGraphLineAccess().getOutputGraphVariableUseParserRuleCall_1_0()); }
 	)
 ;
 finally {

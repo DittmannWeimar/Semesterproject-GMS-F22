@@ -779,7 +779,7 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 	 *     GraphLine returns GraphLine
 	 *
 	 * Constraint:
-	 *     (output=Exp legend=STRING? color=Color?)
+	 *     (output=GraphVariableUse legend=STRING? color=Color?)
 	 * </pre>
 	 */
 	protected void sequence_GraphLine(ISerializationContext context, GraphLine semanticObject) {

@@ -1,30 +1,32 @@
 var chartIdToData = {};
 
-async function updateChart(chartId, type, gateway, worker, measurement, timeSinceNow) {
-    var response = await _getData(type, gateway, worker, measurement, Date.now() - timeSinceNow, Date.now());
-
-    var chart1Data = chartIdToData[chartId];
-
-    chart1Data.labels = [];
-    chart1Data.datasets[0].data = [];
-
+async function updateChart(chartId, topics, timeSinceNow) {
+    var i = 0;
     chart1.update();
 
-    chart1Data.datasets[0].borderColor.push('rgba(99, 255, 132, 1)');
-    chart1Data.datasets[1].borderColor.push('rgba(255, 99, 132, 1)');
-    response.forEach(res => {
-        var date = new Date(res.timestamp);
-        var xLabel;
-        if (new Date(Date.now()).toISOString().split('T')[0] == date.toISOString().split('T')[0]) {
-            xLabel = date.toLocaleTimeString();
-        } else {
-            xLabel = date.toLocaleDateString() + "T" + date.toLocaleTimeString();
-        }
+    topics.forEach(topic => {
+        var response = await _getData(type, topic, Date.now() - timeSinceNow, Date.now());
 
-        chart1Data.labels.push(xLabel);
-        chart1Data.datasets[0].data.push(res.message);
+        var chart1Data = chartIdToData[chartId];
+    
+        chart1Data.labels = [];
+        chart1Data.datasets[i].data = [];
+    
+        chart1Data.datasets[i].borderColor.push('rgba(99, 255, 132, 1)');
+        response.forEach(res => {
+            var date = new Date(res.timestamp);
+            var xLabel;
+            if (new Date(Date.now()).toISOString().split('T')[0] == date.toISOString().split('T')[0]) {
+                xLabel = date.toLocaleTimeString();
+            } else {
+                xLabel = date.toLocaleDateString() + "T" + date.toLocaleTimeString();
+            }
+    
+            chart1Data.labels.push(xLabel);
+            chart1Data.datasets[i].data.push(res.message);
+        });
 
-        chart1Data.datasets[1].data.push(res.message-5);
+        i++;
     });
 
     chart1.update();
@@ -73,6 +75,9 @@ $(document).ready(function () {
 
     chartIdToData['chart-worker1'] = chart1Data;
     MQTTConnect(mqtt => {
+        // Make vars
+        var mqtt_
+
         mqtt.subscribe("samples/gateway/worker1/Humidity");
 
         mqtt.onMessageArrived = function (message) {
