@@ -38,6 +38,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Gateway/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Gateway/mac"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Gateway/errorLed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Gateway/retries"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Gateway/workers"/>
     </genClasses>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Worker">

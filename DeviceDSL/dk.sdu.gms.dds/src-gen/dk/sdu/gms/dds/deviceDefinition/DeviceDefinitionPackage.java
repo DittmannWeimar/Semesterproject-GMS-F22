@@ -307,13 +307,22 @@ public interface DeviceDefinitionPackage extends EPackage
   int GATEWAY__ERROR_LED = 2;
 
   /**
+   * The feature id for the '<em><b>Retries</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GATEWAY__RETRIES = 3;
+
+  /**
    * The feature id for the '<em><b>Workers</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GATEWAY__WORKERS = 3;
+  int GATEWAY__WORKERS = 4;
 
   /**
    * The number of structural features of the '<em>Gateway</em>' class.
@@ -322,7 +331,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GATEWAY_FEATURE_COUNT = 4;
+  int GATEWAY_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.WorkerImpl <em>Worker</em>}' class.
@@ -2171,6 +2180,17 @@ public interface DeviceDefinitionPackage extends EPackage
   EAttribute getGateway_ErrorLed();
 
   /**
+   * Returns the meta object for the attribute list '{@link dk.sdu.gms.dds.deviceDefinition.Gateway#getRetries <em>Retries</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Retries</em>'.
+   * @see dk.sdu.gms.dds.deviceDefinition.Gateway#getRetries()
+   * @see #getGateway()
+   * @generated
+   */
+  EAttribute getGateway_Retries();
+
+  /**
    * Returns the meta object for the containment reference list '{@link dk.sdu.gms.dds.deviceDefinition.Gateway#getWorkers <em>Workers</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3569,6 +3589,14 @@ public interface DeviceDefinitionPackage extends EPackage
      * @generated
      */
     EAttribute GATEWAY__ERROR_LED = eINSTANCE.getGateway_ErrorLed();
+
+    /**
+     * The meta object literal for the '<em><b>Retries</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GATEWAY__RETRIES = eINSTANCE.getGateway_Retries();
 
     /**
      * The meta object literal for the '<em><b>Workers</b></em>' containment reference list feature.

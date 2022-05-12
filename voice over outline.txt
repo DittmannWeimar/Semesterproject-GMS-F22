@@ -1,0 +1,18 @@
+Project Introduction
+	Concept Introduction
+	Problem Introduction
+	Course Relations
+
+Solution Approach / Description
+	IoT Devices, Workers, Gateways
+		Originally bluetooth was to be used between gateways and workers, but was replaced with ESP-NOW due to conflicts between bluetooth and WiFi on a hardware level.
+	Grammar and Code Generation
+	Formal Modelling and Verification
+		Originally intended to be check codegen, but changed to verify system design
+
+Video Demonstration of System
+	Show custom language being written in
+	Show pump setup detecting moisture and activating pump
+
+Video Demonstration of Verification
+	Show models in action

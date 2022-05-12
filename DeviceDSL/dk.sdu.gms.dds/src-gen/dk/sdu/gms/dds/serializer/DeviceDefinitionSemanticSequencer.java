@@ -765,7 +765,7 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 	 *     Gateway returns Gateway
 	 *
 	 * Constraint:
-	 *     (name=ID mac=MAC errorLed+=INT? workers+=Worker+)
+	 *     (name=ID mac=MAC errorLed+=INT? retries+=INT? workers+=Worker+)
 	 * </pre>
 	 */
 	protected void sequence_Gateway(ISerializationContext context, Gateway semanticObject) {

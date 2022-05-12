@@ -1,0 +1,21 @@
+INTRODUCTION
+
+Hello, and welcome to this video demonstration and introduction to the Greenhouse Management System for the spring 2022 semester project. We have this semester developed a solution that is capable of automatically monitoring, maintaining, and reporting on the health of plants in a greenhouse setting of arbitrary size.
+
+The ongoing war in Ukraine has resulted in crop import suffering drastically, and food shortage may be on the horizon. We aim to solve this problem by optimizing local food growth through the automatization of plant maintenance and optimization of plant environment through internet-of-things devices.
+
+The general theme and goal of this project has been to develop and implement a trustworthy system, using a varity of different techniques. These techniques come from the three different courses of Software Technology for Internet of Things, Model-driven Software Development, and Software System Analysis and Verification. Material from each of these courses have been combined in this project.
+
+SOLUTION APPROACH / DESCRIPTION
+
+At the core of our solution is our internet of things devices, which are all ESP-32s. These devices are responsible for the actual automated monitoring and maintenance of the plants and their environment. These devices are split between workers and gateways. Workers use sensors to sample information about the plants, and actuators that they use to maintain the plants. Gateways act as relay that recieve samples via ESP-NOW from workers and transmit them to the backend systems via MQTT, as well as transmit setting updates from users to the workers.
+
+Originally bluetooth was to be used between gateways and workers, but was replaced with ESP-NOW due to conflicts between bluetooth and WiFi on a hardware level.
+
+The code for the gateways and workers is all completely generated using code generation techniques, using a custom domain specific language written using Xtext and Xtend, that allow users to easily define the devices, sensors and actuators in the system. A key feature of this domain specific language is that an actuator can be defined to trigger on certain sensor samples, using arbitrary boolean logic.
+
+The user can also specify graphs that read from thet sensor values, which then generates a PHP-based website that can poll the backend and access the MQTT topics for sensor samples, in order for the user to be able to monitor the health and environment of plants. The server that serves this, along with the rest of the backend, is deployed in docker containers using docker-compose.
+
+The system design is furthermore formally verified using by creating a finite-state automata in UPPAAL that represents the system, and running formalized queries representing our requirements against this model. 
+
+VIDEO DEMONSTRATION OF SYSTEM AND VERIFICATION - Approximately 1-2 minutes long

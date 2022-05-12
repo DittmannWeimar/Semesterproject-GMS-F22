@@ -11,6 +11,7 @@ typedef struct worker_info {
 const int numWorkers = 1;
 struct worker_info workers[numWorkers];
 worker_info null_worker;
+bool messageSuccess = false;
 
 enum MESSAGE_TYPE { Ping, Setting, Sample };
 
@@ -42,7 +43,7 @@ EspMQTTClient client(
   "vald.io",
   "kristian",
   "1234",
-  "gms-gateway-b51d41b1-8c13-4767-9ca2-8e3747e08bb3",
+  "gms-gateway-fe48b1c0-c463-40ec-88df-447baed80803",
   3001
 );
 
@@ -169,9 +170,8 @@ void loop() {
 }
 
 void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
-  Serial.print("Last Packet Send Status:\t");
-  Serial.println(status == ESP_NOW_SEND_SUCCESS ? "Delivery Success" : "Delivery Fail");
-  digitalWrite(3, status == ESP_NOW_SEND_SUCCESS ? LOW : HIGH);
+  messageSuccess = status == ESP_NOW_SEND_SUCCESS;
+  Serial.println("Send message status: " + String(status == ESP_NOW_SEND_SUCCESS ? "success" : "failure"));
 }
 
 void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {  
@@ -238,9 +238,15 @@ void handle_sample(const uint8_t* mac, const uint8_t *incomingData, int len) {
 }
 
 void send_message(const uint8_t * mac, const uint8_t *incomingData, int len) {
-  Serial.println("Sending message with length " + String(len));
-  esp_err_t result = esp_now_send(mac, incomingData, len);
-  if (result != 0) {
-    Serial.println("ESP-NOW ERROR: " + String(esp_err_to_name(result)));
+  bool success = false;
+  for (int i = 0; i < 1; i++) {
+    esp_err_t result = esp_now_send(mac, incomingData, len);
+    delay(250);
+    if (messageSuccess) {
+      success = true;
+      break;
+    }
   }
+  Serial.println("Send message success: " + String(success));
+  digitalWrite(3, success ? LOW : HIGH);
 }

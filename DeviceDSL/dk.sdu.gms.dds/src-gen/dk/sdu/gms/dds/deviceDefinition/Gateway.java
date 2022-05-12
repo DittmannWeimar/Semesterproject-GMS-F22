@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Gateway#getName <em>Name</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Gateway#getMac <em>Mac</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Gateway#getErrorLed <em>Error Led</em>}</li>
+ *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Gateway#getRetries <em>Retries</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Gateway#getWorkers <em>Workers</em>}</li>
  * </ul>
  *
@@ -83,6 +84,18 @@ public interface Gateway extends EObject
    * @generated
    */
   EList<Integer> getErrorLed();
+
+  /**
+   * Returns the value of the '<em><b>Retries</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.Integer}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Retries</em>' attribute list.
+   * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getGateway_Retries()
+   * @model unique="false"
+   * @generated
+   */
+  EList<Integer> getRetries();
 
   /**
    * Returns the value of the '<em><b>Workers</b></em>' containment reference list.

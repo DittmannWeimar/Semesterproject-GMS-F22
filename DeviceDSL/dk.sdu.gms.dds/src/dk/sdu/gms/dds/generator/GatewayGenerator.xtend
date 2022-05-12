@@ -30,6 +30,7 @@ public class GatewayGenerator {
 		const int numWorkers = «gateway.workers.size()»;
 		struct worker_info workers[numWorkers];
 		worker_info null_worker;
+		bool messageSuccess = false;
 		
 		enum MESSAGE_TYPE { Ping, Setting, Sample };
 		
@@ -199,9 +200,8 @@ public class GatewayGenerator {
 		}
 		
 		void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
-		  Serial.print("Last Packet Send Status:\t");
-		  Serial.println(status == ESP_NOW_SEND_SUCCESS ? "Delivery Success" : "Delivery Fail");
-		  digitalWrite(«getErrorLedOrDefault(gateway)», status == ESP_NOW_SEND_SUCCESS ? LOW : HIGH);
+		  messageSuccess = status == ESP_NOW_SEND_SUCCESS;
+		  Serial.println("Send message status: " + String(status == ESP_NOW_SEND_SUCCESS ? "success" : "failure"));
 		}
 		
 		void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {  
@@ -264,11 +264,17 @@ public class GatewayGenerator {
 		}
 		
 		void send_message(const uint8_t * mac, const uint8_t *incomingData, int len) {
-		  Serial.println("Sending message with length " + String(len));
-		  esp_err_t result = esp_now_send(mac, incomingData, len);
-		  if (result != 0) {
-		    Serial.println("ESP-NOW ERROR: " + String(esp_err_to_name(result)));
+		  bool success = false;
+		  for (int i = 0; i < «getRetriesOrDefault(gateway)»; i++) {
+		    esp_err_t result = esp_now_send(mac, incomingData, len);
+		    delay(250);
+		    if (messageSuccess) {
+		      success = true;
+		      break;
+		    }
 		  }
+		  Serial.println("Send message success: " + String(success));
+		  digitalWrite(«getErrorLedOrDefault(gateway)», success ? LOW : HIGH);
 		}
 	'''
 }

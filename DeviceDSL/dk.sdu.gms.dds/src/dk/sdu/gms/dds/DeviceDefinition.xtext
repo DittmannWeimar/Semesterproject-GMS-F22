@@ -39,6 +39,7 @@ Gateway:
 	'Gateway' name=ID ':'
 	'mac' mac = MAC
 	('error' 'light' errorLed += INT)?
+	('retries' retries += INT)?
 	workers += Worker+
 ;
 

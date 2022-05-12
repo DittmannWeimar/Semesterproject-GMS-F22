@@ -403,13 +403,18 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		private final Keyword cLightKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
 		private final Assignment cErrorLedAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
 		private final RuleCall cErrorLedINTTerminalRuleCall_5_2_0 = (RuleCall)cErrorLedAssignment_5_2.eContents().get(0);
-		private final Assignment cWorkersAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cWorkersWorkerParserRuleCall_6_0 = (RuleCall)cWorkersAssignment_6.eContents().get(0);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cRetriesKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cRetriesAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cRetriesINTTerminalRuleCall_6_1_0 = (RuleCall)cRetriesAssignment_6_1.eContents().get(0);
+		private final Assignment cWorkersAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cWorkersWorkerParserRuleCall_7_0 = (RuleCall)cWorkersAssignment_7.eContents().get(0);
 		
 		//Gateway:
 		//    'Gateway' name=ID ':'
 		//    'mac' mac = MAC
 		//    ('error' 'light' errorLed += INT)?
+		//    ('retries' retries += INT)?
 		//    workers += Worker+
 		//;
 		@Override public ParserRule getRule() { return rule; }
@@ -417,6 +422,7 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		//'Gateway' name=ID ':'
 		//'mac' mac = MAC
 		//('error' 'light' errorLed += INT)?
+		//('retries' retries += INT)?
 		//workers += Worker+
 		public Group getGroup() { return cGroup; }
 		
@@ -456,11 +462,23 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		//INT
 		public RuleCall getErrorLedINTTerminalRuleCall_5_2_0() { return cErrorLedINTTerminalRuleCall_5_2_0; }
 		
+		//('retries' retries += INT)?
+		public Group getGroup_6() { return cGroup_6; }
+		
+		//'retries'
+		public Keyword getRetriesKeyword_6_0() { return cRetriesKeyword_6_0; }
+		
+		//retries += INT
+		public Assignment getRetriesAssignment_6_1() { return cRetriesAssignment_6_1; }
+		
+		//INT
+		public RuleCall getRetriesINTTerminalRuleCall_6_1_0() { return cRetriesINTTerminalRuleCall_6_1_0; }
+		
 		//workers += Worker+
-		public Assignment getWorkersAssignment_6() { return cWorkersAssignment_6; }
+		public Assignment getWorkersAssignment_7() { return cWorkersAssignment_7; }
 		
 		//Worker
-		public RuleCall getWorkersWorkerParserRuleCall_6_0() { return cWorkersWorkerParserRuleCall_6_0; }
+		public RuleCall getWorkersWorkerParserRuleCall_7_0() { return cWorkersWorkerParserRuleCall_7_0; }
 	}
 	public class WorkerElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.gms.dds.DeviceDefinition.Worker");
@@ -2089,6 +2107,7 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 	//    'Gateway' name=ID ':'
 	//    'mac' mac = MAC
 	//    ('error' 'light' errorLed += INT)?
+	//    ('retries' retries += INT)?
 	//    workers += Worker+
 	//;
 	public GatewayElements getGatewayAccess() {

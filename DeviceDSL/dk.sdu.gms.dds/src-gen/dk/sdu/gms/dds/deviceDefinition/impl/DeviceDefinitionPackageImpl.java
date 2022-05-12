@@ -772,9 +772,20 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
+  public EAttribute getGateway_Retries()
+  {
+    return (EAttribute)gatewayEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EReference getGateway_Workers()
   {
-    return (EReference)gatewayEClass.getEStructuralFeatures().get(3);
+    return (EReference)gatewayEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -2056,6 +2067,7 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     createEAttribute(gatewayEClass, GATEWAY__NAME);
     createEAttribute(gatewayEClass, GATEWAY__MAC);
     createEAttribute(gatewayEClass, GATEWAY__ERROR_LED);
+    createEAttribute(gatewayEClass, GATEWAY__RETRIES);
     createEReference(gatewayEClass, GATEWAY__WORKERS);
 
     workerEClass = createEClass(WORKER);
@@ -2318,6 +2330,7 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     initEAttribute(getGateway_Name(), ecorePackage.getEString(), "name", null, 0, 1, Gateway.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGateway_Mac(), ecorePackage.getEString(), "mac", null, 0, 1, Gateway.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGateway_ErrorLed(), ecorePackage.getEInt(), "errorLed", null, 0, -1, Gateway.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGateway_Retries(), ecorePackage.getEInt(), "retries", null, 0, -1, Gateway.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGateway_Workers(), this.getWorker(), null, "workers", null, 0, -1, Gateway.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(workerEClass, Worker.class, "Worker", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

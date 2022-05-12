@@ -22,7 +22,7 @@
 'Sensor'=42
 'System'=14
 'TRUE'=65
-'Worker'=38
+'Worker'=39
 'adc'=46
 'and'=21
 'as'=56
@@ -32,7 +32,7 @@
 'color'=29
 'dac'=47
 'error'=36
-'for'=40
+'for'=41
 'green'=83
 'hour'=54
 'hours'=55
@@ -54,13 +54,13 @@
 'pins'=43
 'random'=33
 'red'=82
-'retries'=41
+'retries'=38
 'run'=62
 'sample'=44
 'second'=50
 'seconds'=51
 'setting'=63
-'sleep'=39
+'sleep'=40
 'title'=24
 'username'=20
 'value'=78

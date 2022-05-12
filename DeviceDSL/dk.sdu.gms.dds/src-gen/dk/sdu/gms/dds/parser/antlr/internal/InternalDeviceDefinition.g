@@ -711,11 +711,35 @@ ruleGateway returns [EObject current=null]
 			)
 		)?
 		(
+			otherlv_8='retries'
+			{
+				newLeafNode(otherlv_8, grammarAccess.getGatewayAccess().getRetriesKeyword_6_0());
+			}
+			(
+				(
+					lv_retries_9_0=RULE_INT
+					{
+						newLeafNode(lv_retries_9_0, grammarAccess.getGatewayAccess().getRetriesINTTerminalRuleCall_6_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getGatewayRule());
+						}
+						addWithLastConsumed(
+							$current,
+							"retries",
+							lv_retries_9_0,
+							"org.eclipse.xtext.common.Terminals.INT");
+					}
+				)
+			)
+		)?
+		(
 			(
 				{
-					newCompositeNode(grammarAccess.getGatewayAccess().getWorkersWorkerParserRuleCall_6_0());
+					newCompositeNode(grammarAccess.getGatewayAccess().getWorkersWorkerParserRuleCall_7_0());
 				}
-				lv_workers_8_0=ruleWorker
+				lv_workers_10_0=ruleWorker
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getGatewayRule());
@@ -723,7 +747,7 @@ ruleGateway returns [EObject current=null]
 					add(
 						$current,
 						"workers",
-						lv_workers_8_0,
+						lv_workers_10_0,
 						"dk.sdu.gms.dds.DeviceDefinition.Worker");
 					afterParserOrEnumRuleCall();
 				}

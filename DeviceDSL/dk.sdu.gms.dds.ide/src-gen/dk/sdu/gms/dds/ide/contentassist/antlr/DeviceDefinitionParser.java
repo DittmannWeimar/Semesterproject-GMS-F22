@@ -66,6 +66,7 @@ public class DeviceDefinitionParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getColorAccess().getGroup_2(), "rule__Color__Group_2__0");
 			builder.put(grammarAccess.getGatewayAccess().getGroup(), "rule__Gateway__Group__0");
 			builder.put(grammarAccess.getGatewayAccess().getGroup_5(), "rule__Gateway__Group_5__0");
+			builder.put(grammarAccess.getGatewayAccess().getGroup_6(), "rule__Gateway__Group_6__0");
 			builder.put(grammarAccess.getWorkerAccess().getGroup(), "rule__Worker__Group__0");
 			builder.put(grammarAccess.getWorkerAccess().getGroup_9(), "rule__Worker__Group_9__0");
 			builder.put(grammarAccess.getWorkerAccess().getGroup_10(), "rule__Worker__Group_10__0");
@@ -146,7 +147,8 @@ public class DeviceDefinitionParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getGatewayAccess().getNameAssignment_1(), "rule__Gateway__NameAssignment_1");
 			builder.put(grammarAccess.getGatewayAccess().getMacAssignment_4(), "rule__Gateway__MacAssignment_4");
 			builder.put(grammarAccess.getGatewayAccess().getErrorLedAssignment_5_2(), "rule__Gateway__ErrorLedAssignment_5_2");
-			builder.put(grammarAccess.getGatewayAccess().getWorkersAssignment_6(), "rule__Gateway__WorkersAssignment_6");
+			builder.put(grammarAccess.getGatewayAccess().getRetriesAssignment_6_1(), "rule__Gateway__RetriesAssignment_6_1");
+			builder.put(grammarAccess.getGatewayAccess().getWorkersAssignment_7(), "rule__Gateway__WorkersAssignment_7");
 			builder.put(grammarAccess.getWorkerAccess().getNameAssignment_1(), "rule__Worker__NameAssignment_1");
 			builder.put(grammarAccess.getWorkerAccess().getMacAssignment_4(), "rule__Worker__MacAssignment_4");
 			builder.put(grammarAccess.getWorkerAccess().getSleepTimeAssignment_7(), "rule__Worker__SleepTimeAssignment_7");

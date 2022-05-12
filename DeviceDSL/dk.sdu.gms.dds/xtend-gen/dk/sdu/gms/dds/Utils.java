@@ -669,12 +669,15 @@ public class Utils {
     return worker.getErrorLed().get(0);
   }
   
-  /**
-   * def static dispatch getRetriesOrDefault(Gateway gateway) {
-   * if (gateway.retries.size() == 0) return defaultRetries;
-   * return gateway.retries.get(0);
-   * }
-   */
+  protected static Integer _getRetriesOrDefault(final Gateway gateway) {
+    int _size = gateway.getRetries().size();
+    boolean _equals = (_size == 0);
+    if (_equals) {
+      return Integer.valueOf(Utils.defaultRetries);
+    }
+    return gateway.getRetries().get(0);
+  }
+  
   protected static Integer _getErrorLedOrDefault(final Gateway gateway) {
     int _size = gateway.getErrorLed().size();
     boolean _equals = (_size == 0);
@@ -716,8 +719,15 @@ public class Utils {
     }
   }
   
-  public static Integer getRetriesOrDefault(final Worker worker) {
-    return _getRetriesOrDefault(worker);
+  public static Integer getRetriesOrDefault(final EObject gateway) {
+    if (gateway instanceof Gateway) {
+      return _getRetriesOrDefault((Gateway)gateway);
+    } else if (gateway instanceof Worker) {
+      return _getRetriesOrDefault((Worker)gateway);
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(gateway).toString());
+    }
   }
   
   public static Integer getErrorLedOrDefault(final EObject gateway) {

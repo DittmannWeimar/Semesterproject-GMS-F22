@@ -353,10 +353,10 @@ class Utils {
 		return worker.errorLed.get(0);
 	}
 	
-	/*def static dispatch getRetriesOrDefault(Gateway gateway) {
+	def static dispatch getRetriesOrDefault(Gateway gateway) {
 		if (gateway.retries.size() == 0) return defaultRetries;
 		return gateway.retries.get(0);
-	}*/
+	}
 	
 	def static dispatch getErrorLedOrDefault(Gateway gateway) {
 		if (gateway.errorLed.size() == 0) return defaultErrorLed;

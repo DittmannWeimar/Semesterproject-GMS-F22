@@ -35,6 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.GatewayImpl#getName <em>Name</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.GatewayImpl#getMac <em>Mac</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.GatewayImpl#getErrorLed <em>Error Led</em>}</li>
+ *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.GatewayImpl#getRetries <em>Retries</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.GatewayImpl#getWorkers <em>Workers</em>}</li>
  * </ul>
  *
@@ -91,6 +92,16 @@ public class GatewayImpl extends MinimalEObjectImpl.Container implements Gateway
    * @ordered
    */
   protected EList<Integer> errorLed;
+
+  /**
+   * The cached value of the '{@link #getRetries() <em>Retries</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRetries()
+   * @generated
+   * @ordered
+   */
+  protected EList<Integer> retries;
 
   /**
    * The cached value of the '{@link #getWorkers() <em>Workers</em>}' containment reference list.
@@ -194,6 +205,21 @@ public class GatewayImpl extends MinimalEObjectImpl.Container implements Gateway
    * @generated
    */
   @Override
+  public EList<Integer> getRetries()
+  {
+    if (retries == null)
+    {
+      retries = new EDataTypeEList<Integer>(Integer.class, this, DeviceDefinitionPackage.GATEWAY__RETRIES);
+    }
+    return retries;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<Worker> getWorkers()
   {
     if (workers == null)
@@ -235,6 +261,8 @@ public class GatewayImpl extends MinimalEObjectImpl.Container implements Gateway
         return getMac();
       case DeviceDefinitionPackage.GATEWAY__ERROR_LED:
         return getErrorLed();
+      case DeviceDefinitionPackage.GATEWAY__RETRIES:
+        return getRetries();
       case DeviceDefinitionPackage.GATEWAY__WORKERS:
         return getWorkers();
     }
@@ -261,6 +289,10 @@ public class GatewayImpl extends MinimalEObjectImpl.Container implements Gateway
       case DeviceDefinitionPackage.GATEWAY__ERROR_LED:
         getErrorLed().clear();
         getErrorLed().addAll((Collection<? extends Integer>)newValue);
+        return;
+      case DeviceDefinitionPackage.GATEWAY__RETRIES:
+        getRetries().clear();
+        getRetries().addAll((Collection<? extends Integer>)newValue);
         return;
       case DeviceDefinitionPackage.GATEWAY__WORKERS:
         getWorkers().clear();
@@ -289,6 +321,9 @@ public class GatewayImpl extends MinimalEObjectImpl.Container implements Gateway
       case DeviceDefinitionPackage.GATEWAY__ERROR_LED:
         getErrorLed().clear();
         return;
+      case DeviceDefinitionPackage.GATEWAY__RETRIES:
+        getRetries().clear();
+        return;
       case DeviceDefinitionPackage.GATEWAY__WORKERS:
         getWorkers().clear();
         return;
@@ -312,6 +347,8 @@ public class GatewayImpl extends MinimalEObjectImpl.Container implements Gateway
         return MAC_EDEFAULT == null ? mac != null : !MAC_EDEFAULT.equals(mac);
       case DeviceDefinitionPackage.GATEWAY__ERROR_LED:
         return errorLed != null && !errorLed.isEmpty();
+      case DeviceDefinitionPackage.GATEWAY__RETRIES:
+        return retries != null && !retries.isEmpty();
       case DeviceDefinitionPackage.GATEWAY__WORKERS:
         return workers != null && !workers.isEmpty();
     }
@@ -335,6 +372,8 @@ public class GatewayImpl extends MinimalEObjectImpl.Container implements Gateway
     result.append(mac);
     result.append(", errorLed: ");
     result.append(errorLed);
+    result.append(", retries: ");
+    result.append(retries);
     result.append(')');
     return result.toString();
   }
