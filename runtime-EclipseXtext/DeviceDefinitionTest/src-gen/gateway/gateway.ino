@@ -26,7 +26,9 @@ typedef struct message_setting : message_base {
 message_setting settingMessage;
 
 typedef struct message_sample : message_base {
-	float led_worker_dummy_zero;
+	float pump_01_th_temperature;
+	float pump_01_th_humidity;
+	float pump_01_moisture_sample;
 } message_sample;
 message_sample sampleMessage;
 
@@ -40,7 +42,7 @@ EspMQTTClient client(
   "vald.io",
   "kristian",
   "1234",
-  "gms-gateway-3277d888-53ee-4809-8f9f-e7914c050376",
+  "gms-gateway-b51d41b1-8c13-4767-9ca2-8e3747e08bb3",
   3001
 );
 
@@ -71,6 +73,8 @@ void setup() {
     Serial.println("Error initializing ESP-NOW");
     return;
   }
+  
+  pinMode(3, OUTPUT);
   
 
   // Register peer
@@ -121,6 +125,9 @@ int32_t getWiFiChannel(const char *ssid) {
 
 void onConnectionEstablished()
 {
+	client.subscribe("settings/" + WiFi.macAddress() + "/10:97:BD:D5:3E:64/pump_power", [](const String &payload) {
+	set_worker_setting(0, 0, String(payload).toFloat());
+	});
 }
 
 worker_info get_worker_info(const uint8_t* mac) {
@@ -164,6 +171,7 @@ void loop() {
 void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
   Serial.print("Last Packet Send Status:\t");
   Serial.println(status == ESP_NOW_SEND_SUCCESS ? "Delivery Success" : "Delivery Fail");
+  digitalWrite(3, status == ESP_NOW_SEND_SUCCESS ? LOW : HIGH);
 }
 
 void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {  
@@ -218,8 +226,14 @@ void handle_sample(const uint8_t* mac, const uint8_t *incomingData, int len) {
   print_mac(mac);
   Serial.println("");
   
-  if (!isnan(sampleMessage.led_worker_dummy_zero)) {
-  	client.publish(get_topic("samples", mac, "dummy,zero"), String(sampleMessage.led_worker_dummy_zero));
+  if (!isnan(sampleMessage.pump_01_th_temperature)) {
+  	client.publish(get_topic("samples", mac, "th,temperature"), String(sampleMessage.pump_01_th_temperature));
+  }
+  if (!isnan(sampleMessage.pump_01_th_humidity)) {
+  	client.publish(get_topic("samples", mac, "th,humidity"), String(sampleMessage.pump_01_th_humidity));
+  }
+  if (!isnan(sampleMessage.pump_01_moisture_sample)) {
+  	client.publish(get_topic("samples", mac, "moisture,sample"), String(sampleMessage.pump_01_moisture_sample));
   }
 }
 

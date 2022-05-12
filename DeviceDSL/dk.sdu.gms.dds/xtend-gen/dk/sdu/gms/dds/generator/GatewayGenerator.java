@@ -233,6 +233,14 @@ public class GatewayGenerator {
     _builder.newLine();
     _builder.append("  ");
     _builder.newLine();
+    _builder.append("  ");
+    _builder.append("pinMode(");
+    Integer _errorLedOrDefault = Utils.getErrorLedOrDefault(gateway);
+    _builder.append(_errorLedOrDefault, "  ");
+    _builder.append(", OUTPUT);");
+    _builder.newLineIfNotEmpty();
+    _builder.append("  ");
+    _builder.newLine();
     _builder.newLine();
     _builder.append("  ");
     _builder.append("// Register peer");
@@ -534,6 +542,12 @@ public class GatewayGenerator {
     _builder.append("  ");
     _builder.append("Serial.println(status == ESP_NOW_SEND_SUCCESS ? \"Delivery Success\" : \"Delivery Fail\");");
     _builder.newLine();
+    _builder.append("  ");
+    _builder.append("digitalWrite(");
+    Integer _errorLedOrDefault_1 = Utils.getErrorLedOrDefault(gateway);
+    _builder.append(_errorLedOrDefault_1, "  ");
+    _builder.append(", status == ESP_NOW_SEND_SUCCESS ? LOW : HIGH);");
+    _builder.newLineIfNotEmpty();
     _builder.append("}");
     _builder.newLine();
     _builder.newLine();

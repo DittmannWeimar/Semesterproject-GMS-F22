@@ -765,7 +765,7 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 	 *     Gateway returns Gateway
 	 *
 	 * Constraint:
-	 *     (name=ID mac=MAC workers+=Worker+)
+	 *     (name=ID mac=MAC errorLed+=INT? workers+=Worker+)
 	 * </pre>
 	 */
 	protected void sequence_Gateway(ISerializationContext context, Gateway semanticObject) {
@@ -1346,7 +1346,15 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 	 *     Worker returns Worker
 	 *
 	 * Constraint:
-	 *     (name=ID mac=MAC (sleepTime=INT timeUnit=TimeUnit)? devices+=Device*)
+	 *     (
+	 *         name=ID 
+	 *         mac=MAC 
+	 *         sleepTime=INT 
+	 *         timeUnit=TimeUnit 
+	 *         errorLed+=INT? 
+	 *         retries+=INT? 
+	 *         devices+=Device*
+	 *     )
 	 * </pre>
 	 */
 	protected void sequence_Worker(ISerializationContext context, Worker semanticObject) {

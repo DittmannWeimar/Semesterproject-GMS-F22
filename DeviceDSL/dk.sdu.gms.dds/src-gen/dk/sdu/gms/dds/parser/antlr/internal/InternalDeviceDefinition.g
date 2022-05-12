@@ -683,11 +683,39 @@ ruleGateway returns [EObject current=null]
 			)
 		)
 		(
+			otherlv_5='error'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getGatewayAccess().getErrorKeyword_5_0());
+			}
+			otherlv_6='light'
+			{
+				newLeafNode(otherlv_6, grammarAccess.getGatewayAccess().getLightKeyword_5_1());
+			}
+			(
+				(
+					lv_errorLed_7_0=RULE_INT
+					{
+						newLeafNode(lv_errorLed_7_0, grammarAccess.getGatewayAccess().getErrorLedINTTerminalRuleCall_5_2_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getGatewayRule());
+						}
+						addWithLastConsumed(
+							$current,
+							"errorLed",
+							lv_errorLed_7_0,
+							"org.eclipse.xtext.common.Terminals.INT");
+					}
+				)
+			)
+		)?
+		(
 			(
 				{
-					newCompositeNode(grammarAccess.getGatewayAccess().getWorkersWorkerParserRuleCall_5_0());
+					newCompositeNode(grammarAccess.getGatewayAccess().getWorkersWorkerParserRuleCall_6_0());
 				}
-				lv_workers_5_0=ruleWorker
+				lv_workers_8_0=ruleWorker
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getGatewayRule());
@@ -695,7 +723,7 @@ ruleGateway returns [EObject current=null]
 					add(
 						$current,
 						"workers",
-						lv_workers_5_0,
+						lv_workers_8_0,
 						"dk.sdu.gms.dds.DeviceDefinition.Worker");
 					afterParserOrEnumRuleCall();
 				}
@@ -746,73 +774,121 @@ ruleWorker returns [EObject current=null]
 		{
 			newLeafNode(otherlv_2, grammarAccess.getWorkerAccess().getColonKeyword_2());
 		}
+		otherlv_3='mac'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getWorkerAccess().getMacKeyword_3());
+		}
 		(
-			otherlv_3='mac'
-			{
-				newLeafNode(otherlv_3, grammarAccess.getWorkerAccess().getMacKeyword_3_0());
-			}
 			(
-				(
-					lv_mac_4_0=RULE_MAC
-					{
-						newLeafNode(lv_mac_4_0, grammarAccess.getWorkerAccess().getMacMACTerminalRuleCall_3_1_0());
+				lv_mac_4_0=RULE_MAC
+				{
+					newLeafNode(lv_mac_4_0, grammarAccess.getWorkerAccess().getMacMACTerminalRuleCall_4_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getWorkerRule());
 					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getWorkerRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"mac",
-							lv_mac_4_0,
-							"dk.sdu.gms.dds.DeviceDefinition.MAC");
+					setWithLastConsumed(
+						$current,
+						"mac",
+						lv_mac_4_0,
+						"dk.sdu.gms.dds.DeviceDefinition.MAC");
+				}
+			)
+		)
+		otherlv_5='sleep'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getWorkerAccess().getSleepKeyword_5());
+		}
+		otherlv_6='for'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getWorkerAccess().getForKeyword_6());
+		}
+		(
+			(
+				lv_sleepTime_7_0=RULE_INT
+				{
+					newLeafNode(lv_sleepTime_7_0, grammarAccess.getWorkerAccess().getSleepTimeINTTerminalRuleCall_7_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getWorkerRule());
 					}
-				)
+					setWithLastConsumed(
+						$current,
+						"sleepTime",
+						lv_sleepTime_7_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
 			)
 		)
 		(
-			otherlv_5='sleep'
+			(
+				{
+					newCompositeNode(grammarAccess.getWorkerAccess().getTimeUnitTimeUnitParserRuleCall_8_0());
+				}
+				lv_timeUnit_8_0=ruleTimeUnit
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getWorkerRule());
+					}
+					set(
+						$current,
+						"timeUnit",
+						lv_timeUnit_8_0,
+						"dk.sdu.gms.dds.DeviceDefinition.TimeUnit");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_9='error'
 			{
-				newLeafNode(otherlv_5, grammarAccess.getWorkerAccess().getSleepKeyword_4_0());
+				newLeafNode(otherlv_9, grammarAccess.getWorkerAccess().getErrorKeyword_9_0());
 			}
-			otherlv_6='for'
+			otherlv_10='light'
 			{
-				newLeafNode(otherlv_6, grammarAccess.getWorkerAccess().getForKeyword_4_1());
+				newLeafNode(otherlv_10, grammarAccess.getWorkerAccess().getLightKeyword_9_1());
 			}
 			(
 				(
-					lv_sleepTime_7_0=RULE_INT
+					lv_errorLed_11_0=RULE_INT
 					{
-						newLeafNode(lv_sleepTime_7_0, grammarAccess.getWorkerAccess().getSleepTimeINTTerminalRuleCall_4_2_0());
+						newLeafNode(lv_errorLed_11_0, grammarAccess.getWorkerAccess().getErrorLedINTTerminalRuleCall_9_2_0());
 					}
 					{
 						if ($current==null) {
 							$current = createModelElement(grammarAccess.getWorkerRule());
 						}
-						setWithLastConsumed(
+						addWithLastConsumed(
 							$current,
-							"sleepTime",
-							lv_sleepTime_7_0,
+							"errorLed",
+							lv_errorLed_11_0,
 							"org.eclipse.xtext.common.Terminals.INT");
 					}
 				)
 			)
+		)?
+		(
+			otherlv_12='retries'
+			{
+				newLeafNode(otherlv_12, grammarAccess.getWorkerAccess().getRetriesKeyword_10_0());
+			}
 			(
 				(
+					lv_retries_13_0=RULE_INT
 					{
-						newCompositeNode(grammarAccess.getWorkerAccess().getTimeUnitTimeUnitParserRuleCall_4_3_0());
+						newLeafNode(lv_retries_13_0, grammarAccess.getWorkerAccess().getRetriesINTTerminalRuleCall_10_1_0());
 					}
-					lv_timeUnit_8_0=ruleTimeUnit
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getWorkerRule());
+							$current = createModelElement(grammarAccess.getWorkerRule());
 						}
-						set(
+						addWithLastConsumed(
 							$current,
-							"timeUnit",
-							lv_timeUnit_8_0,
-							"dk.sdu.gms.dds.DeviceDefinition.TimeUnit");
-						afterParserOrEnumRuleCall();
+							"retries",
+							lv_retries_13_0,
+							"org.eclipse.xtext.common.Terminals.INT");
 					}
 				)
 			)
@@ -820,9 +896,9 @@ ruleWorker returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getWorkerAccess().getDevicesDeviceParserRuleCall_5_0());
+					newCompositeNode(grammarAccess.getWorkerAccess().getDevicesDeviceParserRuleCall_11_0());
 				}
-				lv_devices_9_0=ruleDevice
+				lv_devices_14_0=ruleDevice
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getWorkerRule());
@@ -830,7 +906,7 @@ ruleWorker returns [EObject current=null]
 					add(
 						$current,
 						"devices",
-						lv_devices_9_0,
+						lv_devices_14_0,
 						"dk.sdu.gms.dds.DeviceDefinition.Device");
 					afterParserOrEnumRuleCall();
 				}

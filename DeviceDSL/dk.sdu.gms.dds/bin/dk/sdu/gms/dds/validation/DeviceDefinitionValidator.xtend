@@ -17,6 +17,8 @@ import dk.sdu.gms.dds.deviceDefinition.InternalVariableUse
 import dk.sdu.gms.dds.deviceDefinition.ExternalVariableUse
 import dk.sdu.gms.dds.deviceDefinition.GraphVariableUse
 import dk.sdu.gms.dds.deviceDefinition.Graph
+import static dk.sdu.gms.dds.Utils.*
+import dk.sdu.gms.dds.deviceDefinition.Worker
 
 /**
  * This class contains custom validation rules. 
@@ -69,5 +71,22 @@ class DeviceDefinitionValidator extends AbstractDeviceDefinitionValidator {
 			}
 		}
 		return false;
+	}
+	
+	@Check
+	def checkVariableUseOfPrior(ExternalVariableUse use) {
+		val device = getParentOfType(use, typeof(Device))
+		val referencedDevice = use.obj;
+		
+		val indexOfDevice = getParentOfType(device, typeof(Worker)).devices.indexOf(device);
+		val indexOfReference = getParentOfType(referencedDevice, typeof(Worker)).devices.indexOf(referencedDevice);
+		
+		if (indexOfDevice < indexOfReference) {
+			warning("Expression is referencing a binding from a device later in the loop. This will result in readings being from before last sleep. (at least " + getSleepTime(getParentOfType(device, typeof(Worker))) + " outdated)", DeviceDefinitionPackage.Literals.EXTERNAL_VARIABLE_USE__OBJ);
+		}
+	}
+	
+	def getSleepTime (Worker worker) {
+		return worker.sleepTime + " " + timeUnitToString(worker.timeUnit);
 	}
 }

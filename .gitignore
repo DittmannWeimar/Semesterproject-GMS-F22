@@ -63,8 +63,7 @@ local.properties
 
 /.m2/
 build/
-!**/src/**/build
-!**/xtend-gen/**/build
+**/xtend-gen/**
 bin/
 target/
 .gradle/

@@ -37,6 +37,7 @@
     <genClasses ecoreClass="DeviceDefinition.ecore#//Gateway">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Gateway/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Gateway/mac"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Gateway/errorLed"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Gateway/workers"/>
     </genClasses>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Worker">
@@ -44,6 +45,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Worker/mac"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Worker/sleepTime"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Worker/timeUnit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Worker/errorLed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Worker/retries"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Worker/devices"/>
     </genClasses>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Device">

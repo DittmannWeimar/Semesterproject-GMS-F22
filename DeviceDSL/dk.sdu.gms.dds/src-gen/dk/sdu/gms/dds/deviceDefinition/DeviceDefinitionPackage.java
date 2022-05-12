@@ -298,13 +298,22 @@ public interface DeviceDefinitionPackage extends EPackage
   int GATEWAY__MAC = 1;
 
   /**
+   * The feature id for the '<em><b>Error Led</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GATEWAY__ERROR_LED = 2;
+
+  /**
    * The feature id for the '<em><b>Workers</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GATEWAY__WORKERS = 2;
+  int GATEWAY__WORKERS = 3;
 
   /**
    * The number of structural features of the '<em>Gateway</em>' class.
@@ -313,7 +322,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GATEWAY_FEATURE_COUNT = 3;
+  int GATEWAY_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.WorkerImpl <em>Worker</em>}' class.
@@ -362,13 +371,31 @@ public interface DeviceDefinitionPackage extends EPackage
   int WORKER__TIME_UNIT = 3;
 
   /**
+   * The feature id for the '<em><b>Error Led</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKER__ERROR_LED = 4;
+
+  /**
+   * The feature id for the '<em><b>Retries</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKER__RETRIES = 5;
+
+  /**
    * The feature id for the '<em><b>Devices</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WORKER__DEVICES = 4;
+  int WORKER__DEVICES = 6;
 
   /**
    * The number of structural features of the '<em>Worker</em>' class.
@@ -377,7 +404,7 @@ public interface DeviceDefinitionPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WORKER_FEATURE_COUNT = 5;
+  int WORKER_FEATURE_COUNT = 7;
 
   /**
    * The meta object id for the '{@link dk.sdu.gms.dds.deviceDefinition.impl.DeviceImpl <em>Device</em>}' class.
@@ -2133,6 +2160,17 @@ public interface DeviceDefinitionPackage extends EPackage
   EAttribute getGateway_Mac();
 
   /**
+   * Returns the meta object for the attribute list '{@link dk.sdu.gms.dds.deviceDefinition.Gateway#getErrorLed <em>Error Led</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Error Led</em>'.
+   * @see dk.sdu.gms.dds.deviceDefinition.Gateway#getErrorLed()
+   * @see #getGateway()
+   * @generated
+   */
+  EAttribute getGateway_ErrorLed();
+
+  /**
    * Returns the meta object for the containment reference list '{@link dk.sdu.gms.dds.deviceDefinition.Gateway#getWorkers <em>Workers</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2196,6 +2234,28 @@ public interface DeviceDefinitionPackage extends EPackage
    * @generated
    */
   EReference getWorker_TimeUnit();
+
+  /**
+   * Returns the meta object for the attribute list '{@link dk.sdu.gms.dds.deviceDefinition.Worker#getErrorLed <em>Error Led</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Error Led</em>'.
+   * @see dk.sdu.gms.dds.deviceDefinition.Worker#getErrorLed()
+   * @see #getWorker()
+   * @generated
+   */
+  EAttribute getWorker_ErrorLed();
+
+  /**
+   * Returns the meta object for the attribute list '{@link dk.sdu.gms.dds.deviceDefinition.Worker#getRetries <em>Retries</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Retries</em>'.
+   * @see dk.sdu.gms.dds.deviceDefinition.Worker#getRetries()
+   * @see #getWorker()
+   * @generated
+   */
+  EAttribute getWorker_Retries();
 
   /**
    * Returns the meta object for the containment reference list '{@link dk.sdu.gms.dds.deviceDefinition.Worker#getDevices <em>Devices</em>}'.
@@ -3503,6 +3563,14 @@ public interface DeviceDefinitionPackage extends EPackage
     EAttribute GATEWAY__MAC = eINSTANCE.getGateway_Mac();
 
     /**
+     * The meta object literal for the '<em><b>Error Led</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GATEWAY__ERROR_LED = eINSTANCE.getGateway_ErrorLed();
+
+    /**
      * The meta object literal for the '<em><b>Workers</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3551,6 +3619,22 @@ public interface DeviceDefinitionPackage extends EPackage
      * @generated
      */
     EReference WORKER__TIME_UNIT = eINSTANCE.getWorker_TimeUnit();
+
+    /**
+     * The meta object literal for the '<em><b>Error Led</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WORKER__ERROR_LED = eINSTANCE.getWorker_ErrorLed();
+
+    /**
+     * The meta object literal for the '<em><b>Retries</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WORKER__RETRIES = eINSTANCE.getWorker_Retries();
 
     /**
      * The meta object literal for the '<em><b>Devices</b></em>' containment reference list feature.

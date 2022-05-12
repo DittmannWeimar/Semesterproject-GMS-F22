@@ -20,6 +20,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Worker#getMac <em>Mac</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Worker#getSleepTime <em>Sleep Time</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Worker#getTimeUnit <em>Time Unit</em>}</li>
+ *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Worker#getErrorLed <em>Error Led</em>}</li>
+ *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Worker#getRetries <em>Retries</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Worker#getDevices <em>Devices</em>}</li>
  * </ul>
  *
@@ -116,6 +118,30 @@ public interface Worker extends EObject
    * @generated
    */
   void setTimeUnit(TimeUnit value);
+
+  /**
+   * Returns the value of the '<em><b>Error Led</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.Integer}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Error Led</em>' attribute list.
+   * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getWorker_ErrorLed()
+   * @model unique="false"
+   * @generated
+   */
+  EList<Integer> getErrorLed();
+
+  /**
+   * Returns the value of the '<em><b>Retries</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.Integer}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Retries</em>' attribute list.
+   * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getWorker_Retries()
+   * @model unique="false"
+   * @generated
+   */
+  EList<Integer> getRetries();
 
   /**
    * Returns the value of the '<em><b>Devices</b></em>' containment reference list.

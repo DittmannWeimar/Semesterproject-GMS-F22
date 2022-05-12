@@ -398,18 +398,25 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		private final Keyword cMacKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cMacAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cMacMACTerminalRuleCall_4_0 = (RuleCall)cMacAssignment_4.eContents().get(0);
-		private final Assignment cWorkersAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cWorkersWorkerParserRuleCall_5_0 = (RuleCall)cWorkersAssignment_5.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cErrorKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Keyword cLightKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
+		private final Assignment cErrorLedAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
+		private final RuleCall cErrorLedINTTerminalRuleCall_5_2_0 = (RuleCall)cErrorLedAssignment_5_2.eContents().get(0);
+		private final Assignment cWorkersAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cWorkersWorkerParserRuleCall_6_0 = (RuleCall)cWorkersAssignment_6.eContents().get(0);
 		
 		//Gateway:
 		//    'Gateway' name=ID ':'
 		//    'mac' mac = MAC
+		//    ('error' 'light' errorLed += INT)?
 		//    workers += Worker+
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Gateway' name=ID ':'
 		//'mac' mac = MAC
+		//('error' 'light' errorLed += INT)?
 		//workers += Worker+
 		public Group getGroup() { return cGroup; }
 		
@@ -434,11 +441,26 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		//MAC
 		public RuleCall getMacMACTerminalRuleCall_4_0() { return cMacMACTerminalRuleCall_4_0; }
 		
+		//('error' 'light' errorLed += INT)?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//'error'
+		public Keyword getErrorKeyword_5_0() { return cErrorKeyword_5_0; }
+		
+		//'light'
+		public Keyword getLightKeyword_5_1() { return cLightKeyword_5_1; }
+		
+		//errorLed += INT
+		public Assignment getErrorLedAssignment_5_2() { return cErrorLedAssignment_5_2; }
+		
+		//INT
+		public RuleCall getErrorLedINTTerminalRuleCall_5_2_0() { return cErrorLedINTTerminalRuleCall_5_2_0; }
+		
 		//workers += Worker+
-		public Assignment getWorkersAssignment_5() { return cWorkersAssignment_5; }
+		public Assignment getWorkersAssignment_6() { return cWorkersAssignment_6; }
 		
 		//Worker
-		public RuleCall getWorkersWorkerParserRuleCall_5_0() { return cWorkersWorkerParserRuleCall_5_0; }
+		public RuleCall getWorkersWorkerParserRuleCall_6_0() { return cWorkersWorkerParserRuleCall_6_0; }
 	}
 	public class WorkerElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.gms.dds.DeviceDefinition.Worker");
@@ -447,31 +469,42 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cMacKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cMacAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cMacMACTerminalRuleCall_3_1_0 = (RuleCall)cMacAssignment_3_1.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cSleepKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Keyword cForKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Assignment cSleepTimeAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final RuleCall cSleepTimeINTTerminalRuleCall_4_2_0 = (RuleCall)cSleepTimeAssignment_4_2.eContents().get(0);
-		private final Assignment cTimeUnitAssignment_4_3 = (Assignment)cGroup_4.eContents().get(3);
-		private final RuleCall cTimeUnitTimeUnitParserRuleCall_4_3_0 = (RuleCall)cTimeUnitAssignment_4_3.eContents().get(0);
-		private final Assignment cDevicesAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cDevicesDeviceParserRuleCall_5_0 = (RuleCall)cDevicesAssignment_5.eContents().get(0);
+		private final Keyword cMacKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cMacAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cMacMACTerminalRuleCall_4_0 = (RuleCall)cMacAssignment_4.eContents().get(0);
+		private final Keyword cSleepKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cForKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cSleepTimeAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cSleepTimeINTTerminalRuleCall_7_0 = (RuleCall)cSleepTimeAssignment_7.eContents().get(0);
+		private final Assignment cTimeUnitAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cTimeUnitTimeUnitParserRuleCall_8_0 = (RuleCall)cTimeUnitAssignment_8.eContents().get(0);
+		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
+		private final Keyword cErrorKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
+		private final Keyword cLightKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
+		private final Assignment cErrorLedAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
+		private final RuleCall cErrorLedINTTerminalRuleCall_9_2_0 = (RuleCall)cErrorLedAssignment_9_2.eContents().get(0);
+		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
+		private final Keyword cRetriesKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
+		private final Assignment cRetriesAssignment_10_1 = (Assignment)cGroup_10.eContents().get(1);
+		private final RuleCall cRetriesINTTerminalRuleCall_10_1_0 = (RuleCall)cRetriesAssignment_10_1.eContents().get(0);
+		private final Assignment cDevicesAssignment_11 = (Assignment)cGroup.eContents().get(11);
+		private final RuleCall cDevicesDeviceParserRuleCall_11_0 = (RuleCall)cDevicesAssignment_11.eContents().get(0);
 		
 		//Worker:
 		//    'Worker' (name=ID) ':'
-		//    ('mac' mac = MAC)
-		//    ('sleep' 'for' sleepTime = INT timeUnit = TimeUnit)?
+		//    'mac' mac = MAC
+		//    'sleep' 'for' sleepTime = INT timeUnit = TimeUnit
+		//    ('error' 'light' errorLed += INT)?
+		//    ('retries' retries += INT)?
 		//    devices += Device*
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Worker' (name=ID) ':'
-		//('mac' mac = MAC)
-		//('sleep' 'for' sleepTime = INT timeUnit = TimeUnit)?
+		//'mac' mac = MAC
+		//'sleep' 'for' sleepTime = INT timeUnit = TimeUnit
+		//('error' 'light' errorLed += INT)?
+		//('retries' retries += INT)?
 		//devices += Device*
 		public Group getGroup() { return cGroup; }
 		
@@ -487,44 +520,65 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		//':'
 		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 		
-		//('mac' mac = MAC)
-		public Group getGroup_3() { return cGroup_3; }
-		
 		//'mac'
-		public Keyword getMacKeyword_3_0() { return cMacKeyword_3_0; }
+		public Keyword getMacKeyword_3() { return cMacKeyword_3; }
 		
 		//mac = MAC
-		public Assignment getMacAssignment_3_1() { return cMacAssignment_3_1; }
+		public Assignment getMacAssignment_4() { return cMacAssignment_4; }
 		
 		//MAC
-		public RuleCall getMacMACTerminalRuleCall_3_1_0() { return cMacMACTerminalRuleCall_3_1_0; }
-		
-		//('sleep' 'for' sleepTime = INT timeUnit = TimeUnit)?
-		public Group getGroup_4() { return cGroup_4; }
+		public RuleCall getMacMACTerminalRuleCall_4_0() { return cMacMACTerminalRuleCall_4_0; }
 		
 		//'sleep'
-		public Keyword getSleepKeyword_4_0() { return cSleepKeyword_4_0; }
+		public Keyword getSleepKeyword_5() { return cSleepKeyword_5; }
 		
 		//'for'
-		public Keyword getForKeyword_4_1() { return cForKeyword_4_1; }
+		public Keyword getForKeyword_6() { return cForKeyword_6; }
 		
 		//sleepTime = INT
-		public Assignment getSleepTimeAssignment_4_2() { return cSleepTimeAssignment_4_2; }
+		public Assignment getSleepTimeAssignment_7() { return cSleepTimeAssignment_7; }
 		
 		//INT
-		public RuleCall getSleepTimeINTTerminalRuleCall_4_2_0() { return cSleepTimeINTTerminalRuleCall_4_2_0; }
+		public RuleCall getSleepTimeINTTerminalRuleCall_7_0() { return cSleepTimeINTTerminalRuleCall_7_0; }
 		
 		//timeUnit = TimeUnit
-		public Assignment getTimeUnitAssignment_4_3() { return cTimeUnitAssignment_4_3; }
+		public Assignment getTimeUnitAssignment_8() { return cTimeUnitAssignment_8; }
 		
 		//TimeUnit
-		public RuleCall getTimeUnitTimeUnitParserRuleCall_4_3_0() { return cTimeUnitTimeUnitParserRuleCall_4_3_0; }
+		public RuleCall getTimeUnitTimeUnitParserRuleCall_8_0() { return cTimeUnitTimeUnitParserRuleCall_8_0; }
+		
+		//('error' 'light' errorLed += INT)?
+		public Group getGroup_9() { return cGroup_9; }
+		
+		//'error'
+		public Keyword getErrorKeyword_9_0() { return cErrorKeyword_9_0; }
+		
+		//'light'
+		public Keyword getLightKeyword_9_1() { return cLightKeyword_9_1; }
+		
+		//errorLed += INT
+		public Assignment getErrorLedAssignment_9_2() { return cErrorLedAssignment_9_2; }
+		
+		//INT
+		public RuleCall getErrorLedINTTerminalRuleCall_9_2_0() { return cErrorLedINTTerminalRuleCall_9_2_0; }
+		
+		//('retries' retries += INT)?
+		public Group getGroup_10() { return cGroup_10; }
+		
+		//'retries'
+		public Keyword getRetriesKeyword_10_0() { return cRetriesKeyword_10_0; }
+		
+		//retries += INT
+		public Assignment getRetriesAssignment_10_1() { return cRetriesAssignment_10_1; }
+		
+		//INT
+		public RuleCall getRetriesINTTerminalRuleCall_10_1_0() { return cRetriesINTTerminalRuleCall_10_1_0; }
 		
 		//devices += Device*
-		public Assignment getDevicesAssignment_5() { return cDevicesAssignment_5; }
+		public Assignment getDevicesAssignment_11() { return cDevicesAssignment_11; }
 		
 		//Device
-		public RuleCall getDevicesDeviceParserRuleCall_5_0() { return cDevicesDeviceParserRuleCall_5_0; }
+		public RuleCall getDevicesDeviceParserRuleCall_11_0() { return cDevicesDeviceParserRuleCall_11_0; }
 	}
 	public class DeviceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.gms.dds.DeviceDefinition.Device");
@@ -2034,6 +2088,7 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 	//Gateway:
 	//    'Gateway' name=ID ':'
 	//    'mac' mac = MAC
+	//    ('error' 'light' errorLed += INT)?
 	//    workers += Worker+
 	//;
 	public GatewayElements getGatewayAccess() {
@@ -2046,8 +2101,10 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 	
 	//Worker:
 	//    'Worker' (name=ID) ':'
-	//    ('mac' mac = MAC)
-	//    ('sleep' 'for' sleepTime = INT timeUnit = TimeUnit)?
+	//    'mac' mac = MAC
+	//    'sleep' 'for' sleepTime = INT timeUnit = TimeUnit
+	//    ('error' 'light' errorLed += INT)?
+	//    ('retries' retries += INT)?
 	//    devices += Device*
 	//;
 	public WorkerElements getWorkerAccess() {

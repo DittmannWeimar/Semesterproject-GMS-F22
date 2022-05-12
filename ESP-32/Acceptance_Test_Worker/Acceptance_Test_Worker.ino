@@ -32,7 +32,8 @@ const bool scan = true;
 const String STATION_NAME = "Gateway";
 
 const int messageTries = 3;
-const int errorLedPin = 1;
+const int errorLedPin = 2;
+bool messageSuccess = false;
 
 int espnow_channel = 0;
 
@@ -175,8 +176,8 @@ void loop() {
 }
 
 void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
-  Serial.print("Last Packet Send Status:\t");
-  Serial.println(status == ESP_NOW_SEND_SUCCESS ? "Delivery Success" : "Delivery Fail");
+  messageSuccess = status == ESP_NOW_SEND_SUCCESS;
+  Serial.println("Send message status: " + String(status == ESP_NOW_SEND_SUCCESS ? "success" : "failure"));
 }
 
 void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {  
@@ -225,12 +226,13 @@ void handle_setting(const uint8_t * mac, const uint8_t *incomingData, int len) {
 void send_message(const uint8_t * mac, const uint8_t *incomingData, int len) {
   bool success = false;
   for (int i = 0; i < messageTries; i++) {
-    esp_err_t result = esp_now_send(mac, incomingData, len)
-    if (result == ESP_OK) {
+    esp_err_t result = esp_now_send(mac, incomingData, len);
+    delay(250);
+    if (messageSuccess) {
       success = true;
       break;
     }
   }
   Serial.println("Send message success: " + String(success));
-  digitalWrite(errorLedPin, success);
+  digitalWrite(errorLedPin, success ? LOW : HIGH);
 }

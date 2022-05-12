@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -36,6 +37,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.WorkerImpl#getMac <em>Mac</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.WorkerImpl#getSleepTime <em>Sleep Time</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.WorkerImpl#getTimeUnit <em>Time Unit</em>}</li>
+ *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.WorkerImpl#getErrorLed <em>Error Led</em>}</li>
+ *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.WorkerImpl#getRetries <em>Retries</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.WorkerImpl#getDevices <em>Devices</em>}</li>
  * </ul>
  *
@@ -112,6 +115,26 @@ public class WorkerImpl extends MinimalEObjectImpl.Container implements Worker
    * @ordered
    */
   protected TimeUnit timeUnit;
+
+  /**
+   * The cached value of the '{@link #getErrorLed() <em>Error Led</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getErrorLed()
+   * @generated
+   * @ordered
+   */
+  protected EList<Integer> errorLed;
+
+  /**
+   * The cached value of the '{@link #getRetries() <em>Retries</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRetries()
+   * @generated
+   * @ordered
+   */
+  protected EList<Integer> retries;
 
   /**
    * The cached value of the '{@link #getDevices() <em>Devices</em>}' containment reference list.
@@ -275,6 +298,36 @@ public class WorkerImpl extends MinimalEObjectImpl.Container implements Worker
    * @generated
    */
   @Override
+  public EList<Integer> getErrorLed()
+  {
+    if (errorLed == null)
+    {
+      errorLed = new EDataTypeEList<Integer>(Integer.class, this, DeviceDefinitionPackage.WORKER__ERROR_LED);
+    }
+    return errorLed;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<Integer> getRetries()
+  {
+    if (retries == null)
+    {
+      retries = new EDataTypeEList<Integer>(Integer.class, this, DeviceDefinitionPackage.WORKER__RETRIES);
+    }
+    return retries;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<Device> getDevices()
   {
     if (devices == null)
@@ -320,6 +373,10 @@ public class WorkerImpl extends MinimalEObjectImpl.Container implements Worker
         return getSleepTime();
       case DeviceDefinitionPackage.WORKER__TIME_UNIT:
         return getTimeUnit();
+      case DeviceDefinitionPackage.WORKER__ERROR_LED:
+        return getErrorLed();
+      case DeviceDefinitionPackage.WORKER__RETRIES:
+        return getRetries();
       case DeviceDefinitionPackage.WORKER__DEVICES:
         return getDevices();
     }
@@ -348,6 +405,14 @@ public class WorkerImpl extends MinimalEObjectImpl.Container implements Worker
         return;
       case DeviceDefinitionPackage.WORKER__TIME_UNIT:
         setTimeUnit((TimeUnit)newValue);
+        return;
+      case DeviceDefinitionPackage.WORKER__ERROR_LED:
+        getErrorLed().clear();
+        getErrorLed().addAll((Collection<? extends Integer>)newValue);
+        return;
+      case DeviceDefinitionPackage.WORKER__RETRIES:
+        getRetries().clear();
+        getRetries().addAll((Collection<? extends Integer>)newValue);
         return;
       case DeviceDefinitionPackage.WORKER__DEVICES:
         getDevices().clear();
@@ -379,6 +444,12 @@ public class WorkerImpl extends MinimalEObjectImpl.Container implements Worker
       case DeviceDefinitionPackage.WORKER__TIME_UNIT:
         setTimeUnit((TimeUnit)null);
         return;
+      case DeviceDefinitionPackage.WORKER__ERROR_LED:
+        getErrorLed().clear();
+        return;
+      case DeviceDefinitionPackage.WORKER__RETRIES:
+        getRetries().clear();
+        return;
       case DeviceDefinitionPackage.WORKER__DEVICES:
         getDevices().clear();
         return;
@@ -404,6 +475,10 @@ public class WorkerImpl extends MinimalEObjectImpl.Container implements Worker
         return sleepTime != SLEEP_TIME_EDEFAULT;
       case DeviceDefinitionPackage.WORKER__TIME_UNIT:
         return timeUnit != null;
+      case DeviceDefinitionPackage.WORKER__ERROR_LED:
+        return errorLed != null && !errorLed.isEmpty();
+      case DeviceDefinitionPackage.WORKER__RETRIES:
+        return retries != null && !retries.isEmpty();
       case DeviceDefinitionPackage.WORKER__DEVICES:
         return devices != null && !devices.isEmpty();
     }
@@ -427,6 +502,10 @@ public class WorkerImpl extends MinimalEObjectImpl.Container implements Worker
     result.append(mac);
     result.append(", sleepTime: ");
     result.append(sleepTime);
+    result.append(", errorLed: ");
+    result.append(errorLed);
+    result.append(", retries: ");
+    result.append(retries);
     result.append(')');
     return result.toString();
   }

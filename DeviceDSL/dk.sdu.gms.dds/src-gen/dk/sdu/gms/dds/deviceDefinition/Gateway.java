@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Gateway#getName <em>Name</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Gateway#getMac <em>Mac</em>}</li>
+ *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Gateway#getErrorLed <em>Error Led</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Gateway#getWorkers <em>Workers</em>}</li>
  * </ul>
  *
@@ -70,6 +71,18 @@ public interface Gateway extends EObject
    * @generated
    */
   void setMac(String value);
+
+  /**
+   * Returns the value of the '<em><b>Error Led</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.Integer}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Error Led</em>' attribute list.
+   * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getGateway_ErrorLed()
+   * @model unique="false"
+   * @generated
+   */
+  EList<Integer> getErrorLed();
 
   /**
    * Returns the value of the '<em><b>Workers</b></em>' containment reference list.

@@ -5,6 +5,7 @@ package dk.sdu.gms.dds.validation;
 
 import com.google.common.base.Objects;
 import dk.sdu.gms.dds.DeviceDefinition;
+import dk.sdu.gms.dds.Utils;
 import dk.sdu.gms.dds.actuators.ActuatorDefinition;
 import dk.sdu.gms.dds.deviceDefinition.Actuator;
 import dk.sdu.gms.dds.deviceDefinition.Device;
@@ -15,6 +16,7 @@ import dk.sdu.gms.dds.deviceDefinition.GraphVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.InternalVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.Sensor;
 import dk.sdu.gms.dds.deviceDefinition.VariableUse;
+import dk.sdu.gms.dds.deviceDefinition.Worker;
 import dk.sdu.gms.dds.sensors.SensorDefinition;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.validation.Check;
@@ -110,5 +112,26 @@ public class DeviceDefinitionValidator extends AbstractDeviceDefinitionValidator
       }
     }
     return false;
+  }
+  
+  @Check
+  public void checkVariableUseOfPrior(final ExternalVariableUse use) {
+    final Device device = Utils.<Device>getParentOfType(use, Device.class);
+    final Device referencedDevice = use.getObj();
+    final int indexOfDevice = Utils.<Worker>getParentOfType(device, Worker.class).getDevices().indexOf(device);
+    final int indexOfReference = Utils.<Worker>getParentOfType(referencedDevice, Worker.class).getDevices().indexOf(referencedDevice);
+    if ((indexOfDevice < indexOfReference)) {
+      String _sleepTime = this.getSleepTime(Utils.<Worker>getParentOfType(device, Worker.class));
+      String _plus = ("Expression is referencing a binding from a device later in the loop. This will result in readings being from before last sleep. (at least " + _sleepTime);
+      String _plus_1 = (_plus + " outdated)");
+      this.warning(_plus_1, DeviceDefinitionPackage.Literals.EXTERNAL_VARIABLE_USE__OBJ);
+    }
+  }
+  
+  public String getSleepTime(final Worker worker) {
+    int _sleepTime = worker.getSleepTime();
+    String _plus = (Integer.valueOf(_sleepTime) + " ");
+    String _timeUnitToString = Utils.timeUnitToString(worker.getTimeUnit());
+    return (_plus + _timeUnitToString);
   }
 }

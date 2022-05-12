@@ -761,9 +761,20 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
+  public EAttribute getGateway_ErrorLed()
+  {
+    return (EAttribute)gatewayEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EReference getGateway_Workers()
   {
-    return (EReference)gatewayEClass.getEStructuralFeatures().get(2);
+    return (EReference)gatewayEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -827,9 +838,31 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
+  public EAttribute getWorker_ErrorLed()
+  {
+    return (EAttribute)workerEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getWorker_Retries()
+  {
+    return (EAttribute)workerEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EReference getWorker_Devices()
   {
-    return (EReference)workerEClass.getEStructuralFeatures().get(4);
+    return (EReference)workerEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -2022,6 +2055,7 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     gatewayEClass = createEClass(GATEWAY);
     createEAttribute(gatewayEClass, GATEWAY__NAME);
     createEAttribute(gatewayEClass, GATEWAY__MAC);
+    createEAttribute(gatewayEClass, GATEWAY__ERROR_LED);
     createEReference(gatewayEClass, GATEWAY__WORKERS);
 
     workerEClass = createEClass(WORKER);
@@ -2029,6 +2063,8 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     createEAttribute(workerEClass, WORKER__MAC);
     createEAttribute(workerEClass, WORKER__SLEEP_TIME);
     createEReference(workerEClass, WORKER__TIME_UNIT);
+    createEAttribute(workerEClass, WORKER__ERROR_LED);
+    createEAttribute(workerEClass, WORKER__RETRIES);
     createEReference(workerEClass, WORKER__DEVICES);
 
     deviceEClass = createEClass(DEVICE);
@@ -2281,6 +2317,7 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     initEClass(gatewayEClass, Gateway.class, "Gateway", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getGateway_Name(), ecorePackage.getEString(), "name", null, 0, 1, Gateway.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGateway_Mac(), ecorePackage.getEString(), "mac", null, 0, 1, Gateway.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGateway_ErrorLed(), ecorePackage.getEInt(), "errorLed", null, 0, -1, Gateway.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGateway_Workers(), this.getWorker(), null, "workers", null, 0, -1, Gateway.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(workerEClass, Worker.class, "Worker", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2288,6 +2325,8 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     initEAttribute(getWorker_Mac(), ecorePackage.getEString(), "mac", null, 0, 1, Worker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getWorker_SleepTime(), ecorePackage.getEInt(), "sleepTime", null, 0, 1, Worker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getWorker_TimeUnit(), this.getTimeUnit(), null, "timeUnit", null, 0, 1, Worker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWorker_ErrorLed(), ecorePackage.getEInt(), "errorLed", null, 0, -1, Worker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWorker_Retries(), ecorePackage.getEInt(), "retries", null, 0, -1, Worker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getWorker_Devices(), this.getDevice(), null, "devices", null, 0, -1, Worker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(deviceEClass, Device.class, "Device", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

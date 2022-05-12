@@ -51,6 +51,8 @@ import java.util.stream.Collectors
 class Utils {
 	
 	public static int[] dacPins = #[25, 26]
+	public static int defaultRetries = 1;
+	public static int defaultErrorLed = 2;
 	
 	public static def createSettingIndex (Gateway gateway) {
 		val list = new ArrayList<String>();
@@ -251,6 +253,14 @@ class Utils {
 		}
 	}
 	
+	public static def timeUnitToString (TimeUnit unit) {
+		switch (unit) {
+			Second: "second(s)"
+			Minute: "minute(s)"
+			Hour: "hour(s)"
+		}
+	}
+	
 	public static def getDacPinVariableName(int pin) 
 	'''dacPin«pin»'''
 	
@@ -320,5 +330,36 @@ class Utils {
 	
 	public static def CharSequence getEnabledVariableName(Actuator actuator) {
 		return '''«getVariablePrefix(actuator)»enabled'''
+	}
+	
+	def static <T> getParentOfType (EObject obj, Class<T> clazz) {
+		var current = obj;
+		while (current.eContainer !== null) {
+			current = current.eContainer;
+			if (clazz.isInstance(current)) {
+				return current as T;
+			}
+		}
+		return null;
+	}
+	
+	def static dispatch getRetriesOrDefault(Worker worker) {
+		if (worker.retries.size() == 0) return defaultRetries;
+		return worker.retries.get(0);
+	}
+	
+	def static dispatch getErrorLedOrDefault(Worker worker) {
+		if (worker.errorLed.size() == 0) return defaultErrorLed;
+		return worker.errorLed.get(0);
+	}
+	
+	/*def static dispatch getRetriesOrDefault(Gateway gateway) {
+		if (gateway.retries.size() == 0) return defaultRetries;
+		return gateway.retries.get(0);
+	}*/
+	
+	def static dispatch getErrorLedOrDefault(Gateway gateway) {
+		if (gateway.errorLed.size() == 0) return defaultErrorLed;
+		return gateway.errorLed.get(0);
 	}
 }

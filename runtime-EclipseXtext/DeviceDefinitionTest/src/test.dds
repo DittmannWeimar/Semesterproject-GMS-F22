@@ -2,14 +2,49 @@ System:
 	wifi "Chronos" with password "fizzfyr13"
 	mqtt "vald.io:3001" with username "kristian" and password "1234"
 	
-	Gateway main_gateway:
+	Gateway gateway:
 		mac 58:BF:25:E0:77:98
+		error light 3
 				
-		Worker led_worker:
+		Worker pump_01:
 		
 			mac 10:97:BD:D5:3E:64
 			sleep for 10 seconds
+			error light 3
+			retries 5
 			
-			Sensor Dummy dummy:
-				pins
-				out as dummy with mapping value + call sin(call millis() / 314.0) * 100.0
+			Sensor TemperatureHumidity th:
+				pins adc 4
+				out "temperature" as temperature
+				out "humidity" as humidity
+				
+			Sensor Generic moisture:
+				pins adc 32
+				out as output with mapping value / 1024.0 * 100.0
+				
+			Actuator Generic pump:
+				pins dac 25
+				setting power = 256
+				on moisture.output < 50 run for 2 seconds
+				
+	Graph:
+		category "Environment"
+		title "Temperature"
+		x "Time"
+		y "Temperature (C)"
+		line pump_01.th.temperature
+		
+	Graph:
+		category "Environment"
+		title "Humidity"
+		x "Time"
+		y "Humidity (%)"
+		line pump_01.th.humidity
+		
+	Graph:
+		category "Plant 01"
+		title "Soil Moisture"
+		x "Time"
+		y "Moisture (%)"
+		line pump_01.moisture.output
+		

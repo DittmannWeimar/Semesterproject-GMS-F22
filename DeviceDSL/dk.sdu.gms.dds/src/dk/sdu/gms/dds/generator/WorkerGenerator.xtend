@@ -60,6 +60,8 @@ public class WorkerGenerator {
 	const bool scan = true;
 	const String STATION_NAME = "Gateway";
 	
+	bool messageSuccess = false;
+	
 	int espnow_channel = 0;
 	
 	void setup() {
@@ -100,7 +102,9 @@ public class WorkerGenerator {
 	  ledcAttachPin(«dacPins.get(i)», «i»);
 	  pinMode(«dacPins.get(i)», OUTPUT);
 	  «ENDFOR»
-	 
+	  
+	  pinMode(«getErrorLedOrDefault(worker)», OUTPUT);
+	  
 	  // Set device as a Wi-Fi Station
 	  WiFi.mode(WIFI_STA);
 	  Serial.print("Worker starting with MAC address ");
@@ -190,8 +194,8 @@ public class WorkerGenerator {
 	}
 	
 	void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
-	  Serial.print("Last Packet Send Status:\t");
-	  Serial.println(status == ESP_NOW_SEND_SUCCESS ? "Delivery Success" : "Delivery Fail");
+	  messageSuccess = status == ESP_NOW_SEND_SUCCESS;
+	  Serial.println("Send message status: " + String(status == ESP_NOW_SEND_SUCCESS ? "success" : "failure"));
 	}
 	
 	void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {  
@@ -240,6 +244,16 @@ public class WorkerGenerator {
 	}
 	
 	void send_message(const uint8_t * mac, const uint8_t *incomingData, int len) {
-	  esp_err_t result = esp_now_send(mac, incomingData, len);
+	  bool success = false;
+	  for (int i = 0; i < «getRetriesOrDefault(worker)»; i++) {
+	    esp_err_t result = esp_now_send(mac, incomingData, len);
+	    delay(250);
+	    if (messageSuccess) {
+	      success = true;
+	      break;
+	    }
+	  }
+	  Serial.println("Send message success: " + String(success));
+	  digitalWrite(«getErrorLedOrDefault(worker)», success ? LOW : HIGH);
 	}'''
 }

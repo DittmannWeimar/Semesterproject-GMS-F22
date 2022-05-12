@@ -59,6 +59,10 @@ import org.eclipse.xtext.xbase.lib.Conversions;
 public class Utils {
   public static int[] dacPins = { 25, 26 };
   
+  public static int defaultRetries = 1;
+  
+  public static int defaultErrorLed = 2;
+  
   public static ArrayList<String> createSettingIndex(final Gateway gateway) {
     final ArrayList<String> list = new ArrayList<String>();
     EList<Worker> _workers = gateway.getWorkers();
@@ -491,6 +495,28 @@ public class Utils {
     return _switchResult;
   }
   
+  public static String timeUnitToString(final TimeUnit unit) {
+    String _switchResult = null;
+    boolean _matched = false;
+    if (unit instanceof Second) {
+      _matched=true;
+      _switchResult = "second(s)";
+    }
+    if (!_matched) {
+      if (unit instanceof Minute) {
+        _matched=true;
+        _switchResult = "minute(s)";
+      }
+    }
+    if (!_matched) {
+      if (unit instanceof Hour) {
+        _matched=true;
+        _switchResult = "hour(s)";
+      }
+    }
+    return _switchResult;
+  }
+  
   public static CharSequence getDacPinVariableName(final int pin) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("dacPin");
@@ -611,6 +637,53 @@ public class Utils {
     return _builder;
   }
   
+  public static <T extends Object> T getParentOfType(final EObject obj, final Class<T> clazz) {
+    EObject current = obj;
+    while ((current.eContainer() != null)) {
+      {
+        current = current.eContainer();
+        boolean _isInstance = clazz.isInstance(current);
+        if (_isInstance) {
+          return ((T) current);
+        }
+      }
+    }
+    return null;
+  }
+  
+  protected static Integer _getRetriesOrDefault(final Worker worker) {
+    int _size = worker.getRetries().size();
+    boolean _equals = (_size == 0);
+    if (_equals) {
+      return Integer.valueOf(Utils.defaultRetries);
+    }
+    return worker.getRetries().get(0);
+  }
+  
+  protected static Integer _getErrorLedOrDefault(final Worker worker) {
+    int _size = worker.getErrorLed().size();
+    boolean _equals = (_size == 0);
+    if (_equals) {
+      return Integer.valueOf(Utils.defaultErrorLed);
+    }
+    return worker.getErrorLed().get(0);
+  }
+  
+  /**
+   * def static dispatch getRetriesOrDefault(Gateway gateway) {
+   * if (gateway.retries.size() == 0) return defaultRetries;
+   * return gateway.retries.get(0);
+   * }
+   */
+  protected static Integer _getErrorLedOrDefault(final Gateway gateway) {
+    int _size = gateway.getErrorLed().size();
+    boolean _equals = (_size == 0);
+    if (_equals) {
+      return Integer.valueOf(Utils.defaultErrorLed);
+    }
+    return gateway.getErrorLed().get(0);
+  }
+  
   public static String getSampleMessageName(final SensorOutput output) {
     return _getSampleMessageName(output);
   }
@@ -640,6 +713,21 @@ public class Utils {
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
         Arrays.<Object>asList(actuator).toString());
+    }
+  }
+  
+  public static Integer getRetriesOrDefault(final Worker worker) {
+    return _getRetriesOrDefault(worker);
+  }
+  
+  public static Integer getErrorLedOrDefault(final EObject gateway) {
+    if (gateway instanceof Gateway) {
+      return _getErrorLedOrDefault((Gateway)gateway);
+    } else if (gateway instanceof Worker) {
+      return _getErrorLedOrDefault((Worker)gateway);
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(gateway).toString());
     }
   }
 }
