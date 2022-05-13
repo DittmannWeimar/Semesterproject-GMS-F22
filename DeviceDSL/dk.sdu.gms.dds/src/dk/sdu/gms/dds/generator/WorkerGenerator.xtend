@@ -9,11 +9,12 @@ import java.util.stream.Collectors
 import dk.sdu.gms.dds.deviceDefinition.Actuator
 import dk.sdu.gms.dds.actuators.ActuatorDefinition
 import dk.sdu.gms.dds.deviceDefinition.OnOff
+import dk.sdu.gms.dds.sensors.SensorDefinition
 
 public class WorkerGenerator {
 	
 	public static def generateWorker(Worker worker, IFileSystemAccess2 fsa) {
-		fsa.generateFile(worker.mac.replace(':', '') + "/" + worker.mac.replace(':', '') + ".ino", generateCode(worker));
+		fsa.generateFile(system(worker).name + "/" + worker.mac.replace(':', '') + "/" + worker.mac.replace(':', '') + ".ino", generateCode(worker));
 	}
 	
 	public static def generateCode (Worker worker) '''
@@ -62,38 +63,13 @@ public class WorkerGenerator {
 	
 	bool messageSuccess = false;
 	
-	int espnow_channel = 0;
-	
 	void setup() {
 	  WiFi.mode(WIFI_STA);
 	  WiFi.disconnect();
-	
-	  if(scan) {
-	    uint8_t networks = WiFi.scanNetworks();
-	    for(int n=0;n<networks;n++) {
-	        Serial.printf("%d %s   %d   %d %s \n", n,WiFi.SSID(n).c_str(),WiFi.RSSI(n), WiFi.channel(n), WiFi.BSSIDstr(n).c_str());
-	        for(int i=0;i<8;i++) {
-	            Serial.print(WiFi.BSSID(n)[i]);
-	            Serial.print(" ");
-	        }
-	        Serial.println();
-	
-	        if(WiFi.SSID(n).indexOf(STATION_NAME) == 0)
-	        {
-	            Serial.println("Found");
-	            memcpy(gatewayAddress, WiFi.BSSID(n), 6);
-	            espnow_channel = WiFi.channel(n);
-	        }
-	        
-	    }
-	
-	    WiFi.scanDelete();
-	  }
 	  
 	  esp_wifi_set_promiscuous(true);
-	  esp_wifi_set_channel(espnow_channel, WIFI_SECOND_CHAN_NONE);
+	  esp_wifi_set_channel(«gateway(worker).channel», WIFI_SECOND_CHAN_NONE);
 	  esp_wifi_set_promiscuous(false);
-	
 	 
 	  Serial.begin(115200);
 	  
@@ -122,7 +98,7 @@ public class WorkerGenerator {
 	  
 	  // Register peer
 	  memcpy(gatewayInfo.peer_addr, gatewayAddress, 6);
-	  gatewayInfo.channel = 0;  
+	  gatewayInfo.channel = «gateway(worker).channel»;  
 	  gatewayInfo.encrypt = false;
 	  
 	  // Add peer        
@@ -161,32 +137,43 @@ public class WorkerGenerator {
 	message_sample sampleMessage;
 
 	void loop() {
+	  
+	  float value = 0;
 	  uint64_t current_time = esp_timer_get_time() / 1000ULL;
-	  if (current_time > last_loop_time + «worker.sleepTime * getTimeUnitMsMultiplier(worker.timeUnit)») {
-		
-	    «FOR output: getWorkerSensorOutputs(gateway(worker))»
-	    sampleMessage.«getSampleMessageName(output)» = 1.0 / 0.0;
-	    «ENDFOR»
-	    
-	    float value = 0;
-	    
-	    «FOR device : worker.devices»
-	    «DeviceDefinition.getDefinition(device).generateLoop(device)»
-	    «ENDFOR»
+	  if (current_time > last_loop_time + «asFloat(worker.sleepTime) * getTimeUnitMsMultiplier(worker.timeUnit)») {
 	    
 	    «IF hasSensors(worker)»
 	    sampleMessage.type = Sample;
 	    send_message(gatewayAddress, (uint8_t *) &sampleMessage, sizeof(sampleMessage));
 	    «ENDIF»
 	    
+	   	«FOR output: getWorkerSensorOutputs(gateway(worker))»
+	   	sampleMessage.«getSampleMessageName(output)» = 1.0 / 0.0; // This is terrible don't hate me.
+	    «ENDFOR»
+	    
+	   	«FOR device : worker.devices»
+	    «DeviceDefinition.getDefinition(device).generateLoop(device)»
+	    «ENDFOR»
+	    
 	    last_loop_time = current_time;
 	  }
 	  
-	  «FOR actuator : getTimedActuators(worker)»
+	  «FOR actuator : worker.devices.stream().filter(x | x instanceof Actuator).map(x | x as Actuator).collect(Collectors.toList())»
+	  «IF actuator.trigger instanceof OnOff && isTimed(actuator.trigger)»
 	  if (current_time > «getTimerName(actuator)» + «(actuator.trigger as OnOff).time * getTimeUnitMsMultiplier((actuator.trigger as OnOff).unit)» && «getEnabledVariableName(actuator)») {
 	    «getEnabledVariableName(actuator)» = false;
 	    «ActuatorDefinition.getActuatorDefinition(actuator).generateEnableActuatorCode(actuator, getEnabledVariableName(actuator))»
 	  }
+	  «ELSEIF actuator.trigger instanceof OnOff»
+	  «FOR sensor : getAllReferencedInExternalVariableUseSensors((actuator.trigger as OnOff).offExp)»
+	  if («getEnabledVariableName(actuator)») {
+	  	«SensorDefinition.getSensorDefinition(sensor).generateLoop(sensor)»
+	  }
+	  if («getEnabledVariableName(actuator)» == true && (bool)(«generateExpression((actuator.trigger as OnOff).offExp)»)) {
+	  	«getEnabledVariableName(actuator)» = false;
+	  }
+	  «ENDFOR»
+	  «ENDIF»
 	  «ENDFOR»
 
 	  
@@ -247,7 +234,7 @@ public class WorkerGenerator {
 	  bool success = false;
 	  for (int i = 0; i < «getRetriesOrDefault(worker)»; i++) {
 	    esp_err_t result = esp_now_send(mac, incomingData, len);
-	    delay(250);
+	    delay((uint64_t)«getRetryDelayOrDefault(worker) * getTimeUnitMsMultiplier(worker.delayTimeUnit)»);
 	    if (messageSuccess) {
 	      success = true;
 	      break;

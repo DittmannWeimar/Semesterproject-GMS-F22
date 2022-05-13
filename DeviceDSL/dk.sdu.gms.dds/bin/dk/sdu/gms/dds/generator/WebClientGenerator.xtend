@@ -21,11 +21,11 @@ class WebClientGenerator {
 		val webClientRoot = "WebClient/"
 		
 		// Generate boiler plate files.		
-		fsa.generateFile(webClientRoot + "styles/chart.css", WebClientBoilerPlate.generateCSS)
-		fsa.generateFile(webClientRoot + "bridge.php", WebClientBoilerPlate.generateBridge)
-		fsa.generateFile(webClientRoot + "header.php", WebClientBoilerPlate.generateHeader)
-		fsa.generateFile(webClientRoot + "commonBody.php", WebClientBoilerPlate.generateCommonBody)
-		fsa.generateFile(webClientRoot + "index.php", WebClientBoilerPlate.generateIndex)
+		fsa.generateFile(system.name + "/" + webClientRoot + "styles/chart.css", WebClientBoilerPlate.generateCSS)
+		fsa.generateFile(system.name + "/" + webClientRoot + "bridge.php", WebClientBoilerPlate.generateBridge)
+		fsa.generateFile(system.name + "/" + webClientRoot + "header.php", WebClientBoilerPlate.generateHeader)
+		fsa.generateFile(system.name + "/" + webClientRoot + "commonBody.php", WebClientBoilerPlate.generateCommonBody)
+		fsa.generateFile(system.name + "/" + webClientRoot + "index.php", WebClientBoilerPlate.generateIndex)
 		
 		
 		// Generate specific files.
@@ -48,11 +48,11 @@ class WebClientGenerator {
 			var php = x.key.generateCategoryPagePHP(gateway, x.value)
 			var js = x.key.generateCategoryPageJavascript(gateway, x.value)
 			
-			fsa.generateFile(webClientRoot + "category-pages/"+x.key+".php", php)
-			fsa.generateFile(webClientRoot + "category-pages/"+x.key+".js", js)
+			fsa.generateFile(system.name + "/" + webClientRoot + "category-pages/"+x.key+".php", php)
+			fsa.generateFile(system.name + "/" + webClientRoot + "category-pages/"+x.key+".js", js)
 		]
 		
-		fsa.generateFile(webClientRoot + "helper.js", generateHelper(system))
+		fsa.generateFile(system.name + "/" + webClientRoot + "helper.js", generateHelper(system))
 		
 	}
 	
@@ -315,7 +315,7 @@ class WebClientGenerator {
 				case ColorPreset.BLUE_VALUE: return "(0, 0, 255, 255)"
 				case ColorPreset.GREEN_VALUE: return "(0, 255, 0, 255"
 				case ColorPreset.YELLOW_VALUE: return "(255, 255, 0, 255)"
-				default: throw new RuntimeException("Color is not supported!")
+				default: throw new RuntimeException("Color is not supported!") // TODO: Make validation rule
 			}
 		}
 		

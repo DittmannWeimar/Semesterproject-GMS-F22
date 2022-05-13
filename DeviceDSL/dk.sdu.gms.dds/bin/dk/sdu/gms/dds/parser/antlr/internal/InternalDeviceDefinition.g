@@ -81,19 +81,37 @@ ruleSystem returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getSystemAccess().getSystemKeyword_0());
 		}
-		otherlv_1=':'
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getSystemAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSystemRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_2=':'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getSystemAccess().getColonKeyword_1());
+			newLeafNode(otherlv_2, grammarAccess.getSystemAccess().getColonKeyword_2());
 		}
-		otherlv_2='wifi'
+		otherlv_3='wifi'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getSystemAccess().getWifiKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getSystemAccess().getWifiKeyword_3());
 		}
 		(
 			(
-				lv_wifiSsid_3_0=RULE_STRING
+				lv_wifiSsid_4_0=RULE_STRING
 				{
-					newLeafNode(lv_wifiSsid_3_0, grammarAccess.getSystemAccess().getWifiSsidSTRINGTerminalRuleCall_3_0());
+					newLeafNode(lv_wifiSsid_4_0, grammarAccess.getSystemAccess().getWifiSsidSTRINGTerminalRuleCall_4_0());
 				}
 				{
 					if ($current==null) {
@@ -102,25 +120,25 @@ ruleSystem returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"wifiSsid",
-						lv_wifiSsid_3_0,
+						lv_wifiSsid_4_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
 		(
-			otherlv_4='with'
+			otherlv_5='with'
 			{
-				newLeafNode(otherlv_4, grammarAccess.getSystemAccess().getWithKeyword_4_0());
+				newLeafNode(otherlv_5, grammarAccess.getSystemAccess().getWithKeyword_5_0());
 			}
-			otherlv_5='password'
+			otherlv_6='password'
 			{
-				newLeafNode(otherlv_5, grammarAccess.getSystemAccess().getPasswordKeyword_4_1());
+				newLeafNode(otherlv_6, grammarAccess.getSystemAccess().getPasswordKeyword_5_1());
 			}
 			(
 				(
-					lv_wifiPassword_6_0=RULE_STRING
+					lv_wifiPassword_7_0=RULE_STRING
 					{
-						newLeafNode(lv_wifiPassword_6_0, grammarAccess.getSystemAccess().getWifiPasswordSTRINGTerminalRuleCall_4_2_0());
+						newLeafNode(lv_wifiPassword_7_0, grammarAccess.getSystemAccess().getWifiPasswordSTRINGTerminalRuleCall_5_2_0());
 					}
 					{
 						if ($current==null) {
@@ -129,21 +147,21 @@ ruleSystem returns [EObject current=null]
 						setWithLastConsumed(
 							$current,
 							"wifiPassword",
-							lv_wifiPassword_6_0,
+							lv_wifiPassword_7_0,
 							"org.eclipse.xtext.common.Terminals.STRING");
 					}
 				)
 			)
 		)?
-		otherlv_7='mqtt'
+		otherlv_8='mqtt'
 		{
-			newLeafNode(otherlv_7, grammarAccess.getSystemAccess().getMqttKeyword_5());
+			newLeafNode(otherlv_8, grammarAccess.getSystemAccess().getMqttKeyword_6());
 		}
 		(
 			(
-				lv_mqttHost_8_0=RULE_STRING
+				lv_mqttHost_9_0=RULE_STRING
 				{
-					newLeafNode(lv_mqttHost_8_0, grammarAccess.getSystemAccess().getMqttHostSTRINGTerminalRuleCall_6_0());
+					newLeafNode(lv_mqttHost_9_0, grammarAccess.getSystemAccess().getMqttHostSTRINGTerminalRuleCall_7_0());
 				}
 				{
 					if ($current==null) {
@@ -152,25 +170,25 @@ ruleSystem returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"mqttHost",
-						lv_mqttHost_8_0,
+						lv_mqttHost_9_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
 		(
-			otherlv_9='with'
+			otherlv_10='with'
 			{
-				newLeafNode(otherlv_9, grammarAccess.getSystemAccess().getWithKeyword_7_0());
+				newLeafNode(otherlv_10, grammarAccess.getSystemAccess().getWithKeyword_8_0());
 			}
-			otherlv_10='username'
+			otherlv_11='username'
 			{
-				newLeafNode(otherlv_10, grammarAccess.getSystemAccess().getUsernameKeyword_7_1());
+				newLeafNode(otherlv_11, grammarAccess.getSystemAccess().getUsernameKeyword_8_1());
 			}
 			(
 				(
-					lv_mqttUsername_11_0=RULE_STRING
+					lv_mqttUsername_12_0=RULE_STRING
 					{
-						newLeafNode(lv_mqttUsername_11_0, grammarAccess.getSystemAccess().getMqttUsernameSTRINGTerminalRuleCall_7_2_0());
+						newLeafNode(lv_mqttUsername_12_0, grammarAccess.getSystemAccess().getMqttUsernameSTRINGTerminalRuleCall_8_2_0());
 					}
 					{
 						if ($current==null) {
@@ -179,24 +197,24 @@ ruleSystem returns [EObject current=null]
 						setWithLastConsumed(
 							$current,
 							"mqttUsername",
-							lv_mqttUsername_11_0,
+							lv_mqttUsername_12_0,
 							"org.eclipse.xtext.common.Terminals.STRING");
 					}
 				)
 			)
-			otherlv_12='and'
+			otherlv_13='and'
 			{
-				newLeafNode(otherlv_12, grammarAccess.getSystemAccess().getAndKeyword_7_3());
+				newLeafNode(otherlv_13, grammarAccess.getSystemAccess().getAndKeyword_8_3());
 			}
-			otherlv_13='password'
+			otherlv_14='password'
 			{
-				newLeafNode(otherlv_13, grammarAccess.getSystemAccess().getPasswordKeyword_7_4());
+				newLeafNode(otherlv_14, grammarAccess.getSystemAccess().getPasswordKeyword_8_4());
 			}
 			(
 				(
-					lv_mqttPassword_14_0=RULE_STRING
+					lv_mqttPassword_15_0=RULE_STRING
 					{
-						newLeafNode(lv_mqttPassword_14_0, grammarAccess.getSystemAccess().getMqttPasswordSTRINGTerminalRuleCall_7_5_0());
+						newLeafNode(lv_mqttPassword_15_0, grammarAccess.getSystemAccess().getMqttPasswordSTRINGTerminalRuleCall_8_5_0());
 					}
 					{
 						if ($current==null) {
@@ -205,7 +223,7 @@ ruleSystem returns [EObject current=null]
 						setWithLastConsumed(
 							$current,
 							"mqttPassword",
-							lv_mqttPassword_14_0,
+							lv_mqttPassword_15_0,
 							"org.eclipse.xtext.common.Terminals.STRING");
 					}
 				)
@@ -214,9 +232,9 @@ ruleSystem returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSystemAccess().getGatewayGatewayParserRuleCall_8_0());
+					newCompositeNode(grammarAccess.getSystemAccess().getGatewayGatewayParserRuleCall_9_0());
 				}
-				lv_gateway_15_0=ruleGateway
+				lv_gateway_16_0=ruleGateway
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSystemRule());
@@ -224,7 +242,7 @@ ruleSystem returns [EObject current=null]
 					set(
 						$current,
 						"gateway",
-						lv_gateway_15_0,
+						lv_gateway_16_0,
 						"dk.sdu.gms.dds.DeviceDefinition.Gateway");
 					afterParserOrEnumRuleCall();
 				}
@@ -233,9 +251,9 @@ ruleSystem returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSystemAccess().getGraphsGraphParserRuleCall_9_0());
+					newCompositeNode(grammarAccess.getSystemAccess().getGraphsGraphParserRuleCall_10_0());
 				}
-				lv_graphs_16_0=ruleGraph
+				lv_graphs_17_0=ruleGraph
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSystemRule());
@@ -243,7 +261,7 @@ ruleSystem returns [EObject current=null]
 					add(
 						$current,
 						"graphs",
-						lv_graphs_16_0,
+						lv_graphs_17_0,
 						"dk.sdu.gms.dds.DeviceDefinition.Graph");
 					afterParserOrEnumRuleCall();
 				}
@@ -682,20 +700,42 @@ ruleGateway returns [EObject current=null]
 				}
 			)
 		)
+		otherlv_5='channel'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getGatewayAccess().getChannelKeyword_5());
+		}
 		(
-			otherlv_5='error'
+			(
+				lv_channel_6_0=RULE_INT
+				{
+					newLeafNode(lv_channel_6_0, grammarAccess.getGatewayAccess().getChannelINTTerminalRuleCall_6_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGatewayRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"channel",
+						lv_channel_6_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		(
+			otherlv_7='error'
 			{
-				newLeafNode(otherlv_5, grammarAccess.getGatewayAccess().getErrorKeyword_5_0());
+				newLeafNode(otherlv_7, grammarAccess.getGatewayAccess().getErrorKeyword_7_0());
 			}
-			otherlv_6='light'
+			otherlv_8='light'
 			{
-				newLeafNode(otherlv_6, grammarAccess.getGatewayAccess().getLightKeyword_5_1());
+				newLeafNode(otherlv_8, grammarAccess.getGatewayAccess().getLightKeyword_7_1());
 			}
 			(
 				(
-					lv_errorLed_7_0=RULE_INT
+					lv_errorLed_9_0=RULE_INT
 					{
-						newLeafNode(lv_errorLed_7_0, grammarAccess.getGatewayAccess().getErrorLedINTTerminalRuleCall_5_2_0());
+						newLeafNode(lv_errorLed_9_0, grammarAccess.getGatewayAccess().getErrorLedINTTerminalRuleCall_7_2_0());
 					}
 					{
 						if ($current==null) {
@@ -704,22 +744,22 @@ ruleGateway returns [EObject current=null]
 						addWithLastConsumed(
 							$current,
 							"errorLed",
-							lv_errorLed_7_0,
+							lv_errorLed_9_0,
 							"org.eclipse.xtext.common.Terminals.INT");
 					}
 				)
 			)
 		)?
 		(
-			otherlv_8='retries'
+			otherlv_10='retries'
 			{
-				newLeafNode(otherlv_8, grammarAccess.getGatewayAccess().getRetriesKeyword_6_0());
+				newLeafNode(otherlv_10, grammarAccess.getGatewayAccess().getRetriesKeyword_8_0());
 			}
 			(
 				(
-					lv_retries_9_0=RULE_INT
+					lv_retries_11_0=RULE_INT
 					{
-						newLeafNode(lv_retries_9_0, grammarAccess.getGatewayAccess().getRetriesINTTerminalRuleCall_6_1_0());
+						newLeafNode(lv_retries_11_0, grammarAccess.getGatewayAccess().getRetriesINTTerminalRuleCall_8_1_0());
 					}
 					{
 						if ($current==null) {
@@ -728,8 +768,54 @@ ruleGateway returns [EObject current=null]
 						addWithLastConsumed(
 							$current,
 							"retries",
-							lv_retries_9_0,
+							lv_retries_11_0,
 							"org.eclipse.xtext.common.Terminals.INT");
+					}
+				)
+			)
+			otherlv_12='with'
+			{
+				newLeafNode(otherlv_12, grammarAccess.getGatewayAccess().getWithKeyword_8_2());
+			}
+			otherlv_13='delay'
+			{
+				newLeafNode(otherlv_13, grammarAccess.getGatewayAccess().getDelayKeyword_8_3());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getGatewayAccess().getDelayNumberPrimitiveParserRuleCall_8_4_0());
+					}
+					lv_delay_14_0=ruleNumberPrimitive
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getGatewayRule());
+						}
+						add(
+							$current,
+							"delay",
+							lv_delay_14_0,
+							"dk.sdu.gms.dds.DeviceDefinition.NumberPrimitive");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getGatewayAccess().getDelayTimeUnitTimeUnitParserRuleCall_8_5_0());
+					}
+					lv_delayTimeUnit_15_0=ruleTimeUnit
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getGatewayRule());
+						}
+						set(
+							$current,
+							"delayTimeUnit",
+							lv_delayTimeUnit_15_0,
+							"dk.sdu.gms.dds.DeviceDefinition.TimeUnit");
+						afterParserOrEnumRuleCall();
 					}
 				)
 			)
@@ -737,9 +823,9 @@ ruleGateway returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getGatewayAccess().getWorkersWorkerParserRuleCall_7_0());
+					newCompositeNode(grammarAccess.getGatewayAccess().getWorkersWorkerParserRuleCall_9_0());
 				}
-				lv_workers_10_0=ruleWorker
+				lv_workers_16_0=ruleWorker
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getGatewayRule());
@@ -747,7 +833,7 @@ ruleGateway returns [EObject current=null]
 					add(
 						$current,
 						"workers",
-						lv_workers_10_0,
+						lv_workers_16_0,
 						"dk.sdu.gms.dds.DeviceDefinition.Worker");
 					afterParserOrEnumRuleCall();
 				}
@@ -830,19 +916,20 @@ ruleWorker returns [EObject current=null]
 		}
 		(
 			(
-				lv_sleepTime_7_0=RULE_INT
 				{
-					newLeafNode(lv_sleepTime_7_0, grammarAccess.getWorkerAccess().getSleepTimeINTTerminalRuleCall_7_0());
+					newCompositeNode(grammarAccess.getWorkerAccess().getSleepTimeNumberPrimitiveParserRuleCall_7_0());
 				}
+				lv_sleepTime_7_0=ruleNumberPrimitive
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getWorkerRule());
+						$current = createModelElementForParent(grammarAccess.getWorkerRule());
 					}
-					setWithLastConsumed(
+					set(
 						$current,
 						"sleepTime",
 						lv_sleepTime_7_0,
-						"org.eclipse.xtext.common.Terminals.INT");
+						"dk.sdu.gms.dds.DeviceDefinition.NumberPrimitive");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -916,13 +1003,59 @@ ruleWorker returns [EObject current=null]
 					}
 				)
 			)
+			otherlv_14='with'
+			{
+				newLeafNode(otherlv_14, grammarAccess.getWorkerAccess().getWithKeyword_10_2());
+			}
+			otherlv_15='delay'
+			{
+				newLeafNode(otherlv_15, grammarAccess.getWorkerAccess().getDelayKeyword_10_3());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getWorkerAccess().getDelayNumberPrimitiveParserRuleCall_10_4_0());
+					}
+					lv_delay_16_0=ruleNumberPrimitive
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getWorkerRule());
+						}
+						add(
+							$current,
+							"delay",
+							lv_delay_16_0,
+							"dk.sdu.gms.dds.DeviceDefinition.NumberPrimitive");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getWorkerAccess().getDelayTimeUnitTimeUnitParserRuleCall_10_5_0());
+					}
+					lv_delayTimeUnit_17_0=ruleTimeUnit
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getWorkerRule());
+						}
+						set(
+							$current,
+							"delayTimeUnit",
+							lv_delayTimeUnit_17_0,
+							"dk.sdu.gms.dds.DeviceDefinition.TimeUnit");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
 		)?
 		(
 			(
 				{
 					newCompositeNode(grammarAccess.getWorkerAccess().getDevicesDeviceParserRuleCall_11_0());
 				}
-				lv_devices_14_0=ruleDevice
+				lv_devices_18_0=ruleDevice
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getWorkerRule());
@@ -930,7 +1063,7 @@ ruleWorker returns [EObject current=null]
 					add(
 						$current,
 						"devices",
-						lv_devices_14_0,
+						lv_devices_18_0,
 						"dk.sdu.gms.dds.DeviceDefinition.Device");
 					afterParserOrEnumRuleCall();
 				}
@@ -1305,19 +1438,24 @@ ruleTimeUnit returns [EObject current=null]
 			(
 				{
 					$current = forceCreateModelElement(
-						grammarAccess.getTimeUnitAccess().getSecondAction_0_0(),
+						grammarAccess.getTimeUnitAccess().getMillisecondAction_0_0(),
 						$current);
 				}
 			)
 			(
-				otherlv_1='second'
+				otherlv_1='millisecond'
 				{
-					newLeafNode(otherlv_1, grammarAccess.getTimeUnitAccess().getSecondKeyword_0_1_0());
+					newLeafNode(otherlv_1, grammarAccess.getTimeUnitAccess().getMillisecondKeyword_0_1_0());
 				}
 				    |
-				otherlv_2='seconds'
+				otherlv_2='milliseconds'
 				{
-					newLeafNode(otherlv_2, grammarAccess.getTimeUnitAccess().getSecondsKeyword_0_1_1());
+					newLeafNode(otherlv_2, grammarAccess.getTimeUnitAccess().getMillisecondsKeyword_0_1_1());
+				}
+				    |
+				otherlv_3='ms'
+				{
+					newLeafNode(otherlv_3, grammarAccess.getTimeUnitAccess().getMsKeyword_0_1_2());
 				}
 			)
 		)
@@ -1326,19 +1464,24 @@ ruleTimeUnit returns [EObject current=null]
 			(
 				{
 					$current = forceCreateModelElement(
-						grammarAccess.getTimeUnitAccess().getMinuteAction_1_0(),
+						grammarAccess.getTimeUnitAccess().getSecondAction_1_0(),
 						$current);
 				}
 			)
 			(
-				otherlv_4='minute'
+				otherlv_5='second'
 				{
-					newLeafNode(otherlv_4, grammarAccess.getTimeUnitAccess().getMinuteKeyword_1_1_0());
+					newLeafNode(otherlv_5, grammarAccess.getTimeUnitAccess().getSecondKeyword_1_1_0());
 				}
 				    |
-				otherlv_5='minutes'
+				otherlv_6='seconds'
 				{
-					newLeafNode(otherlv_5, grammarAccess.getTimeUnitAccess().getMinutesKeyword_1_1_1());
+					newLeafNode(otherlv_6, grammarAccess.getTimeUnitAccess().getSecondsKeyword_1_1_1());
+				}
+				    |
+				otherlv_7='s'
+				{
+					newLeafNode(otherlv_7, grammarAccess.getTimeUnitAccess().getSKeyword_1_1_2());
 				}
 			)
 		)
@@ -1347,19 +1490,50 @@ ruleTimeUnit returns [EObject current=null]
 			(
 				{
 					$current = forceCreateModelElement(
-						grammarAccess.getTimeUnitAccess().getHourAction_2_0(),
+						grammarAccess.getTimeUnitAccess().getMinuteAction_2_0(),
 						$current);
 				}
 			)
 			(
-				otherlv_7='hour'
+				otherlv_9='minute'
 				{
-					newLeafNode(otherlv_7, grammarAccess.getTimeUnitAccess().getHourKeyword_2_1_0());
+					newLeafNode(otherlv_9, grammarAccess.getTimeUnitAccess().getMinuteKeyword_2_1_0());
 				}
 				    |
-				otherlv_8='hours'
+				otherlv_10='minutes'
 				{
-					newLeafNode(otherlv_8, grammarAccess.getTimeUnitAccess().getHoursKeyword_2_1_1());
+					newLeafNode(otherlv_10, grammarAccess.getTimeUnitAccess().getMinutesKeyword_2_1_1());
+				}
+				    |
+				otherlv_11='m'
+				{
+					newLeafNode(otherlv_11, grammarAccess.getTimeUnitAccess().getMKeyword_2_1_2());
+				}
+			)
+		)
+		    |
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getTimeUnitAccess().getHourAction_3_0(),
+						$current);
+				}
+			)
+			(
+				otherlv_13='hour'
+				{
+					newLeafNode(otherlv_13, grammarAccess.getTimeUnitAccess().getHourKeyword_3_1_0());
+				}
+				    |
+				otherlv_14='hours'
+				{
+					newLeafNode(otherlv_14, grammarAccess.getTimeUnitAccess().getHoursKeyword_3_1_1());
+				}
+				    |
+				otherlv_15='h'
+				{
+					newLeafNode(otherlv_15, grammarAccess.getTimeUnitAccess().getHKeyword_3_1_2());
 				}
 			)
 		)
@@ -1850,52 +2024,79 @@ rulePrimitive returns [EObject current=null]
 			(
 				{
 					$current = forceCreateModelElement(
-						grammarAccess.getPrimitiveAccess().getDecimalPrimitiveAction_0_0(),
+						grammarAccess.getPrimitiveAccess().getBooleanTrueAction_0_0(),
 						$current);
 				}
 			)
-			(
-				(
-					lv_value_1_0=RULE_DECIMAL
-					{
-						newLeafNode(lv_value_1_0, grammarAccess.getPrimitiveAccess().getValueDECIMALTerminalRuleCall_0_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getPrimitiveRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"value",
-							lv_value_1_0,
-							"dk.sdu.gms.dds.DeviceDefinition.DECIMAL");
-					}
-				)
-			)
+			otherlv_1='TRUE'
+			{
+				newLeafNode(otherlv_1, grammarAccess.getPrimitiveAccess().getTRUEKeyword_0_1());
+			}
 		)
 		    |
 		(
 			(
 				{
 					$current = forceCreateModelElement(
-						grammarAccess.getPrimitiveAccess().getIntPrimitiveAction_1_0(),
+						grammarAccess.getPrimitiveAccess().getBooleanFalseAction_1_0(),
+						$current);
+				}
+			)
+			otherlv_3='FALSE'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getPrimitiveAccess().getFALSEKeyword_1_1());
+			}
+		)
+		    |
+		{
+			newCompositeNode(grammarAccess.getPrimitiveAccess().getNumberPrimitiveParserRuleCall_2());
+		}
+		this_NumberPrimitive_4=ruleNumberPrimitive
+		{
+			$current = $this_NumberPrimitive_4.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleNumberPrimitive
+entryRuleNumberPrimitive returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getNumberPrimitiveRule()); }
+	iv_ruleNumberPrimitive=ruleNumberPrimitive
+	{ $current=$iv_ruleNumberPrimitive.current; }
+	EOF;
+
+// Rule NumberPrimitive
+ruleNumberPrimitive returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getNumberPrimitiveAccess().getIntPrimitiveAction_0_0(),
 						$current);
 				}
 			)
 			(
 				(
-					lv_value_3_0=RULE_INT
+					lv_value_1_0=RULE_INT
 					{
-						newLeafNode(lv_value_3_0, grammarAccess.getPrimitiveAccess().getValueINTTerminalRuleCall_1_1_0());
+						newLeafNode(lv_value_1_0, grammarAccess.getNumberPrimitiveAccess().getValueINTTerminalRuleCall_0_1_0());
 					}
 					{
 						if ($current==null) {
-							$current = createModelElement(grammarAccess.getPrimitiveRule());
+							$current = createModelElement(grammarAccess.getNumberPrimitiveRule());
 						}
 						setWithLastConsumed(
 							$current,
 							"value",
-							lv_value_3_0,
+							lv_value_1_0,
 							"org.eclipse.xtext.common.Terminals.INT");
 					}
 				)
@@ -1906,28 +2107,28 @@ rulePrimitive returns [EObject current=null]
 			(
 				{
 					$current = forceCreateModelElement(
-						grammarAccess.getPrimitiveAccess().getBooleanTrueAction_2_0(),
+						grammarAccess.getNumberPrimitiveAccess().getDecimalPrimitiveAction_1_0(),
 						$current);
 				}
 			)
-			otherlv_5='TRUE'
-			{
-				newLeafNode(otherlv_5, grammarAccess.getPrimitiveAccess().getTRUEKeyword_2_1());
-			}
-		)
-		    |
-		(
 			(
-				{
-					$current = forceCreateModelElement(
-						grammarAccess.getPrimitiveAccess().getBooleanFalseAction_3_0(),
-						$current);
-				}
+				(
+					lv_value_3_0=RULE_DECIMAL
+					{
+						newLeafNode(lv_value_3_0, grammarAccess.getNumberPrimitiveAccess().getValueDECIMALTerminalRuleCall_1_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getNumberPrimitiveRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"value",
+							lv_value_3_0,
+							"dk.sdu.gms.dds.DeviceDefinition.DECIMAL");
+					}
+				)
 			)
-			otherlv_7='FALSE'
-			{
-				newLeafNode(otherlv_7, grammarAccess.getPrimitiveAccess().getFALSEKeyword_3_1());
-			}
 		)
 	)
 ;

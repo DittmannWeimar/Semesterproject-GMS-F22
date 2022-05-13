@@ -12,6 +12,7 @@ import dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage;
 import dk.sdu.gms.dds.deviceDefinition.ExternalVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.GraphVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.Sensor;
+import dk.sdu.gms.dds.deviceDefinition.Worker;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -42,10 +43,20 @@ public class DeviceDefinitionScopeProvider extends AbstractDeviceDefinitionScope
     if ((context instanceof GraphVariableUse)) {
       boolean _equals = Objects.equal(reference, DeviceDefinitionPackage.Literals.GRAPH_VARIABLE_USE__WORKER);
       if (_equals) {
+        Worker _worker = ((GraphVariableUse)context).getWorker();
+        boolean _tripleEquals = (_worker == null);
+        if (_tripleEquals) {
+          return super.getScope(context, reference);
+        }
         return Scopes.scopeFor(Utils.system(context).getGateway().getWorkers());
       }
       boolean _equals_1 = Objects.equal(reference, DeviceDefinitionPackage.Literals.GRAPH_VARIABLE_USE__DEVICE);
       if (_equals_1) {
+        Worker _worker_1 = ((GraphVariableUse)context).getWorker();
+        boolean _tripleEquals_1 = (_worker_1 == null);
+        if (_tripleEquals_1) {
+          return super.getScope(context, reference);
+        }
         final Predicate<Device> _function = (Device x) -> {
           return (x instanceof Sensor);
         };
@@ -53,6 +64,11 @@ public class DeviceDefinitionScopeProvider extends AbstractDeviceDefinitionScope
       }
       boolean _equals_2 = Objects.equal(reference, DeviceDefinitionPackage.Literals.VARIABLE_USE__REF);
       if (_equals_2) {
+        Device _device = ((GraphVariableUse)context).getDevice();
+        boolean _tripleEquals_2 = (_device == null);
+        if (_tripleEquals_2) {
+          return super.getScope(context, reference);
+        }
         final Device device = ((GraphVariableUse)context).getDevice();
         IScope _switchResult = null;
         boolean _matched = false;

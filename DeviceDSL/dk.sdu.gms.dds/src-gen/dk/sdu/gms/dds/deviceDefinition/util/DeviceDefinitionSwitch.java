@@ -32,10 +32,12 @@ import dk.sdu.gms.dds.deviceDefinition.IntPrimitive;
 import dk.sdu.gms.dds.deviceDefinition.InternalVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.Lesser;
 import dk.sdu.gms.dds.deviceDefinition.LesserOrEquals;
+import dk.sdu.gms.dds.deviceDefinition.Millisecond;
 import dk.sdu.gms.dds.deviceDefinition.Minus;
 import dk.sdu.gms.dds.deviceDefinition.Minute;
 import dk.sdu.gms.dds.deviceDefinition.Mult;
 import dk.sdu.gms.dds.deviceDefinition.NotEquals;
+import dk.sdu.gms.dds.deviceDefinition.NumberPrimitive;
 import dk.sdu.gms.dds.deviceDefinition.OnOff;
 import dk.sdu.gms.dds.deviceDefinition.Or;
 import dk.sdu.gms.dds.deviceDefinition.Parenthesis;
@@ -249,6 +251,15 @@ public class DeviceDefinitionSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case DeviceDefinitionPackage.NUMBER_PRIMITIVE:
+      {
+        NumberPrimitive numberPrimitive = (NumberPrimitive)theEObject;
+        T result = caseNumberPrimitive(numberPrimitive);
+        if (result == null) result = casePrimitive(numberPrimitive);
+        if (result == null) result = caseExpression(numberPrimitive);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case DeviceDefinitionPackage.EXPRESSION:
       {
         Expression expression = (Expression)theEObject;
@@ -363,6 +374,14 @@ public class DeviceDefinitionSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case DeviceDefinitionPackage.MILLISECOND:
+      {
+        Millisecond millisecond = (Millisecond)theEObject;
+        T result = caseMillisecond(millisecond);
+        if (result == null) result = caseTimeUnit(millisecond);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case DeviceDefinitionPackage.SECOND:
       {
         Second second = (Second)theEObject;
@@ -403,24 +422,6 @@ public class DeviceDefinitionSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DeviceDefinitionPackage.DECIMAL_PRIMITIVE:
-      {
-        DecimalPrimitive decimalPrimitive = (DecimalPrimitive)theEObject;
-        T result = caseDecimalPrimitive(decimalPrimitive);
-        if (result == null) result = casePrimitive(decimalPrimitive);
-        if (result == null) result = caseExpression(decimalPrimitive);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case DeviceDefinitionPackage.INT_PRIMITIVE:
-      {
-        IntPrimitive intPrimitive = (IntPrimitive)theEObject;
-        T result = caseIntPrimitive(intPrimitive);
-        if (result == null) result = casePrimitive(intPrimitive);
-        if (result == null) result = caseExpression(intPrimitive);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case DeviceDefinitionPackage.BOOLEAN_TRUE:
       {
         BooleanTrue booleanTrue = (BooleanTrue)theEObject;
@@ -436,6 +437,26 @@ public class DeviceDefinitionSwitch<T> extends Switch<T>
         T result = caseBooleanFalse(booleanFalse);
         if (result == null) result = casePrimitive(booleanFalse);
         if (result == null) result = caseExpression(booleanFalse);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceDefinitionPackage.INT_PRIMITIVE:
+      {
+        IntPrimitive intPrimitive = (IntPrimitive)theEObject;
+        T result = caseIntPrimitive(intPrimitive);
+        if (result == null) result = caseNumberPrimitive(intPrimitive);
+        if (result == null) result = casePrimitive(intPrimitive);
+        if (result == null) result = caseExpression(intPrimitive);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceDefinitionPackage.DECIMAL_PRIMITIVE:
+      {
+        DecimalPrimitive decimalPrimitive = (DecimalPrimitive)theEObject;
+        T result = caseDecimalPrimitive(decimalPrimitive);
+        if (result == null) result = caseNumberPrimitive(decimalPrimitive);
+        if (result == null) result = casePrimitive(decimalPrimitive);
+        if (result == null) result = caseExpression(decimalPrimitive);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -820,6 +841,22 @@ public class DeviceDefinitionSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Number Primitive</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Number Primitive</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNumberPrimitive(NumberPrimitive object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1044,6 +1081,22 @@ public class DeviceDefinitionSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Millisecond</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Millisecond</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMillisecond(Millisecond object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Second</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1124,38 +1177,6 @@ public class DeviceDefinitionSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Decimal Primitive</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Decimal Primitive</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseDecimalPrimitive(DecimalPrimitive object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Int Primitive</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Int Primitive</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseIntPrimitive(IntPrimitive object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Boolean True</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1183,6 +1204,38 @@ public class DeviceDefinitionSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseBooleanFalse(BooleanFalse object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Int Primitive</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Int Primitive</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIntPrimitive(IntPrimitive object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Decimal Primitive</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Decimal Primitive</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDecimalPrimitive(DecimalPrimitive object)
   {
     return null;
   }

@@ -29,6 +29,7 @@ import dk.sdu.gms.dds.deviceDefinition.IntPrimitive;
 import dk.sdu.gms.dds.deviceDefinition.InternalVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.Lesser;
 import dk.sdu.gms.dds.deviceDefinition.LesserOrEquals;
+import dk.sdu.gms.dds.deviceDefinition.Millisecond;
 import dk.sdu.gms.dds.deviceDefinition.Minus;
 import dk.sdu.gms.dds.deviceDefinition.Minute;
 import dk.sdu.gms.dds.deviceDefinition.Mult;
@@ -93,7 +94,7 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 				sequence_PinType(context, (DAC) semanticObject); 
 				return; 
 			case DeviceDefinitionPackage.DECIMAL_PRIMITIVE:
-				sequence_Primitive(context, (DecimalPrimitive) semanticObject); 
+				sequence_NumberPrimitive(context, (DecimalPrimitive) semanticObject); 
 				return; 
 			case DeviceDefinitionPackage.DIV:
 				sequence_Factor(context, (Div) semanticObject); 
@@ -135,7 +136,7 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 				sequence_TimeUnit(context, (Hour) semanticObject); 
 				return; 
 			case DeviceDefinitionPackage.INT_PRIMITIVE:
-				sequence_Primitive(context, (IntPrimitive) semanticObject); 
+				sequence_NumberPrimitive(context, (IntPrimitive) semanticObject); 
 				return; 
 			case DeviceDefinitionPackage.INTERNAL_VARIABLE_USE:
 				sequence_InternalVariableUse(context, (InternalVariableUse) semanticObject); 
@@ -145,6 +146,9 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 				return; 
 			case DeviceDefinitionPackage.LESSER_OR_EQUALS:
 				sequence_CompareOrEquals(context, (LesserOrEquals) semanticObject); 
+				return; 
+			case DeviceDefinitionPackage.MILLISECOND:
+				sequence_TimeUnit(context, (Millisecond) semanticObject); 
 				return; 
 			case DeviceDefinitionPackage.MINUS:
 				sequence_Exp(context, (Minus) semanticObject); 
@@ -765,7 +769,14 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 	 *     Gateway returns Gateway
 	 *
 	 * Constraint:
-	 *     (name=ID mac=MAC errorLed+=INT? retries+=INT? workers+=Worker+)
+	 *     (
+	 *         name=ID 
+	 *         mac=MAC 
+	 *         channel=INT 
+	 *         errorLed+=INT? 
+	 *         (retries+=INT delay+=NumberPrimitive delayTimeUnit=TimeUnit)? 
+	 *         workers+=Worker+
+	 *     )
 	 * </pre>
 	 */
 	protected void sequence_Gateway(ISerializationContext context, Gateway semanticObject) {
@@ -883,6 +894,86 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getInternalVariableUseAccess().getRefBindingIDTerminalRuleCall_0_1(), semanticObject.eGet(DeviceDefinitionPackage.Literals.VARIABLE_USE__REF, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Primitive returns DecimalPrimitive
+	 *     NumberPrimitive returns DecimalPrimitive
+	 *     Exp returns DecimalPrimitive
+	 *     Exp.Plus_1_0_0_0 returns DecimalPrimitive
+	 *     Exp.Minus_1_0_1_0 returns DecimalPrimitive
+	 *     Factor returns DecimalPrimitive
+	 *     Factor.Mult_1_0_0_0 returns DecimalPrimitive
+	 *     Factor.Div_1_0_1_0 returns DecimalPrimitive
+	 *     Compare returns DecimalPrimitive
+	 *     Compare.Greater_1_0_0_0 returns DecimalPrimitive
+	 *     Compare.Lesser_1_0_1_0 returns DecimalPrimitive
+	 *     CompareOrEquals returns DecimalPrimitive
+	 *     CompareOrEquals.GreaterOrEquals_1_0_0_0 returns DecimalPrimitive
+	 *     CompareOrEquals.LesserOrEquals_1_0_1_0 returns DecimalPrimitive
+	 *     EqualsOrNotEquals returns DecimalPrimitive
+	 *     EqualsOrNotEquals.Equals_1_0_0_0 returns DecimalPrimitive
+	 *     EqualsOrNotEquals.NotEquals_1_0_1_0 returns DecimalPrimitive
+	 *     AndOr returns DecimalPrimitive
+	 *     AndOr.And_1_0_0_0 returns DecimalPrimitive
+	 *     AndOr.Or_1_0_1_0 returns DecimalPrimitive
+	 *     Primary returns DecimalPrimitive
+	 *
+	 * Constraint:
+	 *     value=DECIMAL
+	 * </pre>
+	 */
+	protected void sequence_NumberPrimitive(ISerializationContext context, DecimalPrimitive semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, DeviceDefinitionPackage.Literals.DECIMAL_PRIMITIVE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeviceDefinitionPackage.Literals.DECIMAL_PRIMITIVE__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getNumberPrimitiveAccess().getValueDECIMALTerminalRuleCall_1_1_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Primitive returns IntPrimitive
+	 *     NumberPrimitive returns IntPrimitive
+	 *     Exp returns IntPrimitive
+	 *     Exp.Plus_1_0_0_0 returns IntPrimitive
+	 *     Exp.Minus_1_0_1_0 returns IntPrimitive
+	 *     Factor returns IntPrimitive
+	 *     Factor.Mult_1_0_0_0 returns IntPrimitive
+	 *     Factor.Div_1_0_1_0 returns IntPrimitive
+	 *     Compare returns IntPrimitive
+	 *     Compare.Greater_1_0_0_0 returns IntPrimitive
+	 *     Compare.Lesser_1_0_1_0 returns IntPrimitive
+	 *     CompareOrEquals returns IntPrimitive
+	 *     CompareOrEquals.GreaterOrEquals_1_0_0_0 returns IntPrimitive
+	 *     CompareOrEquals.LesserOrEquals_1_0_1_0 returns IntPrimitive
+	 *     EqualsOrNotEquals returns IntPrimitive
+	 *     EqualsOrNotEquals.Equals_1_0_0_0 returns IntPrimitive
+	 *     EqualsOrNotEquals.NotEquals_1_0_1_0 returns IntPrimitive
+	 *     AndOr returns IntPrimitive
+	 *     AndOr.And_1_0_0_0 returns IntPrimitive
+	 *     AndOr.Or_1_0_1_0 returns IntPrimitive
+	 *     Primary returns IntPrimitive
+	 *
+	 * Constraint:
+	 *     value=INT
+	 * </pre>
+	 */
+	protected void sequence_NumberPrimitive(ISerializationContext context, IntPrimitive semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, DeviceDefinitionPackage.Literals.INT_PRIMITIVE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeviceDefinitionPackage.Literals.INT_PRIMITIVE__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getNumberPrimitiveAccess().getValueINTTerminalRuleCall_0_1_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -1106,84 +1197,6 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Primitive returns DecimalPrimitive
-	 *     Exp returns DecimalPrimitive
-	 *     Exp.Plus_1_0_0_0 returns DecimalPrimitive
-	 *     Exp.Minus_1_0_1_0 returns DecimalPrimitive
-	 *     Factor returns DecimalPrimitive
-	 *     Factor.Mult_1_0_0_0 returns DecimalPrimitive
-	 *     Factor.Div_1_0_1_0 returns DecimalPrimitive
-	 *     Compare returns DecimalPrimitive
-	 *     Compare.Greater_1_0_0_0 returns DecimalPrimitive
-	 *     Compare.Lesser_1_0_1_0 returns DecimalPrimitive
-	 *     CompareOrEquals returns DecimalPrimitive
-	 *     CompareOrEquals.GreaterOrEquals_1_0_0_0 returns DecimalPrimitive
-	 *     CompareOrEquals.LesserOrEquals_1_0_1_0 returns DecimalPrimitive
-	 *     EqualsOrNotEquals returns DecimalPrimitive
-	 *     EqualsOrNotEquals.Equals_1_0_0_0 returns DecimalPrimitive
-	 *     EqualsOrNotEquals.NotEquals_1_0_1_0 returns DecimalPrimitive
-	 *     AndOr returns DecimalPrimitive
-	 *     AndOr.And_1_0_0_0 returns DecimalPrimitive
-	 *     AndOr.Or_1_0_1_0 returns DecimalPrimitive
-	 *     Primary returns DecimalPrimitive
-	 *
-	 * Constraint:
-	 *     value=DECIMAL
-	 * </pre>
-	 */
-	protected void sequence_Primitive(ISerializationContext context, DecimalPrimitive semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, DeviceDefinitionPackage.Literals.DECIMAL_PRIMITIVE__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeviceDefinitionPackage.Literals.DECIMAL_PRIMITIVE__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPrimitiveAccess().getValueDECIMALTerminalRuleCall_0_1_0(), semanticObject.getValue());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Primitive returns IntPrimitive
-	 *     Exp returns IntPrimitive
-	 *     Exp.Plus_1_0_0_0 returns IntPrimitive
-	 *     Exp.Minus_1_0_1_0 returns IntPrimitive
-	 *     Factor returns IntPrimitive
-	 *     Factor.Mult_1_0_0_0 returns IntPrimitive
-	 *     Factor.Div_1_0_1_0 returns IntPrimitive
-	 *     Compare returns IntPrimitive
-	 *     Compare.Greater_1_0_0_0 returns IntPrimitive
-	 *     Compare.Lesser_1_0_1_0 returns IntPrimitive
-	 *     CompareOrEquals returns IntPrimitive
-	 *     CompareOrEquals.GreaterOrEquals_1_0_0_0 returns IntPrimitive
-	 *     CompareOrEquals.LesserOrEquals_1_0_1_0 returns IntPrimitive
-	 *     EqualsOrNotEquals returns IntPrimitive
-	 *     EqualsOrNotEquals.Equals_1_0_0_0 returns IntPrimitive
-	 *     EqualsOrNotEquals.NotEquals_1_0_1_0 returns IntPrimitive
-	 *     AndOr returns IntPrimitive
-	 *     AndOr.And_1_0_0_0 returns IntPrimitive
-	 *     AndOr.Or_1_0_1_0 returns IntPrimitive
-	 *     Primary returns IntPrimitive
-	 *
-	 * Constraint:
-	 *     value=INT
-	 * </pre>
-	 */
-	protected void sequence_Primitive(ISerializationContext context, IntPrimitive semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, DeviceDefinitionPackage.Literals.INT_PRIMITIVE__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeviceDefinitionPackage.Literals.INT_PRIMITIVE__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPrimitiveAccess().getValueINTTerminalRuleCall_1_1_0(), semanticObject.getValue());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
 	 *     Binding returns SensorOutput
 	 *     SensorOutput returns SensorOutput
 	 *
@@ -1250,6 +1263,7 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 	 *
 	 * Constraint:
 	 *     (
+	 *         name=ID 
 	 *         wifiSsid=STRING 
 	 *         wifiPassword=STRING? 
 	 *         mqttHost=STRING 
@@ -1274,6 +1288,20 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 	 * </pre>
 	 */
 	protected void sequence_TimeUnit(ISerializationContext context, Hour semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     TimeUnit returns Millisecond
+	 *
+	 * Constraint:
+	 *     {Millisecond}
+	 * </pre>
+	 */
+	protected void sequence_TimeUnit(ISerializationContext context, Millisecond semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1349,10 +1377,10 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 	 *     (
 	 *         name=ID 
 	 *         mac=MAC 
-	 *         sleepTime=INT 
+	 *         sleepTime=NumberPrimitive 
 	 *         timeUnit=TimeUnit 
 	 *         errorLed+=INT? 
-	 *         retries+=INT? 
+	 *         (retries+=INT delay+=NumberPrimitive delayTimeUnit=TimeUnit)? 
 	 *         devices+=Device*
 	 *     )
 	 * </pre>

@@ -177,6 +177,15 @@ public interface DeviceDefinitionFactory extends EFactory
   Primitive createPrimitive();
 
   /**
+   * Returns a new object of class '<em>Number Primitive</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Number Primitive</em>'.
+   * @generated
+   */
+  NumberPrimitive createNumberPrimitive();
+
+  /**
    * Returns a new object of class '<em>Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -303,6 +312,15 @@ public interface DeviceDefinitionFactory extends EFactory
   GenericOut createGenericOut();
 
   /**
+   * Returns a new object of class '<em>Millisecond</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Millisecond</em>'.
+   * @generated
+   */
+  Millisecond createMillisecond();
+
+  /**
    * Returns a new object of class '<em>Second</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -348,24 +366,6 @@ public interface DeviceDefinitionFactory extends EFactory
   OnOff createOnOff();
 
   /**
-   * Returns a new object of class '<em>Decimal Primitive</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Decimal Primitive</em>'.
-   * @generated
-   */
-  DecimalPrimitive createDecimalPrimitive();
-
-  /**
-   * Returns a new object of class '<em>Int Primitive</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Int Primitive</em>'.
-   * @generated
-   */
-  IntPrimitive createIntPrimitive();
-
-  /**
    * Returns a new object of class '<em>Boolean True</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -382,6 +382,24 @@ public interface DeviceDefinitionFactory extends EFactory
    * @generated
    */
   BooleanFalse createBooleanFalse();
+
+  /**
+   * Returns a new object of class '<em>Int Primitive</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Int Primitive</em>'.
+   * @generated
+   */
+  IntPrimitive createIntPrimitive();
+
+  /**
+   * Returns a new object of class '<em>Decimal Primitive</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Decimal Primitive</em>'.
+   * @generated
+   */
+  DecimalPrimitive createDecimalPrimitive();
 
   /**
    * Returns a new object of class '<em>Plus</em>'.

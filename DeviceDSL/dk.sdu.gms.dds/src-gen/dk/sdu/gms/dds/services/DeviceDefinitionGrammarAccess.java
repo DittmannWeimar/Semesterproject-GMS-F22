@@ -30,34 +30,36 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.gms.dds.DeviceDefinition.System");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cSystemKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cWifiKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cWifiSsidAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cWifiSsidSTRINGTerminalRuleCall_3_0 = (RuleCall)cWifiSsidAssignment_3.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cWithKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Keyword cPasswordKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Assignment cWifiPasswordAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final RuleCall cWifiPasswordSTRINGTerminalRuleCall_4_2_0 = (RuleCall)cWifiPasswordAssignment_4_2.eContents().get(0);
-		private final Keyword cMqttKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cMqttHostAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cMqttHostSTRINGTerminalRuleCall_6_0 = (RuleCall)cMqttHostAssignment_6.eContents().get(0);
-		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cWithKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Keyword cUsernameKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
-		private final Assignment cMqttUsernameAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
-		private final RuleCall cMqttUsernameSTRINGTerminalRuleCall_7_2_0 = (RuleCall)cMqttUsernameAssignment_7_2.eContents().get(0);
-		private final Keyword cAndKeyword_7_3 = (Keyword)cGroup_7.eContents().get(3);
-		private final Keyword cPasswordKeyword_7_4 = (Keyword)cGroup_7.eContents().get(4);
-		private final Assignment cMqttPasswordAssignment_7_5 = (Assignment)cGroup_7.eContents().get(5);
-		private final RuleCall cMqttPasswordSTRINGTerminalRuleCall_7_5_0 = (RuleCall)cMqttPasswordAssignment_7_5.eContents().get(0);
-		private final Assignment cGatewayAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cGatewayGatewayParserRuleCall_8_0 = (RuleCall)cGatewayAssignment_8.eContents().get(0);
-		private final Assignment cGraphsAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cGraphsGraphParserRuleCall_9_0 = (RuleCall)cGraphsAssignment_9.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cWifiKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cWifiSsidAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cWifiSsidSTRINGTerminalRuleCall_4_0 = (RuleCall)cWifiSsidAssignment_4.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cWithKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Keyword cPasswordKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
+		private final Assignment cWifiPasswordAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
+		private final RuleCall cWifiPasswordSTRINGTerminalRuleCall_5_2_0 = (RuleCall)cWifiPasswordAssignment_5_2.eContents().get(0);
+		private final Keyword cMqttKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cMqttHostAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cMqttHostSTRINGTerminalRuleCall_7_0 = (RuleCall)cMqttHostAssignment_7.eContents().get(0);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final Keyword cWithKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Keyword cUsernameKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
+		private final Assignment cMqttUsernameAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
+		private final RuleCall cMqttUsernameSTRINGTerminalRuleCall_8_2_0 = (RuleCall)cMqttUsernameAssignment_8_2.eContents().get(0);
+		private final Keyword cAndKeyword_8_3 = (Keyword)cGroup_8.eContents().get(3);
+		private final Keyword cPasswordKeyword_8_4 = (Keyword)cGroup_8.eContents().get(4);
+		private final Assignment cMqttPasswordAssignment_8_5 = (Assignment)cGroup_8.eContents().get(5);
+		private final RuleCall cMqttPasswordSTRINGTerminalRuleCall_8_5_0 = (RuleCall)cMqttPasswordAssignment_8_5.eContents().get(0);
+		private final Assignment cGatewayAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cGatewayGatewayParserRuleCall_9_0 = (RuleCall)cGatewayAssignment_9.eContents().get(0);
+		private final Assignment cGraphsAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cGraphsGraphParserRuleCall_10_0 = (RuleCall)cGraphsAssignment_10.eContents().get(0);
 		
 		//System:
-		//    'System' ':'
+		//    'System' name=ID ':'
 		//    'wifi' wifiSsid = STRING ('with' 'password' wifiPassword = STRING)?
 		//    'mqtt' mqttHost = STRING ('with' 'username' mqttUsername = STRING 'and' 'password' mqttPassword = STRING)?
 		//    gateway = Gateway
@@ -65,7 +67,7 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'System' ':'
+		//'System' name=ID ':'
 		//'wifi' wifiSsid = STRING ('with' 'password' wifiPassword = STRING)?
 		//'mqtt' mqttHost = STRING ('with' 'username' mqttUsername = STRING 'and' 'password' mqttPassword = STRING)?
 		//gateway = Gateway
@@ -75,80 +77,86 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		//'System'
 		public Keyword getSystemKeyword_0() { return cSystemKeyword_0; }
 		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
 		//':'
-		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 		
 		//'wifi'
-		public Keyword getWifiKeyword_2() { return cWifiKeyword_2; }
+		public Keyword getWifiKeyword_3() { return cWifiKeyword_3; }
 		
 		//wifiSsid = STRING
-		public Assignment getWifiSsidAssignment_3() { return cWifiSsidAssignment_3; }
+		public Assignment getWifiSsidAssignment_4() { return cWifiSsidAssignment_4; }
 		
 		//STRING
-		public RuleCall getWifiSsidSTRINGTerminalRuleCall_3_0() { return cWifiSsidSTRINGTerminalRuleCall_3_0; }
+		public RuleCall getWifiSsidSTRINGTerminalRuleCall_4_0() { return cWifiSsidSTRINGTerminalRuleCall_4_0; }
 		
 		//('with' 'password' wifiPassword = STRING)?
-		public Group getGroup_4() { return cGroup_4; }
+		public Group getGroup_5() { return cGroup_5; }
 		
 		//'with'
-		public Keyword getWithKeyword_4_0() { return cWithKeyword_4_0; }
+		public Keyword getWithKeyword_5_0() { return cWithKeyword_5_0; }
 		
 		//'password'
-		public Keyword getPasswordKeyword_4_1() { return cPasswordKeyword_4_1; }
+		public Keyword getPasswordKeyword_5_1() { return cPasswordKeyword_5_1; }
 		
 		//wifiPassword = STRING
-		public Assignment getWifiPasswordAssignment_4_2() { return cWifiPasswordAssignment_4_2; }
+		public Assignment getWifiPasswordAssignment_5_2() { return cWifiPasswordAssignment_5_2; }
 		
 		//STRING
-		public RuleCall getWifiPasswordSTRINGTerminalRuleCall_4_2_0() { return cWifiPasswordSTRINGTerminalRuleCall_4_2_0; }
+		public RuleCall getWifiPasswordSTRINGTerminalRuleCall_5_2_0() { return cWifiPasswordSTRINGTerminalRuleCall_5_2_0; }
 		
 		//'mqtt'
-		public Keyword getMqttKeyword_5() { return cMqttKeyword_5; }
+		public Keyword getMqttKeyword_6() { return cMqttKeyword_6; }
 		
 		//mqttHost = STRING
-		public Assignment getMqttHostAssignment_6() { return cMqttHostAssignment_6; }
+		public Assignment getMqttHostAssignment_7() { return cMqttHostAssignment_7; }
 		
 		//STRING
-		public RuleCall getMqttHostSTRINGTerminalRuleCall_6_0() { return cMqttHostSTRINGTerminalRuleCall_6_0; }
+		public RuleCall getMqttHostSTRINGTerminalRuleCall_7_0() { return cMqttHostSTRINGTerminalRuleCall_7_0; }
 		
 		//('with' 'username' mqttUsername = STRING 'and' 'password' mqttPassword = STRING)?
-		public Group getGroup_7() { return cGroup_7; }
+		public Group getGroup_8() { return cGroup_8; }
 		
 		//'with'
-		public Keyword getWithKeyword_7_0() { return cWithKeyword_7_0; }
+		public Keyword getWithKeyword_8_0() { return cWithKeyword_8_0; }
 		
 		//'username'
-		public Keyword getUsernameKeyword_7_1() { return cUsernameKeyword_7_1; }
+		public Keyword getUsernameKeyword_8_1() { return cUsernameKeyword_8_1; }
 		
 		//mqttUsername = STRING
-		public Assignment getMqttUsernameAssignment_7_2() { return cMqttUsernameAssignment_7_2; }
+		public Assignment getMqttUsernameAssignment_8_2() { return cMqttUsernameAssignment_8_2; }
 		
 		//STRING
-		public RuleCall getMqttUsernameSTRINGTerminalRuleCall_7_2_0() { return cMqttUsernameSTRINGTerminalRuleCall_7_2_0; }
+		public RuleCall getMqttUsernameSTRINGTerminalRuleCall_8_2_0() { return cMqttUsernameSTRINGTerminalRuleCall_8_2_0; }
 		
 		//'and'
-		public Keyword getAndKeyword_7_3() { return cAndKeyword_7_3; }
+		public Keyword getAndKeyword_8_3() { return cAndKeyword_8_3; }
 		
 		//'password'
-		public Keyword getPasswordKeyword_7_4() { return cPasswordKeyword_7_4; }
+		public Keyword getPasswordKeyword_8_4() { return cPasswordKeyword_8_4; }
 		
 		//mqttPassword = STRING
-		public Assignment getMqttPasswordAssignment_7_5() { return cMqttPasswordAssignment_7_5; }
+		public Assignment getMqttPasswordAssignment_8_5() { return cMqttPasswordAssignment_8_5; }
 		
 		//STRING
-		public RuleCall getMqttPasswordSTRINGTerminalRuleCall_7_5_0() { return cMqttPasswordSTRINGTerminalRuleCall_7_5_0; }
+		public RuleCall getMqttPasswordSTRINGTerminalRuleCall_8_5_0() { return cMqttPasswordSTRINGTerminalRuleCall_8_5_0; }
 		
 		//gateway = Gateway
-		public Assignment getGatewayAssignment_8() { return cGatewayAssignment_8; }
+		public Assignment getGatewayAssignment_9() { return cGatewayAssignment_9; }
 		
 		//Gateway
-		public RuleCall getGatewayGatewayParserRuleCall_8_0() { return cGatewayGatewayParserRuleCall_8_0; }
+		public RuleCall getGatewayGatewayParserRuleCall_9_0() { return cGatewayGatewayParserRuleCall_9_0; }
 		
 		//graphs += Graph*
-		public Assignment getGraphsAssignment_9() { return cGraphsAssignment_9; }
+		public Assignment getGraphsAssignment_10() { return cGraphsAssignment_10; }
 		
 		//Graph
-		public RuleCall getGraphsGraphParserRuleCall_9_0() { return cGraphsGraphParserRuleCall_9_0; }
+		public RuleCall getGraphsGraphParserRuleCall_10_0() { return cGraphsGraphParserRuleCall_10_0; }
 	}
 	public class GraphElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.gms.dds.DeviceDefinition.Graph");
@@ -398,31 +406,42 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		private final Keyword cMacKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cMacAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cMacMACTerminalRuleCall_4_0 = (RuleCall)cMacAssignment_4.eContents().get(0);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cErrorKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Keyword cLightKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
-		private final Assignment cErrorLedAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
-		private final RuleCall cErrorLedINTTerminalRuleCall_5_2_0 = (RuleCall)cErrorLedAssignment_5_2.eContents().get(0);
-		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cRetriesKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cRetriesAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final RuleCall cRetriesINTTerminalRuleCall_6_1_0 = (RuleCall)cRetriesAssignment_6_1.eContents().get(0);
-		private final Assignment cWorkersAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cWorkersWorkerParserRuleCall_7_0 = (RuleCall)cWorkersAssignment_7.eContents().get(0);
+		private final Keyword cChannelKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cChannelAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cChannelINTTerminalRuleCall_6_0 = (RuleCall)cChannelAssignment_6.eContents().get(0);
+		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+		private final Keyword cErrorKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Keyword cLightKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
+		private final Assignment cErrorLedAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
+		private final RuleCall cErrorLedINTTerminalRuleCall_7_2_0 = (RuleCall)cErrorLedAssignment_7_2.eContents().get(0);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final Keyword cRetriesKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Assignment cRetriesAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
+		private final RuleCall cRetriesINTTerminalRuleCall_8_1_0 = (RuleCall)cRetriesAssignment_8_1.eContents().get(0);
+		private final Keyword cWithKeyword_8_2 = (Keyword)cGroup_8.eContents().get(2);
+		private final Keyword cDelayKeyword_8_3 = (Keyword)cGroup_8.eContents().get(3);
+		private final Assignment cDelayAssignment_8_4 = (Assignment)cGroup_8.eContents().get(4);
+		private final RuleCall cDelayNumberPrimitiveParserRuleCall_8_4_0 = (RuleCall)cDelayAssignment_8_4.eContents().get(0);
+		private final Assignment cDelayTimeUnitAssignment_8_5 = (Assignment)cGroup_8.eContents().get(5);
+		private final RuleCall cDelayTimeUnitTimeUnitParserRuleCall_8_5_0 = (RuleCall)cDelayTimeUnitAssignment_8_5.eContents().get(0);
+		private final Assignment cWorkersAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cWorkersWorkerParserRuleCall_9_0 = (RuleCall)cWorkersAssignment_9.eContents().get(0);
 		
 		//Gateway:
 		//    'Gateway' name=ID ':'
 		//    'mac' mac = MAC
+		//    'channel' channel = INT
 		//    ('error' 'light' errorLed += INT)?
-		//    ('retries' retries += INT)?
+		//    ('retries' retries += INT 'with' 'delay' delay += NumberPrimitive delayTimeUnit = TimeUnit)?
 		//    workers += Worker+
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Gateway' name=ID ':'
 		//'mac' mac = MAC
+		//'channel' channel = INT
 		//('error' 'light' errorLed += INT)?
-		//('retries' retries += INT)?
+		//('retries' retries += INT 'with' 'delay' delay += NumberPrimitive delayTimeUnit = TimeUnit)?
 		//workers += Worker+
 		public Group getGroup() { return cGroup; }
 		
@@ -447,38 +466,65 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		//MAC
 		public RuleCall getMacMACTerminalRuleCall_4_0() { return cMacMACTerminalRuleCall_4_0; }
 		
+		//'channel'
+		public Keyword getChannelKeyword_5() { return cChannelKeyword_5; }
+		
+		//channel = INT
+		public Assignment getChannelAssignment_6() { return cChannelAssignment_6; }
+		
+		//INT
+		public RuleCall getChannelINTTerminalRuleCall_6_0() { return cChannelINTTerminalRuleCall_6_0; }
+		
 		//('error' 'light' errorLed += INT)?
-		public Group getGroup_5() { return cGroup_5; }
+		public Group getGroup_7() { return cGroup_7; }
 		
 		//'error'
-		public Keyword getErrorKeyword_5_0() { return cErrorKeyword_5_0; }
+		public Keyword getErrorKeyword_7_0() { return cErrorKeyword_7_0; }
 		
 		//'light'
-		public Keyword getLightKeyword_5_1() { return cLightKeyword_5_1; }
+		public Keyword getLightKeyword_7_1() { return cLightKeyword_7_1; }
 		
 		//errorLed += INT
-		public Assignment getErrorLedAssignment_5_2() { return cErrorLedAssignment_5_2; }
+		public Assignment getErrorLedAssignment_7_2() { return cErrorLedAssignment_7_2; }
 		
 		//INT
-		public RuleCall getErrorLedINTTerminalRuleCall_5_2_0() { return cErrorLedINTTerminalRuleCall_5_2_0; }
+		public RuleCall getErrorLedINTTerminalRuleCall_7_2_0() { return cErrorLedINTTerminalRuleCall_7_2_0; }
 		
-		//('retries' retries += INT)?
-		public Group getGroup_6() { return cGroup_6; }
+		//('retries' retries += INT 'with' 'delay' delay += NumberPrimitive delayTimeUnit = TimeUnit)?
+		public Group getGroup_8() { return cGroup_8; }
 		
 		//'retries'
-		public Keyword getRetriesKeyword_6_0() { return cRetriesKeyword_6_0; }
+		public Keyword getRetriesKeyword_8_0() { return cRetriesKeyword_8_0; }
 		
 		//retries += INT
-		public Assignment getRetriesAssignment_6_1() { return cRetriesAssignment_6_1; }
+		public Assignment getRetriesAssignment_8_1() { return cRetriesAssignment_8_1; }
 		
 		//INT
-		public RuleCall getRetriesINTTerminalRuleCall_6_1_0() { return cRetriesINTTerminalRuleCall_6_1_0; }
+		public RuleCall getRetriesINTTerminalRuleCall_8_1_0() { return cRetriesINTTerminalRuleCall_8_1_0; }
+		
+		//'with'
+		public Keyword getWithKeyword_8_2() { return cWithKeyword_8_2; }
+		
+		//'delay'
+		public Keyword getDelayKeyword_8_3() { return cDelayKeyword_8_3; }
+		
+		//delay += NumberPrimitive
+		public Assignment getDelayAssignment_8_4() { return cDelayAssignment_8_4; }
+		
+		//NumberPrimitive
+		public RuleCall getDelayNumberPrimitiveParserRuleCall_8_4_0() { return cDelayNumberPrimitiveParserRuleCall_8_4_0; }
+		
+		//delayTimeUnit = TimeUnit
+		public Assignment getDelayTimeUnitAssignment_8_5() { return cDelayTimeUnitAssignment_8_5; }
+		
+		//TimeUnit
+		public RuleCall getDelayTimeUnitTimeUnitParserRuleCall_8_5_0() { return cDelayTimeUnitTimeUnitParserRuleCall_8_5_0; }
 		
 		//workers += Worker+
-		public Assignment getWorkersAssignment_7() { return cWorkersAssignment_7; }
+		public Assignment getWorkersAssignment_9() { return cWorkersAssignment_9; }
 		
 		//Worker
-		public RuleCall getWorkersWorkerParserRuleCall_7_0() { return cWorkersWorkerParserRuleCall_7_0; }
+		public RuleCall getWorkersWorkerParserRuleCall_9_0() { return cWorkersWorkerParserRuleCall_9_0; }
 	}
 	public class WorkerElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.gms.dds.DeviceDefinition.Worker");
@@ -493,7 +539,7 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		private final Keyword cSleepKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Keyword cForKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Assignment cSleepTimeAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cSleepTimeINTTerminalRuleCall_7_0 = (RuleCall)cSleepTimeAssignment_7.eContents().get(0);
+		private final RuleCall cSleepTimeNumberPrimitiveParserRuleCall_7_0 = (RuleCall)cSleepTimeAssignment_7.eContents().get(0);
 		private final Assignment cTimeUnitAssignment_8 = (Assignment)cGroup.eContents().get(8);
 		private final RuleCall cTimeUnitTimeUnitParserRuleCall_8_0 = (RuleCall)cTimeUnitAssignment_8.eContents().get(0);
 		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
@@ -505,24 +551,30 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		private final Keyword cRetriesKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
 		private final Assignment cRetriesAssignment_10_1 = (Assignment)cGroup_10.eContents().get(1);
 		private final RuleCall cRetriesINTTerminalRuleCall_10_1_0 = (RuleCall)cRetriesAssignment_10_1.eContents().get(0);
+		private final Keyword cWithKeyword_10_2 = (Keyword)cGroup_10.eContents().get(2);
+		private final Keyword cDelayKeyword_10_3 = (Keyword)cGroup_10.eContents().get(3);
+		private final Assignment cDelayAssignment_10_4 = (Assignment)cGroup_10.eContents().get(4);
+		private final RuleCall cDelayNumberPrimitiveParserRuleCall_10_4_0 = (RuleCall)cDelayAssignment_10_4.eContents().get(0);
+		private final Assignment cDelayTimeUnitAssignment_10_5 = (Assignment)cGroup_10.eContents().get(5);
+		private final RuleCall cDelayTimeUnitTimeUnitParserRuleCall_10_5_0 = (RuleCall)cDelayTimeUnitAssignment_10_5.eContents().get(0);
 		private final Assignment cDevicesAssignment_11 = (Assignment)cGroup.eContents().get(11);
 		private final RuleCall cDevicesDeviceParserRuleCall_11_0 = (RuleCall)cDevicesAssignment_11.eContents().get(0);
 		
 		//Worker:
 		//    'Worker' (name=ID) ':'
 		//    'mac' mac = MAC
-		//    'sleep' 'for' sleepTime = INT timeUnit = TimeUnit
+		//    'sleep' 'for' sleepTime = NumberPrimitive timeUnit = TimeUnit
 		//    ('error' 'light' errorLed += INT)?
-		//    ('retries' retries += INT)?
+		//    ('retries' retries += INT 'with' 'delay' delay += NumberPrimitive delayTimeUnit = TimeUnit)?
 		//    devices += Device*
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Worker' (name=ID) ':'
 		//'mac' mac = MAC
-		//'sleep' 'for' sleepTime = INT timeUnit = TimeUnit
+		//'sleep' 'for' sleepTime = NumberPrimitive timeUnit = TimeUnit
 		//('error' 'light' errorLed += INT)?
-		//('retries' retries += INT)?
+		//('retries' retries += INT 'with' 'delay' delay += NumberPrimitive delayTimeUnit = TimeUnit)?
 		//devices += Device*
 		public Group getGroup() { return cGroup; }
 		
@@ -553,11 +605,11 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		//'for'
 		public Keyword getForKeyword_6() { return cForKeyword_6; }
 		
-		//sleepTime = INT
+		//sleepTime = NumberPrimitive
 		public Assignment getSleepTimeAssignment_7() { return cSleepTimeAssignment_7; }
 		
-		//INT
-		public RuleCall getSleepTimeINTTerminalRuleCall_7_0() { return cSleepTimeINTTerminalRuleCall_7_0; }
+		//NumberPrimitive
+		public RuleCall getSleepTimeNumberPrimitiveParserRuleCall_7_0() { return cSleepTimeNumberPrimitiveParserRuleCall_7_0; }
 		
 		//timeUnit = TimeUnit
 		public Assignment getTimeUnitAssignment_8() { return cTimeUnitAssignment_8; }
@@ -580,7 +632,7 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		//INT
 		public RuleCall getErrorLedINTTerminalRuleCall_9_2_0() { return cErrorLedINTTerminalRuleCall_9_2_0; }
 		
-		//('retries' retries += INT)?
+		//('retries' retries += INT 'with' 'delay' delay += NumberPrimitive delayTimeUnit = TimeUnit)?
 		public Group getGroup_10() { return cGroup_10; }
 		
 		//'retries'
@@ -591,6 +643,24 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		
 		//INT
 		public RuleCall getRetriesINTTerminalRuleCall_10_1_0() { return cRetriesINTTerminalRuleCall_10_1_0; }
+		
+		//'with'
+		public Keyword getWithKeyword_10_2() { return cWithKeyword_10_2; }
+		
+		//'delay'
+		public Keyword getDelayKeyword_10_3() { return cDelayKeyword_10_3; }
+		
+		//delay += NumberPrimitive
+		public Assignment getDelayAssignment_10_4() { return cDelayAssignment_10_4; }
+		
+		//NumberPrimitive
+		public RuleCall getDelayNumberPrimitiveParserRuleCall_10_4_0() { return cDelayNumberPrimitiveParserRuleCall_10_4_0; }
+		
+		//delayTimeUnit = TimeUnit
+		public Assignment getDelayTimeUnitAssignment_10_5() { return cDelayTimeUnitAssignment_10_5; }
+		
+		//TimeUnit
+		public RuleCall getDelayTimeUnitTimeUnitParserRuleCall_10_5_0() { return cDelayTimeUnitTimeUnitParserRuleCall_10_5_0; }
 		
 		//devices += Device*
 		public Assignment getDevicesAssignment_11() { return cDevicesAssignment_11; }
@@ -822,73 +892,109 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.gms.dds.DeviceDefinition.TimeUnit");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Action cSecondAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final Action cMillisecondAction_0_0 = (Action)cGroup_0.eContents().get(0);
 		private final Alternatives cAlternatives_0_1 = (Alternatives)cGroup_0.eContents().get(1);
-		private final Keyword cSecondKeyword_0_1_0 = (Keyword)cAlternatives_0_1.eContents().get(0);
-		private final Keyword cSecondsKeyword_0_1_1 = (Keyword)cAlternatives_0_1.eContents().get(1);
+		private final Keyword cMillisecondKeyword_0_1_0 = (Keyword)cAlternatives_0_1.eContents().get(0);
+		private final Keyword cMillisecondsKeyword_0_1_1 = (Keyword)cAlternatives_0_1.eContents().get(1);
+		private final Keyword cMsKeyword_0_1_2 = (Keyword)cAlternatives_0_1.eContents().get(2);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Action cMinuteAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Action cSecondAction_1_0 = (Action)cGroup_1.eContents().get(0);
 		private final Alternatives cAlternatives_1_1 = (Alternatives)cGroup_1.eContents().get(1);
-		private final Keyword cMinuteKeyword_1_1_0 = (Keyword)cAlternatives_1_1.eContents().get(0);
-		private final Keyword cMinutesKeyword_1_1_1 = (Keyword)cAlternatives_1_1.eContents().get(1);
+		private final Keyword cSecondKeyword_1_1_0 = (Keyword)cAlternatives_1_1.eContents().get(0);
+		private final Keyword cSecondsKeyword_1_1_1 = (Keyword)cAlternatives_1_1.eContents().get(1);
+		private final Keyword cSKeyword_1_1_2 = (Keyword)cAlternatives_1_1.eContents().get(2);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final Action cHourAction_2_0 = (Action)cGroup_2.eContents().get(0);
+		private final Action cMinuteAction_2_0 = (Action)cGroup_2.eContents().get(0);
 		private final Alternatives cAlternatives_2_1 = (Alternatives)cGroup_2.eContents().get(1);
-		private final Keyword cHourKeyword_2_1_0 = (Keyword)cAlternatives_2_1.eContents().get(0);
-		private final Keyword cHoursKeyword_2_1_1 = (Keyword)cAlternatives_2_1.eContents().get(1);
+		private final Keyword cMinuteKeyword_2_1_0 = (Keyword)cAlternatives_2_1.eContents().get(0);
+		private final Keyword cMinutesKeyword_2_1_1 = (Keyword)cAlternatives_2_1.eContents().get(1);
+		private final Keyword cMKeyword_2_1_2 = (Keyword)cAlternatives_2_1.eContents().get(2);
+		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
+		private final Action cHourAction_3_0 = (Action)cGroup_3.eContents().get(0);
+		private final Alternatives cAlternatives_3_1 = (Alternatives)cGroup_3.eContents().get(1);
+		private final Keyword cHourKeyword_3_1_0 = (Keyword)cAlternatives_3_1.eContents().get(0);
+		private final Keyword cHoursKeyword_3_1_1 = (Keyword)cAlternatives_3_1.eContents().get(1);
+		private final Keyword cHKeyword_3_1_2 = (Keyword)cAlternatives_3_1.eContents().get(2);
 		
 		//TimeUnit:
-		//    {Second} ('second'|'seconds') | {Minute} ('minute'|'minutes') | {Hour} ('hour'|'hours')
+		//    {Millisecond} ('millisecond' | 'milliseconds' | 'ms') | {Second} ('second'|'seconds'|'s') | {Minute} ('minute'|'minutes'|'m') | {Hour} ('hour'|'hours'|'h')
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Second} ('second'|'seconds') | {Minute} ('minute'|'minutes') | {Hour} ('hour'|'hours')
+		//{Millisecond} ('millisecond' | 'milliseconds' | 'ms') | {Second} ('second'|'seconds'|'s') | {Minute} ('minute'|'minutes'|'m') | {Hour} ('hour'|'hours'|'h')
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//{Second} ('second'|'seconds')
+		//{Millisecond} ('millisecond' | 'milliseconds' | 'ms')
 		public Group getGroup_0() { return cGroup_0; }
 		
-		//{Second}
-		public Action getSecondAction_0_0() { return cSecondAction_0_0; }
+		//{Millisecond}
+		public Action getMillisecondAction_0_0() { return cMillisecondAction_0_0; }
 		
-		//('second'|'seconds')
+		//('millisecond' | 'milliseconds' | 'ms')
 		public Alternatives getAlternatives_0_1() { return cAlternatives_0_1; }
 		
-		//'second'
-		public Keyword getSecondKeyword_0_1_0() { return cSecondKeyword_0_1_0; }
+		//'millisecond'
+		public Keyword getMillisecondKeyword_0_1_0() { return cMillisecondKeyword_0_1_0; }
 		
-		//'seconds'
-		public Keyword getSecondsKeyword_0_1_1() { return cSecondsKeyword_0_1_1; }
+		//'milliseconds'
+		public Keyword getMillisecondsKeyword_0_1_1() { return cMillisecondsKeyword_0_1_1; }
 		
-		//{Minute} ('minute'|'minutes')
+		//'ms'
+		public Keyword getMsKeyword_0_1_2() { return cMsKeyword_0_1_2; }
+		
+		//{Second} ('second'|'seconds'|'s')
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//{Minute}
-		public Action getMinuteAction_1_0() { return cMinuteAction_1_0; }
+		//{Second}
+		public Action getSecondAction_1_0() { return cSecondAction_1_0; }
 		
-		//('minute'|'minutes')
+		//('second'|'seconds'|'s')
 		public Alternatives getAlternatives_1_1() { return cAlternatives_1_1; }
 		
-		//'minute'
-		public Keyword getMinuteKeyword_1_1_0() { return cMinuteKeyword_1_1_0; }
+		//'second'
+		public Keyword getSecondKeyword_1_1_0() { return cSecondKeyword_1_1_0; }
 		
-		//'minutes'
-		public Keyword getMinutesKeyword_1_1_1() { return cMinutesKeyword_1_1_1; }
+		//'seconds'
+		public Keyword getSecondsKeyword_1_1_1() { return cSecondsKeyword_1_1_1; }
 		
-		//{Hour} ('hour'|'hours')
+		//'s'
+		public Keyword getSKeyword_1_1_2() { return cSKeyword_1_1_2; }
+		
+		//{Minute} ('minute'|'minutes'|'m')
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//{Hour}
-		public Action getHourAction_2_0() { return cHourAction_2_0; }
+		//{Minute}
+		public Action getMinuteAction_2_0() { return cMinuteAction_2_0; }
 		
-		//('hour'|'hours')
+		//('minute'|'minutes'|'m')
 		public Alternatives getAlternatives_2_1() { return cAlternatives_2_1; }
 		
+		//'minute'
+		public Keyword getMinuteKeyword_2_1_0() { return cMinuteKeyword_2_1_0; }
+		
+		//'minutes'
+		public Keyword getMinutesKeyword_2_1_1() { return cMinutesKeyword_2_1_1; }
+		
+		//'m'
+		public Keyword getMKeyword_2_1_2() { return cMKeyword_2_1_2; }
+		
+		//{Hour} ('hour'|'hours'|'h')
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//{Hour}
+		public Action getHourAction_3_0() { return cHourAction_3_0; }
+		
+		//('hour'|'hours'|'h')
+		public Alternatives getAlternatives_3_1() { return cAlternatives_3_1; }
+		
 		//'hour'
-		public Keyword getHourKeyword_2_1_0() { return cHourKeyword_2_1_0; }
+		public Keyword getHourKeyword_3_1_0() { return cHourKeyword_3_1_0; }
 		
 		//'hours'
-		public Keyword getHoursKeyword_2_1_1() { return cHoursKeyword_2_1_1; }
+		public Keyword getHoursKeyword_3_1_1() { return cHoursKeyword_3_1_1; }
+		
+		//'h'
+		public Keyword getHKeyword_3_1_2() { return cHKeyword_3_1_2; }
 	}
 	public class BindingElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.gms.dds.DeviceDefinition.Binding");
@@ -1194,69 +1300,85 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.gms.dds.DeviceDefinition.Primitive");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Action cDecimalPrimitiveAction_0_0 = (Action)cGroup_0.eContents().get(0);
-		private final Assignment cValueAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
-		private final RuleCall cValueDECIMALTerminalRuleCall_0_1_0 = (RuleCall)cValueAssignment_0_1.eContents().get(0);
+		private final Action cBooleanTrueAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final Keyword cTRUEKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Action cIntPrimitiveAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Assignment cValueAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cValueINTTerminalRuleCall_1_1_0 = (RuleCall)cValueAssignment_1_1.eContents().get(0);
-		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final Action cBooleanTrueAction_2_0 = (Action)cGroup_2.eContents().get(0);
-		private final Keyword cTRUEKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
-		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
-		private final Action cBooleanFalseAction_3_0 = (Action)cGroup_3.eContents().get(0);
-		private final Keyword cFALSEKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Action cBooleanFalseAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Keyword cFALSEKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final RuleCall cNumberPrimitiveParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//Primitive:
-		//    {DecimalPrimitive} value = DECIMAL | {IntPrimitive} value=INT | {BooleanTrue} 'TRUE' | {BooleanFalse} 'FALSE'
+		//    {BooleanTrue} 'TRUE' | {BooleanFalse} 'FALSE' | NumberPrimitive
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{DecimalPrimitive} value = DECIMAL | {IntPrimitive} value=INT | {BooleanTrue} 'TRUE' | {BooleanFalse} 'FALSE'
+		//{BooleanTrue} 'TRUE' | {BooleanFalse} 'FALSE' | NumberPrimitive
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//{DecimalPrimitive} value = DECIMAL
+		//{BooleanTrue} 'TRUE'
 		public Group getGroup_0() { return cGroup_0; }
 		
-		//{DecimalPrimitive}
-		public Action getDecimalPrimitiveAction_0_0() { return cDecimalPrimitiveAction_0_0; }
-		
-		//value = DECIMAL
-		public Assignment getValueAssignment_0_1() { return cValueAssignment_0_1; }
-		
-		//DECIMAL
-		public RuleCall getValueDECIMALTerminalRuleCall_0_1_0() { return cValueDECIMALTerminalRuleCall_0_1_0; }
-		
-		//{IntPrimitive} value=INT
-		public Group getGroup_1() { return cGroup_1; }
-		
-		//{IntPrimitive}
-		public Action getIntPrimitiveAction_1_0() { return cIntPrimitiveAction_1_0; }
-		
-		//value=INT
-		public Assignment getValueAssignment_1_1() { return cValueAssignment_1_1; }
-		
-		//INT
-		public RuleCall getValueINTTerminalRuleCall_1_1_0() { return cValueINTTerminalRuleCall_1_1_0; }
-		
-		//{BooleanTrue} 'TRUE'
-		public Group getGroup_2() { return cGroup_2; }
-		
 		//{BooleanTrue}
-		public Action getBooleanTrueAction_2_0() { return cBooleanTrueAction_2_0; }
+		public Action getBooleanTrueAction_0_0() { return cBooleanTrueAction_0_0; }
 		
 		//'TRUE'
-		public Keyword getTRUEKeyword_2_1() { return cTRUEKeyword_2_1; }
+		public Keyword getTRUEKeyword_0_1() { return cTRUEKeyword_0_1; }
 		
 		//{BooleanFalse} 'FALSE'
-		public Group getGroup_3() { return cGroup_3; }
+		public Group getGroup_1() { return cGroup_1; }
 		
 		//{BooleanFalse}
-		public Action getBooleanFalseAction_3_0() { return cBooleanFalseAction_3_0; }
+		public Action getBooleanFalseAction_1_0() { return cBooleanFalseAction_1_0; }
 		
 		//'FALSE'
-		public Keyword getFALSEKeyword_3_1() { return cFALSEKeyword_3_1; }
+		public Keyword getFALSEKeyword_1_1() { return cFALSEKeyword_1_1; }
+		
+		//NumberPrimitive
+		public RuleCall getNumberPrimitiveParserRuleCall_2() { return cNumberPrimitiveParserRuleCall_2; }
+	}
+	public class NumberPrimitiveElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.gms.dds.DeviceDefinition.NumberPrimitive");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Action cIntPrimitiveAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final Assignment cValueAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cValueINTTerminalRuleCall_0_1_0 = (RuleCall)cValueAssignment_0_1.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Action cDecimalPrimitiveAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Assignment cValueAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cValueDECIMALTerminalRuleCall_1_1_0 = (RuleCall)cValueAssignment_1_1.eContents().get(0);
+		
+		//NumberPrimitive:
+		//    {IntPrimitive} value=INT | {DecimalPrimitive} value = DECIMAL
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{IntPrimitive} value=INT | {DecimalPrimitive} value = DECIMAL
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//{IntPrimitive} value=INT
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//{IntPrimitive}
+		public Action getIntPrimitiveAction_0_0() { return cIntPrimitiveAction_0_0; }
+		
+		//value=INT
+		public Assignment getValueAssignment_0_1() { return cValueAssignment_0_1; }
+		
+		//INT
+		public RuleCall getValueINTTerminalRuleCall_0_1_0() { return cValueINTTerminalRuleCall_0_1_0; }
+		
+		//{DecimalPrimitive} value = DECIMAL
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//{DecimalPrimitive}
+		public Action getDecimalPrimitiveAction_1_0() { return cDecimalPrimitiveAction_1_0; }
+		
+		//value = DECIMAL
+		public Assignment getValueAssignment_1_1() { return cValueAssignment_1_1; }
+		
+		//DECIMAL
+		public RuleCall getValueDECIMALTerminalRuleCall_1_1_0() { return cValueDECIMALTerminalRuleCall_1_1_0; }
 	}
 	public class ExpElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.gms.dds.DeviceDefinition.Exp");
@@ -1949,6 +2071,7 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 	private final SettingElements pSetting;
 	private final TerminalRule tDECIMAL;
 	private final PrimitiveElements pPrimitive;
+	private final NumberPrimitiveElements pNumberPrimitive;
 	private final ExpElements pExp;
 	private final FactorElements pFactor;
 	private final CompareElements pCompare;
@@ -1993,6 +2116,7 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 		this.pSetting = new SettingElements();
 		this.tDECIMAL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.gms.dds.DeviceDefinition.DECIMAL");
 		this.pPrimitive = new PrimitiveElements();
+		this.pNumberPrimitive = new NumberPrimitiveElements();
 		this.pExp = new ExpElements();
 		this.pFactor = new FactorElements();
 		this.pCompare = new CompareElements();
@@ -2036,7 +2160,7 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 
 	
 	//System:
-	//    'System' ':'
+	//    'System' name=ID ':'
 	//    'wifi' wifiSsid = STRING ('with' 'password' wifiPassword = STRING)?
 	//    'mqtt' mqttHost = STRING ('with' 'username' mqttUsername = STRING 'and' 'password' mqttPassword = STRING)?
 	//    gateway = Gateway
@@ -2106,8 +2230,9 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 	//Gateway:
 	//    'Gateway' name=ID ':'
 	//    'mac' mac = MAC
+	//    'channel' channel = INT
 	//    ('error' 'light' errorLed += INT)?
-	//    ('retries' retries += INT)?
+	//    ('retries' retries += INT 'with' 'delay' delay += NumberPrimitive delayTimeUnit = TimeUnit)?
 	//    workers += Worker+
 	//;
 	public GatewayElements getGatewayAccess() {
@@ -2121,9 +2246,9 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 	//Worker:
 	//    'Worker' (name=ID) ':'
 	//    'mac' mac = MAC
-	//    'sleep' 'for' sleepTime = INT timeUnit = TimeUnit
+	//    'sleep' 'for' sleepTime = NumberPrimitive timeUnit = TimeUnit
 	//    ('error' 'light' errorLed += INT)?
-	//    ('retries' retries += INT)?
+	//    ('retries' retries += INT 'with' 'delay' delay += NumberPrimitive delayTimeUnit = TimeUnit)?
 	//    devices += Device*
 	//;
 	public WorkerElements getWorkerAccess() {
@@ -2183,7 +2308,7 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 	}
 	
 	//TimeUnit:
-	//    {Second} ('second'|'seconds') | {Minute} ('minute'|'minutes') | {Hour} ('hour'|'hours')
+	//    {Millisecond} ('millisecond' | 'milliseconds' | 'ms') | {Second} ('second'|'seconds'|'s') | {Minute} ('minute'|'minutes'|'m') | {Hour} ('hour'|'hours'|'h')
 	//;
 	public TimeUnitElements getTimeUnitAccess() {
 		return pTimeUnit;
@@ -2274,7 +2399,7 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 	}
 	
 	//Primitive:
-	//    {DecimalPrimitive} value = DECIMAL | {IntPrimitive} value=INT | {BooleanTrue} 'TRUE' | {BooleanFalse} 'FALSE'
+	//    {BooleanTrue} 'TRUE' | {BooleanFalse} 'FALSE' | NumberPrimitive
 	//;
 	public PrimitiveElements getPrimitiveAccess() {
 		return pPrimitive;
@@ -2282,6 +2407,17 @@ public class DeviceDefinitionGrammarAccess extends AbstractElementFinder.Abstrac
 	
 	public ParserRule getPrimitiveRule() {
 		return getPrimitiveAccess().getRule();
+	}
+	
+	//NumberPrimitive:
+	//    {IntPrimitive} value=INT | {DecimalPrimitive} value = DECIMAL
+	//;
+	public NumberPrimitiveElements getNumberPrimitiveAccess() {
+		return pNumberPrimitive;
+	}
+	
+	public ParserRule getNumberPrimitiveRule() {
+		return getNumberPrimitiveAccess().getRule();
 	}
 	
 	//Exp returns Expression:

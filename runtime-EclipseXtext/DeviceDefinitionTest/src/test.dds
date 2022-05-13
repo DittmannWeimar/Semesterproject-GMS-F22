@@ -1,17 +1,20 @@
-System:
+System acceptance_test:
 	wifi "Chronos" with password "fizzfyr13"
 	mqtt "vald.io:3001" with username "kristian" and password "1234"
 	
 	Gateway gateway:
+
 		mac 58:BF:25:E0:77:98
-		error light 3
+		channel 6
+		error light 15
+		retries 5 with delay 500 ms
 				
 		Worker pump_01:
 		
 			mac 10:97:BD:D5:3E:64
 			sleep for 10 seconds
-			error light 3
-			retries 5
+			error light 15
+			retries 5 with delay 500 ms
 			
 			Sensor TemperatureHumidity th:
 				pins adc 4
@@ -23,9 +26,8 @@ System:
 				out as output with mapping value / 1024.0 * 100.0
 				
 			Actuator Generic pump:
-				pins dac 25
-				setting power = 256
-				on moisture.output < 50 run for 2 seconds
+				pins out 14
+				on moisture.output < 40 off moisture.output > 60
 				
 	Graph:
 		category "Environment"

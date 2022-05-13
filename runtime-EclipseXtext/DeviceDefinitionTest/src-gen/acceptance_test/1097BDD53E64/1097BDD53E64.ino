@@ -12,7 +12,6 @@ esp_now_peer_info_t gatewayInfo;
 enum MESSAGE_TYPE { Ping, Setting, Sample };
 
 // GENERATED SETTINGS
-float pump_power = 256;
 
 // GENERATED INITIALIZATIONS
 float th_temperature;
@@ -23,7 +22,6 @@ bool pump_enabled = false;
 
 // GENERATED TIMERS
 uint64_t last_loop_time;
-uint64_t pump_last_enable_time;
 
 const int freq = 5000;
 const int ledChannel = 0;
@@ -33,38 +31,13 @@ const String STATION_NAME = "Gateway";
 
 bool messageSuccess = false;
 
-int espnow_channel = 0;
-
 void setup() {
   WiFi.mode(WIFI_STA);
   WiFi.disconnect();
-
-  if(scan) {
-    uint8_t networks = WiFi.scanNetworks();
-    for(int n=0;n<networks;n++) {
-        Serial.printf("%d %s   %d   %d %s \n", n,WiFi.SSID(n).c_str(),WiFi.RSSI(n), WiFi.channel(n), WiFi.BSSIDstr(n).c_str());
-        for(int i=0;i<8;i++) {
-            Serial.print(WiFi.BSSID(n)[i]);
-            Serial.print(" ");
-        }
-        Serial.println();
-
-        if(WiFi.SSID(n).indexOf(STATION_NAME) == 0)
-        {
-            Serial.println("Found");
-            memcpy(gatewayAddress, WiFi.BSSID(n), 6);
-            espnow_channel = WiFi.channel(n);
-        }
-        
-    }
-
-    WiFi.scanDelete();
-  }
   
   esp_wifi_set_promiscuous(true);
-  esp_wifi_set_channel(espnow_channel, WIFI_SECOND_CHAN_NONE);
+  esp_wifi_set_channel(6, WIFI_SECOND_CHAN_NONE);
   esp_wifi_set_promiscuous(false);
-
  
   Serial.begin(115200);
   
@@ -75,7 +48,7 @@ void setup() {
   ledcAttachPin(26, 1);
   pinMode(26, OUTPUT);
   
-  pinMode(3, OUTPUT);
+  pinMode(15, OUTPUT);
   
   // Set device as a Wi-Fi Station
   WiFi.mode(WIFI_STA);
@@ -94,7 +67,7 @@ void setup() {
   
   // Register peer
   memcpy(gatewayInfo.peer_addr, gatewayAddress, 6);
-  gatewayInfo.channel = 0;  
+  gatewayInfo.channel = 6;  
   gatewayInfo.encrypt = false;
   
   // Add peer        
@@ -113,6 +86,7 @@ pinMode(4, INPUT);
 th_dht.begin();
 Serial.println("DHT sensor initialized!");
 pinMode(32, INPUT);
+pinMode(14, OUTPUT);
 }
 
 typedef struct message_base {
@@ -134,38 +108,42 @@ typedef struct message_sample : message_base {
 message_sample sampleMessage;
 
 void loop() {
+  
+  float value = 0;
   uint64_t current_time = esp_timer_get_time() / 1000ULL;
-  if (current_time > last_loop_time + 10000) {
-	
-    sampleMessage.pump_01_th_temperature = 1.0 / 0.0;
-    sampleMessage.pump_01_th_humidity = 1.0 / 0.0;
-    sampleMessage.pump_01_moisture_sample = 1.0 / 0.0;
-    
-    float value = 0;
-    
-    th_temperature = th_dht.readTemperature();
-    sampleMessage.pump_01_th_temperature = th_temperature;
-    th_humidity = th_dht.readHumidity();
-    sampleMessage.pump_01_th_humidity = th_humidity;
-    moisture_sample = analogRead(32);
-    value = moisture_sample;
-    moisture_sample = value / 1024.0 * 100.0;
-    sampleMessage.pump_01_moisture_sample = moisture_sample;
-    pump_enabled = (bool)(moisture_sample < 50);
-    ledcWrite(0, (float)(pump_enabled) * pump_power);
-    if (pump_enabled) {
-      pump_last_enable_time = current_time;
-    }
+  if (current_time > last_loop_time + 10000.0) {
     
     sampleMessage.type = Sample;
     send_message(gatewayAddress, (uint8_t *) &sampleMessage, sizeof(sampleMessage));
     
+   	sampleMessage.pump_01_th_temperature = 1.0 / 0.0; // This is terrible don't hate me.
+   	sampleMessage.pump_01_th_humidity = 1.0 / 0.0; // This is terrible don't hate me.
+   	sampleMessage.pump_01_moisture_sample = 1.0 / 0.0; // This is terrible don't hate me.
+    
+th_temperature = th_dht.readTemperature();
+sampleMessage.pump_01_th_temperature = th_temperature;
+th_humidity = th_dht.readHumidity();
+sampleMessage.pump_01_th_humidity = th_humidity;
+moisture_sample = analogRead(32);
+value = moisture_sample;
+moisture_sample = value / 1024.0 * 100.0;
+sampleMessage.pump_01_moisture_sample = moisture_sample;
+if (pump_enabled == false && (bool)(moisture_sample < 40)) {
+	pump_enabled = true;
+}
+digitalWrite(14, pump_enabled);
+    
     last_loop_time = current_time;
   }
   
-  if (current_time > pump_last_enable_time + 2000 && pump_enabled) {
-    pump_enabled = false;
-    ledcWrite(0, (float)(pump_enabled) * pump_power);
+  if (pump_enabled) {
+  	moisture_sample = analogRead(32);
+  	value = moisture_sample;
+  	moisture_sample = value / 1024.0 * 100.0;
+  	sampleMessage.pump_01_moisture_sample = moisture_sample;
+  }
+  if (pump_enabled == true && (bool)(moisture_sample > 60)) {
+  	pump_enabled = false;
   }
 
   
@@ -215,21 +193,18 @@ void handle_ping(const uint8_t * mac, const uint8_t *incomingData, int len) {
 
 void handle_setting(const uint8_t * mac, const uint8_t *incomingData, int len) {
   memcpy(&settingMessage, incomingData, sizeof(settingMessage));
-  if (settingMessage.setting == 0) {
-  	pump_power = settingMessage.newValue;
-  }
 }
 
 void send_message(const uint8_t * mac, const uint8_t *incomingData, int len) {
   bool success = false;
   for (int i = 0; i < 5; i++) {
     esp_err_t result = esp_now_send(mac, incomingData, len);
-    delay(250);
+    delay((uint64_t)500.0);
     if (messageSuccess) {
       success = true;
       break;
     }
   }
   Serial.println("Send message success: " + String(success));
-  digitalWrite(3, success ? LOW : HIGH);
+  digitalWrite(15, success ? LOW : HIGH);
 }

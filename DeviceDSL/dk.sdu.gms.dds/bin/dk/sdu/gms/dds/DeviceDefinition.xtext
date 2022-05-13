@@ -3,7 +3,7 @@ grammar dk.sdu.gms.dds.DeviceDefinition with org.eclipse.xtext.common.Terminals
 generate deviceDefinition "http://www.sdu.dk/gms/dds/DeviceDefinition"
 
 System:
-	'System' ':'
+	'System' name=ID ':'
 	'wifi' wifiSsid = STRING ('with' 'password' wifiPassword = STRING)?
 	'mqtt' mqttHost = STRING ('with' 'username' mqttUsername = STRING 'and' 'password' mqttPassword = STRING)?
 	gateway = Gateway
@@ -38,17 +38,18 @@ enum ColorPreset:
 Gateway:
 	'Gateway' name=ID ':'
 	'mac' mac = MAC
+	'channel' channel = INT
 	('error' 'light' errorLed += INT)?
-	('retries' retries += INT)?
+	('retries' retries += INT 'with' 'delay' delay += NumberPrimitive delayTimeUnit = TimeUnit)?
 	workers += Worker+
 ;
 
 Worker:
 	'Worker' (name=ID) ':'
 	'mac' mac = MAC
-	'sleep' 'for' sleepTime = INT timeUnit = TimeUnit
+	'sleep' 'for' sleepTime = NumberPrimitive timeUnit = TimeUnit
 	('error' 'light' errorLed += INT)?
-	('retries' retries += INT)?
+	('retries' retries += INT 'with' 'delay' delay += NumberPrimitive delayTimeUnit = TimeUnit)?
 	devices += Device*
 ;
 
@@ -73,7 +74,7 @@ PinType:
 ;
 
 TimeUnit:
-	{Second} ('second'|'seconds') | {Minute} ('minute'|'minutes') | {Hour} ('hour'|'hours')
+	{Millisecond} ('millisecond' | 'milliseconds' | 'ms') | {Second} ('second'|'seconds'|'s') | {Minute} ('minute'|'minutes'|'m') | {Hour} ('hour'|'hours'|'h')
 ;
 
 terminal MAC:
@@ -113,7 +114,11 @@ terminal DECIMAL:
 ;
 
 Primitive:
-	{DecimalPrimitive} value = DECIMAL | {IntPrimitive} value=INT | {BooleanTrue} 'TRUE' | {BooleanFalse} 'FALSE'
+	{BooleanTrue} 'TRUE' | {BooleanFalse} 'FALSE' | NumberPrimitive
+;
+
+NumberPrimitive:
+	{IntPrimitive} value=INT | {DecimalPrimitive} value = DECIMAL
 ;
 
 Exp returns Expression:

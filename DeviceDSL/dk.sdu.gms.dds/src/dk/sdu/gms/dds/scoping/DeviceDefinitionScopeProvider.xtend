@@ -38,12 +38,15 @@ class DeviceDefinitionScopeProvider extends AbstractDeviceDefinitionScopeProvide
 		
 		if (context instanceof GraphVariableUse) {
 			if (reference == DeviceDefinitionPackage.Literals.GRAPH_VARIABLE_USE__WORKER) {
+				if (context.worker === null) return super.getScope(context, reference);
 				return Scopes.scopeFor(system(context).gateway.workers)
 			}
 			if (reference == DeviceDefinitionPackage.Literals.GRAPH_VARIABLE_USE__DEVICE) {
+				if (context.worker === null) return super.getScope(context, reference);
 				return Scopes.scopeFor(context.worker.devices.stream().filter(x | x instanceof Sensor).collect(Collectors.toList()))
 			}
 			if (reference == DeviceDefinitionPackage.Literals.VARIABLE_USE__REF) {
+				if (context.device === null) return super.getScope(context, reference);
 				val device = context.device
 				return switch (device) {
 					Sensor: Scopes.scopeFor(Stream.concat(device.settings.stream(), device.outputs.stream()).collect(Collectors.toList()))

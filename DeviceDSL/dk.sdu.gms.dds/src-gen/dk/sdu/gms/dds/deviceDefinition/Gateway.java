@@ -18,8 +18,11 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Gateway#getName <em>Name</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Gateway#getMac <em>Mac</em>}</li>
+ *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Gateway#getChannel <em>Channel</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Gateway#getErrorLed <em>Error Led</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Gateway#getRetries <em>Retries</em>}</li>
+ *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Gateway#getDelay <em>Delay</em>}</li>
+ *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Gateway#getDelayTimeUnit <em>Delay Time Unit</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Gateway#getWorkers <em>Workers</em>}</li>
  * </ul>
  *
@@ -74,6 +77,28 @@ public interface Gateway extends EObject
   void setMac(String value);
 
   /**
+   * Returns the value of the '<em><b>Channel</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Channel</em>' attribute.
+   * @see #setChannel(int)
+   * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getGateway_Channel()
+   * @model
+   * @generated
+   */
+  int getChannel();
+
+  /**
+   * Sets the value of the '{@link dk.sdu.gms.dds.deviceDefinition.Gateway#getChannel <em>Channel</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Channel</em>' attribute.
+   * @see #getChannel()
+   * @generated
+   */
+  void setChannel(int value);
+
+  /**
    * Returns the value of the '<em><b>Error Led</b></em>' attribute list.
    * The list contents are of type {@link java.lang.Integer}.
    * <!-- begin-user-doc -->
@@ -96,6 +121,40 @@ public interface Gateway extends EObject
    * @generated
    */
   EList<Integer> getRetries();
+
+  /**
+   * Returns the value of the '<em><b>Delay</b></em>' containment reference list.
+   * The list contents are of type {@link dk.sdu.gms.dds.deviceDefinition.NumberPrimitive}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Delay</em>' containment reference list.
+   * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getGateway_Delay()
+   * @model containment="true"
+   * @generated
+   */
+  EList<NumberPrimitive> getDelay();
+
+  /**
+   * Returns the value of the '<em><b>Delay Time Unit</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Delay Time Unit</em>' containment reference.
+   * @see #setDelayTimeUnit(TimeUnit)
+   * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getGateway_DelayTimeUnit()
+   * @model containment="true"
+   * @generated
+   */
+  TimeUnit getDelayTimeUnit();
+
+  /**
+   * Sets the value of the '{@link dk.sdu.gms.dds.deviceDefinition.Gateway#getDelayTimeUnit <em>Delay Time Unit</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Delay Time Unit</em>' containment reference.
+   * @see #getDelayTimeUnit()
+   * @generated
+   */
+  void setDelayTimeUnit(TimeUnit value);
 
   /**
    * Returns the value of the '<em><b>Workers</b></em>' containment reference list.
