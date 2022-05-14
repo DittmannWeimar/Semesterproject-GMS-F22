@@ -42,7 +42,7 @@ EspMQTTClient client(
   "vald.io",
   "kristian",
   "1234",
-  "gms-gateway-213b0f04-b6a5-4aa3-8669-cc306b8d1625",
+  "gms-gateway-6bc2e777-811a-4ed6-a0fa-6e8d39f9cdb9",
   3001
 );
 

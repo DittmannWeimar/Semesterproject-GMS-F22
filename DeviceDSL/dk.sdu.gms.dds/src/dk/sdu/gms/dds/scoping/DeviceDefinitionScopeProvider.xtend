@@ -10,11 +10,11 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EReference
 import dk.sdu.gms.dds.deviceDefinition.Actuator
 import dk.sdu.gms.dds.deviceDefinition.Sensor
-import dk.sdu.gms.dds.deviceDefinition.Graph
 import dk.sdu.gms.dds.deviceDefinition.GraphVariableUse
 import static dk.sdu.gms.dds.Utils.*
 import java.util.stream.Collectors
 import java.util.stream.Stream
+import org.eclipse.xtext.scoping.IScope
 
 /**
  * This class contains custom scoping description.
@@ -38,19 +38,17 @@ class DeviceDefinitionScopeProvider extends AbstractDeviceDefinitionScopeProvide
 		
 		if (context instanceof GraphVariableUse) {
 			if (reference == DeviceDefinitionPackage.Literals.GRAPH_VARIABLE_USE__WORKER) {
-				if (context.worker === null) return super.getScope(context, reference);
 				return Scopes.scopeFor(system(context).gateway.workers)
 			}
 			if (reference == DeviceDefinitionPackage.Literals.GRAPH_VARIABLE_USE__DEVICE) {
-				if (context.worker === null) return super.getScope(context, reference);
+				if (context.worker.eContainer === null) return IScope.NULLSCOPE
 				return Scopes.scopeFor(context.worker.devices.stream().filter(x | x instanceof Sensor).collect(Collectors.toList()))
 			}
 			if (reference == DeviceDefinitionPackage.Literals.VARIABLE_USE__REF) {
-				if (context.device === null) return super.getScope(context, reference);
+				if (context.worker.eContainer === null || context.device.eContainer === null) return IScope.NULLSCOPE
 				val device = context.device
 				return switch (device) {
-					Sensor: Scopes.scopeFor(Stream.concat(device.settings.stream(), device.outputs.stream()).collect(Collectors.toList()))
-					Actuator: Scopes.scopeFor(device.settings)
+					Sensor: Scopes.scopeFor(device.outputs)
 				}
 			}
 		}

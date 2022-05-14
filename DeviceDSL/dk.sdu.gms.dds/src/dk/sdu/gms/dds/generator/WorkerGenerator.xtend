@@ -10,6 +10,7 @@ import dk.sdu.gms.dds.deviceDefinition.Actuator
 import dk.sdu.gms.dds.actuators.ActuatorDefinition
 import dk.sdu.gms.dds.deviceDefinition.OnOff
 import dk.sdu.gms.dds.sensors.SensorDefinition
+import dk.sdu.gms.dds.deviceDefinition.Sensor
 
 public class WorkerGenerator {
 	
@@ -165,7 +166,7 @@ public class WorkerGenerator {
 	    «ActuatorDefinition.getActuatorDefinition(actuator).generateEnableActuatorCode(actuator, getEnabledVariableName(actuator))»
 	  }
 	  «ELSEIF actuator.trigger instanceof OnOff»
-	  «FOR sensor : getAllReferencedInExternalVariableUseSensors((actuator.trigger as OnOff).offExp)»
+	  «FOR sensor : getChildrenOfType((actuator.trigger as OnOff).offExp, typeof(Sensor)).stream().filter(x | x !== null).distinct().collect(Collectors.toList())»
 	  if («getEnabledVariableName(actuator)») {
 	  	«SensorDefinition.getSensorDefinition(sensor).generateLoop(sensor)»
 	  }

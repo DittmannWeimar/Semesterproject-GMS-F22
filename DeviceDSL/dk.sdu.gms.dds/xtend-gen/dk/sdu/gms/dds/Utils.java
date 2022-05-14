@@ -624,6 +624,17 @@ public class Utils {
     return (_plus_3 + _sampleMqttSubject);
   }
   
+  public static String getSettingMqttTopic(final Setting setting) {
+    String _mac = Utils.gateway(setting).getMac();
+    String _plus = ("settings/" + _mac);
+    String _plus_1 = (_plus + "/");
+    String _mac_1 = Utils.worker(setting).getMac();
+    String _plus_2 = (_plus_1 + _mac_1);
+    String _plus_3 = (_plus_2 + "/");
+    String _bindingName = Utils.getBindingName(setting);
+    return (_plus_3 + _bindingName);
+  }
+  
   public static boolean isTimed(final Trigger trigger) {
     if ((trigger instanceof OnOff)) {
       Expression _offExp = ((OnOff)trigger).getOffExp();
@@ -671,23 +682,20 @@ public class Utils {
     return _switchResult;
   }
   
-  public static ArrayList<Sensor> getAllReferencedInExternalVariableUseSensors(final Expression exp) {
-    final ArrayList<Sensor> list = new ArrayList<Sensor>();
-    Utils.recursiveGetAllReferencedInExternalVariableUseSensors(exp, list);
+  public static <T extends Object> ArrayList<T> getChildrenOfType(final EObject obj, final Class<T> type) {
+    ArrayList<T> list = new ArrayList<T>();
+    Utils.<T>recursiveGetChildrenOfType(obj, list, type);
     return list;
   }
   
-  private static void recursiveGetAllReferencedInExternalVariableUseSensors(final EObject obj, final List<Sensor> list) {
+  private static <T extends Object> void recursiveGetChildrenOfType(final EObject obj, final List<T> list, final Class<T> type) {
     EList<EObject> _eContents = obj.eContents();
     for (final EObject content : _eContents) {
-      if ((content instanceof ExternalVariableUse)) {
-        Device _obj = ((ExternalVariableUse) content).getObj();
-        final Sensor sensor = ((Sensor) _obj);
-        if ((sensor != null)) {
-          list.add(sensor);
-        }
+      boolean _isInstance = type.isInstance(content);
+      if (_isInstance) {
+        list.add(((T) content));
       } else {
-        Utils.recursiveGetAllReferencedInExternalVariableUseSensors(content, list);
+        Utils.<T>recursiveGetChildrenOfType(content, list, type);
       }
     }
   }

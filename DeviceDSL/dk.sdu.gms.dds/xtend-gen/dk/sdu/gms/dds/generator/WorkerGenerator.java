@@ -480,8 +480,11 @@ public class WorkerGenerator {
             if ((_trigger_2 instanceof OnOff)) {
               {
                 Trigger _trigger_3 = actuator_1.getTrigger();
-                ArrayList<Sensor> _allReferencedInExternalVariableUseSensors = Utils.getAllReferencedInExternalVariableUseSensors(((OnOff) _trigger_3).getOffExp());
-                for(final Sensor sensor : _allReferencedInExternalVariableUseSensors) {
+                final Predicate<Sensor> _function_2 = (Sensor x) -> {
+                  return (x != null);
+                };
+                List<Sensor> _collect_1 = Utils.<Sensor>getChildrenOfType(((OnOff) _trigger_3).getOffExp(), Sensor.class).stream().filter(_function_2).distinct().collect(Collectors.<Sensor>toList());
+                for(final Sensor sensor : _collect_1) {
                   _builder.append("  ");
                   _builder.append("if (");
                   CharSequence _enabledVariableName_2 = Utils.getEnabledVariableName(actuator_1);
