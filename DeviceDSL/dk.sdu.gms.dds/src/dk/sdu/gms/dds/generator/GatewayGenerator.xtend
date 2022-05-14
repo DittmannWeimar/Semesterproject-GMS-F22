@@ -13,7 +13,7 @@ public class GatewayGenerator {
 	
 	public static def generateGateway(Gateway gateway, IFileSystemAccess2 fsa) {
 		val code = gateway.generateCode
-		fsa.generateFile("gateway/gateway.ino", code);
+		fsa.generateFile(system(gateway).name + "/" + "gateway/gateway.ino", code);
 	}
 	
 	static def generateCode (Gateway gateway) '''
@@ -54,7 +54,6 @@ public class GatewayGenerator {
 		
 		const char* WIFI_SSID = "«system(gateway).wifiSsid»";
 		const char* WIFI_PW = "«system(gateway).wifiPassword»";
-		const char* STATION_NAME = "Gateway";
 		
 		EspMQTTClient client(
 		  WIFI_SSID,
@@ -79,14 +78,11 @@ public class GatewayGenerator {
 		  Serial.print("Gateway starting with MAC address ");
 		  Serial.println(WiFi.macAddress());
 		  
-		  WiFi.begin(WIFI_SSID, WIFI_PW);
-		
-		  if (WiFi.softAP(STATION_NAME, "123456789", 1, 0)) {
-		    Serial.println("Soft AP set up");
-		  }else{
-		    Serial.println("Failed to set up soft AP.");
-		  }
+		  int32_t channel = «gateway.channel»;
+		  esp_wifi_set_channel(channel, WIFI_SECOND_CHAN_NONE);
 		  
+		  WiFi.begin(WIFI_SSID, WIFI_PW);
+
 		  while (WiFi.status() != WL_CONNECTED) {
 		    delay(1000);
 		    Serial.println("Establishing connection to WiFi..");
@@ -125,7 +121,7 @@ public class GatewayGenerator {
 			«var bytes = macAsBytes(worker.mac)»
 				set_mac_bytes(workers[«indexOf(gateway, worker)»].address, «bytes.get(0)», «bytes.get(1)», «bytes.get(2)», «bytes.get(3)», «bytes.get(4)», «bytes.get(5)»);
 				memcpy(workers[«indexOf(gateway, worker)»].info.peer_addr, workers[«indexOf(gateway, worker)»].address, 6);
-				workers[«indexOf(gateway, worker)»].info.channel = 0;  
+				workers[«indexOf(gateway, worker)»].info.channel = «gateway.channel»;  
 				workers[«indexOf(gateway, worker)»].info.encrypt = false;
 			«ENDFOR»
 		}
@@ -267,7 +263,7 @@ public class GatewayGenerator {
 		  bool success = false;
 		  for (int i = 0; i < «getRetriesOrDefault(gateway)»; i++) {
 		    esp_err_t result = esp_now_send(mac, incomingData, len);
-		    delay(250);
+		    delay((uint64_t)«getRetryDelayOrDefault(gateway) * getTimeUnitMsMultiplier(gateway.delayTimeUnit)»);
 		    if (messageSuccess) {
 		      success = true;
 		      break;

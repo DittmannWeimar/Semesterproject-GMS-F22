@@ -15,7 +15,10 @@ import org.eclipse.xtext.generator.IFileSystemAccess2;
 public class GatewayGenerator {
   public static void generateGateway(final Gateway gateway, final IFileSystemAccess2 fsa) {
     final CharSequence code = GatewayGenerator.generateCode(gateway);
-    fsa.generateFile("gateway/gateway.ino", code);
+    String _name = Utils.system(gateway).getName();
+    String _plus = (_name + "/");
+    String _plus_1 = (_plus + "gateway/gateway.ino");
+    fsa.generateFile(_plus_1, code);
   }
   
   public static CharSequence generateCode(final Gateway gateway) {
@@ -106,8 +109,6 @@ public class GatewayGenerator {
     _builder.append(_wifiPassword);
     _builder.append("\";");
     _builder.newLineIfNotEmpty();
-    _builder.append("const char* STATION_NAME = \"Gateway\";");
-    _builder.newLine();
     _builder.newLine();
     _builder.append("EspMQTTClient client(");
     _builder.newLine();
@@ -185,25 +186,19 @@ public class GatewayGenerator {
     _builder.append("  ");
     _builder.newLine();
     _builder.append("  ");
+    _builder.append("int32_t channel = ");
+    int _channel = gateway.getChannel();
+    _builder.append(_channel, "  ");
+    _builder.append(";");
+    _builder.newLineIfNotEmpty();
+    _builder.append("  ");
+    _builder.append("esp_wifi_set_channel(channel, WIFI_SECOND_CHAN_NONE);");
+    _builder.newLine();
+    _builder.append("  ");
+    _builder.newLine();
+    _builder.append("  ");
     _builder.append("WiFi.begin(WIFI_SSID, WIFI_PW);");
     _builder.newLine();
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("if (WiFi.softAP(STATION_NAME, \"123456789\", 1, 0)) {");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("Serial.println(\"Soft AP set up\");");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("}else{");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("Serial.println(\"Failed to set up soft AP.\");");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("  ");
     _builder.newLine();
     _builder.append("  ");
     _builder.append("while (WiFi.status() != WL_CONNECTED) {");
@@ -342,7 +337,10 @@ public class GatewayGenerator {
         _builder.append("workers[");
         int _indexOf_3 = Utils.indexOf(gateway, worker);
         _builder.append(_indexOf_3, "\t\t");
-        _builder.append("].info.channel = 0;  ");
+        _builder.append("].info.channel = ");
+        int _channel_1 = gateway.getChannel();
+        _builder.append(_channel_1, "\t\t");
+        _builder.append(";  ");
         _builder.newLineIfNotEmpty();
         _builder.append("\t");
         _builder.append("\t");
@@ -718,8 +716,13 @@ public class GatewayGenerator {
     _builder.append("esp_err_t result = esp_now_send(mac, incomingData, len);");
     _builder.newLine();
     _builder.append("    ");
-    _builder.append("delay(250);");
-    _builder.newLine();
+    _builder.append("delay((uint64_t)");
+    float _retryDelayOrDefault = Utils.getRetryDelayOrDefault(gateway);
+    int _timeUnitMsMultiplier = Utils.getTimeUnitMsMultiplier(gateway.getDelayTimeUnit());
+    float _multiply = (_retryDelayOrDefault * _timeUnitMsMultiplier);
+    _builder.append(_multiply, "    ");
+    _builder.append(");");
+    _builder.newLineIfNotEmpty();
     _builder.append("    ");
     _builder.append("if (messageSuccess) {");
     _builder.newLine();

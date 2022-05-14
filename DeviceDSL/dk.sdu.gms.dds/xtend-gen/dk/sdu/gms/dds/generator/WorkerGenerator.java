@@ -6,12 +6,17 @@ import dk.sdu.gms.dds.actuators.ActuatorDefinition;
 import dk.sdu.gms.dds.deviceDefinition.Actuator;
 import dk.sdu.gms.dds.deviceDefinition.Device;
 import dk.sdu.gms.dds.deviceDefinition.OnOff;
+import dk.sdu.gms.dds.deviceDefinition.Sensor;
 import dk.sdu.gms.dds.deviceDefinition.SensorOutput;
 import dk.sdu.gms.dds.deviceDefinition.Setting;
 import dk.sdu.gms.dds.deviceDefinition.Trigger;
 import dk.sdu.gms.dds.deviceDefinition.Worker;
+import dk.sdu.gms.dds.sensors.SensorDefinition;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
@@ -20,12 +25,15 @@ import org.eclipse.xtext.xbase.lib.ExclusiveRange;
 @SuppressWarnings("all")
 public class WorkerGenerator {
   public static void generateWorker(final Worker worker, final IFileSystemAccess2 fsa) {
+    String _name = Utils.system(worker).getName();
+    String _plus = (_name + "/");
     String _replace = worker.getMac().replace(":", "");
-    String _plus = (_replace + "/");
+    String _plus_1 = (_plus + _replace);
+    String _plus_2 = (_plus_1 + "/");
     String _replace_1 = worker.getMac().replace(":", "");
-    String _plus_1 = (_plus + _replace_1);
-    String _plus_2 = (_plus_1 + ".ino");
-    fsa.generateFile(_plus_2, WorkerGenerator.generateCode(worker));
+    String _plus_3 = (_plus_2 + _replace_1);
+    String _plus_4 = (_plus_3 + ".ino");
+    fsa.generateFile(_plus_4, WorkerGenerator.generateCode(worker));
   }
   
   public static CharSequence generateCode(final Worker worker) {
@@ -155,9 +163,6 @@ public class WorkerGenerator {
     _builder.append("bool messageSuccess = false;");
     _builder.newLine();
     _builder.newLine();
-    _builder.append("int espnow_channel = 0;");
-    _builder.newLine();
-    _builder.newLine();
     _builder.append("void setup() {");
     _builder.newLine();
     _builder.append("  ");
@@ -166,76 +171,19 @@ public class WorkerGenerator {
     _builder.append("  ");
     _builder.append("WiFi.disconnect();");
     _builder.newLine();
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("if(scan) {");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("uint8_t networks = WiFi.scanNetworks();");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("for(int n=0;n<networks;n++) {");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("Serial.printf(\"%d %s   %d   %d %s \\n\", n,WiFi.SSID(n).c_str(),WiFi.RSSI(n), WiFi.channel(n), WiFi.BSSIDstr(n).c_str());");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("for(int i=0;i<8;i++) {");
-    _builder.newLine();
-    _builder.append("            ");
-    _builder.append("Serial.print(WiFi.BSSID(n)[i]);");
-    _builder.newLine();
-    _builder.append("            ");
-    _builder.append("Serial.print(\" \");");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("Serial.println();");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("if(WiFi.SSID(n).indexOf(STATION_NAME) == 0)");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("{");
-    _builder.newLine();
-    _builder.append("            ");
-    _builder.append("Serial.println(\"Found\");");
-    _builder.newLine();
-    _builder.append("            ");
-    _builder.append("memcpy(gatewayAddress, WiFi.BSSID(n), 6);");
-    _builder.newLine();
-    _builder.append("            ");
-    _builder.append("espnow_channel = WiFi.channel(n);");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("WiFi.scanDelete();");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("}");
-    _builder.newLine();
     _builder.append("  ");
     _builder.newLine();
     _builder.append("  ");
     _builder.append("esp_wifi_set_promiscuous(true);");
     _builder.newLine();
     _builder.append("  ");
-    _builder.append("esp_wifi_set_channel(espnow_channel, WIFI_SECOND_CHAN_NONE);");
-    _builder.newLine();
+    _builder.append("esp_wifi_set_channel(");
+    int _channel = Utils.gateway(worker).getChannel();
+    _builder.append(_channel, "  ");
+    _builder.append(", WIFI_SECOND_CHAN_NONE);");
+    _builder.newLineIfNotEmpty();
     _builder.append("  ");
     _builder.append("esp_wifi_set_promiscuous(false);");
-    _builder.newLine();
     _builder.newLine();
     _builder.append(" ");
     _builder.newLine();
@@ -326,8 +274,11 @@ public class WorkerGenerator {
     _builder.append("memcpy(gatewayInfo.peer_addr, gatewayAddress, 6);");
     _builder.newLine();
     _builder.append("  ");
-    _builder.append("gatewayInfo.channel = 0;  ");
-    _builder.newLine();
+    _builder.append("gatewayInfo.channel = ");
+    int _channel_1 = Utils.gateway(worker).getChannel();
+    _builder.append(_channel_1, "  ");
+    _builder.append(";  ");
+    _builder.newLineIfNotEmpty();
     _builder.append("  ");
     _builder.append("gatewayInfo.encrypt = false;");
     _builder.newLine();
@@ -422,45 +373,21 @@ public class WorkerGenerator {
     _builder.append("void loop() {");
     _builder.newLine();
     _builder.append("  ");
+    _builder.newLine();
+    _builder.append("  ");
+    _builder.append("float value = 0;");
+    _builder.newLine();
+    _builder.append("  ");
     _builder.append("uint64_t current_time = esp_timer_get_time() / 1000ULL;");
     _builder.newLine();
     _builder.append("  ");
     _builder.append("if (current_time > last_loop_time + ");
-    int _sleepTime = worker.getSleepTime();
+    float _asFloat = Utils.asFloat(worker.getSleepTime());
     int _timeUnitMsMultiplier = Utils.getTimeUnitMsMultiplier(worker.getTimeUnit());
-    int _multiply = (_sleepTime * _timeUnitMsMultiplier);
+    float _multiply = (_asFloat * _timeUnitMsMultiplier);
     _builder.append(_multiply, "  ");
     _builder.append(") {");
     _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    _builder.newLine();
-    {
-      ArrayList<SensorOutput> _workerSensorOutputs_1 = Utils.getWorkerSensorOutputs(Utils.gateway(worker));
-      for(final SensorOutput output_1 : _workerSensorOutputs_1) {
-        _builder.append("    ");
-        _builder.append("sampleMessage.");
-        String _sampleMessageName_1 = Utils.getSampleMessageName(output_1);
-        _builder.append(_sampleMessageName_1, "    ");
-        _builder.append(" = 1.0 / 0.0;");
-        _builder.newLineIfNotEmpty();
-      }
-    }
-    _builder.append("    ");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("float value = 0;");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.newLine();
-    {
-      EList<Device> _devices_3 = worker.getDevices();
-      for(final Device device_3 : _devices_3) {
-        _builder.append("    ");
-        CharSequence _generateLoop = DeviceDefinition.getDefinition(device_3).generateLoop(device_3);
-        _builder.append(_generateLoop, "    ");
-        _builder.newLineIfNotEmpty();
-      }
-    }
     _builder.append("    ");
     _builder.newLine();
     {
@@ -476,6 +403,29 @@ public class WorkerGenerator {
     }
     _builder.append("    ");
     _builder.newLine();
+    {
+      ArrayList<SensorOutput> _workerSensorOutputs_1 = Utils.getWorkerSensorOutputs(Utils.gateway(worker));
+      for(final SensorOutput output_1 : _workerSensorOutputs_1) {
+        _builder.append("   \t");
+        _builder.append("sampleMessage.");
+        String _sampleMessageName_1 = Utils.getSampleMessageName(output_1);
+        _builder.append(_sampleMessageName_1, "   \t");
+        _builder.append(" = 1.0 / 0.0; // This is terrible don\'t hate me.");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("    ");
+    _builder.newLine();
+    {
+      EList<Device> _devices_3 = worker.getDevices();
+      for(final Device device_3 : _devices_3) {
+        CharSequence _generateLoop = DeviceDefinition.getDefinition(device_3).generateLoop(device_3);
+        _builder.append(_generateLoop);
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("    ");
+    _builder.newLine();
     _builder.append("    ");
     _builder.append("last_loop_time = current_time;");
     _builder.newLine();
@@ -485,38 +435,91 @@ public class WorkerGenerator {
     _builder.append("  ");
     _builder.newLine();
     {
-      List<Actuator> _timedActuators_1 = Utils.getTimedActuators(worker);
-      for(final Actuator actuator_1 : _timedActuators_1) {
-        _builder.append("  ");
-        _builder.append("if (current_time > ");
-        String _timerName_1 = Utils.getTimerName(actuator_1);
-        _builder.append(_timerName_1, "  ");
-        _builder.append(" + ");
-        Trigger _trigger = actuator_1.getTrigger();
-        int _time = ((OnOff) _trigger).getTime();
-        Trigger _trigger_1 = actuator_1.getTrigger();
-        int _timeUnitMsMultiplier_1 = Utils.getTimeUnitMsMultiplier(((OnOff) _trigger_1).getUnit());
-        int _multiply_1 = (_time * _timeUnitMsMultiplier_1);
-        _builder.append(_multiply_1, "  ");
-        _builder.append(" && ");
-        CharSequence _enabledVariableName = Utils.getEnabledVariableName(actuator_1);
-        _builder.append(_enabledVariableName, "  ");
-        _builder.append(") {");
-        _builder.newLineIfNotEmpty();
-        _builder.append("  ");
-        _builder.append("  ");
-        CharSequence _enabledVariableName_1 = Utils.getEnabledVariableName(actuator_1);
-        _builder.append(_enabledVariableName_1, "    ");
-        _builder.append(" = false;");
-        _builder.newLineIfNotEmpty();
-        _builder.append("  ");
-        _builder.append("  ");
-        CharSequence _generateEnableActuatorCode = ActuatorDefinition.getActuatorDefinition(actuator_1).generateEnableActuatorCode(actuator_1, Utils.getEnabledVariableName(actuator_1));
-        _builder.append(_generateEnableActuatorCode, "    ");
-        _builder.newLineIfNotEmpty();
-        _builder.append("  ");
-        _builder.append("}");
-        _builder.newLine();
+      final Predicate<Device> _function = (Device x) -> {
+        return (x instanceof Actuator);
+      };
+      final Function<Device, Actuator> _function_1 = (Device x) -> {
+        return ((Actuator) x);
+      };
+      List<Actuator> _collect = worker.getDevices().stream().filter(_function).<Actuator>map(_function_1).collect(Collectors.<Actuator>toList());
+      for(final Actuator actuator_1 : _collect) {
+        {
+          if (((actuator_1.getTrigger() instanceof OnOff) && Utils.isTimed(actuator_1.getTrigger()))) {
+            _builder.append("  ");
+            _builder.append("if (current_time > ");
+            String _timerName_1 = Utils.getTimerName(actuator_1);
+            _builder.append(_timerName_1, "  ");
+            _builder.append(" + ");
+            Trigger _trigger = actuator_1.getTrigger();
+            int _time = ((OnOff) _trigger).getTime();
+            Trigger _trigger_1 = actuator_1.getTrigger();
+            int _timeUnitMsMultiplier_1 = Utils.getTimeUnitMsMultiplier(((OnOff) _trigger_1).getUnit());
+            int _multiply_1 = (_time * _timeUnitMsMultiplier_1);
+            _builder.append(_multiply_1, "  ");
+            _builder.append(" && ");
+            CharSequence _enabledVariableName = Utils.getEnabledVariableName(actuator_1);
+            _builder.append(_enabledVariableName, "  ");
+            _builder.append(") {");
+            _builder.newLineIfNotEmpty();
+            _builder.append("  ");
+            _builder.append("  ");
+            CharSequence _enabledVariableName_1 = Utils.getEnabledVariableName(actuator_1);
+            _builder.append(_enabledVariableName_1, "    ");
+            _builder.append(" = false;");
+            _builder.newLineIfNotEmpty();
+            _builder.append("  ");
+            _builder.append("  ");
+            CharSequence _generateEnableActuatorCode = ActuatorDefinition.getActuatorDefinition(actuator_1).generateEnableActuatorCode(actuator_1, Utils.getEnabledVariableName(actuator_1));
+            _builder.append(_generateEnableActuatorCode, "    ");
+            _builder.newLineIfNotEmpty();
+            _builder.append("  ");
+            _builder.append("}");
+            _builder.newLine();
+          } else {
+            Trigger _trigger_2 = actuator_1.getTrigger();
+            if ((_trigger_2 instanceof OnOff)) {
+              {
+                Trigger _trigger_3 = actuator_1.getTrigger();
+                ArrayList<Sensor> _allReferencedInExternalVariableUseSensors = Utils.getAllReferencedInExternalVariableUseSensors(((OnOff) _trigger_3).getOffExp());
+                for(final Sensor sensor : _allReferencedInExternalVariableUseSensors) {
+                  _builder.append("  ");
+                  _builder.append("if (");
+                  CharSequence _enabledVariableName_2 = Utils.getEnabledVariableName(actuator_1);
+                  _builder.append(_enabledVariableName_2, "  ");
+                  _builder.append(") {");
+                  _builder.newLineIfNotEmpty();
+                  _builder.append("  ");
+                  _builder.append("\t");
+                  CharSequence _generateLoop_1 = SensorDefinition.getSensorDefinition(sensor).generateLoop(sensor);
+                  _builder.append(_generateLoop_1, "  \t");
+                  _builder.newLineIfNotEmpty();
+                  _builder.append("  ");
+                  _builder.append("}");
+                  _builder.newLine();
+                  _builder.append("  ");
+                  _builder.append("if (");
+                  CharSequence _enabledVariableName_3 = Utils.getEnabledVariableName(actuator_1);
+                  _builder.append(_enabledVariableName_3, "  ");
+                  _builder.append(" == true && (bool)(");
+                  Trigger _trigger_4 = actuator_1.getTrigger();
+                  String _generateExpression_1 = Utils.generateExpression(((OnOff) _trigger_4).getOffExp());
+                  _builder.append(_generateExpression_1, "  ");
+                  _builder.append(")) {");
+                  _builder.newLineIfNotEmpty();
+                  _builder.append("  ");
+                  _builder.append("\t");
+                  CharSequence _enabledVariableName_4 = Utils.getEnabledVariableName(actuator_1);
+                  _builder.append(_enabledVariableName_4, "  \t");
+                  _builder.append(" = false;");
+                  _builder.newLineIfNotEmpty();
+                  _builder.append("  ");
+                  _builder.append("}");
+                  _builder.newLine();
+                }
+              }
+            }
+          }
+        }
       }
     }
     _builder.newLine();
@@ -675,8 +678,13 @@ public class WorkerGenerator {
     _builder.append("esp_err_t result = esp_now_send(mac, incomingData, len);");
     _builder.newLine();
     _builder.append("    ");
-    _builder.append("delay(250);");
-    _builder.newLine();
+    _builder.append("delay((uint64_t)");
+    float _retryDelayOrDefault = Utils.getRetryDelayOrDefault(worker);
+    int _timeUnitMsMultiplier_2 = Utils.getTimeUnitMsMultiplier(worker.getDelayTimeUnit());
+    float _multiply_2 = (_retryDelayOrDefault * _timeUnitMsMultiplier_2);
+    _builder.append(_multiply_2, "    ");
+    _builder.append(");");
+    _builder.newLineIfNotEmpty();
     _builder.append("    ");
     _builder.append("if (messageSuccess) {");
     _builder.newLine();

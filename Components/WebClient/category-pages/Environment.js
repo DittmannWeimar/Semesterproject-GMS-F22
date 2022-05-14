@@ -38,8 +38,8 @@ async function updateChart(chartId, topics, timeSinceNow) {
 }
 
 $(document).ready(function () {
-const graph_ref1810086879_context = document.getElementById('chart-Temperature').getContext('2d');
-graph_ref1810086879_data = {
+const graph_ref324693908_context = document.getElementById('chart-Temperature').getContext('2d');
+graph_ref324693908_data = {
     labels: [],
     datasets: [{
     	            label: '',
@@ -51,9 +51,9 @@ graph_ref1810086879_data = {
     ]
 }
 	
-graph_ref1810086879 = new Chart(graph_ref1810086879_context, {
+graph_ref324693908 = new Chart(graph_ref324693908_context, {
     type: 'line',
-    data: graph_ref1810086879_data,
+    data: graph_ref324693908_data,
     options: {
         scales: {
             y: {
@@ -72,15 +72,15 @@ graph_ref1810086879 = new Chart(graph_ref1810086879_context, {
     }
 });
 		
-chartIdToData['chart-Temperature'] = graph_ref1810086879_data;
-chartIdToChart['chart-Temperature'] = graph_ref1810086879;
+chartIdToData['chart-Temperature'] = graph_ref324693908_data;
+chartIdToChart['chart-Temperature'] = graph_ref324693908;
 chartIdToChartExtras['chart-Temperature'] = {}
 chartIdToChartExtras['chart-Temperature'].colors = [];
     	
 chartIdToChartExtras['chart-Temperature'].colors.push('rgba');
         
-const graph_ref2104323602_context = document.getElementById('chart-Humidity').getContext('2d');
-graph_ref2104323602_data = {
+const graph_ref1082118585_context = document.getElementById('chart-Humidity').getContext('2d');
+graph_ref1082118585_data = {
     labels: [],
     datasets: [{
     	            label: '',
@@ -92,9 +92,9 @@ graph_ref2104323602_data = {
     ]
 }
 	
-graph_ref2104323602 = new Chart(graph_ref2104323602_context, {
+graph_ref1082118585 = new Chart(graph_ref1082118585_context, {
     type: 'line',
-    data: graph_ref2104323602_data,
+    data: graph_ref1082118585_data,
     options: {
         scales: {
             y: {
@@ -113,8 +113,8 @@ graph_ref2104323602 = new Chart(graph_ref2104323602_context, {
     }
 });
 		
-chartIdToData['chart-Humidity'] = graph_ref2104323602_data;
-chartIdToChart['chart-Humidity'] = graph_ref2104323602;
+chartIdToData['chart-Humidity'] = graph_ref1082118585_data;
+chartIdToChart['chart-Humidity'] = graph_ref1082118585;
 chartIdToChartExtras['chart-Humidity'] = {}
 chartIdToChartExtras['chart-Humidity'].colors = [];
     	
@@ -123,10 +123,10 @@ chartIdToChartExtras['chart-Humidity'].colors.push('rgba');
 	
     MQTTConnect(mqtt => {
         // Make vars
-var mqtt_topic_1776817536 = 'samples/58:BF:25:E0:77:98/10:97:BD:D5:3E:64/th,temperature';
-mqtt.subscribe(mqtt_topic_1776817536);
-var mqtt_topic_195436323 = 'samples/58:BF:25:E0:77:98/10:97:BD:D5:3E:64/th,humidity';
-mqtt.subscribe(mqtt_topic_195436323);
+var mqtt_topic_1002032845 = 'samples/58:BF:25:E0:77:98/10:97:BD:D5:3E:64/th,temperature';
+mqtt.subscribe(mqtt_topic_1002032845);
+var mqtt_topic_1650925 = 'samples/58:BF:25:E0:77:98/10:97:BD:D5:3E:64/th,humidity';
+mqtt.subscribe(mqtt_topic_1650925);
 
         mqtt.onMessageArrived = function (message) {
             console.log("Message Arrived: " + message.payloadString);
@@ -141,15 +141,15 @@ mqtt.subscribe(mqtt_topic_195436323);
             xLabel = date.toLocaleTimeString();
             
             
-    	        if(message.destinationName == mqtt_topic_1776817536) {
-    	        		            graph_ref1810086879_data.labels.push(xLabel);
-    	        		            graph_ref1810086879_data.datasets[0].data.push(message.payloadString);
-    	        		            graph_ref1810086879.update();
+    	        if(message.destinationName == mqtt_topic_1002032845) {
+    	        		            graph_ref324693908_data.labels.push(xLabel);
+    	        		            graph_ref324693908_data.datasets[0].data.push(message.payloadString);
+    	        		            graph_ref324693908.update();
     	        }
-    	        if(message.destinationName == mqtt_topic_195436323) {
-    	        		            graph_ref2104323602_data.labels.push(xLabel);
-    	        		            graph_ref2104323602_data.datasets[0].data.push(message.payloadString);
-    	        		            graph_ref2104323602.update();
+    	        if(message.destinationName == mqtt_topic_1650925) {
+    	        		            graph_ref1082118585_data.labels.push(xLabel);
+    	        		            graph_ref1082118585_data.datasets[0].data.push(message.payloadString);
+    	        		            graph_ref1082118585.update();
     	        }
         }
     });

@@ -22,6 +22,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Worker#getTimeUnit <em>Time Unit</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Worker#getErrorLed <em>Error Led</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Worker#getRetries <em>Retries</em>}</li>
+ *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Worker#getDelay <em>Delay</em>}</li>
+ *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Worker#getDelayTimeUnit <em>Delay Time Unit</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Worker#getDevices <em>Devices</em>}</li>
  * </ul>
  *
@@ -76,26 +78,26 @@ public interface Worker extends EObject
   void setMac(String value);
 
   /**
-   * Returns the value of the '<em><b>Sleep Time</b></em>' attribute.
+   * Returns the value of the '<em><b>Sleep Time</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Sleep Time</em>' attribute.
-   * @see #setSleepTime(int)
+   * @return the value of the '<em>Sleep Time</em>' containment reference.
+   * @see #setSleepTime(NumberPrimitive)
    * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getWorker_SleepTime()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  int getSleepTime();
+  NumberPrimitive getSleepTime();
 
   /**
-   * Sets the value of the '{@link dk.sdu.gms.dds.deviceDefinition.Worker#getSleepTime <em>Sleep Time</em>}' attribute.
+   * Sets the value of the '{@link dk.sdu.gms.dds.deviceDefinition.Worker#getSleepTime <em>Sleep Time</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Sleep Time</em>' attribute.
+   * @param value the new value of the '<em>Sleep Time</em>' containment reference.
    * @see #getSleepTime()
    * @generated
    */
-  void setSleepTime(int value);
+  void setSleepTime(NumberPrimitive value);
 
   /**
    * Returns the value of the '<em><b>Time Unit</b></em>' containment reference.
@@ -142,6 +144,40 @@ public interface Worker extends EObject
    * @generated
    */
   EList<Integer> getRetries();
+
+  /**
+   * Returns the value of the '<em><b>Delay</b></em>' containment reference list.
+   * The list contents are of type {@link dk.sdu.gms.dds.deviceDefinition.NumberPrimitive}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Delay</em>' containment reference list.
+   * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getWorker_Delay()
+   * @model containment="true"
+   * @generated
+   */
+  EList<NumberPrimitive> getDelay();
+
+  /**
+   * Returns the value of the '<em><b>Delay Time Unit</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Delay Time Unit</em>' containment reference.
+   * @see #setDelayTimeUnit(TimeUnit)
+   * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getWorker_DelayTimeUnit()
+   * @model containment="true"
+   * @generated
+   */
+  TimeUnit getDelayTimeUnit();
+
+  /**
+   * Sets the value of the '{@link dk.sdu.gms.dds.deviceDefinition.Worker#getDelayTimeUnit <em>Delay Time Unit</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Delay Time Unit</em>' containment reference.
+   * @see #getDelayTimeUnit()
+   * @generated
+   */
+  void setDelayTimeUnit(TimeUnit value);
 
   /**
    * Returns the value of the '<em><b>Devices</b></em>' containment reference list.

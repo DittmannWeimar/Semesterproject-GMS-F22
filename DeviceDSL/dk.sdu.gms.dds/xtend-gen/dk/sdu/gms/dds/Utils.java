@@ -23,10 +23,12 @@ import dk.sdu.gms.dds.deviceDefinition.IntPrimitive;
 import dk.sdu.gms.dds.deviceDefinition.InternalVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.Lesser;
 import dk.sdu.gms.dds.deviceDefinition.LesserOrEquals;
+import dk.sdu.gms.dds.deviceDefinition.Millisecond;
 import dk.sdu.gms.dds.deviceDefinition.Minus;
 import dk.sdu.gms.dds.deviceDefinition.Minute;
 import dk.sdu.gms.dds.deviceDefinition.Mult;
 import dk.sdu.gms.dds.deviceDefinition.NotEquals;
+import dk.sdu.gms.dds.deviceDefinition.NumberPrimitive;
 import dk.sdu.gms.dds.deviceDefinition.OnOff;
 import dk.sdu.gms.dds.deviceDefinition.Or;
 import dk.sdu.gms.dds.deviceDefinition.Parenthesis;
@@ -62,6 +64,8 @@ public class Utils {
   public static int defaultRetries = 1;
   
   public static int defaultErrorLed = 2;
+  
+  public static float defaultRetryDelay = 0.5f;
   
   public static ArrayList<String> createSettingIndex(final Gateway gateway) {
     final ArrayList<String> list = new ArrayList<String>();
@@ -103,37 +107,24 @@ public class Utils {
     return list;
   }
   
-  public static Sensor sensor(final SensorOutput output) {
-    EObject _eContainer = output.eContainer();
-    return ((Sensor) _eContainer);
+  public static Sensor sensor(final EObject obj) {
+    return Utils.<Sensor>getParentOfType(obj, Sensor.class);
   }
   
-  public static Device device(final Setting setting) {
-    EObject _eContainer = setting.eContainer();
-    return ((Device) _eContainer);
+  public static Device device(final EObject obj) {
+    return Utils.<Device>getParentOfType(obj, Device.class);
   }
   
-  public static Worker worker(final Device device) {
-    EObject _eContainer = device.eContainer();
-    return ((Worker) _eContainer);
+  public static Worker worker(final EObject obj) {
+    return Utils.<Worker>getParentOfType(obj, Worker.class);
   }
   
-  public static Gateway gateway(final Worker worker) {
-    EObject _eContainer = worker.eContainer();
-    return ((Gateway) _eContainer);
+  public static Gateway gateway(final EObject obj) {
+    return Utils.<Gateway>getParentOfType(obj, Gateway.class);
   }
   
   public static dk.sdu.gms.dds.deviceDefinition.System system(final EObject obj) {
-    EObject current = obj;
-    while ((current.eContainer() != null)) {
-      {
-        current = current.eContainer();
-        if ((current instanceof dk.sdu.gms.dds.deviceDefinition.System)) {
-          return ((dk.sdu.gms.dds.deviceDefinition.System)current);
-        }
-      }
-    }
-    return null;
+    return Utils.<dk.sdu.gms.dds.deviceDefinition.System>getParentOfType(obj, dk.sdu.gms.dds.deviceDefinition.System.class);
   }
   
   public static int indexOf(final Gateway gateway, final Worker worker) {
@@ -476,9 +467,15 @@ public class Utils {
   public static int getTimeUnitMsMultiplier(final TimeUnit unit) {
     int _switchResult = (int) 0;
     boolean _matched = false;
-    if (unit instanceof Second) {
+    if (unit instanceof Millisecond) {
       _matched=true;
-      _switchResult = 1000;
+      _switchResult = 1;
+    }
+    if (!_matched) {
+      if (unit instanceof Second) {
+        _matched=true;
+        _switchResult = 1000;
+      }
     }
     if (!_matched) {
       if (unit instanceof Minute) {
@@ -498,9 +495,15 @@ public class Utils {
   public static String timeUnitToString(final TimeUnit unit) {
     String _switchResult = null;
     boolean _matched = false;
-    if (unit instanceof Second) {
+    if (unit instanceof Millisecond) {
       _matched=true;
-      _switchResult = "second(s)";
+      _switchResult = "milliseconds(s)";
+    }
+    if (!_matched) {
+      if (unit instanceof Second) {
+        _matched=true;
+        _switchResult = "second(s)";
+      }
     }
     if (!_matched) {
       if (unit instanceof Minute) {
@@ -651,6 +654,44 @@ public class Utils {
     return null;
   }
   
+  public static float asFloat(final NumberPrimitive primitive) {
+    float _switchResult = (float) 0;
+    boolean _matched = false;
+    if (primitive instanceof IntPrimitive) {
+      _matched=true;
+      int _value = ((IntPrimitive)primitive).getValue();
+      _switchResult = ((float) _value);
+    }
+    if (!_matched) {
+      if (primitive instanceof DecimalPrimitive) {
+        _matched=true;
+        _switchResult = Float.parseFloat(((DecimalPrimitive)primitive).getValue());
+      }
+    }
+    return _switchResult;
+  }
+  
+  public static ArrayList<Sensor> getAllReferencedInExternalVariableUseSensors(final Expression exp) {
+    final ArrayList<Sensor> list = new ArrayList<Sensor>();
+    Utils.recursiveGetAllReferencedInExternalVariableUseSensors(exp, list);
+    return list;
+  }
+  
+  private static void recursiveGetAllReferencedInExternalVariableUseSensors(final EObject obj, final List<Sensor> list) {
+    EList<EObject> _eContents = obj.eContents();
+    for (final EObject content : _eContents) {
+      if ((content instanceof ExternalVariableUse)) {
+        Device _obj = ((ExternalVariableUse) content).getObj();
+        final Sensor sensor = ((Sensor) _obj);
+        if ((sensor != null)) {
+          list.add(sensor);
+        }
+      } else {
+        Utils.recursiveGetAllReferencedInExternalVariableUseSensors(content, list);
+      }
+    }
+  }
+  
   protected static Integer _getRetriesOrDefault(final Worker worker) {
     int _size = worker.getRetries().size();
     boolean _equals = (_size == 0);
@@ -685,6 +726,24 @@ public class Utils {
       return Integer.valueOf(Utils.defaultErrorLed);
     }
     return gateway.getErrorLed().get(0);
+  }
+  
+  protected static float _getRetryDelayOrDefault(final Worker worker) {
+    int _size = worker.getDelay().size();
+    boolean _equals = (_size == 0);
+    if (_equals) {
+      return Utils.defaultRetryDelay;
+    }
+    return Utils.asFloat(worker.getDelay().get(0));
+  }
+  
+  protected static float _getRetryDelayOrDefault(final Gateway gateway) {
+    int _size = gateway.getDelay().size();
+    boolean _equals = (_size == 0);
+    if (_equals) {
+      return Utils.defaultRetryDelay;
+    }
+    return Utils.asFloat(gateway.getDelay().get(0));
   }
   
   public static String getSampleMessageName(final SensorOutput output) {
@@ -735,6 +794,17 @@ public class Utils {
       return _getErrorLedOrDefault((Gateway)gateway);
     } else if (gateway instanceof Worker) {
       return _getErrorLedOrDefault((Worker)gateway);
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(gateway).toString());
+    }
+  }
+  
+  public static float getRetryDelayOrDefault(final EObject gateway) {
+    if (gateway instanceof Gateway) {
+      return _getRetryDelayOrDefault((Gateway)gateway);
+    } else if (gateway instanceof Worker) {
+      return _getRetryDelayOrDefault((Worker)gateway);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
         Arrays.<Object>asList(gateway).toString());

@@ -34,10 +34,12 @@ import dk.sdu.gms.dds.deviceDefinition.IntPrimitive;
 import dk.sdu.gms.dds.deviceDefinition.InternalVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.Lesser;
 import dk.sdu.gms.dds.deviceDefinition.LesserOrEquals;
+import dk.sdu.gms.dds.deviceDefinition.Millisecond;
 import dk.sdu.gms.dds.deviceDefinition.Minus;
 import dk.sdu.gms.dds.deviceDefinition.Minute;
 import dk.sdu.gms.dds.deviceDefinition.Mult;
 import dk.sdu.gms.dds.deviceDefinition.NotEquals;
+import dk.sdu.gms.dds.deviceDefinition.NumberPrimitive;
 import dk.sdu.gms.dds.deviceDefinition.OnOff;
 import dk.sdu.gms.dds.deviceDefinition.Or;
 import dk.sdu.gms.dds.deviceDefinition.Parenthesis;
@@ -137,6 +139,7 @@ public class DeviceDefinitionFactoryImpl extends EFactoryImpl implements DeviceD
       case DeviceDefinitionPackage.TRIGGER: return createTrigger();
       case DeviceDefinitionPackage.SETTING: return createSetting();
       case DeviceDefinitionPackage.PRIMITIVE: return createPrimitive();
+      case DeviceDefinitionPackage.NUMBER_PRIMITIVE: return createNumberPrimitive();
       case DeviceDefinitionPackage.EXPRESSION: return createExpression();
       case DeviceDefinitionPackage.EXTERNAL_CALL: return createExternalCall();
       case DeviceDefinitionPackage.INTERNAL_VARIABLE_USE: return createInternalVariableUse();
@@ -151,15 +154,16 @@ public class DeviceDefinitionFactoryImpl extends EFactoryImpl implements DeviceD
       case DeviceDefinitionPackage.DAC: return createDAC();
       case DeviceDefinitionPackage.GENERIC_IN: return createGenericIn();
       case DeviceDefinitionPackage.GENERIC_OUT: return createGenericOut();
+      case DeviceDefinitionPackage.MILLISECOND: return createMillisecond();
       case DeviceDefinitionPackage.SECOND: return createSecond();
       case DeviceDefinitionPackage.MINUTE: return createMinute();
       case DeviceDefinitionPackage.HOUR: return createHour();
       case DeviceDefinitionPackage.WHEN: return createWhen();
       case DeviceDefinitionPackage.ON_OFF: return createOnOff();
-      case DeviceDefinitionPackage.DECIMAL_PRIMITIVE: return createDecimalPrimitive();
-      case DeviceDefinitionPackage.INT_PRIMITIVE: return createIntPrimitive();
       case DeviceDefinitionPackage.BOOLEAN_TRUE: return createBooleanTrue();
       case DeviceDefinitionPackage.BOOLEAN_FALSE: return createBooleanFalse();
+      case DeviceDefinitionPackage.INT_PRIMITIVE: return createIntPrimitive();
+      case DeviceDefinitionPackage.DECIMAL_PRIMITIVE: return createDecimalPrimitive();
       case DeviceDefinitionPackage.PLUS: return createPlus();
       case DeviceDefinitionPackage.MINUS: return createMinus();
       case DeviceDefinitionPackage.MULT: return createMult();
@@ -422,6 +426,18 @@ public class DeviceDefinitionFactoryImpl extends EFactoryImpl implements DeviceD
    * @generated
    */
   @Override
+  public NumberPrimitive createNumberPrimitive()
+  {
+    NumberPrimitiveImpl numberPrimitive = new NumberPrimitiveImpl();
+    return numberPrimitive;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Expression createExpression()
   {
     ExpressionImpl expression = new ExpressionImpl();
@@ -590,6 +606,18 @@ public class DeviceDefinitionFactoryImpl extends EFactoryImpl implements DeviceD
    * @generated
    */
   @Override
+  public Millisecond createMillisecond()
+  {
+    MillisecondImpl millisecond = new MillisecondImpl();
+    return millisecond;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Second createSecond()
   {
     SecondImpl second = new SecondImpl();
@@ -650,10 +678,22 @@ public class DeviceDefinitionFactoryImpl extends EFactoryImpl implements DeviceD
    * @generated
    */
   @Override
-  public DecimalPrimitive createDecimalPrimitive()
+  public BooleanTrue createBooleanTrue()
   {
-    DecimalPrimitiveImpl decimalPrimitive = new DecimalPrimitiveImpl();
-    return decimalPrimitive;
+    BooleanTrueImpl booleanTrue = new BooleanTrueImpl();
+    return booleanTrue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public BooleanFalse createBooleanFalse()
+  {
+    BooleanFalseImpl booleanFalse = new BooleanFalseImpl();
+    return booleanFalse;
   }
 
   /**
@@ -674,22 +714,10 @@ public class DeviceDefinitionFactoryImpl extends EFactoryImpl implements DeviceD
    * @generated
    */
   @Override
-  public BooleanTrue createBooleanTrue()
+  public DecimalPrimitive createDecimalPrimitive()
   {
-    BooleanTrueImpl booleanTrue = new BooleanTrueImpl();
-    return booleanTrue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public BooleanFalse createBooleanFalse()
-  {
-    BooleanFalseImpl booleanFalse = new BooleanFalseImpl();
-    return booleanFalse;
+    DecimalPrimitiveImpl decimalPrimitive = new DecimalPrimitiveImpl();
+    return decimalPrimitive;
   }
 
   /**

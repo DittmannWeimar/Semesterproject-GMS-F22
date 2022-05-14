@@ -159,21 +159,6 @@ public abstract class ActuatorDefinition extends DeviceDefinition {
     _builder.newLineIfNotEmpty();
     _builder.append("}");
     _builder.newLine();
-    _builder.append("if (");
-    CharSequence _enabledVariableName_2 = Utils.getEnabledVariableName(actuator);
-    _builder.append(_enabledVariableName_2);
-    _builder.append(" == true && (bool)(");
-    String _generateExpression_1 = Utils.generateExpression(onOff.getOffExp());
-    _builder.append(_generateExpression_1);
-    _builder.append(")) {");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    CharSequence _enabledVariableName_3 = Utils.getEnabledVariableName(actuator);
-    _builder.append(_enabledVariableName_3, "\t");
-    _builder.append(" = false;");
-    _builder.newLineIfNotEmpty();
-    _builder.append("}");
-    _builder.newLine();
     return _builder;
   }
   

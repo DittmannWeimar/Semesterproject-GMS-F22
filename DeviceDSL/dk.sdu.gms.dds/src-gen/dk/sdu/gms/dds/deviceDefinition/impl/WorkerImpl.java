@@ -5,6 +5,7 @@ package dk.sdu.gms.dds.deviceDefinition.impl;
 
 import dk.sdu.gms.dds.deviceDefinition.Device;
 import dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage;
+import dk.sdu.gms.dds.deviceDefinition.NumberPrimitive;
 import dk.sdu.gms.dds.deviceDefinition.TimeUnit;
 import dk.sdu.gms.dds.deviceDefinition.Worker;
 
@@ -39,6 +40,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.WorkerImpl#getTimeUnit <em>Time Unit</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.WorkerImpl#getErrorLed <em>Error Led</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.WorkerImpl#getRetries <em>Retries</em>}</li>
+ *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.WorkerImpl#getDelay <em>Delay</em>}</li>
+ *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.WorkerImpl#getDelayTimeUnit <em>Delay Time Unit</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.WorkerImpl#getDevices <em>Devices</em>}</li>
  * </ul>
  *
@@ -87,24 +90,14 @@ public class WorkerImpl extends MinimalEObjectImpl.Container implements Worker
   protected String mac = MAC_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getSleepTime() <em>Sleep Time</em>}' attribute.
+   * The cached value of the '{@link #getSleepTime() <em>Sleep Time</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getSleepTime()
    * @generated
    * @ordered
    */
-  protected static final int SLEEP_TIME_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getSleepTime() <em>Sleep Time</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSleepTime()
-   * @generated
-   * @ordered
-   */
-  protected int sleepTime = SLEEP_TIME_EDEFAULT;
+  protected NumberPrimitive sleepTime;
 
   /**
    * The cached value of the '{@link #getTimeUnit() <em>Time Unit</em>}' containment reference.
@@ -135,6 +128,26 @@ public class WorkerImpl extends MinimalEObjectImpl.Container implements Worker
    * @ordered
    */
   protected EList<Integer> retries;
+
+  /**
+   * The cached value of the '{@link #getDelay() <em>Delay</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDelay()
+   * @generated
+   * @ordered
+   */
+  protected EList<NumberPrimitive> delay;
+
+  /**
+   * The cached value of the '{@link #getDelayTimeUnit() <em>Delay Time Unit</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDelayTimeUnit()
+   * @generated
+   * @ordered
+   */
+  protected TimeUnit delayTimeUnit;
 
   /**
    * The cached value of the '{@link #getDevices() <em>Devices</em>}' containment reference list.
@@ -223,7 +236,7 @@ public class WorkerImpl extends MinimalEObjectImpl.Container implements Worker
    * @generated
    */
   @Override
-  public int getSleepTime()
+  public NumberPrimitive getSleepTime()
   {
     return sleepTime;
   }
@@ -233,13 +246,38 @@ public class WorkerImpl extends MinimalEObjectImpl.Container implements Worker
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setSleepTime(int newSleepTime)
+  public NotificationChain basicSetSleepTime(NumberPrimitive newSleepTime, NotificationChain msgs)
   {
-    int oldSleepTime = sleepTime;
+    NumberPrimitive oldSleepTime = sleepTime;
     sleepTime = newSleepTime;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DeviceDefinitionPackage.WORKER__SLEEP_TIME, oldSleepTime, sleepTime));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeviceDefinitionPackage.WORKER__SLEEP_TIME, oldSleepTime, newSleepTime);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setSleepTime(NumberPrimitive newSleepTime)
+  {
+    if (newSleepTime != sleepTime)
+    {
+      NotificationChain msgs = null;
+      if (sleepTime != null)
+        msgs = ((InternalEObject)sleepTime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeviceDefinitionPackage.WORKER__SLEEP_TIME, null, msgs);
+      if (newSleepTime != null)
+        msgs = ((InternalEObject)newSleepTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeviceDefinitionPackage.WORKER__SLEEP_TIME, null, msgs);
+      msgs = basicSetSleepTime(newSleepTime, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceDefinitionPackage.WORKER__SLEEP_TIME, newSleepTime, newSleepTime));
   }
 
   /**
@@ -328,6 +366,71 @@ public class WorkerImpl extends MinimalEObjectImpl.Container implements Worker
    * @generated
    */
   @Override
+  public EList<NumberPrimitive> getDelay()
+  {
+    if (delay == null)
+    {
+      delay = new EObjectContainmentEList<NumberPrimitive>(NumberPrimitive.class, this, DeviceDefinitionPackage.WORKER__DELAY);
+    }
+    return delay;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TimeUnit getDelayTimeUnit()
+  {
+    return delayTimeUnit;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetDelayTimeUnit(TimeUnit newDelayTimeUnit, NotificationChain msgs)
+  {
+    TimeUnit oldDelayTimeUnit = delayTimeUnit;
+    delayTimeUnit = newDelayTimeUnit;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeviceDefinitionPackage.WORKER__DELAY_TIME_UNIT, oldDelayTimeUnit, newDelayTimeUnit);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDelayTimeUnit(TimeUnit newDelayTimeUnit)
+  {
+    if (newDelayTimeUnit != delayTimeUnit)
+    {
+      NotificationChain msgs = null;
+      if (delayTimeUnit != null)
+        msgs = ((InternalEObject)delayTimeUnit).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeviceDefinitionPackage.WORKER__DELAY_TIME_UNIT, null, msgs);
+      if (newDelayTimeUnit != null)
+        msgs = ((InternalEObject)newDelayTimeUnit).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeviceDefinitionPackage.WORKER__DELAY_TIME_UNIT, null, msgs);
+      msgs = basicSetDelayTimeUnit(newDelayTimeUnit, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceDefinitionPackage.WORKER__DELAY_TIME_UNIT, newDelayTimeUnit, newDelayTimeUnit));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<Device> getDevices()
   {
     if (devices == null)
@@ -347,8 +450,14 @@ public class WorkerImpl extends MinimalEObjectImpl.Container implements Worker
   {
     switch (featureID)
     {
+      case DeviceDefinitionPackage.WORKER__SLEEP_TIME:
+        return basicSetSleepTime(null, msgs);
       case DeviceDefinitionPackage.WORKER__TIME_UNIT:
         return basicSetTimeUnit(null, msgs);
+      case DeviceDefinitionPackage.WORKER__DELAY:
+        return ((InternalEList<?>)getDelay()).basicRemove(otherEnd, msgs);
+      case DeviceDefinitionPackage.WORKER__DELAY_TIME_UNIT:
+        return basicSetDelayTimeUnit(null, msgs);
       case DeviceDefinitionPackage.WORKER__DEVICES:
         return ((InternalEList<?>)getDevices()).basicRemove(otherEnd, msgs);
     }
@@ -377,6 +486,10 @@ public class WorkerImpl extends MinimalEObjectImpl.Container implements Worker
         return getErrorLed();
       case DeviceDefinitionPackage.WORKER__RETRIES:
         return getRetries();
+      case DeviceDefinitionPackage.WORKER__DELAY:
+        return getDelay();
+      case DeviceDefinitionPackage.WORKER__DELAY_TIME_UNIT:
+        return getDelayTimeUnit();
       case DeviceDefinitionPackage.WORKER__DEVICES:
         return getDevices();
     }
@@ -401,7 +514,7 @@ public class WorkerImpl extends MinimalEObjectImpl.Container implements Worker
         setMac((String)newValue);
         return;
       case DeviceDefinitionPackage.WORKER__SLEEP_TIME:
-        setSleepTime((Integer)newValue);
+        setSleepTime((NumberPrimitive)newValue);
         return;
       case DeviceDefinitionPackage.WORKER__TIME_UNIT:
         setTimeUnit((TimeUnit)newValue);
@@ -413,6 +526,13 @@ public class WorkerImpl extends MinimalEObjectImpl.Container implements Worker
       case DeviceDefinitionPackage.WORKER__RETRIES:
         getRetries().clear();
         getRetries().addAll((Collection<? extends Integer>)newValue);
+        return;
+      case DeviceDefinitionPackage.WORKER__DELAY:
+        getDelay().clear();
+        getDelay().addAll((Collection<? extends NumberPrimitive>)newValue);
+        return;
+      case DeviceDefinitionPackage.WORKER__DELAY_TIME_UNIT:
+        setDelayTimeUnit((TimeUnit)newValue);
         return;
       case DeviceDefinitionPackage.WORKER__DEVICES:
         getDevices().clear();
@@ -439,7 +559,7 @@ public class WorkerImpl extends MinimalEObjectImpl.Container implements Worker
         setMac(MAC_EDEFAULT);
         return;
       case DeviceDefinitionPackage.WORKER__SLEEP_TIME:
-        setSleepTime(SLEEP_TIME_EDEFAULT);
+        setSleepTime((NumberPrimitive)null);
         return;
       case DeviceDefinitionPackage.WORKER__TIME_UNIT:
         setTimeUnit((TimeUnit)null);
@@ -449,6 +569,12 @@ public class WorkerImpl extends MinimalEObjectImpl.Container implements Worker
         return;
       case DeviceDefinitionPackage.WORKER__RETRIES:
         getRetries().clear();
+        return;
+      case DeviceDefinitionPackage.WORKER__DELAY:
+        getDelay().clear();
+        return;
+      case DeviceDefinitionPackage.WORKER__DELAY_TIME_UNIT:
+        setDelayTimeUnit((TimeUnit)null);
         return;
       case DeviceDefinitionPackage.WORKER__DEVICES:
         getDevices().clear();
@@ -472,13 +598,17 @@ public class WorkerImpl extends MinimalEObjectImpl.Container implements Worker
       case DeviceDefinitionPackage.WORKER__MAC:
         return MAC_EDEFAULT == null ? mac != null : !MAC_EDEFAULT.equals(mac);
       case DeviceDefinitionPackage.WORKER__SLEEP_TIME:
-        return sleepTime != SLEEP_TIME_EDEFAULT;
+        return sleepTime != null;
       case DeviceDefinitionPackage.WORKER__TIME_UNIT:
         return timeUnit != null;
       case DeviceDefinitionPackage.WORKER__ERROR_LED:
         return errorLed != null && !errorLed.isEmpty();
       case DeviceDefinitionPackage.WORKER__RETRIES:
         return retries != null && !retries.isEmpty();
+      case DeviceDefinitionPackage.WORKER__DELAY:
+        return delay != null && !delay.isEmpty();
+      case DeviceDefinitionPackage.WORKER__DELAY_TIME_UNIT:
+        return delayTimeUnit != null;
       case DeviceDefinitionPackage.WORKER__DEVICES:
         return devices != null && !devices.isEmpty();
     }
@@ -500,8 +630,6 @@ public class WorkerImpl extends MinimalEObjectImpl.Container implements Worker
     result.append(name);
     result.append(", mac: ");
     result.append(mac);
-    result.append(", sleepTime: ");
-    result.append(sleepTime);
     result.append(", errorLed: ");
     result.append(errorLed);
     result.append(", retries: ");

@@ -13,6 +13,7 @@
       <genEnumLiterals ecoreEnumLiteral="DeviceDefinition.ecore#//ColorPreset/Yellow"/>
     </genEnums>
     <genClasses ecoreClass="DeviceDefinition.ecore#//System">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//System/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//System/wifiSsid"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//System/wifiPassword"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//System/mqttHost"/>
@@ -37,17 +38,22 @@
     <genClasses ecoreClass="DeviceDefinition.ecore#//Gateway">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Gateway/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Gateway/mac"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Gateway/channel"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Gateway/errorLed"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Gateway/retries"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Gateway/delay"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Gateway/delayTimeUnit"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Gateway/workers"/>
     </genClasses>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Worker">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Worker/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Worker/mac"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Worker/sleepTime"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Worker/sleepTime"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Worker/timeUnit"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Worker/errorLed"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Worker/retries"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Worker/delay"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Worker/delayTimeUnit"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Worker/devices"/>
     </genClasses>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Device">
@@ -81,6 +87,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Setting/value"/>
     </genClasses>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Primitive"/>
+    <genClasses ecoreClass="DeviceDefinition.ecore#//NumberPrimitive"/>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Expression"/>
     <genClasses ecoreClass="DeviceDefinition.ecore#//ExternalCall">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//ExternalCall/func"/>
@@ -113,6 +120,7 @@
     <genClasses ecoreClass="DeviceDefinition.ecore#//DAC"/>
     <genClasses ecoreClass="DeviceDefinition.ecore#//GenericIn"/>
     <genClasses ecoreClass="DeviceDefinition.ecore#//GenericOut"/>
+    <genClasses ecoreClass="DeviceDefinition.ecore#//Millisecond"/>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Second"/>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Minute"/>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Hour"/>
@@ -125,14 +133,14 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//OnOff/time"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//OnOff/unit"/>
     </genClasses>
-    <genClasses ecoreClass="DeviceDefinition.ecore#//DecimalPrimitive">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//DecimalPrimitive/value"/>
-    </genClasses>
+    <genClasses ecoreClass="DeviceDefinition.ecore#//BooleanTrue"/>
+    <genClasses ecoreClass="DeviceDefinition.ecore#//BooleanFalse"/>
     <genClasses ecoreClass="DeviceDefinition.ecore#//IntPrimitive">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//IntPrimitive/value"/>
     </genClasses>
-    <genClasses ecoreClass="DeviceDefinition.ecore#//BooleanTrue"/>
-    <genClasses ecoreClass="DeviceDefinition.ecore#//BooleanFalse"/>
+    <genClasses ecoreClass="DeviceDefinition.ecore#//DecimalPrimitive">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//DecimalPrimitive/value"/>
+    </genClasses>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Plus">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Plus/left"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Plus/right"/>

@@ -82,9 +82,6 @@ abstract class ActuatorDefinition extends DeviceDefinition {
 	if («getEnabledVariableName(actuator)» == false && (bool)(«generateExpression(onOff.onExp)»)) {
 		«getEnabledVariableName(actuator)» = true;
 	}
-	if («getEnabledVariableName(actuator)» == true && (bool)(«generateExpression(onOff.offExp)»)) {
-		«getEnabledVariableName(actuator)» = false;
-	}
 	'''
 	
 	public def CharSequence generateEnableActuatorCode (Actuator actuator, CharSequence enabledBoolString)

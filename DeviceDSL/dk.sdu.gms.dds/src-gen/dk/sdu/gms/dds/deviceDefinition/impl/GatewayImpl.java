@@ -5,6 +5,8 @@ package dk.sdu.gms.dds.deviceDefinition.impl;
 
 import dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage;
 import dk.sdu.gms.dds.deviceDefinition.Gateway;
+import dk.sdu.gms.dds.deviceDefinition.NumberPrimitive;
+import dk.sdu.gms.dds.deviceDefinition.TimeUnit;
 import dk.sdu.gms.dds.deviceDefinition.Worker;
 
 import java.util.Collection;
@@ -34,8 +36,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.GatewayImpl#getName <em>Name</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.GatewayImpl#getMac <em>Mac</em>}</li>
+ *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.GatewayImpl#getChannel <em>Channel</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.GatewayImpl#getErrorLed <em>Error Led</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.GatewayImpl#getRetries <em>Retries</em>}</li>
+ *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.GatewayImpl#getDelay <em>Delay</em>}</li>
+ *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.GatewayImpl#getDelayTimeUnit <em>Delay Time Unit</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.GatewayImpl#getWorkers <em>Workers</em>}</li>
  * </ul>
  *
@@ -84,6 +89,26 @@ public class GatewayImpl extends MinimalEObjectImpl.Container implements Gateway
   protected String mac = MAC_EDEFAULT;
 
   /**
+   * The default value of the '{@link #getChannel() <em>Channel</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getChannel()
+   * @generated
+   * @ordered
+   */
+  protected static final int CHANNEL_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getChannel() <em>Channel</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getChannel()
+   * @generated
+   * @ordered
+   */
+  protected int channel = CHANNEL_EDEFAULT;
+
+  /**
    * The cached value of the '{@link #getErrorLed() <em>Error Led</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -102,6 +127,26 @@ public class GatewayImpl extends MinimalEObjectImpl.Container implements Gateway
    * @ordered
    */
   protected EList<Integer> retries;
+
+  /**
+   * The cached value of the '{@link #getDelay() <em>Delay</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDelay()
+   * @generated
+   * @ordered
+   */
+  protected EList<NumberPrimitive> delay;
+
+  /**
+   * The cached value of the '{@link #getDelayTimeUnit() <em>Delay Time Unit</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDelayTimeUnit()
+   * @generated
+   * @ordered
+   */
+  protected TimeUnit delayTimeUnit;
 
   /**
    * The cached value of the '{@link #getWorkers() <em>Workers</em>}' containment reference list.
@@ -190,6 +235,31 @@ public class GatewayImpl extends MinimalEObjectImpl.Container implements Gateway
    * @generated
    */
   @Override
+  public int getChannel()
+  {
+    return channel;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setChannel(int newChannel)
+  {
+    int oldChannel = channel;
+    channel = newChannel;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceDefinitionPackage.GATEWAY__CHANNEL, oldChannel, channel));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<Integer> getErrorLed()
   {
     if (errorLed == null)
@@ -220,6 +290,71 @@ public class GatewayImpl extends MinimalEObjectImpl.Container implements Gateway
    * @generated
    */
   @Override
+  public EList<NumberPrimitive> getDelay()
+  {
+    if (delay == null)
+    {
+      delay = new EObjectContainmentEList<NumberPrimitive>(NumberPrimitive.class, this, DeviceDefinitionPackage.GATEWAY__DELAY);
+    }
+    return delay;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TimeUnit getDelayTimeUnit()
+  {
+    return delayTimeUnit;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetDelayTimeUnit(TimeUnit newDelayTimeUnit, NotificationChain msgs)
+  {
+    TimeUnit oldDelayTimeUnit = delayTimeUnit;
+    delayTimeUnit = newDelayTimeUnit;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeviceDefinitionPackage.GATEWAY__DELAY_TIME_UNIT, oldDelayTimeUnit, newDelayTimeUnit);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDelayTimeUnit(TimeUnit newDelayTimeUnit)
+  {
+    if (newDelayTimeUnit != delayTimeUnit)
+    {
+      NotificationChain msgs = null;
+      if (delayTimeUnit != null)
+        msgs = ((InternalEObject)delayTimeUnit).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeviceDefinitionPackage.GATEWAY__DELAY_TIME_UNIT, null, msgs);
+      if (newDelayTimeUnit != null)
+        msgs = ((InternalEObject)newDelayTimeUnit).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeviceDefinitionPackage.GATEWAY__DELAY_TIME_UNIT, null, msgs);
+      msgs = basicSetDelayTimeUnit(newDelayTimeUnit, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceDefinitionPackage.GATEWAY__DELAY_TIME_UNIT, newDelayTimeUnit, newDelayTimeUnit));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<Worker> getWorkers()
   {
     if (workers == null)
@@ -239,6 +374,10 @@ public class GatewayImpl extends MinimalEObjectImpl.Container implements Gateway
   {
     switch (featureID)
     {
+      case DeviceDefinitionPackage.GATEWAY__DELAY:
+        return ((InternalEList<?>)getDelay()).basicRemove(otherEnd, msgs);
+      case DeviceDefinitionPackage.GATEWAY__DELAY_TIME_UNIT:
+        return basicSetDelayTimeUnit(null, msgs);
       case DeviceDefinitionPackage.GATEWAY__WORKERS:
         return ((InternalEList<?>)getWorkers()).basicRemove(otherEnd, msgs);
     }
@@ -259,10 +398,16 @@ public class GatewayImpl extends MinimalEObjectImpl.Container implements Gateway
         return getName();
       case DeviceDefinitionPackage.GATEWAY__MAC:
         return getMac();
+      case DeviceDefinitionPackage.GATEWAY__CHANNEL:
+        return getChannel();
       case DeviceDefinitionPackage.GATEWAY__ERROR_LED:
         return getErrorLed();
       case DeviceDefinitionPackage.GATEWAY__RETRIES:
         return getRetries();
+      case DeviceDefinitionPackage.GATEWAY__DELAY:
+        return getDelay();
+      case DeviceDefinitionPackage.GATEWAY__DELAY_TIME_UNIT:
+        return getDelayTimeUnit();
       case DeviceDefinitionPackage.GATEWAY__WORKERS:
         return getWorkers();
     }
@@ -286,6 +431,9 @@ public class GatewayImpl extends MinimalEObjectImpl.Container implements Gateway
       case DeviceDefinitionPackage.GATEWAY__MAC:
         setMac((String)newValue);
         return;
+      case DeviceDefinitionPackage.GATEWAY__CHANNEL:
+        setChannel((Integer)newValue);
+        return;
       case DeviceDefinitionPackage.GATEWAY__ERROR_LED:
         getErrorLed().clear();
         getErrorLed().addAll((Collection<? extends Integer>)newValue);
@@ -293,6 +441,13 @@ public class GatewayImpl extends MinimalEObjectImpl.Container implements Gateway
       case DeviceDefinitionPackage.GATEWAY__RETRIES:
         getRetries().clear();
         getRetries().addAll((Collection<? extends Integer>)newValue);
+        return;
+      case DeviceDefinitionPackage.GATEWAY__DELAY:
+        getDelay().clear();
+        getDelay().addAll((Collection<? extends NumberPrimitive>)newValue);
+        return;
+      case DeviceDefinitionPackage.GATEWAY__DELAY_TIME_UNIT:
+        setDelayTimeUnit((TimeUnit)newValue);
         return;
       case DeviceDefinitionPackage.GATEWAY__WORKERS:
         getWorkers().clear();
@@ -318,11 +473,20 @@ public class GatewayImpl extends MinimalEObjectImpl.Container implements Gateway
       case DeviceDefinitionPackage.GATEWAY__MAC:
         setMac(MAC_EDEFAULT);
         return;
+      case DeviceDefinitionPackage.GATEWAY__CHANNEL:
+        setChannel(CHANNEL_EDEFAULT);
+        return;
       case DeviceDefinitionPackage.GATEWAY__ERROR_LED:
         getErrorLed().clear();
         return;
       case DeviceDefinitionPackage.GATEWAY__RETRIES:
         getRetries().clear();
+        return;
+      case DeviceDefinitionPackage.GATEWAY__DELAY:
+        getDelay().clear();
+        return;
+      case DeviceDefinitionPackage.GATEWAY__DELAY_TIME_UNIT:
+        setDelayTimeUnit((TimeUnit)null);
         return;
       case DeviceDefinitionPackage.GATEWAY__WORKERS:
         getWorkers().clear();
@@ -345,10 +509,16 @@ public class GatewayImpl extends MinimalEObjectImpl.Container implements Gateway
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case DeviceDefinitionPackage.GATEWAY__MAC:
         return MAC_EDEFAULT == null ? mac != null : !MAC_EDEFAULT.equals(mac);
+      case DeviceDefinitionPackage.GATEWAY__CHANNEL:
+        return channel != CHANNEL_EDEFAULT;
       case DeviceDefinitionPackage.GATEWAY__ERROR_LED:
         return errorLed != null && !errorLed.isEmpty();
       case DeviceDefinitionPackage.GATEWAY__RETRIES:
         return retries != null && !retries.isEmpty();
+      case DeviceDefinitionPackage.GATEWAY__DELAY:
+        return delay != null && !delay.isEmpty();
+      case DeviceDefinitionPackage.GATEWAY__DELAY_TIME_UNIT:
+        return delayTimeUnit != null;
       case DeviceDefinitionPackage.GATEWAY__WORKERS:
         return workers != null && !workers.isEmpty();
     }
@@ -370,6 +540,8 @@ public class GatewayImpl extends MinimalEObjectImpl.Container implements Gateway
     result.append(name);
     result.append(", mac: ");
     result.append(mac);
+    result.append(", channel: ");
+    result.append(channel);
     result.append(", errorLed: ");
     result.append(errorLed);
     result.append(", retries: ");

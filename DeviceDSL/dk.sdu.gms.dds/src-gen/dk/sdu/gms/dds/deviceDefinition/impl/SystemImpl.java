@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.SystemImpl#getName <em>Name</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.SystemImpl#getWifiSsid <em>Wifi Ssid</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.SystemImpl#getWifiPassword <em>Wifi Password</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.SystemImpl#getMqttHost <em>Mqtt Host</em>}</li>
@@ -44,6 +45,26 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class SystemImpl extends MinimalEObjectImpl.Container implements dk.sdu.gms.dds.deviceDefinition.System
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The default value of the '{@link #getWifiSsid() <em>Wifi Ssid</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -183,6 +204,31 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements dk.sdu.g
   protected EClass eStaticClass()
   {
     return DeviceDefinitionPackage.Literals.SYSTEM;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceDefinitionPackage.SYSTEM__NAME, oldName, name));
   }
 
   /**
@@ -403,6 +449,8 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements dk.sdu.g
   {
     switch (featureID)
     {
+      case DeviceDefinitionPackage.SYSTEM__NAME:
+        return getName();
       case DeviceDefinitionPackage.SYSTEM__WIFI_SSID:
         return getWifiSsid();
       case DeviceDefinitionPackage.SYSTEM__WIFI_PASSWORD:
@@ -432,6 +480,9 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements dk.sdu.g
   {
     switch (featureID)
     {
+      case DeviceDefinitionPackage.SYSTEM__NAME:
+        setName((String)newValue);
+        return;
       case DeviceDefinitionPackage.SYSTEM__WIFI_SSID:
         setWifiSsid((String)newValue);
         return;
@@ -468,6 +519,9 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements dk.sdu.g
   {
     switch (featureID)
     {
+      case DeviceDefinitionPackage.SYSTEM__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case DeviceDefinitionPackage.SYSTEM__WIFI_SSID:
         setWifiSsid(WIFI_SSID_EDEFAULT);
         return;
@@ -503,6 +557,8 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements dk.sdu.g
   {
     switch (featureID)
     {
+      case DeviceDefinitionPackage.SYSTEM__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case DeviceDefinitionPackage.SYSTEM__WIFI_SSID:
         return WIFI_SSID_EDEFAULT == null ? wifiSsid != null : !WIFI_SSID_EDEFAULT.equals(wifiSsid);
       case DeviceDefinitionPackage.SYSTEM__WIFI_PASSWORD:
@@ -532,7 +588,9 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements dk.sdu.g
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (wifiSsid: ");
+    result.append(" (name: ");
+    result.append(name);
+    result.append(", wifiSsid: ");
     result.append(wifiSsid);
     result.append(", wifiPassword: ");
     result.append(wifiPassword);

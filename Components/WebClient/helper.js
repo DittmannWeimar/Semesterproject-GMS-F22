@@ -14,8 +14,8 @@ function _createCategoryJSBinding(name) {
 }
 
 $(document).ready(function () {
-    addCategory("Moisture");
-    addCategory("Water Levels");
+	addCategory("Environment");
+	addCategory("Plant 01");
 });
 
 
@@ -39,7 +39,6 @@ function _getData(type, gateway, worker, topic, from = 0, to = Number.MAX_SAFE_I
         })
     })
 }
-
 
 //MQTT!
 var isTestingLocally = false;

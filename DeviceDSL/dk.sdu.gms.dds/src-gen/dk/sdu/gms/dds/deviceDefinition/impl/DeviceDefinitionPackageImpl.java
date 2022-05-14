@@ -32,10 +32,12 @@ import dk.sdu.gms.dds.deviceDefinition.IntPrimitive;
 import dk.sdu.gms.dds.deviceDefinition.InternalVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.Lesser;
 import dk.sdu.gms.dds.deviceDefinition.LesserOrEquals;
+import dk.sdu.gms.dds.deviceDefinition.Millisecond;
 import dk.sdu.gms.dds.deviceDefinition.Minus;
 import dk.sdu.gms.dds.deviceDefinition.Minute;
 import dk.sdu.gms.dds.deviceDefinition.Mult;
 import dk.sdu.gms.dds.deviceDefinition.NotEquals;
+import dk.sdu.gms.dds.deviceDefinition.NumberPrimitive;
 import dk.sdu.gms.dds.deviceDefinition.OnOff;
 import dk.sdu.gms.dds.deviceDefinition.Or;
 import dk.sdu.gms.dds.deviceDefinition.Parenthesis;
@@ -196,6 +198,13 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass numberPrimitiveEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass expressionEClass = null;
 
   /**
@@ -294,6 +303,13 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass millisecondEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass secondEClass = null;
 
   /**
@@ -329,7 +345,14 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass decimalPrimitiveEClass = null;
+  private EClass booleanTrueEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass booleanFalseEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -343,14 +366,7 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass booleanTrueEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass booleanFalseEClass = null;
+  private EClass decimalPrimitiveEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -530,7 +546,7 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EAttribute getSystem_WifiSsid()
+  public EAttribute getSystem_Name()
   {
     return (EAttribute)systemEClass.getEStructuralFeatures().get(0);
   }
@@ -541,7 +557,7 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EAttribute getSystem_WifiPassword()
+  public EAttribute getSystem_WifiSsid()
   {
     return (EAttribute)systemEClass.getEStructuralFeatures().get(1);
   }
@@ -552,7 +568,7 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EAttribute getSystem_MqttHost()
+  public EAttribute getSystem_WifiPassword()
   {
     return (EAttribute)systemEClass.getEStructuralFeatures().get(2);
   }
@@ -563,7 +579,7 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EAttribute getSystem_MqttUsername()
+  public EAttribute getSystem_MqttHost()
   {
     return (EAttribute)systemEClass.getEStructuralFeatures().get(3);
   }
@@ -574,7 +590,7 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EAttribute getSystem_MqttPassword()
+  public EAttribute getSystem_MqttUsername()
   {
     return (EAttribute)systemEClass.getEStructuralFeatures().get(4);
   }
@@ -585,9 +601,20 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
+  public EAttribute getSystem_MqttPassword()
+  {
+    return (EAttribute)systemEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EReference getSystem_Gateway()
   {
-    return (EReference)systemEClass.getEStructuralFeatures().get(5);
+    return (EReference)systemEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -598,7 +625,7 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
   @Override
   public EReference getSystem_Graphs()
   {
-    return (EReference)systemEClass.getEStructuralFeatures().get(6);
+    return (EReference)systemEClass.getEStructuralFeatures().get(7);
   }
 
   /**
@@ -761,7 +788,7 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EAttribute getGateway_ErrorLed()
+  public EAttribute getGateway_Channel()
   {
     return (EAttribute)gatewayEClass.getEStructuralFeatures().get(2);
   }
@@ -772,7 +799,7 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EAttribute getGateway_Retries()
+  public EAttribute getGateway_ErrorLed()
   {
     return (EAttribute)gatewayEClass.getEStructuralFeatures().get(3);
   }
@@ -783,9 +810,42 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
+  public EAttribute getGateway_Retries()
+  {
+    return (EAttribute)gatewayEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getGateway_Delay()
+  {
+    return (EReference)gatewayEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getGateway_DelayTimeUnit()
+  {
+    return (EReference)gatewayEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EReference getGateway_Workers()
   {
-    return (EReference)gatewayEClass.getEStructuralFeatures().get(4);
+    return (EReference)gatewayEClass.getEStructuralFeatures().get(7);
   }
 
   /**
@@ -827,9 +887,9 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EAttribute getWorker_SleepTime()
+  public EReference getWorker_SleepTime()
   {
-    return (EAttribute)workerEClass.getEStructuralFeatures().get(2);
+    return (EReference)workerEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -871,9 +931,31 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EReference getWorker_Devices()
+  public EReference getWorker_Delay()
   {
     return (EReference)workerEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getWorker_DelayTimeUnit()
+  {
+    return (EReference)workerEClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getWorker_Devices()
+  {
+    return (EReference)workerEClass.getEStructuralFeatures().get(8);
   }
 
   /**
@@ -1138,6 +1220,17 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
   public EClass getPrimitive()
   {
     return primitiveEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getNumberPrimitive()
+  {
+    return numberPrimitiveEClass;
   }
 
   /**
@@ -1421,6 +1514,17 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
+  public EClass getMillisecond()
+  {
+    return millisecondEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getSecond()
   {
     return secondEClass;
@@ -1531,9 +1635,9 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EClass getDecimalPrimitive()
+  public EClass getBooleanTrue()
   {
-    return decimalPrimitiveEClass;
+    return booleanTrueEClass;
   }
 
   /**
@@ -1542,9 +1646,9 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EAttribute getDecimalPrimitive_Value()
+  public EClass getBooleanFalse()
   {
-    return (EAttribute)decimalPrimitiveEClass.getEStructuralFeatures().get(0);
+    return booleanFalseEClass;
   }
 
   /**
@@ -1575,9 +1679,9 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EClass getBooleanTrue()
+  public EClass getDecimalPrimitive()
   {
-    return booleanTrueEClass;
+    return decimalPrimitiveEClass;
   }
 
   /**
@@ -1586,9 +1690,9 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EClass getBooleanFalse()
+  public EAttribute getDecimalPrimitive_Value()
   {
-    return booleanFalseEClass;
+    return (EAttribute)decimalPrimitiveEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2041,6 +2145,7 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
 
     // Create classes and their features
     systemEClass = createEClass(SYSTEM);
+    createEAttribute(systemEClass, SYSTEM__NAME);
     createEAttribute(systemEClass, SYSTEM__WIFI_SSID);
     createEAttribute(systemEClass, SYSTEM__WIFI_PASSWORD);
     createEAttribute(systemEClass, SYSTEM__MQTT_HOST);
@@ -2066,17 +2171,22 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     gatewayEClass = createEClass(GATEWAY);
     createEAttribute(gatewayEClass, GATEWAY__NAME);
     createEAttribute(gatewayEClass, GATEWAY__MAC);
+    createEAttribute(gatewayEClass, GATEWAY__CHANNEL);
     createEAttribute(gatewayEClass, GATEWAY__ERROR_LED);
     createEAttribute(gatewayEClass, GATEWAY__RETRIES);
+    createEReference(gatewayEClass, GATEWAY__DELAY);
+    createEReference(gatewayEClass, GATEWAY__DELAY_TIME_UNIT);
     createEReference(gatewayEClass, GATEWAY__WORKERS);
 
     workerEClass = createEClass(WORKER);
     createEAttribute(workerEClass, WORKER__NAME);
     createEAttribute(workerEClass, WORKER__MAC);
-    createEAttribute(workerEClass, WORKER__SLEEP_TIME);
+    createEReference(workerEClass, WORKER__SLEEP_TIME);
     createEReference(workerEClass, WORKER__TIME_UNIT);
     createEAttribute(workerEClass, WORKER__ERROR_LED);
     createEAttribute(workerEClass, WORKER__RETRIES);
+    createEReference(workerEClass, WORKER__DELAY);
+    createEReference(workerEClass, WORKER__DELAY_TIME_UNIT);
     createEReference(workerEClass, WORKER__DEVICES);
 
     deviceEClass = createEClass(DEVICE);
@@ -2113,6 +2223,8 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     createEReference(settingEClass, SETTING__VALUE);
 
     primitiveEClass = createEClass(PRIMITIVE);
+
+    numberPrimitiveEClass = createEClass(NUMBER_PRIMITIVE);
 
     expressionEClass = createEClass(EXPRESSION);
 
@@ -2153,6 +2265,8 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
 
     genericOutEClass = createEClass(GENERIC_OUT);
 
+    millisecondEClass = createEClass(MILLISECOND);
+
     secondEClass = createEClass(SECOND);
 
     minuteEClass = createEClass(MINUTE);
@@ -2168,15 +2282,15 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     createEAttribute(onOffEClass, ON_OFF__TIME);
     createEReference(onOffEClass, ON_OFF__UNIT);
 
-    decimalPrimitiveEClass = createEClass(DECIMAL_PRIMITIVE);
-    createEAttribute(decimalPrimitiveEClass, DECIMAL_PRIMITIVE__VALUE);
+    booleanTrueEClass = createEClass(BOOLEAN_TRUE);
+
+    booleanFalseEClass = createEClass(BOOLEAN_FALSE);
 
     intPrimitiveEClass = createEClass(INT_PRIMITIVE);
     createEAttribute(intPrimitiveEClass, INT_PRIMITIVE__VALUE);
 
-    booleanTrueEClass = createEClass(BOOLEAN_TRUE);
-
-    booleanFalseEClass = createEClass(BOOLEAN_FALSE);
+    decimalPrimitiveEClass = createEClass(DECIMAL_PRIMITIVE);
+    createEAttribute(decimalPrimitiveEClass, DECIMAL_PRIMITIVE__VALUE);
 
     plusEClass = createEClass(PLUS);
     createEReference(plusEClass, PLUS__LEFT);
@@ -2266,6 +2380,7 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     actuatorEClass.getESuperTypes().add(this.getDevice());
     settingEClass.getESuperTypes().add(this.getBinding());
     primitiveEClass.getESuperTypes().add(this.getExpression());
+    numberPrimitiveEClass.getESuperTypes().add(this.getPrimitive());
     externalCallEClass.getESuperTypes().add(this.getExpression());
     internalVariableUseEClass.getESuperTypes().add(this.getVariableUse());
     externalVariableUseEClass.getESuperTypes().add(this.getVariableUse());
@@ -2279,15 +2394,16 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     dacEClass.getESuperTypes().add(this.getPinType());
     genericInEClass.getESuperTypes().add(this.getPinType());
     genericOutEClass.getESuperTypes().add(this.getPinType());
+    millisecondEClass.getESuperTypes().add(this.getTimeUnit());
     secondEClass.getESuperTypes().add(this.getTimeUnit());
     minuteEClass.getESuperTypes().add(this.getTimeUnit());
     hourEClass.getESuperTypes().add(this.getTimeUnit());
     whenEClass.getESuperTypes().add(this.getTrigger());
     onOffEClass.getESuperTypes().add(this.getTrigger());
-    decimalPrimitiveEClass.getESuperTypes().add(this.getPrimitive());
-    intPrimitiveEClass.getESuperTypes().add(this.getPrimitive());
     booleanTrueEClass.getESuperTypes().add(this.getPrimitive());
     booleanFalseEClass.getESuperTypes().add(this.getPrimitive());
+    intPrimitiveEClass.getESuperTypes().add(this.getNumberPrimitive());
+    decimalPrimitiveEClass.getESuperTypes().add(this.getNumberPrimitive());
     plusEClass.getESuperTypes().add(this.getExpression());
     minusEClass.getESuperTypes().add(this.getExpression());
     multEClass.getESuperTypes().add(this.getExpression());
@@ -2304,6 +2420,7 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
 
     // Initialize classes and features; add operations and parameters
     initEClass(systemEClass, dk.sdu.gms.dds.deviceDefinition.System.class, "System", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSystem_Name(), ecorePackage.getEString(), "name", null, 0, 1, dk.sdu.gms.dds.deviceDefinition.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSystem_WifiSsid(), ecorePackage.getEString(), "wifiSsid", null, 0, 1, dk.sdu.gms.dds.deviceDefinition.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSystem_WifiPassword(), ecorePackage.getEString(), "wifiPassword", null, 0, 1, dk.sdu.gms.dds.deviceDefinition.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSystem_MqttHost(), ecorePackage.getEString(), "mqttHost", null, 0, 1, dk.sdu.gms.dds.deviceDefinition.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2329,17 +2446,22 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     initEClass(gatewayEClass, Gateway.class, "Gateway", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getGateway_Name(), ecorePackage.getEString(), "name", null, 0, 1, Gateway.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGateway_Mac(), ecorePackage.getEString(), "mac", null, 0, 1, Gateway.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGateway_Channel(), ecorePackage.getEInt(), "channel", null, 0, 1, Gateway.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGateway_ErrorLed(), ecorePackage.getEInt(), "errorLed", null, 0, -1, Gateway.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGateway_Retries(), ecorePackage.getEInt(), "retries", null, 0, -1, Gateway.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGateway_Delay(), this.getNumberPrimitive(), null, "delay", null, 0, -1, Gateway.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGateway_DelayTimeUnit(), this.getTimeUnit(), null, "delayTimeUnit", null, 0, 1, Gateway.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGateway_Workers(), this.getWorker(), null, "workers", null, 0, -1, Gateway.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(workerEClass, Worker.class, "Worker", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getWorker_Name(), ecorePackage.getEString(), "name", null, 0, 1, Worker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getWorker_Mac(), ecorePackage.getEString(), "mac", null, 0, 1, Worker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getWorker_SleepTime(), ecorePackage.getEInt(), "sleepTime", null, 0, 1, Worker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWorker_SleepTime(), this.getNumberPrimitive(), null, "sleepTime", null, 0, 1, Worker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getWorker_TimeUnit(), this.getTimeUnit(), null, "timeUnit", null, 0, 1, Worker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getWorker_ErrorLed(), ecorePackage.getEInt(), "errorLed", null, 0, -1, Worker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getWorker_Retries(), ecorePackage.getEInt(), "retries", null, 0, -1, Worker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWorker_Delay(), this.getNumberPrimitive(), null, "delay", null, 0, -1, Worker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWorker_DelayTimeUnit(), this.getTimeUnit(), null, "delayTimeUnit", null, 0, 1, Worker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getWorker_Devices(), this.getDevice(), null, "devices", null, 0, -1, Worker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(deviceEClass, Device.class, "Device", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2376,6 +2498,8 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     initEReference(getSetting_Value(), this.getPrimitive(), null, "value", null, 0, 1, Setting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(primitiveEClass, Primitive.class, "Primitive", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(numberPrimitiveEClass, NumberPrimitive.class, "NumberPrimitive", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2416,6 +2540,8 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
 
     initEClass(genericOutEClass, GenericOut.class, "GenericOut", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+    initEClass(millisecondEClass, Millisecond.class, "Millisecond", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
     initEClass(secondEClass, Second.class, "Second", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(minuteEClass, Minute.class, "Minute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2431,15 +2557,15 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     initEAttribute(getOnOff_Time(), ecorePackage.getEInt(), "time", null, 0, 1, OnOff.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getOnOff_Unit(), this.getTimeUnit(), null, "unit", null, 0, 1, OnOff.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(decimalPrimitiveEClass, DecimalPrimitive.class, "DecimalPrimitive", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDecimalPrimitive_Value(), ecorePackage.getEString(), "value", null, 0, 1, DecimalPrimitive.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(booleanTrueEClass, BooleanTrue.class, "BooleanTrue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(booleanFalseEClass, BooleanFalse.class, "BooleanFalse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(intPrimitiveEClass, IntPrimitive.class, "IntPrimitive", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getIntPrimitive_Value(), ecorePackage.getEInt(), "value", null, 0, 1, IntPrimitive.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(booleanTrueEClass, BooleanTrue.class, "BooleanTrue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(booleanFalseEClass, BooleanFalse.class, "BooleanFalse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(decimalPrimitiveEClass, DecimalPrimitive.class, "DecimalPrimitive", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDecimalPrimitive_Value(), ecorePackage.getEString(), "value", null, 0, 1, DecimalPrimitive.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(plusEClass, Plus.class, "Plus", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getPlus_Left(), this.getExpression(), null, "left", null, 0, 1, Plus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

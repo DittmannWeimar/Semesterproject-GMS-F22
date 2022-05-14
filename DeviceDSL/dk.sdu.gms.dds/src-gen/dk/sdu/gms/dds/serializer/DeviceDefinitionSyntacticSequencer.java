@@ -25,9 +25,10 @@ public class DeviceDefinitionSyntacticSequencer extends AbstractSyntacticSequenc
 	protected AbstractElementAlias match_GraphVariableUse_FullStopKeyword_1_0_or_HyphenMinusGreaterThanSignKeyword_1_1;
 	protected AbstractElementAlias match_GraphVariableUse_FullStopKeyword_3_0_or_HyphenMinusGreaterThanSignKeyword_3_1;
 	protected AbstractElementAlias match_Sensor_PinsKeyword_4_0_q;
-	protected AbstractElementAlias match_TimeUnit_HourKeyword_2_1_0_or_HoursKeyword_2_1_1;
-	protected AbstractElementAlias match_TimeUnit_MinuteKeyword_1_1_0_or_MinutesKeyword_1_1_1;
-	protected AbstractElementAlias match_TimeUnit_SecondKeyword_0_1_0_or_SecondsKeyword_0_1_1;
+	protected AbstractElementAlias match_TimeUnit_HKeyword_3_1_2_or_HourKeyword_3_1_0_or_HoursKeyword_3_1_1;
+	protected AbstractElementAlias match_TimeUnit_MKeyword_2_1_2_or_MinuteKeyword_2_1_0_or_MinutesKeyword_2_1_1;
+	protected AbstractElementAlias match_TimeUnit_MillisecondKeyword_0_1_0_or_MillisecondsKeyword_0_1_1_or_MsKeyword_0_1_2;
+	protected AbstractElementAlias match_TimeUnit_SKeyword_1_1_2_or_SecondKeyword_1_1_0_or_SecondsKeyword_1_1_1;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
@@ -36,9 +37,10 @@ public class DeviceDefinitionSyntacticSequencer extends AbstractSyntacticSequenc
 		match_GraphVariableUse_FullStopKeyword_1_0_or_HyphenMinusGreaterThanSignKeyword_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getGraphVariableUseAccess().getFullStopKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getGraphVariableUseAccess().getHyphenMinusGreaterThanSignKeyword_1_1()));
 		match_GraphVariableUse_FullStopKeyword_3_0_or_HyphenMinusGreaterThanSignKeyword_3_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getGraphVariableUseAccess().getFullStopKeyword_3_0()), new TokenAlias(false, false, grammarAccess.getGraphVariableUseAccess().getHyphenMinusGreaterThanSignKeyword_3_1()));
 		match_Sensor_PinsKeyword_4_0_q = new TokenAlias(false, true, grammarAccess.getSensorAccess().getPinsKeyword_4_0());
-		match_TimeUnit_HourKeyword_2_1_0_or_HoursKeyword_2_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getTimeUnitAccess().getHourKeyword_2_1_0()), new TokenAlias(false, false, grammarAccess.getTimeUnitAccess().getHoursKeyword_2_1_1()));
-		match_TimeUnit_MinuteKeyword_1_1_0_or_MinutesKeyword_1_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getTimeUnitAccess().getMinuteKeyword_1_1_0()), new TokenAlias(false, false, grammarAccess.getTimeUnitAccess().getMinutesKeyword_1_1_1()));
-		match_TimeUnit_SecondKeyword_0_1_0_or_SecondsKeyword_0_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getTimeUnitAccess().getSecondKeyword_0_1_0()), new TokenAlias(false, false, grammarAccess.getTimeUnitAccess().getSecondsKeyword_0_1_1()));
+		match_TimeUnit_HKeyword_3_1_2_or_HourKeyword_3_1_0_or_HoursKeyword_3_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getTimeUnitAccess().getHKeyword_3_1_2()), new TokenAlias(false, false, grammarAccess.getTimeUnitAccess().getHourKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getTimeUnitAccess().getHoursKeyword_3_1_1()));
+		match_TimeUnit_MKeyword_2_1_2_or_MinuteKeyword_2_1_0_or_MinutesKeyword_2_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getTimeUnitAccess().getMKeyword_2_1_2()), new TokenAlias(false, false, grammarAccess.getTimeUnitAccess().getMinuteKeyword_2_1_0()), new TokenAlias(false, false, grammarAccess.getTimeUnitAccess().getMinutesKeyword_2_1_1()));
+		match_TimeUnit_MillisecondKeyword_0_1_0_or_MillisecondsKeyword_0_1_1_or_MsKeyword_0_1_2 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getTimeUnitAccess().getMillisecondKeyword_0_1_0()), new TokenAlias(false, false, grammarAccess.getTimeUnitAccess().getMillisecondsKeyword_0_1_1()), new TokenAlias(false, false, grammarAccess.getTimeUnitAccess().getMsKeyword_0_1_2()));
+		match_TimeUnit_SKeyword_1_1_2_or_SecondKeyword_1_1_0_or_SecondsKeyword_1_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getTimeUnitAccess().getSKeyword_1_1_2()), new TokenAlias(false, false, grammarAccess.getTimeUnitAccess().getSecondKeyword_1_1_0()), new TokenAlias(false, false, grammarAccess.getTimeUnitAccess().getSecondsKeyword_1_1_1()));
 	}
 	
 	@Override
@@ -61,12 +63,14 @@ public class DeviceDefinitionSyntacticSequencer extends AbstractSyntacticSequenc
 				emit_GraphVariableUse_FullStopKeyword_3_0_or_HyphenMinusGreaterThanSignKeyword_3_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Sensor_PinsKeyword_4_0_q.equals(syntax))
 				emit_Sensor_PinsKeyword_4_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_TimeUnit_HourKeyword_2_1_0_or_HoursKeyword_2_1_1.equals(syntax))
-				emit_TimeUnit_HourKeyword_2_1_0_or_HoursKeyword_2_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_TimeUnit_MinuteKeyword_1_1_0_or_MinutesKeyword_1_1_1.equals(syntax))
-				emit_TimeUnit_MinuteKeyword_1_1_0_or_MinutesKeyword_1_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_TimeUnit_SecondKeyword_0_1_0_or_SecondsKeyword_0_1_1.equals(syntax))
-				emit_TimeUnit_SecondKeyword_0_1_0_or_SecondsKeyword_0_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TimeUnit_HKeyword_3_1_2_or_HourKeyword_3_1_0_or_HoursKeyword_3_1_1.equals(syntax))
+				emit_TimeUnit_HKeyword_3_1_2_or_HourKeyword_3_1_0_or_HoursKeyword_3_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TimeUnit_MKeyword_2_1_2_or_MinuteKeyword_2_1_0_or_MinutesKeyword_2_1_1.equals(syntax))
+				emit_TimeUnit_MKeyword_2_1_2_or_MinuteKeyword_2_1_0_or_MinutesKeyword_2_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TimeUnit_MillisecondKeyword_0_1_0_or_MillisecondsKeyword_0_1_1_or_MsKeyword_0_1_2.equals(syntax))
+				emit_TimeUnit_MillisecondKeyword_0_1_0_or_MillisecondsKeyword_0_1_1_or_MsKeyword_0_1_2(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TimeUnit_SKeyword_1_1_2_or_SecondKeyword_1_1_0_or_SecondsKeyword_1_1_1.equals(syntax))
+				emit_TimeUnit_SKeyword_1_1_2_or_SecondKeyword_1_1_0_or_SecondsKeyword_1_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -133,42 +137,56 @@ public class DeviceDefinitionSyntacticSequencer extends AbstractSyntacticSequenc
 	/**
 	 * <pre>
 	 * Ambiguous syntax:
-	 *     'hour' | 'hours'
+	 *     'hour' | 'hours' | 'h'
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) (rule start)
 	 
 	 * </pre>
 	 */
-	protected void emit_TimeUnit_HourKeyword_2_1_0_or_HoursKeyword_2_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_TimeUnit_HKeyword_3_1_2_or_HourKeyword_3_1_0_or_HoursKeyword_3_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * <pre>
 	 * Ambiguous syntax:
-	 *     'minute' | 'minutes'
+	 *     'minute' | 'minutes' | 'm'
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) (rule start)
 	 
 	 * </pre>
 	 */
-	protected void emit_TimeUnit_MinuteKeyword_1_1_0_or_MinutesKeyword_1_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_TimeUnit_MKeyword_2_1_2_or_MinuteKeyword_2_1_0_or_MinutesKeyword_2_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * <pre>
 	 * Ambiguous syntax:
-	 *     'second' | 'seconds'
+	 *     'millisecond' | 'milliseconds' | 'ms'
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) (rule start)
 	 
 	 * </pre>
 	 */
-	protected void emit_TimeUnit_SecondKeyword_0_1_0_or_SecondsKeyword_0_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_TimeUnit_MillisecondKeyword_0_1_0_or_MillisecondsKeyword_0_1_1_or_MsKeyword_0_1_2(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     'second' | 'seconds' | 's'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) (rule start)
+	 
+	 * </pre>
+	 */
+	protected void emit_TimeUnit_SKeyword_1_1_2_or_SecondKeyword_1_1_0_or_SecondsKeyword_1_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

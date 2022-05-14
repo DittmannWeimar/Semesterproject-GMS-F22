@@ -35,7 +35,6 @@ message_sample sampleMessage;
 
 const char* WIFI_SSID = "Chronos";
 const char* WIFI_PW = "fizzfyr13";
-const char* STATION_NAME = "Gateway";
 
 EspMQTTClient client(
   WIFI_SSID,
@@ -43,7 +42,7 @@ EspMQTTClient client(
   "vald.io",
   "kristian",
   "1234",
-  "gms-gateway-fe48b1c0-c463-40ec-88df-447baed80803",
+  "gms-gateway-213b0f04-b6a5-4aa3-8669-cc306b8d1625",
   3001
 );
 
@@ -56,14 +55,11 @@ void setup() {
   Serial.print("Gateway starting with MAC address ");
   Serial.println(WiFi.macAddress());
   
+  int32_t channel = 6;
+  esp_wifi_set_channel(channel, WIFI_SECOND_CHAN_NONE);
+  
   WiFi.begin(WIFI_SSID, WIFI_PW);
 
-  if (WiFi.softAP(STATION_NAME, "123456789", 1, 0)) {
-    Serial.println("Soft AP set up");
-  }else{
-    Serial.println("Failed to set up soft AP.");
-  }
-  
   while (WiFi.status() != WL_CONNECTED) {
     delay(1000);
     Serial.println("Establishing connection to WiFi..");
@@ -75,7 +71,7 @@ void setup() {
     return;
   }
   
-  pinMode(3, OUTPUT);
+  pinMode(15, OUTPUT);
   
 
   // Register peer
@@ -100,7 +96,7 @@ void setup() {
 void populate_worker_infos () {
 		set_mac_bytes(workers[0].address, 0x10, 0x97, 0xBD, 0xD5, 0x3E, 0x64);
 		memcpy(workers[0].info.peer_addr, workers[0].address, 6);
-		workers[0].info.channel = 0;  
+		workers[0].info.channel = 6;  
 		workers[0].info.encrypt = false;
 }
 
@@ -126,9 +122,6 @@ int32_t getWiFiChannel(const char *ssid) {
 
 void onConnectionEstablished()
 {
-	client.subscribe("settings/" + WiFi.macAddress() + "/10:97:BD:D5:3E:64/pump_power", [](const String &payload) {
-	set_worker_setting(0, 0, String(payload).toFloat());
-	});
 }
 
 worker_info get_worker_info(const uint8_t* mac) {
@@ -239,14 +232,14 @@ void handle_sample(const uint8_t* mac, const uint8_t *incomingData, int len) {
 
 void send_message(const uint8_t * mac, const uint8_t *incomingData, int len) {
   bool success = false;
-  for (int i = 0; i < 1; i++) {
+  for (int i = 0; i < 5; i++) {
     esp_err_t result = esp_now_send(mac, incomingData, len);
-    delay(250);
+    delay((uint64_t)500.0);
     if (messageSuccess) {
       success = true;
       break;
     }
   }
   Serial.println("Send message success: " + String(success));
-  digitalWrite(3, success ? LOW : HIGH);
+  digitalWrite(15, success ? LOW : HIGH);
 }

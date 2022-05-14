@@ -3,6 +3,7 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="deviceDefinition" nsURI="http://www.sdu.dk/gms/dds/DeviceDefinition"
     nsPrefix="deviceDefinition">
   <eClassifiers xsi:type="ecore:EClass" name="System">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="wifiSsid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="wifiPassword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mqttHost" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -38,23 +39,33 @@
   <eClassifiers xsi:type="ecore:EClass" name="Gateway">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mac" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="channel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="errorLed" unique="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="retries" unique="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="delay" upperBound="-1"
+        eType="#//NumberPrimitive" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="delayTimeUnit" eType="#//TimeUnit"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="workers" upperBound="-1"
         eType="#//Worker" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Worker">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mac" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sleepTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sleepTime" eType="#//NumberPrimitive"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="timeUnit" eType="#//TimeUnit"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="errorLed" unique="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="retries" unique="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="delay" upperBound="-1"
+        eType="#//NumberPrimitive" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="delayTimeUnit" eType="#//TimeUnit"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="devices" upperBound="-1"
         eType="#//Device" containment="true"/>
   </eClassifiers>
@@ -97,6 +108,7 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Primitive" eSuperTypes="#//Expression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NumberPrimitive" eSuperTypes="#//Primitive"/>
   <eClassifiers xsi:type="ecore:EClass" name="Expression"/>
   <eClassifiers xsi:type="ecore:EClass" name="ExternalCall" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="func" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -131,6 +143,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="DAC" eSuperTypes="#//PinType"/>
   <eClassifiers xsi:type="ecore:EClass" name="GenericIn" eSuperTypes="#//PinType"/>
   <eClassifiers xsi:type="ecore:EClass" name="GenericOut" eSuperTypes="#//PinType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Millisecond" eSuperTypes="#//TimeUnit"/>
   <eClassifiers xsi:type="ecore:EClass" name="Second" eSuperTypes="#//TimeUnit"/>
   <eClassifiers xsi:type="ecore:EClass" name="Minute" eSuperTypes="#//TimeUnit"/>
   <eClassifiers xsi:type="ecore:EClass" name="Hour" eSuperTypes="#//TimeUnit"/>
@@ -147,14 +160,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="unit" eType="#//TimeUnit"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DecimalPrimitive" eSuperTypes="#//Primitive">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="IntPrimitive" eSuperTypes="#//Primitive">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BooleanTrue" eSuperTypes="#//Primitive"/>
   <eClassifiers xsi:type="ecore:EClass" name="BooleanFalse" eSuperTypes="#//Primitive"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IntPrimitive" eSuperTypes="#//NumberPrimitive">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DecimalPrimitive" eSuperTypes="#//NumberPrimitive">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Plus" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expression"
         containment="true"/>

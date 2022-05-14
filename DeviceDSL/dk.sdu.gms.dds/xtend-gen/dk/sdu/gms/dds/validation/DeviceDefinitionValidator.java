@@ -14,6 +14,7 @@ import dk.sdu.gms.dds.deviceDefinition.ExternalVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.Graph;
 import dk.sdu.gms.dds.deviceDefinition.GraphVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.InternalVariableUse;
+import dk.sdu.gms.dds.deviceDefinition.NumberPrimitive;
 import dk.sdu.gms.dds.deviceDefinition.Sensor;
 import dk.sdu.gms.dds.deviceDefinition.VariableUse;
 import dk.sdu.gms.dds.deviceDefinition.Worker;
@@ -129,8 +130,8 @@ public class DeviceDefinitionValidator extends AbstractDeviceDefinitionValidator
   }
   
   public String getSleepTime(final Worker worker) {
-    int _sleepTime = worker.getSleepTime();
-    String _plus = (Integer.valueOf(_sleepTime) + " ");
+    NumberPrimitive _sleepTime = worker.getSleepTime();
+    String _plus = (_sleepTime + " ");
     String _timeUnitToString = Utils.timeUnitToString(worker.getTimeUnit());
     return (_plus + _timeUnitToString);
   }

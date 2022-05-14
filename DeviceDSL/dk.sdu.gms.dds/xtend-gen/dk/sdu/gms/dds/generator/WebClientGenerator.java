@@ -26,11 +26,31 @@ import org.eclipse.xtext.xbase.lib.StringExtensions;
 public class WebClientGenerator {
   public static void generateWebClient(final dk.sdu.gms.dds.deviceDefinition.System system, final IFileSystemAccess2 fsa) {
     final String webClientRoot = "WebClient/";
-    fsa.generateFile((webClientRoot + "styles/chart.css"), WebClientBoilerPlate.generateCSS());
-    fsa.generateFile((webClientRoot + "bridge.php"), WebClientBoilerPlate.generateBridge());
-    fsa.generateFile((webClientRoot + "header.php"), WebClientBoilerPlate.generateHeader());
-    fsa.generateFile((webClientRoot + "commonBody.php"), WebClientBoilerPlate.generateCommonBody());
-    fsa.generateFile((webClientRoot + "index.php"), WebClientBoilerPlate.generateIndex());
+    String _name = system.getName();
+    String _plus = (_name + "/");
+    String _plus_1 = (_plus + webClientRoot);
+    String _plus_2 = (_plus_1 + "styles/chart.css");
+    fsa.generateFile(_plus_2, WebClientBoilerPlate.generateCSS());
+    String _name_1 = system.getName();
+    String _plus_3 = (_name_1 + "/");
+    String _plus_4 = (_plus_3 + webClientRoot);
+    String _plus_5 = (_plus_4 + "bridge.php");
+    fsa.generateFile(_plus_5, WebClientBoilerPlate.generateBridge());
+    String _name_2 = system.getName();
+    String _plus_6 = (_name_2 + "/");
+    String _plus_7 = (_plus_6 + webClientRoot);
+    String _plus_8 = (_plus_7 + "header.php");
+    fsa.generateFile(_plus_8, WebClientBoilerPlate.generateHeader());
+    String _name_3 = system.getName();
+    String _plus_9 = (_name_3 + "/");
+    String _plus_10 = (_plus_9 + webClientRoot);
+    String _plus_11 = (_plus_10 + "commonBody.php");
+    fsa.generateFile(_plus_11, WebClientBoilerPlate.generateCommonBody());
+    String _name_4 = system.getName();
+    String _plus_12 = (_name_4 + "/");
+    String _plus_13 = (_plus_12 + webClientRoot);
+    String _plus_14 = (_plus_13 + "index.php");
+    fsa.generateFile(_plus_14, WebClientBoilerPlate.generateIndex());
     final Gateway gateway = system.getGateway();
     final EList<Worker> workers = gateway.getWorkers();
     final HashMap<String, List<Graph>> graphsGroupedByCategory = new HashMap<String, List<Graph>>();
@@ -50,17 +70,29 @@ public class WebClientGenerator {
     final Consumer<Map.Entry<String, List<Graph>>> _function = (Map.Entry<String, List<Graph>> x) -> {
       String php = WebClientGenerator.generateCategoryPagePHP(x.getKey(), gateway, x.getValue());
       String js = WebClientGenerator.generateCategoryPageJavascript(x.getKey(), gateway, x.getValue());
+      String _name_5 = system.getName();
+      String _plus_15 = (_name_5 + "/");
+      String _plus_16 = (_plus_15 + webClientRoot);
+      String _plus_17 = (_plus_16 + "category-pages/");
       String _key = x.getKey();
-      String _plus = ((webClientRoot + "category-pages/") + _key);
-      String _plus_1 = (_plus + ".php");
-      fsa.generateFile(_plus_1, php);
+      String _plus_18 = (_plus_17 + _key);
+      String _plus_19 = (_plus_18 + ".php");
+      fsa.generateFile(_plus_19, php);
+      String _name_6 = system.getName();
+      String _plus_20 = (_name_6 + "/");
+      String _plus_21 = (_plus_20 + webClientRoot);
+      String _plus_22 = (_plus_21 + "category-pages/");
       String _key_1 = x.getKey();
-      String _plus_2 = ((webClientRoot + "category-pages/") + _key_1);
-      String _plus_3 = (_plus_2 + ".js");
-      fsa.generateFile(_plus_3, js);
+      String _plus_23 = (_plus_22 + _key_1);
+      String _plus_24 = (_plus_23 + ".js");
+      fsa.generateFile(_plus_24, js);
     };
     graphsGroupedByCategory.entrySet().forEach(_function);
-    fsa.generateFile((webClientRoot + "helper.js"), WebClientGenerator.generateHelper(system));
+    String _name_5 = system.getName();
+    String _plus_15 = (_name_5 + "/");
+    String _plus_16 = (_plus_15 + webClientRoot);
+    String _plus_17 = (_plus_16 + "helper.js");
+    fsa.generateFile(_plus_17, WebClientGenerator.generateHelper(system));
   }
   
   public static String generateCategoryPagePHP(final String category, final Gateway gateway, final List<Graph> values) {

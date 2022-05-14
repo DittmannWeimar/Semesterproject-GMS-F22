@@ -47,12 +47,15 @@ import org.eclipse.emf.ecore.EObject
 import dk.sdu.gms.dds.deviceDefinition.Trigger
 import dk.sdu.gms.dds.deviceDefinition.OnOff
 import java.util.stream.Collectors
+import dk.sdu.gms.dds.deviceDefinition.NumberPrimitive
+import dk.sdu.gms.dds.deviceDefinition.Millisecond
 
 class Utils {
 	
 	public static int[] dacPins = #[25, 26]
 	public static int defaultRetries = 1;
 	public static int defaultErrorLed = 2;
+	public static float defaultRetryDelay = 0.5f;
 	
 	public static def createSettingIndex (Gateway gateway) {
 		val list = new ArrayList<String>();
@@ -86,31 +89,24 @@ class Utils {
 		return list;
 	}
 	
-	public static def sensor(SensorOutput output) {
-		output.eContainer as Sensor;
+	public static def sensor(EObject obj) {
+		return getParentOfType(obj, typeof (Sensor))
 	}
 	
-	public static def device(Setting setting) {
-		setting.eContainer as Device;
+	public static def device(EObject obj) {
+		return getParentOfType(obj, typeof (Device))
 	}
 	
-	public static def worker(Device device) {
-		device.eContainer as Worker;
+	public static def worker(EObject obj) {
+		return getParentOfType(obj, typeof (Worker))
 	}
 	
-	public static def gateway(Worker worker) {
-		worker.eContainer as Gateway; 
+	public static def gateway(EObject obj) {
+		return getParentOfType(obj, typeof (Gateway))
 	}
 	
 	public static def system (EObject obj) {
-		var current = obj;
-		while (current.eContainer !== null) {
-			current = current.eContainer;
-			if (current instanceof dk.sdu.gms.dds.deviceDefinition.System) {
-				return current;
-			}
-		}
-		return null;
+		return getParentOfType(obj, typeof(dk.sdu.gms.dds.deviceDefinition.System))
 	}
 	
 	public static def indexOf (Gateway gateway, Worker worker) {
@@ -247,6 +243,7 @@ class Utils {
 	
 	public static def getTimeUnitMsMultiplier(TimeUnit unit) {
 		switch (unit) {
+			Millisecond: 1
 			Second: 1000
 			Minute: 1000 * 60
 			Hour: 1000 * 60 * 60
@@ -255,6 +252,7 @@ class Utils {
 	
 	public static def timeUnitToString (TimeUnit unit) {
 		switch (unit) {
+			Millisecond: "milliseconds(s)"
 			Second: "second(s)"
 			Minute: "minute(s)"
 			Hour: "hour(s)"
@@ -343,6 +341,33 @@ class Utils {
 		return null;
 	}
 	
+	public static def asFloat(NumberPrimitive primitive) {
+		switch (primitive) {
+			IntPrimitive: primitive.value as float
+			DecimalPrimitive: Float.parseFloat(primitive.value)
+		}
+	}
+	
+	public static def getAllReferencedInExternalVariableUseSensors(Expression exp) {
+		val list = new ArrayList<Sensor>();
+		recursiveGetAllReferencedInExternalVariableUseSensors(exp, list);
+		return list;
+	}
+	
+	// Can be refactored to be generic.
+	private static def void recursiveGetAllReferencedInExternalVariableUseSensors (EObject obj, List<Sensor> list) {
+		for (content : obj.eContents) {
+			if (content instanceof ExternalVariableUse) {
+				val sensor = (content as ExternalVariableUse).obj as Sensor;
+				if (sensor !== null) {
+					list.add(sensor);
+				}
+			}else{
+				recursiveGetAllReferencedInExternalVariableUseSensors(content, list);
+			}
+		}
+	}
+	
 	def static dispatch getRetriesOrDefault(Worker worker) {
 		if (worker.retries.size() == 0) return defaultRetries;
 		return worker.retries.get(0);
@@ -353,13 +378,23 @@ class Utils {
 		return worker.errorLed.get(0);
 	}
 	
-	/*def static dispatch getRetriesOrDefault(Gateway gateway) {
+	def static dispatch getRetriesOrDefault(Gateway gateway) {
 		if (gateway.retries.size() == 0) return defaultRetries;
 		return gateway.retries.get(0);
-	}*/
+	}
 	
 	def static dispatch getErrorLedOrDefault(Gateway gateway) {
 		if (gateway.errorLed.size() == 0) return defaultErrorLed;
 		return gateway.errorLed.get(0);
+	}
+	
+	def static dispatch getRetryDelayOrDefault(Worker worker) {
+		if (worker.delay.size() == 0) return defaultRetryDelay;
+		return asFloat(worker.delay.get(0));	
+	}
+	
+	def static dispatch getRetryDelayOrDefault(Gateway gateway) {
+		if (gateway.delay.size() == 0) return defaultRetryDelay;
+		return asFloat(gateway.delay.get(0));	
 	}
 }

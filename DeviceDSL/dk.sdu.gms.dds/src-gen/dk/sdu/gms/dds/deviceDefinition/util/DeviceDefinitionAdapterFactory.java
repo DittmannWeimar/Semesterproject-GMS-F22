@@ -32,10 +32,12 @@ import dk.sdu.gms.dds.deviceDefinition.IntPrimitive;
 import dk.sdu.gms.dds.deviceDefinition.InternalVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.Lesser;
 import dk.sdu.gms.dds.deviceDefinition.LesserOrEquals;
+import dk.sdu.gms.dds.deviceDefinition.Millisecond;
 import dk.sdu.gms.dds.deviceDefinition.Minus;
 import dk.sdu.gms.dds.deviceDefinition.Minute;
 import dk.sdu.gms.dds.deviceDefinition.Mult;
 import dk.sdu.gms.dds.deviceDefinition.NotEquals;
+import dk.sdu.gms.dds.deviceDefinition.NumberPrimitive;
 import dk.sdu.gms.dds.deviceDefinition.OnOff;
 import dk.sdu.gms.dds.deviceDefinition.Or;
 import dk.sdu.gms.dds.deviceDefinition.Parenthesis;
@@ -213,6 +215,11 @@ public class DeviceDefinitionAdapterFactory extends AdapterFactoryImpl
         return createPrimitiveAdapter();
       }
       @Override
+      public Adapter caseNumberPrimitive(NumberPrimitive object)
+      {
+        return createNumberPrimitiveAdapter();
+      }
+      @Override
       public Adapter caseExpression(Expression object)
       {
         return createExpressionAdapter();
@@ -283,6 +290,11 @@ public class DeviceDefinitionAdapterFactory extends AdapterFactoryImpl
         return createGenericOutAdapter();
       }
       @Override
+      public Adapter caseMillisecond(Millisecond object)
+      {
+        return createMillisecondAdapter();
+      }
+      @Override
       public Adapter caseSecond(Second object)
       {
         return createSecondAdapter();
@@ -308,16 +320,6 @@ public class DeviceDefinitionAdapterFactory extends AdapterFactoryImpl
         return createOnOffAdapter();
       }
       @Override
-      public Adapter caseDecimalPrimitive(DecimalPrimitive object)
-      {
-        return createDecimalPrimitiveAdapter();
-      }
-      @Override
-      public Adapter caseIntPrimitive(IntPrimitive object)
-      {
-        return createIntPrimitiveAdapter();
-      }
-      @Override
       public Adapter caseBooleanTrue(BooleanTrue object)
       {
         return createBooleanTrueAdapter();
@@ -326,6 +328,16 @@ public class DeviceDefinitionAdapterFactory extends AdapterFactoryImpl
       public Adapter caseBooleanFalse(BooleanFalse object)
       {
         return createBooleanFalseAdapter();
+      }
+      @Override
+      public Adapter caseIntPrimitive(IntPrimitive object)
+      {
+        return createIntPrimitiveAdapter();
+      }
+      @Override
+      public Adapter caseDecimalPrimitive(DecimalPrimitive object)
+      {
+        return createDecimalPrimitiveAdapter();
       }
       @Override
       public Adapter casePlus(Plus object)
@@ -670,6 +682,21 @@ public class DeviceDefinitionAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link dk.sdu.gms.dds.deviceDefinition.NumberPrimitive <em>Number Primitive</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dk.sdu.gms.dds.deviceDefinition.NumberPrimitive
+   * @generated
+   */
+  public Adapter createNumberPrimitiveAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link dk.sdu.gms.dds.deviceDefinition.Expression <em>Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -880,6 +907,21 @@ public class DeviceDefinitionAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link dk.sdu.gms.dds.deviceDefinition.Millisecond <em>Millisecond</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dk.sdu.gms.dds.deviceDefinition.Millisecond
+   * @generated
+   */
+  public Adapter createMillisecondAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link dk.sdu.gms.dds.deviceDefinition.Second <em>Second</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -955,36 +997,6 @@ public class DeviceDefinitionAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link dk.sdu.gms.dds.deviceDefinition.DecimalPrimitive <em>Decimal Primitive</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see dk.sdu.gms.dds.deviceDefinition.DecimalPrimitive
-   * @generated
-   */
-  public Adapter createDecimalPrimitiveAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link dk.sdu.gms.dds.deviceDefinition.IntPrimitive <em>Int Primitive</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see dk.sdu.gms.dds.deviceDefinition.IntPrimitive
-   * @generated
-   */
-  public Adapter createIntPrimitiveAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link dk.sdu.gms.dds.deviceDefinition.BooleanTrue <em>Boolean True</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1010,6 +1022,36 @@ public class DeviceDefinitionAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createBooleanFalseAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dk.sdu.gms.dds.deviceDefinition.IntPrimitive <em>Int Primitive</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dk.sdu.gms.dds.deviceDefinition.IntPrimitive
+   * @generated
+   */
+  public Adapter createIntPrimitiveAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dk.sdu.gms.dds.deviceDefinition.DecimalPrimitive <em>Decimal Primitive</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dk.sdu.gms.dds.deviceDefinition.DecimalPrimitive
+   * @generated
+   */
+  public Adapter createDecimalPrimitiveAdapter()
   {
     return null;
   }

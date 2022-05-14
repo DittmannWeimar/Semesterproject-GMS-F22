@@ -20,7 +20,7 @@ package dk.sdu.gms.dds.deviceDefinition;
  * @model
  * @generated
  */
-public interface IntPrimitive extends Primitive
+public interface IntPrimitive extends NumberPrimitive
 {
   /**
    * Returns the value of the '<em><b>Value</b></em>' attribute.

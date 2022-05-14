@@ -38,8 +38,8 @@ async function updateChart(chartId, topics, timeSinceNow) {
 }
 
 $(document).ready(function () {
-const graph_ref113621002_context = document.getElementById('chart-Soil Moisture').getContext('2d');
-graph_ref113621002_data = {
+const graph_ref653551648_context = document.getElementById('chart-Soil Moisture').getContext('2d');
+graph_ref653551648_data = {
     labels: [],
     datasets: [{
     	            label: '',
@@ -51,9 +51,9 @@ graph_ref113621002_data = {
     ]
 }
 	
-graph_ref113621002 = new Chart(graph_ref113621002_context, {
+graph_ref653551648 = new Chart(graph_ref653551648_context, {
     type: 'line',
-    data: graph_ref113621002_data,
+    data: graph_ref653551648_data,
     options: {
         scales: {
             y: {
@@ -72,8 +72,8 @@ graph_ref113621002 = new Chart(graph_ref113621002_context, {
     }
 });
 		
-chartIdToData['chart-Soil Moisture'] = graph_ref113621002_data;
-chartIdToChart['chart-Soil Moisture'] = graph_ref113621002;
+chartIdToData['chart-Soil Moisture'] = graph_ref653551648_data;
+chartIdToChart['chart-Soil Moisture'] = graph_ref653551648;
 chartIdToChartExtras['chart-Soil Moisture'] = {}
 chartIdToChartExtras['chart-Soil Moisture'].colors = [];
     	
@@ -82,8 +82,8 @@ chartIdToChartExtras['chart-Soil Moisture'].colors.push('rgba');
 	
     MQTTConnect(mqtt => {
         // Make vars
-var mqtt_topic_281959230 = 'samples/58:BF:25:E0:77:98/10:97:BD:D5:3E:64/moisture,sample';
-mqtt.subscribe(mqtt_topic_281959230);
+var mqtt_topic_414746462 = 'samples/58:BF:25:E0:77:98/10:97:BD:D5:3E:64/moisture,sample';
+mqtt.subscribe(mqtt_topic_414746462);
 
         mqtt.onMessageArrived = function (message) {
             console.log("Message Arrived: " + message.payloadString);
@@ -98,10 +98,10 @@ mqtt.subscribe(mqtt_topic_281959230);
             xLabel = date.toLocaleTimeString();
             
             
-    	        if(message.destinationName == mqtt_topic_281959230) {
-    	        		            graph_ref113621002_data.labels.push(xLabel);
-    	        		            graph_ref113621002_data.datasets[0].data.push(message.payloadString);
-    	        		            graph_ref113621002.update();
+    	        if(message.destinationName == mqtt_topic_414746462) {
+    	        		            graph_ref653551648_data.labels.push(xLabel);
+    	        		            graph_ref653551648_data.datasets[0].data.push(message.payloadString);
+    	        		            graph_ref653551648.update();
     	        }
         }
     });
