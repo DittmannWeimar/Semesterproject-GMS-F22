@@ -15,6 +15,10 @@ import dk.sdu.gms.dds.deviceDefinition.Preset
 import dk.sdu.gms.dds.deviceDefinition.ColorPreset
 import dk.sdu.gms.dds.deviceDefinition.Random
 import dk.sdu.gms.dds.deviceDefinition.RGB
+import dk.sdu.gms.dds.deviceDefinition.Primitive
+import dk.sdu.gms.dds.deviceDefinition.BooleanTrue
+import dk.sdu.gms.dds.deviceDefinition.BooleanFalse
+import dk.sdu.gms.dds.deviceDefinition.NumberPrimitive
 
 class WebClientGenerator {
 	public static def generateWebClient (dk.sdu.gms.dds.deviceDefinition.System system, IFileSystemAccess2 fsa) {
@@ -25,7 +29,6 @@ class WebClientGenerator {
 		fsa.generateFile(system.name + "/" + webClientRoot + "bridge.php", WebClientBoilerPlate.generateBridge)
 		fsa.generateFile(system.name + "/" + webClientRoot + "header.php", WebClientBoilerPlate.generateHeader)
 		fsa.generateFile(system.name + "/" + webClientRoot + "commonBody.php", WebClientBoilerPlate.generateCommonBody)
-		fsa.generateFile(system.name + "/" + webClientRoot + "index.php", WebClientBoilerPlate.generateIndex)
 		
 		
 		// Generate specific files.
@@ -48,12 +51,12 @@ class WebClientGenerator {
 			var php = x.key.generateCategoryPagePHP(gateway, x.value)
 			var js = x.key.generateCategoryPageJavascript(gateway, x.value)
 			
-			fsa.generateFile(system.name + "/" + webClientRoot + "category-pages/"+x.key+".php", php)
-			fsa.generateFile(system.name + "/" + webClientRoot + "category-pages/"+x.key+".js", js)
+			fsa.generateFile(system.name + "/" + webClientRoot + "category-pages/"+x.key.removeSpaces+".php", php)
+			fsa.generateFile(system.name + "/" + webClientRoot + "category-pages/"+x.key.removeSpaces+".js", js)
 		]
 		
 		fsa.generateFile(system.name + "/" + webClientRoot + "helper.js", generateHelper(system))
-		
+		fsa.generateFile(system.name + "/" + webClientRoot + "index.php", generateIndex(gateway.workers))
 	}
 	
 	def static String generateCategoryPagePHP(String category, Gateway gateway, List<Graph> values) '''
@@ -63,7 +66,7 @@ class WebClientGenerator {
 	<head>
 	    <title>Green House Management System</title>
 	    <?php require $_SERVER['DOCUMENT_ROOT'] . "/header.php" ?>
-	    <script src="«category».js"></script>
+	    <script src="«category.removeSpaces».js"></script>
 	</head>
 	
 	<body>
@@ -306,6 +309,78 @@ class WebClientGenerator {
 	}
 	'''
 	
+	def static String generateIndex(List<Worker> workers) '''
+	<!DOCTYPE html>
+	<html>
+	
+	<head>
+	    <title>Green House Management System</title>
+	    <?php require "header.php" ?>
+	</head>
+	
+	<body>
+	    <?php require "commonBody.php" ?>
+	
+	    <ul class="flex-container">
+	    	«FOR worker: workers»
+	        <li class="chart-container">
+	            <div class="centered">
+	                <h3>«worker.name»</h3>
+	            </div>
+	            <table class="settings-table">
+	            «FOR setting: worker.devices.flatMap[x | x.settings]»
+	                <tr>
+	                    <th>
+	                        <h5>«setting.name»</h5>
+	                    </th>
+	                    <th><input type="text" id="«worker.name»__«setting.name»">«Utils.generatePrimitive(setting.value)»</input></th>
+	                    <th><button onclick="MQTTSend('«Utils.getSettingMqttTopic(setting)»', $('#«worker.name»__«setting.name»').val())">Apply</button></th>
+	                </tr>
+                «ENDFOR»
+	            </table>
+	        </li>
+	    	«ENDFOR»
+	    </ul>
+	</body>
+	
+	<script>
+	
+	
+	$(document).ready(function () {	
+	    MQTTConnect(mqtt => {
+	    	
+	    	
+    	«FOR worker: workers»
+            «FOR setting: worker.devices.flatMap[x | x.settings]»
+            	var topic_«worker.name»__«setting.name» = '«Utils.getSettingMqttTopic(setting)»';
+            «ENDFOR»
+    	«ENDFOR»
+	
+	        mqtt.onMessageArrived = function (message) {
+	            console.log("Message Arrived: " + message.payloadString);
+	            console.log("Topic:     " + message.destinationName);
+	            console.log("QoS:       " + message.qos);
+	            console.log("Retained:  " + message.retained);
+	            // Read Only, set if message might be a duplicate sent from broker
+	            console.log("Duplicate: " + message.duplicate);
+	
+	
+	    	«FOR worker: workers»
+	            «FOR setting: worker.devices.flatMap[x | x.settings]»
+    	            if (message.destinationName == topic_«worker.name»__«setting.name») {
+						$("#«worker.name»__«setting.name»").val(message.payLoadString);
+    	            }
+	            «ENDFOR»
+	    	«ENDFOR»
+	        }
+	    });
+	});
+	
+	</script>
+	
+	</html>
+	'''
+	
 	def static String writeColor(Color color) {
 		if(color instanceof Preset) {
 			val preset = color.preset
@@ -427,5 +502,9 @@ class WebClientGenerator {
 		} 
 		
 		categories
+	}
+	
+	def static String removeSpaces(String str) {
+		str.replaceAll("\\s+","")
 	}
 }

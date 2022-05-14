@@ -319,6 +319,10 @@ class Utils {
 		return 'samples/' + system(output).gateway.mac + '/' + output.sensor.worker.mac + '/' + getSampleMqttSubject(output)
 	}
 	
+	public static def getSettingMqttTopic(Setting setting) {
+		return 'settings/' + gateway(setting).mac + '/' + worker(setting).mac + '/' + getBindingName(setting)
+	}
+	
 	public static def isTimed (Trigger trigger) {
 		if (trigger instanceof OnOff) {
 			return trigger.offExp === null;			
@@ -348,22 +352,18 @@ class Utils {
 		}
 	}
 	
-	public static def getAllReferencedInExternalVariableUseSensors(Expression exp) {
-		val list = new ArrayList<Sensor>();
-		recursiveGetAllReferencedInExternalVariableUseSensors(exp, list);
+	public static def <T> getChildrenOfType(EObject obj, Class<T> type) {
+		var list = new ArrayList<T>();
+		recursiveGetChildrenOfType(obj, list, type);
 		return list;
 	}
 	
-	// Can be refactored to be generic.
-	private static def void recursiveGetAllReferencedInExternalVariableUseSensors (EObject obj, List<Sensor> list) {
+	private static def <T> void recursiveGetChildrenOfType (EObject obj, List<T> list, Class<T> type) {
 		for (content : obj.eContents) {
-			if (content instanceof ExternalVariableUse) {
-				val sensor = (content as ExternalVariableUse).obj as Sensor;
-				if (sensor !== null) {
-					list.add(sensor);
-				}
+			if (type.isInstance(content)) {
+				list.add(content as T);
 			}else{
-				recursiveGetAllReferencedInExternalVariableUseSensors(content, list);
+				recursiveGetChildrenOfType(content, list, type);
 			}
 		}
 	}

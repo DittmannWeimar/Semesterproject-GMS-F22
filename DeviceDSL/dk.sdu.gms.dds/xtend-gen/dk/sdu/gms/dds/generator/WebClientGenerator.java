@@ -4,6 +4,7 @@ import dk.sdu.gms.dds.Utils;
 import dk.sdu.gms.dds.deviceDefinition.Binding;
 import dk.sdu.gms.dds.deviceDefinition.Color;
 import dk.sdu.gms.dds.deviceDefinition.ColorPreset;
+import dk.sdu.gms.dds.deviceDefinition.Device;
 import dk.sdu.gms.dds.deviceDefinition.Gateway;
 import dk.sdu.gms.dds.deviceDefinition.Graph;
 import dk.sdu.gms.dds.deviceDefinition.GraphLine;
@@ -11,6 +12,7 @@ import dk.sdu.gms.dds.deviceDefinition.Preset;
 import dk.sdu.gms.dds.deviceDefinition.RGB;
 import dk.sdu.gms.dds.deviceDefinition.Random;
 import dk.sdu.gms.dds.deviceDefinition.SensorOutput;
+import dk.sdu.gms.dds.deviceDefinition.Setting;
 import dk.sdu.gms.dds.deviceDefinition.Worker;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,6 +22,8 @@ import java.util.function.Consumer;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
+import org.eclipse.xtext.xbase.lib.Functions.Function1;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
 
 @SuppressWarnings("all")
@@ -46,11 +50,6 @@ public class WebClientGenerator {
     String _plus_10 = (_plus_9 + webClientRoot);
     String _plus_11 = (_plus_10 + "commonBody.php");
     fsa.generateFile(_plus_11, WebClientBoilerPlate.generateCommonBody());
-    String _name_4 = system.getName();
-    String _plus_12 = (_name_4 + "/");
-    String _plus_13 = (_plus_12 + webClientRoot);
-    String _plus_14 = (_plus_13 + "index.php");
-    fsa.generateFile(_plus_14, WebClientBoilerPlate.generateIndex());
     final Gateway gateway = system.getGateway();
     final EList<Worker> workers = gateway.getWorkers();
     final HashMap<String, List<Graph>> graphsGroupedByCategory = new HashMap<String, List<Graph>>();
@@ -70,29 +69,34 @@ public class WebClientGenerator {
     final Consumer<Map.Entry<String, List<Graph>>> _function = (Map.Entry<String, List<Graph>> x) -> {
       String php = WebClientGenerator.generateCategoryPagePHP(x.getKey(), gateway, x.getValue());
       String js = WebClientGenerator.generateCategoryPageJavascript(x.getKey(), gateway, x.getValue());
+      String _name_4 = system.getName();
+      String _plus_12 = (_name_4 + "/");
+      String _plus_13 = (_plus_12 + webClientRoot);
+      String _plus_14 = (_plus_13 + "category-pages/");
+      String _removeSpaces = WebClientGenerator.removeSpaces(x.getKey());
+      String _plus_15 = (_plus_14 + _removeSpaces);
+      String _plus_16 = (_plus_15 + ".php");
+      fsa.generateFile(_plus_16, php);
       String _name_5 = system.getName();
-      String _plus_15 = (_name_5 + "/");
-      String _plus_16 = (_plus_15 + webClientRoot);
-      String _plus_17 = (_plus_16 + "category-pages/");
-      String _key = x.getKey();
-      String _plus_18 = (_plus_17 + _key);
-      String _plus_19 = (_plus_18 + ".php");
-      fsa.generateFile(_plus_19, php);
-      String _name_6 = system.getName();
-      String _plus_20 = (_name_6 + "/");
-      String _plus_21 = (_plus_20 + webClientRoot);
-      String _plus_22 = (_plus_21 + "category-pages/");
-      String _key_1 = x.getKey();
-      String _plus_23 = (_plus_22 + _key_1);
-      String _plus_24 = (_plus_23 + ".js");
-      fsa.generateFile(_plus_24, js);
+      String _plus_17 = (_name_5 + "/");
+      String _plus_18 = (_plus_17 + webClientRoot);
+      String _plus_19 = (_plus_18 + "category-pages/");
+      String _removeSpaces_1 = WebClientGenerator.removeSpaces(x.getKey());
+      String _plus_20 = (_plus_19 + _removeSpaces_1);
+      String _plus_21 = (_plus_20 + ".js");
+      fsa.generateFile(_plus_21, js);
     };
     graphsGroupedByCategory.entrySet().forEach(_function);
+    String _name_4 = system.getName();
+    String _plus_12 = (_name_4 + "/");
+    String _plus_13 = (_plus_12 + webClientRoot);
+    String _plus_14 = (_plus_13 + "helper.js");
+    fsa.generateFile(_plus_14, WebClientGenerator.generateHelper(system));
     String _name_5 = system.getName();
     String _plus_15 = (_name_5 + "/");
     String _plus_16 = (_plus_15 + webClientRoot);
-    String _plus_17 = (_plus_16 + "helper.js");
-    fsa.generateFile(_plus_17, WebClientGenerator.generateHelper(system));
+    String _plus_17 = (_plus_16 + "index.php");
+    fsa.generateFile(_plus_17, WebClientGenerator.generateIndex(gateway.getWorkers()));
   }
   
   public static String generateCategoryPagePHP(final String category, final Gateway gateway, final List<Graph> values) {
@@ -112,7 +116,8 @@ public class WebClientGenerator {
     _builder.newLine();
     _builder.append("    ");
     _builder.append("<script src=\"");
-    _builder.append(category, "    ");
+    String _removeSpaces = WebClientGenerator.removeSpaces(category);
+    _builder.append(_removeSpaces, "    ");
     _builder.append(".js\"></script>");
     _builder.newLineIfNotEmpty();
     _builder.append("</head>");
@@ -828,6 +833,228 @@ public class WebClientGenerator {
     return _builder.toString();
   }
   
+  public static String generateIndex(final List<Worker> workers) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<!DOCTYPE html>");
+    _builder.newLine();
+    _builder.append("<html>");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("<head>");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("<title>Green House Management System</title>");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("<?php require \"header.php\" ?>");
+    _builder.newLine();
+    _builder.append("</head>");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("<body>");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("<?php require \"commonBody.php\" ?>");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("<ul class=\"flex-container\">");
+    _builder.newLine();
+    {
+      for(final Worker worker : workers) {
+        _builder.append("<li class=\"chart-container\">");
+        _builder.newLine();
+        _builder.append("    ");
+        _builder.append("<div class=\"centered\">");
+        _builder.newLine();
+        _builder.append("        ");
+        _builder.append("<h3>");
+        String _name = worker.getName();
+        _builder.append(_name, "        ");
+        _builder.append("</h3>");
+        _builder.newLineIfNotEmpty();
+        _builder.append("    ");
+        _builder.append("</div>");
+        _builder.newLine();
+        _builder.append("    ");
+        _builder.append("<table class=\"settings-table\">");
+        _builder.newLine();
+        {
+          final Function1<Device, EList<Setting>> _function = (Device x) -> {
+            return x.getSettings();
+          };
+          Iterable<Setting> _flatMap = IterableExtensions.<Device, Setting>flatMap(worker.getDevices(), _function);
+          for(final Setting setting : _flatMap) {
+            _builder.append("    ");
+            _builder.append("<tr>");
+            _builder.newLine();
+            _builder.append("    ");
+            _builder.append("    ");
+            _builder.append("<th>");
+            _builder.newLine();
+            _builder.append("    ");
+            _builder.append("        ");
+            _builder.append("<h5>");
+            String _name_1 = setting.getName();
+            _builder.append(_name_1, "            ");
+            _builder.append("</h5>");
+            _builder.newLineIfNotEmpty();
+            _builder.append("    ");
+            _builder.append("    ");
+            _builder.append("</th>");
+            _builder.newLine();
+            _builder.append("    ");
+            _builder.append("    ");
+            _builder.append("<th><input type=\"text\" id=\"");
+            String _name_2 = worker.getName();
+            _builder.append(_name_2, "        ");
+            _builder.append("__");
+            String _name_3 = setting.getName();
+            _builder.append(_name_3, "        ");
+            _builder.append("\">");
+            String _generatePrimitive = Utils.generatePrimitive(setting.getValue());
+            _builder.append(_generatePrimitive, "        ");
+            _builder.append("</input></th>");
+            _builder.newLineIfNotEmpty();
+            _builder.append("    ");
+            _builder.append("    ");
+            _builder.append("<th><button onclick=\"MQTTSend(\'");
+            String _settingMqttTopic = Utils.getSettingMqttTopic(setting);
+            _builder.append(_settingMqttTopic, "        ");
+            _builder.append("\', $(\'#");
+            String _name_4 = worker.getName();
+            _builder.append(_name_4, "        ");
+            _builder.append("__");
+            String _name_5 = setting.getName();
+            _builder.append(_name_5, "        ");
+            _builder.append("\').val())\">Apply</button></th>");
+            _builder.newLineIfNotEmpty();
+            _builder.append("    ");
+            _builder.append("</tr>");
+            _builder.newLine();
+          }
+        }
+        _builder.append("    ");
+        _builder.append("</table>");
+        _builder.newLine();
+        _builder.append("</li>");
+        _builder.newLine();
+      }
+    }
+    _builder.append("    ");
+    _builder.append("</ul>");
+    _builder.newLine();
+    _builder.append("</body>");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("<script>");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("$(document).ready(function () {\t");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("MQTTConnect(mqtt => {");
+    _builder.newLine();
+    _builder.append("    \t");
+    _builder.newLine();
+    _builder.append("    \t");
+    _builder.newLine();
+    {
+      for(final Worker worker_1 : workers) {
+        {
+          final Function1<Device, EList<Setting>> _function_1 = (Device x) -> {
+            return x.getSettings();
+          };
+          Iterable<Setting> _flatMap_1 = IterableExtensions.<Device, Setting>flatMap(worker_1.getDevices(), _function_1);
+          for(final Setting setting_1 : _flatMap_1) {
+            _builder.append("var topic_");
+            String _name_6 = worker_1.getName();
+            _builder.append(_name_6);
+            _builder.append("__");
+            String _name_7 = setting_1.getName();
+            _builder.append(_name_7);
+            _builder.append(" = \'");
+            String _settingMqttTopic_1 = Utils.getSettingMqttTopic(setting_1);
+            _builder.append(_settingMqttTopic_1);
+            _builder.append("\';");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+      }
+    }
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("mqtt.onMessageArrived = function (message) {");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("console.log(\"Message Arrived: \" + message.payloadString);");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("console.log(\"Topic:     \" + message.destinationName);");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("console.log(\"QoS:       \" + message.qos);");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("console.log(\"Retained:  \" + message.retained);");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("// Read Only, set if message might be a duplicate sent from broker");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("console.log(\"Duplicate: \" + message.duplicate);");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.newLine();
+    {
+      for(final Worker worker_2 : workers) {
+        {
+          final Function1<Device, EList<Setting>> _function_2 = (Device x) -> {
+            return x.getSettings();
+          };
+          Iterable<Setting> _flatMap_2 = IterableExtensions.<Device, Setting>flatMap(worker_2.getDevices(), _function_2);
+          for(final Setting setting_2 : _flatMap_2) {
+            _builder.append("if (message.destinationName == topic_");
+            String _name_8 = worker_2.getName();
+            _builder.append(_name_8);
+            _builder.append("__");
+            String _name_9 = setting_2.getName();
+            _builder.append(_name_9);
+            _builder.append(") {");
+            _builder.newLineIfNotEmpty();
+            _builder.append("\t\t\t\t\t\t");
+            _builder.append("$(\"#");
+            String _name_10 = worker_2.getName();
+            _builder.append(_name_10, "\t\t\t\t\t\t");
+            _builder.append("__");
+            String _name_11 = setting_2.getName();
+            _builder.append(_name_11, "\t\t\t\t\t\t");
+            _builder.append("\").val(message.payLoadString);");
+            _builder.newLineIfNotEmpty();
+            _builder.append("}");
+            _builder.newLine();
+          }
+        }
+      }
+    }
+    _builder.append("        ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("});");
+    _builder.newLine();
+    _builder.append("});");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("</script>");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("</html>");
+    _builder.newLine();
+    return _builder.toString();
+  }
+  
   public static String writeColor(final Color color) {
     if ((color instanceof Preset)) {
       final ColorPreset preset = ((Preset)color).getPreset();
@@ -1053,5 +1280,9 @@ public class WebClientGenerator {
       _xblockexpression = categories;
     }
     return _xblockexpression;
+  }
+  
+  public static String removeSpaces(final String str) {
+    return str.replaceAll("\\s+", "");
   }
 }

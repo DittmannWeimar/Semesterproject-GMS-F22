@@ -2,31 +2,49 @@ package dk.sdu.gms.dds.generator
 
 class WebClientBoilerPlate {
 	public static def String generateCSS() '''
-		.chart-container {
-		  width: 600px;
-		  height: auto;
-		  list-style-type: none;
-		  border: 1px solid gray;
-		  padding: 5px;
-		}
-		
-		.flex-container {
-		  display: grid;
-		  grid-template-columns: repeat(auto-fit, minmax(600px, max-content));
-		  grid-gap: 16px;
-		  justify-content: center;
-		  padding: 32px;
-		}
-		
-		.centered {
-		  font-family: arial;
-		  font-size: 24px;
-		  width: 100%;
-		}
-		
-		.centered h3 {
-		  text-align: center;
-		}
+.chart-container {
+  width: 600px;
+  height: auto;
+  list-style-type: none;
+  border: 1px solid gray;
+  padding: 5px;
+}
+
+.flex-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(600px, max-content));
+  grid-gap: 16px;
+  justify-content: center;
+  padding: 32px;
+}
+
+.centered {
+  font-family: arial;
+  font-size: 24px;
+  width: 100%;
+}
+
+.centered h3 {
+  text-align: center;
+}
+
+.settings-table {
+  width: 100%;
+  border-spacing: 16px;
+  border-collapse: collapse;
+}
+
+.settings-table tr th input {
+  width: 100px;
+}
+
+.settings-table tr th h5 {
+  width: 350px;
+}
+
+table tr {
+  border-top: 2px solid #EEE;
+}
 	'''
 	
 	public static def String generateHeader() '''
@@ -81,7 +99,7 @@ class WebClientBoilerPlate {
 	if (!isset($apiHost)) {
 	    $apiRoot = "http://localhost:3000/$queryArguments";
 	} else {
-	    $apiRoot = $apiHost . "/$queryArguments";
+	    $apiRoot = $apiHost . "$queryArguments";
 	}
 	
 	$options = array(
@@ -95,37 +113,6 @@ class WebClientBoilerPlate {
 	$result = file_get_contents($apiRoot, false, $context);
 	
 	echo $result;
-	'''
-	
-	def static String generateIndex() '''
-	<!DOCTYPE html>
-	<html>
-	
-	<head>
-	    <title>Green House Management System</title>
-	    <?php require "header.php" ?>
-	
-	    <script>
-	        MQTTConnect();
-	    </script>
-	</head>
-	
-	<body>
-	    <?php require "commonBody.php" ?>
-	
-	    <ul class="flex-container">
-	        <li class="chart-container">
-	            <h1>IoT Device 1</h1>
-	            <div>
-	                <input type="text" id="lightness"></input>
-	                
-	                <p>LED: </p><button onclick="MQTTSend('gateway/worker/setting', $('#lightness').val())">Toggle</button>
-	            </div>
-	        </li>
-	    </ul>
-	</body>
-	
-	</html>
 	'''
 	
 	def static String generateCommonBody() '''

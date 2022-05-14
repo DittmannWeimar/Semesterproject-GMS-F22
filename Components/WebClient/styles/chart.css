@@ -23,3 +23,21 @@
 .centered h3 {
   text-align: center;
 }
+
+.settings-table {
+  width: 100%;
+  border-spacing: 16px;
+  border-collapse: collapse;
+}
+
+.settings-table tr th input {
+  width: 100px;
+}
+
+.settings-table tr th h5 {
+  width: 350px;
+}
+
+table tr {
+  border-top: 2px solid #EEE;
+}
