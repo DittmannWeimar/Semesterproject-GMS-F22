@@ -89,4 +89,25 @@ class DeviceDefinitionValidator extends AbstractDeviceDefinitionValidator {
 	def getSleepTime (Worker worker) {
 		return worker.sleepTime + " " + timeUnitToString(worker.timeUnit);
 	}
+	
+	@Check
+	def checkPrefered(Worker worker){
+		var preferred = false
+		val gateway = gateway(worker)
+		for (worker_device : gateway.workers){
+			if(worker_device.preferred > 0){
+				preferred = true
+			}
+		}
+		
+		var outofRange = false
+		if (worker.preferred > gateway.mac.size){
+			outofRange = true
+		}
+		
+		if(preferred && worker.preferred <= 0 || outofRange){
+			error("Either all workers need to have a preferred gateway and should be inside range of gateways or no worker should have a prefered gateway", DeviceDefinitionPackage.Literals.WORKER__MAC)
+		}
+	}
+	
 }

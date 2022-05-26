@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_DECIMAL", "RULE_MAC", "RULE_INT", "RULE_HEXBYTE", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'System'", "':'", "'wifi'", "'with'", "'password'", "'mqtt'", "'username'", "'and'", "'Graph'", "'category'", "'title'", "'x'", "'y'", "'line'", "'legend'", "'color'", "'('", "','", "')'", "'random'", "'Gateway'", "'mac'", "'channel'", "'error'", "'light'", "'retries'", "'delay'", "'Worker'", "'sleep'", "'for'", "'Sensor'", "'pins'", "'sample'", "'if'", "'adc'", "'dac'", "'in'", "'out'", "'millisecond'", "'milliseconds'", "'ms'", "'second'", "'seconds'", "'s'", "'minute'", "'minutes'", "'m'", "'hour'", "'hours'", "'h'", "'as'", "'mapping'", "'Actuator'", "'when'", "'on'", "'off'", "'run'", "'setting'", "'='", "'TRUE'", "'FALSE'", "'+'", "'-'", "'*'", "'/'", "'>'", "'<'", "'>='", "'<='", "'=='", "'!='", "'or'", "'value'", "'call'", "'.'", "'->'", "'red'", "'green'", "'blue'", "'yellow'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_DECIMAL", "RULE_MAC", "RULE_INT", "RULE_HEXBYTE", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'System'", "':'", "'wifi'", "'with'", "'password'", "'mqtt'", "'username'", "'and'", "'Graph'", "'category'", "'title'", "'x'", "'y'", "'line'", "'legend'", "'color'", "'('", "','", "')'", "'random'", "'Gateway'", "'mac'", "'channel'", "'error'", "'light'", "'retries'", "'delay'", "'Worker'", "'preferred gateway'", "'sleep'", "'for'", "'Sensor'", "'pins'", "'sample'", "'if'", "'adc'", "'dac'", "'in'", "'out'", "'millisecond'", "'milliseconds'", "'ms'", "'second'", "'seconds'", "'s'", "'minute'", "'minutes'", "'m'", "'hour'", "'hours'", "'h'", "'as'", "'mapping'", "'Actuator'", "'when'", "'on'", "'off'", "'run'", "'setting'", "'='", "'TRUE'", "'FALSE'", "'+'", "'-'", "'*'", "'/'", "'>'", "'<'", "'>='", "'<='", "'=='", "'!='", "'or'", "'value'", "'call'", "'.'", "'->'", "'red'", "'green'", "'blue'", "'yellow'"
     };
     public static final int T__50=50;
     public static final int T__59=59;
@@ -72,6 +72,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
     public static final int T__91=91;
     public static final int T__92=92;
     public static final int T__93=93;
+    public static final int T__94=94;
     public static final int T__90=90;
     public static final int T__19=19;
     public static final int T__15=15;
@@ -1110,10 +1111,10 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                 alt7=1;
                 }
                 break;
-            case 90:
             case 91:
             case 92:
             case 93:
+            case 94:
                 {
                 alt7=2;
                 }
@@ -1388,7 +1389,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "ruleGateway"
-    // InternalDeviceDefinition.g:647:1: ruleGateway returns [EObject current=null] : (otherlv_0= 'Gateway' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= 'mac' ( (lv_mac_4_0= RULE_MAC ) ) otherlv_5= 'channel' ( (lv_channel_6_0= RULE_INT ) ) (otherlv_7= 'error' otherlv_8= 'light' ( (lv_errorLed_9_0= RULE_INT ) ) )? (otherlv_10= 'retries' ( (lv_retries_11_0= RULE_INT ) ) otherlv_12= 'with' otherlv_13= 'delay' ( (lv_delay_14_0= ruleNumberPrimitive ) ) ( (lv_delayTimeUnit_15_0= ruleTimeUnit ) ) )? ( (lv_workers_16_0= ruleWorker ) )+ ) ;
+    // InternalDeviceDefinition.g:647:1: ruleGateway returns [EObject current=null] : (otherlv_0= 'Gateway' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= 'mac' ( (lv_mac_4_0= RULE_MAC ) ) (otherlv_5= ',' ( (lv_mac_6_0= RULE_MAC ) ) )* otherlv_7= 'channel' ( (lv_channel_8_0= RULE_INT ) ) (otherlv_9= 'error' otherlv_10= 'light' ( (lv_errorLed_11_0= RULE_INT ) ) )? (otherlv_12= 'retries' ( (lv_retries_13_0= RULE_INT ) ) otherlv_14= 'with' otherlv_15= 'delay' ( (lv_delay_16_0= ruleNumberPrimitive ) ) ( (lv_delayTimeUnit_17_0= ruleTimeUnit ) ) )? ( (lv_workers_18_0= ruleWorker ) )+ ) ;
     public final EObject ruleGateway() throws RecognitionException {
         EObject current = null;
 
@@ -1398,30 +1399,32 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
         Token otherlv_3=null;
         Token lv_mac_4_0=null;
         Token otherlv_5=null;
-        Token lv_channel_6_0=null;
+        Token lv_mac_6_0=null;
         Token otherlv_7=null;
-        Token otherlv_8=null;
-        Token lv_errorLed_9_0=null;
+        Token lv_channel_8_0=null;
+        Token otherlv_9=null;
         Token otherlv_10=null;
-        Token lv_retries_11_0=null;
+        Token lv_errorLed_11_0=null;
         Token otherlv_12=null;
-        Token otherlv_13=null;
-        EObject lv_delay_14_0 = null;
+        Token lv_retries_13_0=null;
+        Token otherlv_14=null;
+        Token otherlv_15=null;
+        EObject lv_delay_16_0 = null;
 
-        EObject lv_delayTimeUnit_15_0 = null;
+        EObject lv_delayTimeUnit_17_0 = null;
 
-        EObject lv_workers_16_0 = null;
+        EObject lv_workers_18_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalDeviceDefinition.g:653:2: ( (otherlv_0= 'Gateway' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= 'mac' ( (lv_mac_4_0= RULE_MAC ) ) otherlv_5= 'channel' ( (lv_channel_6_0= RULE_INT ) ) (otherlv_7= 'error' otherlv_8= 'light' ( (lv_errorLed_9_0= RULE_INT ) ) )? (otherlv_10= 'retries' ( (lv_retries_11_0= RULE_INT ) ) otherlv_12= 'with' otherlv_13= 'delay' ( (lv_delay_14_0= ruleNumberPrimitive ) ) ( (lv_delayTimeUnit_15_0= ruleTimeUnit ) ) )? ( (lv_workers_16_0= ruleWorker ) )+ ) )
-            // InternalDeviceDefinition.g:654:2: (otherlv_0= 'Gateway' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= 'mac' ( (lv_mac_4_0= RULE_MAC ) ) otherlv_5= 'channel' ( (lv_channel_6_0= RULE_INT ) ) (otherlv_7= 'error' otherlv_8= 'light' ( (lv_errorLed_9_0= RULE_INT ) ) )? (otherlv_10= 'retries' ( (lv_retries_11_0= RULE_INT ) ) otherlv_12= 'with' otherlv_13= 'delay' ( (lv_delay_14_0= ruleNumberPrimitive ) ) ( (lv_delayTimeUnit_15_0= ruleTimeUnit ) ) )? ( (lv_workers_16_0= ruleWorker ) )+ )
+            // InternalDeviceDefinition.g:653:2: ( (otherlv_0= 'Gateway' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= 'mac' ( (lv_mac_4_0= RULE_MAC ) ) (otherlv_5= ',' ( (lv_mac_6_0= RULE_MAC ) ) )* otherlv_7= 'channel' ( (lv_channel_8_0= RULE_INT ) ) (otherlv_9= 'error' otherlv_10= 'light' ( (lv_errorLed_11_0= RULE_INT ) ) )? (otherlv_12= 'retries' ( (lv_retries_13_0= RULE_INT ) ) otherlv_14= 'with' otherlv_15= 'delay' ( (lv_delay_16_0= ruleNumberPrimitive ) ) ( (lv_delayTimeUnit_17_0= ruleTimeUnit ) ) )? ( (lv_workers_18_0= ruleWorker ) )+ ) )
+            // InternalDeviceDefinition.g:654:2: (otherlv_0= 'Gateway' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= 'mac' ( (lv_mac_4_0= RULE_MAC ) ) (otherlv_5= ',' ( (lv_mac_6_0= RULE_MAC ) ) )* otherlv_7= 'channel' ( (lv_channel_8_0= RULE_INT ) ) (otherlv_9= 'error' otherlv_10= 'light' ( (lv_errorLed_11_0= RULE_INT ) ) )? (otherlv_12= 'retries' ( (lv_retries_13_0= RULE_INT ) ) otherlv_14= 'with' otherlv_15= 'delay' ( (lv_delay_16_0= ruleNumberPrimitive ) ) ( (lv_delayTimeUnit_17_0= ruleTimeUnit ) ) )? ( (lv_workers_18_0= ruleWorker ) )+ )
             {
-            // InternalDeviceDefinition.g:654:2: (otherlv_0= 'Gateway' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= 'mac' ( (lv_mac_4_0= RULE_MAC ) ) otherlv_5= 'channel' ( (lv_channel_6_0= RULE_INT ) ) (otherlv_7= 'error' otherlv_8= 'light' ( (lv_errorLed_9_0= RULE_INT ) ) )? (otherlv_10= 'retries' ( (lv_retries_11_0= RULE_INT ) ) otherlv_12= 'with' otherlv_13= 'delay' ( (lv_delay_14_0= ruleNumberPrimitive ) ) ( (lv_delayTimeUnit_15_0= ruleTimeUnit ) ) )? ( (lv_workers_16_0= ruleWorker ) )+ )
-            // InternalDeviceDefinition.g:655:3: otherlv_0= 'Gateway' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= 'mac' ( (lv_mac_4_0= RULE_MAC ) ) otherlv_5= 'channel' ( (lv_channel_6_0= RULE_INT ) ) (otherlv_7= 'error' otherlv_8= 'light' ( (lv_errorLed_9_0= RULE_INT ) ) )? (otherlv_10= 'retries' ( (lv_retries_11_0= RULE_INT ) ) otherlv_12= 'with' otherlv_13= 'delay' ( (lv_delay_14_0= ruleNumberPrimitive ) ) ( (lv_delayTimeUnit_15_0= ruleTimeUnit ) ) )? ( (lv_workers_16_0= ruleWorker ) )+
+            // InternalDeviceDefinition.g:654:2: (otherlv_0= 'Gateway' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= 'mac' ( (lv_mac_4_0= RULE_MAC ) ) (otherlv_5= ',' ( (lv_mac_6_0= RULE_MAC ) ) )* otherlv_7= 'channel' ( (lv_channel_8_0= RULE_INT ) ) (otherlv_9= 'error' otherlv_10= 'light' ( (lv_errorLed_11_0= RULE_INT ) ) )? (otherlv_12= 'retries' ( (lv_retries_13_0= RULE_INT ) ) otherlv_14= 'with' otherlv_15= 'delay' ( (lv_delay_16_0= ruleNumberPrimitive ) ) ( (lv_delayTimeUnit_17_0= ruleTimeUnit ) ) )? ( (lv_workers_18_0= ruleWorker ) )+ )
+            // InternalDeviceDefinition.g:655:3: otherlv_0= 'Gateway' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= 'mac' ( (lv_mac_4_0= RULE_MAC ) ) (otherlv_5= ',' ( (lv_mac_6_0= RULE_MAC ) ) )* otherlv_7= 'channel' ( (lv_channel_8_0= RULE_INT ) ) (otherlv_9= 'error' otherlv_10= 'light' ( (lv_errorLed_11_0= RULE_INT ) ) )? (otherlv_12= 'retries' ( (lv_retries_13_0= RULE_INT ) ) otherlv_14= 'with' otherlv_15= 'delay' ( (lv_delay_16_0= ruleNumberPrimitive ) ) ( (lv_delayTimeUnit_17_0= ruleTimeUnit ) ) )? ( (lv_workers_18_0= ruleWorker ) )+
             {
             otherlv_0=(Token)match(input,34,FOLLOW_3); 
 
@@ -1475,7 +1478,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
             					if (current==null) {
             						current = createModelElement(grammarAccess.getGatewayRule());
             					}
-            					setWithLastConsumed(
+            					addWithLastConsumed(
             						current,
             						"mac",
             						lv_mac_4_0,
@@ -1487,19 +1490,73 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             }
 
-            otherlv_5=(Token)match(input,36,FOLLOW_29); 
+            // InternalDeviceDefinition.g:703:3: (otherlv_5= ',' ( (lv_mac_6_0= RULE_MAC ) ) )*
+            loop8:
+            do {
+                int alt8=2;
+                int LA8_0 = input.LA(1);
 
-            			newLeafNode(otherlv_5, grammarAccess.getGatewayAccess().getChannelKeyword_5());
+                if ( (LA8_0==31) ) {
+                    alt8=1;
+                }
+
+
+                switch (alt8) {
+            	case 1 :
+            	    // InternalDeviceDefinition.g:704:4: otherlv_5= ',' ( (lv_mac_6_0= RULE_MAC ) )
+            	    {
+            	    otherlv_5=(Token)match(input,31,FOLLOW_27); 
+
+            	    				newLeafNode(otherlv_5, grammarAccess.getGatewayAccess().getCommaKeyword_5_0());
+            	    			
+            	    // InternalDeviceDefinition.g:708:4: ( (lv_mac_6_0= RULE_MAC ) )
+            	    // InternalDeviceDefinition.g:709:5: (lv_mac_6_0= RULE_MAC )
+            	    {
+            	    // InternalDeviceDefinition.g:709:5: (lv_mac_6_0= RULE_MAC )
+            	    // InternalDeviceDefinition.g:710:6: lv_mac_6_0= RULE_MAC
+            	    {
+            	    lv_mac_6_0=(Token)match(input,RULE_MAC,FOLLOW_28); 
+
+            	    						newLeafNode(lv_mac_6_0, grammarAccess.getGatewayAccess().getMacMACTerminalRuleCall_5_1_0());
+            	    					
+
+            	    						if (current==null) {
+            	    							current = createModelElement(grammarAccess.getGatewayRule());
+            	    						}
+            	    						addWithLastConsumed(
+            	    							current,
+            	    							"mac",
+            	    							lv_mac_6_0,
+            	    							"dk.sdu.gms.dds.DeviceDefinition.MAC");
+            	    					
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop8;
+                }
+            } while (true);
+
+            otherlv_7=(Token)match(input,36,FOLLOW_29); 
+
+            			newLeafNode(otherlv_7, grammarAccess.getGatewayAccess().getChannelKeyword_6());
             		
-            // InternalDeviceDefinition.g:707:3: ( (lv_channel_6_0= RULE_INT ) )
-            // InternalDeviceDefinition.g:708:4: (lv_channel_6_0= RULE_INT )
+            // InternalDeviceDefinition.g:731:3: ( (lv_channel_8_0= RULE_INT ) )
+            // InternalDeviceDefinition.g:732:4: (lv_channel_8_0= RULE_INT )
             {
-            // InternalDeviceDefinition.g:708:4: (lv_channel_6_0= RULE_INT )
-            // InternalDeviceDefinition.g:709:5: lv_channel_6_0= RULE_INT
+            // InternalDeviceDefinition.g:732:4: (lv_channel_8_0= RULE_INT )
+            // InternalDeviceDefinition.g:733:5: lv_channel_8_0= RULE_INT
             {
-            lv_channel_6_0=(Token)match(input,RULE_INT,FOLLOW_30); 
+            lv_channel_8_0=(Token)match(input,RULE_INT,FOLLOW_30); 
 
-            					newLeafNode(lv_channel_6_0, grammarAccess.getGatewayAccess().getChannelINTTerminalRuleCall_6_0());
+            					newLeafNode(lv_channel_8_0, grammarAccess.getGatewayAccess().getChannelINTTerminalRuleCall_7_0());
             				
 
             					if (current==null) {
@@ -1508,7 +1565,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
             					setWithLastConsumed(
             						current,
             						"channel",
-            						lv_channel_6_0,
+            						lv_channel_8_0,
             						"org.eclipse.xtext.common.Terminals.INT");
             				
 
@@ -1517,34 +1574,34 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             }
 
-            // InternalDeviceDefinition.g:725:3: (otherlv_7= 'error' otherlv_8= 'light' ( (lv_errorLed_9_0= RULE_INT ) ) )?
-            int alt8=2;
-            int LA8_0 = input.LA(1);
+            // InternalDeviceDefinition.g:749:3: (otherlv_9= 'error' otherlv_10= 'light' ( (lv_errorLed_11_0= RULE_INT ) ) )?
+            int alt9=2;
+            int LA9_0 = input.LA(1);
 
-            if ( (LA8_0==37) ) {
-                alt8=1;
+            if ( (LA9_0==37) ) {
+                alt9=1;
             }
-            switch (alt8) {
+            switch (alt9) {
                 case 1 :
-                    // InternalDeviceDefinition.g:726:4: otherlv_7= 'error' otherlv_8= 'light' ( (lv_errorLed_9_0= RULE_INT ) )
+                    // InternalDeviceDefinition.g:750:4: otherlv_9= 'error' otherlv_10= 'light' ( (lv_errorLed_11_0= RULE_INT ) )
                     {
-                    otherlv_7=(Token)match(input,37,FOLLOW_31); 
+                    otherlv_9=(Token)match(input,37,FOLLOW_31); 
 
-                    				newLeafNode(otherlv_7, grammarAccess.getGatewayAccess().getErrorKeyword_7_0());
+                    				newLeafNode(otherlv_9, grammarAccess.getGatewayAccess().getErrorKeyword_8_0());
                     			
-                    otherlv_8=(Token)match(input,38,FOLLOW_29); 
+                    otherlv_10=(Token)match(input,38,FOLLOW_29); 
 
-                    				newLeafNode(otherlv_8, grammarAccess.getGatewayAccess().getLightKeyword_7_1());
+                    				newLeafNode(otherlv_10, grammarAccess.getGatewayAccess().getLightKeyword_8_1());
                     			
-                    // InternalDeviceDefinition.g:734:4: ( (lv_errorLed_9_0= RULE_INT ) )
-                    // InternalDeviceDefinition.g:735:5: (lv_errorLed_9_0= RULE_INT )
+                    // InternalDeviceDefinition.g:758:4: ( (lv_errorLed_11_0= RULE_INT ) )
+                    // InternalDeviceDefinition.g:759:5: (lv_errorLed_11_0= RULE_INT )
                     {
-                    // InternalDeviceDefinition.g:735:5: (lv_errorLed_9_0= RULE_INT )
-                    // InternalDeviceDefinition.g:736:6: lv_errorLed_9_0= RULE_INT
+                    // InternalDeviceDefinition.g:759:5: (lv_errorLed_11_0= RULE_INT )
+                    // InternalDeviceDefinition.g:760:6: lv_errorLed_11_0= RULE_INT
                     {
-                    lv_errorLed_9_0=(Token)match(input,RULE_INT,FOLLOW_30); 
+                    lv_errorLed_11_0=(Token)match(input,RULE_INT,FOLLOW_30); 
 
-                    						newLeafNode(lv_errorLed_9_0, grammarAccess.getGatewayAccess().getErrorLedINTTerminalRuleCall_7_2_0());
+                    						newLeafNode(lv_errorLed_11_0, grammarAccess.getGatewayAccess().getErrorLedINTTerminalRuleCall_8_2_0());
                     					
 
                     						if (current==null) {
@@ -1553,7 +1610,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                     						addWithLastConsumed(
                     							current,
                     							"errorLed",
-                    							lv_errorLed_9_0,
+                    							lv_errorLed_11_0,
                     							"org.eclipse.xtext.common.Terminals.INT");
                     					
 
@@ -1568,30 +1625,30 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             }
 
-            // InternalDeviceDefinition.g:753:3: (otherlv_10= 'retries' ( (lv_retries_11_0= RULE_INT ) ) otherlv_12= 'with' otherlv_13= 'delay' ( (lv_delay_14_0= ruleNumberPrimitive ) ) ( (lv_delayTimeUnit_15_0= ruleTimeUnit ) ) )?
-            int alt9=2;
-            int LA9_0 = input.LA(1);
+            // InternalDeviceDefinition.g:777:3: (otherlv_12= 'retries' ( (lv_retries_13_0= RULE_INT ) ) otherlv_14= 'with' otherlv_15= 'delay' ( (lv_delay_16_0= ruleNumberPrimitive ) ) ( (lv_delayTimeUnit_17_0= ruleTimeUnit ) ) )?
+            int alt10=2;
+            int LA10_0 = input.LA(1);
 
-            if ( (LA9_0==39) ) {
-                alt9=1;
+            if ( (LA10_0==39) ) {
+                alt10=1;
             }
-            switch (alt9) {
+            switch (alt10) {
                 case 1 :
-                    // InternalDeviceDefinition.g:754:4: otherlv_10= 'retries' ( (lv_retries_11_0= RULE_INT ) ) otherlv_12= 'with' otherlv_13= 'delay' ( (lv_delay_14_0= ruleNumberPrimitive ) ) ( (lv_delayTimeUnit_15_0= ruleTimeUnit ) )
+                    // InternalDeviceDefinition.g:778:4: otherlv_12= 'retries' ( (lv_retries_13_0= RULE_INT ) ) otherlv_14= 'with' otherlv_15= 'delay' ( (lv_delay_16_0= ruleNumberPrimitive ) ) ( (lv_delayTimeUnit_17_0= ruleTimeUnit ) )
                     {
-                    otherlv_10=(Token)match(input,39,FOLLOW_29); 
+                    otherlv_12=(Token)match(input,39,FOLLOW_29); 
 
-                    				newLeafNode(otherlv_10, grammarAccess.getGatewayAccess().getRetriesKeyword_8_0());
+                    				newLeafNode(otherlv_12, grammarAccess.getGatewayAccess().getRetriesKeyword_9_0());
                     			
-                    // InternalDeviceDefinition.g:758:4: ( (lv_retries_11_0= RULE_INT ) )
-                    // InternalDeviceDefinition.g:759:5: (lv_retries_11_0= RULE_INT )
+                    // InternalDeviceDefinition.g:782:4: ( (lv_retries_13_0= RULE_INT ) )
+                    // InternalDeviceDefinition.g:783:5: (lv_retries_13_0= RULE_INT )
                     {
-                    // InternalDeviceDefinition.g:759:5: (lv_retries_11_0= RULE_INT )
-                    // InternalDeviceDefinition.g:760:6: lv_retries_11_0= RULE_INT
+                    // InternalDeviceDefinition.g:783:5: (lv_retries_13_0= RULE_INT )
+                    // InternalDeviceDefinition.g:784:6: lv_retries_13_0= RULE_INT
                     {
-                    lv_retries_11_0=(Token)match(input,RULE_INT,FOLLOW_32); 
+                    lv_retries_13_0=(Token)match(input,RULE_INT,FOLLOW_32); 
 
-                    						newLeafNode(lv_retries_11_0, grammarAccess.getGatewayAccess().getRetriesINTTerminalRuleCall_8_1_0());
+                    						newLeafNode(lv_retries_13_0, grammarAccess.getGatewayAccess().getRetriesINTTerminalRuleCall_9_1_0());
                     					
 
                     						if (current==null) {
@@ -1600,7 +1657,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                     						addWithLastConsumed(
                     							current,
                     							"retries",
-                    							lv_retries_11_0,
+                    							lv_retries_13_0,
                     							"org.eclipse.xtext.common.Terminals.INT");
                     					
 
@@ -1609,25 +1666,25 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
                     }
 
-                    otherlv_12=(Token)match(input,17,FOLLOW_33); 
+                    otherlv_14=(Token)match(input,17,FOLLOW_33); 
 
-                    				newLeafNode(otherlv_12, grammarAccess.getGatewayAccess().getWithKeyword_8_2());
+                    				newLeafNode(otherlv_14, grammarAccess.getGatewayAccess().getWithKeyword_9_2());
                     			
-                    otherlv_13=(Token)match(input,40,FOLLOW_34); 
+                    otherlv_15=(Token)match(input,40,FOLLOW_34); 
 
-                    				newLeafNode(otherlv_13, grammarAccess.getGatewayAccess().getDelayKeyword_8_3());
+                    				newLeafNode(otherlv_15, grammarAccess.getGatewayAccess().getDelayKeyword_9_3());
                     			
-                    // InternalDeviceDefinition.g:784:4: ( (lv_delay_14_0= ruleNumberPrimitive ) )
-                    // InternalDeviceDefinition.g:785:5: (lv_delay_14_0= ruleNumberPrimitive )
+                    // InternalDeviceDefinition.g:808:4: ( (lv_delay_16_0= ruleNumberPrimitive ) )
+                    // InternalDeviceDefinition.g:809:5: (lv_delay_16_0= ruleNumberPrimitive )
                     {
-                    // InternalDeviceDefinition.g:785:5: (lv_delay_14_0= ruleNumberPrimitive )
-                    // InternalDeviceDefinition.g:786:6: lv_delay_14_0= ruleNumberPrimitive
+                    // InternalDeviceDefinition.g:809:5: (lv_delay_16_0= ruleNumberPrimitive )
+                    // InternalDeviceDefinition.g:810:6: lv_delay_16_0= ruleNumberPrimitive
                     {
 
-                    						newCompositeNode(grammarAccess.getGatewayAccess().getDelayNumberPrimitiveParserRuleCall_8_4_0());
+                    						newCompositeNode(grammarAccess.getGatewayAccess().getDelayNumberPrimitiveParserRuleCall_9_4_0());
                     					
                     pushFollow(FOLLOW_35);
-                    lv_delay_14_0=ruleNumberPrimitive();
+                    lv_delay_16_0=ruleNumberPrimitive();
 
                     state._fsp--;
 
@@ -1638,7 +1695,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                     						add(
                     							current,
                     							"delay",
-                    							lv_delay_14_0,
+                    							lv_delay_16_0,
                     							"dk.sdu.gms.dds.DeviceDefinition.NumberPrimitive");
                     						afterParserOrEnumRuleCall();
                     					
@@ -1648,17 +1705,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
                     }
 
-                    // InternalDeviceDefinition.g:803:4: ( (lv_delayTimeUnit_15_0= ruleTimeUnit ) )
-                    // InternalDeviceDefinition.g:804:5: (lv_delayTimeUnit_15_0= ruleTimeUnit )
+                    // InternalDeviceDefinition.g:827:4: ( (lv_delayTimeUnit_17_0= ruleTimeUnit ) )
+                    // InternalDeviceDefinition.g:828:5: (lv_delayTimeUnit_17_0= ruleTimeUnit )
                     {
-                    // InternalDeviceDefinition.g:804:5: (lv_delayTimeUnit_15_0= ruleTimeUnit )
-                    // InternalDeviceDefinition.g:805:6: lv_delayTimeUnit_15_0= ruleTimeUnit
+                    // InternalDeviceDefinition.g:828:5: (lv_delayTimeUnit_17_0= ruleTimeUnit )
+                    // InternalDeviceDefinition.g:829:6: lv_delayTimeUnit_17_0= ruleTimeUnit
                     {
 
-                    						newCompositeNode(grammarAccess.getGatewayAccess().getDelayTimeUnitTimeUnitParserRuleCall_8_5_0());
+                    						newCompositeNode(grammarAccess.getGatewayAccess().getDelayTimeUnitTimeUnitParserRuleCall_9_5_0());
                     					
                     pushFollow(FOLLOW_30);
-                    lv_delayTimeUnit_15_0=ruleTimeUnit();
+                    lv_delayTimeUnit_17_0=ruleTimeUnit();
 
                     state._fsp--;
 
@@ -1669,7 +1726,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                     						set(
                     							current,
                     							"delayTimeUnit",
-                    							lv_delayTimeUnit_15_0,
+                    							lv_delayTimeUnit_17_0,
                     							"dk.sdu.gms.dds.DeviceDefinition.TimeUnit");
                     						afterParserOrEnumRuleCall();
                     					
@@ -1685,30 +1742,30 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             }
 
-            // InternalDeviceDefinition.g:823:3: ( (lv_workers_16_0= ruleWorker ) )+
-            int cnt10=0;
-            loop10:
+            // InternalDeviceDefinition.g:847:3: ( (lv_workers_18_0= ruleWorker ) )+
+            int cnt11=0;
+            loop11:
             do {
-                int alt10=2;
-                int LA10_0 = input.LA(1);
+                int alt11=2;
+                int LA11_0 = input.LA(1);
 
-                if ( (LA10_0==41) ) {
-                    alt10=1;
+                if ( (LA11_0==41) ) {
+                    alt11=1;
                 }
 
 
-                switch (alt10) {
+                switch (alt11) {
             	case 1 :
-            	    // InternalDeviceDefinition.g:824:4: (lv_workers_16_0= ruleWorker )
+            	    // InternalDeviceDefinition.g:848:4: (lv_workers_18_0= ruleWorker )
             	    {
-            	    // InternalDeviceDefinition.g:824:4: (lv_workers_16_0= ruleWorker )
-            	    // InternalDeviceDefinition.g:825:5: lv_workers_16_0= ruleWorker
+            	    // InternalDeviceDefinition.g:848:4: (lv_workers_18_0= ruleWorker )
+            	    // InternalDeviceDefinition.g:849:5: lv_workers_18_0= ruleWorker
             	    {
 
-            	    					newCompositeNode(grammarAccess.getGatewayAccess().getWorkersWorkerParserRuleCall_9_0());
+            	    					newCompositeNode(grammarAccess.getGatewayAccess().getWorkersWorkerParserRuleCall_10_0());
             	    				
             	    pushFollow(FOLLOW_36);
-            	    lv_workers_16_0=ruleWorker();
+            	    lv_workers_18_0=ruleWorker();
 
             	    state._fsp--;
 
@@ -1719,7 +1776,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
             	    					add(
             	    						current,
             	    						"workers",
-            	    						lv_workers_16_0,
+            	    						lv_workers_18_0,
             	    						"dk.sdu.gms.dds.DeviceDefinition.Worker");
             	    					afterParserOrEnumRuleCall();
             	    				
@@ -1731,12 +1788,12 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
             	    break;
 
             	default :
-            	    if ( cnt10 >= 1 ) break loop10;
+            	    if ( cnt11 >= 1 ) break loop11;
                         EarlyExitException eee =
-                            new EarlyExitException(10, input);
+                            new EarlyExitException(11, input);
                         throw eee;
                 }
-                cnt10++;
+                cnt11++;
             } while (true);
 
 
@@ -1762,7 +1819,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "entryRuleWorker"
-    // InternalDeviceDefinition.g:846:1: entryRuleWorker returns [EObject current=null] : iv_ruleWorker= ruleWorker EOF ;
+    // InternalDeviceDefinition.g:870:1: entryRuleWorker returns [EObject current=null] : iv_ruleWorker= ruleWorker EOF ;
     public final EObject entryRuleWorker() throws RecognitionException {
         EObject current = null;
 
@@ -1770,8 +1827,8 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
         try {
-            // InternalDeviceDefinition.g:846:47: (iv_ruleWorker= ruleWorker EOF )
-            // InternalDeviceDefinition.g:847:2: iv_ruleWorker= ruleWorker EOF
+            // InternalDeviceDefinition.g:870:47: (iv_ruleWorker= ruleWorker EOF )
+            // InternalDeviceDefinition.g:871:2: iv_ruleWorker= ruleWorker EOF
             {
              newCompositeNode(grammarAccess.getWorkerRule()); 
             pushFollow(FOLLOW_1);
@@ -1798,7 +1855,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "ruleWorker"
-    // InternalDeviceDefinition.g:853:1: ruleWorker returns [EObject current=null] : (otherlv_0= 'Worker' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= 'mac' ( (lv_mac_4_0= RULE_MAC ) ) otherlv_5= 'sleep' otherlv_6= 'for' ( (lv_sleepTime_7_0= ruleNumberPrimitive ) ) ( (lv_timeUnit_8_0= ruleTimeUnit ) ) (otherlv_9= 'error' otherlv_10= 'light' ( (lv_errorLed_11_0= RULE_INT ) ) )? (otherlv_12= 'retries' ( (lv_retries_13_0= RULE_INT ) ) otherlv_14= 'with' otherlv_15= 'delay' ( (lv_delay_16_0= ruleNumberPrimitive ) ) ( (lv_delayTimeUnit_17_0= ruleTimeUnit ) ) )? ( (lv_devices_18_0= ruleDevice ) )* ) ;
+    // InternalDeviceDefinition.g:877:1: ruleWorker returns [EObject current=null] : (otherlv_0= 'Worker' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= 'mac' ( (lv_mac_4_0= RULE_MAC ) ) (otherlv_5= 'preferred gateway' ( (lv_preferred_6_0= RULE_INT ) ) )? otherlv_7= 'sleep' otherlv_8= 'for' ( (lv_sleepTime_9_0= ruleNumberPrimitive ) ) ( (lv_timeUnit_10_0= ruleTimeUnit ) ) (otherlv_11= 'error' otherlv_12= 'light' ( (lv_errorLed_13_0= RULE_INT ) ) )? (otherlv_14= 'retries' ( (lv_retries_15_0= RULE_INT ) ) otherlv_16= 'with' otherlv_17= 'delay' ( (lv_delay_18_0= ruleNumberPrimitive ) ) ( (lv_delayTimeUnit_19_0= ruleTimeUnit ) ) )? ( (lv_devices_20_0= ruleDevice ) )* ) ;
     public final EObject ruleWorker() throws RecognitionException {
         EObject current = null;
 
@@ -1808,44 +1865,46 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
         Token otherlv_3=null;
         Token lv_mac_4_0=null;
         Token otherlv_5=null;
-        Token otherlv_6=null;
-        Token otherlv_9=null;
-        Token otherlv_10=null;
-        Token lv_errorLed_11_0=null;
+        Token lv_preferred_6_0=null;
+        Token otherlv_7=null;
+        Token otherlv_8=null;
+        Token otherlv_11=null;
         Token otherlv_12=null;
-        Token lv_retries_13_0=null;
+        Token lv_errorLed_13_0=null;
         Token otherlv_14=null;
-        Token otherlv_15=null;
-        EObject lv_sleepTime_7_0 = null;
+        Token lv_retries_15_0=null;
+        Token otherlv_16=null;
+        Token otherlv_17=null;
+        EObject lv_sleepTime_9_0 = null;
 
-        EObject lv_timeUnit_8_0 = null;
+        EObject lv_timeUnit_10_0 = null;
 
-        EObject lv_delay_16_0 = null;
+        EObject lv_delay_18_0 = null;
 
-        EObject lv_delayTimeUnit_17_0 = null;
+        EObject lv_delayTimeUnit_19_0 = null;
 
-        EObject lv_devices_18_0 = null;
+        EObject lv_devices_20_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalDeviceDefinition.g:859:2: ( (otherlv_0= 'Worker' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= 'mac' ( (lv_mac_4_0= RULE_MAC ) ) otherlv_5= 'sleep' otherlv_6= 'for' ( (lv_sleepTime_7_0= ruleNumberPrimitive ) ) ( (lv_timeUnit_8_0= ruleTimeUnit ) ) (otherlv_9= 'error' otherlv_10= 'light' ( (lv_errorLed_11_0= RULE_INT ) ) )? (otherlv_12= 'retries' ( (lv_retries_13_0= RULE_INT ) ) otherlv_14= 'with' otherlv_15= 'delay' ( (lv_delay_16_0= ruleNumberPrimitive ) ) ( (lv_delayTimeUnit_17_0= ruleTimeUnit ) ) )? ( (lv_devices_18_0= ruleDevice ) )* ) )
-            // InternalDeviceDefinition.g:860:2: (otherlv_0= 'Worker' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= 'mac' ( (lv_mac_4_0= RULE_MAC ) ) otherlv_5= 'sleep' otherlv_6= 'for' ( (lv_sleepTime_7_0= ruleNumberPrimitive ) ) ( (lv_timeUnit_8_0= ruleTimeUnit ) ) (otherlv_9= 'error' otherlv_10= 'light' ( (lv_errorLed_11_0= RULE_INT ) ) )? (otherlv_12= 'retries' ( (lv_retries_13_0= RULE_INT ) ) otherlv_14= 'with' otherlv_15= 'delay' ( (lv_delay_16_0= ruleNumberPrimitive ) ) ( (lv_delayTimeUnit_17_0= ruleTimeUnit ) ) )? ( (lv_devices_18_0= ruleDevice ) )* )
+            // InternalDeviceDefinition.g:883:2: ( (otherlv_0= 'Worker' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= 'mac' ( (lv_mac_4_0= RULE_MAC ) ) (otherlv_5= 'preferred gateway' ( (lv_preferred_6_0= RULE_INT ) ) )? otherlv_7= 'sleep' otherlv_8= 'for' ( (lv_sleepTime_9_0= ruleNumberPrimitive ) ) ( (lv_timeUnit_10_0= ruleTimeUnit ) ) (otherlv_11= 'error' otherlv_12= 'light' ( (lv_errorLed_13_0= RULE_INT ) ) )? (otherlv_14= 'retries' ( (lv_retries_15_0= RULE_INT ) ) otherlv_16= 'with' otherlv_17= 'delay' ( (lv_delay_18_0= ruleNumberPrimitive ) ) ( (lv_delayTimeUnit_19_0= ruleTimeUnit ) ) )? ( (lv_devices_20_0= ruleDevice ) )* ) )
+            // InternalDeviceDefinition.g:884:2: (otherlv_0= 'Worker' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= 'mac' ( (lv_mac_4_0= RULE_MAC ) ) (otherlv_5= 'preferred gateway' ( (lv_preferred_6_0= RULE_INT ) ) )? otherlv_7= 'sleep' otherlv_8= 'for' ( (lv_sleepTime_9_0= ruleNumberPrimitive ) ) ( (lv_timeUnit_10_0= ruleTimeUnit ) ) (otherlv_11= 'error' otherlv_12= 'light' ( (lv_errorLed_13_0= RULE_INT ) ) )? (otherlv_14= 'retries' ( (lv_retries_15_0= RULE_INT ) ) otherlv_16= 'with' otherlv_17= 'delay' ( (lv_delay_18_0= ruleNumberPrimitive ) ) ( (lv_delayTimeUnit_19_0= ruleTimeUnit ) ) )? ( (lv_devices_20_0= ruleDevice ) )* )
             {
-            // InternalDeviceDefinition.g:860:2: (otherlv_0= 'Worker' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= 'mac' ( (lv_mac_4_0= RULE_MAC ) ) otherlv_5= 'sleep' otherlv_6= 'for' ( (lv_sleepTime_7_0= ruleNumberPrimitive ) ) ( (lv_timeUnit_8_0= ruleTimeUnit ) ) (otherlv_9= 'error' otherlv_10= 'light' ( (lv_errorLed_11_0= RULE_INT ) ) )? (otherlv_12= 'retries' ( (lv_retries_13_0= RULE_INT ) ) otherlv_14= 'with' otherlv_15= 'delay' ( (lv_delay_16_0= ruleNumberPrimitive ) ) ( (lv_delayTimeUnit_17_0= ruleTimeUnit ) ) )? ( (lv_devices_18_0= ruleDevice ) )* )
-            // InternalDeviceDefinition.g:861:3: otherlv_0= 'Worker' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= 'mac' ( (lv_mac_4_0= RULE_MAC ) ) otherlv_5= 'sleep' otherlv_6= 'for' ( (lv_sleepTime_7_0= ruleNumberPrimitive ) ) ( (lv_timeUnit_8_0= ruleTimeUnit ) ) (otherlv_9= 'error' otherlv_10= 'light' ( (lv_errorLed_11_0= RULE_INT ) ) )? (otherlv_12= 'retries' ( (lv_retries_13_0= RULE_INT ) ) otherlv_14= 'with' otherlv_15= 'delay' ( (lv_delay_16_0= ruleNumberPrimitive ) ) ( (lv_delayTimeUnit_17_0= ruleTimeUnit ) ) )? ( (lv_devices_18_0= ruleDevice ) )*
+            // InternalDeviceDefinition.g:884:2: (otherlv_0= 'Worker' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= 'mac' ( (lv_mac_4_0= RULE_MAC ) ) (otherlv_5= 'preferred gateway' ( (lv_preferred_6_0= RULE_INT ) ) )? otherlv_7= 'sleep' otherlv_8= 'for' ( (lv_sleepTime_9_0= ruleNumberPrimitive ) ) ( (lv_timeUnit_10_0= ruleTimeUnit ) ) (otherlv_11= 'error' otherlv_12= 'light' ( (lv_errorLed_13_0= RULE_INT ) ) )? (otherlv_14= 'retries' ( (lv_retries_15_0= RULE_INT ) ) otherlv_16= 'with' otherlv_17= 'delay' ( (lv_delay_18_0= ruleNumberPrimitive ) ) ( (lv_delayTimeUnit_19_0= ruleTimeUnit ) ) )? ( (lv_devices_20_0= ruleDevice ) )* )
+            // InternalDeviceDefinition.g:885:3: otherlv_0= 'Worker' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' otherlv_3= 'mac' ( (lv_mac_4_0= RULE_MAC ) ) (otherlv_5= 'preferred gateway' ( (lv_preferred_6_0= RULE_INT ) ) )? otherlv_7= 'sleep' otherlv_8= 'for' ( (lv_sleepTime_9_0= ruleNumberPrimitive ) ) ( (lv_timeUnit_10_0= ruleTimeUnit ) ) (otherlv_11= 'error' otherlv_12= 'light' ( (lv_errorLed_13_0= RULE_INT ) ) )? (otherlv_14= 'retries' ( (lv_retries_15_0= RULE_INT ) ) otherlv_16= 'with' otherlv_17= 'delay' ( (lv_delay_18_0= ruleNumberPrimitive ) ) ( (lv_delayTimeUnit_19_0= ruleTimeUnit ) ) )? ( (lv_devices_20_0= ruleDevice ) )*
             {
             otherlv_0=(Token)match(input,41,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getWorkerAccess().getWorkerKeyword_0());
             		
-            // InternalDeviceDefinition.g:865:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalDeviceDefinition.g:866:4: (lv_name_1_0= RULE_ID )
+            // InternalDeviceDefinition.g:889:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalDeviceDefinition.g:890:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalDeviceDefinition.g:866:4: (lv_name_1_0= RULE_ID )
-            // InternalDeviceDefinition.g:867:5: lv_name_1_0= RULE_ID
+            // InternalDeviceDefinition.g:890:4: (lv_name_1_0= RULE_ID )
+            // InternalDeviceDefinition.g:891:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_4); 
 
@@ -1875,11 +1934,11 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             			newLeafNode(otherlv_3, grammarAccess.getWorkerAccess().getMacKeyword_3());
             		
-            // InternalDeviceDefinition.g:891:3: ( (lv_mac_4_0= RULE_MAC ) )
-            // InternalDeviceDefinition.g:892:4: (lv_mac_4_0= RULE_MAC )
+            // InternalDeviceDefinition.g:915:3: ( (lv_mac_4_0= RULE_MAC ) )
+            // InternalDeviceDefinition.g:916:4: (lv_mac_4_0= RULE_MAC )
             {
-            // InternalDeviceDefinition.g:892:4: (lv_mac_4_0= RULE_MAC )
-            // InternalDeviceDefinition.g:893:5: lv_mac_4_0= RULE_MAC
+            // InternalDeviceDefinition.g:916:4: (lv_mac_4_0= RULE_MAC )
+            // InternalDeviceDefinition.g:917:5: lv_mac_4_0= RULE_MAC
             {
             lv_mac_4_0=(Token)match(input,RULE_MAC,FOLLOW_37); 
 
@@ -1901,113 +1960,39 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             }
 
-            otherlv_5=(Token)match(input,42,FOLLOW_38); 
+            // InternalDeviceDefinition.g:933:3: (otherlv_5= 'preferred gateway' ( (lv_preferred_6_0= RULE_INT ) ) )?
+            int alt12=2;
+            int LA12_0 = input.LA(1);
 
-            			newLeafNode(otherlv_5, grammarAccess.getWorkerAccess().getSleepKeyword_5());
-            		
-            otherlv_6=(Token)match(input,43,FOLLOW_34); 
-
-            			newLeafNode(otherlv_6, grammarAccess.getWorkerAccess().getForKeyword_6());
-            		
-            // InternalDeviceDefinition.g:917:3: ( (lv_sleepTime_7_0= ruleNumberPrimitive ) )
-            // InternalDeviceDefinition.g:918:4: (lv_sleepTime_7_0= ruleNumberPrimitive )
-            {
-            // InternalDeviceDefinition.g:918:4: (lv_sleepTime_7_0= ruleNumberPrimitive )
-            // InternalDeviceDefinition.g:919:5: lv_sleepTime_7_0= ruleNumberPrimitive
-            {
-
-            					newCompositeNode(grammarAccess.getWorkerAccess().getSleepTimeNumberPrimitiveParserRuleCall_7_0());
-            				
-            pushFollow(FOLLOW_35);
-            lv_sleepTime_7_0=ruleNumberPrimitive();
-
-            state._fsp--;
-
-
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getWorkerRule());
-            					}
-            					set(
-            						current,
-            						"sleepTime",
-            						lv_sleepTime_7_0,
-            						"dk.sdu.gms.dds.DeviceDefinition.NumberPrimitive");
-            					afterParserOrEnumRuleCall();
-            				
-
+            if ( (LA12_0==42) ) {
+                alt12=1;
             }
-
-
-            }
-
-            // InternalDeviceDefinition.g:936:3: ( (lv_timeUnit_8_0= ruleTimeUnit ) )
-            // InternalDeviceDefinition.g:937:4: (lv_timeUnit_8_0= ruleTimeUnit )
-            {
-            // InternalDeviceDefinition.g:937:4: (lv_timeUnit_8_0= ruleTimeUnit )
-            // InternalDeviceDefinition.g:938:5: lv_timeUnit_8_0= ruleTimeUnit
-            {
-
-            					newCompositeNode(grammarAccess.getWorkerAccess().getTimeUnitTimeUnitParserRuleCall_8_0());
-            				
-            pushFollow(FOLLOW_39);
-            lv_timeUnit_8_0=ruleTimeUnit();
-
-            state._fsp--;
-
-
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getWorkerRule());
-            					}
-            					set(
-            						current,
-            						"timeUnit",
-            						lv_timeUnit_8_0,
-            						"dk.sdu.gms.dds.DeviceDefinition.TimeUnit");
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
-
-
-            }
-
-            // InternalDeviceDefinition.g:955:3: (otherlv_9= 'error' otherlv_10= 'light' ( (lv_errorLed_11_0= RULE_INT ) ) )?
-            int alt11=2;
-            int LA11_0 = input.LA(1);
-
-            if ( (LA11_0==37) ) {
-                alt11=1;
-            }
-            switch (alt11) {
+            switch (alt12) {
                 case 1 :
-                    // InternalDeviceDefinition.g:956:4: otherlv_9= 'error' otherlv_10= 'light' ( (lv_errorLed_11_0= RULE_INT ) )
+                    // InternalDeviceDefinition.g:934:4: otherlv_5= 'preferred gateway' ( (lv_preferred_6_0= RULE_INT ) )
                     {
-                    otherlv_9=(Token)match(input,37,FOLLOW_31); 
+                    otherlv_5=(Token)match(input,42,FOLLOW_29); 
 
-                    				newLeafNode(otherlv_9, grammarAccess.getWorkerAccess().getErrorKeyword_9_0());
+                    				newLeafNode(otherlv_5, grammarAccess.getWorkerAccess().getPreferredGatewayKeyword_5_0());
                     			
-                    otherlv_10=(Token)match(input,38,FOLLOW_29); 
-
-                    				newLeafNode(otherlv_10, grammarAccess.getWorkerAccess().getLightKeyword_9_1());
-                    			
-                    // InternalDeviceDefinition.g:964:4: ( (lv_errorLed_11_0= RULE_INT ) )
-                    // InternalDeviceDefinition.g:965:5: (lv_errorLed_11_0= RULE_INT )
+                    // InternalDeviceDefinition.g:938:4: ( (lv_preferred_6_0= RULE_INT ) )
+                    // InternalDeviceDefinition.g:939:5: (lv_preferred_6_0= RULE_INT )
                     {
-                    // InternalDeviceDefinition.g:965:5: (lv_errorLed_11_0= RULE_INT )
-                    // InternalDeviceDefinition.g:966:6: lv_errorLed_11_0= RULE_INT
+                    // InternalDeviceDefinition.g:939:5: (lv_preferred_6_0= RULE_INT )
+                    // InternalDeviceDefinition.g:940:6: lv_preferred_6_0= RULE_INT
                     {
-                    lv_errorLed_11_0=(Token)match(input,RULE_INT,FOLLOW_40); 
+                    lv_preferred_6_0=(Token)match(input,RULE_INT,FOLLOW_38); 
 
-                    						newLeafNode(lv_errorLed_11_0, grammarAccess.getWorkerAccess().getErrorLedINTTerminalRuleCall_9_2_0());
+                    						newLeafNode(lv_preferred_6_0, grammarAccess.getWorkerAccess().getPreferredINTTerminalRuleCall_5_1_0());
                     					
 
                     						if (current==null) {
                     							current = createModelElement(grammarAccess.getWorkerRule());
                     						}
-                    						addWithLastConsumed(
+                    						setWithLastConsumed(
                     							current,
-                    							"errorLed",
-                    							lv_errorLed_11_0,
+                    							"preferred",
+                    							lv_preferred_6_0,
                     							"org.eclipse.xtext.common.Terminals.INT");
                     					
 
@@ -2022,30 +2007,104 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             }
 
-            // InternalDeviceDefinition.g:983:3: (otherlv_12= 'retries' ( (lv_retries_13_0= RULE_INT ) ) otherlv_14= 'with' otherlv_15= 'delay' ( (lv_delay_16_0= ruleNumberPrimitive ) ) ( (lv_delayTimeUnit_17_0= ruleTimeUnit ) ) )?
-            int alt12=2;
-            int LA12_0 = input.LA(1);
+            otherlv_7=(Token)match(input,43,FOLLOW_39); 
 
-            if ( (LA12_0==39) ) {
-                alt12=1;
+            			newLeafNode(otherlv_7, grammarAccess.getWorkerAccess().getSleepKeyword_6());
+            		
+            otherlv_8=(Token)match(input,44,FOLLOW_34); 
+
+            			newLeafNode(otherlv_8, grammarAccess.getWorkerAccess().getForKeyword_7());
+            		
+            // InternalDeviceDefinition.g:965:3: ( (lv_sleepTime_9_0= ruleNumberPrimitive ) )
+            // InternalDeviceDefinition.g:966:4: (lv_sleepTime_9_0= ruleNumberPrimitive )
+            {
+            // InternalDeviceDefinition.g:966:4: (lv_sleepTime_9_0= ruleNumberPrimitive )
+            // InternalDeviceDefinition.g:967:5: lv_sleepTime_9_0= ruleNumberPrimitive
+            {
+
+            					newCompositeNode(grammarAccess.getWorkerAccess().getSleepTimeNumberPrimitiveParserRuleCall_8_0());
+            				
+            pushFollow(FOLLOW_35);
+            lv_sleepTime_9_0=ruleNumberPrimitive();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getWorkerRule());
+            					}
+            					set(
+            						current,
+            						"sleepTime",
+            						lv_sleepTime_9_0,
+            						"dk.sdu.gms.dds.DeviceDefinition.NumberPrimitive");
+            					afterParserOrEnumRuleCall();
+            				
+
             }
-            switch (alt12) {
+
+
+            }
+
+            // InternalDeviceDefinition.g:984:3: ( (lv_timeUnit_10_0= ruleTimeUnit ) )
+            // InternalDeviceDefinition.g:985:4: (lv_timeUnit_10_0= ruleTimeUnit )
+            {
+            // InternalDeviceDefinition.g:985:4: (lv_timeUnit_10_0= ruleTimeUnit )
+            // InternalDeviceDefinition.g:986:5: lv_timeUnit_10_0= ruleTimeUnit
+            {
+
+            					newCompositeNode(grammarAccess.getWorkerAccess().getTimeUnitTimeUnitParserRuleCall_9_0());
+            				
+            pushFollow(FOLLOW_40);
+            lv_timeUnit_10_0=ruleTimeUnit();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getWorkerRule());
+            					}
+            					set(
+            						current,
+            						"timeUnit",
+            						lv_timeUnit_10_0,
+            						"dk.sdu.gms.dds.DeviceDefinition.TimeUnit");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            // InternalDeviceDefinition.g:1003:3: (otherlv_11= 'error' otherlv_12= 'light' ( (lv_errorLed_13_0= RULE_INT ) ) )?
+            int alt13=2;
+            int LA13_0 = input.LA(1);
+
+            if ( (LA13_0==37) ) {
+                alt13=1;
+            }
+            switch (alt13) {
                 case 1 :
-                    // InternalDeviceDefinition.g:984:4: otherlv_12= 'retries' ( (lv_retries_13_0= RULE_INT ) ) otherlv_14= 'with' otherlv_15= 'delay' ( (lv_delay_16_0= ruleNumberPrimitive ) ) ( (lv_delayTimeUnit_17_0= ruleTimeUnit ) )
+                    // InternalDeviceDefinition.g:1004:4: otherlv_11= 'error' otherlv_12= 'light' ( (lv_errorLed_13_0= RULE_INT ) )
                     {
-                    otherlv_12=(Token)match(input,39,FOLLOW_29); 
+                    otherlv_11=(Token)match(input,37,FOLLOW_31); 
 
-                    				newLeafNode(otherlv_12, grammarAccess.getWorkerAccess().getRetriesKeyword_10_0());
+                    				newLeafNode(otherlv_11, grammarAccess.getWorkerAccess().getErrorKeyword_10_0());
                     			
-                    // InternalDeviceDefinition.g:988:4: ( (lv_retries_13_0= RULE_INT ) )
-                    // InternalDeviceDefinition.g:989:5: (lv_retries_13_0= RULE_INT )
-                    {
-                    // InternalDeviceDefinition.g:989:5: (lv_retries_13_0= RULE_INT )
-                    // InternalDeviceDefinition.g:990:6: lv_retries_13_0= RULE_INT
-                    {
-                    lv_retries_13_0=(Token)match(input,RULE_INT,FOLLOW_32); 
+                    otherlv_12=(Token)match(input,38,FOLLOW_29); 
 
-                    						newLeafNode(lv_retries_13_0, grammarAccess.getWorkerAccess().getRetriesINTTerminalRuleCall_10_1_0());
+                    				newLeafNode(otherlv_12, grammarAccess.getWorkerAccess().getLightKeyword_10_1());
+                    			
+                    // InternalDeviceDefinition.g:1012:4: ( (lv_errorLed_13_0= RULE_INT ) )
+                    // InternalDeviceDefinition.g:1013:5: (lv_errorLed_13_0= RULE_INT )
+                    {
+                    // InternalDeviceDefinition.g:1013:5: (lv_errorLed_13_0= RULE_INT )
+                    // InternalDeviceDefinition.g:1014:6: lv_errorLed_13_0= RULE_INT
+                    {
+                    lv_errorLed_13_0=(Token)match(input,RULE_INT,FOLLOW_41); 
+
+                    						newLeafNode(lv_errorLed_13_0, grammarAccess.getWorkerAccess().getErrorLedINTTerminalRuleCall_10_2_0());
                     					
 
                     						if (current==null) {
@@ -2053,8 +2112,8 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                     						}
                     						addWithLastConsumed(
                     							current,
-                    							"retries",
-                    							lv_retries_13_0,
+                    							"errorLed",
+                    							lv_errorLed_13_0,
                     							"org.eclipse.xtext.common.Terminals.INT");
                     					
 
@@ -2063,25 +2122,72 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
                     }
 
-                    otherlv_14=(Token)match(input,17,FOLLOW_33); 
 
-                    				newLeafNode(otherlv_14, grammarAccess.getWorkerAccess().getWithKeyword_10_2());
-                    			
-                    otherlv_15=(Token)match(input,40,FOLLOW_34); 
+                    }
+                    break;
 
-                    				newLeafNode(otherlv_15, grammarAccess.getWorkerAccess().getDelayKeyword_10_3());
-                    			
-                    // InternalDeviceDefinition.g:1014:4: ( (lv_delay_16_0= ruleNumberPrimitive ) )
-                    // InternalDeviceDefinition.g:1015:5: (lv_delay_16_0= ruleNumberPrimitive )
+            }
+
+            // InternalDeviceDefinition.g:1031:3: (otherlv_14= 'retries' ( (lv_retries_15_0= RULE_INT ) ) otherlv_16= 'with' otherlv_17= 'delay' ( (lv_delay_18_0= ruleNumberPrimitive ) ) ( (lv_delayTimeUnit_19_0= ruleTimeUnit ) ) )?
+            int alt14=2;
+            int LA14_0 = input.LA(1);
+
+            if ( (LA14_0==39) ) {
+                alt14=1;
+            }
+            switch (alt14) {
+                case 1 :
+                    // InternalDeviceDefinition.g:1032:4: otherlv_14= 'retries' ( (lv_retries_15_0= RULE_INT ) ) otherlv_16= 'with' otherlv_17= 'delay' ( (lv_delay_18_0= ruleNumberPrimitive ) ) ( (lv_delayTimeUnit_19_0= ruleTimeUnit ) )
                     {
-                    // InternalDeviceDefinition.g:1015:5: (lv_delay_16_0= ruleNumberPrimitive )
-                    // InternalDeviceDefinition.g:1016:6: lv_delay_16_0= ruleNumberPrimitive
+                    otherlv_14=(Token)match(input,39,FOLLOW_29); 
+
+                    				newLeafNode(otherlv_14, grammarAccess.getWorkerAccess().getRetriesKeyword_11_0());
+                    			
+                    // InternalDeviceDefinition.g:1036:4: ( (lv_retries_15_0= RULE_INT ) )
+                    // InternalDeviceDefinition.g:1037:5: (lv_retries_15_0= RULE_INT )
+                    {
+                    // InternalDeviceDefinition.g:1037:5: (lv_retries_15_0= RULE_INT )
+                    // InternalDeviceDefinition.g:1038:6: lv_retries_15_0= RULE_INT
+                    {
+                    lv_retries_15_0=(Token)match(input,RULE_INT,FOLLOW_32); 
+
+                    						newLeafNode(lv_retries_15_0, grammarAccess.getWorkerAccess().getRetriesINTTerminalRuleCall_11_1_0());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getWorkerRule());
+                    						}
+                    						addWithLastConsumed(
+                    							current,
+                    							"retries",
+                    							lv_retries_15_0,
+                    							"org.eclipse.xtext.common.Terminals.INT");
+                    					
+
+                    }
+
+
+                    }
+
+                    otherlv_16=(Token)match(input,17,FOLLOW_33); 
+
+                    				newLeafNode(otherlv_16, grammarAccess.getWorkerAccess().getWithKeyword_11_2());
+                    			
+                    otherlv_17=(Token)match(input,40,FOLLOW_34); 
+
+                    				newLeafNode(otherlv_17, grammarAccess.getWorkerAccess().getDelayKeyword_11_3());
+                    			
+                    // InternalDeviceDefinition.g:1062:4: ( (lv_delay_18_0= ruleNumberPrimitive ) )
+                    // InternalDeviceDefinition.g:1063:5: (lv_delay_18_0= ruleNumberPrimitive )
+                    {
+                    // InternalDeviceDefinition.g:1063:5: (lv_delay_18_0= ruleNumberPrimitive )
+                    // InternalDeviceDefinition.g:1064:6: lv_delay_18_0= ruleNumberPrimitive
                     {
 
-                    						newCompositeNode(grammarAccess.getWorkerAccess().getDelayNumberPrimitiveParserRuleCall_10_4_0());
+                    						newCompositeNode(grammarAccess.getWorkerAccess().getDelayNumberPrimitiveParserRuleCall_11_4_0());
                     					
                     pushFollow(FOLLOW_35);
-                    lv_delay_16_0=ruleNumberPrimitive();
+                    lv_delay_18_0=ruleNumberPrimitive();
 
                     state._fsp--;
 
@@ -2092,7 +2198,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                     						add(
                     							current,
                     							"delay",
-                    							lv_delay_16_0,
+                    							lv_delay_18_0,
                     							"dk.sdu.gms.dds.DeviceDefinition.NumberPrimitive");
                     						afterParserOrEnumRuleCall();
                     					
@@ -2102,17 +2208,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
                     }
 
-                    // InternalDeviceDefinition.g:1033:4: ( (lv_delayTimeUnit_17_0= ruleTimeUnit ) )
-                    // InternalDeviceDefinition.g:1034:5: (lv_delayTimeUnit_17_0= ruleTimeUnit )
+                    // InternalDeviceDefinition.g:1081:4: ( (lv_delayTimeUnit_19_0= ruleTimeUnit ) )
+                    // InternalDeviceDefinition.g:1082:5: (lv_delayTimeUnit_19_0= ruleTimeUnit )
                     {
-                    // InternalDeviceDefinition.g:1034:5: (lv_delayTimeUnit_17_0= ruleTimeUnit )
-                    // InternalDeviceDefinition.g:1035:6: lv_delayTimeUnit_17_0= ruleTimeUnit
+                    // InternalDeviceDefinition.g:1082:5: (lv_delayTimeUnit_19_0= ruleTimeUnit )
+                    // InternalDeviceDefinition.g:1083:6: lv_delayTimeUnit_19_0= ruleTimeUnit
                     {
 
-                    						newCompositeNode(grammarAccess.getWorkerAccess().getDelayTimeUnitTimeUnitParserRuleCall_10_5_0());
+                    						newCompositeNode(grammarAccess.getWorkerAccess().getDelayTimeUnitTimeUnitParserRuleCall_11_5_0());
                     					
-                    pushFollow(FOLLOW_41);
-                    lv_delayTimeUnit_17_0=ruleTimeUnit();
+                    pushFollow(FOLLOW_42);
+                    lv_delayTimeUnit_19_0=ruleTimeUnit();
 
                     state._fsp--;
 
@@ -2123,7 +2229,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                     						set(
                     							current,
                     							"delayTimeUnit",
-                    							lv_delayTimeUnit_17_0,
+                    							lv_delayTimeUnit_19_0,
                     							"dk.sdu.gms.dds.DeviceDefinition.TimeUnit");
                     						afterParserOrEnumRuleCall();
                     					
@@ -2139,29 +2245,29 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             }
 
-            // InternalDeviceDefinition.g:1053:3: ( (lv_devices_18_0= ruleDevice ) )*
-            loop13:
+            // InternalDeviceDefinition.g:1101:3: ( (lv_devices_20_0= ruleDevice ) )*
+            loop15:
             do {
-                int alt13=2;
-                int LA13_0 = input.LA(1);
+                int alt15=2;
+                int LA15_0 = input.LA(1);
 
-                if ( (LA13_0==44||LA13_0==66) ) {
-                    alt13=1;
+                if ( (LA15_0==45||LA15_0==67) ) {
+                    alt15=1;
                 }
 
 
-                switch (alt13) {
+                switch (alt15) {
             	case 1 :
-            	    // InternalDeviceDefinition.g:1054:4: (lv_devices_18_0= ruleDevice )
+            	    // InternalDeviceDefinition.g:1102:4: (lv_devices_20_0= ruleDevice )
             	    {
-            	    // InternalDeviceDefinition.g:1054:4: (lv_devices_18_0= ruleDevice )
-            	    // InternalDeviceDefinition.g:1055:5: lv_devices_18_0= ruleDevice
+            	    // InternalDeviceDefinition.g:1102:4: (lv_devices_20_0= ruleDevice )
+            	    // InternalDeviceDefinition.g:1103:5: lv_devices_20_0= ruleDevice
             	    {
 
-            	    					newCompositeNode(grammarAccess.getWorkerAccess().getDevicesDeviceParserRuleCall_11_0());
+            	    					newCompositeNode(grammarAccess.getWorkerAccess().getDevicesDeviceParserRuleCall_12_0());
             	    				
-            	    pushFollow(FOLLOW_41);
-            	    lv_devices_18_0=ruleDevice();
+            	    pushFollow(FOLLOW_42);
+            	    lv_devices_20_0=ruleDevice();
 
             	    state._fsp--;
 
@@ -2172,7 +2278,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
             	    					add(
             	    						current,
             	    						"devices",
-            	    						lv_devices_18_0,
+            	    						lv_devices_20_0,
             	    						"dk.sdu.gms.dds.DeviceDefinition.Device");
             	    					afterParserOrEnumRuleCall();
             	    				
@@ -2184,7 +2290,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
             	    break;
 
             	default :
-            	    break loop13;
+            	    break loop15;
                 }
             } while (true);
 
@@ -2211,7 +2317,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "entryRuleDevice"
-    // InternalDeviceDefinition.g:1076:1: entryRuleDevice returns [EObject current=null] : iv_ruleDevice= ruleDevice EOF ;
+    // InternalDeviceDefinition.g:1124:1: entryRuleDevice returns [EObject current=null] : iv_ruleDevice= ruleDevice EOF ;
     public final EObject entryRuleDevice() throws RecognitionException {
         EObject current = null;
 
@@ -2219,8 +2325,8 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
         try {
-            // InternalDeviceDefinition.g:1076:47: (iv_ruleDevice= ruleDevice EOF )
-            // InternalDeviceDefinition.g:1077:2: iv_ruleDevice= ruleDevice EOF
+            // InternalDeviceDefinition.g:1124:47: (iv_ruleDevice= ruleDevice EOF )
+            // InternalDeviceDefinition.g:1125:2: iv_ruleDevice= ruleDevice EOF
             {
              newCompositeNode(grammarAccess.getDeviceRule()); 
             pushFollow(FOLLOW_1);
@@ -2247,7 +2353,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "ruleDevice"
-    // InternalDeviceDefinition.g:1083:1: ruleDevice returns [EObject current=null] : (this_Sensor_0= ruleSensor | this_Actuator_1= ruleActuator ) ;
+    // InternalDeviceDefinition.g:1131:1: ruleDevice returns [EObject current=null] : (this_Sensor_0= ruleSensor | this_Actuator_1= ruleActuator ) ;
     public final EObject ruleDevice() throws RecognitionException {
         EObject current = null;
 
@@ -2260,28 +2366,28 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
         	enterRule();
 
         try {
-            // InternalDeviceDefinition.g:1089:2: ( (this_Sensor_0= ruleSensor | this_Actuator_1= ruleActuator ) )
-            // InternalDeviceDefinition.g:1090:2: (this_Sensor_0= ruleSensor | this_Actuator_1= ruleActuator )
+            // InternalDeviceDefinition.g:1137:2: ( (this_Sensor_0= ruleSensor | this_Actuator_1= ruleActuator ) )
+            // InternalDeviceDefinition.g:1138:2: (this_Sensor_0= ruleSensor | this_Actuator_1= ruleActuator )
             {
-            // InternalDeviceDefinition.g:1090:2: (this_Sensor_0= ruleSensor | this_Actuator_1= ruleActuator )
-            int alt14=2;
-            int LA14_0 = input.LA(1);
+            // InternalDeviceDefinition.g:1138:2: (this_Sensor_0= ruleSensor | this_Actuator_1= ruleActuator )
+            int alt16=2;
+            int LA16_0 = input.LA(1);
 
-            if ( (LA14_0==44) ) {
-                alt14=1;
+            if ( (LA16_0==45) ) {
+                alt16=1;
             }
-            else if ( (LA14_0==66) ) {
-                alt14=2;
+            else if ( (LA16_0==67) ) {
+                alt16=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 14, 0, input);
+                    new NoViableAltException("", 16, 0, input);
 
                 throw nvae;
             }
-            switch (alt14) {
+            switch (alt16) {
                 case 1 :
-                    // InternalDeviceDefinition.g:1091:3: this_Sensor_0= ruleSensor
+                    // InternalDeviceDefinition.g:1139:3: this_Sensor_0= ruleSensor
                     {
 
                     			newCompositeNode(grammarAccess.getDeviceAccess().getSensorParserRuleCall_0());
@@ -2299,7 +2405,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                     }
                     break;
                 case 2 :
-                    // InternalDeviceDefinition.g:1100:3: this_Actuator_1= ruleActuator
+                    // InternalDeviceDefinition.g:1148:3: this_Actuator_1= ruleActuator
                     {
 
                     			newCompositeNode(grammarAccess.getDeviceAccess().getActuatorParserRuleCall_1());
@@ -2339,7 +2445,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "entryRuleSensor"
-    // InternalDeviceDefinition.g:1112:1: entryRuleSensor returns [EObject current=null] : iv_ruleSensor= ruleSensor EOF ;
+    // InternalDeviceDefinition.g:1160:1: entryRuleSensor returns [EObject current=null] : iv_ruleSensor= ruleSensor EOF ;
     public final EObject entryRuleSensor() throws RecognitionException {
         EObject current = null;
 
@@ -2347,8 +2453,8 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
         try {
-            // InternalDeviceDefinition.g:1112:47: (iv_ruleSensor= ruleSensor EOF )
-            // InternalDeviceDefinition.g:1113:2: iv_ruleSensor= ruleSensor EOF
+            // InternalDeviceDefinition.g:1160:47: (iv_ruleSensor= ruleSensor EOF )
+            // InternalDeviceDefinition.g:1161:2: iv_ruleSensor= ruleSensor EOF
             {
              newCompositeNode(grammarAccess.getSensorRule()); 
             pushFollow(FOLLOW_1);
@@ -2375,7 +2481,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "ruleSensor"
-    // InternalDeviceDefinition.g:1119:1: ruleSensor returns [EObject current=null] : (otherlv_0= 'Sensor' ( (lv_type_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' (otherlv_4= 'pins' ( (lv_pins_5_0= rulePin ) )* (otherlv_6= ',' ( (lv_pins_7_0= rulePin ) ) )* )? ( (lv_outputs_8_0= ruleSensorOutput ) )* ( (lv_settings_9_0= ruleSetting ) )* (otherlv_10= 'sample' otherlv_11= 'if' ( (lv_predicate_12_0= ruleExp ) ) )? ) ;
+    // InternalDeviceDefinition.g:1167:1: ruleSensor returns [EObject current=null] : (otherlv_0= 'Sensor' ( (lv_type_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' (otherlv_4= 'pins' ( (lv_pins_5_0= rulePin ) )* (otherlv_6= ',' ( (lv_pins_7_0= rulePin ) ) )* )? ( (lv_outputs_8_0= ruleSensorOutput ) )* ( (lv_settings_9_0= ruleSetting ) )* (otherlv_10= 'sample' otherlv_11= 'if' ( (lv_predicate_12_0= ruleExp ) ) )? ) ;
     public final EObject ruleSensor() throws RecognitionException {
         EObject current = null;
 
@@ -2402,21 +2508,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
         	enterRule();
 
         try {
-            // InternalDeviceDefinition.g:1125:2: ( (otherlv_0= 'Sensor' ( (lv_type_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' (otherlv_4= 'pins' ( (lv_pins_5_0= rulePin ) )* (otherlv_6= ',' ( (lv_pins_7_0= rulePin ) ) )* )? ( (lv_outputs_8_0= ruleSensorOutput ) )* ( (lv_settings_9_0= ruleSetting ) )* (otherlv_10= 'sample' otherlv_11= 'if' ( (lv_predicate_12_0= ruleExp ) ) )? ) )
-            // InternalDeviceDefinition.g:1126:2: (otherlv_0= 'Sensor' ( (lv_type_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' (otherlv_4= 'pins' ( (lv_pins_5_0= rulePin ) )* (otherlv_6= ',' ( (lv_pins_7_0= rulePin ) ) )* )? ( (lv_outputs_8_0= ruleSensorOutput ) )* ( (lv_settings_9_0= ruleSetting ) )* (otherlv_10= 'sample' otherlv_11= 'if' ( (lv_predicate_12_0= ruleExp ) ) )? )
+            // InternalDeviceDefinition.g:1173:2: ( (otherlv_0= 'Sensor' ( (lv_type_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' (otherlv_4= 'pins' ( (lv_pins_5_0= rulePin ) )* (otherlv_6= ',' ( (lv_pins_7_0= rulePin ) ) )* )? ( (lv_outputs_8_0= ruleSensorOutput ) )* ( (lv_settings_9_0= ruleSetting ) )* (otherlv_10= 'sample' otherlv_11= 'if' ( (lv_predicate_12_0= ruleExp ) ) )? ) )
+            // InternalDeviceDefinition.g:1174:2: (otherlv_0= 'Sensor' ( (lv_type_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' (otherlv_4= 'pins' ( (lv_pins_5_0= rulePin ) )* (otherlv_6= ',' ( (lv_pins_7_0= rulePin ) ) )* )? ( (lv_outputs_8_0= ruleSensorOutput ) )* ( (lv_settings_9_0= ruleSetting ) )* (otherlv_10= 'sample' otherlv_11= 'if' ( (lv_predicate_12_0= ruleExp ) ) )? )
             {
-            // InternalDeviceDefinition.g:1126:2: (otherlv_0= 'Sensor' ( (lv_type_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' (otherlv_4= 'pins' ( (lv_pins_5_0= rulePin ) )* (otherlv_6= ',' ( (lv_pins_7_0= rulePin ) ) )* )? ( (lv_outputs_8_0= ruleSensorOutput ) )* ( (lv_settings_9_0= ruleSetting ) )* (otherlv_10= 'sample' otherlv_11= 'if' ( (lv_predicate_12_0= ruleExp ) ) )? )
-            // InternalDeviceDefinition.g:1127:3: otherlv_0= 'Sensor' ( (lv_type_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' (otherlv_4= 'pins' ( (lv_pins_5_0= rulePin ) )* (otherlv_6= ',' ( (lv_pins_7_0= rulePin ) ) )* )? ( (lv_outputs_8_0= ruleSensorOutput ) )* ( (lv_settings_9_0= ruleSetting ) )* (otherlv_10= 'sample' otherlv_11= 'if' ( (lv_predicate_12_0= ruleExp ) ) )?
+            // InternalDeviceDefinition.g:1174:2: (otherlv_0= 'Sensor' ( (lv_type_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' (otherlv_4= 'pins' ( (lv_pins_5_0= rulePin ) )* (otherlv_6= ',' ( (lv_pins_7_0= rulePin ) ) )* )? ( (lv_outputs_8_0= ruleSensorOutput ) )* ( (lv_settings_9_0= ruleSetting ) )* (otherlv_10= 'sample' otherlv_11= 'if' ( (lv_predicate_12_0= ruleExp ) ) )? )
+            // InternalDeviceDefinition.g:1175:3: otherlv_0= 'Sensor' ( (lv_type_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' (otherlv_4= 'pins' ( (lv_pins_5_0= rulePin ) )* (otherlv_6= ',' ( (lv_pins_7_0= rulePin ) ) )* )? ( (lv_outputs_8_0= ruleSensorOutput ) )* ( (lv_settings_9_0= ruleSetting ) )* (otherlv_10= 'sample' otherlv_11= 'if' ( (lv_predicate_12_0= ruleExp ) ) )?
             {
-            otherlv_0=(Token)match(input,44,FOLLOW_3); 
+            otherlv_0=(Token)match(input,45,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getSensorAccess().getSensorKeyword_0());
             		
-            // InternalDeviceDefinition.g:1131:3: ( (lv_type_1_0= RULE_ID ) )
-            // InternalDeviceDefinition.g:1132:4: (lv_type_1_0= RULE_ID )
+            // InternalDeviceDefinition.g:1179:3: ( (lv_type_1_0= RULE_ID ) )
+            // InternalDeviceDefinition.g:1180:4: (lv_type_1_0= RULE_ID )
             {
-            // InternalDeviceDefinition.g:1132:4: (lv_type_1_0= RULE_ID )
-            // InternalDeviceDefinition.g:1133:5: lv_type_1_0= RULE_ID
+            // InternalDeviceDefinition.g:1180:4: (lv_type_1_0= RULE_ID )
+            // InternalDeviceDefinition.g:1181:5: lv_type_1_0= RULE_ID
             {
             lv_type_1_0=(Token)match(input,RULE_ID,FOLLOW_3); 
 
@@ -2438,11 +2544,11 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             }
 
-            // InternalDeviceDefinition.g:1149:3: ( (lv_name_2_0= RULE_ID ) )
-            // InternalDeviceDefinition.g:1150:4: (lv_name_2_0= RULE_ID )
+            // InternalDeviceDefinition.g:1197:3: ( (lv_name_2_0= RULE_ID ) )
+            // InternalDeviceDefinition.g:1198:4: (lv_name_2_0= RULE_ID )
             {
-            // InternalDeviceDefinition.g:1150:4: (lv_name_2_0= RULE_ID )
-            // InternalDeviceDefinition.g:1151:5: lv_name_2_0= RULE_ID
+            // InternalDeviceDefinition.g:1198:4: (lv_name_2_0= RULE_ID )
+            // InternalDeviceDefinition.g:1199:5: lv_name_2_0= RULE_ID
             {
             lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_4); 
 
@@ -2464,56 +2570,56 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             }
 
-            otherlv_3=(Token)match(input,15,FOLLOW_42); 
+            otherlv_3=(Token)match(input,15,FOLLOW_43); 
 
             			newLeafNode(otherlv_3, grammarAccess.getSensorAccess().getColonKeyword_3());
             		
-            // InternalDeviceDefinition.g:1171:3: (otherlv_4= 'pins' ( (lv_pins_5_0= rulePin ) )* (otherlv_6= ',' ( (lv_pins_7_0= rulePin ) ) )* )?
-            int alt17=2;
-            int LA17_0 = input.LA(1);
+            // InternalDeviceDefinition.g:1219:3: (otherlv_4= 'pins' ( (lv_pins_5_0= rulePin ) )* (otherlv_6= ',' ( (lv_pins_7_0= rulePin ) ) )* )?
+            int alt19=2;
+            int LA19_0 = input.LA(1);
 
-            if ( (LA17_0==45) ) {
-                alt17=1;
+            if ( (LA19_0==46) ) {
+                alt19=1;
             }
-            switch (alt17) {
+            switch (alt19) {
                 case 1 :
-                    // InternalDeviceDefinition.g:1172:4: otherlv_4= 'pins' ( (lv_pins_5_0= rulePin ) )* (otherlv_6= ',' ( (lv_pins_7_0= rulePin ) ) )*
+                    // InternalDeviceDefinition.g:1220:4: otherlv_4= 'pins' ( (lv_pins_5_0= rulePin ) )* (otherlv_6= ',' ( (lv_pins_7_0= rulePin ) ) )*
                     {
-                    otherlv_4=(Token)match(input,45,FOLLOW_43); 
+                    otherlv_4=(Token)match(input,46,FOLLOW_44); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getSensorAccess().getPinsKeyword_4_0());
                     			
-                    // InternalDeviceDefinition.g:1176:4: ( (lv_pins_5_0= rulePin ) )*
-                    loop15:
+                    // InternalDeviceDefinition.g:1224:4: ( (lv_pins_5_0= rulePin ) )*
+                    loop17:
                     do {
-                        int alt15=2;
-                        int LA15_0 = input.LA(1);
+                        int alt17=2;
+                        int LA17_0 = input.LA(1);
 
-                        if ( (LA15_0==51) ) {
-                            int LA15_2 = input.LA(2);
+                        if ( (LA17_0==52) ) {
+                            int LA17_2 = input.LA(2);
 
-                            if ( (LA15_2==RULE_INT) ) {
-                                alt15=1;
+                            if ( (LA17_2==RULE_INT) ) {
+                                alt17=1;
                             }
 
 
                         }
-                        else if ( ((LA15_0>=48 && LA15_0<=50)) ) {
-                            alt15=1;
+                        else if ( ((LA17_0>=49 && LA17_0<=51)) ) {
+                            alt17=1;
                         }
 
 
-                        switch (alt15) {
+                        switch (alt17) {
                     	case 1 :
-                    	    // InternalDeviceDefinition.g:1177:5: (lv_pins_5_0= rulePin )
+                    	    // InternalDeviceDefinition.g:1225:5: (lv_pins_5_0= rulePin )
                     	    {
-                    	    // InternalDeviceDefinition.g:1177:5: (lv_pins_5_0= rulePin )
-                    	    // InternalDeviceDefinition.g:1178:6: lv_pins_5_0= rulePin
+                    	    // InternalDeviceDefinition.g:1225:5: (lv_pins_5_0= rulePin )
+                    	    // InternalDeviceDefinition.g:1226:6: lv_pins_5_0= rulePin
                     	    {
 
                     	    						newCompositeNode(grammarAccess.getSensorAccess().getPinsPinParserRuleCall_4_1_0());
                     	    					
-                    	    pushFollow(FOLLOW_43);
+                    	    pushFollow(FOLLOW_44);
                     	    lv_pins_5_0=rulePin();
 
                     	    state._fsp--;
@@ -2537,39 +2643,39 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                     	    break;
 
                     	default :
-                    	    break loop15;
+                    	    break loop17;
                         }
                     } while (true);
 
-                    // InternalDeviceDefinition.g:1195:4: (otherlv_6= ',' ( (lv_pins_7_0= rulePin ) ) )*
-                    loop16:
+                    // InternalDeviceDefinition.g:1243:4: (otherlv_6= ',' ( (lv_pins_7_0= rulePin ) ) )*
+                    loop18:
                     do {
-                        int alt16=2;
-                        int LA16_0 = input.LA(1);
+                        int alt18=2;
+                        int LA18_0 = input.LA(1);
 
-                        if ( (LA16_0==31) ) {
-                            alt16=1;
+                        if ( (LA18_0==31) ) {
+                            alt18=1;
                         }
 
 
-                        switch (alt16) {
+                        switch (alt18) {
                     	case 1 :
-                    	    // InternalDeviceDefinition.g:1196:5: otherlv_6= ',' ( (lv_pins_7_0= rulePin ) )
+                    	    // InternalDeviceDefinition.g:1244:5: otherlv_6= ',' ( (lv_pins_7_0= rulePin ) )
                     	    {
-                    	    otherlv_6=(Token)match(input,31,FOLLOW_44); 
+                    	    otherlv_6=(Token)match(input,31,FOLLOW_45); 
 
                     	    					newLeafNode(otherlv_6, grammarAccess.getSensorAccess().getCommaKeyword_4_2_0());
                     	    				
-                    	    // InternalDeviceDefinition.g:1200:5: ( (lv_pins_7_0= rulePin ) )
-                    	    // InternalDeviceDefinition.g:1201:6: (lv_pins_7_0= rulePin )
+                    	    // InternalDeviceDefinition.g:1248:5: ( (lv_pins_7_0= rulePin ) )
+                    	    // InternalDeviceDefinition.g:1249:6: (lv_pins_7_0= rulePin )
                     	    {
-                    	    // InternalDeviceDefinition.g:1201:6: (lv_pins_7_0= rulePin )
-                    	    // InternalDeviceDefinition.g:1202:7: lv_pins_7_0= rulePin
+                    	    // InternalDeviceDefinition.g:1249:6: (lv_pins_7_0= rulePin )
+                    	    // InternalDeviceDefinition.g:1250:7: lv_pins_7_0= rulePin
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getSensorAccess().getPinsPinParserRuleCall_4_2_1_0());
                     	    						
-                    	    pushFollow(FOLLOW_45);
+                    	    pushFollow(FOLLOW_46);
                     	    lv_pins_7_0=rulePin();
 
                     	    state._fsp--;
@@ -2596,7 +2702,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                     	    break;
 
                     	default :
-                    	    break loop16;
+                    	    break loop18;
                         }
                     } while (true);
 
@@ -2606,28 +2712,28 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             }
 
-            // InternalDeviceDefinition.g:1221:3: ( (lv_outputs_8_0= ruleSensorOutput ) )*
-            loop18:
+            // InternalDeviceDefinition.g:1269:3: ( (lv_outputs_8_0= ruleSensorOutput ) )*
+            loop20:
             do {
-                int alt18=2;
-                int LA18_0 = input.LA(1);
+                int alt20=2;
+                int LA20_0 = input.LA(1);
 
-                if ( (LA18_0==51) ) {
-                    alt18=1;
+                if ( (LA20_0==52) ) {
+                    alt20=1;
                 }
 
 
-                switch (alt18) {
+                switch (alt20) {
             	case 1 :
-            	    // InternalDeviceDefinition.g:1222:4: (lv_outputs_8_0= ruleSensorOutput )
+            	    // InternalDeviceDefinition.g:1270:4: (lv_outputs_8_0= ruleSensorOutput )
             	    {
-            	    // InternalDeviceDefinition.g:1222:4: (lv_outputs_8_0= ruleSensorOutput )
-            	    // InternalDeviceDefinition.g:1223:5: lv_outputs_8_0= ruleSensorOutput
+            	    // InternalDeviceDefinition.g:1270:4: (lv_outputs_8_0= ruleSensorOutput )
+            	    // InternalDeviceDefinition.g:1271:5: lv_outputs_8_0= ruleSensorOutput
             	    {
 
             	    					newCompositeNode(grammarAccess.getSensorAccess().getOutputsSensorOutputParserRuleCall_5_0());
             	    				
-            	    pushFollow(FOLLOW_46);
+            	    pushFollow(FOLLOW_47);
             	    lv_outputs_8_0=ruleSensorOutput();
 
             	    state._fsp--;
@@ -2651,32 +2757,32 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
             	    break;
 
             	default :
-            	    break loop18;
+            	    break loop20;
                 }
             } while (true);
 
-            // InternalDeviceDefinition.g:1240:3: ( (lv_settings_9_0= ruleSetting ) )*
-            loop19:
+            // InternalDeviceDefinition.g:1288:3: ( (lv_settings_9_0= ruleSetting ) )*
+            loop21:
             do {
-                int alt19=2;
-                int LA19_0 = input.LA(1);
+                int alt21=2;
+                int LA21_0 = input.LA(1);
 
-                if ( (LA19_0==71) ) {
-                    alt19=1;
+                if ( (LA21_0==72) ) {
+                    alt21=1;
                 }
 
 
-                switch (alt19) {
+                switch (alt21) {
             	case 1 :
-            	    // InternalDeviceDefinition.g:1241:4: (lv_settings_9_0= ruleSetting )
+            	    // InternalDeviceDefinition.g:1289:4: (lv_settings_9_0= ruleSetting )
             	    {
-            	    // InternalDeviceDefinition.g:1241:4: (lv_settings_9_0= ruleSetting )
-            	    // InternalDeviceDefinition.g:1242:5: lv_settings_9_0= ruleSetting
+            	    // InternalDeviceDefinition.g:1289:4: (lv_settings_9_0= ruleSetting )
+            	    // InternalDeviceDefinition.g:1290:5: lv_settings_9_0= ruleSetting
             	    {
 
             	    					newCompositeNode(grammarAccess.getSensorAccess().getSettingsSettingParserRuleCall_6_0());
             	    				
-            	    pushFollow(FOLLOW_47);
+            	    pushFollow(FOLLOW_48);
             	    lv_settings_9_0=ruleSetting();
 
             	    state._fsp--;
@@ -2700,34 +2806,34 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
             	    break;
 
             	default :
-            	    break loop19;
+            	    break loop21;
                 }
             } while (true);
 
-            // InternalDeviceDefinition.g:1259:3: (otherlv_10= 'sample' otherlv_11= 'if' ( (lv_predicate_12_0= ruleExp ) ) )?
-            int alt20=2;
-            int LA20_0 = input.LA(1);
+            // InternalDeviceDefinition.g:1307:3: (otherlv_10= 'sample' otherlv_11= 'if' ( (lv_predicate_12_0= ruleExp ) ) )?
+            int alt22=2;
+            int LA22_0 = input.LA(1);
 
-            if ( (LA20_0==46) ) {
-                alt20=1;
+            if ( (LA22_0==47) ) {
+                alt22=1;
             }
-            switch (alt20) {
+            switch (alt22) {
                 case 1 :
-                    // InternalDeviceDefinition.g:1260:4: otherlv_10= 'sample' otherlv_11= 'if' ( (lv_predicate_12_0= ruleExp ) )
+                    // InternalDeviceDefinition.g:1308:4: otherlv_10= 'sample' otherlv_11= 'if' ( (lv_predicate_12_0= ruleExp ) )
                     {
-                    otherlv_10=(Token)match(input,46,FOLLOW_48); 
+                    otherlv_10=(Token)match(input,47,FOLLOW_49); 
 
                     				newLeafNode(otherlv_10, grammarAccess.getSensorAccess().getSampleKeyword_7_0());
                     			
-                    otherlv_11=(Token)match(input,47,FOLLOW_49); 
+                    otherlv_11=(Token)match(input,48,FOLLOW_50); 
 
                     				newLeafNode(otherlv_11, grammarAccess.getSensorAccess().getIfKeyword_7_1());
                     			
-                    // InternalDeviceDefinition.g:1268:4: ( (lv_predicate_12_0= ruleExp ) )
-                    // InternalDeviceDefinition.g:1269:5: (lv_predicate_12_0= ruleExp )
+                    // InternalDeviceDefinition.g:1316:4: ( (lv_predicate_12_0= ruleExp ) )
+                    // InternalDeviceDefinition.g:1317:5: (lv_predicate_12_0= ruleExp )
                     {
-                    // InternalDeviceDefinition.g:1269:5: (lv_predicate_12_0= ruleExp )
-                    // InternalDeviceDefinition.g:1270:6: lv_predicate_12_0= ruleExp
+                    // InternalDeviceDefinition.g:1317:5: (lv_predicate_12_0= ruleExp )
+                    // InternalDeviceDefinition.g:1318:6: lv_predicate_12_0= ruleExp
                     {
 
                     						newCompositeNode(grammarAccess.getSensorAccess().getPredicateExpParserRuleCall_7_2_0());
@@ -2783,7 +2889,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "entryRulePin"
-    // InternalDeviceDefinition.g:1292:1: entryRulePin returns [EObject current=null] : iv_rulePin= rulePin EOF ;
+    // InternalDeviceDefinition.g:1340:1: entryRulePin returns [EObject current=null] : iv_rulePin= rulePin EOF ;
     public final EObject entryRulePin() throws RecognitionException {
         EObject current = null;
 
@@ -2791,8 +2897,8 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
         try {
-            // InternalDeviceDefinition.g:1292:44: (iv_rulePin= rulePin EOF )
-            // InternalDeviceDefinition.g:1293:2: iv_rulePin= rulePin EOF
+            // InternalDeviceDefinition.g:1340:44: (iv_rulePin= rulePin EOF )
+            // InternalDeviceDefinition.g:1341:2: iv_rulePin= rulePin EOF
             {
              newCompositeNode(grammarAccess.getPinRule()); 
             pushFollow(FOLLOW_1);
@@ -2819,7 +2925,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "rulePin"
-    // InternalDeviceDefinition.g:1299:1: rulePin returns [EObject current=null] : ( ( (lv_type_0_0= rulePinType ) ) ( (lv_number_1_0= RULE_INT ) ) ) ;
+    // InternalDeviceDefinition.g:1347:1: rulePin returns [EObject current=null] : ( ( (lv_type_0_0= rulePinType ) ) ( (lv_number_1_0= RULE_INT ) ) ) ;
     public final EObject rulePin() throws RecognitionException {
         EObject current = null;
 
@@ -2831,17 +2937,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
         	enterRule();
 
         try {
-            // InternalDeviceDefinition.g:1305:2: ( ( ( (lv_type_0_0= rulePinType ) ) ( (lv_number_1_0= RULE_INT ) ) ) )
-            // InternalDeviceDefinition.g:1306:2: ( ( (lv_type_0_0= rulePinType ) ) ( (lv_number_1_0= RULE_INT ) ) )
+            // InternalDeviceDefinition.g:1353:2: ( ( ( (lv_type_0_0= rulePinType ) ) ( (lv_number_1_0= RULE_INT ) ) ) )
+            // InternalDeviceDefinition.g:1354:2: ( ( (lv_type_0_0= rulePinType ) ) ( (lv_number_1_0= RULE_INT ) ) )
             {
-            // InternalDeviceDefinition.g:1306:2: ( ( (lv_type_0_0= rulePinType ) ) ( (lv_number_1_0= RULE_INT ) ) )
-            // InternalDeviceDefinition.g:1307:3: ( (lv_type_0_0= rulePinType ) ) ( (lv_number_1_0= RULE_INT ) )
+            // InternalDeviceDefinition.g:1354:2: ( ( (lv_type_0_0= rulePinType ) ) ( (lv_number_1_0= RULE_INT ) ) )
+            // InternalDeviceDefinition.g:1355:3: ( (lv_type_0_0= rulePinType ) ) ( (lv_number_1_0= RULE_INT ) )
             {
-            // InternalDeviceDefinition.g:1307:3: ( (lv_type_0_0= rulePinType ) )
-            // InternalDeviceDefinition.g:1308:4: (lv_type_0_0= rulePinType )
+            // InternalDeviceDefinition.g:1355:3: ( (lv_type_0_0= rulePinType ) )
+            // InternalDeviceDefinition.g:1356:4: (lv_type_0_0= rulePinType )
             {
-            // InternalDeviceDefinition.g:1308:4: (lv_type_0_0= rulePinType )
-            // InternalDeviceDefinition.g:1309:5: lv_type_0_0= rulePinType
+            // InternalDeviceDefinition.g:1356:4: (lv_type_0_0= rulePinType )
+            // InternalDeviceDefinition.g:1357:5: lv_type_0_0= rulePinType
             {
 
             					newCompositeNode(grammarAccess.getPinAccess().getTypePinTypeParserRuleCall_0_0());
@@ -2868,11 +2974,11 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             }
 
-            // InternalDeviceDefinition.g:1326:3: ( (lv_number_1_0= RULE_INT ) )
-            // InternalDeviceDefinition.g:1327:4: (lv_number_1_0= RULE_INT )
+            // InternalDeviceDefinition.g:1374:3: ( (lv_number_1_0= RULE_INT ) )
+            // InternalDeviceDefinition.g:1375:4: (lv_number_1_0= RULE_INT )
             {
-            // InternalDeviceDefinition.g:1327:4: (lv_number_1_0= RULE_INT )
-            // InternalDeviceDefinition.g:1328:5: lv_number_1_0= RULE_INT
+            // InternalDeviceDefinition.g:1375:4: (lv_number_1_0= RULE_INT )
+            // InternalDeviceDefinition.g:1376:5: lv_number_1_0= RULE_INT
             {
             lv_number_1_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
@@ -2917,7 +3023,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "entryRulePinType"
-    // InternalDeviceDefinition.g:1348:1: entryRulePinType returns [EObject current=null] : iv_rulePinType= rulePinType EOF ;
+    // InternalDeviceDefinition.g:1396:1: entryRulePinType returns [EObject current=null] : iv_rulePinType= rulePinType EOF ;
     public final EObject entryRulePinType() throws RecognitionException {
         EObject current = null;
 
@@ -2925,8 +3031,8 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
         try {
-            // InternalDeviceDefinition.g:1348:48: (iv_rulePinType= rulePinType EOF )
-            // InternalDeviceDefinition.g:1349:2: iv_rulePinType= rulePinType EOF
+            // InternalDeviceDefinition.g:1396:48: (iv_rulePinType= rulePinType EOF )
+            // InternalDeviceDefinition.g:1397:2: iv_rulePinType= rulePinType EOF
             {
              newCompositeNode(grammarAccess.getPinTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -2953,7 +3059,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "rulePinType"
-    // InternalDeviceDefinition.g:1355:1: rulePinType returns [EObject current=null] : ( ( () otherlv_1= 'adc' ) | ( () otherlv_3= 'dac' ) | ( () otherlv_5= 'in' ) | ( () otherlv_7= 'out' ) ) ;
+    // InternalDeviceDefinition.g:1403:1: rulePinType returns [EObject current=null] : ( ( () otherlv_1= 'adc' ) | ( () otherlv_3= 'dac' ) | ( () otherlv_5= 'in' ) | ( () otherlv_7= 'out' ) ) ;
     public final EObject rulePinType() throws RecognitionException {
         EObject current = null;
 
@@ -2966,48 +3072,48 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
         	enterRule();
 
         try {
-            // InternalDeviceDefinition.g:1361:2: ( ( ( () otherlv_1= 'adc' ) | ( () otherlv_3= 'dac' ) | ( () otherlv_5= 'in' ) | ( () otherlv_7= 'out' ) ) )
-            // InternalDeviceDefinition.g:1362:2: ( ( () otherlv_1= 'adc' ) | ( () otherlv_3= 'dac' ) | ( () otherlv_5= 'in' ) | ( () otherlv_7= 'out' ) )
+            // InternalDeviceDefinition.g:1409:2: ( ( ( () otherlv_1= 'adc' ) | ( () otherlv_3= 'dac' ) | ( () otherlv_5= 'in' ) | ( () otherlv_7= 'out' ) ) )
+            // InternalDeviceDefinition.g:1410:2: ( ( () otherlv_1= 'adc' ) | ( () otherlv_3= 'dac' ) | ( () otherlv_5= 'in' ) | ( () otherlv_7= 'out' ) )
             {
-            // InternalDeviceDefinition.g:1362:2: ( ( () otherlv_1= 'adc' ) | ( () otherlv_3= 'dac' ) | ( () otherlv_5= 'in' ) | ( () otherlv_7= 'out' ) )
-            int alt21=4;
+            // InternalDeviceDefinition.g:1410:2: ( ( () otherlv_1= 'adc' ) | ( () otherlv_3= 'dac' ) | ( () otherlv_5= 'in' ) | ( () otherlv_7= 'out' ) )
+            int alt23=4;
             switch ( input.LA(1) ) {
-            case 48:
-                {
-                alt21=1;
-                }
-                break;
             case 49:
                 {
-                alt21=2;
+                alt23=1;
                 }
                 break;
             case 50:
                 {
-                alt21=3;
+                alt23=2;
                 }
                 break;
             case 51:
                 {
-                alt21=4;
+                alt23=3;
+                }
+                break;
+            case 52:
+                {
+                alt23=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 21, 0, input);
+                    new NoViableAltException("", 23, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt21) {
+            switch (alt23) {
                 case 1 :
-                    // InternalDeviceDefinition.g:1363:3: ( () otherlv_1= 'adc' )
+                    // InternalDeviceDefinition.g:1411:3: ( () otherlv_1= 'adc' )
                     {
-                    // InternalDeviceDefinition.g:1363:3: ( () otherlv_1= 'adc' )
-                    // InternalDeviceDefinition.g:1364:4: () otherlv_1= 'adc'
+                    // InternalDeviceDefinition.g:1411:3: ( () otherlv_1= 'adc' )
+                    // InternalDeviceDefinition.g:1412:4: () otherlv_1= 'adc'
                     {
-                    // InternalDeviceDefinition.g:1364:4: ()
-                    // InternalDeviceDefinition.g:1365:5: 
+                    // InternalDeviceDefinition.g:1412:4: ()
+                    // InternalDeviceDefinition.g:1413:5: 
                     {
 
                     					current = forceCreateModelElement(
@@ -3017,7 +3123,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
                     }
 
-                    otherlv_1=(Token)match(input,48,FOLLOW_2); 
+                    otherlv_1=(Token)match(input,49,FOLLOW_2); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getPinTypeAccess().getAdcKeyword_0_1());
                     			
@@ -3028,13 +3134,13 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                     }
                     break;
                 case 2 :
-                    // InternalDeviceDefinition.g:1377:3: ( () otherlv_3= 'dac' )
+                    // InternalDeviceDefinition.g:1425:3: ( () otherlv_3= 'dac' )
                     {
-                    // InternalDeviceDefinition.g:1377:3: ( () otherlv_3= 'dac' )
-                    // InternalDeviceDefinition.g:1378:4: () otherlv_3= 'dac'
+                    // InternalDeviceDefinition.g:1425:3: ( () otherlv_3= 'dac' )
+                    // InternalDeviceDefinition.g:1426:4: () otherlv_3= 'dac'
                     {
-                    // InternalDeviceDefinition.g:1378:4: ()
-                    // InternalDeviceDefinition.g:1379:5: 
+                    // InternalDeviceDefinition.g:1426:4: ()
+                    // InternalDeviceDefinition.g:1427:5: 
                     {
 
                     					current = forceCreateModelElement(
@@ -3044,7 +3150,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
                     }
 
-                    otherlv_3=(Token)match(input,49,FOLLOW_2); 
+                    otherlv_3=(Token)match(input,50,FOLLOW_2); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getPinTypeAccess().getDacKeyword_1_1());
                     			
@@ -3055,13 +3161,13 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                     }
                     break;
                 case 3 :
-                    // InternalDeviceDefinition.g:1391:3: ( () otherlv_5= 'in' )
+                    // InternalDeviceDefinition.g:1439:3: ( () otherlv_5= 'in' )
                     {
-                    // InternalDeviceDefinition.g:1391:3: ( () otherlv_5= 'in' )
-                    // InternalDeviceDefinition.g:1392:4: () otherlv_5= 'in'
+                    // InternalDeviceDefinition.g:1439:3: ( () otherlv_5= 'in' )
+                    // InternalDeviceDefinition.g:1440:4: () otherlv_5= 'in'
                     {
-                    // InternalDeviceDefinition.g:1392:4: ()
-                    // InternalDeviceDefinition.g:1393:5: 
+                    // InternalDeviceDefinition.g:1440:4: ()
+                    // InternalDeviceDefinition.g:1441:5: 
                     {
 
                     					current = forceCreateModelElement(
@@ -3071,7 +3177,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
                     }
 
-                    otherlv_5=(Token)match(input,50,FOLLOW_2); 
+                    otherlv_5=(Token)match(input,51,FOLLOW_2); 
 
                     				newLeafNode(otherlv_5, grammarAccess.getPinTypeAccess().getInKeyword_2_1());
                     			
@@ -3082,13 +3188,13 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                     }
                     break;
                 case 4 :
-                    // InternalDeviceDefinition.g:1405:3: ( () otherlv_7= 'out' )
+                    // InternalDeviceDefinition.g:1453:3: ( () otherlv_7= 'out' )
                     {
-                    // InternalDeviceDefinition.g:1405:3: ( () otherlv_7= 'out' )
-                    // InternalDeviceDefinition.g:1406:4: () otherlv_7= 'out'
+                    // InternalDeviceDefinition.g:1453:3: ( () otherlv_7= 'out' )
+                    // InternalDeviceDefinition.g:1454:4: () otherlv_7= 'out'
                     {
-                    // InternalDeviceDefinition.g:1406:4: ()
-                    // InternalDeviceDefinition.g:1407:5: 
+                    // InternalDeviceDefinition.g:1454:4: ()
+                    // InternalDeviceDefinition.g:1455:5: 
                     {
 
                     					current = forceCreateModelElement(
@@ -3098,7 +3204,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
                     }
 
-                    otherlv_7=(Token)match(input,51,FOLLOW_2); 
+                    otherlv_7=(Token)match(input,52,FOLLOW_2); 
 
                     				newLeafNode(otherlv_7, grammarAccess.getPinTypeAccess().getOutKeyword_3_1());
                     			
@@ -3131,7 +3237,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "entryRuleTimeUnit"
-    // InternalDeviceDefinition.g:1422:1: entryRuleTimeUnit returns [EObject current=null] : iv_ruleTimeUnit= ruleTimeUnit EOF ;
+    // InternalDeviceDefinition.g:1470:1: entryRuleTimeUnit returns [EObject current=null] : iv_ruleTimeUnit= ruleTimeUnit EOF ;
     public final EObject entryRuleTimeUnit() throws RecognitionException {
         EObject current = null;
 
@@ -3139,8 +3245,8 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
         try {
-            // InternalDeviceDefinition.g:1422:49: (iv_ruleTimeUnit= ruleTimeUnit EOF )
-            // InternalDeviceDefinition.g:1423:2: iv_ruleTimeUnit= ruleTimeUnit EOF
+            // InternalDeviceDefinition.g:1470:49: (iv_ruleTimeUnit= ruleTimeUnit EOF )
+            // InternalDeviceDefinition.g:1471:2: iv_ruleTimeUnit= ruleTimeUnit EOF
             {
              newCompositeNode(grammarAccess.getTimeUnitRule()); 
             pushFollow(FOLLOW_1);
@@ -3167,7 +3273,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "ruleTimeUnit"
-    // InternalDeviceDefinition.g:1429:1: ruleTimeUnit returns [EObject current=null] : ( ( () (otherlv_1= 'millisecond' | otherlv_2= 'milliseconds' | otherlv_3= 'ms' ) ) | ( () (otherlv_5= 'second' | otherlv_6= 'seconds' | otherlv_7= 's' ) ) | ( () (otherlv_9= 'minute' | otherlv_10= 'minutes' | otherlv_11= 'm' ) ) | ( () (otherlv_13= 'hour' | otherlv_14= 'hours' | otherlv_15= 'h' ) ) ) ;
+    // InternalDeviceDefinition.g:1477:1: ruleTimeUnit returns [EObject current=null] : ( ( () (otherlv_1= 'millisecond' | otherlv_2= 'milliseconds' | otherlv_3= 'ms' ) ) | ( () (otherlv_5= 'second' | otherlv_6= 'seconds' | otherlv_7= 's' ) ) | ( () (otherlv_9= 'minute' | otherlv_10= 'minutes' | otherlv_11= 'm' ) ) | ( () (otherlv_13= 'hour' | otherlv_14= 'hours' | otherlv_15= 'h' ) ) ) ;
     public final EObject ruleTimeUnit() throws RecognitionException {
         EObject current = null;
 
@@ -3188,56 +3294,56 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
         	enterRule();
 
         try {
-            // InternalDeviceDefinition.g:1435:2: ( ( ( () (otherlv_1= 'millisecond' | otherlv_2= 'milliseconds' | otherlv_3= 'ms' ) ) | ( () (otherlv_5= 'second' | otherlv_6= 'seconds' | otherlv_7= 's' ) ) | ( () (otherlv_9= 'minute' | otherlv_10= 'minutes' | otherlv_11= 'm' ) ) | ( () (otherlv_13= 'hour' | otherlv_14= 'hours' | otherlv_15= 'h' ) ) ) )
-            // InternalDeviceDefinition.g:1436:2: ( ( () (otherlv_1= 'millisecond' | otherlv_2= 'milliseconds' | otherlv_3= 'ms' ) ) | ( () (otherlv_5= 'second' | otherlv_6= 'seconds' | otherlv_7= 's' ) ) | ( () (otherlv_9= 'minute' | otherlv_10= 'minutes' | otherlv_11= 'm' ) ) | ( () (otherlv_13= 'hour' | otherlv_14= 'hours' | otherlv_15= 'h' ) ) )
+            // InternalDeviceDefinition.g:1483:2: ( ( ( () (otherlv_1= 'millisecond' | otherlv_2= 'milliseconds' | otherlv_3= 'ms' ) ) | ( () (otherlv_5= 'second' | otherlv_6= 'seconds' | otherlv_7= 's' ) ) | ( () (otherlv_9= 'minute' | otherlv_10= 'minutes' | otherlv_11= 'm' ) ) | ( () (otherlv_13= 'hour' | otherlv_14= 'hours' | otherlv_15= 'h' ) ) ) )
+            // InternalDeviceDefinition.g:1484:2: ( ( () (otherlv_1= 'millisecond' | otherlv_2= 'milliseconds' | otherlv_3= 'ms' ) ) | ( () (otherlv_5= 'second' | otherlv_6= 'seconds' | otherlv_7= 's' ) ) | ( () (otherlv_9= 'minute' | otherlv_10= 'minutes' | otherlv_11= 'm' ) ) | ( () (otherlv_13= 'hour' | otherlv_14= 'hours' | otherlv_15= 'h' ) ) )
             {
-            // InternalDeviceDefinition.g:1436:2: ( ( () (otherlv_1= 'millisecond' | otherlv_2= 'milliseconds' | otherlv_3= 'ms' ) ) | ( () (otherlv_5= 'second' | otherlv_6= 'seconds' | otherlv_7= 's' ) ) | ( () (otherlv_9= 'minute' | otherlv_10= 'minutes' | otherlv_11= 'm' ) ) | ( () (otherlv_13= 'hour' | otherlv_14= 'hours' | otherlv_15= 'h' ) ) )
-            int alt26=4;
+            // InternalDeviceDefinition.g:1484:2: ( ( () (otherlv_1= 'millisecond' | otherlv_2= 'milliseconds' | otherlv_3= 'ms' ) ) | ( () (otherlv_5= 'second' | otherlv_6= 'seconds' | otherlv_7= 's' ) ) | ( () (otherlv_9= 'minute' | otherlv_10= 'minutes' | otherlv_11= 'm' ) ) | ( () (otherlv_13= 'hour' | otherlv_14= 'hours' | otherlv_15= 'h' ) ) )
+            int alt28=4;
             switch ( input.LA(1) ) {
-            case 52:
             case 53:
             case 54:
+            case 55:
                 {
-                alt26=1;
+                alt28=1;
                 }
                 break;
-            case 55:
             case 56:
             case 57:
+            case 58:
                 {
-                alt26=2;
+                alt28=2;
                 }
                 break;
-            case 58:
             case 59:
             case 60:
+            case 61:
                 {
-                alt26=3;
+                alt28=3;
                 }
                 break;
-            case 61:
             case 62:
             case 63:
+            case 64:
                 {
-                alt26=4;
+                alt28=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 26, 0, input);
+                    new NoViableAltException("", 28, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt26) {
+            switch (alt28) {
                 case 1 :
-                    // InternalDeviceDefinition.g:1437:3: ( () (otherlv_1= 'millisecond' | otherlv_2= 'milliseconds' | otherlv_3= 'ms' ) )
+                    // InternalDeviceDefinition.g:1485:3: ( () (otherlv_1= 'millisecond' | otherlv_2= 'milliseconds' | otherlv_3= 'ms' ) )
                     {
-                    // InternalDeviceDefinition.g:1437:3: ( () (otherlv_1= 'millisecond' | otherlv_2= 'milliseconds' | otherlv_3= 'ms' ) )
-                    // InternalDeviceDefinition.g:1438:4: () (otherlv_1= 'millisecond' | otherlv_2= 'milliseconds' | otherlv_3= 'ms' )
+                    // InternalDeviceDefinition.g:1485:3: ( () (otherlv_1= 'millisecond' | otherlv_2= 'milliseconds' | otherlv_3= 'ms' ) )
+                    // InternalDeviceDefinition.g:1486:4: () (otherlv_1= 'millisecond' | otherlv_2= 'milliseconds' | otherlv_3= 'ms' )
                     {
-                    // InternalDeviceDefinition.g:1438:4: ()
-                    // InternalDeviceDefinition.g:1439:5: 
+                    // InternalDeviceDefinition.g:1486:4: ()
+                    // InternalDeviceDefinition.g:1487:5: 
                     {
 
                     					current = forceCreateModelElement(
@@ -3247,36 +3353,36 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
                     }
 
-                    // InternalDeviceDefinition.g:1445:4: (otherlv_1= 'millisecond' | otherlv_2= 'milliseconds' | otherlv_3= 'ms' )
-                    int alt22=3;
+                    // InternalDeviceDefinition.g:1493:4: (otherlv_1= 'millisecond' | otherlv_2= 'milliseconds' | otherlv_3= 'ms' )
+                    int alt24=3;
                     switch ( input.LA(1) ) {
-                    case 52:
-                        {
-                        alt22=1;
-                        }
-                        break;
                     case 53:
                         {
-                        alt22=2;
+                        alt24=1;
                         }
                         break;
                     case 54:
                         {
-                        alt22=3;
+                        alt24=2;
+                        }
+                        break;
+                    case 55:
+                        {
+                        alt24=3;
                         }
                         break;
                     default:
                         NoViableAltException nvae =
-                            new NoViableAltException("", 22, 0, input);
+                            new NoViableAltException("", 24, 0, input);
 
                         throw nvae;
                     }
 
-                    switch (alt22) {
+                    switch (alt24) {
                         case 1 :
-                            // InternalDeviceDefinition.g:1446:5: otherlv_1= 'millisecond'
+                            // InternalDeviceDefinition.g:1494:5: otherlv_1= 'millisecond'
                             {
-                            otherlv_1=(Token)match(input,52,FOLLOW_2); 
+                            otherlv_1=(Token)match(input,53,FOLLOW_2); 
 
                             					newLeafNode(otherlv_1, grammarAccess.getTimeUnitAccess().getMillisecondKeyword_0_1_0());
                             				
@@ -3284,9 +3390,9 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                             }
                             break;
                         case 2 :
-                            // InternalDeviceDefinition.g:1451:5: otherlv_2= 'milliseconds'
+                            // InternalDeviceDefinition.g:1499:5: otherlv_2= 'milliseconds'
                             {
-                            otherlv_2=(Token)match(input,53,FOLLOW_2); 
+                            otherlv_2=(Token)match(input,54,FOLLOW_2); 
 
                             					newLeafNode(otherlv_2, grammarAccess.getTimeUnitAccess().getMillisecondsKeyword_0_1_1());
                             				
@@ -3294,9 +3400,9 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                             }
                             break;
                         case 3 :
-                            // InternalDeviceDefinition.g:1456:5: otherlv_3= 'ms'
+                            // InternalDeviceDefinition.g:1504:5: otherlv_3= 'ms'
                             {
-                            otherlv_3=(Token)match(input,54,FOLLOW_2); 
+                            otherlv_3=(Token)match(input,55,FOLLOW_2); 
 
                             					newLeafNode(otherlv_3, grammarAccess.getTimeUnitAccess().getMsKeyword_0_1_2());
                             				
@@ -3313,13 +3419,13 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                     }
                     break;
                 case 2 :
-                    // InternalDeviceDefinition.g:1463:3: ( () (otherlv_5= 'second' | otherlv_6= 'seconds' | otherlv_7= 's' ) )
+                    // InternalDeviceDefinition.g:1511:3: ( () (otherlv_5= 'second' | otherlv_6= 'seconds' | otherlv_7= 's' ) )
                     {
-                    // InternalDeviceDefinition.g:1463:3: ( () (otherlv_5= 'second' | otherlv_6= 'seconds' | otherlv_7= 's' ) )
-                    // InternalDeviceDefinition.g:1464:4: () (otherlv_5= 'second' | otherlv_6= 'seconds' | otherlv_7= 's' )
+                    // InternalDeviceDefinition.g:1511:3: ( () (otherlv_5= 'second' | otherlv_6= 'seconds' | otherlv_7= 's' ) )
+                    // InternalDeviceDefinition.g:1512:4: () (otherlv_5= 'second' | otherlv_6= 'seconds' | otherlv_7= 's' )
                     {
-                    // InternalDeviceDefinition.g:1464:4: ()
-                    // InternalDeviceDefinition.g:1465:5: 
+                    // InternalDeviceDefinition.g:1512:4: ()
+                    // InternalDeviceDefinition.g:1513:5: 
                     {
 
                     					current = forceCreateModelElement(
@@ -3329,36 +3435,36 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
                     }
 
-                    // InternalDeviceDefinition.g:1471:4: (otherlv_5= 'second' | otherlv_6= 'seconds' | otherlv_7= 's' )
-                    int alt23=3;
+                    // InternalDeviceDefinition.g:1519:4: (otherlv_5= 'second' | otherlv_6= 'seconds' | otherlv_7= 's' )
+                    int alt25=3;
                     switch ( input.LA(1) ) {
-                    case 55:
-                        {
-                        alt23=1;
-                        }
-                        break;
                     case 56:
                         {
-                        alt23=2;
+                        alt25=1;
                         }
                         break;
                     case 57:
                         {
-                        alt23=3;
+                        alt25=2;
+                        }
+                        break;
+                    case 58:
+                        {
+                        alt25=3;
                         }
                         break;
                     default:
                         NoViableAltException nvae =
-                            new NoViableAltException("", 23, 0, input);
+                            new NoViableAltException("", 25, 0, input);
 
                         throw nvae;
                     }
 
-                    switch (alt23) {
+                    switch (alt25) {
                         case 1 :
-                            // InternalDeviceDefinition.g:1472:5: otherlv_5= 'second'
+                            // InternalDeviceDefinition.g:1520:5: otherlv_5= 'second'
                             {
-                            otherlv_5=(Token)match(input,55,FOLLOW_2); 
+                            otherlv_5=(Token)match(input,56,FOLLOW_2); 
 
                             					newLeafNode(otherlv_5, grammarAccess.getTimeUnitAccess().getSecondKeyword_1_1_0());
                             				
@@ -3366,9 +3472,9 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                             }
                             break;
                         case 2 :
-                            // InternalDeviceDefinition.g:1477:5: otherlv_6= 'seconds'
+                            // InternalDeviceDefinition.g:1525:5: otherlv_6= 'seconds'
                             {
-                            otherlv_6=(Token)match(input,56,FOLLOW_2); 
+                            otherlv_6=(Token)match(input,57,FOLLOW_2); 
 
                             					newLeafNode(otherlv_6, grammarAccess.getTimeUnitAccess().getSecondsKeyword_1_1_1());
                             				
@@ -3376,9 +3482,9 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                             }
                             break;
                         case 3 :
-                            // InternalDeviceDefinition.g:1482:5: otherlv_7= 's'
+                            // InternalDeviceDefinition.g:1530:5: otherlv_7= 's'
                             {
-                            otherlv_7=(Token)match(input,57,FOLLOW_2); 
+                            otherlv_7=(Token)match(input,58,FOLLOW_2); 
 
                             					newLeafNode(otherlv_7, grammarAccess.getTimeUnitAccess().getSKeyword_1_1_2());
                             				
@@ -3395,13 +3501,13 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                     }
                     break;
                 case 3 :
-                    // InternalDeviceDefinition.g:1489:3: ( () (otherlv_9= 'minute' | otherlv_10= 'minutes' | otherlv_11= 'm' ) )
+                    // InternalDeviceDefinition.g:1537:3: ( () (otherlv_9= 'minute' | otherlv_10= 'minutes' | otherlv_11= 'm' ) )
                     {
-                    // InternalDeviceDefinition.g:1489:3: ( () (otherlv_9= 'minute' | otherlv_10= 'minutes' | otherlv_11= 'm' ) )
-                    // InternalDeviceDefinition.g:1490:4: () (otherlv_9= 'minute' | otherlv_10= 'minutes' | otherlv_11= 'm' )
+                    // InternalDeviceDefinition.g:1537:3: ( () (otherlv_9= 'minute' | otherlv_10= 'minutes' | otherlv_11= 'm' ) )
+                    // InternalDeviceDefinition.g:1538:4: () (otherlv_9= 'minute' | otherlv_10= 'minutes' | otherlv_11= 'm' )
                     {
-                    // InternalDeviceDefinition.g:1490:4: ()
-                    // InternalDeviceDefinition.g:1491:5: 
+                    // InternalDeviceDefinition.g:1538:4: ()
+                    // InternalDeviceDefinition.g:1539:5: 
                     {
 
                     					current = forceCreateModelElement(
@@ -3411,36 +3517,36 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
                     }
 
-                    // InternalDeviceDefinition.g:1497:4: (otherlv_9= 'minute' | otherlv_10= 'minutes' | otherlv_11= 'm' )
-                    int alt24=3;
+                    // InternalDeviceDefinition.g:1545:4: (otherlv_9= 'minute' | otherlv_10= 'minutes' | otherlv_11= 'm' )
+                    int alt26=3;
                     switch ( input.LA(1) ) {
-                    case 58:
-                        {
-                        alt24=1;
-                        }
-                        break;
                     case 59:
                         {
-                        alt24=2;
+                        alt26=1;
                         }
                         break;
                     case 60:
                         {
-                        alt24=3;
+                        alt26=2;
+                        }
+                        break;
+                    case 61:
+                        {
+                        alt26=3;
                         }
                         break;
                     default:
                         NoViableAltException nvae =
-                            new NoViableAltException("", 24, 0, input);
+                            new NoViableAltException("", 26, 0, input);
 
                         throw nvae;
                     }
 
-                    switch (alt24) {
+                    switch (alt26) {
                         case 1 :
-                            // InternalDeviceDefinition.g:1498:5: otherlv_9= 'minute'
+                            // InternalDeviceDefinition.g:1546:5: otherlv_9= 'minute'
                             {
-                            otherlv_9=(Token)match(input,58,FOLLOW_2); 
+                            otherlv_9=(Token)match(input,59,FOLLOW_2); 
 
                             					newLeafNode(otherlv_9, grammarAccess.getTimeUnitAccess().getMinuteKeyword_2_1_0());
                             				
@@ -3448,9 +3554,9 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                             }
                             break;
                         case 2 :
-                            // InternalDeviceDefinition.g:1503:5: otherlv_10= 'minutes'
+                            // InternalDeviceDefinition.g:1551:5: otherlv_10= 'minutes'
                             {
-                            otherlv_10=(Token)match(input,59,FOLLOW_2); 
+                            otherlv_10=(Token)match(input,60,FOLLOW_2); 
 
                             					newLeafNode(otherlv_10, grammarAccess.getTimeUnitAccess().getMinutesKeyword_2_1_1());
                             				
@@ -3458,9 +3564,9 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                             }
                             break;
                         case 3 :
-                            // InternalDeviceDefinition.g:1508:5: otherlv_11= 'm'
+                            // InternalDeviceDefinition.g:1556:5: otherlv_11= 'm'
                             {
-                            otherlv_11=(Token)match(input,60,FOLLOW_2); 
+                            otherlv_11=(Token)match(input,61,FOLLOW_2); 
 
                             					newLeafNode(otherlv_11, grammarAccess.getTimeUnitAccess().getMKeyword_2_1_2());
                             				
@@ -3477,13 +3583,13 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                     }
                     break;
                 case 4 :
-                    // InternalDeviceDefinition.g:1515:3: ( () (otherlv_13= 'hour' | otherlv_14= 'hours' | otherlv_15= 'h' ) )
+                    // InternalDeviceDefinition.g:1563:3: ( () (otherlv_13= 'hour' | otherlv_14= 'hours' | otherlv_15= 'h' ) )
                     {
-                    // InternalDeviceDefinition.g:1515:3: ( () (otherlv_13= 'hour' | otherlv_14= 'hours' | otherlv_15= 'h' ) )
-                    // InternalDeviceDefinition.g:1516:4: () (otherlv_13= 'hour' | otherlv_14= 'hours' | otherlv_15= 'h' )
+                    // InternalDeviceDefinition.g:1563:3: ( () (otherlv_13= 'hour' | otherlv_14= 'hours' | otherlv_15= 'h' ) )
+                    // InternalDeviceDefinition.g:1564:4: () (otherlv_13= 'hour' | otherlv_14= 'hours' | otherlv_15= 'h' )
                     {
-                    // InternalDeviceDefinition.g:1516:4: ()
-                    // InternalDeviceDefinition.g:1517:5: 
+                    // InternalDeviceDefinition.g:1564:4: ()
+                    // InternalDeviceDefinition.g:1565:5: 
                     {
 
                     					current = forceCreateModelElement(
@@ -3493,36 +3599,36 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
                     }
 
-                    // InternalDeviceDefinition.g:1523:4: (otherlv_13= 'hour' | otherlv_14= 'hours' | otherlv_15= 'h' )
-                    int alt25=3;
+                    // InternalDeviceDefinition.g:1571:4: (otherlv_13= 'hour' | otherlv_14= 'hours' | otherlv_15= 'h' )
+                    int alt27=3;
                     switch ( input.LA(1) ) {
-                    case 61:
-                        {
-                        alt25=1;
-                        }
-                        break;
                     case 62:
                         {
-                        alt25=2;
+                        alt27=1;
                         }
                         break;
                     case 63:
                         {
-                        alt25=3;
+                        alt27=2;
+                        }
+                        break;
+                    case 64:
+                        {
+                        alt27=3;
                         }
                         break;
                     default:
                         NoViableAltException nvae =
-                            new NoViableAltException("", 25, 0, input);
+                            new NoViableAltException("", 27, 0, input);
 
                         throw nvae;
                     }
 
-                    switch (alt25) {
+                    switch (alt27) {
                         case 1 :
-                            // InternalDeviceDefinition.g:1524:5: otherlv_13= 'hour'
+                            // InternalDeviceDefinition.g:1572:5: otherlv_13= 'hour'
                             {
-                            otherlv_13=(Token)match(input,61,FOLLOW_2); 
+                            otherlv_13=(Token)match(input,62,FOLLOW_2); 
 
                             					newLeafNode(otherlv_13, grammarAccess.getTimeUnitAccess().getHourKeyword_3_1_0());
                             				
@@ -3530,9 +3636,9 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                             }
                             break;
                         case 2 :
-                            // InternalDeviceDefinition.g:1529:5: otherlv_14= 'hours'
+                            // InternalDeviceDefinition.g:1577:5: otherlv_14= 'hours'
                             {
-                            otherlv_14=(Token)match(input,62,FOLLOW_2); 
+                            otherlv_14=(Token)match(input,63,FOLLOW_2); 
 
                             					newLeafNode(otherlv_14, grammarAccess.getTimeUnitAccess().getHoursKeyword_3_1_1());
                             				
@@ -3540,9 +3646,9 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                             }
                             break;
                         case 3 :
-                            // InternalDeviceDefinition.g:1534:5: otherlv_15= 'h'
+                            // InternalDeviceDefinition.g:1582:5: otherlv_15= 'h'
                             {
-                            otherlv_15=(Token)match(input,63,FOLLOW_2); 
+                            otherlv_15=(Token)match(input,64,FOLLOW_2); 
 
                             					newLeafNode(otherlv_15, grammarAccess.getTimeUnitAccess().getHKeyword_3_1_2());
                             				
@@ -3581,7 +3687,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "entryRuleSensorOutput"
-    // InternalDeviceDefinition.g:1544:1: entryRuleSensorOutput returns [EObject current=null] : iv_ruleSensorOutput= ruleSensorOutput EOF ;
+    // InternalDeviceDefinition.g:1592:1: entryRuleSensorOutput returns [EObject current=null] : iv_ruleSensorOutput= ruleSensorOutput EOF ;
     public final EObject entryRuleSensorOutput() throws RecognitionException {
         EObject current = null;
 
@@ -3589,8 +3695,8 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
         try {
-            // InternalDeviceDefinition.g:1544:53: (iv_ruleSensorOutput= ruleSensorOutput EOF )
-            // InternalDeviceDefinition.g:1545:2: iv_ruleSensorOutput= ruleSensorOutput EOF
+            // InternalDeviceDefinition.g:1592:53: (iv_ruleSensorOutput= ruleSensorOutput EOF )
+            // InternalDeviceDefinition.g:1593:2: iv_ruleSensorOutput= ruleSensorOutput EOF
             {
              newCompositeNode(grammarAccess.getSensorOutputRule()); 
             pushFollow(FOLLOW_1);
@@ -3617,7 +3723,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "ruleSensorOutput"
-    // InternalDeviceDefinition.g:1551:1: ruleSensorOutput returns [EObject current=null] : (otherlv_0= 'out' ( (lv_output_1_0= RULE_STRING ) )? otherlv_2= 'as' ( (lv_name_3_0= RULE_ID ) ) (otherlv_4= 'with' otherlv_5= 'mapping' ( (lv_mapping_6_0= ruleExp ) ) )? ) ;
+    // InternalDeviceDefinition.g:1599:1: ruleSensorOutput returns [EObject current=null] : (otherlv_0= 'out' ( (lv_output_1_0= RULE_STRING ) )? otherlv_2= 'as' ( (lv_name_3_0= RULE_ID ) ) (otherlv_4= 'with' otherlv_5= 'mapping' ( (lv_mapping_6_0= ruleExp ) ) )? ) ;
     public final EObject ruleSensorOutput() throws RecognitionException {
         EObject current = null;
 
@@ -3634,31 +3740,31 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
         	enterRule();
 
         try {
-            // InternalDeviceDefinition.g:1557:2: ( (otherlv_0= 'out' ( (lv_output_1_0= RULE_STRING ) )? otherlv_2= 'as' ( (lv_name_3_0= RULE_ID ) ) (otherlv_4= 'with' otherlv_5= 'mapping' ( (lv_mapping_6_0= ruleExp ) ) )? ) )
-            // InternalDeviceDefinition.g:1558:2: (otherlv_0= 'out' ( (lv_output_1_0= RULE_STRING ) )? otherlv_2= 'as' ( (lv_name_3_0= RULE_ID ) ) (otherlv_4= 'with' otherlv_5= 'mapping' ( (lv_mapping_6_0= ruleExp ) ) )? )
+            // InternalDeviceDefinition.g:1605:2: ( (otherlv_0= 'out' ( (lv_output_1_0= RULE_STRING ) )? otherlv_2= 'as' ( (lv_name_3_0= RULE_ID ) ) (otherlv_4= 'with' otherlv_5= 'mapping' ( (lv_mapping_6_0= ruleExp ) ) )? ) )
+            // InternalDeviceDefinition.g:1606:2: (otherlv_0= 'out' ( (lv_output_1_0= RULE_STRING ) )? otherlv_2= 'as' ( (lv_name_3_0= RULE_ID ) ) (otherlv_4= 'with' otherlv_5= 'mapping' ( (lv_mapping_6_0= ruleExp ) ) )? )
             {
-            // InternalDeviceDefinition.g:1558:2: (otherlv_0= 'out' ( (lv_output_1_0= RULE_STRING ) )? otherlv_2= 'as' ( (lv_name_3_0= RULE_ID ) ) (otherlv_4= 'with' otherlv_5= 'mapping' ( (lv_mapping_6_0= ruleExp ) ) )? )
-            // InternalDeviceDefinition.g:1559:3: otherlv_0= 'out' ( (lv_output_1_0= RULE_STRING ) )? otherlv_2= 'as' ( (lv_name_3_0= RULE_ID ) ) (otherlv_4= 'with' otherlv_5= 'mapping' ( (lv_mapping_6_0= ruleExp ) ) )?
+            // InternalDeviceDefinition.g:1606:2: (otherlv_0= 'out' ( (lv_output_1_0= RULE_STRING ) )? otherlv_2= 'as' ( (lv_name_3_0= RULE_ID ) ) (otherlv_4= 'with' otherlv_5= 'mapping' ( (lv_mapping_6_0= ruleExp ) ) )? )
+            // InternalDeviceDefinition.g:1607:3: otherlv_0= 'out' ( (lv_output_1_0= RULE_STRING ) )? otherlv_2= 'as' ( (lv_name_3_0= RULE_ID ) ) (otherlv_4= 'with' otherlv_5= 'mapping' ( (lv_mapping_6_0= ruleExp ) ) )?
             {
-            otherlv_0=(Token)match(input,51,FOLLOW_50); 
+            otherlv_0=(Token)match(input,52,FOLLOW_51); 
 
             			newLeafNode(otherlv_0, grammarAccess.getSensorOutputAccess().getOutKeyword_0());
             		
-            // InternalDeviceDefinition.g:1563:3: ( (lv_output_1_0= RULE_STRING ) )?
-            int alt27=2;
-            int LA27_0 = input.LA(1);
+            // InternalDeviceDefinition.g:1611:3: ( (lv_output_1_0= RULE_STRING ) )?
+            int alt29=2;
+            int LA29_0 = input.LA(1);
 
-            if ( (LA27_0==RULE_STRING) ) {
-                alt27=1;
+            if ( (LA29_0==RULE_STRING) ) {
+                alt29=1;
             }
-            switch (alt27) {
+            switch (alt29) {
                 case 1 :
-                    // InternalDeviceDefinition.g:1564:4: (lv_output_1_0= RULE_STRING )
+                    // InternalDeviceDefinition.g:1612:4: (lv_output_1_0= RULE_STRING )
                     {
-                    // InternalDeviceDefinition.g:1564:4: (lv_output_1_0= RULE_STRING )
-                    // InternalDeviceDefinition.g:1565:5: lv_output_1_0= RULE_STRING
+                    // InternalDeviceDefinition.g:1612:4: (lv_output_1_0= RULE_STRING )
+                    // InternalDeviceDefinition.g:1613:5: lv_output_1_0= RULE_STRING
                     {
-                    lv_output_1_0=(Token)match(input,RULE_STRING,FOLLOW_51); 
+                    lv_output_1_0=(Token)match(input,RULE_STRING,FOLLOW_52); 
 
                     					newLeafNode(lv_output_1_0, grammarAccess.getSensorOutputAccess().getOutputSTRINGTerminalRuleCall_1_0());
                     				
@@ -3681,17 +3787,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             }
 
-            otherlv_2=(Token)match(input,64,FOLLOW_3); 
+            otherlv_2=(Token)match(input,65,FOLLOW_3); 
 
             			newLeafNode(otherlv_2, grammarAccess.getSensorOutputAccess().getAsKeyword_2());
             		
-            // InternalDeviceDefinition.g:1585:3: ( (lv_name_3_0= RULE_ID ) )
-            // InternalDeviceDefinition.g:1586:4: (lv_name_3_0= RULE_ID )
+            // InternalDeviceDefinition.g:1633:3: ( (lv_name_3_0= RULE_ID ) )
+            // InternalDeviceDefinition.g:1634:4: (lv_name_3_0= RULE_ID )
             {
-            // InternalDeviceDefinition.g:1586:4: (lv_name_3_0= RULE_ID )
-            // InternalDeviceDefinition.g:1587:5: lv_name_3_0= RULE_ID
+            // InternalDeviceDefinition.g:1634:4: (lv_name_3_0= RULE_ID )
+            // InternalDeviceDefinition.g:1635:5: lv_name_3_0= RULE_ID
             {
-            lv_name_3_0=(Token)match(input,RULE_ID,FOLLOW_52); 
+            lv_name_3_0=(Token)match(input,RULE_ID,FOLLOW_53); 
 
             					newLeafNode(lv_name_3_0, grammarAccess.getSensorOutputAccess().getNameIDTerminalRuleCall_3_0());
             				
@@ -3711,30 +3817,30 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             }
 
-            // InternalDeviceDefinition.g:1603:3: (otherlv_4= 'with' otherlv_5= 'mapping' ( (lv_mapping_6_0= ruleExp ) ) )?
-            int alt28=2;
-            int LA28_0 = input.LA(1);
+            // InternalDeviceDefinition.g:1651:3: (otherlv_4= 'with' otherlv_5= 'mapping' ( (lv_mapping_6_0= ruleExp ) ) )?
+            int alt30=2;
+            int LA30_0 = input.LA(1);
 
-            if ( (LA28_0==17) ) {
-                alt28=1;
+            if ( (LA30_0==17) ) {
+                alt30=1;
             }
-            switch (alt28) {
+            switch (alt30) {
                 case 1 :
-                    // InternalDeviceDefinition.g:1604:4: otherlv_4= 'with' otherlv_5= 'mapping' ( (lv_mapping_6_0= ruleExp ) )
+                    // InternalDeviceDefinition.g:1652:4: otherlv_4= 'with' otherlv_5= 'mapping' ( (lv_mapping_6_0= ruleExp ) )
                     {
-                    otherlv_4=(Token)match(input,17,FOLLOW_53); 
+                    otherlv_4=(Token)match(input,17,FOLLOW_54); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getSensorOutputAccess().getWithKeyword_4_0());
                     			
-                    otherlv_5=(Token)match(input,65,FOLLOW_49); 
+                    otherlv_5=(Token)match(input,66,FOLLOW_50); 
 
                     				newLeafNode(otherlv_5, grammarAccess.getSensorOutputAccess().getMappingKeyword_4_1());
                     			
-                    // InternalDeviceDefinition.g:1612:4: ( (lv_mapping_6_0= ruleExp ) )
-                    // InternalDeviceDefinition.g:1613:5: (lv_mapping_6_0= ruleExp )
+                    // InternalDeviceDefinition.g:1660:4: ( (lv_mapping_6_0= ruleExp ) )
+                    // InternalDeviceDefinition.g:1661:5: (lv_mapping_6_0= ruleExp )
                     {
-                    // InternalDeviceDefinition.g:1613:5: (lv_mapping_6_0= ruleExp )
-                    // InternalDeviceDefinition.g:1614:6: lv_mapping_6_0= ruleExp
+                    // InternalDeviceDefinition.g:1661:5: (lv_mapping_6_0= ruleExp )
+                    // InternalDeviceDefinition.g:1662:6: lv_mapping_6_0= ruleExp
                     {
 
                     						newCompositeNode(grammarAccess.getSensorOutputAccess().getMappingExpParserRuleCall_4_2_0());
@@ -3790,7 +3896,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "entryRuleActuator"
-    // InternalDeviceDefinition.g:1636:1: entryRuleActuator returns [EObject current=null] : iv_ruleActuator= ruleActuator EOF ;
+    // InternalDeviceDefinition.g:1684:1: entryRuleActuator returns [EObject current=null] : iv_ruleActuator= ruleActuator EOF ;
     public final EObject entryRuleActuator() throws RecognitionException {
         EObject current = null;
 
@@ -3798,8 +3904,8 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
         try {
-            // InternalDeviceDefinition.g:1636:49: (iv_ruleActuator= ruleActuator EOF )
-            // InternalDeviceDefinition.g:1637:2: iv_ruleActuator= ruleActuator EOF
+            // InternalDeviceDefinition.g:1684:49: (iv_ruleActuator= ruleActuator EOF )
+            // InternalDeviceDefinition.g:1685:2: iv_ruleActuator= ruleActuator EOF
             {
              newCompositeNode(grammarAccess.getActuatorRule()); 
             pushFollow(FOLLOW_1);
@@ -3826,7 +3932,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "ruleActuator"
-    // InternalDeviceDefinition.g:1643:1: ruleActuator returns [EObject current=null] : (otherlv_0= 'Actuator' ( (lv_type_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' otherlv_4= 'pins' ( (lv_pins_5_0= rulePin ) )* (otherlv_6= ',' ( (lv_pins_7_0= rulePin ) ) )* ( (lv_settings_8_0= ruleSetting ) )* ( (lv_trigger_9_0= ruleTrigger ) ) ) ;
+    // InternalDeviceDefinition.g:1691:1: ruleActuator returns [EObject current=null] : (otherlv_0= 'Actuator' ( (lv_type_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' otherlv_4= 'pins' ( (lv_pins_5_0= rulePin ) )* (otherlv_6= ',' ( (lv_pins_7_0= rulePin ) ) )* ( (lv_settings_8_0= ruleSetting ) )* ( (lv_trigger_9_0= ruleTrigger ) ) ) ;
     public final EObject ruleActuator() throws RecognitionException {
         EObject current = null;
 
@@ -3849,21 +3955,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
         	enterRule();
 
         try {
-            // InternalDeviceDefinition.g:1649:2: ( (otherlv_0= 'Actuator' ( (lv_type_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' otherlv_4= 'pins' ( (lv_pins_5_0= rulePin ) )* (otherlv_6= ',' ( (lv_pins_7_0= rulePin ) ) )* ( (lv_settings_8_0= ruleSetting ) )* ( (lv_trigger_9_0= ruleTrigger ) ) ) )
-            // InternalDeviceDefinition.g:1650:2: (otherlv_0= 'Actuator' ( (lv_type_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' otherlv_4= 'pins' ( (lv_pins_5_0= rulePin ) )* (otherlv_6= ',' ( (lv_pins_7_0= rulePin ) ) )* ( (lv_settings_8_0= ruleSetting ) )* ( (lv_trigger_9_0= ruleTrigger ) ) )
+            // InternalDeviceDefinition.g:1697:2: ( (otherlv_0= 'Actuator' ( (lv_type_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' otherlv_4= 'pins' ( (lv_pins_5_0= rulePin ) )* (otherlv_6= ',' ( (lv_pins_7_0= rulePin ) ) )* ( (lv_settings_8_0= ruleSetting ) )* ( (lv_trigger_9_0= ruleTrigger ) ) ) )
+            // InternalDeviceDefinition.g:1698:2: (otherlv_0= 'Actuator' ( (lv_type_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' otherlv_4= 'pins' ( (lv_pins_5_0= rulePin ) )* (otherlv_6= ',' ( (lv_pins_7_0= rulePin ) ) )* ( (lv_settings_8_0= ruleSetting ) )* ( (lv_trigger_9_0= ruleTrigger ) ) )
             {
-            // InternalDeviceDefinition.g:1650:2: (otherlv_0= 'Actuator' ( (lv_type_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' otherlv_4= 'pins' ( (lv_pins_5_0= rulePin ) )* (otherlv_6= ',' ( (lv_pins_7_0= rulePin ) ) )* ( (lv_settings_8_0= ruleSetting ) )* ( (lv_trigger_9_0= ruleTrigger ) ) )
-            // InternalDeviceDefinition.g:1651:3: otherlv_0= 'Actuator' ( (lv_type_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' otherlv_4= 'pins' ( (lv_pins_5_0= rulePin ) )* (otherlv_6= ',' ( (lv_pins_7_0= rulePin ) ) )* ( (lv_settings_8_0= ruleSetting ) )* ( (lv_trigger_9_0= ruleTrigger ) )
+            // InternalDeviceDefinition.g:1698:2: (otherlv_0= 'Actuator' ( (lv_type_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' otherlv_4= 'pins' ( (lv_pins_5_0= rulePin ) )* (otherlv_6= ',' ( (lv_pins_7_0= rulePin ) ) )* ( (lv_settings_8_0= ruleSetting ) )* ( (lv_trigger_9_0= ruleTrigger ) ) )
+            // InternalDeviceDefinition.g:1699:3: otherlv_0= 'Actuator' ( (lv_type_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' otherlv_4= 'pins' ( (lv_pins_5_0= rulePin ) )* (otherlv_6= ',' ( (lv_pins_7_0= rulePin ) ) )* ( (lv_settings_8_0= ruleSetting ) )* ( (lv_trigger_9_0= ruleTrigger ) )
             {
-            otherlv_0=(Token)match(input,66,FOLLOW_3); 
+            otherlv_0=(Token)match(input,67,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getActuatorAccess().getActuatorKeyword_0());
             		
-            // InternalDeviceDefinition.g:1655:3: ( (lv_type_1_0= RULE_ID ) )
-            // InternalDeviceDefinition.g:1656:4: (lv_type_1_0= RULE_ID )
+            // InternalDeviceDefinition.g:1703:3: ( (lv_type_1_0= RULE_ID ) )
+            // InternalDeviceDefinition.g:1704:4: (lv_type_1_0= RULE_ID )
             {
-            // InternalDeviceDefinition.g:1656:4: (lv_type_1_0= RULE_ID )
-            // InternalDeviceDefinition.g:1657:5: lv_type_1_0= RULE_ID
+            // InternalDeviceDefinition.g:1704:4: (lv_type_1_0= RULE_ID )
+            // InternalDeviceDefinition.g:1705:5: lv_type_1_0= RULE_ID
             {
             lv_type_1_0=(Token)match(input,RULE_ID,FOLLOW_3); 
 
@@ -3885,11 +3991,11 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             }
 
-            // InternalDeviceDefinition.g:1673:3: ( (lv_name_2_0= RULE_ID ) )
-            // InternalDeviceDefinition.g:1674:4: (lv_name_2_0= RULE_ID )
+            // InternalDeviceDefinition.g:1721:3: ( (lv_name_2_0= RULE_ID ) )
+            // InternalDeviceDefinition.g:1722:4: (lv_name_2_0= RULE_ID )
             {
-            // InternalDeviceDefinition.g:1674:4: (lv_name_2_0= RULE_ID )
-            // InternalDeviceDefinition.g:1675:5: lv_name_2_0= RULE_ID
+            // InternalDeviceDefinition.g:1722:4: (lv_name_2_0= RULE_ID )
+            // InternalDeviceDefinition.g:1723:5: lv_name_2_0= RULE_ID
             {
             lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_4); 
 
@@ -3911,36 +4017,36 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             }
 
-            otherlv_3=(Token)match(input,15,FOLLOW_54); 
+            otherlv_3=(Token)match(input,15,FOLLOW_55); 
 
             			newLeafNode(otherlv_3, grammarAccess.getActuatorAccess().getColonKeyword_3());
             		
-            otherlv_4=(Token)match(input,45,FOLLOW_55); 
+            otherlv_4=(Token)match(input,46,FOLLOW_56); 
 
             			newLeafNode(otherlv_4, grammarAccess.getActuatorAccess().getPinsKeyword_4());
             		
-            // InternalDeviceDefinition.g:1699:3: ( (lv_pins_5_0= rulePin ) )*
-            loop29:
+            // InternalDeviceDefinition.g:1747:3: ( (lv_pins_5_0= rulePin ) )*
+            loop31:
             do {
-                int alt29=2;
-                int LA29_0 = input.LA(1);
+                int alt31=2;
+                int LA31_0 = input.LA(1);
 
-                if ( ((LA29_0>=48 && LA29_0<=51)) ) {
-                    alt29=1;
+                if ( ((LA31_0>=49 && LA31_0<=52)) ) {
+                    alt31=1;
                 }
 
 
-                switch (alt29) {
+                switch (alt31) {
             	case 1 :
-            	    // InternalDeviceDefinition.g:1700:4: (lv_pins_5_0= rulePin )
+            	    // InternalDeviceDefinition.g:1748:4: (lv_pins_5_0= rulePin )
             	    {
-            	    // InternalDeviceDefinition.g:1700:4: (lv_pins_5_0= rulePin )
-            	    // InternalDeviceDefinition.g:1701:5: lv_pins_5_0= rulePin
+            	    // InternalDeviceDefinition.g:1748:4: (lv_pins_5_0= rulePin )
+            	    // InternalDeviceDefinition.g:1749:5: lv_pins_5_0= rulePin
             	    {
 
             	    					newCompositeNode(grammarAccess.getActuatorAccess().getPinsPinParserRuleCall_5_0());
             	    				
-            	    pushFollow(FOLLOW_55);
+            	    pushFollow(FOLLOW_56);
             	    lv_pins_5_0=rulePin();
 
             	    state._fsp--;
@@ -3964,39 +4070,39 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
             	    break;
 
             	default :
-            	    break loop29;
+            	    break loop31;
                 }
             } while (true);
 
-            // InternalDeviceDefinition.g:1718:3: (otherlv_6= ',' ( (lv_pins_7_0= rulePin ) ) )*
-            loop30:
+            // InternalDeviceDefinition.g:1766:3: (otherlv_6= ',' ( (lv_pins_7_0= rulePin ) ) )*
+            loop32:
             do {
-                int alt30=2;
-                int LA30_0 = input.LA(1);
+                int alt32=2;
+                int LA32_0 = input.LA(1);
 
-                if ( (LA30_0==31) ) {
-                    alt30=1;
+                if ( (LA32_0==31) ) {
+                    alt32=1;
                 }
 
 
-                switch (alt30) {
+                switch (alt32) {
             	case 1 :
-            	    // InternalDeviceDefinition.g:1719:4: otherlv_6= ',' ( (lv_pins_7_0= rulePin ) )
+            	    // InternalDeviceDefinition.g:1767:4: otherlv_6= ',' ( (lv_pins_7_0= rulePin ) )
             	    {
-            	    otherlv_6=(Token)match(input,31,FOLLOW_44); 
+            	    otherlv_6=(Token)match(input,31,FOLLOW_45); 
 
             	    				newLeafNode(otherlv_6, grammarAccess.getActuatorAccess().getCommaKeyword_6_0());
             	    			
-            	    // InternalDeviceDefinition.g:1723:4: ( (lv_pins_7_0= rulePin ) )
-            	    // InternalDeviceDefinition.g:1724:5: (lv_pins_7_0= rulePin )
+            	    // InternalDeviceDefinition.g:1771:4: ( (lv_pins_7_0= rulePin ) )
+            	    // InternalDeviceDefinition.g:1772:5: (lv_pins_7_0= rulePin )
             	    {
-            	    // InternalDeviceDefinition.g:1724:5: (lv_pins_7_0= rulePin )
-            	    // InternalDeviceDefinition.g:1725:6: lv_pins_7_0= rulePin
+            	    // InternalDeviceDefinition.g:1772:5: (lv_pins_7_0= rulePin )
+            	    // InternalDeviceDefinition.g:1773:6: lv_pins_7_0= rulePin
             	    {
 
             	    						newCompositeNode(grammarAccess.getActuatorAccess().getPinsPinParserRuleCall_6_1_0());
             	    					
-            	    pushFollow(FOLLOW_55);
+            	    pushFollow(FOLLOW_56);
             	    lv_pins_7_0=rulePin();
 
             	    state._fsp--;
@@ -4023,32 +4129,32 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
             	    break;
 
             	default :
-            	    break loop30;
+            	    break loop32;
                 }
             } while (true);
 
-            // InternalDeviceDefinition.g:1743:3: ( (lv_settings_8_0= ruleSetting ) )*
-            loop31:
+            // InternalDeviceDefinition.g:1791:3: ( (lv_settings_8_0= ruleSetting ) )*
+            loop33:
             do {
-                int alt31=2;
-                int LA31_0 = input.LA(1);
+                int alt33=2;
+                int LA33_0 = input.LA(1);
 
-                if ( (LA31_0==71) ) {
-                    alt31=1;
+                if ( (LA33_0==72) ) {
+                    alt33=1;
                 }
 
 
-                switch (alt31) {
+                switch (alt33) {
             	case 1 :
-            	    // InternalDeviceDefinition.g:1744:4: (lv_settings_8_0= ruleSetting )
+            	    // InternalDeviceDefinition.g:1792:4: (lv_settings_8_0= ruleSetting )
             	    {
-            	    // InternalDeviceDefinition.g:1744:4: (lv_settings_8_0= ruleSetting )
-            	    // InternalDeviceDefinition.g:1745:5: lv_settings_8_0= ruleSetting
+            	    // InternalDeviceDefinition.g:1792:4: (lv_settings_8_0= ruleSetting )
+            	    // InternalDeviceDefinition.g:1793:5: lv_settings_8_0= ruleSetting
             	    {
 
             	    					newCompositeNode(grammarAccess.getActuatorAccess().getSettingsSettingParserRuleCall_7_0());
             	    				
-            	    pushFollow(FOLLOW_55);
+            	    pushFollow(FOLLOW_56);
             	    lv_settings_8_0=ruleSetting();
 
             	    state._fsp--;
@@ -4072,15 +4178,15 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
             	    break;
 
             	default :
-            	    break loop31;
+            	    break loop33;
                 }
             } while (true);
 
-            // InternalDeviceDefinition.g:1762:3: ( (lv_trigger_9_0= ruleTrigger ) )
-            // InternalDeviceDefinition.g:1763:4: (lv_trigger_9_0= ruleTrigger )
+            // InternalDeviceDefinition.g:1810:3: ( (lv_trigger_9_0= ruleTrigger ) )
+            // InternalDeviceDefinition.g:1811:4: (lv_trigger_9_0= ruleTrigger )
             {
-            // InternalDeviceDefinition.g:1763:4: (lv_trigger_9_0= ruleTrigger )
-            // InternalDeviceDefinition.g:1764:5: lv_trigger_9_0= ruleTrigger
+            // InternalDeviceDefinition.g:1811:4: (lv_trigger_9_0= ruleTrigger )
+            // InternalDeviceDefinition.g:1812:5: lv_trigger_9_0= ruleTrigger
             {
 
             					newCompositeNode(grammarAccess.getActuatorAccess().getTriggerTriggerParserRuleCall_8_0());
@@ -4130,7 +4236,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "entryRuleTrigger"
-    // InternalDeviceDefinition.g:1785:1: entryRuleTrigger returns [EObject current=null] : iv_ruleTrigger= ruleTrigger EOF ;
+    // InternalDeviceDefinition.g:1833:1: entryRuleTrigger returns [EObject current=null] : iv_ruleTrigger= ruleTrigger EOF ;
     public final EObject entryRuleTrigger() throws RecognitionException {
         EObject current = null;
 
@@ -4138,8 +4244,8 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
         try {
-            // InternalDeviceDefinition.g:1785:48: (iv_ruleTrigger= ruleTrigger EOF )
-            // InternalDeviceDefinition.g:1786:2: iv_ruleTrigger= ruleTrigger EOF
+            // InternalDeviceDefinition.g:1833:48: (iv_ruleTrigger= ruleTrigger EOF )
+            // InternalDeviceDefinition.g:1834:2: iv_ruleTrigger= ruleTrigger EOF
             {
              newCompositeNode(grammarAccess.getTriggerRule()); 
             pushFollow(FOLLOW_1);
@@ -4166,7 +4272,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "ruleTrigger"
-    // InternalDeviceDefinition.g:1792:1: ruleTrigger returns [EObject current=null] : ( ( () otherlv_1= 'when' ( (lv_exp_2_0= ruleExp ) ) ) | ( () otherlv_4= 'on' ( (lv_onExp_5_0= ruleExp ) ) ( (otherlv_6= 'off' ( (lv_offExp_7_0= ruleExp ) ) ) | (otherlv_8= 'run' otherlv_9= 'for' ( (lv_time_10_0= RULE_INT ) ) ( (lv_unit_11_0= ruleTimeUnit ) ) ) ) ) ) ;
+    // InternalDeviceDefinition.g:1840:1: ruleTrigger returns [EObject current=null] : ( ( () otherlv_1= 'when' ( (lv_exp_2_0= ruleExp ) ) ) | ( () otherlv_4= 'on' ( (lv_onExp_5_0= ruleExp ) ) ( (otherlv_6= 'off' ( (lv_offExp_7_0= ruleExp ) ) ) | (otherlv_8= 'run' otherlv_9= 'for' ( (lv_time_10_0= RULE_INT ) ) ( (lv_unit_11_0= ruleTimeUnit ) ) ) ) ) ) ;
     public final EObject ruleTrigger() throws RecognitionException {
         EObject current = null;
 
@@ -4189,34 +4295,34 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
         	enterRule();
 
         try {
-            // InternalDeviceDefinition.g:1798:2: ( ( ( () otherlv_1= 'when' ( (lv_exp_2_0= ruleExp ) ) ) | ( () otherlv_4= 'on' ( (lv_onExp_5_0= ruleExp ) ) ( (otherlv_6= 'off' ( (lv_offExp_7_0= ruleExp ) ) ) | (otherlv_8= 'run' otherlv_9= 'for' ( (lv_time_10_0= RULE_INT ) ) ( (lv_unit_11_0= ruleTimeUnit ) ) ) ) ) ) )
-            // InternalDeviceDefinition.g:1799:2: ( ( () otherlv_1= 'when' ( (lv_exp_2_0= ruleExp ) ) ) | ( () otherlv_4= 'on' ( (lv_onExp_5_0= ruleExp ) ) ( (otherlv_6= 'off' ( (lv_offExp_7_0= ruleExp ) ) ) | (otherlv_8= 'run' otherlv_9= 'for' ( (lv_time_10_0= RULE_INT ) ) ( (lv_unit_11_0= ruleTimeUnit ) ) ) ) ) )
+            // InternalDeviceDefinition.g:1846:2: ( ( ( () otherlv_1= 'when' ( (lv_exp_2_0= ruleExp ) ) ) | ( () otherlv_4= 'on' ( (lv_onExp_5_0= ruleExp ) ) ( (otherlv_6= 'off' ( (lv_offExp_7_0= ruleExp ) ) ) | (otherlv_8= 'run' otherlv_9= 'for' ( (lv_time_10_0= RULE_INT ) ) ( (lv_unit_11_0= ruleTimeUnit ) ) ) ) ) ) )
+            // InternalDeviceDefinition.g:1847:2: ( ( () otherlv_1= 'when' ( (lv_exp_2_0= ruleExp ) ) ) | ( () otherlv_4= 'on' ( (lv_onExp_5_0= ruleExp ) ) ( (otherlv_6= 'off' ( (lv_offExp_7_0= ruleExp ) ) ) | (otherlv_8= 'run' otherlv_9= 'for' ( (lv_time_10_0= RULE_INT ) ) ( (lv_unit_11_0= ruleTimeUnit ) ) ) ) ) )
             {
-            // InternalDeviceDefinition.g:1799:2: ( ( () otherlv_1= 'when' ( (lv_exp_2_0= ruleExp ) ) ) | ( () otherlv_4= 'on' ( (lv_onExp_5_0= ruleExp ) ) ( (otherlv_6= 'off' ( (lv_offExp_7_0= ruleExp ) ) ) | (otherlv_8= 'run' otherlv_9= 'for' ( (lv_time_10_0= RULE_INT ) ) ( (lv_unit_11_0= ruleTimeUnit ) ) ) ) ) )
-            int alt33=2;
-            int LA33_0 = input.LA(1);
+            // InternalDeviceDefinition.g:1847:2: ( ( () otherlv_1= 'when' ( (lv_exp_2_0= ruleExp ) ) ) | ( () otherlv_4= 'on' ( (lv_onExp_5_0= ruleExp ) ) ( (otherlv_6= 'off' ( (lv_offExp_7_0= ruleExp ) ) ) | (otherlv_8= 'run' otherlv_9= 'for' ( (lv_time_10_0= RULE_INT ) ) ( (lv_unit_11_0= ruleTimeUnit ) ) ) ) ) )
+            int alt35=2;
+            int LA35_0 = input.LA(1);
 
-            if ( (LA33_0==67) ) {
-                alt33=1;
+            if ( (LA35_0==68) ) {
+                alt35=1;
             }
-            else if ( (LA33_0==68) ) {
-                alt33=2;
+            else if ( (LA35_0==69) ) {
+                alt35=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 33, 0, input);
+                    new NoViableAltException("", 35, 0, input);
 
                 throw nvae;
             }
-            switch (alt33) {
+            switch (alt35) {
                 case 1 :
-                    // InternalDeviceDefinition.g:1800:3: ( () otherlv_1= 'when' ( (lv_exp_2_0= ruleExp ) ) )
+                    // InternalDeviceDefinition.g:1848:3: ( () otherlv_1= 'when' ( (lv_exp_2_0= ruleExp ) ) )
                     {
-                    // InternalDeviceDefinition.g:1800:3: ( () otherlv_1= 'when' ( (lv_exp_2_0= ruleExp ) ) )
-                    // InternalDeviceDefinition.g:1801:4: () otherlv_1= 'when' ( (lv_exp_2_0= ruleExp ) )
+                    // InternalDeviceDefinition.g:1848:3: ( () otherlv_1= 'when' ( (lv_exp_2_0= ruleExp ) ) )
+                    // InternalDeviceDefinition.g:1849:4: () otherlv_1= 'when' ( (lv_exp_2_0= ruleExp ) )
                     {
-                    // InternalDeviceDefinition.g:1801:4: ()
-                    // InternalDeviceDefinition.g:1802:5: 
+                    // InternalDeviceDefinition.g:1849:4: ()
+                    // InternalDeviceDefinition.g:1850:5: 
                     {
 
                     					current = forceCreateModelElement(
@@ -4226,15 +4332,15 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
                     }
 
-                    otherlv_1=(Token)match(input,67,FOLLOW_49); 
+                    otherlv_1=(Token)match(input,68,FOLLOW_50); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getTriggerAccess().getWhenKeyword_0_1());
                     			
-                    // InternalDeviceDefinition.g:1812:4: ( (lv_exp_2_0= ruleExp ) )
-                    // InternalDeviceDefinition.g:1813:5: (lv_exp_2_0= ruleExp )
+                    // InternalDeviceDefinition.g:1860:4: ( (lv_exp_2_0= ruleExp ) )
+                    // InternalDeviceDefinition.g:1861:5: (lv_exp_2_0= ruleExp )
                     {
-                    // InternalDeviceDefinition.g:1813:5: (lv_exp_2_0= ruleExp )
-                    // InternalDeviceDefinition.g:1814:6: lv_exp_2_0= ruleExp
+                    // InternalDeviceDefinition.g:1861:5: (lv_exp_2_0= ruleExp )
+                    // InternalDeviceDefinition.g:1862:6: lv_exp_2_0= ruleExp
                     {
 
                     						newCompositeNode(grammarAccess.getTriggerAccess().getExpExpParserRuleCall_0_2_0());
@@ -4268,13 +4374,13 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                     }
                     break;
                 case 2 :
-                    // InternalDeviceDefinition.g:1833:3: ( () otherlv_4= 'on' ( (lv_onExp_5_0= ruleExp ) ) ( (otherlv_6= 'off' ( (lv_offExp_7_0= ruleExp ) ) ) | (otherlv_8= 'run' otherlv_9= 'for' ( (lv_time_10_0= RULE_INT ) ) ( (lv_unit_11_0= ruleTimeUnit ) ) ) ) )
+                    // InternalDeviceDefinition.g:1881:3: ( () otherlv_4= 'on' ( (lv_onExp_5_0= ruleExp ) ) ( (otherlv_6= 'off' ( (lv_offExp_7_0= ruleExp ) ) ) | (otherlv_8= 'run' otherlv_9= 'for' ( (lv_time_10_0= RULE_INT ) ) ( (lv_unit_11_0= ruleTimeUnit ) ) ) ) )
                     {
-                    // InternalDeviceDefinition.g:1833:3: ( () otherlv_4= 'on' ( (lv_onExp_5_0= ruleExp ) ) ( (otherlv_6= 'off' ( (lv_offExp_7_0= ruleExp ) ) ) | (otherlv_8= 'run' otherlv_9= 'for' ( (lv_time_10_0= RULE_INT ) ) ( (lv_unit_11_0= ruleTimeUnit ) ) ) ) )
-                    // InternalDeviceDefinition.g:1834:4: () otherlv_4= 'on' ( (lv_onExp_5_0= ruleExp ) ) ( (otherlv_6= 'off' ( (lv_offExp_7_0= ruleExp ) ) ) | (otherlv_8= 'run' otherlv_9= 'for' ( (lv_time_10_0= RULE_INT ) ) ( (lv_unit_11_0= ruleTimeUnit ) ) ) )
+                    // InternalDeviceDefinition.g:1881:3: ( () otherlv_4= 'on' ( (lv_onExp_5_0= ruleExp ) ) ( (otherlv_6= 'off' ( (lv_offExp_7_0= ruleExp ) ) ) | (otherlv_8= 'run' otherlv_9= 'for' ( (lv_time_10_0= RULE_INT ) ) ( (lv_unit_11_0= ruleTimeUnit ) ) ) ) )
+                    // InternalDeviceDefinition.g:1882:4: () otherlv_4= 'on' ( (lv_onExp_5_0= ruleExp ) ) ( (otherlv_6= 'off' ( (lv_offExp_7_0= ruleExp ) ) ) | (otherlv_8= 'run' otherlv_9= 'for' ( (lv_time_10_0= RULE_INT ) ) ( (lv_unit_11_0= ruleTimeUnit ) ) ) )
                     {
-                    // InternalDeviceDefinition.g:1834:4: ()
-                    // InternalDeviceDefinition.g:1835:5: 
+                    // InternalDeviceDefinition.g:1882:4: ()
+                    // InternalDeviceDefinition.g:1883:5: 
                     {
 
                     					current = forceCreateModelElement(
@@ -4284,20 +4390,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
                     }
 
-                    otherlv_4=(Token)match(input,68,FOLLOW_49); 
+                    otherlv_4=(Token)match(input,69,FOLLOW_50); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getTriggerAccess().getOnKeyword_1_1());
                     			
-                    // InternalDeviceDefinition.g:1845:4: ( (lv_onExp_5_0= ruleExp ) )
-                    // InternalDeviceDefinition.g:1846:5: (lv_onExp_5_0= ruleExp )
+                    // InternalDeviceDefinition.g:1893:4: ( (lv_onExp_5_0= ruleExp ) )
+                    // InternalDeviceDefinition.g:1894:5: (lv_onExp_5_0= ruleExp )
                     {
-                    // InternalDeviceDefinition.g:1846:5: (lv_onExp_5_0= ruleExp )
-                    // InternalDeviceDefinition.g:1847:6: lv_onExp_5_0= ruleExp
+                    // InternalDeviceDefinition.g:1894:5: (lv_onExp_5_0= ruleExp )
+                    // InternalDeviceDefinition.g:1895:6: lv_onExp_5_0= ruleExp
                     {
 
                     						newCompositeNode(grammarAccess.getTriggerAccess().getOnExpExpParserRuleCall_1_2_0());
                     					
-                    pushFollow(FOLLOW_56);
+                    pushFollow(FOLLOW_57);
                     lv_onExp_5_0=ruleExp();
 
                     state._fsp--;
@@ -4319,38 +4425,38 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
                     }
 
-                    // InternalDeviceDefinition.g:1864:4: ( (otherlv_6= 'off' ( (lv_offExp_7_0= ruleExp ) ) ) | (otherlv_8= 'run' otherlv_9= 'for' ( (lv_time_10_0= RULE_INT ) ) ( (lv_unit_11_0= ruleTimeUnit ) ) ) )
-                    int alt32=2;
-                    int LA32_0 = input.LA(1);
+                    // InternalDeviceDefinition.g:1912:4: ( (otherlv_6= 'off' ( (lv_offExp_7_0= ruleExp ) ) ) | (otherlv_8= 'run' otherlv_9= 'for' ( (lv_time_10_0= RULE_INT ) ) ( (lv_unit_11_0= ruleTimeUnit ) ) ) )
+                    int alt34=2;
+                    int LA34_0 = input.LA(1);
 
-                    if ( (LA32_0==69) ) {
-                        alt32=1;
+                    if ( (LA34_0==70) ) {
+                        alt34=1;
                     }
-                    else if ( (LA32_0==70) ) {
-                        alt32=2;
+                    else if ( (LA34_0==71) ) {
+                        alt34=2;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 32, 0, input);
+                            new NoViableAltException("", 34, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt32) {
+                    switch (alt34) {
                         case 1 :
-                            // InternalDeviceDefinition.g:1865:5: (otherlv_6= 'off' ( (lv_offExp_7_0= ruleExp ) ) )
+                            // InternalDeviceDefinition.g:1913:5: (otherlv_6= 'off' ( (lv_offExp_7_0= ruleExp ) ) )
                             {
-                            // InternalDeviceDefinition.g:1865:5: (otherlv_6= 'off' ( (lv_offExp_7_0= ruleExp ) ) )
-                            // InternalDeviceDefinition.g:1866:6: otherlv_6= 'off' ( (lv_offExp_7_0= ruleExp ) )
+                            // InternalDeviceDefinition.g:1913:5: (otherlv_6= 'off' ( (lv_offExp_7_0= ruleExp ) ) )
+                            // InternalDeviceDefinition.g:1914:6: otherlv_6= 'off' ( (lv_offExp_7_0= ruleExp ) )
                             {
-                            otherlv_6=(Token)match(input,69,FOLLOW_49); 
+                            otherlv_6=(Token)match(input,70,FOLLOW_50); 
 
                             						newLeafNode(otherlv_6, grammarAccess.getTriggerAccess().getOffKeyword_1_3_0_0());
                             					
-                            // InternalDeviceDefinition.g:1870:6: ( (lv_offExp_7_0= ruleExp ) )
-                            // InternalDeviceDefinition.g:1871:7: (lv_offExp_7_0= ruleExp )
+                            // InternalDeviceDefinition.g:1918:6: ( (lv_offExp_7_0= ruleExp ) )
+                            // InternalDeviceDefinition.g:1919:7: (lv_offExp_7_0= ruleExp )
                             {
-                            // InternalDeviceDefinition.g:1871:7: (lv_offExp_7_0= ruleExp )
-                            // InternalDeviceDefinition.g:1872:8: lv_offExp_7_0= ruleExp
+                            // InternalDeviceDefinition.g:1919:7: (lv_offExp_7_0= ruleExp )
+                            // InternalDeviceDefinition.g:1920:8: lv_offExp_7_0= ruleExp
                             {
 
                             								newCompositeNode(grammarAccess.getTriggerAccess().getOffExpExpParserRuleCall_1_3_0_1_0());
@@ -4384,24 +4490,24 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                             }
                             break;
                         case 2 :
-                            // InternalDeviceDefinition.g:1891:5: (otherlv_8= 'run' otherlv_9= 'for' ( (lv_time_10_0= RULE_INT ) ) ( (lv_unit_11_0= ruleTimeUnit ) ) )
+                            // InternalDeviceDefinition.g:1939:5: (otherlv_8= 'run' otherlv_9= 'for' ( (lv_time_10_0= RULE_INT ) ) ( (lv_unit_11_0= ruleTimeUnit ) ) )
                             {
-                            // InternalDeviceDefinition.g:1891:5: (otherlv_8= 'run' otherlv_9= 'for' ( (lv_time_10_0= RULE_INT ) ) ( (lv_unit_11_0= ruleTimeUnit ) ) )
-                            // InternalDeviceDefinition.g:1892:6: otherlv_8= 'run' otherlv_9= 'for' ( (lv_time_10_0= RULE_INT ) ) ( (lv_unit_11_0= ruleTimeUnit ) )
+                            // InternalDeviceDefinition.g:1939:5: (otherlv_8= 'run' otherlv_9= 'for' ( (lv_time_10_0= RULE_INT ) ) ( (lv_unit_11_0= ruleTimeUnit ) ) )
+                            // InternalDeviceDefinition.g:1940:6: otherlv_8= 'run' otherlv_9= 'for' ( (lv_time_10_0= RULE_INT ) ) ( (lv_unit_11_0= ruleTimeUnit ) )
                             {
-                            otherlv_8=(Token)match(input,70,FOLLOW_38); 
+                            otherlv_8=(Token)match(input,71,FOLLOW_39); 
 
                             						newLeafNode(otherlv_8, grammarAccess.getTriggerAccess().getRunKeyword_1_3_1_0());
                             					
-                            otherlv_9=(Token)match(input,43,FOLLOW_29); 
+                            otherlv_9=(Token)match(input,44,FOLLOW_29); 
 
                             						newLeafNode(otherlv_9, grammarAccess.getTriggerAccess().getForKeyword_1_3_1_1());
                             					
-                            // InternalDeviceDefinition.g:1900:6: ( (lv_time_10_0= RULE_INT ) )
-                            // InternalDeviceDefinition.g:1901:7: (lv_time_10_0= RULE_INT )
+                            // InternalDeviceDefinition.g:1948:6: ( (lv_time_10_0= RULE_INT ) )
+                            // InternalDeviceDefinition.g:1949:7: (lv_time_10_0= RULE_INT )
                             {
-                            // InternalDeviceDefinition.g:1901:7: (lv_time_10_0= RULE_INT )
-                            // InternalDeviceDefinition.g:1902:8: lv_time_10_0= RULE_INT
+                            // InternalDeviceDefinition.g:1949:7: (lv_time_10_0= RULE_INT )
+                            // InternalDeviceDefinition.g:1950:8: lv_time_10_0= RULE_INT
                             {
                             lv_time_10_0=(Token)match(input,RULE_INT,FOLLOW_35); 
 
@@ -4423,11 +4529,11 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
                             }
 
-                            // InternalDeviceDefinition.g:1918:6: ( (lv_unit_11_0= ruleTimeUnit ) )
-                            // InternalDeviceDefinition.g:1919:7: (lv_unit_11_0= ruleTimeUnit )
+                            // InternalDeviceDefinition.g:1966:6: ( (lv_unit_11_0= ruleTimeUnit ) )
+                            // InternalDeviceDefinition.g:1967:7: (lv_unit_11_0= ruleTimeUnit )
                             {
-                            // InternalDeviceDefinition.g:1919:7: (lv_unit_11_0= ruleTimeUnit )
-                            // InternalDeviceDefinition.g:1920:8: lv_unit_11_0= ruleTimeUnit
+                            // InternalDeviceDefinition.g:1967:7: (lv_unit_11_0= ruleTimeUnit )
+                            // InternalDeviceDefinition.g:1968:8: lv_unit_11_0= ruleTimeUnit
                             {
 
                             								newCompositeNode(grammarAccess.getTriggerAccess().getUnitTimeUnitParserRuleCall_1_3_1_3_0());
@@ -4492,7 +4598,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "entryRuleSetting"
-    // InternalDeviceDefinition.g:1944:1: entryRuleSetting returns [EObject current=null] : iv_ruleSetting= ruleSetting EOF ;
+    // InternalDeviceDefinition.g:1992:1: entryRuleSetting returns [EObject current=null] : iv_ruleSetting= ruleSetting EOF ;
     public final EObject entryRuleSetting() throws RecognitionException {
         EObject current = null;
 
@@ -4500,8 +4606,8 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
         try {
-            // InternalDeviceDefinition.g:1944:48: (iv_ruleSetting= ruleSetting EOF )
-            // InternalDeviceDefinition.g:1945:2: iv_ruleSetting= ruleSetting EOF
+            // InternalDeviceDefinition.g:1992:48: (iv_ruleSetting= ruleSetting EOF )
+            // InternalDeviceDefinition.g:1993:2: iv_ruleSetting= ruleSetting EOF
             {
              newCompositeNode(grammarAccess.getSettingRule()); 
             pushFollow(FOLLOW_1);
@@ -4528,7 +4634,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "ruleSetting"
-    // InternalDeviceDefinition.g:1951:1: ruleSetting returns [EObject current=null] : (otherlv_0= 'setting' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= rulePrimitive ) ) ) ;
+    // InternalDeviceDefinition.g:1999:1: ruleSetting returns [EObject current=null] : (otherlv_0= 'setting' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= rulePrimitive ) ) ) ;
     public final EObject ruleSetting() throws RecognitionException {
         EObject current = null;
 
@@ -4542,23 +4648,23 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
         	enterRule();
 
         try {
-            // InternalDeviceDefinition.g:1957:2: ( (otherlv_0= 'setting' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= rulePrimitive ) ) ) )
-            // InternalDeviceDefinition.g:1958:2: (otherlv_0= 'setting' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= rulePrimitive ) ) )
+            // InternalDeviceDefinition.g:2005:2: ( (otherlv_0= 'setting' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= rulePrimitive ) ) ) )
+            // InternalDeviceDefinition.g:2006:2: (otherlv_0= 'setting' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= rulePrimitive ) ) )
             {
-            // InternalDeviceDefinition.g:1958:2: (otherlv_0= 'setting' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= rulePrimitive ) ) )
-            // InternalDeviceDefinition.g:1959:3: otherlv_0= 'setting' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= rulePrimitive ) )
+            // InternalDeviceDefinition.g:2006:2: (otherlv_0= 'setting' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= rulePrimitive ) ) )
+            // InternalDeviceDefinition.g:2007:3: otherlv_0= 'setting' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= rulePrimitive ) )
             {
-            otherlv_0=(Token)match(input,71,FOLLOW_3); 
+            otherlv_0=(Token)match(input,72,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getSettingAccess().getSettingKeyword_0());
             		
-            // InternalDeviceDefinition.g:1963:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalDeviceDefinition.g:1964:4: (lv_name_1_0= RULE_ID )
+            // InternalDeviceDefinition.g:2011:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalDeviceDefinition.g:2012:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalDeviceDefinition.g:1964:4: (lv_name_1_0= RULE_ID )
-            // InternalDeviceDefinition.g:1965:5: lv_name_1_0= RULE_ID
+            // InternalDeviceDefinition.g:2012:4: (lv_name_1_0= RULE_ID )
+            // InternalDeviceDefinition.g:2013:5: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_57); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_58); 
 
             					newLeafNode(lv_name_1_0, grammarAccess.getSettingAccess().getNameIDTerminalRuleCall_1_0());
             				
@@ -4578,15 +4684,15 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             }
 
-            otherlv_2=(Token)match(input,72,FOLLOW_58); 
+            otherlv_2=(Token)match(input,73,FOLLOW_59); 
 
             			newLeafNode(otherlv_2, grammarAccess.getSettingAccess().getEqualsSignKeyword_2());
             		
-            // InternalDeviceDefinition.g:1985:3: ( (lv_value_3_0= rulePrimitive ) )
-            // InternalDeviceDefinition.g:1986:4: (lv_value_3_0= rulePrimitive )
+            // InternalDeviceDefinition.g:2033:3: ( (lv_value_3_0= rulePrimitive ) )
+            // InternalDeviceDefinition.g:2034:4: (lv_value_3_0= rulePrimitive )
             {
-            // InternalDeviceDefinition.g:1986:4: (lv_value_3_0= rulePrimitive )
-            // InternalDeviceDefinition.g:1987:5: lv_value_3_0= rulePrimitive
+            // InternalDeviceDefinition.g:2034:4: (lv_value_3_0= rulePrimitive )
+            // InternalDeviceDefinition.g:2035:5: lv_value_3_0= rulePrimitive
             {
 
             					newCompositeNode(grammarAccess.getSettingAccess().getValuePrimitiveParserRuleCall_3_0());
@@ -4636,7 +4742,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "entryRulePrimitive"
-    // InternalDeviceDefinition.g:2008:1: entryRulePrimitive returns [EObject current=null] : iv_rulePrimitive= rulePrimitive EOF ;
+    // InternalDeviceDefinition.g:2056:1: entryRulePrimitive returns [EObject current=null] : iv_rulePrimitive= rulePrimitive EOF ;
     public final EObject entryRulePrimitive() throws RecognitionException {
         EObject current = null;
 
@@ -4644,8 +4750,8 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
         try {
-            // InternalDeviceDefinition.g:2008:50: (iv_rulePrimitive= rulePrimitive EOF )
-            // InternalDeviceDefinition.g:2009:2: iv_rulePrimitive= rulePrimitive EOF
+            // InternalDeviceDefinition.g:2056:50: (iv_rulePrimitive= rulePrimitive EOF )
+            // InternalDeviceDefinition.g:2057:2: iv_rulePrimitive= rulePrimitive EOF
             {
              newCompositeNode(grammarAccess.getPrimitiveRule()); 
             pushFollow(FOLLOW_1);
@@ -4672,7 +4778,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "rulePrimitive"
-    // InternalDeviceDefinition.g:2015:1: rulePrimitive returns [EObject current=null] : ( ( () otherlv_1= 'TRUE' ) | ( () otherlv_3= 'FALSE' ) | this_NumberPrimitive_4= ruleNumberPrimitive ) ;
+    // InternalDeviceDefinition.g:2063:1: rulePrimitive returns [EObject current=null] : ( ( () otherlv_1= 'TRUE' ) | ( () otherlv_3= 'FALSE' ) | this_NumberPrimitive_4= ruleNumberPrimitive ) ;
     public final EObject rulePrimitive() throws RecognitionException {
         EObject current = null;
 
@@ -4685,44 +4791,44 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
         	enterRule();
 
         try {
-            // InternalDeviceDefinition.g:2021:2: ( ( ( () otherlv_1= 'TRUE' ) | ( () otherlv_3= 'FALSE' ) | this_NumberPrimitive_4= ruleNumberPrimitive ) )
-            // InternalDeviceDefinition.g:2022:2: ( ( () otherlv_1= 'TRUE' ) | ( () otherlv_3= 'FALSE' ) | this_NumberPrimitive_4= ruleNumberPrimitive )
+            // InternalDeviceDefinition.g:2069:2: ( ( ( () otherlv_1= 'TRUE' ) | ( () otherlv_3= 'FALSE' ) | this_NumberPrimitive_4= ruleNumberPrimitive ) )
+            // InternalDeviceDefinition.g:2070:2: ( ( () otherlv_1= 'TRUE' ) | ( () otherlv_3= 'FALSE' ) | this_NumberPrimitive_4= ruleNumberPrimitive )
             {
-            // InternalDeviceDefinition.g:2022:2: ( ( () otherlv_1= 'TRUE' ) | ( () otherlv_3= 'FALSE' ) | this_NumberPrimitive_4= ruleNumberPrimitive )
-            int alt34=3;
+            // InternalDeviceDefinition.g:2070:2: ( ( () otherlv_1= 'TRUE' ) | ( () otherlv_3= 'FALSE' ) | this_NumberPrimitive_4= ruleNumberPrimitive )
+            int alt36=3;
             switch ( input.LA(1) ) {
-            case 73:
-                {
-                alt34=1;
-                }
-                break;
             case 74:
                 {
-                alt34=2;
+                alt36=1;
+                }
+                break;
+            case 75:
+                {
+                alt36=2;
                 }
                 break;
             case RULE_DECIMAL:
             case RULE_INT:
                 {
-                alt34=3;
+                alt36=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 34, 0, input);
+                    new NoViableAltException("", 36, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt34) {
+            switch (alt36) {
                 case 1 :
-                    // InternalDeviceDefinition.g:2023:3: ( () otherlv_1= 'TRUE' )
+                    // InternalDeviceDefinition.g:2071:3: ( () otherlv_1= 'TRUE' )
                     {
-                    // InternalDeviceDefinition.g:2023:3: ( () otherlv_1= 'TRUE' )
-                    // InternalDeviceDefinition.g:2024:4: () otherlv_1= 'TRUE'
+                    // InternalDeviceDefinition.g:2071:3: ( () otherlv_1= 'TRUE' )
+                    // InternalDeviceDefinition.g:2072:4: () otherlv_1= 'TRUE'
                     {
-                    // InternalDeviceDefinition.g:2024:4: ()
-                    // InternalDeviceDefinition.g:2025:5: 
+                    // InternalDeviceDefinition.g:2072:4: ()
+                    // InternalDeviceDefinition.g:2073:5: 
                     {
 
                     					current = forceCreateModelElement(
@@ -4732,7 +4838,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
                     }
 
-                    otherlv_1=(Token)match(input,73,FOLLOW_2); 
+                    otherlv_1=(Token)match(input,74,FOLLOW_2); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getPrimitiveAccess().getTRUEKeyword_0_1());
                     			
@@ -4743,13 +4849,13 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                     }
                     break;
                 case 2 :
-                    // InternalDeviceDefinition.g:2037:3: ( () otherlv_3= 'FALSE' )
+                    // InternalDeviceDefinition.g:2085:3: ( () otherlv_3= 'FALSE' )
                     {
-                    // InternalDeviceDefinition.g:2037:3: ( () otherlv_3= 'FALSE' )
-                    // InternalDeviceDefinition.g:2038:4: () otherlv_3= 'FALSE'
+                    // InternalDeviceDefinition.g:2085:3: ( () otherlv_3= 'FALSE' )
+                    // InternalDeviceDefinition.g:2086:4: () otherlv_3= 'FALSE'
                     {
-                    // InternalDeviceDefinition.g:2038:4: ()
-                    // InternalDeviceDefinition.g:2039:5: 
+                    // InternalDeviceDefinition.g:2086:4: ()
+                    // InternalDeviceDefinition.g:2087:5: 
                     {
 
                     					current = forceCreateModelElement(
@@ -4759,7 +4865,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
                     }
 
-                    otherlv_3=(Token)match(input,74,FOLLOW_2); 
+                    otherlv_3=(Token)match(input,75,FOLLOW_2); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getPrimitiveAccess().getFALSEKeyword_1_1());
                     			
@@ -4770,7 +4876,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                     }
                     break;
                 case 3 :
-                    // InternalDeviceDefinition.g:2051:3: this_NumberPrimitive_4= ruleNumberPrimitive
+                    // InternalDeviceDefinition.g:2099:3: this_NumberPrimitive_4= ruleNumberPrimitive
                     {
 
                     			newCompositeNode(grammarAccess.getPrimitiveAccess().getNumberPrimitiveParserRuleCall_2());
@@ -4810,7 +4916,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "entryRuleNumberPrimitive"
-    // InternalDeviceDefinition.g:2063:1: entryRuleNumberPrimitive returns [EObject current=null] : iv_ruleNumberPrimitive= ruleNumberPrimitive EOF ;
+    // InternalDeviceDefinition.g:2111:1: entryRuleNumberPrimitive returns [EObject current=null] : iv_ruleNumberPrimitive= ruleNumberPrimitive EOF ;
     public final EObject entryRuleNumberPrimitive() throws RecognitionException {
         EObject current = null;
 
@@ -4818,8 +4924,8 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
         try {
-            // InternalDeviceDefinition.g:2063:56: (iv_ruleNumberPrimitive= ruleNumberPrimitive EOF )
-            // InternalDeviceDefinition.g:2064:2: iv_ruleNumberPrimitive= ruleNumberPrimitive EOF
+            // InternalDeviceDefinition.g:2111:56: (iv_ruleNumberPrimitive= ruleNumberPrimitive EOF )
+            // InternalDeviceDefinition.g:2112:2: iv_ruleNumberPrimitive= ruleNumberPrimitive EOF
             {
              newCompositeNode(grammarAccess.getNumberPrimitiveRule()); 
             pushFollow(FOLLOW_1);
@@ -4846,7 +4952,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "ruleNumberPrimitive"
-    // InternalDeviceDefinition.g:2070:1: ruleNumberPrimitive returns [EObject current=null] : ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_DECIMAL ) ) ) ) ;
+    // InternalDeviceDefinition.g:2118:1: ruleNumberPrimitive returns [EObject current=null] : ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_DECIMAL ) ) ) ) ;
     public final EObject ruleNumberPrimitive() throws RecognitionException {
         EObject current = null;
 
@@ -4857,34 +4963,34 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
         	enterRule();
 
         try {
-            // InternalDeviceDefinition.g:2076:2: ( ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_DECIMAL ) ) ) ) )
-            // InternalDeviceDefinition.g:2077:2: ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_DECIMAL ) ) ) )
+            // InternalDeviceDefinition.g:2124:2: ( ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_DECIMAL ) ) ) ) )
+            // InternalDeviceDefinition.g:2125:2: ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_DECIMAL ) ) ) )
             {
-            // InternalDeviceDefinition.g:2077:2: ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_DECIMAL ) ) ) )
-            int alt35=2;
-            int LA35_0 = input.LA(1);
+            // InternalDeviceDefinition.g:2125:2: ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_DECIMAL ) ) ) )
+            int alt37=2;
+            int LA37_0 = input.LA(1);
 
-            if ( (LA35_0==RULE_INT) ) {
-                alt35=1;
+            if ( (LA37_0==RULE_INT) ) {
+                alt37=1;
             }
-            else if ( (LA35_0==RULE_DECIMAL) ) {
-                alt35=2;
+            else if ( (LA37_0==RULE_DECIMAL) ) {
+                alt37=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 35, 0, input);
+                    new NoViableAltException("", 37, 0, input);
 
                 throw nvae;
             }
-            switch (alt35) {
+            switch (alt37) {
                 case 1 :
-                    // InternalDeviceDefinition.g:2078:3: ( () ( (lv_value_1_0= RULE_INT ) ) )
+                    // InternalDeviceDefinition.g:2126:3: ( () ( (lv_value_1_0= RULE_INT ) ) )
                     {
-                    // InternalDeviceDefinition.g:2078:3: ( () ( (lv_value_1_0= RULE_INT ) ) )
-                    // InternalDeviceDefinition.g:2079:4: () ( (lv_value_1_0= RULE_INT ) )
+                    // InternalDeviceDefinition.g:2126:3: ( () ( (lv_value_1_0= RULE_INT ) ) )
+                    // InternalDeviceDefinition.g:2127:4: () ( (lv_value_1_0= RULE_INT ) )
                     {
-                    // InternalDeviceDefinition.g:2079:4: ()
-                    // InternalDeviceDefinition.g:2080:5: 
+                    // InternalDeviceDefinition.g:2127:4: ()
+                    // InternalDeviceDefinition.g:2128:5: 
                     {
 
                     					current = forceCreateModelElement(
@@ -4894,11 +5000,11 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
                     }
 
-                    // InternalDeviceDefinition.g:2086:4: ( (lv_value_1_0= RULE_INT ) )
-                    // InternalDeviceDefinition.g:2087:5: (lv_value_1_0= RULE_INT )
+                    // InternalDeviceDefinition.g:2134:4: ( (lv_value_1_0= RULE_INT ) )
+                    // InternalDeviceDefinition.g:2135:5: (lv_value_1_0= RULE_INT )
                     {
-                    // InternalDeviceDefinition.g:2087:5: (lv_value_1_0= RULE_INT )
-                    // InternalDeviceDefinition.g:2088:6: lv_value_1_0= RULE_INT
+                    // InternalDeviceDefinition.g:2135:5: (lv_value_1_0= RULE_INT )
+                    // InternalDeviceDefinition.g:2136:6: lv_value_1_0= RULE_INT
                     {
                     lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
@@ -4927,13 +5033,13 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                     }
                     break;
                 case 2 :
-                    // InternalDeviceDefinition.g:2106:3: ( () ( (lv_value_3_0= RULE_DECIMAL ) ) )
+                    // InternalDeviceDefinition.g:2154:3: ( () ( (lv_value_3_0= RULE_DECIMAL ) ) )
                     {
-                    // InternalDeviceDefinition.g:2106:3: ( () ( (lv_value_3_0= RULE_DECIMAL ) ) )
-                    // InternalDeviceDefinition.g:2107:4: () ( (lv_value_3_0= RULE_DECIMAL ) )
+                    // InternalDeviceDefinition.g:2154:3: ( () ( (lv_value_3_0= RULE_DECIMAL ) ) )
+                    // InternalDeviceDefinition.g:2155:4: () ( (lv_value_3_0= RULE_DECIMAL ) )
                     {
-                    // InternalDeviceDefinition.g:2107:4: ()
-                    // InternalDeviceDefinition.g:2108:5: 
+                    // InternalDeviceDefinition.g:2155:4: ()
+                    // InternalDeviceDefinition.g:2156:5: 
                     {
 
                     					current = forceCreateModelElement(
@@ -4943,11 +5049,11 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
                     }
 
-                    // InternalDeviceDefinition.g:2114:4: ( (lv_value_3_0= RULE_DECIMAL ) )
-                    // InternalDeviceDefinition.g:2115:5: (lv_value_3_0= RULE_DECIMAL )
+                    // InternalDeviceDefinition.g:2162:4: ( (lv_value_3_0= RULE_DECIMAL ) )
+                    // InternalDeviceDefinition.g:2163:5: (lv_value_3_0= RULE_DECIMAL )
                     {
-                    // InternalDeviceDefinition.g:2115:5: (lv_value_3_0= RULE_DECIMAL )
-                    // InternalDeviceDefinition.g:2116:6: lv_value_3_0= RULE_DECIMAL
+                    // InternalDeviceDefinition.g:2163:5: (lv_value_3_0= RULE_DECIMAL )
+                    // InternalDeviceDefinition.g:2164:6: lv_value_3_0= RULE_DECIMAL
                     {
                     lv_value_3_0=(Token)match(input,RULE_DECIMAL,FOLLOW_2); 
 
@@ -4998,7 +5104,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "entryRuleExp"
-    // InternalDeviceDefinition.g:2137:1: entryRuleExp returns [EObject current=null] : iv_ruleExp= ruleExp EOF ;
+    // InternalDeviceDefinition.g:2185:1: entryRuleExp returns [EObject current=null] : iv_ruleExp= ruleExp EOF ;
     public final EObject entryRuleExp() throws RecognitionException {
         EObject current = null;
 
@@ -5006,8 +5112,8 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
         try {
-            // InternalDeviceDefinition.g:2137:44: (iv_ruleExp= ruleExp EOF )
-            // InternalDeviceDefinition.g:2138:2: iv_ruleExp= ruleExp EOF
+            // InternalDeviceDefinition.g:2185:44: (iv_ruleExp= ruleExp EOF )
+            // InternalDeviceDefinition.g:2186:2: iv_ruleExp= ruleExp EOF
             {
              newCompositeNode(grammarAccess.getExpRule()); 
             pushFollow(FOLLOW_1);
@@ -5034,7 +5140,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "ruleExp"
-    // InternalDeviceDefinition.g:2144:1: ruleExp returns [EObject current=null] : (this_Factor_0= ruleFactor ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleFactor ) ) )* ) ;
+    // InternalDeviceDefinition.g:2192:1: ruleExp returns [EObject current=null] : (this_Factor_0= ruleFactor ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleFactor ) ) )* ) ;
     public final EObject ruleExp() throws RecognitionException {
         EObject current = null;
 
@@ -5049,16 +5155,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
         	enterRule();
 
         try {
-            // InternalDeviceDefinition.g:2150:2: ( (this_Factor_0= ruleFactor ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleFactor ) ) )* ) )
-            // InternalDeviceDefinition.g:2151:2: (this_Factor_0= ruleFactor ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleFactor ) ) )* )
+            // InternalDeviceDefinition.g:2198:2: ( (this_Factor_0= ruleFactor ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleFactor ) ) )* ) )
+            // InternalDeviceDefinition.g:2199:2: (this_Factor_0= ruleFactor ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleFactor ) ) )* )
             {
-            // InternalDeviceDefinition.g:2151:2: (this_Factor_0= ruleFactor ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleFactor ) ) )* )
-            // InternalDeviceDefinition.g:2152:3: this_Factor_0= ruleFactor ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleFactor ) ) )*
+            // InternalDeviceDefinition.g:2199:2: (this_Factor_0= ruleFactor ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleFactor ) ) )* )
+            // InternalDeviceDefinition.g:2200:3: this_Factor_0= ruleFactor ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleFactor ) ) )*
             {
 
             			newCompositeNode(grammarAccess.getExpAccess().getFactorParserRuleCall_0());
             		
-            pushFollow(FOLLOW_59);
+            pushFollow(FOLLOW_60);
             this_Factor_0=ruleFactor();
 
             state._fsp--;
@@ -5067,46 +5173,46 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
             			current = this_Factor_0;
             			afterParserOrEnumRuleCall();
             		
-            // InternalDeviceDefinition.g:2160:3: ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleFactor ) ) )*
-            loop37:
+            // InternalDeviceDefinition.g:2208:3: ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleFactor ) ) )*
+            loop39:
             do {
-                int alt37=2;
-                int LA37_0 = input.LA(1);
+                int alt39=2;
+                int LA39_0 = input.LA(1);
 
-                if ( ((LA37_0>=75 && LA37_0<=76)) ) {
-                    alt37=1;
+                if ( ((LA39_0>=76 && LA39_0<=77)) ) {
+                    alt39=1;
                 }
 
 
-                switch (alt37) {
+                switch (alt39) {
             	case 1 :
-            	    // InternalDeviceDefinition.g:2161:4: ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleFactor ) )
+            	    // InternalDeviceDefinition.g:2209:4: ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleFactor ) )
             	    {
-            	    // InternalDeviceDefinition.g:2161:4: ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) )
-            	    int alt36=2;
-            	    int LA36_0 = input.LA(1);
+            	    // InternalDeviceDefinition.g:2209:4: ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) )
+            	    int alt38=2;
+            	    int LA38_0 = input.LA(1);
 
-            	    if ( (LA36_0==75) ) {
-            	        alt36=1;
+            	    if ( (LA38_0==76) ) {
+            	        alt38=1;
             	    }
-            	    else if ( (LA36_0==76) ) {
-            	        alt36=2;
+            	    else if ( (LA38_0==77) ) {
+            	        alt38=2;
             	    }
             	    else {
             	        NoViableAltException nvae =
-            	            new NoViableAltException("", 36, 0, input);
+            	            new NoViableAltException("", 38, 0, input);
 
             	        throw nvae;
             	    }
-            	    switch (alt36) {
+            	    switch (alt38) {
             	        case 1 :
-            	            // InternalDeviceDefinition.g:2162:5: ( () otherlv_2= '+' )
+            	            // InternalDeviceDefinition.g:2210:5: ( () otherlv_2= '+' )
             	            {
-            	            // InternalDeviceDefinition.g:2162:5: ( () otherlv_2= '+' )
-            	            // InternalDeviceDefinition.g:2163:6: () otherlv_2= '+'
+            	            // InternalDeviceDefinition.g:2210:5: ( () otherlv_2= '+' )
+            	            // InternalDeviceDefinition.g:2211:6: () otherlv_2= '+'
             	            {
-            	            // InternalDeviceDefinition.g:2163:6: ()
-            	            // InternalDeviceDefinition.g:2164:7: 
+            	            // InternalDeviceDefinition.g:2211:6: ()
+            	            // InternalDeviceDefinition.g:2212:7: 
             	            {
 
             	            							current = forceCreateModelElementAndSet(
@@ -5116,7 +5222,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             	            }
 
-            	            otherlv_2=(Token)match(input,75,FOLLOW_49); 
+            	            otherlv_2=(Token)match(input,76,FOLLOW_50); 
 
             	            						newLeafNode(otherlv_2, grammarAccess.getExpAccess().getPlusSignKeyword_1_0_0_1());
             	            					
@@ -5127,13 +5233,13 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
             	            }
             	            break;
             	        case 2 :
-            	            // InternalDeviceDefinition.g:2176:5: ( () otherlv_4= '-' )
+            	            // InternalDeviceDefinition.g:2224:5: ( () otherlv_4= '-' )
             	            {
-            	            // InternalDeviceDefinition.g:2176:5: ( () otherlv_4= '-' )
-            	            // InternalDeviceDefinition.g:2177:6: () otherlv_4= '-'
+            	            // InternalDeviceDefinition.g:2224:5: ( () otherlv_4= '-' )
+            	            // InternalDeviceDefinition.g:2225:6: () otherlv_4= '-'
             	            {
-            	            // InternalDeviceDefinition.g:2177:6: ()
-            	            // InternalDeviceDefinition.g:2178:7: 
+            	            // InternalDeviceDefinition.g:2225:6: ()
+            	            // InternalDeviceDefinition.g:2226:7: 
             	            {
 
             	            							current = forceCreateModelElementAndSet(
@@ -5143,7 +5249,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             	            }
 
-            	            otherlv_4=(Token)match(input,76,FOLLOW_49); 
+            	            otherlv_4=(Token)match(input,77,FOLLOW_50); 
 
             	            						newLeafNode(otherlv_4, grammarAccess.getExpAccess().getHyphenMinusKeyword_1_0_1_1());
             	            					
@@ -5156,16 +5262,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             	    }
 
-            	    // InternalDeviceDefinition.g:2190:4: ( (lv_right_5_0= ruleFactor ) )
-            	    // InternalDeviceDefinition.g:2191:5: (lv_right_5_0= ruleFactor )
+            	    // InternalDeviceDefinition.g:2238:4: ( (lv_right_5_0= ruleFactor ) )
+            	    // InternalDeviceDefinition.g:2239:5: (lv_right_5_0= ruleFactor )
             	    {
-            	    // InternalDeviceDefinition.g:2191:5: (lv_right_5_0= ruleFactor )
-            	    // InternalDeviceDefinition.g:2192:6: lv_right_5_0= ruleFactor
+            	    // InternalDeviceDefinition.g:2239:5: (lv_right_5_0= ruleFactor )
+            	    // InternalDeviceDefinition.g:2240:6: lv_right_5_0= ruleFactor
             	    {
 
             	    						newCompositeNode(grammarAccess.getExpAccess().getRightFactorParserRuleCall_1_1_0());
             	    					
-            	    pushFollow(FOLLOW_59);
+            	    pushFollow(FOLLOW_60);
             	    lv_right_5_0=ruleFactor();
 
             	    state._fsp--;
@@ -5179,227 +5285,6 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
             	    							"right",
             	    							lv_right_5_0,
             	    							"dk.sdu.gms.dds.DeviceDefinition.Factor");
-            	    						afterParserOrEnumRuleCall();
-            	    					
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop37;
-                }
-            } while (true);
-
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleExp"
-
-
-    // $ANTLR start "entryRuleFactor"
-    // InternalDeviceDefinition.g:2214:1: entryRuleFactor returns [EObject current=null] : iv_ruleFactor= ruleFactor EOF ;
-    public final EObject entryRuleFactor() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleFactor = null;
-
-
-        try {
-            // InternalDeviceDefinition.g:2214:47: (iv_ruleFactor= ruleFactor EOF )
-            // InternalDeviceDefinition.g:2215:2: iv_ruleFactor= ruleFactor EOF
-            {
-             newCompositeNode(grammarAccess.getFactorRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleFactor=ruleFactor();
-
-            state._fsp--;
-
-             current =iv_ruleFactor; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleFactor"
-
-
-    // $ANTLR start "ruleFactor"
-    // InternalDeviceDefinition.g:2221:1: ruleFactor returns [EObject current=null] : (this_Compare_0= ruleCompare ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) ) ( (lv_right_5_0= ruleCompare ) ) )* ) ;
-    public final EObject ruleFactor() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_2=null;
-        Token otherlv_4=null;
-        EObject this_Compare_0 = null;
-
-        EObject lv_right_5_0 = null;
-
-
-
-        	enterRule();
-
-        try {
-            // InternalDeviceDefinition.g:2227:2: ( (this_Compare_0= ruleCompare ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) ) ( (lv_right_5_0= ruleCompare ) ) )* ) )
-            // InternalDeviceDefinition.g:2228:2: (this_Compare_0= ruleCompare ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) ) ( (lv_right_5_0= ruleCompare ) ) )* )
-            {
-            // InternalDeviceDefinition.g:2228:2: (this_Compare_0= ruleCompare ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) ) ( (lv_right_5_0= ruleCompare ) ) )* )
-            // InternalDeviceDefinition.g:2229:3: this_Compare_0= ruleCompare ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) ) ( (lv_right_5_0= ruleCompare ) ) )*
-            {
-
-            			newCompositeNode(grammarAccess.getFactorAccess().getCompareParserRuleCall_0());
-            		
-            pushFollow(FOLLOW_60);
-            this_Compare_0=ruleCompare();
-
-            state._fsp--;
-
-
-            			current = this_Compare_0;
-            			afterParserOrEnumRuleCall();
-            		
-            // InternalDeviceDefinition.g:2237:3: ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) ) ( (lv_right_5_0= ruleCompare ) ) )*
-            loop39:
-            do {
-                int alt39=2;
-                int LA39_0 = input.LA(1);
-
-                if ( ((LA39_0>=77 && LA39_0<=78)) ) {
-                    alt39=1;
-                }
-
-
-                switch (alt39) {
-            	case 1 :
-            	    // InternalDeviceDefinition.g:2238:4: ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) ) ( (lv_right_5_0= ruleCompare ) )
-            	    {
-            	    // InternalDeviceDefinition.g:2238:4: ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) )
-            	    int alt38=2;
-            	    int LA38_0 = input.LA(1);
-
-            	    if ( (LA38_0==77) ) {
-            	        alt38=1;
-            	    }
-            	    else if ( (LA38_0==78) ) {
-            	        alt38=2;
-            	    }
-            	    else {
-            	        NoViableAltException nvae =
-            	            new NoViableAltException("", 38, 0, input);
-
-            	        throw nvae;
-            	    }
-            	    switch (alt38) {
-            	        case 1 :
-            	            // InternalDeviceDefinition.g:2239:5: ( () otherlv_2= '*' )
-            	            {
-            	            // InternalDeviceDefinition.g:2239:5: ( () otherlv_2= '*' )
-            	            // InternalDeviceDefinition.g:2240:6: () otherlv_2= '*'
-            	            {
-            	            // InternalDeviceDefinition.g:2240:6: ()
-            	            // InternalDeviceDefinition.g:2241:7: 
-            	            {
-
-            	            							current = forceCreateModelElementAndSet(
-            	            								grammarAccess.getFactorAccess().getMultLeftAction_1_0_0_0(),
-            	            								current);
-            	            						
-
-            	            }
-
-            	            otherlv_2=(Token)match(input,77,FOLLOW_49); 
-
-            	            						newLeafNode(otherlv_2, grammarAccess.getFactorAccess().getAsteriskKeyword_1_0_0_1());
-            	            					
-
-            	            }
-
-
-            	            }
-            	            break;
-            	        case 2 :
-            	            // InternalDeviceDefinition.g:2253:5: ( () otherlv_4= '/' )
-            	            {
-            	            // InternalDeviceDefinition.g:2253:5: ( () otherlv_4= '/' )
-            	            // InternalDeviceDefinition.g:2254:6: () otherlv_4= '/'
-            	            {
-            	            // InternalDeviceDefinition.g:2254:6: ()
-            	            // InternalDeviceDefinition.g:2255:7: 
-            	            {
-
-            	            							current = forceCreateModelElementAndSet(
-            	            								grammarAccess.getFactorAccess().getDivLeftAction_1_0_1_0(),
-            	            								current);
-            	            						
-
-            	            }
-
-            	            otherlv_4=(Token)match(input,78,FOLLOW_49); 
-
-            	            						newLeafNode(otherlv_4, grammarAccess.getFactorAccess().getSolidusKeyword_1_0_1_1());
-            	            					
-
-            	            }
-
-
-            	            }
-            	            break;
-
-            	    }
-
-            	    // InternalDeviceDefinition.g:2267:4: ( (lv_right_5_0= ruleCompare ) )
-            	    // InternalDeviceDefinition.g:2268:5: (lv_right_5_0= ruleCompare )
-            	    {
-            	    // InternalDeviceDefinition.g:2268:5: (lv_right_5_0= ruleCompare )
-            	    // InternalDeviceDefinition.g:2269:6: lv_right_5_0= ruleCompare
-            	    {
-
-            	    						newCompositeNode(grammarAccess.getFactorAccess().getRightCompareParserRuleCall_1_1_0());
-            	    					
-            	    pushFollow(FOLLOW_60);
-            	    lv_right_5_0=ruleCompare();
-
-            	    state._fsp--;
-
-
-            	    						if (current==null) {
-            	    							current = createModelElementForParent(grammarAccess.getFactorRule());
-            	    						}
-            	    						set(
-            	    							current,
-            	    							"right",
-            	    							lv_right_5_0,
-            	    							"dk.sdu.gms.dds.DeviceDefinition.Compare");
             	    						afterParserOrEnumRuleCall();
             	    					
 
@@ -5436,28 +5321,28 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
         }
         return current;
     }
-    // $ANTLR end "ruleFactor"
+    // $ANTLR end "ruleExp"
 
 
-    // $ANTLR start "entryRuleCompare"
-    // InternalDeviceDefinition.g:2291:1: entryRuleCompare returns [EObject current=null] : iv_ruleCompare= ruleCompare EOF ;
-    public final EObject entryRuleCompare() throws RecognitionException {
+    // $ANTLR start "entryRuleFactor"
+    // InternalDeviceDefinition.g:2262:1: entryRuleFactor returns [EObject current=null] : iv_ruleFactor= ruleFactor EOF ;
+    public final EObject entryRuleFactor() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleCompare = null;
+        EObject iv_ruleFactor = null;
 
 
         try {
-            // InternalDeviceDefinition.g:2291:48: (iv_ruleCompare= ruleCompare EOF )
-            // InternalDeviceDefinition.g:2292:2: iv_ruleCompare= ruleCompare EOF
+            // InternalDeviceDefinition.g:2262:47: (iv_ruleFactor= ruleFactor EOF )
+            // InternalDeviceDefinition.g:2263:2: iv_ruleFactor= ruleFactor EOF
             {
-             newCompositeNode(grammarAccess.getCompareRule()); 
+             newCompositeNode(grammarAccess.getFactorRule()); 
             pushFollow(FOLLOW_1);
-            iv_ruleCompare=ruleCompare();
+            iv_ruleFactor=ruleFactor();
 
             state._fsp--;
 
-             current =iv_ruleCompare; 
+             current =iv_ruleFactor; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -5472,17 +5357,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
         }
         return current;
     }
-    // $ANTLR end "entryRuleCompare"
+    // $ANTLR end "entryRuleFactor"
 
 
-    // $ANTLR start "ruleCompare"
-    // InternalDeviceDefinition.g:2298:1: ruleCompare returns [EObject current=null] : (this_CompareOrEquals_0= ruleCompareOrEquals ( ( ( () otherlv_2= '>' ) | ( () otherlv_4= '<' ) ) ( (lv_right_5_0= ruleCompareOrEquals ) ) )* ) ;
-    public final EObject ruleCompare() throws RecognitionException {
+    // $ANTLR start "ruleFactor"
+    // InternalDeviceDefinition.g:2269:1: ruleFactor returns [EObject current=null] : (this_Compare_0= ruleCompare ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) ) ( (lv_right_5_0= ruleCompare ) ) )* ) ;
+    public final EObject ruleFactor() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_2=null;
         Token otherlv_4=null;
-        EObject this_CompareOrEquals_0 = null;
+        EObject this_Compare_0 = null;
 
         EObject lv_right_5_0 = null;
 
@@ -5491,47 +5376,47 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
         	enterRule();
 
         try {
-            // InternalDeviceDefinition.g:2304:2: ( (this_CompareOrEquals_0= ruleCompareOrEquals ( ( ( () otherlv_2= '>' ) | ( () otherlv_4= '<' ) ) ( (lv_right_5_0= ruleCompareOrEquals ) ) )* ) )
-            // InternalDeviceDefinition.g:2305:2: (this_CompareOrEquals_0= ruleCompareOrEquals ( ( ( () otherlv_2= '>' ) | ( () otherlv_4= '<' ) ) ( (lv_right_5_0= ruleCompareOrEquals ) ) )* )
+            // InternalDeviceDefinition.g:2275:2: ( (this_Compare_0= ruleCompare ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) ) ( (lv_right_5_0= ruleCompare ) ) )* ) )
+            // InternalDeviceDefinition.g:2276:2: (this_Compare_0= ruleCompare ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) ) ( (lv_right_5_0= ruleCompare ) ) )* )
             {
-            // InternalDeviceDefinition.g:2305:2: (this_CompareOrEquals_0= ruleCompareOrEquals ( ( ( () otherlv_2= '>' ) | ( () otherlv_4= '<' ) ) ( (lv_right_5_0= ruleCompareOrEquals ) ) )* )
-            // InternalDeviceDefinition.g:2306:3: this_CompareOrEquals_0= ruleCompareOrEquals ( ( ( () otherlv_2= '>' ) | ( () otherlv_4= '<' ) ) ( (lv_right_5_0= ruleCompareOrEquals ) ) )*
+            // InternalDeviceDefinition.g:2276:2: (this_Compare_0= ruleCompare ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) ) ( (lv_right_5_0= ruleCompare ) ) )* )
+            // InternalDeviceDefinition.g:2277:3: this_Compare_0= ruleCompare ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) ) ( (lv_right_5_0= ruleCompare ) ) )*
             {
 
-            			newCompositeNode(grammarAccess.getCompareAccess().getCompareOrEqualsParserRuleCall_0());
+            			newCompositeNode(grammarAccess.getFactorAccess().getCompareParserRuleCall_0());
             		
             pushFollow(FOLLOW_61);
-            this_CompareOrEquals_0=ruleCompareOrEquals();
+            this_Compare_0=ruleCompare();
 
             state._fsp--;
 
 
-            			current = this_CompareOrEquals_0;
+            			current = this_Compare_0;
             			afterParserOrEnumRuleCall();
             		
-            // InternalDeviceDefinition.g:2314:3: ( ( ( () otherlv_2= '>' ) | ( () otherlv_4= '<' ) ) ( (lv_right_5_0= ruleCompareOrEquals ) ) )*
+            // InternalDeviceDefinition.g:2285:3: ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) ) ( (lv_right_5_0= ruleCompare ) ) )*
             loop41:
             do {
                 int alt41=2;
                 int LA41_0 = input.LA(1);
 
-                if ( ((LA41_0>=79 && LA41_0<=80)) ) {
+                if ( ((LA41_0>=78 && LA41_0<=79)) ) {
                     alt41=1;
                 }
 
 
                 switch (alt41) {
             	case 1 :
-            	    // InternalDeviceDefinition.g:2315:4: ( ( () otherlv_2= '>' ) | ( () otherlv_4= '<' ) ) ( (lv_right_5_0= ruleCompareOrEquals ) )
+            	    // InternalDeviceDefinition.g:2286:4: ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) ) ( (lv_right_5_0= ruleCompare ) )
             	    {
-            	    // InternalDeviceDefinition.g:2315:4: ( ( () otherlv_2= '>' ) | ( () otherlv_4= '<' ) )
+            	    // InternalDeviceDefinition.g:2286:4: ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) )
             	    int alt40=2;
             	    int LA40_0 = input.LA(1);
 
-            	    if ( (LA40_0==79) ) {
+            	    if ( (LA40_0==78) ) {
             	        alt40=1;
             	    }
-            	    else if ( (LA40_0==80) ) {
+            	    else if ( (LA40_0==79) ) {
             	        alt40=2;
             	    }
             	    else {
@@ -5542,25 +5427,25 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
             	    }
             	    switch (alt40) {
             	        case 1 :
-            	            // InternalDeviceDefinition.g:2316:5: ( () otherlv_2= '>' )
+            	            // InternalDeviceDefinition.g:2287:5: ( () otherlv_2= '*' )
             	            {
-            	            // InternalDeviceDefinition.g:2316:5: ( () otherlv_2= '>' )
-            	            // InternalDeviceDefinition.g:2317:6: () otherlv_2= '>'
+            	            // InternalDeviceDefinition.g:2287:5: ( () otherlv_2= '*' )
+            	            // InternalDeviceDefinition.g:2288:6: () otherlv_2= '*'
             	            {
-            	            // InternalDeviceDefinition.g:2317:6: ()
-            	            // InternalDeviceDefinition.g:2318:7: 
+            	            // InternalDeviceDefinition.g:2288:6: ()
+            	            // InternalDeviceDefinition.g:2289:7: 
             	            {
 
             	            							current = forceCreateModelElementAndSet(
-            	            								grammarAccess.getCompareAccess().getGreaterLeftAction_1_0_0_0(),
+            	            								grammarAccess.getFactorAccess().getMultLeftAction_1_0_0_0(),
             	            								current);
             	            						
 
             	            }
 
-            	            otherlv_2=(Token)match(input,79,FOLLOW_49); 
+            	            otherlv_2=(Token)match(input,78,FOLLOW_50); 
 
-            	            						newLeafNode(otherlv_2, grammarAccess.getCompareAccess().getGreaterThanSignKeyword_1_0_0_1());
+            	            						newLeafNode(otherlv_2, grammarAccess.getFactorAccess().getAsteriskKeyword_1_0_0_1());
             	            					
 
             	            }
@@ -5569,25 +5454,25 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
             	            }
             	            break;
             	        case 2 :
-            	            // InternalDeviceDefinition.g:2330:5: ( () otherlv_4= '<' )
+            	            // InternalDeviceDefinition.g:2301:5: ( () otherlv_4= '/' )
             	            {
-            	            // InternalDeviceDefinition.g:2330:5: ( () otherlv_4= '<' )
-            	            // InternalDeviceDefinition.g:2331:6: () otherlv_4= '<'
+            	            // InternalDeviceDefinition.g:2301:5: ( () otherlv_4= '/' )
+            	            // InternalDeviceDefinition.g:2302:6: () otherlv_4= '/'
             	            {
-            	            // InternalDeviceDefinition.g:2331:6: ()
-            	            // InternalDeviceDefinition.g:2332:7: 
+            	            // InternalDeviceDefinition.g:2302:6: ()
+            	            // InternalDeviceDefinition.g:2303:7: 
             	            {
 
             	            							current = forceCreateModelElementAndSet(
-            	            								grammarAccess.getCompareAccess().getLesserLeftAction_1_0_1_0(),
+            	            								grammarAccess.getFactorAccess().getDivLeftAction_1_0_1_0(),
             	            								current);
             	            						
 
             	            }
 
-            	            otherlv_4=(Token)match(input,80,FOLLOW_49); 
+            	            otherlv_4=(Token)match(input,79,FOLLOW_50); 
 
-            	            						newLeafNode(otherlv_4, grammarAccess.getCompareAccess().getLessThanSignKeyword_1_0_1_1());
+            	            						newLeafNode(otherlv_4, grammarAccess.getFactorAccess().getSolidusKeyword_1_0_1_1());
             	            					
 
             	            }
@@ -5598,29 +5483,29 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             	    }
 
-            	    // InternalDeviceDefinition.g:2344:4: ( (lv_right_5_0= ruleCompareOrEquals ) )
-            	    // InternalDeviceDefinition.g:2345:5: (lv_right_5_0= ruleCompareOrEquals )
+            	    // InternalDeviceDefinition.g:2315:4: ( (lv_right_5_0= ruleCompare ) )
+            	    // InternalDeviceDefinition.g:2316:5: (lv_right_5_0= ruleCompare )
             	    {
-            	    // InternalDeviceDefinition.g:2345:5: (lv_right_5_0= ruleCompareOrEquals )
-            	    // InternalDeviceDefinition.g:2346:6: lv_right_5_0= ruleCompareOrEquals
+            	    // InternalDeviceDefinition.g:2316:5: (lv_right_5_0= ruleCompare )
+            	    // InternalDeviceDefinition.g:2317:6: lv_right_5_0= ruleCompare
             	    {
 
-            	    						newCompositeNode(grammarAccess.getCompareAccess().getRightCompareOrEqualsParserRuleCall_1_1_0());
+            	    						newCompositeNode(grammarAccess.getFactorAccess().getRightCompareParserRuleCall_1_1_0());
             	    					
             	    pushFollow(FOLLOW_61);
-            	    lv_right_5_0=ruleCompareOrEquals();
+            	    lv_right_5_0=ruleCompare();
 
             	    state._fsp--;
 
 
             	    						if (current==null) {
-            	    							current = createModelElementForParent(grammarAccess.getCompareRule());
+            	    							current = createModelElementForParent(grammarAccess.getFactorRule());
             	    						}
             	    						set(
             	    							current,
             	    							"right",
             	    							lv_right_5_0,
-            	    							"dk.sdu.gms.dds.DeviceDefinition.CompareOrEquals");
+            	    							"dk.sdu.gms.dds.DeviceDefinition.Compare");
             	    						afterParserOrEnumRuleCall();
             	    					
 
@@ -5657,28 +5542,28 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
         }
         return current;
     }
-    // $ANTLR end "ruleCompare"
+    // $ANTLR end "ruleFactor"
 
 
-    // $ANTLR start "entryRuleCompareOrEquals"
-    // InternalDeviceDefinition.g:2368:1: entryRuleCompareOrEquals returns [EObject current=null] : iv_ruleCompareOrEquals= ruleCompareOrEquals EOF ;
-    public final EObject entryRuleCompareOrEquals() throws RecognitionException {
+    // $ANTLR start "entryRuleCompare"
+    // InternalDeviceDefinition.g:2339:1: entryRuleCompare returns [EObject current=null] : iv_ruleCompare= ruleCompare EOF ;
+    public final EObject entryRuleCompare() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleCompareOrEquals = null;
+        EObject iv_ruleCompare = null;
 
 
         try {
-            // InternalDeviceDefinition.g:2368:56: (iv_ruleCompareOrEquals= ruleCompareOrEquals EOF )
-            // InternalDeviceDefinition.g:2369:2: iv_ruleCompareOrEquals= ruleCompareOrEquals EOF
+            // InternalDeviceDefinition.g:2339:48: (iv_ruleCompare= ruleCompare EOF )
+            // InternalDeviceDefinition.g:2340:2: iv_ruleCompare= ruleCompare EOF
             {
-             newCompositeNode(grammarAccess.getCompareOrEqualsRule()); 
+             newCompositeNode(grammarAccess.getCompareRule()); 
             pushFollow(FOLLOW_1);
-            iv_ruleCompareOrEquals=ruleCompareOrEquals();
+            iv_ruleCompare=ruleCompare();
 
             state._fsp--;
 
-             current =iv_ruleCompareOrEquals; 
+             current =iv_ruleCompare; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -5693,17 +5578,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
         }
         return current;
     }
-    // $ANTLR end "entryRuleCompareOrEquals"
+    // $ANTLR end "entryRuleCompare"
 
 
-    // $ANTLR start "ruleCompareOrEquals"
-    // InternalDeviceDefinition.g:2375:1: ruleCompareOrEquals returns [EObject current=null] : (this_EqualsOrNotEquals_0= ruleEqualsOrNotEquals ( ( ( () otherlv_2= '>=' ) | ( () otherlv_4= '<=' ) ) ( (lv_right_5_0= ruleEqualsOrNotEquals ) ) )* ) ;
-    public final EObject ruleCompareOrEquals() throws RecognitionException {
+    // $ANTLR start "ruleCompare"
+    // InternalDeviceDefinition.g:2346:1: ruleCompare returns [EObject current=null] : (this_CompareOrEquals_0= ruleCompareOrEquals ( ( ( () otherlv_2= '>' ) | ( () otherlv_4= '<' ) ) ( (lv_right_5_0= ruleCompareOrEquals ) ) )* ) ;
+    public final EObject ruleCompare() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_2=null;
         Token otherlv_4=null;
-        EObject this_EqualsOrNotEquals_0 = null;
+        EObject this_CompareOrEquals_0 = null;
 
         EObject lv_right_5_0 = null;
 
@@ -5712,47 +5597,47 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
         	enterRule();
 
         try {
-            // InternalDeviceDefinition.g:2381:2: ( (this_EqualsOrNotEquals_0= ruleEqualsOrNotEquals ( ( ( () otherlv_2= '>=' ) | ( () otherlv_4= '<=' ) ) ( (lv_right_5_0= ruleEqualsOrNotEquals ) ) )* ) )
-            // InternalDeviceDefinition.g:2382:2: (this_EqualsOrNotEquals_0= ruleEqualsOrNotEquals ( ( ( () otherlv_2= '>=' ) | ( () otherlv_4= '<=' ) ) ( (lv_right_5_0= ruleEqualsOrNotEquals ) ) )* )
+            // InternalDeviceDefinition.g:2352:2: ( (this_CompareOrEquals_0= ruleCompareOrEquals ( ( ( () otherlv_2= '>' ) | ( () otherlv_4= '<' ) ) ( (lv_right_5_0= ruleCompareOrEquals ) ) )* ) )
+            // InternalDeviceDefinition.g:2353:2: (this_CompareOrEquals_0= ruleCompareOrEquals ( ( ( () otherlv_2= '>' ) | ( () otherlv_4= '<' ) ) ( (lv_right_5_0= ruleCompareOrEquals ) ) )* )
             {
-            // InternalDeviceDefinition.g:2382:2: (this_EqualsOrNotEquals_0= ruleEqualsOrNotEquals ( ( ( () otherlv_2= '>=' ) | ( () otherlv_4= '<=' ) ) ( (lv_right_5_0= ruleEqualsOrNotEquals ) ) )* )
-            // InternalDeviceDefinition.g:2383:3: this_EqualsOrNotEquals_0= ruleEqualsOrNotEquals ( ( ( () otherlv_2= '>=' ) | ( () otherlv_4= '<=' ) ) ( (lv_right_5_0= ruleEqualsOrNotEquals ) ) )*
+            // InternalDeviceDefinition.g:2353:2: (this_CompareOrEquals_0= ruleCompareOrEquals ( ( ( () otherlv_2= '>' ) | ( () otherlv_4= '<' ) ) ( (lv_right_5_0= ruleCompareOrEquals ) ) )* )
+            // InternalDeviceDefinition.g:2354:3: this_CompareOrEquals_0= ruleCompareOrEquals ( ( ( () otherlv_2= '>' ) | ( () otherlv_4= '<' ) ) ( (lv_right_5_0= ruleCompareOrEquals ) ) )*
             {
 
-            			newCompositeNode(grammarAccess.getCompareOrEqualsAccess().getEqualsOrNotEqualsParserRuleCall_0());
+            			newCompositeNode(grammarAccess.getCompareAccess().getCompareOrEqualsParserRuleCall_0());
             		
             pushFollow(FOLLOW_62);
-            this_EqualsOrNotEquals_0=ruleEqualsOrNotEquals();
+            this_CompareOrEquals_0=ruleCompareOrEquals();
 
             state._fsp--;
 
 
-            			current = this_EqualsOrNotEquals_0;
+            			current = this_CompareOrEquals_0;
             			afterParserOrEnumRuleCall();
             		
-            // InternalDeviceDefinition.g:2391:3: ( ( ( () otherlv_2= '>=' ) | ( () otherlv_4= '<=' ) ) ( (lv_right_5_0= ruleEqualsOrNotEquals ) ) )*
+            // InternalDeviceDefinition.g:2362:3: ( ( ( () otherlv_2= '>' ) | ( () otherlv_4= '<' ) ) ( (lv_right_5_0= ruleCompareOrEquals ) ) )*
             loop43:
             do {
                 int alt43=2;
                 int LA43_0 = input.LA(1);
 
-                if ( ((LA43_0>=81 && LA43_0<=82)) ) {
+                if ( ((LA43_0>=80 && LA43_0<=81)) ) {
                     alt43=1;
                 }
 
 
                 switch (alt43) {
             	case 1 :
-            	    // InternalDeviceDefinition.g:2392:4: ( ( () otherlv_2= '>=' ) | ( () otherlv_4= '<=' ) ) ( (lv_right_5_0= ruleEqualsOrNotEquals ) )
+            	    // InternalDeviceDefinition.g:2363:4: ( ( () otherlv_2= '>' ) | ( () otherlv_4= '<' ) ) ( (lv_right_5_0= ruleCompareOrEquals ) )
             	    {
-            	    // InternalDeviceDefinition.g:2392:4: ( ( () otherlv_2= '>=' ) | ( () otherlv_4= '<=' ) )
+            	    // InternalDeviceDefinition.g:2363:4: ( ( () otherlv_2= '>' ) | ( () otherlv_4= '<' ) )
             	    int alt42=2;
             	    int LA42_0 = input.LA(1);
 
-            	    if ( (LA42_0==81) ) {
+            	    if ( (LA42_0==80) ) {
             	        alt42=1;
             	    }
-            	    else if ( (LA42_0==82) ) {
+            	    else if ( (LA42_0==81) ) {
             	        alt42=2;
             	    }
             	    else {
@@ -5763,25 +5648,25 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
             	    }
             	    switch (alt42) {
             	        case 1 :
-            	            // InternalDeviceDefinition.g:2393:5: ( () otherlv_2= '>=' )
+            	            // InternalDeviceDefinition.g:2364:5: ( () otherlv_2= '>' )
             	            {
-            	            // InternalDeviceDefinition.g:2393:5: ( () otherlv_2= '>=' )
-            	            // InternalDeviceDefinition.g:2394:6: () otherlv_2= '>='
+            	            // InternalDeviceDefinition.g:2364:5: ( () otherlv_2= '>' )
+            	            // InternalDeviceDefinition.g:2365:6: () otherlv_2= '>'
             	            {
-            	            // InternalDeviceDefinition.g:2394:6: ()
-            	            // InternalDeviceDefinition.g:2395:7: 
+            	            // InternalDeviceDefinition.g:2365:6: ()
+            	            // InternalDeviceDefinition.g:2366:7: 
             	            {
 
             	            							current = forceCreateModelElementAndSet(
-            	            								grammarAccess.getCompareOrEqualsAccess().getGreaterOrEqualsLeftAction_1_0_0_0(),
+            	            								grammarAccess.getCompareAccess().getGreaterLeftAction_1_0_0_0(),
             	            								current);
             	            						
 
             	            }
 
-            	            otherlv_2=(Token)match(input,81,FOLLOW_49); 
+            	            otherlv_2=(Token)match(input,80,FOLLOW_50); 
 
-            	            						newLeafNode(otherlv_2, grammarAccess.getCompareOrEqualsAccess().getGreaterThanSignEqualsSignKeyword_1_0_0_1());
+            	            						newLeafNode(otherlv_2, grammarAccess.getCompareAccess().getGreaterThanSignKeyword_1_0_0_1());
             	            					
 
             	            }
@@ -5790,25 +5675,25 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
             	            }
             	            break;
             	        case 2 :
-            	            // InternalDeviceDefinition.g:2407:5: ( () otherlv_4= '<=' )
+            	            // InternalDeviceDefinition.g:2378:5: ( () otherlv_4= '<' )
             	            {
-            	            // InternalDeviceDefinition.g:2407:5: ( () otherlv_4= '<=' )
-            	            // InternalDeviceDefinition.g:2408:6: () otherlv_4= '<='
+            	            // InternalDeviceDefinition.g:2378:5: ( () otherlv_4= '<' )
+            	            // InternalDeviceDefinition.g:2379:6: () otherlv_4= '<'
             	            {
-            	            // InternalDeviceDefinition.g:2408:6: ()
-            	            // InternalDeviceDefinition.g:2409:7: 
+            	            // InternalDeviceDefinition.g:2379:6: ()
+            	            // InternalDeviceDefinition.g:2380:7: 
             	            {
 
             	            							current = forceCreateModelElementAndSet(
-            	            								grammarAccess.getCompareOrEqualsAccess().getLesserOrEqualsLeftAction_1_0_1_0(),
+            	            								grammarAccess.getCompareAccess().getLesserLeftAction_1_0_1_0(),
             	            								current);
             	            						
 
             	            }
 
-            	            otherlv_4=(Token)match(input,82,FOLLOW_49); 
+            	            otherlv_4=(Token)match(input,81,FOLLOW_50); 
 
-            	            						newLeafNode(otherlv_4, grammarAccess.getCompareOrEqualsAccess().getLessThanSignEqualsSignKeyword_1_0_1_1());
+            	            						newLeafNode(otherlv_4, grammarAccess.getCompareAccess().getLessThanSignKeyword_1_0_1_1());
             	            					
 
             	            }
@@ -5819,29 +5704,29 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             	    }
 
-            	    // InternalDeviceDefinition.g:2421:4: ( (lv_right_5_0= ruleEqualsOrNotEquals ) )
-            	    // InternalDeviceDefinition.g:2422:5: (lv_right_5_0= ruleEqualsOrNotEquals )
+            	    // InternalDeviceDefinition.g:2392:4: ( (lv_right_5_0= ruleCompareOrEquals ) )
+            	    // InternalDeviceDefinition.g:2393:5: (lv_right_5_0= ruleCompareOrEquals )
             	    {
-            	    // InternalDeviceDefinition.g:2422:5: (lv_right_5_0= ruleEqualsOrNotEquals )
-            	    // InternalDeviceDefinition.g:2423:6: lv_right_5_0= ruleEqualsOrNotEquals
+            	    // InternalDeviceDefinition.g:2393:5: (lv_right_5_0= ruleCompareOrEquals )
+            	    // InternalDeviceDefinition.g:2394:6: lv_right_5_0= ruleCompareOrEquals
             	    {
 
-            	    						newCompositeNode(grammarAccess.getCompareOrEqualsAccess().getRightEqualsOrNotEqualsParserRuleCall_1_1_0());
+            	    						newCompositeNode(grammarAccess.getCompareAccess().getRightCompareOrEqualsParserRuleCall_1_1_0());
             	    					
             	    pushFollow(FOLLOW_62);
-            	    lv_right_5_0=ruleEqualsOrNotEquals();
+            	    lv_right_5_0=ruleCompareOrEquals();
 
             	    state._fsp--;
 
 
             	    						if (current==null) {
-            	    							current = createModelElementForParent(grammarAccess.getCompareOrEqualsRule());
+            	    							current = createModelElementForParent(grammarAccess.getCompareRule());
             	    						}
             	    						set(
             	    							current,
             	    							"right",
             	    							lv_right_5_0,
-            	    							"dk.sdu.gms.dds.DeviceDefinition.EqualsOrNotEquals");
+            	    							"dk.sdu.gms.dds.DeviceDefinition.CompareOrEquals");
             	    						afterParserOrEnumRuleCall();
             	    					
 
@@ -5878,28 +5763,28 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
         }
         return current;
     }
-    // $ANTLR end "ruleCompareOrEquals"
+    // $ANTLR end "ruleCompare"
 
 
-    // $ANTLR start "entryRuleEqualsOrNotEquals"
-    // InternalDeviceDefinition.g:2445:1: entryRuleEqualsOrNotEquals returns [EObject current=null] : iv_ruleEqualsOrNotEquals= ruleEqualsOrNotEquals EOF ;
-    public final EObject entryRuleEqualsOrNotEquals() throws RecognitionException {
+    // $ANTLR start "entryRuleCompareOrEquals"
+    // InternalDeviceDefinition.g:2416:1: entryRuleCompareOrEquals returns [EObject current=null] : iv_ruleCompareOrEquals= ruleCompareOrEquals EOF ;
+    public final EObject entryRuleCompareOrEquals() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleEqualsOrNotEquals = null;
+        EObject iv_ruleCompareOrEquals = null;
 
 
         try {
-            // InternalDeviceDefinition.g:2445:58: (iv_ruleEqualsOrNotEquals= ruleEqualsOrNotEquals EOF )
-            // InternalDeviceDefinition.g:2446:2: iv_ruleEqualsOrNotEquals= ruleEqualsOrNotEquals EOF
+            // InternalDeviceDefinition.g:2416:56: (iv_ruleCompareOrEquals= ruleCompareOrEquals EOF )
+            // InternalDeviceDefinition.g:2417:2: iv_ruleCompareOrEquals= ruleCompareOrEquals EOF
             {
-             newCompositeNode(grammarAccess.getEqualsOrNotEqualsRule()); 
+             newCompositeNode(grammarAccess.getCompareOrEqualsRule()); 
             pushFollow(FOLLOW_1);
-            iv_ruleEqualsOrNotEquals=ruleEqualsOrNotEquals();
+            iv_ruleCompareOrEquals=ruleCompareOrEquals();
 
             state._fsp--;
 
-             current =iv_ruleEqualsOrNotEquals; 
+             current =iv_ruleCompareOrEquals; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -5914,17 +5799,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
         }
         return current;
     }
-    // $ANTLR end "entryRuleEqualsOrNotEquals"
+    // $ANTLR end "entryRuleCompareOrEquals"
 
 
-    // $ANTLR start "ruleEqualsOrNotEquals"
-    // InternalDeviceDefinition.g:2452:1: ruleEqualsOrNotEquals returns [EObject current=null] : (this_AndOr_0= ruleAndOr ( ( ( () otherlv_2= '==' ) | ( () otherlv_4= '!=' ) ) ( (lv_right_5_0= ruleAndOr ) ) )* ) ;
-    public final EObject ruleEqualsOrNotEquals() throws RecognitionException {
+    // $ANTLR start "ruleCompareOrEquals"
+    // InternalDeviceDefinition.g:2423:1: ruleCompareOrEquals returns [EObject current=null] : (this_EqualsOrNotEquals_0= ruleEqualsOrNotEquals ( ( ( () otherlv_2= '>=' ) | ( () otherlv_4= '<=' ) ) ( (lv_right_5_0= ruleEqualsOrNotEquals ) ) )* ) ;
+    public final EObject ruleCompareOrEquals() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_2=null;
         Token otherlv_4=null;
-        EObject this_AndOr_0 = null;
+        EObject this_EqualsOrNotEquals_0 = null;
 
         EObject lv_right_5_0 = null;
 
@@ -5933,47 +5818,47 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
         	enterRule();
 
         try {
-            // InternalDeviceDefinition.g:2458:2: ( (this_AndOr_0= ruleAndOr ( ( ( () otherlv_2= '==' ) | ( () otherlv_4= '!=' ) ) ( (lv_right_5_0= ruleAndOr ) ) )* ) )
-            // InternalDeviceDefinition.g:2459:2: (this_AndOr_0= ruleAndOr ( ( ( () otherlv_2= '==' ) | ( () otherlv_4= '!=' ) ) ( (lv_right_5_0= ruleAndOr ) ) )* )
+            // InternalDeviceDefinition.g:2429:2: ( (this_EqualsOrNotEquals_0= ruleEqualsOrNotEquals ( ( ( () otherlv_2= '>=' ) | ( () otherlv_4= '<=' ) ) ( (lv_right_5_0= ruleEqualsOrNotEquals ) ) )* ) )
+            // InternalDeviceDefinition.g:2430:2: (this_EqualsOrNotEquals_0= ruleEqualsOrNotEquals ( ( ( () otherlv_2= '>=' ) | ( () otherlv_4= '<=' ) ) ( (lv_right_5_0= ruleEqualsOrNotEquals ) ) )* )
             {
-            // InternalDeviceDefinition.g:2459:2: (this_AndOr_0= ruleAndOr ( ( ( () otherlv_2= '==' ) | ( () otherlv_4= '!=' ) ) ( (lv_right_5_0= ruleAndOr ) ) )* )
-            // InternalDeviceDefinition.g:2460:3: this_AndOr_0= ruleAndOr ( ( ( () otherlv_2= '==' ) | ( () otherlv_4= '!=' ) ) ( (lv_right_5_0= ruleAndOr ) ) )*
+            // InternalDeviceDefinition.g:2430:2: (this_EqualsOrNotEquals_0= ruleEqualsOrNotEquals ( ( ( () otherlv_2= '>=' ) | ( () otherlv_4= '<=' ) ) ( (lv_right_5_0= ruleEqualsOrNotEquals ) ) )* )
+            // InternalDeviceDefinition.g:2431:3: this_EqualsOrNotEquals_0= ruleEqualsOrNotEquals ( ( ( () otherlv_2= '>=' ) | ( () otherlv_4= '<=' ) ) ( (lv_right_5_0= ruleEqualsOrNotEquals ) ) )*
             {
 
-            			newCompositeNode(grammarAccess.getEqualsOrNotEqualsAccess().getAndOrParserRuleCall_0());
+            			newCompositeNode(grammarAccess.getCompareOrEqualsAccess().getEqualsOrNotEqualsParserRuleCall_0());
             		
             pushFollow(FOLLOW_63);
-            this_AndOr_0=ruleAndOr();
+            this_EqualsOrNotEquals_0=ruleEqualsOrNotEquals();
 
             state._fsp--;
 
 
-            			current = this_AndOr_0;
+            			current = this_EqualsOrNotEquals_0;
             			afterParserOrEnumRuleCall();
             		
-            // InternalDeviceDefinition.g:2468:3: ( ( ( () otherlv_2= '==' ) | ( () otherlv_4= '!=' ) ) ( (lv_right_5_0= ruleAndOr ) ) )*
+            // InternalDeviceDefinition.g:2439:3: ( ( ( () otherlv_2= '>=' ) | ( () otherlv_4= '<=' ) ) ( (lv_right_5_0= ruleEqualsOrNotEquals ) ) )*
             loop45:
             do {
                 int alt45=2;
                 int LA45_0 = input.LA(1);
 
-                if ( ((LA45_0>=83 && LA45_0<=84)) ) {
+                if ( ((LA45_0>=82 && LA45_0<=83)) ) {
                     alt45=1;
                 }
 
 
                 switch (alt45) {
             	case 1 :
-            	    // InternalDeviceDefinition.g:2469:4: ( ( () otherlv_2= '==' ) | ( () otherlv_4= '!=' ) ) ( (lv_right_5_0= ruleAndOr ) )
+            	    // InternalDeviceDefinition.g:2440:4: ( ( () otherlv_2= '>=' ) | ( () otherlv_4= '<=' ) ) ( (lv_right_5_0= ruleEqualsOrNotEquals ) )
             	    {
-            	    // InternalDeviceDefinition.g:2469:4: ( ( () otherlv_2= '==' ) | ( () otherlv_4= '!=' ) )
+            	    // InternalDeviceDefinition.g:2440:4: ( ( () otherlv_2= '>=' ) | ( () otherlv_4= '<=' ) )
             	    int alt44=2;
             	    int LA44_0 = input.LA(1);
 
-            	    if ( (LA44_0==83) ) {
+            	    if ( (LA44_0==82) ) {
             	        alt44=1;
             	    }
-            	    else if ( (LA44_0==84) ) {
+            	    else if ( (LA44_0==83) ) {
             	        alt44=2;
             	    }
             	    else {
@@ -5984,25 +5869,25 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
             	    }
             	    switch (alt44) {
             	        case 1 :
-            	            // InternalDeviceDefinition.g:2470:5: ( () otherlv_2= '==' )
+            	            // InternalDeviceDefinition.g:2441:5: ( () otherlv_2= '>=' )
             	            {
-            	            // InternalDeviceDefinition.g:2470:5: ( () otherlv_2= '==' )
-            	            // InternalDeviceDefinition.g:2471:6: () otherlv_2= '=='
+            	            // InternalDeviceDefinition.g:2441:5: ( () otherlv_2= '>=' )
+            	            // InternalDeviceDefinition.g:2442:6: () otherlv_2= '>='
             	            {
-            	            // InternalDeviceDefinition.g:2471:6: ()
-            	            // InternalDeviceDefinition.g:2472:7: 
+            	            // InternalDeviceDefinition.g:2442:6: ()
+            	            // InternalDeviceDefinition.g:2443:7: 
             	            {
 
             	            							current = forceCreateModelElementAndSet(
-            	            								grammarAccess.getEqualsOrNotEqualsAccess().getEqualsLeftAction_1_0_0_0(),
+            	            								grammarAccess.getCompareOrEqualsAccess().getGreaterOrEqualsLeftAction_1_0_0_0(),
             	            								current);
             	            						
 
             	            }
 
-            	            otherlv_2=(Token)match(input,83,FOLLOW_49); 
+            	            otherlv_2=(Token)match(input,82,FOLLOW_50); 
 
-            	            						newLeafNode(otherlv_2, grammarAccess.getEqualsOrNotEqualsAccess().getEqualsSignEqualsSignKeyword_1_0_0_1());
+            	            						newLeafNode(otherlv_2, grammarAccess.getCompareOrEqualsAccess().getGreaterThanSignEqualsSignKeyword_1_0_0_1());
             	            					
 
             	            }
@@ -6011,25 +5896,25 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
             	            }
             	            break;
             	        case 2 :
-            	            // InternalDeviceDefinition.g:2484:5: ( () otherlv_4= '!=' )
+            	            // InternalDeviceDefinition.g:2455:5: ( () otherlv_4= '<=' )
             	            {
-            	            // InternalDeviceDefinition.g:2484:5: ( () otherlv_4= '!=' )
-            	            // InternalDeviceDefinition.g:2485:6: () otherlv_4= '!='
+            	            // InternalDeviceDefinition.g:2455:5: ( () otherlv_4= '<=' )
+            	            // InternalDeviceDefinition.g:2456:6: () otherlv_4= '<='
             	            {
-            	            // InternalDeviceDefinition.g:2485:6: ()
-            	            // InternalDeviceDefinition.g:2486:7: 
+            	            // InternalDeviceDefinition.g:2456:6: ()
+            	            // InternalDeviceDefinition.g:2457:7: 
             	            {
 
             	            							current = forceCreateModelElementAndSet(
-            	            								grammarAccess.getEqualsOrNotEqualsAccess().getNotEqualsLeftAction_1_0_1_0(),
+            	            								grammarAccess.getCompareOrEqualsAccess().getLesserOrEqualsLeftAction_1_0_1_0(),
             	            								current);
             	            						
 
             	            }
 
-            	            otherlv_4=(Token)match(input,84,FOLLOW_49); 
+            	            otherlv_4=(Token)match(input,83,FOLLOW_50); 
 
-            	            						newLeafNode(otherlv_4, grammarAccess.getEqualsOrNotEqualsAccess().getExclamationMarkEqualsSignKeyword_1_0_1_1());
+            	            						newLeafNode(otherlv_4, grammarAccess.getCompareOrEqualsAccess().getLessThanSignEqualsSignKeyword_1_0_1_1());
             	            					
 
             	            }
@@ -6040,29 +5925,29 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             	    }
 
-            	    // InternalDeviceDefinition.g:2498:4: ( (lv_right_5_0= ruleAndOr ) )
-            	    // InternalDeviceDefinition.g:2499:5: (lv_right_5_0= ruleAndOr )
+            	    // InternalDeviceDefinition.g:2469:4: ( (lv_right_5_0= ruleEqualsOrNotEquals ) )
+            	    // InternalDeviceDefinition.g:2470:5: (lv_right_5_0= ruleEqualsOrNotEquals )
             	    {
-            	    // InternalDeviceDefinition.g:2499:5: (lv_right_5_0= ruleAndOr )
-            	    // InternalDeviceDefinition.g:2500:6: lv_right_5_0= ruleAndOr
+            	    // InternalDeviceDefinition.g:2470:5: (lv_right_5_0= ruleEqualsOrNotEquals )
+            	    // InternalDeviceDefinition.g:2471:6: lv_right_5_0= ruleEqualsOrNotEquals
             	    {
 
-            	    						newCompositeNode(grammarAccess.getEqualsOrNotEqualsAccess().getRightAndOrParserRuleCall_1_1_0());
+            	    						newCompositeNode(grammarAccess.getCompareOrEqualsAccess().getRightEqualsOrNotEqualsParserRuleCall_1_1_0());
             	    					
             	    pushFollow(FOLLOW_63);
-            	    lv_right_5_0=ruleAndOr();
+            	    lv_right_5_0=ruleEqualsOrNotEquals();
 
             	    state._fsp--;
 
 
             	    						if (current==null) {
-            	    							current = createModelElementForParent(grammarAccess.getEqualsOrNotEqualsRule());
+            	    							current = createModelElementForParent(grammarAccess.getCompareOrEqualsRule());
             	    						}
             	    						set(
             	    							current,
             	    							"right",
             	    							lv_right_5_0,
-            	    							"dk.sdu.gms.dds.DeviceDefinition.AndOr");
+            	    							"dk.sdu.gms.dds.DeviceDefinition.EqualsOrNotEquals");
             	    						afterParserOrEnumRuleCall();
             	    					
 
@@ -6099,28 +5984,28 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
         }
         return current;
     }
-    // $ANTLR end "ruleEqualsOrNotEquals"
+    // $ANTLR end "ruleCompareOrEquals"
 
 
-    // $ANTLR start "entryRuleAndOr"
-    // InternalDeviceDefinition.g:2522:1: entryRuleAndOr returns [EObject current=null] : iv_ruleAndOr= ruleAndOr EOF ;
-    public final EObject entryRuleAndOr() throws RecognitionException {
+    // $ANTLR start "entryRuleEqualsOrNotEquals"
+    // InternalDeviceDefinition.g:2493:1: entryRuleEqualsOrNotEquals returns [EObject current=null] : iv_ruleEqualsOrNotEquals= ruleEqualsOrNotEquals EOF ;
+    public final EObject entryRuleEqualsOrNotEquals() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleAndOr = null;
+        EObject iv_ruleEqualsOrNotEquals = null;
 
 
         try {
-            // InternalDeviceDefinition.g:2522:46: (iv_ruleAndOr= ruleAndOr EOF )
-            // InternalDeviceDefinition.g:2523:2: iv_ruleAndOr= ruleAndOr EOF
+            // InternalDeviceDefinition.g:2493:58: (iv_ruleEqualsOrNotEquals= ruleEqualsOrNotEquals EOF )
+            // InternalDeviceDefinition.g:2494:2: iv_ruleEqualsOrNotEquals= ruleEqualsOrNotEquals EOF
             {
-             newCompositeNode(grammarAccess.getAndOrRule()); 
+             newCompositeNode(grammarAccess.getEqualsOrNotEqualsRule()); 
             pushFollow(FOLLOW_1);
-            iv_ruleAndOr=ruleAndOr();
+            iv_ruleEqualsOrNotEquals=ruleEqualsOrNotEquals();
 
             state._fsp--;
 
-             current =iv_ruleAndOr; 
+             current =iv_ruleEqualsOrNotEquals; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -6135,17 +6020,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
         }
         return current;
     }
-    // $ANTLR end "entryRuleAndOr"
+    // $ANTLR end "entryRuleEqualsOrNotEquals"
 
 
-    // $ANTLR start "ruleAndOr"
-    // InternalDeviceDefinition.g:2529:1: ruleAndOr returns [EObject current=null] : (this_Primary_0= rulePrimary ( ( ( () otherlv_2= 'and' ) | ( () otherlv_4= 'or' ) ) ( (lv_right_5_0= rulePrimary ) ) )* ) ;
-    public final EObject ruleAndOr() throws RecognitionException {
+    // $ANTLR start "ruleEqualsOrNotEquals"
+    // InternalDeviceDefinition.g:2500:1: ruleEqualsOrNotEquals returns [EObject current=null] : (this_AndOr_0= ruleAndOr ( ( ( () otherlv_2= '==' ) | ( () otherlv_4= '!=' ) ) ( (lv_right_5_0= ruleAndOr ) ) )* ) ;
+    public final EObject ruleEqualsOrNotEquals() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_2=null;
         Token otherlv_4=null;
-        EObject this_Primary_0 = null;
+        EObject this_AndOr_0 = null;
 
         EObject lv_right_5_0 = null;
 
@@ -6154,44 +6039,44 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
         	enterRule();
 
         try {
-            // InternalDeviceDefinition.g:2535:2: ( (this_Primary_0= rulePrimary ( ( ( () otherlv_2= 'and' ) | ( () otherlv_4= 'or' ) ) ( (lv_right_5_0= rulePrimary ) ) )* ) )
-            // InternalDeviceDefinition.g:2536:2: (this_Primary_0= rulePrimary ( ( ( () otherlv_2= 'and' ) | ( () otherlv_4= 'or' ) ) ( (lv_right_5_0= rulePrimary ) ) )* )
+            // InternalDeviceDefinition.g:2506:2: ( (this_AndOr_0= ruleAndOr ( ( ( () otherlv_2= '==' ) | ( () otherlv_4= '!=' ) ) ( (lv_right_5_0= ruleAndOr ) ) )* ) )
+            // InternalDeviceDefinition.g:2507:2: (this_AndOr_0= ruleAndOr ( ( ( () otherlv_2= '==' ) | ( () otherlv_4= '!=' ) ) ( (lv_right_5_0= ruleAndOr ) ) )* )
             {
-            // InternalDeviceDefinition.g:2536:2: (this_Primary_0= rulePrimary ( ( ( () otherlv_2= 'and' ) | ( () otherlv_4= 'or' ) ) ( (lv_right_5_0= rulePrimary ) ) )* )
-            // InternalDeviceDefinition.g:2537:3: this_Primary_0= rulePrimary ( ( ( () otherlv_2= 'and' ) | ( () otherlv_4= 'or' ) ) ( (lv_right_5_0= rulePrimary ) ) )*
+            // InternalDeviceDefinition.g:2507:2: (this_AndOr_0= ruleAndOr ( ( ( () otherlv_2= '==' ) | ( () otherlv_4= '!=' ) ) ( (lv_right_5_0= ruleAndOr ) ) )* )
+            // InternalDeviceDefinition.g:2508:3: this_AndOr_0= ruleAndOr ( ( ( () otherlv_2= '==' ) | ( () otherlv_4= '!=' ) ) ( (lv_right_5_0= ruleAndOr ) ) )*
             {
 
-            			newCompositeNode(grammarAccess.getAndOrAccess().getPrimaryParserRuleCall_0());
+            			newCompositeNode(grammarAccess.getEqualsOrNotEqualsAccess().getAndOrParserRuleCall_0());
             		
             pushFollow(FOLLOW_64);
-            this_Primary_0=rulePrimary();
+            this_AndOr_0=ruleAndOr();
 
             state._fsp--;
 
 
-            			current = this_Primary_0;
+            			current = this_AndOr_0;
             			afterParserOrEnumRuleCall();
             		
-            // InternalDeviceDefinition.g:2545:3: ( ( ( () otherlv_2= 'and' ) | ( () otherlv_4= 'or' ) ) ( (lv_right_5_0= rulePrimary ) ) )*
+            // InternalDeviceDefinition.g:2516:3: ( ( ( () otherlv_2= '==' ) | ( () otherlv_4= '!=' ) ) ( (lv_right_5_0= ruleAndOr ) ) )*
             loop47:
             do {
                 int alt47=2;
                 int LA47_0 = input.LA(1);
 
-                if ( (LA47_0==21||LA47_0==85) ) {
+                if ( ((LA47_0>=84 && LA47_0<=85)) ) {
                     alt47=1;
                 }
 
 
                 switch (alt47) {
             	case 1 :
-            	    // InternalDeviceDefinition.g:2546:4: ( ( () otherlv_2= 'and' ) | ( () otherlv_4= 'or' ) ) ( (lv_right_5_0= rulePrimary ) )
+            	    // InternalDeviceDefinition.g:2517:4: ( ( () otherlv_2= '==' ) | ( () otherlv_4= '!=' ) ) ( (lv_right_5_0= ruleAndOr ) )
             	    {
-            	    // InternalDeviceDefinition.g:2546:4: ( ( () otherlv_2= 'and' ) | ( () otherlv_4= 'or' ) )
+            	    // InternalDeviceDefinition.g:2517:4: ( ( () otherlv_2= '==' ) | ( () otherlv_4= '!=' ) )
             	    int alt46=2;
             	    int LA46_0 = input.LA(1);
 
-            	    if ( (LA46_0==21) ) {
+            	    if ( (LA46_0==84) ) {
             	        alt46=1;
             	    }
             	    else if ( (LA46_0==85) ) {
@@ -6205,25 +6090,25 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
             	    }
             	    switch (alt46) {
             	        case 1 :
-            	            // InternalDeviceDefinition.g:2547:5: ( () otherlv_2= 'and' )
+            	            // InternalDeviceDefinition.g:2518:5: ( () otherlv_2= '==' )
             	            {
-            	            // InternalDeviceDefinition.g:2547:5: ( () otherlv_2= 'and' )
-            	            // InternalDeviceDefinition.g:2548:6: () otherlv_2= 'and'
+            	            // InternalDeviceDefinition.g:2518:5: ( () otherlv_2= '==' )
+            	            // InternalDeviceDefinition.g:2519:6: () otherlv_2= '=='
             	            {
-            	            // InternalDeviceDefinition.g:2548:6: ()
-            	            // InternalDeviceDefinition.g:2549:7: 
+            	            // InternalDeviceDefinition.g:2519:6: ()
+            	            // InternalDeviceDefinition.g:2520:7: 
             	            {
 
             	            							current = forceCreateModelElementAndSet(
-            	            								grammarAccess.getAndOrAccess().getAndLeftAction_1_0_0_0(),
+            	            								grammarAccess.getEqualsOrNotEqualsAccess().getEqualsLeftAction_1_0_0_0(),
             	            								current);
             	            						
 
             	            }
 
-            	            otherlv_2=(Token)match(input,21,FOLLOW_49); 
+            	            otherlv_2=(Token)match(input,84,FOLLOW_50); 
 
-            	            						newLeafNode(otherlv_2, grammarAccess.getAndOrAccess().getAndKeyword_1_0_0_1());
+            	            						newLeafNode(otherlv_2, grammarAccess.getEqualsOrNotEqualsAccess().getEqualsSignEqualsSignKeyword_1_0_0_1());
             	            					
 
             	            }
@@ -6232,25 +6117,25 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
             	            }
             	            break;
             	        case 2 :
-            	            // InternalDeviceDefinition.g:2561:5: ( () otherlv_4= 'or' )
+            	            // InternalDeviceDefinition.g:2532:5: ( () otherlv_4= '!=' )
             	            {
-            	            // InternalDeviceDefinition.g:2561:5: ( () otherlv_4= 'or' )
-            	            // InternalDeviceDefinition.g:2562:6: () otherlv_4= 'or'
+            	            // InternalDeviceDefinition.g:2532:5: ( () otherlv_4= '!=' )
+            	            // InternalDeviceDefinition.g:2533:6: () otherlv_4= '!='
             	            {
-            	            // InternalDeviceDefinition.g:2562:6: ()
-            	            // InternalDeviceDefinition.g:2563:7: 
+            	            // InternalDeviceDefinition.g:2533:6: ()
+            	            // InternalDeviceDefinition.g:2534:7: 
             	            {
 
             	            							current = forceCreateModelElementAndSet(
-            	            								grammarAccess.getAndOrAccess().getOrLeftAction_1_0_1_0(),
+            	            								grammarAccess.getEqualsOrNotEqualsAccess().getNotEqualsLeftAction_1_0_1_0(),
             	            								current);
             	            						
 
             	            }
 
-            	            otherlv_4=(Token)match(input,85,FOLLOW_49); 
+            	            otherlv_4=(Token)match(input,85,FOLLOW_50); 
 
-            	            						newLeafNode(otherlv_4, grammarAccess.getAndOrAccess().getOrKeyword_1_0_1_1());
+            	            						newLeafNode(otherlv_4, grammarAccess.getEqualsOrNotEqualsAccess().getExclamationMarkEqualsSignKeyword_1_0_1_1());
             	            					
 
             	            }
@@ -6261,29 +6146,29 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             	    }
 
-            	    // InternalDeviceDefinition.g:2575:4: ( (lv_right_5_0= rulePrimary ) )
-            	    // InternalDeviceDefinition.g:2576:5: (lv_right_5_0= rulePrimary )
+            	    // InternalDeviceDefinition.g:2546:4: ( (lv_right_5_0= ruleAndOr ) )
+            	    // InternalDeviceDefinition.g:2547:5: (lv_right_5_0= ruleAndOr )
             	    {
-            	    // InternalDeviceDefinition.g:2576:5: (lv_right_5_0= rulePrimary )
-            	    // InternalDeviceDefinition.g:2577:6: lv_right_5_0= rulePrimary
+            	    // InternalDeviceDefinition.g:2547:5: (lv_right_5_0= ruleAndOr )
+            	    // InternalDeviceDefinition.g:2548:6: lv_right_5_0= ruleAndOr
             	    {
 
-            	    						newCompositeNode(grammarAccess.getAndOrAccess().getRightPrimaryParserRuleCall_1_1_0());
+            	    						newCompositeNode(grammarAccess.getEqualsOrNotEqualsAccess().getRightAndOrParserRuleCall_1_1_0());
             	    					
             	    pushFollow(FOLLOW_64);
-            	    lv_right_5_0=rulePrimary();
+            	    lv_right_5_0=ruleAndOr();
 
             	    state._fsp--;
 
 
             	    						if (current==null) {
-            	    							current = createModelElementForParent(grammarAccess.getAndOrRule());
+            	    							current = createModelElementForParent(grammarAccess.getEqualsOrNotEqualsRule());
             	    						}
             	    						set(
             	    							current,
             	    							"right",
             	    							lv_right_5_0,
-            	    							"dk.sdu.gms.dds.DeviceDefinition.Primary");
+            	    							"dk.sdu.gms.dds.DeviceDefinition.AndOr");
             	    						afterParserOrEnumRuleCall();
             	    					
 
@@ -6320,11 +6205,232 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
         }
         return current;
     }
+    // $ANTLR end "ruleEqualsOrNotEquals"
+
+
+    // $ANTLR start "entryRuleAndOr"
+    // InternalDeviceDefinition.g:2570:1: entryRuleAndOr returns [EObject current=null] : iv_ruleAndOr= ruleAndOr EOF ;
+    public final EObject entryRuleAndOr() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleAndOr = null;
+
+
+        try {
+            // InternalDeviceDefinition.g:2570:46: (iv_ruleAndOr= ruleAndOr EOF )
+            // InternalDeviceDefinition.g:2571:2: iv_ruleAndOr= ruleAndOr EOF
+            {
+             newCompositeNode(grammarAccess.getAndOrRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleAndOr=ruleAndOr();
+
+            state._fsp--;
+
+             current =iv_ruleAndOr; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleAndOr"
+
+
+    // $ANTLR start "ruleAndOr"
+    // InternalDeviceDefinition.g:2577:1: ruleAndOr returns [EObject current=null] : (this_Primary_0= rulePrimary ( ( ( () otherlv_2= 'and' ) | ( () otherlv_4= 'or' ) ) ( (lv_right_5_0= rulePrimary ) ) )* ) ;
+    public final EObject ruleAndOr() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_2=null;
+        Token otherlv_4=null;
+        EObject this_Primary_0 = null;
+
+        EObject lv_right_5_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalDeviceDefinition.g:2583:2: ( (this_Primary_0= rulePrimary ( ( ( () otherlv_2= 'and' ) | ( () otherlv_4= 'or' ) ) ( (lv_right_5_0= rulePrimary ) ) )* ) )
+            // InternalDeviceDefinition.g:2584:2: (this_Primary_0= rulePrimary ( ( ( () otherlv_2= 'and' ) | ( () otherlv_4= 'or' ) ) ( (lv_right_5_0= rulePrimary ) ) )* )
+            {
+            // InternalDeviceDefinition.g:2584:2: (this_Primary_0= rulePrimary ( ( ( () otherlv_2= 'and' ) | ( () otherlv_4= 'or' ) ) ( (lv_right_5_0= rulePrimary ) ) )* )
+            // InternalDeviceDefinition.g:2585:3: this_Primary_0= rulePrimary ( ( ( () otherlv_2= 'and' ) | ( () otherlv_4= 'or' ) ) ( (lv_right_5_0= rulePrimary ) ) )*
+            {
+
+            			newCompositeNode(grammarAccess.getAndOrAccess().getPrimaryParserRuleCall_0());
+            		
+            pushFollow(FOLLOW_65);
+            this_Primary_0=rulePrimary();
+
+            state._fsp--;
+
+
+            			current = this_Primary_0;
+            			afterParserOrEnumRuleCall();
+            		
+            // InternalDeviceDefinition.g:2593:3: ( ( ( () otherlv_2= 'and' ) | ( () otherlv_4= 'or' ) ) ( (lv_right_5_0= rulePrimary ) ) )*
+            loop49:
+            do {
+                int alt49=2;
+                int LA49_0 = input.LA(1);
+
+                if ( (LA49_0==21||LA49_0==86) ) {
+                    alt49=1;
+                }
+
+
+                switch (alt49) {
+            	case 1 :
+            	    // InternalDeviceDefinition.g:2594:4: ( ( () otherlv_2= 'and' ) | ( () otherlv_4= 'or' ) ) ( (lv_right_5_0= rulePrimary ) )
+            	    {
+            	    // InternalDeviceDefinition.g:2594:4: ( ( () otherlv_2= 'and' ) | ( () otherlv_4= 'or' ) )
+            	    int alt48=2;
+            	    int LA48_0 = input.LA(1);
+
+            	    if ( (LA48_0==21) ) {
+            	        alt48=1;
+            	    }
+            	    else if ( (LA48_0==86) ) {
+            	        alt48=2;
+            	    }
+            	    else {
+            	        NoViableAltException nvae =
+            	            new NoViableAltException("", 48, 0, input);
+
+            	        throw nvae;
+            	    }
+            	    switch (alt48) {
+            	        case 1 :
+            	            // InternalDeviceDefinition.g:2595:5: ( () otherlv_2= 'and' )
+            	            {
+            	            // InternalDeviceDefinition.g:2595:5: ( () otherlv_2= 'and' )
+            	            // InternalDeviceDefinition.g:2596:6: () otherlv_2= 'and'
+            	            {
+            	            // InternalDeviceDefinition.g:2596:6: ()
+            	            // InternalDeviceDefinition.g:2597:7: 
+            	            {
+
+            	            							current = forceCreateModelElementAndSet(
+            	            								grammarAccess.getAndOrAccess().getAndLeftAction_1_0_0_0(),
+            	            								current);
+            	            						
+
+            	            }
+
+            	            otherlv_2=(Token)match(input,21,FOLLOW_50); 
+
+            	            						newLeafNode(otherlv_2, grammarAccess.getAndOrAccess().getAndKeyword_1_0_0_1());
+            	            					
+
+            	            }
+
+
+            	            }
+            	            break;
+            	        case 2 :
+            	            // InternalDeviceDefinition.g:2609:5: ( () otherlv_4= 'or' )
+            	            {
+            	            // InternalDeviceDefinition.g:2609:5: ( () otherlv_4= 'or' )
+            	            // InternalDeviceDefinition.g:2610:6: () otherlv_4= 'or'
+            	            {
+            	            // InternalDeviceDefinition.g:2610:6: ()
+            	            // InternalDeviceDefinition.g:2611:7: 
+            	            {
+
+            	            							current = forceCreateModelElementAndSet(
+            	            								grammarAccess.getAndOrAccess().getOrLeftAction_1_0_1_0(),
+            	            								current);
+            	            						
+
+            	            }
+
+            	            otherlv_4=(Token)match(input,86,FOLLOW_50); 
+
+            	            						newLeafNode(otherlv_4, grammarAccess.getAndOrAccess().getOrKeyword_1_0_1_1());
+            	            					
+
+            	            }
+
+
+            	            }
+            	            break;
+
+            	    }
+
+            	    // InternalDeviceDefinition.g:2623:4: ( (lv_right_5_0= rulePrimary ) )
+            	    // InternalDeviceDefinition.g:2624:5: (lv_right_5_0= rulePrimary )
+            	    {
+            	    // InternalDeviceDefinition.g:2624:5: (lv_right_5_0= rulePrimary )
+            	    // InternalDeviceDefinition.g:2625:6: lv_right_5_0= rulePrimary
+            	    {
+
+            	    						newCompositeNode(grammarAccess.getAndOrAccess().getRightPrimaryParserRuleCall_1_1_0());
+            	    					
+            	    pushFollow(FOLLOW_65);
+            	    lv_right_5_0=rulePrimary();
+
+            	    state._fsp--;
+
+
+            	    						if (current==null) {
+            	    							current = createModelElementForParent(grammarAccess.getAndOrRule());
+            	    						}
+            	    						set(
+            	    							current,
+            	    							"right",
+            	    							lv_right_5_0,
+            	    							"dk.sdu.gms.dds.DeviceDefinition.Primary");
+            	    						afterParserOrEnumRuleCall();
+            	    					
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop49;
+                }
+            } while (true);
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
     // $ANTLR end "ruleAndOr"
 
 
     // $ANTLR start "entryRulePrimary"
-    // InternalDeviceDefinition.g:2599:1: entryRulePrimary returns [EObject current=null] : iv_rulePrimary= rulePrimary EOF ;
+    // InternalDeviceDefinition.g:2647:1: entryRulePrimary returns [EObject current=null] : iv_rulePrimary= rulePrimary EOF ;
     public final EObject entryRulePrimary() throws RecognitionException {
         EObject current = null;
 
@@ -6332,8 +6438,8 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
         try {
-            // InternalDeviceDefinition.g:2599:48: (iv_rulePrimary= rulePrimary EOF )
-            // InternalDeviceDefinition.g:2600:2: iv_rulePrimary= rulePrimary EOF
+            // InternalDeviceDefinition.g:2647:48: (iv_rulePrimary= rulePrimary EOF )
+            // InternalDeviceDefinition.g:2648:2: iv_rulePrimary= rulePrimary EOF
             {
              newCompositeNode(grammarAccess.getPrimaryRule()); 
             pushFollow(FOLLOW_1);
@@ -6360,7 +6466,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "rulePrimary"
-    // InternalDeviceDefinition.g:2606:1: rulePrimary returns [EObject current=null] : (this_Primitive_0= rulePrimitive | this_Parenthesis_1= ruleParenthesis | this_VariableUse_2= ruleVariableUse | this_ExternalCall_3= ruleExternalCall | ( () otherlv_5= 'value' ) ) ;
+    // InternalDeviceDefinition.g:2654:1: rulePrimary returns [EObject current=null] : (this_Primitive_0= rulePrimitive | this_Parenthesis_1= ruleParenthesis | this_VariableUse_2= ruleVariableUse | this_ExternalCall_3= ruleExternalCall | ( () otherlv_5= 'value' ) ) ;
     public final EObject rulePrimary() throws RecognitionException {
         EObject current = null;
 
@@ -6378,50 +6484,50 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
         	enterRule();
 
         try {
-            // InternalDeviceDefinition.g:2612:2: ( (this_Primitive_0= rulePrimitive | this_Parenthesis_1= ruleParenthesis | this_VariableUse_2= ruleVariableUse | this_ExternalCall_3= ruleExternalCall | ( () otherlv_5= 'value' ) ) )
-            // InternalDeviceDefinition.g:2613:2: (this_Primitive_0= rulePrimitive | this_Parenthesis_1= ruleParenthesis | this_VariableUse_2= ruleVariableUse | this_ExternalCall_3= ruleExternalCall | ( () otherlv_5= 'value' ) )
+            // InternalDeviceDefinition.g:2660:2: ( (this_Primitive_0= rulePrimitive | this_Parenthesis_1= ruleParenthesis | this_VariableUse_2= ruleVariableUse | this_ExternalCall_3= ruleExternalCall | ( () otherlv_5= 'value' ) ) )
+            // InternalDeviceDefinition.g:2661:2: (this_Primitive_0= rulePrimitive | this_Parenthesis_1= ruleParenthesis | this_VariableUse_2= ruleVariableUse | this_ExternalCall_3= ruleExternalCall | ( () otherlv_5= 'value' ) )
             {
-            // InternalDeviceDefinition.g:2613:2: (this_Primitive_0= rulePrimitive | this_Parenthesis_1= ruleParenthesis | this_VariableUse_2= ruleVariableUse | this_ExternalCall_3= ruleExternalCall | ( () otherlv_5= 'value' ) )
-            int alt48=5;
+            // InternalDeviceDefinition.g:2661:2: (this_Primitive_0= rulePrimitive | this_Parenthesis_1= ruleParenthesis | this_VariableUse_2= ruleVariableUse | this_ExternalCall_3= ruleExternalCall | ( () otherlv_5= 'value' ) )
+            int alt50=5;
             switch ( input.LA(1) ) {
             case RULE_DECIMAL:
             case RULE_INT:
-            case 73:
             case 74:
+            case 75:
                 {
-                alt48=1;
+                alt50=1;
                 }
                 break;
             case 30:
                 {
-                alt48=2;
+                alt50=2;
                 }
                 break;
             case RULE_ID:
                 {
-                alt48=3;
+                alt50=3;
+                }
+                break;
+            case 88:
+                {
+                alt50=4;
                 }
                 break;
             case 87:
                 {
-                alt48=4;
-                }
-                break;
-            case 86:
-                {
-                alt48=5;
+                alt50=5;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 48, 0, input);
+                    new NoViableAltException("", 50, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt48) {
+            switch (alt50) {
                 case 1 :
-                    // InternalDeviceDefinition.g:2614:3: this_Primitive_0= rulePrimitive
+                    // InternalDeviceDefinition.g:2662:3: this_Primitive_0= rulePrimitive
                     {
 
                     			newCompositeNode(grammarAccess.getPrimaryAccess().getPrimitiveParserRuleCall_0());
@@ -6439,7 +6545,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                     }
                     break;
                 case 2 :
-                    // InternalDeviceDefinition.g:2623:3: this_Parenthesis_1= ruleParenthesis
+                    // InternalDeviceDefinition.g:2671:3: this_Parenthesis_1= ruleParenthesis
                     {
 
                     			newCompositeNode(grammarAccess.getPrimaryAccess().getParenthesisParserRuleCall_1());
@@ -6457,7 +6563,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                     }
                     break;
                 case 3 :
-                    // InternalDeviceDefinition.g:2632:3: this_VariableUse_2= ruleVariableUse
+                    // InternalDeviceDefinition.g:2680:3: this_VariableUse_2= ruleVariableUse
                     {
 
                     			newCompositeNode(grammarAccess.getPrimaryAccess().getVariableUseParserRuleCall_2());
@@ -6475,7 +6581,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                     }
                     break;
                 case 4 :
-                    // InternalDeviceDefinition.g:2641:3: this_ExternalCall_3= ruleExternalCall
+                    // InternalDeviceDefinition.g:2689:3: this_ExternalCall_3= ruleExternalCall
                     {
 
                     			newCompositeNode(grammarAccess.getPrimaryAccess().getExternalCallParserRuleCall_3());
@@ -6493,13 +6599,13 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                     }
                     break;
                 case 5 :
-                    // InternalDeviceDefinition.g:2650:3: ( () otherlv_5= 'value' )
+                    // InternalDeviceDefinition.g:2698:3: ( () otherlv_5= 'value' )
                     {
-                    // InternalDeviceDefinition.g:2650:3: ( () otherlv_5= 'value' )
-                    // InternalDeviceDefinition.g:2651:4: () otherlv_5= 'value'
+                    // InternalDeviceDefinition.g:2698:3: ( () otherlv_5= 'value' )
+                    // InternalDeviceDefinition.g:2699:4: () otherlv_5= 'value'
                     {
-                    // InternalDeviceDefinition.g:2651:4: ()
-                    // InternalDeviceDefinition.g:2652:5: 
+                    // InternalDeviceDefinition.g:2699:4: ()
+                    // InternalDeviceDefinition.g:2700:5: 
                     {
 
                     					current = forceCreateModelElement(
@@ -6509,7 +6615,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
                     }
 
-                    otherlv_5=(Token)match(input,86,FOLLOW_2); 
+                    otherlv_5=(Token)match(input,87,FOLLOW_2); 
 
                     				newLeafNode(otherlv_5, grammarAccess.getPrimaryAccess().getValueKeyword_4_1());
                     			
@@ -6542,7 +6648,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "entryRuleExternalCall"
-    // InternalDeviceDefinition.g:2667:1: entryRuleExternalCall returns [EObject current=null] : iv_ruleExternalCall= ruleExternalCall EOF ;
+    // InternalDeviceDefinition.g:2715:1: entryRuleExternalCall returns [EObject current=null] : iv_ruleExternalCall= ruleExternalCall EOF ;
     public final EObject entryRuleExternalCall() throws RecognitionException {
         EObject current = null;
 
@@ -6550,8 +6656,8 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
         try {
-            // InternalDeviceDefinition.g:2667:53: (iv_ruleExternalCall= ruleExternalCall EOF )
-            // InternalDeviceDefinition.g:2668:2: iv_ruleExternalCall= ruleExternalCall EOF
+            // InternalDeviceDefinition.g:2715:53: (iv_ruleExternalCall= ruleExternalCall EOF )
+            // InternalDeviceDefinition.g:2716:2: iv_ruleExternalCall= ruleExternalCall EOF
             {
              newCompositeNode(grammarAccess.getExternalCallRule()); 
             pushFollow(FOLLOW_1);
@@ -6578,7 +6684,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "ruleExternalCall"
-    // InternalDeviceDefinition.g:2674:1: ruleExternalCall returns [EObject current=null] : (otherlv_0= 'call' ( (lv_func_1_0= RULE_ID ) ) otherlv_2= '(' ( (lv_args_3_0= ruleExp ) )? (otherlv_4= ',' ( (lv_args_5_0= ruleExp ) ) )* otherlv_6= ')' ) ;
+    // InternalDeviceDefinition.g:2722:1: ruleExternalCall returns [EObject current=null] : (otherlv_0= 'call' ( (lv_func_1_0= RULE_ID ) ) otherlv_2= '(' ( (lv_args_3_0= ruleExp ) )? (otherlv_4= ',' ( (lv_args_5_0= ruleExp ) ) )* otherlv_6= ')' ) ;
     public final EObject ruleExternalCall() throws RecognitionException {
         EObject current = null;
 
@@ -6596,23 +6702,23 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
         	enterRule();
 
         try {
-            // InternalDeviceDefinition.g:2680:2: ( (otherlv_0= 'call' ( (lv_func_1_0= RULE_ID ) ) otherlv_2= '(' ( (lv_args_3_0= ruleExp ) )? (otherlv_4= ',' ( (lv_args_5_0= ruleExp ) ) )* otherlv_6= ')' ) )
-            // InternalDeviceDefinition.g:2681:2: (otherlv_0= 'call' ( (lv_func_1_0= RULE_ID ) ) otherlv_2= '(' ( (lv_args_3_0= ruleExp ) )? (otherlv_4= ',' ( (lv_args_5_0= ruleExp ) ) )* otherlv_6= ')' )
+            // InternalDeviceDefinition.g:2728:2: ( (otherlv_0= 'call' ( (lv_func_1_0= RULE_ID ) ) otherlv_2= '(' ( (lv_args_3_0= ruleExp ) )? (otherlv_4= ',' ( (lv_args_5_0= ruleExp ) ) )* otherlv_6= ')' ) )
+            // InternalDeviceDefinition.g:2729:2: (otherlv_0= 'call' ( (lv_func_1_0= RULE_ID ) ) otherlv_2= '(' ( (lv_args_3_0= ruleExp ) )? (otherlv_4= ',' ( (lv_args_5_0= ruleExp ) ) )* otherlv_6= ')' )
             {
-            // InternalDeviceDefinition.g:2681:2: (otherlv_0= 'call' ( (lv_func_1_0= RULE_ID ) ) otherlv_2= '(' ( (lv_args_3_0= ruleExp ) )? (otherlv_4= ',' ( (lv_args_5_0= ruleExp ) ) )* otherlv_6= ')' )
-            // InternalDeviceDefinition.g:2682:3: otherlv_0= 'call' ( (lv_func_1_0= RULE_ID ) ) otherlv_2= '(' ( (lv_args_3_0= ruleExp ) )? (otherlv_4= ',' ( (lv_args_5_0= ruleExp ) ) )* otherlv_6= ')'
+            // InternalDeviceDefinition.g:2729:2: (otherlv_0= 'call' ( (lv_func_1_0= RULE_ID ) ) otherlv_2= '(' ( (lv_args_3_0= ruleExp ) )? (otherlv_4= ',' ( (lv_args_5_0= ruleExp ) ) )* otherlv_6= ')' )
+            // InternalDeviceDefinition.g:2730:3: otherlv_0= 'call' ( (lv_func_1_0= RULE_ID ) ) otherlv_2= '(' ( (lv_args_3_0= ruleExp ) )? (otherlv_4= ',' ( (lv_args_5_0= ruleExp ) ) )* otherlv_6= ')'
             {
-            otherlv_0=(Token)match(input,87,FOLLOW_3); 
+            otherlv_0=(Token)match(input,88,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getExternalCallAccess().getCallKeyword_0());
             		
-            // InternalDeviceDefinition.g:2686:3: ( (lv_func_1_0= RULE_ID ) )
-            // InternalDeviceDefinition.g:2687:4: (lv_func_1_0= RULE_ID )
+            // InternalDeviceDefinition.g:2734:3: ( (lv_func_1_0= RULE_ID ) )
+            // InternalDeviceDefinition.g:2735:4: (lv_func_1_0= RULE_ID )
             {
-            // InternalDeviceDefinition.g:2687:4: (lv_func_1_0= RULE_ID )
-            // InternalDeviceDefinition.g:2688:5: lv_func_1_0= RULE_ID
+            // InternalDeviceDefinition.g:2735:4: (lv_func_1_0= RULE_ID )
+            // InternalDeviceDefinition.g:2736:5: lv_func_1_0= RULE_ID
             {
-            lv_func_1_0=(Token)match(input,RULE_ID,FOLLOW_65); 
+            lv_func_1_0=(Token)match(input,RULE_ID,FOLLOW_66); 
 
             					newLeafNode(lv_func_1_0, grammarAccess.getExternalCallAccess().getFuncIDTerminalRuleCall_1_0());
             				
@@ -6632,28 +6738,28 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             }
 
-            otherlv_2=(Token)match(input,30,FOLLOW_66); 
+            otherlv_2=(Token)match(input,30,FOLLOW_67); 
 
             			newLeafNode(otherlv_2, grammarAccess.getExternalCallAccess().getLeftParenthesisKeyword_2());
             		
-            // InternalDeviceDefinition.g:2708:3: ( (lv_args_3_0= ruleExp ) )?
-            int alt49=2;
-            int LA49_0 = input.LA(1);
+            // InternalDeviceDefinition.g:2756:3: ( (lv_args_3_0= ruleExp ) )?
+            int alt51=2;
+            int LA51_0 = input.LA(1);
 
-            if ( (LA49_0==RULE_ID||LA49_0==RULE_DECIMAL||LA49_0==RULE_INT||LA49_0==30||(LA49_0>=73 && LA49_0<=74)||(LA49_0>=86 && LA49_0<=87)) ) {
-                alt49=1;
+            if ( (LA51_0==RULE_ID||LA51_0==RULE_DECIMAL||LA51_0==RULE_INT||LA51_0==30||(LA51_0>=74 && LA51_0<=75)||(LA51_0>=87 && LA51_0<=88)) ) {
+                alt51=1;
             }
-            switch (alt49) {
+            switch (alt51) {
                 case 1 :
-                    // InternalDeviceDefinition.g:2709:4: (lv_args_3_0= ruleExp )
+                    // InternalDeviceDefinition.g:2757:4: (lv_args_3_0= ruleExp )
                     {
-                    // InternalDeviceDefinition.g:2709:4: (lv_args_3_0= ruleExp )
-                    // InternalDeviceDefinition.g:2710:5: lv_args_3_0= ruleExp
+                    // InternalDeviceDefinition.g:2757:4: (lv_args_3_0= ruleExp )
+                    // InternalDeviceDefinition.g:2758:5: lv_args_3_0= ruleExp
                     {
 
                     					newCompositeNode(grammarAccess.getExternalCallAccess().getArgsExpParserRuleCall_3_0());
                     				
-                    pushFollow(FOLLOW_67);
+                    pushFollow(FOLLOW_68);
                     lv_args_3_0=ruleExp();
 
                     state._fsp--;
@@ -6678,35 +6784,35 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             }
 
-            // InternalDeviceDefinition.g:2727:3: (otherlv_4= ',' ( (lv_args_5_0= ruleExp ) ) )*
-            loop50:
+            // InternalDeviceDefinition.g:2775:3: (otherlv_4= ',' ( (lv_args_5_0= ruleExp ) ) )*
+            loop52:
             do {
-                int alt50=2;
-                int LA50_0 = input.LA(1);
+                int alt52=2;
+                int LA52_0 = input.LA(1);
 
-                if ( (LA50_0==31) ) {
-                    alt50=1;
+                if ( (LA52_0==31) ) {
+                    alt52=1;
                 }
 
 
-                switch (alt50) {
+                switch (alt52) {
             	case 1 :
-            	    // InternalDeviceDefinition.g:2728:4: otherlv_4= ',' ( (lv_args_5_0= ruleExp ) )
+            	    // InternalDeviceDefinition.g:2776:4: otherlv_4= ',' ( (lv_args_5_0= ruleExp ) )
             	    {
-            	    otherlv_4=(Token)match(input,31,FOLLOW_49); 
+            	    otherlv_4=(Token)match(input,31,FOLLOW_50); 
 
             	    				newLeafNode(otherlv_4, grammarAccess.getExternalCallAccess().getCommaKeyword_4_0());
             	    			
-            	    // InternalDeviceDefinition.g:2732:4: ( (lv_args_5_0= ruleExp ) )
-            	    // InternalDeviceDefinition.g:2733:5: (lv_args_5_0= ruleExp )
+            	    // InternalDeviceDefinition.g:2780:4: ( (lv_args_5_0= ruleExp ) )
+            	    // InternalDeviceDefinition.g:2781:5: (lv_args_5_0= ruleExp )
             	    {
-            	    // InternalDeviceDefinition.g:2733:5: (lv_args_5_0= ruleExp )
-            	    // InternalDeviceDefinition.g:2734:6: lv_args_5_0= ruleExp
+            	    // InternalDeviceDefinition.g:2781:5: (lv_args_5_0= ruleExp )
+            	    // InternalDeviceDefinition.g:2782:6: lv_args_5_0= ruleExp
             	    {
 
             	    						newCompositeNode(grammarAccess.getExternalCallAccess().getArgsExpParserRuleCall_4_1_0());
             	    					
-            	    pushFollow(FOLLOW_67);
+            	    pushFollow(FOLLOW_68);
             	    lv_args_5_0=ruleExp();
 
             	    state._fsp--;
@@ -6733,7 +6839,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
             	    break;
 
             	default :
-            	    break loop50;
+            	    break loop52;
                 }
             } while (true);
 
@@ -6764,7 +6870,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "entryRuleInternalVariableUse"
-    // InternalDeviceDefinition.g:2760:1: entryRuleInternalVariableUse returns [EObject current=null] : iv_ruleInternalVariableUse= ruleInternalVariableUse EOF ;
+    // InternalDeviceDefinition.g:2808:1: entryRuleInternalVariableUse returns [EObject current=null] : iv_ruleInternalVariableUse= ruleInternalVariableUse EOF ;
     public final EObject entryRuleInternalVariableUse() throws RecognitionException {
         EObject current = null;
 
@@ -6772,8 +6878,8 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
         try {
-            // InternalDeviceDefinition.g:2760:60: (iv_ruleInternalVariableUse= ruleInternalVariableUse EOF )
-            // InternalDeviceDefinition.g:2761:2: iv_ruleInternalVariableUse= ruleInternalVariableUse EOF
+            // InternalDeviceDefinition.g:2808:60: (iv_ruleInternalVariableUse= ruleInternalVariableUse EOF )
+            // InternalDeviceDefinition.g:2809:2: iv_ruleInternalVariableUse= ruleInternalVariableUse EOF
             {
              newCompositeNode(grammarAccess.getInternalVariableUseRule()); 
             pushFollow(FOLLOW_1);
@@ -6800,7 +6906,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "ruleInternalVariableUse"
-    // InternalDeviceDefinition.g:2767:1: ruleInternalVariableUse returns [EObject current=null] : ( (otherlv_0= RULE_ID ) ) ;
+    // InternalDeviceDefinition.g:2815:1: ruleInternalVariableUse returns [EObject current=null] : ( (otherlv_0= RULE_ID ) ) ;
     public final EObject ruleInternalVariableUse() throws RecognitionException {
         EObject current = null;
 
@@ -6810,14 +6916,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
         	enterRule();
 
         try {
-            // InternalDeviceDefinition.g:2773:2: ( ( (otherlv_0= RULE_ID ) ) )
-            // InternalDeviceDefinition.g:2774:2: ( (otherlv_0= RULE_ID ) )
+            // InternalDeviceDefinition.g:2821:2: ( ( (otherlv_0= RULE_ID ) ) )
+            // InternalDeviceDefinition.g:2822:2: ( (otherlv_0= RULE_ID ) )
             {
-            // InternalDeviceDefinition.g:2774:2: ( (otherlv_0= RULE_ID ) )
-            // InternalDeviceDefinition.g:2775:3: (otherlv_0= RULE_ID )
+            // InternalDeviceDefinition.g:2822:2: ( (otherlv_0= RULE_ID ) )
+            // InternalDeviceDefinition.g:2823:3: (otherlv_0= RULE_ID )
             {
-            // InternalDeviceDefinition.g:2775:3: (otherlv_0= RULE_ID )
-            // InternalDeviceDefinition.g:2776:4: otherlv_0= RULE_ID
+            // InternalDeviceDefinition.g:2823:3: (otherlv_0= RULE_ID )
+            // InternalDeviceDefinition.g:2824:4: otherlv_0= RULE_ID
             {
 
             				if (current==null) {
@@ -6854,7 +6960,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "entryRuleExternalVariableUse"
-    // InternalDeviceDefinition.g:2790:1: entryRuleExternalVariableUse returns [EObject current=null] : iv_ruleExternalVariableUse= ruleExternalVariableUse EOF ;
+    // InternalDeviceDefinition.g:2838:1: entryRuleExternalVariableUse returns [EObject current=null] : iv_ruleExternalVariableUse= ruleExternalVariableUse EOF ;
     public final EObject entryRuleExternalVariableUse() throws RecognitionException {
         EObject current = null;
 
@@ -6862,8 +6968,8 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
         try {
-            // InternalDeviceDefinition.g:2790:60: (iv_ruleExternalVariableUse= ruleExternalVariableUse EOF )
-            // InternalDeviceDefinition.g:2791:2: iv_ruleExternalVariableUse= ruleExternalVariableUse EOF
+            // InternalDeviceDefinition.g:2838:60: (iv_ruleExternalVariableUse= ruleExternalVariableUse EOF )
+            // InternalDeviceDefinition.g:2839:2: iv_ruleExternalVariableUse= ruleExternalVariableUse EOF
             {
              newCompositeNode(grammarAccess.getExternalVariableUseRule()); 
             pushFollow(FOLLOW_1);
@@ -6890,7 +6996,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "ruleExternalVariableUse"
-    // InternalDeviceDefinition.g:2797:1: ruleExternalVariableUse returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '.' | otherlv_2= '->' ) ( (otherlv_3= RULE_ID ) ) ) ;
+    // InternalDeviceDefinition.g:2845:1: ruleExternalVariableUse returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '.' | otherlv_2= '->' ) ( (otherlv_3= RULE_ID ) ) ) ;
     public final EObject ruleExternalVariableUse() throws RecognitionException {
         EObject current = null;
 
@@ -6903,24 +7009,24 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
         	enterRule();
 
         try {
-            // InternalDeviceDefinition.g:2803:2: ( ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '.' | otherlv_2= '->' ) ( (otherlv_3= RULE_ID ) ) ) )
-            // InternalDeviceDefinition.g:2804:2: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '.' | otherlv_2= '->' ) ( (otherlv_3= RULE_ID ) ) )
+            // InternalDeviceDefinition.g:2851:2: ( ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '.' | otherlv_2= '->' ) ( (otherlv_3= RULE_ID ) ) ) )
+            // InternalDeviceDefinition.g:2852:2: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '.' | otherlv_2= '->' ) ( (otherlv_3= RULE_ID ) ) )
             {
-            // InternalDeviceDefinition.g:2804:2: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '.' | otherlv_2= '->' ) ( (otherlv_3= RULE_ID ) ) )
-            // InternalDeviceDefinition.g:2805:3: ( (otherlv_0= RULE_ID ) ) (otherlv_1= '.' | otherlv_2= '->' ) ( (otherlv_3= RULE_ID ) )
+            // InternalDeviceDefinition.g:2852:2: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '.' | otherlv_2= '->' ) ( (otherlv_3= RULE_ID ) ) )
+            // InternalDeviceDefinition.g:2853:3: ( (otherlv_0= RULE_ID ) ) (otherlv_1= '.' | otherlv_2= '->' ) ( (otherlv_3= RULE_ID ) )
             {
-            // InternalDeviceDefinition.g:2805:3: ( (otherlv_0= RULE_ID ) )
-            // InternalDeviceDefinition.g:2806:4: (otherlv_0= RULE_ID )
+            // InternalDeviceDefinition.g:2853:3: ( (otherlv_0= RULE_ID ) )
+            // InternalDeviceDefinition.g:2854:4: (otherlv_0= RULE_ID )
             {
-            // InternalDeviceDefinition.g:2806:4: (otherlv_0= RULE_ID )
-            // InternalDeviceDefinition.g:2807:5: otherlv_0= RULE_ID
+            // InternalDeviceDefinition.g:2854:4: (otherlv_0= RULE_ID )
+            // InternalDeviceDefinition.g:2855:5: otherlv_0= RULE_ID
             {
 
             					if (current==null) {
             						current = createModelElement(grammarAccess.getExternalVariableUseRule());
             					}
             				
-            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_68); 
+            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_69); 
 
             					newLeafNode(otherlv_0, grammarAccess.getExternalVariableUseAccess().getObjDeviceCrossReference_0_0());
             				
@@ -6930,27 +7036,27 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             }
 
-            // InternalDeviceDefinition.g:2818:3: (otherlv_1= '.' | otherlv_2= '->' )
-            int alt51=2;
-            int LA51_0 = input.LA(1);
+            // InternalDeviceDefinition.g:2866:3: (otherlv_1= '.' | otherlv_2= '->' )
+            int alt53=2;
+            int LA53_0 = input.LA(1);
 
-            if ( (LA51_0==88) ) {
-                alt51=1;
+            if ( (LA53_0==89) ) {
+                alt53=1;
             }
-            else if ( (LA51_0==89) ) {
-                alt51=2;
+            else if ( (LA53_0==90) ) {
+                alt53=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 51, 0, input);
+                    new NoViableAltException("", 53, 0, input);
 
                 throw nvae;
             }
-            switch (alt51) {
+            switch (alt53) {
                 case 1 :
-                    // InternalDeviceDefinition.g:2819:4: otherlv_1= '.'
+                    // InternalDeviceDefinition.g:2867:4: otherlv_1= '.'
                     {
-                    otherlv_1=(Token)match(input,88,FOLLOW_3); 
+                    otherlv_1=(Token)match(input,89,FOLLOW_3); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getExternalVariableUseAccess().getFullStopKeyword_1_0());
                     			
@@ -6958,9 +7064,9 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                     }
                     break;
                 case 2 :
-                    // InternalDeviceDefinition.g:2824:4: otherlv_2= '->'
+                    // InternalDeviceDefinition.g:2872:4: otherlv_2= '->'
                     {
-                    otherlv_2=(Token)match(input,89,FOLLOW_3); 
+                    otherlv_2=(Token)match(input,90,FOLLOW_3); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getExternalVariableUseAccess().getHyphenMinusGreaterThanSignKeyword_1_1());
                     			
@@ -6970,11 +7076,11 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             }
 
-            // InternalDeviceDefinition.g:2829:3: ( (otherlv_3= RULE_ID ) )
-            // InternalDeviceDefinition.g:2830:4: (otherlv_3= RULE_ID )
+            // InternalDeviceDefinition.g:2877:3: ( (otherlv_3= RULE_ID ) )
+            // InternalDeviceDefinition.g:2878:4: (otherlv_3= RULE_ID )
             {
-            // InternalDeviceDefinition.g:2830:4: (otherlv_3= RULE_ID )
-            // InternalDeviceDefinition.g:2831:5: otherlv_3= RULE_ID
+            // InternalDeviceDefinition.g:2878:4: (otherlv_3= RULE_ID )
+            // InternalDeviceDefinition.g:2879:5: otherlv_3= RULE_ID
             {
 
             					if (current==null) {
@@ -7014,7 +7120,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "entryRuleGraphVariableUse"
-    // InternalDeviceDefinition.g:2846:1: entryRuleGraphVariableUse returns [EObject current=null] : iv_ruleGraphVariableUse= ruleGraphVariableUse EOF ;
+    // InternalDeviceDefinition.g:2894:1: entryRuleGraphVariableUse returns [EObject current=null] : iv_ruleGraphVariableUse= ruleGraphVariableUse EOF ;
     public final EObject entryRuleGraphVariableUse() throws RecognitionException {
         EObject current = null;
 
@@ -7022,8 +7128,8 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
         try {
-            // InternalDeviceDefinition.g:2846:57: (iv_ruleGraphVariableUse= ruleGraphVariableUse EOF )
-            // InternalDeviceDefinition.g:2847:2: iv_ruleGraphVariableUse= ruleGraphVariableUse EOF
+            // InternalDeviceDefinition.g:2894:57: (iv_ruleGraphVariableUse= ruleGraphVariableUse EOF )
+            // InternalDeviceDefinition.g:2895:2: iv_ruleGraphVariableUse= ruleGraphVariableUse EOF
             {
              newCompositeNode(grammarAccess.getGraphVariableUseRule()); 
             pushFollow(FOLLOW_1);
@@ -7050,7 +7156,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "ruleGraphVariableUse"
-    // InternalDeviceDefinition.g:2853:1: ruleGraphVariableUse returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '.' | otherlv_2= '->' ) ( (otherlv_3= RULE_ID ) ) (otherlv_4= '.' | otherlv_5= '->' ) ( (otherlv_6= RULE_ID ) ) ) ;
+    // InternalDeviceDefinition.g:2901:1: ruleGraphVariableUse returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '.' | otherlv_2= '->' ) ( (otherlv_3= RULE_ID ) ) (otherlv_4= '.' | otherlv_5= '->' ) ( (otherlv_6= RULE_ID ) ) ) ;
     public final EObject ruleGraphVariableUse() throws RecognitionException {
         EObject current = null;
 
@@ -7066,24 +7172,24 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
         	enterRule();
 
         try {
-            // InternalDeviceDefinition.g:2859:2: ( ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '.' | otherlv_2= '->' ) ( (otherlv_3= RULE_ID ) ) (otherlv_4= '.' | otherlv_5= '->' ) ( (otherlv_6= RULE_ID ) ) ) )
-            // InternalDeviceDefinition.g:2860:2: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '.' | otherlv_2= '->' ) ( (otherlv_3= RULE_ID ) ) (otherlv_4= '.' | otherlv_5= '->' ) ( (otherlv_6= RULE_ID ) ) )
+            // InternalDeviceDefinition.g:2907:2: ( ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '.' | otherlv_2= '->' ) ( (otherlv_3= RULE_ID ) ) (otherlv_4= '.' | otherlv_5= '->' ) ( (otherlv_6= RULE_ID ) ) ) )
+            // InternalDeviceDefinition.g:2908:2: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '.' | otherlv_2= '->' ) ( (otherlv_3= RULE_ID ) ) (otherlv_4= '.' | otherlv_5= '->' ) ( (otherlv_6= RULE_ID ) ) )
             {
-            // InternalDeviceDefinition.g:2860:2: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '.' | otherlv_2= '->' ) ( (otherlv_3= RULE_ID ) ) (otherlv_4= '.' | otherlv_5= '->' ) ( (otherlv_6= RULE_ID ) ) )
-            // InternalDeviceDefinition.g:2861:3: ( (otherlv_0= RULE_ID ) ) (otherlv_1= '.' | otherlv_2= '->' ) ( (otherlv_3= RULE_ID ) ) (otherlv_4= '.' | otherlv_5= '->' ) ( (otherlv_6= RULE_ID ) )
+            // InternalDeviceDefinition.g:2908:2: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '.' | otherlv_2= '->' ) ( (otherlv_3= RULE_ID ) ) (otherlv_4= '.' | otherlv_5= '->' ) ( (otherlv_6= RULE_ID ) ) )
+            // InternalDeviceDefinition.g:2909:3: ( (otherlv_0= RULE_ID ) ) (otherlv_1= '.' | otherlv_2= '->' ) ( (otherlv_3= RULE_ID ) ) (otherlv_4= '.' | otherlv_5= '->' ) ( (otherlv_6= RULE_ID ) )
             {
-            // InternalDeviceDefinition.g:2861:3: ( (otherlv_0= RULE_ID ) )
-            // InternalDeviceDefinition.g:2862:4: (otherlv_0= RULE_ID )
+            // InternalDeviceDefinition.g:2909:3: ( (otherlv_0= RULE_ID ) )
+            // InternalDeviceDefinition.g:2910:4: (otherlv_0= RULE_ID )
             {
-            // InternalDeviceDefinition.g:2862:4: (otherlv_0= RULE_ID )
-            // InternalDeviceDefinition.g:2863:5: otherlv_0= RULE_ID
+            // InternalDeviceDefinition.g:2910:4: (otherlv_0= RULE_ID )
+            // InternalDeviceDefinition.g:2911:5: otherlv_0= RULE_ID
             {
 
             					if (current==null) {
             						current = createModelElement(grammarAccess.getGraphVariableUseRule());
             					}
             				
-            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_68); 
+            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_69); 
 
             					newLeafNode(otherlv_0, grammarAccess.getGraphVariableUseAccess().getWorkerWorkerCrossReference_0_0());
             				
@@ -7093,27 +7199,27 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             }
 
-            // InternalDeviceDefinition.g:2874:3: (otherlv_1= '.' | otherlv_2= '->' )
-            int alt52=2;
-            int LA52_0 = input.LA(1);
+            // InternalDeviceDefinition.g:2922:3: (otherlv_1= '.' | otherlv_2= '->' )
+            int alt54=2;
+            int LA54_0 = input.LA(1);
 
-            if ( (LA52_0==88) ) {
-                alt52=1;
+            if ( (LA54_0==89) ) {
+                alt54=1;
             }
-            else if ( (LA52_0==89) ) {
-                alt52=2;
+            else if ( (LA54_0==90) ) {
+                alt54=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 52, 0, input);
+                    new NoViableAltException("", 54, 0, input);
 
                 throw nvae;
             }
-            switch (alt52) {
+            switch (alt54) {
                 case 1 :
-                    // InternalDeviceDefinition.g:2875:4: otherlv_1= '.'
+                    // InternalDeviceDefinition.g:2923:4: otherlv_1= '.'
                     {
-                    otherlv_1=(Token)match(input,88,FOLLOW_3); 
+                    otherlv_1=(Token)match(input,89,FOLLOW_3); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getGraphVariableUseAccess().getFullStopKeyword_1_0());
                     			
@@ -7121,9 +7227,9 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                     }
                     break;
                 case 2 :
-                    // InternalDeviceDefinition.g:2880:4: otherlv_2= '->'
+                    // InternalDeviceDefinition.g:2928:4: otherlv_2= '->'
                     {
-                    otherlv_2=(Token)match(input,89,FOLLOW_3); 
+                    otherlv_2=(Token)match(input,90,FOLLOW_3); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getGraphVariableUseAccess().getHyphenMinusGreaterThanSignKeyword_1_1());
                     			
@@ -7133,18 +7239,18 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             }
 
-            // InternalDeviceDefinition.g:2885:3: ( (otherlv_3= RULE_ID ) )
-            // InternalDeviceDefinition.g:2886:4: (otherlv_3= RULE_ID )
+            // InternalDeviceDefinition.g:2933:3: ( (otherlv_3= RULE_ID ) )
+            // InternalDeviceDefinition.g:2934:4: (otherlv_3= RULE_ID )
             {
-            // InternalDeviceDefinition.g:2886:4: (otherlv_3= RULE_ID )
-            // InternalDeviceDefinition.g:2887:5: otherlv_3= RULE_ID
+            // InternalDeviceDefinition.g:2934:4: (otherlv_3= RULE_ID )
+            // InternalDeviceDefinition.g:2935:5: otherlv_3= RULE_ID
             {
 
             					if (current==null) {
             						current = createModelElement(grammarAccess.getGraphVariableUseRule());
             					}
             				
-            otherlv_3=(Token)match(input,RULE_ID,FOLLOW_68); 
+            otherlv_3=(Token)match(input,RULE_ID,FOLLOW_69); 
 
             					newLeafNode(otherlv_3, grammarAccess.getGraphVariableUseAccess().getDeviceDeviceCrossReference_2_0());
             				
@@ -7154,27 +7260,27 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             }
 
-            // InternalDeviceDefinition.g:2898:3: (otherlv_4= '.' | otherlv_5= '->' )
-            int alt53=2;
-            int LA53_0 = input.LA(1);
+            // InternalDeviceDefinition.g:2946:3: (otherlv_4= '.' | otherlv_5= '->' )
+            int alt55=2;
+            int LA55_0 = input.LA(1);
 
-            if ( (LA53_0==88) ) {
-                alt53=1;
+            if ( (LA55_0==89) ) {
+                alt55=1;
             }
-            else if ( (LA53_0==89) ) {
-                alt53=2;
+            else if ( (LA55_0==90) ) {
+                alt55=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 53, 0, input);
+                    new NoViableAltException("", 55, 0, input);
 
                 throw nvae;
             }
-            switch (alt53) {
+            switch (alt55) {
                 case 1 :
-                    // InternalDeviceDefinition.g:2899:4: otherlv_4= '.'
+                    // InternalDeviceDefinition.g:2947:4: otherlv_4= '.'
                     {
-                    otherlv_4=(Token)match(input,88,FOLLOW_3); 
+                    otherlv_4=(Token)match(input,89,FOLLOW_3); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getGraphVariableUseAccess().getFullStopKeyword_3_0());
                     			
@@ -7182,9 +7288,9 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                     }
                     break;
                 case 2 :
-                    // InternalDeviceDefinition.g:2904:4: otherlv_5= '->'
+                    // InternalDeviceDefinition.g:2952:4: otherlv_5= '->'
                     {
-                    otherlv_5=(Token)match(input,89,FOLLOW_3); 
+                    otherlv_5=(Token)match(input,90,FOLLOW_3); 
 
                     				newLeafNode(otherlv_5, grammarAccess.getGraphVariableUseAccess().getHyphenMinusGreaterThanSignKeyword_3_1());
                     			
@@ -7194,11 +7300,11 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
             }
 
-            // InternalDeviceDefinition.g:2909:3: ( (otherlv_6= RULE_ID ) )
-            // InternalDeviceDefinition.g:2910:4: (otherlv_6= RULE_ID )
+            // InternalDeviceDefinition.g:2957:3: ( (otherlv_6= RULE_ID ) )
+            // InternalDeviceDefinition.g:2958:4: (otherlv_6= RULE_ID )
             {
-            // InternalDeviceDefinition.g:2910:4: (otherlv_6= RULE_ID )
-            // InternalDeviceDefinition.g:2911:5: otherlv_6= RULE_ID
+            // InternalDeviceDefinition.g:2958:4: (otherlv_6= RULE_ID )
+            // InternalDeviceDefinition.g:2959:5: otherlv_6= RULE_ID
             {
 
             					if (current==null) {
@@ -7238,7 +7344,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "entryRuleVariableUse"
-    // InternalDeviceDefinition.g:2926:1: entryRuleVariableUse returns [EObject current=null] : iv_ruleVariableUse= ruleVariableUse EOF ;
+    // InternalDeviceDefinition.g:2974:1: entryRuleVariableUse returns [EObject current=null] : iv_ruleVariableUse= ruleVariableUse EOF ;
     public final EObject entryRuleVariableUse() throws RecognitionException {
         EObject current = null;
 
@@ -7246,8 +7352,8 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
         try {
-            // InternalDeviceDefinition.g:2926:52: (iv_ruleVariableUse= ruleVariableUse EOF )
-            // InternalDeviceDefinition.g:2927:2: iv_ruleVariableUse= ruleVariableUse EOF
+            // InternalDeviceDefinition.g:2974:52: (iv_ruleVariableUse= ruleVariableUse EOF )
+            // InternalDeviceDefinition.g:2975:2: iv_ruleVariableUse= ruleVariableUse EOF
             {
              newCompositeNode(grammarAccess.getVariableUseRule()); 
             pushFollow(FOLLOW_1);
@@ -7274,7 +7380,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "ruleVariableUse"
-    // InternalDeviceDefinition.g:2933:1: ruleVariableUse returns [EObject current=null] : (this_InternalVariableUse_0= ruleInternalVariableUse | this_ExternalVariableUse_1= ruleExternalVariableUse | this_GraphVariableUse_2= ruleGraphVariableUse ) ;
+    // InternalDeviceDefinition.g:2981:1: ruleVariableUse returns [EObject current=null] : (this_InternalVariableUse_0= ruleInternalVariableUse | this_ExternalVariableUse_1= ruleExternalVariableUse | this_GraphVariableUse_2= ruleGraphVariableUse ) ;
     public final EObject ruleVariableUse() throws RecognitionException {
         EObject current = null;
 
@@ -7289,66 +7395,66 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
         	enterRule();
 
         try {
-            // InternalDeviceDefinition.g:2939:2: ( (this_InternalVariableUse_0= ruleInternalVariableUse | this_ExternalVariableUse_1= ruleExternalVariableUse | this_GraphVariableUse_2= ruleGraphVariableUse ) )
-            // InternalDeviceDefinition.g:2940:2: (this_InternalVariableUse_0= ruleInternalVariableUse | this_ExternalVariableUse_1= ruleExternalVariableUse | this_GraphVariableUse_2= ruleGraphVariableUse )
+            // InternalDeviceDefinition.g:2987:2: ( (this_InternalVariableUse_0= ruleInternalVariableUse | this_ExternalVariableUse_1= ruleExternalVariableUse | this_GraphVariableUse_2= ruleGraphVariableUse ) )
+            // InternalDeviceDefinition.g:2988:2: (this_InternalVariableUse_0= ruleInternalVariableUse | this_ExternalVariableUse_1= ruleExternalVariableUse | this_GraphVariableUse_2= ruleGraphVariableUse )
             {
-            // InternalDeviceDefinition.g:2940:2: (this_InternalVariableUse_0= ruleInternalVariableUse | this_ExternalVariableUse_1= ruleExternalVariableUse | this_GraphVariableUse_2= ruleGraphVariableUse )
-            int alt54=3;
-            int LA54_0 = input.LA(1);
+            // InternalDeviceDefinition.g:2988:2: (this_InternalVariableUse_0= ruleInternalVariableUse | this_ExternalVariableUse_1= ruleExternalVariableUse | this_GraphVariableUse_2= ruleGraphVariableUse )
+            int alt56=3;
+            int LA56_0 = input.LA(1);
 
-            if ( (LA54_0==RULE_ID) ) {
+            if ( (LA56_0==RULE_ID) ) {
                 switch ( input.LA(2) ) {
-                case 88:
+                case 89:
                     {
-                    int LA54_2 = input.LA(3);
+                    int LA56_2 = input.LA(3);
 
-                    if ( (LA54_2==RULE_ID) ) {
-                        int LA54_5 = input.LA(4);
+                    if ( (LA56_2==RULE_ID) ) {
+                        int LA56_5 = input.LA(4);
 
-                        if ( ((LA54_5>=88 && LA54_5<=89)) ) {
-                            alt54=3;
+                        if ( ((LA56_5>=89 && LA56_5<=90)) ) {
+                            alt56=3;
                         }
-                        else if ( (LA54_5==EOF||(LA54_5>=21 && LA54_5<=22)||(LA54_5>=31 && LA54_5<=32)||LA54_5==41||LA54_5==44||LA54_5==46||LA54_5==51||LA54_5==66||(LA54_5>=69 && LA54_5<=71)||(LA54_5>=75 && LA54_5<=85)) ) {
-                            alt54=2;
+                        else if ( (LA56_5==EOF||(LA56_5>=21 && LA56_5<=22)||(LA56_5>=31 && LA56_5<=32)||LA56_5==41||LA56_5==45||LA56_5==47||LA56_5==52||LA56_5==67||(LA56_5>=70 && LA56_5<=72)||(LA56_5>=76 && LA56_5<=86)) ) {
+                            alt56=2;
                         }
                         else {
                             NoViableAltException nvae =
-                                new NoViableAltException("", 54, 5, input);
+                                new NoViableAltException("", 56, 5, input);
 
                             throw nvae;
                         }
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 54, 2, input);
+                            new NoViableAltException("", 56, 2, input);
 
                         throw nvae;
                     }
                     }
                     break;
-                case 89:
+                case 90:
                     {
-                    int LA54_3 = input.LA(3);
+                    int LA56_3 = input.LA(3);
 
-                    if ( (LA54_3==RULE_ID) ) {
-                        int LA54_5 = input.LA(4);
+                    if ( (LA56_3==RULE_ID) ) {
+                        int LA56_5 = input.LA(4);
 
-                        if ( ((LA54_5>=88 && LA54_5<=89)) ) {
-                            alt54=3;
+                        if ( ((LA56_5>=89 && LA56_5<=90)) ) {
+                            alt56=3;
                         }
-                        else if ( (LA54_5==EOF||(LA54_5>=21 && LA54_5<=22)||(LA54_5>=31 && LA54_5<=32)||LA54_5==41||LA54_5==44||LA54_5==46||LA54_5==51||LA54_5==66||(LA54_5>=69 && LA54_5<=71)||(LA54_5>=75 && LA54_5<=85)) ) {
-                            alt54=2;
+                        else if ( (LA56_5==EOF||(LA56_5>=21 && LA56_5<=22)||(LA56_5>=31 && LA56_5<=32)||LA56_5==41||LA56_5==45||LA56_5==47||LA56_5==52||LA56_5==67||(LA56_5>=70 && LA56_5<=72)||(LA56_5>=76 && LA56_5<=86)) ) {
+                            alt56=2;
                         }
                         else {
                             NoViableAltException nvae =
-                                new NoViableAltException("", 54, 5, input);
+                                new NoViableAltException("", 56, 5, input);
 
                             throw nvae;
                         }
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 54, 3, input);
+                            new NoViableAltException("", 56, 3, input);
 
                         throw nvae;
                     }
@@ -7360,14 +7466,13 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                 case 31:
                 case 32:
                 case 41:
-                case 44:
-                case 46:
-                case 51:
-                case 66:
-                case 69:
+                case 45:
+                case 47:
+                case 52:
+                case 67:
                 case 70:
                 case 71:
-                case 75:
+                case 72:
                 case 76:
                 case 77:
                 case 78:
@@ -7378,13 +7483,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                 case 83:
                 case 84:
                 case 85:
+                case 86:
                     {
-                    alt54=1;
+                    alt56=1;
                     }
                     break;
                 default:
                     NoViableAltException nvae =
-                        new NoViableAltException("", 54, 1, input);
+                        new NoViableAltException("", 56, 1, input);
 
                     throw nvae;
                 }
@@ -7392,13 +7498,13 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 54, 0, input);
+                    new NoViableAltException("", 56, 0, input);
 
                 throw nvae;
             }
-            switch (alt54) {
+            switch (alt56) {
                 case 1 :
-                    // InternalDeviceDefinition.g:2941:3: this_InternalVariableUse_0= ruleInternalVariableUse
+                    // InternalDeviceDefinition.g:2989:3: this_InternalVariableUse_0= ruleInternalVariableUse
                     {
 
                     			newCompositeNode(grammarAccess.getVariableUseAccess().getInternalVariableUseParserRuleCall_0());
@@ -7416,7 +7522,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                     }
                     break;
                 case 2 :
-                    // InternalDeviceDefinition.g:2950:3: this_ExternalVariableUse_1= ruleExternalVariableUse
+                    // InternalDeviceDefinition.g:2998:3: this_ExternalVariableUse_1= ruleExternalVariableUse
                     {
 
                     			newCompositeNode(grammarAccess.getVariableUseAccess().getExternalVariableUseParserRuleCall_1());
@@ -7434,7 +7540,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                     }
                     break;
                 case 3 :
-                    // InternalDeviceDefinition.g:2959:3: this_GraphVariableUse_2= ruleGraphVariableUse
+                    // InternalDeviceDefinition.g:3007:3: this_GraphVariableUse_2= ruleGraphVariableUse
                     {
 
                     			newCompositeNode(grammarAccess.getVariableUseAccess().getGraphVariableUseParserRuleCall_2());
@@ -7474,7 +7580,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "entryRuleParenthesis"
-    // InternalDeviceDefinition.g:2971:1: entryRuleParenthesis returns [EObject current=null] : iv_ruleParenthesis= ruleParenthesis EOF ;
+    // InternalDeviceDefinition.g:3019:1: entryRuleParenthesis returns [EObject current=null] : iv_ruleParenthesis= ruleParenthesis EOF ;
     public final EObject entryRuleParenthesis() throws RecognitionException {
         EObject current = null;
 
@@ -7482,8 +7588,8 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
         try {
-            // InternalDeviceDefinition.g:2971:52: (iv_ruleParenthesis= ruleParenthesis EOF )
-            // InternalDeviceDefinition.g:2972:2: iv_ruleParenthesis= ruleParenthesis EOF
+            // InternalDeviceDefinition.g:3019:52: (iv_ruleParenthesis= ruleParenthesis EOF )
+            // InternalDeviceDefinition.g:3020:2: iv_ruleParenthesis= ruleParenthesis EOF
             {
              newCompositeNode(grammarAccess.getParenthesisRule()); 
             pushFollow(FOLLOW_1);
@@ -7510,7 +7616,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "ruleParenthesis"
-    // InternalDeviceDefinition.g:2978:1: ruleParenthesis returns [EObject current=null] : (otherlv_0= '(' ( (lv_exp_1_0= ruleExp ) ) otherlv_2= ')' ) ;
+    // InternalDeviceDefinition.g:3026:1: ruleParenthesis returns [EObject current=null] : (otherlv_0= '(' ( (lv_exp_1_0= ruleExp ) ) otherlv_2= ')' ) ;
     public final EObject ruleParenthesis() throws RecognitionException {
         EObject current = null;
 
@@ -7523,21 +7629,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
         	enterRule();
 
         try {
-            // InternalDeviceDefinition.g:2984:2: ( (otherlv_0= '(' ( (lv_exp_1_0= ruleExp ) ) otherlv_2= ')' ) )
-            // InternalDeviceDefinition.g:2985:2: (otherlv_0= '(' ( (lv_exp_1_0= ruleExp ) ) otherlv_2= ')' )
+            // InternalDeviceDefinition.g:3032:2: ( (otherlv_0= '(' ( (lv_exp_1_0= ruleExp ) ) otherlv_2= ')' ) )
+            // InternalDeviceDefinition.g:3033:2: (otherlv_0= '(' ( (lv_exp_1_0= ruleExp ) ) otherlv_2= ')' )
             {
-            // InternalDeviceDefinition.g:2985:2: (otherlv_0= '(' ( (lv_exp_1_0= ruleExp ) ) otherlv_2= ')' )
-            // InternalDeviceDefinition.g:2986:3: otherlv_0= '(' ( (lv_exp_1_0= ruleExp ) ) otherlv_2= ')'
+            // InternalDeviceDefinition.g:3033:2: (otherlv_0= '(' ( (lv_exp_1_0= ruleExp ) ) otherlv_2= ')' )
+            // InternalDeviceDefinition.g:3034:3: otherlv_0= '(' ( (lv_exp_1_0= ruleExp ) ) otherlv_2= ')'
             {
-            otherlv_0=(Token)match(input,30,FOLLOW_49); 
+            otherlv_0=(Token)match(input,30,FOLLOW_50); 
 
             			newLeafNode(otherlv_0, grammarAccess.getParenthesisAccess().getLeftParenthesisKeyword_0());
             		
-            // InternalDeviceDefinition.g:2990:3: ( (lv_exp_1_0= ruleExp ) )
-            // InternalDeviceDefinition.g:2991:4: (lv_exp_1_0= ruleExp )
+            // InternalDeviceDefinition.g:3038:3: ( (lv_exp_1_0= ruleExp ) )
+            // InternalDeviceDefinition.g:3039:4: (lv_exp_1_0= ruleExp )
             {
-            // InternalDeviceDefinition.g:2991:4: (lv_exp_1_0= ruleExp )
-            // InternalDeviceDefinition.g:2992:5: lv_exp_1_0= ruleExp
+            // InternalDeviceDefinition.g:3039:4: (lv_exp_1_0= ruleExp )
+            // InternalDeviceDefinition.g:3040:5: lv_exp_1_0= ruleExp
             {
 
             					newCompositeNode(grammarAccess.getParenthesisAccess().getExpExpParserRuleCall_1_0());
@@ -7591,7 +7697,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
 
 
     // $ANTLR start "ruleColorPreset"
-    // InternalDeviceDefinition.g:3017:1: ruleColorPreset returns [Enumerator current=null] : ( (enumLiteral_0= 'red' ) | (enumLiteral_1= 'green' ) | (enumLiteral_2= 'blue' ) | (enumLiteral_3= 'yellow' ) ) ;
+    // InternalDeviceDefinition.g:3065:1: ruleColorPreset returns [Enumerator current=null] : ( (enumLiteral_0= 'red' ) | (enumLiteral_1= 'green' ) | (enumLiteral_2= 'blue' ) | (enumLiteral_3= 'yellow' ) ) ;
     public final Enumerator ruleColorPreset() throws RecognitionException {
         Enumerator current = null;
 
@@ -7604,47 +7710,47 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
         	enterRule();
 
         try {
-            // InternalDeviceDefinition.g:3023:2: ( ( (enumLiteral_0= 'red' ) | (enumLiteral_1= 'green' ) | (enumLiteral_2= 'blue' ) | (enumLiteral_3= 'yellow' ) ) )
-            // InternalDeviceDefinition.g:3024:2: ( (enumLiteral_0= 'red' ) | (enumLiteral_1= 'green' ) | (enumLiteral_2= 'blue' ) | (enumLiteral_3= 'yellow' ) )
+            // InternalDeviceDefinition.g:3071:2: ( ( (enumLiteral_0= 'red' ) | (enumLiteral_1= 'green' ) | (enumLiteral_2= 'blue' ) | (enumLiteral_3= 'yellow' ) ) )
+            // InternalDeviceDefinition.g:3072:2: ( (enumLiteral_0= 'red' ) | (enumLiteral_1= 'green' ) | (enumLiteral_2= 'blue' ) | (enumLiteral_3= 'yellow' ) )
             {
-            // InternalDeviceDefinition.g:3024:2: ( (enumLiteral_0= 'red' ) | (enumLiteral_1= 'green' ) | (enumLiteral_2= 'blue' ) | (enumLiteral_3= 'yellow' ) )
-            int alt55=4;
+            // InternalDeviceDefinition.g:3072:2: ( (enumLiteral_0= 'red' ) | (enumLiteral_1= 'green' ) | (enumLiteral_2= 'blue' ) | (enumLiteral_3= 'yellow' ) )
+            int alt57=4;
             switch ( input.LA(1) ) {
-            case 90:
-                {
-                alt55=1;
-                }
-                break;
             case 91:
                 {
-                alt55=2;
+                alt57=1;
                 }
                 break;
             case 92:
                 {
-                alt55=3;
+                alt57=2;
                 }
                 break;
             case 93:
                 {
-                alt55=4;
+                alt57=3;
+                }
+                break;
+            case 94:
+                {
+                alt57=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 55, 0, input);
+                    new NoViableAltException("", 57, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt55) {
+            switch (alt57) {
                 case 1 :
-                    // InternalDeviceDefinition.g:3025:3: (enumLiteral_0= 'red' )
+                    // InternalDeviceDefinition.g:3073:3: (enumLiteral_0= 'red' )
                     {
-                    // InternalDeviceDefinition.g:3025:3: (enumLiteral_0= 'red' )
-                    // InternalDeviceDefinition.g:3026:4: enumLiteral_0= 'red'
+                    // InternalDeviceDefinition.g:3073:3: (enumLiteral_0= 'red' )
+                    // InternalDeviceDefinition.g:3074:4: enumLiteral_0= 'red'
                     {
-                    enumLiteral_0=(Token)match(input,90,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,91,FOLLOW_2); 
 
                     				current = grammarAccess.getColorPresetAccess().getRedEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getColorPresetAccess().getRedEnumLiteralDeclaration_0());
@@ -7656,12 +7762,12 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                     }
                     break;
                 case 2 :
-                    // InternalDeviceDefinition.g:3033:3: (enumLiteral_1= 'green' )
+                    // InternalDeviceDefinition.g:3081:3: (enumLiteral_1= 'green' )
                     {
-                    // InternalDeviceDefinition.g:3033:3: (enumLiteral_1= 'green' )
-                    // InternalDeviceDefinition.g:3034:4: enumLiteral_1= 'green'
+                    // InternalDeviceDefinition.g:3081:3: (enumLiteral_1= 'green' )
+                    // InternalDeviceDefinition.g:3082:4: enumLiteral_1= 'green'
                     {
-                    enumLiteral_1=(Token)match(input,91,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,92,FOLLOW_2); 
 
                     				current = grammarAccess.getColorPresetAccess().getGreenEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getColorPresetAccess().getGreenEnumLiteralDeclaration_1());
@@ -7673,12 +7779,12 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                     }
                     break;
                 case 3 :
-                    // InternalDeviceDefinition.g:3041:3: (enumLiteral_2= 'blue' )
+                    // InternalDeviceDefinition.g:3089:3: (enumLiteral_2= 'blue' )
                     {
-                    // InternalDeviceDefinition.g:3041:3: (enumLiteral_2= 'blue' )
-                    // InternalDeviceDefinition.g:3042:4: enumLiteral_2= 'blue'
+                    // InternalDeviceDefinition.g:3089:3: (enumLiteral_2= 'blue' )
+                    // InternalDeviceDefinition.g:3090:4: enumLiteral_2= 'blue'
                     {
-                    enumLiteral_2=(Token)match(input,92,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,93,FOLLOW_2); 
 
                     				current = grammarAccess.getColorPresetAccess().getBlueEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getColorPresetAccess().getBlueEnumLiteralDeclaration_2());
@@ -7690,12 +7796,12 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
                     }
                     break;
                 case 4 :
-                    // InternalDeviceDefinition.g:3049:3: (enumLiteral_3= 'yellow' )
+                    // InternalDeviceDefinition.g:3097:3: (enumLiteral_3= 'yellow' )
                     {
-                    // InternalDeviceDefinition.g:3049:3: (enumLiteral_3= 'yellow' )
-                    // InternalDeviceDefinition.g:3050:4: enumLiteral_3= 'yellow'
+                    // InternalDeviceDefinition.g:3097:3: (enumLiteral_3= 'yellow' )
+                    // InternalDeviceDefinition.g:3098:4: enumLiteral_3= 'yellow'
                     {
-                    enumLiteral_3=(Token)match(input,93,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,94,FOLLOW_2); 
 
                     				current = grammarAccess.getColorPresetAccess().getYellowEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getColorPresetAccess().getYellowEnumLiteralDeclaration_3());
@@ -7753,52 +7859,53 @@ public class InternalDeviceDefinitionParser extends AbstractInternalAntlrParser 
     public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000008000002L});
     public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000030000002L});
     public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000020000002L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000240000000L,0x000000003C000000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000240000000L,0x0000000078000000L});
     public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000080000000L});
     public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000100000000L});
     public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000800000000L});
     public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000001080000000L});
     public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000000000100L});
     public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x000002A000000000L});
     public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000004000000000L});
     public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000000020000L});
     public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000010000000000L});
     public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000000000140L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0xFFF0000000000000L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0xFFE0000000000000L,0x0000000000000001L});
     public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x000002A000000002L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000040000000000L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x00000C0000000000L});
     public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000080000000000L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x000010A000000002L,0x0000000000000004L});
-    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000108000000002L,0x0000000000000004L});
-    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000100000000002L,0x0000000000000004L});
-    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0008600000000002L,0x0000000000000080L});
-    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x000F400080000002L,0x0000000000000080L});
-    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x000F000000000000L});
-    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0008400080000002L,0x0000000000000080L});
-    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0008400000000002L,0x0000000000000080L});
-    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0000400000000002L,0x0000000000000080L});
-    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0000800000000000L});
-    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x0000000040000150L,0x0000000000C00600L});
-    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x0000000000000020L,0x0000000000000001L});
-    public static final BitSet FOLLOW_51 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_52 = new BitSet(new long[]{0x0000000000020002L});
-    public static final BitSet FOLLOW_53 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_54 = new BitSet(new long[]{0x0000200000000000L});
-    public static final BitSet FOLLOW_55 = new BitSet(new long[]{0x000F000080000000L,0x0000000000000098L});
-    public static final BitSet FOLLOW_56 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000060L});
-    public static final BitSet FOLLOW_57 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_58 = new BitSet(new long[]{0x0000000000000140L,0x0000000000000600L});
-    public static final BitSet FOLLOW_59 = new BitSet(new long[]{0x0000000000000002L,0x0000000000001800L});
-    public static final BitSet FOLLOW_60 = new BitSet(new long[]{0x0000000000000002L,0x0000000000006000L});
-    public static final BitSet FOLLOW_61 = new BitSet(new long[]{0x0000000000000002L,0x0000000000018000L});
-    public static final BitSet FOLLOW_62 = new BitSet(new long[]{0x0000000000000002L,0x0000000000060000L});
-    public static final BitSet FOLLOW_63 = new BitSet(new long[]{0x0000000000000002L,0x0000000000180000L});
-    public static final BitSet FOLLOW_64 = new BitSet(new long[]{0x0000000000200002L,0x0000000000200000L});
-    public static final BitSet FOLLOW_65 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_66 = new BitSet(new long[]{0x00000001C0000150L,0x0000000000C00600L});
-    public static final BitSet FOLLOW_67 = new BitSet(new long[]{0x0000000180000000L});
-    public static final BitSet FOLLOW_68 = new BitSet(new long[]{0x0000000000000000L,0x0000000003000000L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000100000000000L});
+    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x000020A000000002L,0x0000000000000008L});
+    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000208000000002L,0x0000000000000008L});
+    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000200000000002L,0x0000000000000008L});
+    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0010C00000000002L,0x0000000000000100L});
+    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x001E800080000002L,0x0000000000000100L});
+    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x001E000000000000L});
+    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0010800080000002L,0x0000000000000100L});
+    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0010800000000002L,0x0000000000000100L});
+    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0000800000000002L,0x0000000000000100L});
+    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x0001000000000000L});
+    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x0000000040000150L,0x0000000001800C00L});
+    public static final BitSet FOLLOW_51 = new BitSet(new long[]{0x0000000000000020L,0x0000000000000002L});
+    public static final BitSet FOLLOW_52 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_53 = new BitSet(new long[]{0x0000000000020002L});
+    public static final BitSet FOLLOW_54 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_55 = new BitSet(new long[]{0x0000400000000000L});
+    public static final BitSet FOLLOW_56 = new BitSet(new long[]{0x001E000080000000L,0x0000000000000130L});
+    public static final BitSet FOLLOW_57 = new BitSet(new long[]{0x0000000000000000L,0x00000000000000C0L});
+    public static final BitSet FOLLOW_58 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_59 = new BitSet(new long[]{0x0000000000000140L,0x0000000000000C00L});
+    public static final BitSet FOLLOW_60 = new BitSet(new long[]{0x0000000000000002L,0x0000000000003000L});
+    public static final BitSet FOLLOW_61 = new BitSet(new long[]{0x0000000000000002L,0x000000000000C000L});
+    public static final BitSet FOLLOW_62 = new BitSet(new long[]{0x0000000000000002L,0x0000000000030000L});
+    public static final BitSet FOLLOW_63 = new BitSet(new long[]{0x0000000000000002L,0x00000000000C0000L});
+    public static final BitSet FOLLOW_64 = new BitSet(new long[]{0x0000000000000002L,0x0000000000300000L});
+    public static final BitSet FOLLOW_65 = new BitSet(new long[]{0x0000000000200002L,0x0000000000400000L});
+    public static final BitSet FOLLOW_66 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_67 = new BitSet(new long[]{0x00000001C0000150L,0x0000000001800C00L});
+    public static final BitSet FOLLOW_68 = new BitSet(new long[]{0x0000000180000000L});
+    public static final BitSet FOLLOW_69 = new BitSet(new long[]{0x0000000000000000L,0x0000000006000000L});
 
 }

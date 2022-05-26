@@ -10,7 +10,6 @@ System acceptance_test:
 		retries 5 with delay 500 ms
 				
 		Worker pump_01:
-		
 			mac 10:97:BD:D5:3E:64
 			sleep for 10 seconds
 			error light 15
@@ -28,25 +27,4 @@ System acceptance_test:
 			Actuator Generic pump:
 				pins out 14
 				on moisture.output < 40 off moisture.output > 60
-				
-	Graph:
-		category "Environment"
-		title "Temperature"
-		x "Time"
-		y "Temperature (C)"
-		line pump_01.th.temperature
-		
-	Graph:
-		category "Environment"
-		title "Humidity"
-		x "Time"
-		y "Humidity (%)"
-		line pump_01.th.humidity
-		
-	Graph:
-		category "Plant 01"
-		title "Soil Moisture"
-		x "Time"
-		y "Moisture (%)"
-		line pump_01.moisture.output
 		

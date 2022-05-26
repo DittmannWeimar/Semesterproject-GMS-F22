@@ -37,7 +37,7 @@ enum ColorPreset:
 	
 Gateway:
 	'Gateway' name=ID ':'
-	'mac' mac = MAC
+	'mac' mac += MAC (',' mac += MAC)*
 	'channel' channel = INT
 	('error' 'light' errorLed += INT)?
 	('retries' retries += INT 'with' 'delay' delay += NumberPrimitive delayTimeUnit = TimeUnit)?
@@ -47,6 +47,7 @@ Gateway:
 Worker:
 	'Worker' (name=ID) ':'
 	'mac' mac = MAC
+	('preferred gateway' preferred=INT)?
 	'sleep' 'for' sleepTime = NumberPrimitive timeUnit = TimeUnit
 	('error' 'light' errorLed += INT)?
 	('retries' retries += INT 'with' 'delay' delay += NumberPrimitive delayTimeUnit = TimeUnit)?

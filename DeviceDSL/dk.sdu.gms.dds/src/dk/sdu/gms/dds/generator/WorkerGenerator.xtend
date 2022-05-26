@@ -11,8 +11,12 @@ import dk.sdu.gms.dds.actuators.ActuatorDefinition
 import dk.sdu.gms.dds.deviceDefinition.OnOff
 import dk.sdu.gms.dds.sensors.SensorDefinition
 import dk.sdu.gms.dds.deviceDefinition.Sensor
+import java.util.List
 
 public class WorkerGenerator {
+	
+	static private int gateways
+	static private int deviceNr = 0
 	
 	public static def generateWorker(Worker worker, IFileSystemAccess2 fsa) {
 		fsa.generateFile(system(worker).name + "/" + worker.mac.replace(':', '') + "/" + worker.mac.replace(':', '') + ".ino", generateCode(worker));
@@ -32,8 +36,8 @@ public class WorkerGenerator {
 	«{ generatedDirectives.add(device.getClass()); "" /* lol gross */ }»
 	«ENDIF»
 	«ENDFOR»
-	«val bytes = macAsBytes(gateway(worker).mac)»
-	uint8_t gatewayAddress[] = {«bytes.get(0)», «bytes.get(1)», «bytes.get(2)», «bytes.get(3)», «bytes.get(4)», «bytes.get(5)»};
+	«gateway(worker).mac.generateGatewayAdresses»
+	«worker.generatePreferred»
 	esp_now_peer_info_t gatewayInfo;
 	
 	enum MESSAGE_TYPE { Ping, Setting, Sample };
@@ -145,7 +149,7 @@ public class WorkerGenerator {
 	    
 	    «IF hasSensors(worker)»
 	    sampleMessage.type = Sample;
-	    send_message(gatewayAddress, (uint8_t *) &sampleMessage, sizeof(sampleMessage));
+	    send_message((uint8_t *) &sampleMessage, sizeof(sampleMessage));
 	    «ENDIF»
 	    
 	   	«FOR output: getWorkerSensorOutputs(gateway(worker))»
@@ -194,9 +198,6 @@ public class WorkerGenerator {
 	  Serial.println(len);
 	  
 	  switch (baseMessage.type) {
-	    case Ping:
-	      handle_ping(mac, incomingData, len);
-	      break;
 	    case Setting:
 	      handle_setting(mac, incomingData, len);
 	      break;
@@ -214,14 +215,6 @@ public class WorkerGenerator {
 	  }
 	}
 	
-	void handle_ping(const uint8_t * mac, const uint8_t *incomingData, int len) {
-	  Serial.print("Ping recieved from ");
-	  print_mac(mac);
-	  Serial.println("");
-	  
-	  send_message(mac, incomingData, len);
-	}
-	
 	void handle_setting(const uint8_t * mac, const uint8_t *incomingData, int len) {
 	  memcpy(&settingMessage, incomingData, sizeof(settingMessage));
 	  «FOR setting : settings(worker)»
@@ -231,17 +224,53 @@ public class WorkerGenerator {
 	  «ENDFOR»
 	}
 	
-	void send_message(const uint8_t * mac, const uint8_t *incomingData, int len) {
+	void send_message(const uint8_t *incomingData, int len) {
 	  bool success = false;
-	  for (int i = 0; i < «getRetriesOrDefault(worker)»; i++) {
-	    esp_err_t result = esp_now_send(mac, incomingData, len);
-	    delay((uint64_t)«getRetryDelayOrDefault(worker) * getTimeUnitMsMultiplier(worker.delayTimeUnit)»);
-	    if (messageSuccess) {
-	      success = true;
-	      break;
-	    }
+	  for (int i = 0; i < «gateway(worker).mac.size»; i++){
+	  	uint8_t* mac = gatewayAddress[i + preferedIndex % «gateway(worker).mac.size»];
+	  	for (int i = 0; i < «getRetriesOrDefault(worker)»; i++) {
+	  		esp_err_t result = esp_now_send(mac, incomingData, len);
+	  		delay((uint64_t)«getRetryDelayOrDefault(worker) * getTimeUnitMsMultiplier(worker.delayTimeUnit)»);
+	  		if (messageSuccess) {
+	  			success = true;
+	  			break;
+	  		}
+	  	}
+	  	if (success){
+	  		break;
+	  	}
 	  }
 	  Serial.println("Send message success: " + String(success));
 	  digitalWrite(«getErrorLedOrDefault(worker)», success ? LOW : HIGH);
 	}'''
+	
+	
+	def static generateGatewayAdresses(List<String> mac){
+		val macs = new ArrayList<String[]>()
+		for (macAddress : mac){
+			macs.add(macAsBytes(macAddress))
+		}
+		//«bytes.get(0), bytes.get(1), bytes.get(2), bytes.get(3), bytes.get(4), bytes.get(5)»
+		return '''
+		uint8_t gatewayAddress[«macs.size»][6] = {«FOR macAd : macs»{«macAd.get(0)», «macAd.get(1)», «macAd.get(2)», «macAd.get(3)», «macAd.get(4)», «macAd.get(5)»}, «ENDFOR»};
+		'''
+	}
+	
+	def static generatePreferred(Worker worker){
+		var pref = worker.preferred
+		if(pref <= 0){
+			if (deviceNr == 0){
+				gateways = gateway(worker).mac.size
+			}
+			pref = deviceNr % gateways
+		} else {
+			pref = pref - 1
+		}
+		return'''int preferedIndex = «pref»;'''
+	}
+
 }
+
+
+
+

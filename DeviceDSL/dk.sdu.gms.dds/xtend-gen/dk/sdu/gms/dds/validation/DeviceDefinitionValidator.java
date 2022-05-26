@@ -11,6 +11,7 @@ import dk.sdu.gms.dds.deviceDefinition.Actuator;
 import dk.sdu.gms.dds.deviceDefinition.Device;
 import dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage;
 import dk.sdu.gms.dds.deviceDefinition.ExternalVariableUse;
+import dk.sdu.gms.dds.deviceDefinition.Gateway;
 import dk.sdu.gms.dds.deviceDefinition.Graph;
 import dk.sdu.gms.dds.deviceDefinition.GraphVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.InternalVariableUse;
@@ -19,6 +20,7 @@ import dk.sdu.gms.dds.deviceDefinition.Sensor;
 import dk.sdu.gms.dds.deviceDefinition.VariableUse;
 import dk.sdu.gms.dds.deviceDefinition.Worker;
 import dk.sdu.gms.dds.sensors.SensorDefinition;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.validation.Check;
 
@@ -134,5 +136,29 @@ public class DeviceDefinitionValidator extends AbstractDeviceDefinitionValidator
     String _plus = (_sleepTime + " ");
     String _timeUnitToString = Utils.timeUnitToString(worker.getTimeUnit());
     return (_plus + _timeUnitToString);
+  }
+  
+  @Check
+  public void checkPrefered(final Worker worker) {
+    boolean preferred = false;
+    final Gateway gateway = Utils.gateway(worker);
+    EList<Worker> _workers = gateway.getWorkers();
+    for (final Worker worker_device : _workers) {
+      int _preferred = worker_device.getPreferred();
+      boolean _greaterThan = (_preferred > 0);
+      if (_greaterThan) {
+        preferred = true;
+      }
+    }
+    boolean outofRange = false;
+    int _preferred_1 = worker.getPreferred();
+    int _size = gateway.getMac().size();
+    boolean _greaterThan_1 = (_preferred_1 > _size);
+    if (_greaterThan_1) {
+      outofRange = true;
+    }
+    if (((preferred && (worker.getPreferred() <= 0)) || outofRange)) {
+      this.error("Either all workers need to have a preferred gateway and should be inside range of gateways or no worker should have a prefered gateway", DeviceDefinitionPackage.Literals.WORKER__MAC);
+    }
   }
 }

@@ -4,25 +4,43 @@
 <head>
     <title>Green House Management System</title>
     <?php require "header.php" ?>
-
-    <script>
-        MQTTConnect();
-    </script>
 </head>
 
 <body>
     <?php require "commonBody.php" ?>
 
     <ul class="flex-container">
-        <li class="chart-container">
-            <h1>IoT Device 1</h1>
-            <div>
-                <input type="text" id="lightness"></input>
-                
-                <p>LED: </p><button onclick="MQTTSend('gateway/worker/setting', $('#lightness').val())">Toggle</button>
-            </div>
-        </li>
+<li class="chart-container">
+    <div class="centered">
+        <h3>pump_01</h3>
+    </div>
+    <table class="settings-table">
+    </table>
+</li>
     </ul>
 </body>
+
+<script>
+
+
+$(document).ready(function () {	
+    MQTTConnect(mqtt => {
+    	
+    	
+
+        mqtt.onMessageArrived = function (message) {
+            console.log("Message Arrived: " + message.payloadString);
+            console.log("Topic:     " + message.destinationName);
+            console.log("QoS:       " + message.qos);
+            console.log("Retained:  " + message.retained);
+            // Read Only, set if message might be a duplicate sent from broker
+            console.log("Duplicate: " + message.duplicate);
+
+
+        }
+    });
+});
+
+</script>
 
 </html>

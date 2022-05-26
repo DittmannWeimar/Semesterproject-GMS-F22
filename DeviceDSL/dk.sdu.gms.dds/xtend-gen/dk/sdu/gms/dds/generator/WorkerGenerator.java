@@ -24,6 +24,10 @@ import org.eclipse.xtext.xbase.lib.ExclusiveRange;
 
 @SuppressWarnings("all")
 public class WorkerGenerator {
+  private static int gateways;
+  
+  private static int deviceNr = 0;
+  
   public static void generateWorker(final Worker worker, final IFileSystemAccess2 fsa) {
     String _name = Utils.system(worker).getName();
     String _plus = (_name + "/");
@@ -74,27 +78,11 @@ public class WorkerGenerator {
         }
       }
     }
-    final String[] bytes = Utils.macAsBytes(Utils.gateway(worker).getMac());
+    String _generateGatewayAdresses = WorkerGenerator.generateGatewayAdresses(Utils.gateway(worker).getMac());
+    _builder.append(_generateGatewayAdresses);
     _builder.newLineIfNotEmpty();
-    _builder.append("uint8_t gatewayAddress[] = {");
-    String _get = bytes[0];
-    _builder.append(_get);
-    _builder.append(", ");
-    String _get_1 = bytes[1];
-    _builder.append(_get_1);
-    _builder.append(", ");
-    String _get_2 = bytes[2];
-    _builder.append(_get_2);
-    _builder.append(", ");
-    String _get_3 = bytes[3];
-    _builder.append(_get_3);
-    _builder.append(", ");
-    String _get_4 = bytes[4];
-    _builder.append(_get_4);
-    _builder.append(", ");
-    String _get_5 = bytes[5];
-    _builder.append(_get_5);
-    _builder.append("};");
+    String _generatePreferred = WorkerGenerator.generatePreferred(worker);
+    _builder.append(_generatePreferred);
     _builder.newLineIfNotEmpty();
     _builder.append("esp_now_peer_info_t gatewayInfo;");
     _builder.newLine();
@@ -203,16 +191,16 @@ public class WorkerGenerator {
         _builder.newLineIfNotEmpty();
         _builder.append("  ");
         _builder.append("ledcAttachPin(");
-        int _get_6 = Utils.dacPins[(i).intValue()];
-        _builder.append(_get_6, "  ");
+        int _get = Utils.dacPins[(i).intValue()];
+        _builder.append(_get, "  ");
         _builder.append(", ");
         _builder.append(i, "  ");
         _builder.append(");");
         _builder.newLineIfNotEmpty();
         _builder.append("  ");
         _builder.append("pinMode(");
-        int _get_7 = Utils.dacPins[(i).intValue()];
-        _builder.append(_get_7, "  ");
+        int _get_1 = Utils.dacPins[(i).intValue()];
+        _builder.append(_get_1, "  ");
         _builder.append(", OUTPUT);");
         _builder.newLineIfNotEmpty();
       }
@@ -397,7 +385,7 @@ public class WorkerGenerator {
         _builder.append("sampleMessage.type = Sample;");
         _builder.newLine();
         _builder.append("    ");
-        _builder.append("send_message(gatewayAddress, (uint8_t *) &sampleMessage, sizeof(sampleMessage));");
+        _builder.append("send_message((uint8_t *) &sampleMessage, sizeof(sampleMessage));");
         _builder.newLine();
       }
     }
@@ -567,15 +555,6 @@ public class WorkerGenerator {
     _builder.append("switch (baseMessage.type) {");
     _builder.newLine();
     _builder.append("    ");
-    _builder.append("case Ping:");
-    _builder.newLine();
-    _builder.append("      ");
-    _builder.append("handle_ping(mac, incomingData, len);");
-    _builder.newLine();
-    _builder.append("      ");
-    _builder.append("break;");
-    _builder.newLine();
-    _builder.append("    ");
     _builder.append("case Setting:");
     _builder.newLine();
     _builder.append("      ");
@@ -619,25 +598,6 @@ public class WorkerGenerator {
     _builder.append("}");
     _builder.newLine();
     _builder.newLine();
-    _builder.append("void handle_ping(const uint8_t * mac, const uint8_t *incomingData, int len) {");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("Serial.print(\"Ping recieved from \");");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("print_mac(mac);");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("Serial.println(\"\");");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.newLine();
-    _builder.append("  ");
-    _builder.append("send_message(mac, incomingData, len);");
-    _builder.newLine();
-    _builder.append("}");
-    _builder.newLine();
-    _builder.newLine();
     _builder.append("void handle_setting(const uint8_t * mac, const uint8_t *incomingData, int len) {");
     _builder.newLine();
     _builder.append("  ");
@@ -666,38 +626,62 @@ public class WorkerGenerator {
     _builder.append("}");
     _builder.newLine();
     _builder.newLine();
-    _builder.append("void send_message(const uint8_t * mac, const uint8_t *incomingData, int len) {");
+    _builder.append("void send_message(const uint8_t *incomingData, int len) {");
     _builder.newLine();
     _builder.append("  ");
     _builder.append("bool success = false;");
     _builder.newLine();
     _builder.append("  ");
     _builder.append("for (int i = 0; i < ");
+    int _size = Utils.gateway(worker).getMac().size();
+    _builder.append(_size, "  ");
+    _builder.append("; i++){");
+    _builder.newLineIfNotEmpty();
+    _builder.append("  \t");
+    _builder.append("uint8_t* mac = gatewayAddress[i + preferedIndex % ");
+    int _size_1 = Utils.gateway(worker).getMac().size();
+    _builder.append(_size_1, "  \t");
+    _builder.append("];");
+    _builder.newLineIfNotEmpty();
+    _builder.append("  \t");
+    _builder.append("for (int i = 0; i < ");
     Integer _retriesOrDefault = Utils.getRetriesOrDefault(worker);
-    _builder.append(_retriesOrDefault, "  ");
+    _builder.append(_retriesOrDefault, "  \t");
     _builder.append("; i++) {");
     _builder.newLineIfNotEmpty();
-    _builder.append("    ");
+    _builder.append("  \t\t");
     _builder.append("esp_err_t result = esp_now_send(mac, incomingData, len);");
     _builder.newLine();
-    _builder.append("    ");
+    _builder.append("  \t\t");
     _builder.append("delay((uint64_t)");
     float _retryDelayOrDefault = Utils.getRetryDelayOrDefault(worker);
     int _timeUnitMsMultiplier_2 = Utils.getTimeUnitMsMultiplier(worker.getDelayTimeUnit());
     float _multiply_2 = (_retryDelayOrDefault * _timeUnitMsMultiplier_2);
-    _builder.append(_multiply_2, "    ");
+    _builder.append(_multiply_2, "  \t\t");
     _builder.append(");");
     _builder.newLineIfNotEmpty();
-    _builder.append("    ");
+    _builder.append("  \t\t");
     _builder.append("if (messageSuccess) {");
     _builder.newLine();
-    _builder.append("      ");
+    _builder.append("  \t\t\t");
     _builder.append("success = true;");
     _builder.newLine();
-    _builder.append("      ");
+    _builder.append("  \t\t\t");
     _builder.append("break;");
     _builder.newLine();
-    _builder.append("    ");
+    _builder.append("  \t\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("  \t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("  \t");
+    _builder.append("if (success){");
+    _builder.newLine();
+    _builder.append("  \t\t");
+    _builder.append("break;");
+    _builder.newLine();
+    _builder.append("  \t");
     _builder.append("}");
     _builder.newLine();
     _builder.append("  ");
@@ -714,5 +698,60 @@ public class WorkerGenerator {
     _builder.newLineIfNotEmpty();
     _builder.append("}");
     return _builder;
+  }
+  
+  public static String generateGatewayAdresses(final List<String> mac) {
+    final ArrayList<String[]> macs = new ArrayList<String[]>();
+    for (final String macAddress : mac) {
+      macs.add(Utils.macAsBytes(macAddress));
+    }
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("uint8_t gatewayAddress[");
+    int _size = macs.size();
+    _builder.append(_size);
+    _builder.append("][6] = {");
+    {
+      for(final String[] macAd : macs) {
+        _builder.append("{");
+        String _get = macAd[0];
+        _builder.append(_get);
+        _builder.append(", ");
+        String _get_1 = macAd[1];
+        _builder.append(_get_1);
+        _builder.append(", ");
+        String _get_2 = macAd[2];
+        _builder.append(_get_2);
+        _builder.append(", ");
+        String _get_3 = macAd[3];
+        _builder.append(_get_3);
+        _builder.append(", ");
+        String _get_4 = macAd[4];
+        _builder.append(_get_4);
+        _builder.append(", ");
+        String _get_5 = macAd[5];
+        _builder.append(_get_5);
+        _builder.append("}, ");
+      }
+    }
+    _builder.append("};");
+    _builder.newLineIfNotEmpty();
+    return _builder.toString();
+  }
+  
+  public static String generatePreferred(final Worker worker) {
+    int pref = worker.getPreferred();
+    if ((pref <= 0)) {
+      if ((WorkerGenerator.deviceNr == 0)) {
+        WorkerGenerator.gateways = Utils.gateway(worker).getMac().size();
+      }
+      pref = (WorkerGenerator.deviceNr % WorkerGenerator.gateways);
+    } else {
+      pref = (pref - 1);
+    }
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("int preferedIndex = ");
+    _builder.append(pref);
+    _builder.append(";");
+    return _builder.toString();
   }
 }

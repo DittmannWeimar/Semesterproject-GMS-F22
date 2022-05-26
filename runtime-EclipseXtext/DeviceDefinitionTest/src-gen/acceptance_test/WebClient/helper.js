@@ -14,8 +14,6 @@ function _createCategoryJSBinding(name) {
 }
 
 $(document).ready(function () {
-	addCategory("Environment");
-	addCategory("Plant 01");
 });
 
 

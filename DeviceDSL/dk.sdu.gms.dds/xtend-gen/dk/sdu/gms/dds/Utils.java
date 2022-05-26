@@ -614,7 +614,7 @@ public class Utils {
   }
   
   public static String getSampleMqttTopic(final SensorOutput output) {
-    String _mac = Utils.system(output).getGateway().getMac();
+    EList<String> _mac = Utils.system(output).getGateway().getMac();
     String _plus = ("samples/" + _mac);
     String _plus_1 = (_plus + "/");
     String _mac_1 = Utils.worker(Utils.sensor(output)).getMac();
@@ -625,7 +625,7 @@ public class Utils {
   }
   
   public static String getSettingMqttTopic(final Setting setting) {
-    String _mac = Utils.gateway(setting).getMac();
+    EList<String> _mac = Utils.gateway(setting).getMac();
     String _plus = ("settings/" + _mac);
     String _plus_1 = (_plus + "/");
     String _mac_1 = Utils.worker(setting).getMac();
