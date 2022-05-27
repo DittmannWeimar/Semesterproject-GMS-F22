@@ -12,7 +12,21 @@
     <ul class="flex-container">
 <li class="chart-container">
     <div class="centered">
-        <h3>pump_01</h3>
+        <h3>Worker_1</h3>
+    </div>
+    <table class="settings-table">
+    </table>
+</li>
+<li class="chart-container">
+    <div class="centered">
+        <h3>Worker_2</h3>
+    </div>
+    <table class="settings-table">
+    </table>
+</li>
+<li class="chart-container">
+    <div class="centered">
+        <h3>Worker_3</h3>
     </div>
     <table class="settings-table">
     </table>

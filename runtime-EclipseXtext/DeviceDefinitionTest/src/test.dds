@@ -1,16 +1,27 @@
-System acceptance_test:
-	wifi "Chronos" with password "fizzfyr13"
+System test:
+	wifi "Nova 5T" with password "meeeeeep"
 	mqtt "vald.io:3001" with username "kristian" and password "1234"
 	
 	Gateway gateway:
 
-		mac 58:BF:25:E0:77:98
-		channel 6
+		mac 9C:9C:1F:C5:F7:EC, 4C:11:AE:D9:48:14
+		channel 11
 		error light 15
-		retries 5 with delay 500 ms
+		retries 5 with delay 500 ms 
 				
-		Worker pump_01:
-			mac 10:97:BD:D5:3E:64
+		Worker Worker_1:
+			mac 10:97:BD:D4:3E:AC
+			sleep for 10 seconds
+			error light 15
+			retries 5 with delay 500 ms
+			
+			Sensor TemperatureHumidity th:
+				pins adc 4
+				out "temperature" as temperature
+				out "humidity" as humidity
+		
+		Worker Worker_2:
+			mac 10:97:BD:D4:36:94
 			sleep for 10 seconds
 			error light 15
 			retries 5 with delay 500 ms
@@ -20,11 +31,13 @@ System acceptance_test:
 				out "temperature" as temperature
 				out "humidity" as humidity
 				
-			Sensor Generic moisture:
-				pins adc 32
-				out as output with mapping value / 1024.0 * 100.0
-				
-			Actuator Generic pump:
-				pins out 14
-				on moisture.output < 40 off moisture.output > 60
-		
+		Worker Worker_3:
+			mac 10:97:BD:D5:69:F0
+			sleep for 10 seconds
+			error light 15
+			retries 5 with delay 500 ms
+			
+			Sensor TemperatureHumidity th:
+				pins adc 4
+				out "temperature" as temperature
+				out "humidity" as humidity

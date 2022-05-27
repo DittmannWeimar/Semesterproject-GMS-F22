@@ -38,7 +38,7 @@ public class WorkerGenerator {
 	«ENDFOR»
 	«gateway(worker).mac.generateGatewayAdresses»
 	«worker.generatePreferred»
-	esp_now_peer_info_t gatewayInfo;
+	esp_now_peer_info_t gatewayInfo[«gateway(worker).mac»];
 	
 	enum MESSAGE_TYPE { Ping, Setting, Sample };
 	
@@ -101,18 +101,21 @@ public class WorkerGenerator {
 	  // get the status of Trasnmitted packet
 	  esp_now_register_send_cb(OnDataSent);
 	  
-	  // Register peer
-	  memcpy(gatewayInfo.peer_addr, gatewayAddress, 6);
-	  gatewayInfo.channel = «gateway(worker).channel»;  
-	  gatewayInfo.encrypt = false;
 	  
-	  // Add peer        
-	  if (esp_now_add_peer(&gatewayInfo) != ESP_OK){
-	    Serial.println("Failed to add peer");
-	    return;
-	  }else{
-	    Serial.println("Succesfully added peer");
-	  }
+	  for (int i = 0; i < «gateway(worker).mac.size»; i++) {
+	      uint8_t* mac = gatewayAddress[i];
+	      memcpy(gatewayInfo[i].peer_addr, mac, 6);
+	      gatewayInfo[i].channel = «gateway(worker).channel»;  
+	      gatewayInfo[i].encrypt = false;
+	      
+	      // Add peer        
+	      if (esp_now_add_peer(&gatewayInfo[i]) != ESP_OK){
+	        Serial.println("Failed to add peer");
+	        return;
+	      }else{
+	        Serial.println("Succesfully added peer");
+	      }
+	   }
 	  
 	  // Register for a callback function that will be called when data is received
 	  esp_now_register_recv_cb(OnDataRecv);
@@ -227,7 +230,7 @@ public class WorkerGenerator {
 	void send_message(const uint8_t *incomingData, int len) {
 	  bool success = false;
 	  for (int i = 0; i < «gateway(worker).mac.size»; i++){
-	  	uint8_t* mac = gatewayAddress[i + preferedIndex % «gateway(worker).mac.size»];
+	  	uint8_t* mac = gatewayAddress[(i + preferedIndex) % «gateway(worker).mac.size»];
 	  	for (int i = 0; i < «getRetriesOrDefault(worker)»; i++) {
 	  		esp_err_t result = esp_now_send(mac, incomingData, len);
 	  		delay((uint64_t)«getRetryDelayOrDefault(worker) * getTimeUnitMsMultiplier(worker.delayTimeUnit)»);
@@ -263,6 +266,7 @@ public class WorkerGenerator {
 				gateways = gateway(worker).mac.size
 			}
 			pref = deviceNr % gateways
+			deviceNr++
 		} else {
 			pref = pref - 1
 		}

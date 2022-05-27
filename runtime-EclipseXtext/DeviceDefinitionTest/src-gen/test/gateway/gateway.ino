@@ -8,7 +8,7 @@ typedef struct worker_info {
 	esp_now_peer_info_t info;
 };
 
-const int numWorkers = 1;
+const int numWorkers = 3;
 struct worker_info workers[numWorkers];
 worker_info null_worker;
 bool messageSuccess = false;
@@ -27,14 +27,17 @@ typedef struct message_setting : message_base {
 message_setting settingMessage;
 
 typedef struct message_sample : message_base {
-	float pump_01_th_temperature;
-	float pump_01_th_humidity;
-	float pump_01_moisture_sample;
+	float Worker_1_th_temperature;
+	float Worker_1_th_humidity;
+	float Worker_2_th_temperature;
+	float Worker_2_th_humidity;
+	float Worker_3_th_temperature;
+	float Worker_3_th_humidity;
 } message_sample;
 message_sample sampleMessage;
 
-const char* WIFI_SSID = "Chronos";
-const char* WIFI_PW = "fizzfyr13";
+const char* WIFI_SSID = "Nova 5T";
+const char* WIFI_PW = "meeeeeep";
 
 EspMQTTClient client(
   WIFI_SSID,
@@ -42,7 +45,7 @@ EspMQTTClient client(
   "vald.io",
   "kristian",
   "1234",
-  "gms-gateway-9bf5ae09-61b1-4a73-b058-ba1bbe2838d7",
+  "gms-gateway-7936dc2a-7941-4d2f-b180-b9ce3662ed7a",
   3001
 );
 
@@ -55,7 +58,7 @@ void setup() {
   Serial.print("Gateway starting with MAC address ");
   Serial.println(WiFi.macAddress());
   
-  int32_t channel = 6;
+  int32_t channel = 11;
   esp_wifi_set_channel(channel, WIFI_SECOND_CHAN_NONE);
   
   WiFi.begin(WIFI_SSID, WIFI_PW);
@@ -94,10 +97,18 @@ void setup() {
 }
 
 void populate_worker_infos () {
-		set_mac_bytes(workers[0].address, 0x10, 0x97, 0xBD, 0xD5, 0x3E, 0x64);
+		set_mac_bytes(workers[0].address, 0x10, 0x97, 0xBD, 0xD4, 0x3E, 0xAC);
 		memcpy(workers[0].info.peer_addr, workers[0].address, 6);
-		workers[0].info.channel = 6;  
+		workers[0].info.channel = 11;  
 		workers[0].info.encrypt = false;
+		set_mac_bytes(workers[1].address, 0x10, 0x97, 0xBD, 0xD4, 0x36, 0x94);
+		memcpy(workers[1].info.peer_addr, workers[1].address, 6);
+		workers[1].info.channel = 11;  
+		workers[1].info.encrypt = false;
+		set_mac_bytes(workers[2].address, 0x10, 0x97, 0xBD, 0xD5, 0x69, 0xF0);
+		memcpy(workers[2].info.peer_addr, workers[2].address, 6);
+		workers[2].info.channel = 11;  
+		workers[2].info.encrypt = false;
 }
 
 void set_mac_bytes(uint8_t arr[6], uint8_t b0, uint8_t b1, uint8_t b2, uint8_t b3, uint8_t b4, uint8_t b5) {
@@ -219,14 +230,23 @@ void handle_sample(const uint8_t* mac, const uint8_t *incomingData, int len) {
   print_mac(mac);
   Serial.println("");
   
-  if (!isnan(sampleMessage.pump_01_th_temperature)) {
-  	client.publish(get_topic("samples", mac, "th,temperature"), String(sampleMessage.pump_01_th_temperature));
+  if (!isnan(sampleMessage.Worker_1_th_temperature)) {
+  	client.publish(get_topic("samples", mac, "th,temperature"), String(sampleMessage.Worker_1_th_temperature));
   }
-  if (!isnan(sampleMessage.pump_01_th_humidity)) {
-  	client.publish(get_topic("samples", mac, "th,humidity"), String(sampleMessage.pump_01_th_humidity));
+  if (!isnan(sampleMessage.Worker_1_th_humidity)) {
+  	client.publish(get_topic("samples", mac, "th,humidity"), String(sampleMessage.Worker_1_th_humidity));
   }
-  if (!isnan(sampleMessage.pump_01_moisture_sample)) {
-  	client.publish(get_topic("samples", mac, "moisture,sample"), String(sampleMessage.pump_01_moisture_sample));
+  if (!isnan(sampleMessage.Worker_2_th_temperature)) {
+  	client.publish(get_topic("samples", mac, "th,temperature"), String(sampleMessage.Worker_2_th_temperature));
+  }
+  if (!isnan(sampleMessage.Worker_2_th_humidity)) {
+  	client.publish(get_topic("samples", mac, "th,humidity"), String(sampleMessage.Worker_2_th_humidity));
+  }
+  if (!isnan(sampleMessage.Worker_3_th_temperature)) {
+  	client.publish(get_topic("samples", mac, "th,temperature"), String(sampleMessage.Worker_3_th_temperature));
+  }
+  if (!isnan(sampleMessage.Worker_3_th_humidity)) {
+  	client.publish(get_topic("samples", mac, "th,humidity"), String(sampleMessage.Worker_3_th_humidity));
   }
 }
 
