@@ -24,8 +24,6 @@ abstract class SensorDefinition extends DeviceDefinition {
 		return null;
 	}
 	
-	public String type;
-	public int pinCount;
 	public String[] outputs;
 	
 	public def boolean isSingleOutput () {

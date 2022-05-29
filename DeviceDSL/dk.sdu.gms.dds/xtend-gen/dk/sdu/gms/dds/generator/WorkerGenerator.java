@@ -46,6 +46,10 @@ public class WorkerGenerator {
     _builder.newLine();
     _builder.append("#include <Wire.h>");
     _builder.newLine();
+    _builder.append("#include <SPI.h>");
+    _builder.newLine();
+    _builder.append("#include <Arduino.h>");
+    _builder.newLine();
     _builder.append("\t");
     _builder.newLine();
     _builder.append("// GENERATED DIRECTIVES");

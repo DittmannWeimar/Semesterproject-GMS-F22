@@ -233,6 +233,25 @@ class Utils {
 		}
 	}
 	
+	public static def <T> getPinsOfType(List<Pin> pins, Class<T> type) {
+		val result = new ArrayList<Pin>();
+		for (pin : pins) {
+			if (type.isInstance(pin)) {
+				result.add(pin);
+			}
+		}
+		return result;
+	}
+	
+	public static def getPinById (List<Pin> pins, String id) {
+		for (pin : pins) {
+			if (pin.pinId == id) {
+				return pin;
+			}
+		}
+		return null;
+	}
+	
 	public static def getTimerName(Actuator actuator) {
 		getVariablePrefix(actuator) + "last_enable_time";
 	}

@@ -8,6 +8,12 @@ import dk.sdu.gms.dds.sensors.SensorDefinition;
 
 @SuppressWarnings("all")
 public abstract class DeviceDefinition {
+  public String type;
+  
+  public int pinCount;
+  
+  public String[] requiredPinIds;
+  
   public static DeviceDefinition getDefinition(final Device device) {
     DeviceDefinition _switchResult = null;
     boolean _matched = false;

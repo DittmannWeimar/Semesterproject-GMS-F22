@@ -13,7 +13,7 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
 public abstract class ActuatorDefinition extends DeviceDefinition {
-  public static ActuatorDefinition[] Actuators = new ActuatorDefinition[] { new GenericActuator() };
+  public static ActuatorDefinition[] Actuators = new ActuatorDefinition[] { new GenericActuator(), new OLEDMonitorActuator() };
   
   public static ActuatorDefinition getActuatorDefinition(final Actuator actuator) {
     for (final ActuatorDefinition s : ActuatorDefinition.Actuators) {
@@ -25,10 +25,6 @@ public abstract class ActuatorDefinition extends DeviceDefinition {
     }
     return null;
   }
-  
-  public String type;
-  
-  public int pinCount;
   
   public String[] requiredSettings;
   
@@ -102,30 +98,41 @@ public abstract class ActuatorDefinition extends DeviceDefinition {
     CharSequence _xblockexpression = null;
     {
       final Trigger trigger = actuator.getTrigger();
-      CharSequence _switchResult = null;
-      boolean _matched = false;
-      if (trigger instanceof When) {
-        _matched=true;
-        _switchResult = this.generateWhenLoop(((When)trigger).getExp(), actuator);
-      }
-      if (!_matched) {
-        if (trigger instanceof OnOff) {
+      CharSequence _xifexpression = null;
+      if ((trigger == null)) {
+        StringConcatenation _builder = new StringConcatenation();
+        CharSequence _enabledVariableName = Utils.getEnabledVariableName(actuator);
+        _builder.append(_enabledVariableName);
+        _builder.append(" = true);");
+        _builder.newLineIfNotEmpty();
+        return _builder.toString();
+      } else {
+        CharSequence _switchResult = null;
+        boolean _matched = false;
+        if (trigger instanceof When) {
           _matched=true;
-          CharSequence _xblockexpression_1 = null;
-          {
-            final boolean isTimed = Utils.isTimed(trigger);
-            CharSequence _xifexpression = null;
-            if (isTimed) {
-              _xifexpression = this.generateWhenLoop(((OnOff)trigger).getOnExp(), actuator);
-            } else {
-              _xifexpression = this.generateOnOffLoop(((OnOff)trigger), actuator);
-            }
-            _xblockexpression_1 = _xifexpression;
-          }
-          _switchResult = _xblockexpression_1;
+          _switchResult = this.generateWhenLoop(((When)trigger).getExp(), actuator);
         }
+        if (!_matched) {
+          if (trigger instanceof OnOff) {
+            _matched=true;
+            CharSequence _xblockexpression_1 = null;
+            {
+              final boolean isTimed = Utils.isTimed(trigger);
+              CharSequence _xifexpression_1 = null;
+              if (isTimed) {
+                _xifexpression_1 = this.generateWhenLoop(((OnOff)trigger).getOnExp(), actuator);
+              } else {
+                _xifexpression_1 = this.generateOnOffLoop(((OnOff)trigger), actuator);
+              }
+              _xblockexpression_1 = _xifexpression_1;
+            }
+            _switchResult = _xblockexpression_1;
+          }
+        }
+        _xifexpression = _switchResult;
       }
-      _xblockexpression = _switchResult;
+      _xblockexpression = _xifexpression;
     }
     return _xblockexpression;
   }

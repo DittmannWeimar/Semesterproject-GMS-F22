@@ -50,6 +50,8 @@ import dk.sdu.gms.dds.deviceDefinition.Random;
 import dk.sdu.gms.dds.deviceDefinition.Second;
 import dk.sdu.gms.dds.deviceDefinition.Sensor;
 import dk.sdu.gms.dds.deviceDefinition.SensorOutput;
+import dk.sdu.gms.dds.deviceDefinition.SerialClock;
+import dk.sdu.gms.dds.deviceDefinition.SerialData;
 import dk.sdu.gms.dds.deviceDefinition.Setting;
 import dk.sdu.gms.dds.deviceDefinition.TimeUnit;
 import dk.sdu.gms.dds.deviceDefinition.Trigger;
@@ -297,6 +299,20 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   private EClass genericOutEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass serialDataEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass serialClockEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1074,9 +1090,20 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
    * @generated
    */
   @Override
-  public EAttribute getPin_Number()
+  public EAttribute getPin_PinId()
   {
     return (EAttribute)pinEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getPin_Number()
+  {
+    return (EAttribute)pinEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1506,6 +1533,28 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
   public EClass getGenericOut()
   {
     return genericOutEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSerialData()
+  {
+    return serialDataEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSerialClock()
+  {
+    return serialClockEClass;
   }
 
   /**
@@ -2201,6 +2250,7 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
 
     pinEClass = createEClass(PIN);
     createEReference(pinEClass, PIN__TYPE);
+    createEAttribute(pinEClass, PIN__PIN_ID);
     createEAttribute(pinEClass, PIN__NUMBER);
 
     pinTypeEClass = createEClass(PIN_TYPE);
@@ -2264,6 +2314,10 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     genericInEClass = createEClass(GENERIC_IN);
 
     genericOutEClass = createEClass(GENERIC_OUT);
+
+    serialDataEClass = createEClass(SERIAL_DATA);
+
+    serialClockEClass = createEClass(SERIAL_CLOCK);
 
     millisecondEClass = createEClass(MILLISECOND);
 
@@ -2394,6 +2448,8 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     dacEClass.getESuperTypes().add(this.getPinType());
     genericInEClass.getESuperTypes().add(this.getPinType());
     genericOutEClass.getESuperTypes().add(this.getPinType());
+    serialDataEClass.getESuperTypes().add(this.getPinType());
+    serialClockEClass.getESuperTypes().add(this.getPinType());
     millisecondEClass.getESuperTypes().add(this.getTimeUnit());
     secondEClass.getESuperTypes().add(this.getTimeUnit());
     minuteEClass.getESuperTypes().add(this.getTimeUnit());
@@ -2476,6 +2532,7 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
 
     initEClass(pinEClass, Pin.class, "Pin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getPin_Type(), this.getPinType(), null, "type", null, 0, 1, Pin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPin_PinId(), ecorePackage.getEString(), "pinId", null, 0, 1, Pin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getPin_Number(), ecorePackage.getEInt(), "number", null, 0, 1, Pin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(pinTypeEClass, PinType.class, "PinType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2539,6 +2596,10 @@ public class DeviceDefinitionPackageImpl extends EPackageImpl implements DeviceD
     initEClass(genericInEClass, GenericIn.class, "GenericIn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(genericOutEClass, GenericOut.class, "GenericOut", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(serialDataEClass, SerialData.class, "SerialData", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(serialClockEClass, SerialClock.class, "SerialClock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(millisecondEClass, Millisecond.class, "Millisecond", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

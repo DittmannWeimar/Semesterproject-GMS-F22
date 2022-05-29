@@ -8,6 +8,10 @@ import dk.sdu.gms.dds.actuators.ActuatorDefinition
 
 public abstract class DeviceDefinition {
 	
+	public String type;
+	public int pinCount;
+	public String[] requiredPinIds;
+	
 	public static def DeviceDefinition getDefinition(Device device) {
 		switch (device) {
 			Sensor: SensorDefinition.getSensorDefinition(device as Sensor)

@@ -53,6 +53,8 @@ import dk.sdu.gms.dds.deviceDefinition.Random;
 import dk.sdu.gms.dds.deviceDefinition.Second;
 import dk.sdu.gms.dds.deviceDefinition.Sensor;
 import dk.sdu.gms.dds.deviceDefinition.SensorOutput;
+import dk.sdu.gms.dds.deviceDefinition.SerialClock;
+import dk.sdu.gms.dds.deviceDefinition.SerialData;
 import dk.sdu.gms.dds.deviceDefinition.Setting;
 import dk.sdu.gms.dds.deviceDefinition.TimeUnit;
 import dk.sdu.gms.dds.deviceDefinition.Trigger;
@@ -154,6 +156,8 @@ public class DeviceDefinitionFactoryImpl extends EFactoryImpl implements DeviceD
       case DeviceDefinitionPackage.DAC: return createDAC();
       case DeviceDefinitionPackage.GENERIC_IN: return createGenericIn();
       case DeviceDefinitionPackage.GENERIC_OUT: return createGenericOut();
+      case DeviceDefinitionPackage.SERIAL_DATA: return createSerialData();
+      case DeviceDefinitionPackage.SERIAL_CLOCK: return createSerialClock();
       case DeviceDefinitionPackage.MILLISECOND: return createMillisecond();
       case DeviceDefinitionPackage.SECOND: return createSecond();
       case DeviceDefinitionPackage.MINUTE: return createMinute();
@@ -598,6 +602,30 @@ public class DeviceDefinitionFactoryImpl extends EFactoryImpl implements DeviceD
   {
     GenericOutImpl genericOut = new GenericOutImpl();
     return genericOut;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SerialData createSerialData()
+  {
+    SerialDataImpl serialData = new SerialDataImpl();
+    return serialData;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SerialClock createSerialClock()
+  {
+    SerialClockImpl serialClock = new SerialClockImpl();
+    return serialClock;
   }
 
   /**

@@ -23,6 +23,8 @@ public class WorkerGenerator {
 	#include <esp_wifi.h>
 	#include <WiFi.h>
 	#include <Wire.h>
+	#include <SPI.h>
+	#include <Arduino.h>
 		
 	// GENERATED DIRECTIVES
 	«FOR device : worker.devices»

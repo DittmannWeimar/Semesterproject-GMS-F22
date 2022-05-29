@@ -89,4 +89,15 @@ class DeviceDefinitionValidator extends AbstractDeviceDefinitionValidator {
 	def getSleepTime (Worker worker) {
 		return worker.sleepTime + " " + timeUnitToString(worker.timeUnit);
 	}
+	
+	@Check
+	def checkRequiredPins(Device device) {
+		val definition = DeviceDefinition.getDefinition(device);
+		for (id : definition.requiredPinIds) {
+			val pin = getPinById(device.pins, id);
+			if (pin == null) {
+				error("Required pin '" + id + "' not found, please add it.", DeviceDefinitionPackage.Literals.DEVICE__PINS)
+			}
+		}
+	}
 }

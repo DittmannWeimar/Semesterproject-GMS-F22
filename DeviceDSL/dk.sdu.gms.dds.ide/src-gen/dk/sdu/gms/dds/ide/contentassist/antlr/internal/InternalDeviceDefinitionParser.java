@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalDeviceDefinitionParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_DECIMAL", "RULE_MAC", "RULE_INT", "RULE_HEXBYTE", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'millisecond'", "'milliseconds'", "'ms'", "'second'", "'seconds'", "'s'", "'minute'", "'minutes'", "'m'", "'hour'", "'hours'", "'h'", "'.'", "'->'", "'red'", "'green'", "'blue'", "'yellow'", "'System'", "':'", "'wifi'", "'mqtt'", "'with'", "'password'", "'username'", "'and'", "'Graph'", "'category'", "'title'", "'x'", "'y'", "'line'", "'legend'", "'color'", "'('", "','", "')'", "'random'", "'Gateway'", "'mac'", "'channel'", "'error'", "'light'", "'retries'", "'delay'", "'Worker'", "'sleep'", "'for'", "'Sensor'", "'pins'", "'sample'", "'if'", "'adc'", "'dac'", "'in'", "'out'", "'as'", "'mapping'", "'Actuator'", "'when'", "'on'", "'off'", "'run'", "'setting'", "'='", "'TRUE'", "'FALSE'", "'+'", "'-'", "'*'", "'/'", "'>'", "'<'", "'>='", "'<='", "'=='", "'!='", "'or'", "'value'", "'call'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_DECIMAL", "RULE_MAC", "RULE_INT", "RULE_HEXBYTE", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'millisecond'", "'milliseconds'", "'ms'", "'second'", "'seconds'", "'s'", "'minute'", "'minutes'", "'m'", "'hour'", "'hours'", "'h'", "'.'", "'->'", "'red'", "'green'", "'blue'", "'yellow'", "'System'", "':'", "'wifi'", "'mqtt'", "'with'", "'password'", "'username'", "'and'", "'Graph'", "'category'", "'title'", "'x'", "'y'", "'line'", "'legend'", "'color'", "'('", "','", "')'", "'random'", "'Gateway'", "'mac'", "'channel'", "'error'", "'light'", "'retries'", "'delay'", "'Worker'", "'sleep'", "'for'", "'Sensor'", "'pins'", "'sample'", "'if'", "'adc'", "'dac'", "'in'", "'out'", "'sda'", "'scl'", "'as'", "'mapping'", "'Actuator'", "'when'", "'on'", "'off'", "'run'", "'setting'", "'='", "'TRUE'", "'FALSE'", "'+'", "'-'", "'*'", "'/'", "'>'", "'<'", "'>='", "'<='", "'=='", "'!='", "'or'", "'value'", "'call'"
     };
     public static final int T__50=50;
     public static final int T__59=59;
@@ -72,6 +72,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
     public static final int T__91=91;
     public static final int T__92=92;
     public static final int T__93=93;
+    public static final int T__94=94;
     public static final int T__90=90;
     public static final int T__19=19;
     public static final int T__15=15;
@@ -79,6 +80,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
     public static final int T__17=17;
     public static final int T__18=18;
     public static final int T__14=14;
+    public static final int T__95=95;
     public static final int RULE_DECIMAL=6;
     public static final int T__26=26;
     public static final int T__27=27;
@@ -2650,7 +2652,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             if ( (LA2_0==62) ) {
                 alt2=1;
             }
-            else if ( (LA2_0==72) ) {
+            else if ( (LA2_0==74) ) {
                 alt2=2;
             }
             else {
@@ -2716,14 +2718,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__PinType__Alternatives"
-    // InternalDeviceDefinition.g:866:1: rule__PinType__Alternatives : ( ( ( rule__PinType__Group_0__0 ) ) | ( ( rule__PinType__Group_1__0 ) ) | ( ( rule__PinType__Group_2__0 ) ) | ( ( rule__PinType__Group_3__0 ) ) );
+    // InternalDeviceDefinition.g:866:1: rule__PinType__Alternatives : ( ( ( rule__PinType__Group_0__0 ) ) | ( ( rule__PinType__Group_1__0 ) ) | ( ( rule__PinType__Group_2__0 ) ) | ( ( rule__PinType__Group_3__0 ) ) | ( ( rule__PinType__Group_4__0 ) ) | ( ( rule__PinType__Group_5__0 ) ) );
     public final void rule__PinType__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:870:1: ( ( ( rule__PinType__Group_0__0 ) ) | ( ( rule__PinType__Group_1__0 ) ) | ( ( rule__PinType__Group_2__0 ) ) | ( ( rule__PinType__Group_3__0 ) ) )
-            int alt3=4;
+            // InternalDeviceDefinition.g:870:1: ( ( ( rule__PinType__Group_0__0 ) ) | ( ( rule__PinType__Group_1__0 ) ) | ( ( rule__PinType__Group_2__0 ) ) | ( ( rule__PinType__Group_3__0 ) ) | ( ( rule__PinType__Group_4__0 ) ) | ( ( rule__PinType__Group_5__0 ) ) )
+            int alt3=6;
             switch ( input.LA(1) ) {
             case 66:
                 {
@@ -2743,6 +2745,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             case 69:
                 {
                 alt3=4;
+                }
+                break;
+            case 70:
+                {
+                alt3=5;
+                }
+                break;
+            case 71:
+                {
+                alt3=6;
                 }
                 break;
             default:
@@ -2853,6 +2865,56 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
                     }
                     break;
+                case 5 :
+                    // InternalDeviceDefinition.g:895:2: ( ( rule__PinType__Group_4__0 ) )
+                    {
+                    // InternalDeviceDefinition.g:895:2: ( ( rule__PinType__Group_4__0 ) )
+                    // InternalDeviceDefinition.g:896:3: ( rule__PinType__Group_4__0 )
+                    {
+                     before(grammarAccess.getPinTypeAccess().getGroup_4()); 
+                    // InternalDeviceDefinition.g:897:3: ( rule__PinType__Group_4__0 )
+                    // InternalDeviceDefinition.g:897:4: rule__PinType__Group_4__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__PinType__Group_4__0();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getPinTypeAccess().getGroup_4()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 6 :
+                    // InternalDeviceDefinition.g:901:2: ( ( rule__PinType__Group_5__0 ) )
+                    {
+                    // InternalDeviceDefinition.g:901:2: ( ( rule__PinType__Group_5__0 ) )
+                    // InternalDeviceDefinition.g:902:3: ( rule__PinType__Group_5__0 )
+                    {
+                     before(grammarAccess.getPinTypeAccess().getGroup_5()); 
+                    // InternalDeviceDefinition.g:903:3: ( rule__PinType__Group_5__0 )
+                    // InternalDeviceDefinition.g:903:4: rule__PinType__Group_5__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__PinType__Group_5__0();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getPinTypeAccess().getGroup_5()); 
+
+                    }
+
+
+                    }
+                    break;
 
             }
         }
@@ -2871,13 +2933,13 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__TimeUnit__Alternatives"
-    // InternalDeviceDefinition.g:899:1: rule__TimeUnit__Alternatives : ( ( ( rule__TimeUnit__Group_0__0 ) ) | ( ( rule__TimeUnit__Group_1__0 ) ) | ( ( rule__TimeUnit__Group_2__0 ) ) | ( ( rule__TimeUnit__Group_3__0 ) ) );
+    // InternalDeviceDefinition.g:911:1: rule__TimeUnit__Alternatives : ( ( ( rule__TimeUnit__Group_0__0 ) ) | ( ( rule__TimeUnit__Group_1__0 ) ) | ( ( rule__TimeUnit__Group_2__0 ) ) | ( ( rule__TimeUnit__Group_3__0 ) ) );
     public final void rule__TimeUnit__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:903:1: ( ( ( rule__TimeUnit__Group_0__0 ) ) | ( ( rule__TimeUnit__Group_1__0 ) ) | ( ( rule__TimeUnit__Group_2__0 ) ) | ( ( rule__TimeUnit__Group_3__0 ) ) )
+            // InternalDeviceDefinition.g:915:1: ( ( ( rule__TimeUnit__Group_0__0 ) ) | ( ( rule__TimeUnit__Group_1__0 ) ) | ( ( rule__TimeUnit__Group_2__0 ) ) | ( ( rule__TimeUnit__Group_3__0 ) ) )
             int alt4=4;
             switch ( input.LA(1) ) {
             case 14:
@@ -2917,14 +2979,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
             switch (alt4) {
                 case 1 :
-                    // InternalDeviceDefinition.g:904:2: ( ( rule__TimeUnit__Group_0__0 ) )
+                    // InternalDeviceDefinition.g:916:2: ( ( rule__TimeUnit__Group_0__0 ) )
                     {
-                    // InternalDeviceDefinition.g:904:2: ( ( rule__TimeUnit__Group_0__0 ) )
-                    // InternalDeviceDefinition.g:905:3: ( rule__TimeUnit__Group_0__0 )
+                    // InternalDeviceDefinition.g:916:2: ( ( rule__TimeUnit__Group_0__0 ) )
+                    // InternalDeviceDefinition.g:917:3: ( rule__TimeUnit__Group_0__0 )
                     {
                      before(grammarAccess.getTimeUnitAccess().getGroup_0()); 
-                    // InternalDeviceDefinition.g:906:3: ( rule__TimeUnit__Group_0__0 )
-                    // InternalDeviceDefinition.g:906:4: rule__TimeUnit__Group_0__0
+                    // InternalDeviceDefinition.g:918:3: ( rule__TimeUnit__Group_0__0 )
+                    // InternalDeviceDefinition.g:918:4: rule__TimeUnit__Group_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__TimeUnit__Group_0__0();
@@ -2942,14 +3004,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 2 :
-                    // InternalDeviceDefinition.g:910:2: ( ( rule__TimeUnit__Group_1__0 ) )
+                    // InternalDeviceDefinition.g:922:2: ( ( rule__TimeUnit__Group_1__0 ) )
                     {
-                    // InternalDeviceDefinition.g:910:2: ( ( rule__TimeUnit__Group_1__0 ) )
-                    // InternalDeviceDefinition.g:911:3: ( rule__TimeUnit__Group_1__0 )
+                    // InternalDeviceDefinition.g:922:2: ( ( rule__TimeUnit__Group_1__0 ) )
+                    // InternalDeviceDefinition.g:923:3: ( rule__TimeUnit__Group_1__0 )
                     {
                      before(grammarAccess.getTimeUnitAccess().getGroup_1()); 
-                    // InternalDeviceDefinition.g:912:3: ( rule__TimeUnit__Group_1__0 )
-                    // InternalDeviceDefinition.g:912:4: rule__TimeUnit__Group_1__0
+                    // InternalDeviceDefinition.g:924:3: ( rule__TimeUnit__Group_1__0 )
+                    // InternalDeviceDefinition.g:924:4: rule__TimeUnit__Group_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__TimeUnit__Group_1__0();
@@ -2967,14 +3029,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 3 :
-                    // InternalDeviceDefinition.g:916:2: ( ( rule__TimeUnit__Group_2__0 ) )
+                    // InternalDeviceDefinition.g:928:2: ( ( rule__TimeUnit__Group_2__0 ) )
                     {
-                    // InternalDeviceDefinition.g:916:2: ( ( rule__TimeUnit__Group_2__0 ) )
-                    // InternalDeviceDefinition.g:917:3: ( rule__TimeUnit__Group_2__0 )
+                    // InternalDeviceDefinition.g:928:2: ( ( rule__TimeUnit__Group_2__0 ) )
+                    // InternalDeviceDefinition.g:929:3: ( rule__TimeUnit__Group_2__0 )
                     {
                      before(grammarAccess.getTimeUnitAccess().getGroup_2()); 
-                    // InternalDeviceDefinition.g:918:3: ( rule__TimeUnit__Group_2__0 )
-                    // InternalDeviceDefinition.g:918:4: rule__TimeUnit__Group_2__0
+                    // InternalDeviceDefinition.g:930:3: ( rule__TimeUnit__Group_2__0 )
+                    // InternalDeviceDefinition.g:930:4: rule__TimeUnit__Group_2__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__TimeUnit__Group_2__0();
@@ -2992,14 +3054,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 4 :
-                    // InternalDeviceDefinition.g:922:2: ( ( rule__TimeUnit__Group_3__0 ) )
+                    // InternalDeviceDefinition.g:934:2: ( ( rule__TimeUnit__Group_3__0 ) )
                     {
-                    // InternalDeviceDefinition.g:922:2: ( ( rule__TimeUnit__Group_3__0 ) )
-                    // InternalDeviceDefinition.g:923:3: ( rule__TimeUnit__Group_3__0 )
+                    // InternalDeviceDefinition.g:934:2: ( ( rule__TimeUnit__Group_3__0 ) )
+                    // InternalDeviceDefinition.g:935:3: ( rule__TimeUnit__Group_3__0 )
                     {
                      before(grammarAccess.getTimeUnitAccess().getGroup_3()); 
-                    // InternalDeviceDefinition.g:924:3: ( rule__TimeUnit__Group_3__0 )
-                    // InternalDeviceDefinition.g:924:4: rule__TimeUnit__Group_3__0
+                    // InternalDeviceDefinition.g:936:3: ( rule__TimeUnit__Group_3__0 )
+                    // InternalDeviceDefinition.g:936:4: rule__TimeUnit__Group_3__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__TimeUnit__Group_3__0();
@@ -3034,13 +3096,13 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__TimeUnit__Alternatives_0_1"
-    // InternalDeviceDefinition.g:932:1: rule__TimeUnit__Alternatives_0_1 : ( ( 'millisecond' ) | ( 'milliseconds' ) | ( 'ms' ) );
+    // InternalDeviceDefinition.g:944:1: rule__TimeUnit__Alternatives_0_1 : ( ( 'millisecond' ) | ( 'milliseconds' ) | ( 'ms' ) );
     public final void rule__TimeUnit__Alternatives_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:936:1: ( ( 'millisecond' ) | ( 'milliseconds' ) | ( 'ms' ) )
+            // InternalDeviceDefinition.g:948:1: ( ( 'millisecond' ) | ( 'milliseconds' ) | ( 'ms' ) )
             int alt5=3;
             switch ( input.LA(1) ) {
             case 14:
@@ -3067,10 +3129,10 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
             switch (alt5) {
                 case 1 :
-                    // InternalDeviceDefinition.g:937:2: ( 'millisecond' )
+                    // InternalDeviceDefinition.g:949:2: ( 'millisecond' )
                     {
-                    // InternalDeviceDefinition.g:937:2: ( 'millisecond' )
-                    // InternalDeviceDefinition.g:938:3: 'millisecond'
+                    // InternalDeviceDefinition.g:949:2: ( 'millisecond' )
+                    // InternalDeviceDefinition.g:950:3: 'millisecond'
                     {
                      before(grammarAccess.getTimeUnitAccess().getMillisecondKeyword_0_1_0()); 
                     match(input,14,FOLLOW_2); 
@@ -3082,10 +3144,10 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 2 :
-                    // InternalDeviceDefinition.g:943:2: ( 'milliseconds' )
+                    // InternalDeviceDefinition.g:955:2: ( 'milliseconds' )
                     {
-                    // InternalDeviceDefinition.g:943:2: ( 'milliseconds' )
-                    // InternalDeviceDefinition.g:944:3: 'milliseconds'
+                    // InternalDeviceDefinition.g:955:2: ( 'milliseconds' )
+                    // InternalDeviceDefinition.g:956:3: 'milliseconds'
                     {
                      before(grammarAccess.getTimeUnitAccess().getMillisecondsKeyword_0_1_1()); 
                     match(input,15,FOLLOW_2); 
@@ -3097,10 +3159,10 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 3 :
-                    // InternalDeviceDefinition.g:949:2: ( 'ms' )
+                    // InternalDeviceDefinition.g:961:2: ( 'ms' )
                     {
-                    // InternalDeviceDefinition.g:949:2: ( 'ms' )
-                    // InternalDeviceDefinition.g:950:3: 'ms'
+                    // InternalDeviceDefinition.g:961:2: ( 'ms' )
+                    // InternalDeviceDefinition.g:962:3: 'ms'
                     {
                      before(grammarAccess.getTimeUnitAccess().getMsKeyword_0_1_2()); 
                     match(input,16,FOLLOW_2); 
@@ -3129,13 +3191,13 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__TimeUnit__Alternatives_1_1"
-    // InternalDeviceDefinition.g:959:1: rule__TimeUnit__Alternatives_1_1 : ( ( 'second' ) | ( 'seconds' ) | ( 's' ) );
+    // InternalDeviceDefinition.g:971:1: rule__TimeUnit__Alternatives_1_1 : ( ( 'second' ) | ( 'seconds' ) | ( 's' ) );
     public final void rule__TimeUnit__Alternatives_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:963:1: ( ( 'second' ) | ( 'seconds' ) | ( 's' ) )
+            // InternalDeviceDefinition.g:975:1: ( ( 'second' ) | ( 'seconds' ) | ( 's' ) )
             int alt6=3;
             switch ( input.LA(1) ) {
             case 17:
@@ -3162,10 +3224,10 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
             switch (alt6) {
                 case 1 :
-                    // InternalDeviceDefinition.g:964:2: ( 'second' )
+                    // InternalDeviceDefinition.g:976:2: ( 'second' )
                     {
-                    // InternalDeviceDefinition.g:964:2: ( 'second' )
-                    // InternalDeviceDefinition.g:965:3: 'second'
+                    // InternalDeviceDefinition.g:976:2: ( 'second' )
+                    // InternalDeviceDefinition.g:977:3: 'second'
                     {
                      before(grammarAccess.getTimeUnitAccess().getSecondKeyword_1_1_0()); 
                     match(input,17,FOLLOW_2); 
@@ -3177,10 +3239,10 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 2 :
-                    // InternalDeviceDefinition.g:970:2: ( 'seconds' )
+                    // InternalDeviceDefinition.g:982:2: ( 'seconds' )
                     {
-                    // InternalDeviceDefinition.g:970:2: ( 'seconds' )
-                    // InternalDeviceDefinition.g:971:3: 'seconds'
+                    // InternalDeviceDefinition.g:982:2: ( 'seconds' )
+                    // InternalDeviceDefinition.g:983:3: 'seconds'
                     {
                      before(grammarAccess.getTimeUnitAccess().getSecondsKeyword_1_1_1()); 
                     match(input,18,FOLLOW_2); 
@@ -3192,10 +3254,10 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 3 :
-                    // InternalDeviceDefinition.g:976:2: ( 's' )
+                    // InternalDeviceDefinition.g:988:2: ( 's' )
                     {
-                    // InternalDeviceDefinition.g:976:2: ( 's' )
-                    // InternalDeviceDefinition.g:977:3: 's'
+                    // InternalDeviceDefinition.g:988:2: ( 's' )
+                    // InternalDeviceDefinition.g:989:3: 's'
                     {
                      before(grammarAccess.getTimeUnitAccess().getSKeyword_1_1_2()); 
                     match(input,19,FOLLOW_2); 
@@ -3224,13 +3286,13 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__TimeUnit__Alternatives_2_1"
-    // InternalDeviceDefinition.g:986:1: rule__TimeUnit__Alternatives_2_1 : ( ( 'minute' ) | ( 'minutes' ) | ( 'm' ) );
+    // InternalDeviceDefinition.g:998:1: rule__TimeUnit__Alternatives_2_1 : ( ( 'minute' ) | ( 'minutes' ) | ( 'm' ) );
     public final void rule__TimeUnit__Alternatives_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:990:1: ( ( 'minute' ) | ( 'minutes' ) | ( 'm' ) )
+            // InternalDeviceDefinition.g:1002:1: ( ( 'minute' ) | ( 'minutes' ) | ( 'm' ) )
             int alt7=3;
             switch ( input.LA(1) ) {
             case 20:
@@ -3257,10 +3319,10 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
             switch (alt7) {
                 case 1 :
-                    // InternalDeviceDefinition.g:991:2: ( 'minute' )
+                    // InternalDeviceDefinition.g:1003:2: ( 'minute' )
                     {
-                    // InternalDeviceDefinition.g:991:2: ( 'minute' )
-                    // InternalDeviceDefinition.g:992:3: 'minute'
+                    // InternalDeviceDefinition.g:1003:2: ( 'minute' )
+                    // InternalDeviceDefinition.g:1004:3: 'minute'
                     {
                      before(grammarAccess.getTimeUnitAccess().getMinuteKeyword_2_1_0()); 
                     match(input,20,FOLLOW_2); 
@@ -3272,10 +3334,10 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 2 :
-                    // InternalDeviceDefinition.g:997:2: ( 'minutes' )
+                    // InternalDeviceDefinition.g:1009:2: ( 'minutes' )
                     {
-                    // InternalDeviceDefinition.g:997:2: ( 'minutes' )
-                    // InternalDeviceDefinition.g:998:3: 'minutes'
+                    // InternalDeviceDefinition.g:1009:2: ( 'minutes' )
+                    // InternalDeviceDefinition.g:1010:3: 'minutes'
                     {
                      before(grammarAccess.getTimeUnitAccess().getMinutesKeyword_2_1_1()); 
                     match(input,21,FOLLOW_2); 
@@ -3287,10 +3349,10 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 3 :
-                    // InternalDeviceDefinition.g:1003:2: ( 'm' )
+                    // InternalDeviceDefinition.g:1015:2: ( 'm' )
                     {
-                    // InternalDeviceDefinition.g:1003:2: ( 'm' )
-                    // InternalDeviceDefinition.g:1004:3: 'm'
+                    // InternalDeviceDefinition.g:1015:2: ( 'm' )
+                    // InternalDeviceDefinition.g:1016:3: 'm'
                     {
                      before(grammarAccess.getTimeUnitAccess().getMKeyword_2_1_2()); 
                     match(input,22,FOLLOW_2); 
@@ -3319,13 +3381,13 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__TimeUnit__Alternatives_3_1"
-    // InternalDeviceDefinition.g:1013:1: rule__TimeUnit__Alternatives_3_1 : ( ( 'hour' ) | ( 'hours' ) | ( 'h' ) );
+    // InternalDeviceDefinition.g:1025:1: rule__TimeUnit__Alternatives_3_1 : ( ( 'hour' ) | ( 'hours' ) | ( 'h' ) );
     public final void rule__TimeUnit__Alternatives_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1017:1: ( ( 'hour' ) | ( 'hours' ) | ( 'h' ) )
+            // InternalDeviceDefinition.g:1029:1: ( ( 'hour' ) | ( 'hours' ) | ( 'h' ) )
             int alt8=3;
             switch ( input.LA(1) ) {
             case 23:
@@ -3352,10 +3414,10 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
             switch (alt8) {
                 case 1 :
-                    // InternalDeviceDefinition.g:1018:2: ( 'hour' )
+                    // InternalDeviceDefinition.g:1030:2: ( 'hour' )
                     {
-                    // InternalDeviceDefinition.g:1018:2: ( 'hour' )
-                    // InternalDeviceDefinition.g:1019:3: 'hour'
+                    // InternalDeviceDefinition.g:1030:2: ( 'hour' )
+                    // InternalDeviceDefinition.g:1031:3: 'hour'
                     {
                      before(grammarAccess.getTimeUnitAccess().getHourKeyword_3_1_0()); 
                     match(input,23,FOLLOW_2); 
@@ -3367,10 +3429,10 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 2 :
-                    // InternalDeviceDefinition.g:1024:2: ( 'hours' )
+                    // InternalDeviceDefinition.g:1036:2: ( 'hours' )
                     {
-                    // InternalDeviceDefinition.g:1024:2: ( 'hours' )
-                    // InternalDeviceDefinition.g:1025:3: 'hours'
+                    // InternalDeviceDefinition.g:1036:2: ( 'hours' )
+                    // InternalDeviceDefinition.g:1037:3: 'hours'
                     {
                      before(grammarAccess.getTimeUnitAccess().getHoursKeyword_3_1_1()); 
                     match(input,24,FOLLOW_2); 
@@ -3382,10 +3444,10 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 3 :
-                    // InternalDeviceDefinition.g:1030:2: ( 'h' )
+                    // InternalDeviceDefinition.g:1042:2: ( 'h' )
                     {
-                    // InternalDeviceDefinition.g:1030:2: ( 'h' )
-                    // InternalDeviceDefinition.g:1031:3: 'h'
+                    // InternalDeviceDefinition.g:1042:2: ( 'h' )
+                    // InternalDeviceDefinition.g:1043:3: 'h'
                     {
                      before(grammarAccess.getTimeUnitAccess().getHKeyword_3_1_2()); 
                     match(input,25,FOLLOW_2); 
@@ -3414,20 +3476,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Trigger__Alternatives"
-    // InternalDeviceDefinition.g:1040:1: rule__Trigger__Alternatives : ( ( ( rule__Trigger__Group_0__0 ) ) | ( ( rule__Trigger__Group_1__0 ) ) );
+    // InternalDeviceDefinition.g:1052:1: rule__Trigger__Alternatives : ( ( ( rule__Trigger__Group_0__0 ) ) | ( ( rule__Trigger__Group_1__0 ) ) );
     public final void rule__Trigger__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1044:1: ( ( ( rule__Trigger__Group_0__0 ) ) | ( ( rule__Trigger__Group_1__0 ) ) )
+            // InternalDeviceDefinition.g:1056:1: ( ( ( rule__Trigger__Group_0__0 ) ) | ( ( rule__Trigger__Group_1__0 ) ) )
             int alt9=2;
             int LA9_0 = input.LA(1);
 
-            if ( (LA9_0==73) ) {
+            if ( (LA9_0==75) ) {
                 alt9=1;
             }
-            else if ( (LA9_0==74) ) {
+            else if ( (LA9_0==76) ) {
                 alt9=2;
             }
             else {
@@ -3438,14 +3500,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             }
             switch (alt9) {
                 case 1 :
-                    // InternalDeviceDefinition.g:1045:2: ( ( rule__Trigger__Group_0__0 ) )
+                    // InternalDeviceDefinition.g:1057:2: ( ( rule__Trigger__Group_0__0 ) )
                     {
-                    // InternalDeviceDefinition.g:1045:2: ( ( rule__Trigger__Group_0__0 ) )
-                    // InternalDeviceDefinition.g:1046:3: ( rule__Trigger__Group_0__0 )
+                    // InternalDeviceDefinition.g:1057:2: ( ( rule__Trigger__Group_0__0 ) )
+                    // InternalDeviceDefinition.g:1058:3: ( rule__Trigger__Group_0__0 )
                     {
                      before(grammarAccess.getTriggerAccess().getGroup_0()); 
-                    // InternalDeviceDefinition.g:1047:3: ( rule__Trigger__Group_0__0 )
-                    // InternalDeviceDefinition.g:1047:4: rule__Trigger__Group_0__0
+                    // InternalDeviceDefinition.g:1059:3: ( rule__Trigger__Group_0__0 )
+                    // InternalDeviceDefinition.g:1059:4: rule__Trigger__Group_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Trigger__Group_0__0();
@@ -3463,14 +3525,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 2 :
-                    // InternalDeviceDefinition.g:1051:2: ( ( rule__Trigger__Group_1__0 ) )
+                    // InternalDeviceDefinition.g:1063:2: ( ( rule__Trigger__Group_1__0 ) )
                     {
-                    // InternalDeviceDefinition.g:1051:2: ( ( rule__Trigger__Group_1__0 ) )
-                    // InternalDeviceDefinition.g:1052:3: ( rule__Trigger__Group_1__0 )
+                    // InternalDeviceDefinition.g:1063:2: ( ( rule__Trigger__Group_1__0 ) )
+                    // InternalDeviceDefinition.g:1064:3: ( rule__Trigger__Group_1__0 )
                     {
                      before(grammarAccess.getTriggerAccess().getGroup_1()); 
-                    // InternalDeviceDefinition.g:1053:3: ( rule__Trigger__Group_1__0 )
-                    // InternalDeviceDefinition.g:1053:4: rule__Trigger__Group_1__0
+                    // InternalDeviceDefinition.g:1065:3: ( rule__Trigger__Group_1__0 )
+                    // InternalDeviceDefinition.g:1065:4: rule__Trigger__Group_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Trigger__Group_1__0();
@@ -3505,20 +3567,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Trigger__Alternatives_1_3"
-    // InternalDeviceDefinition.g:1061:1: rule__Trigger__Alternatives_1_3 : ( ( ( rule__Trigger__Group_1_3_0__0 ) ) | ( ( rule__Trigger__Group_1_3_1__0 ) ) );
+    // InternalDeviceDefinition.g:1073:1: rule__Trigger__Alternatives_1_3 : ( ( ( rule__Trigger__Group_1_3_0__0 ) ) | ( ( rule__Trigger__Group_1_3_1__0 ) ) );
     public final void rule__Trigger__Alternatives_1_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1065:1: ( ( ( rule__Trigger__Group_1_3_0__0 ) ) | ( ( rule__Trigger__Group_1_3_1__0 ) ) )
+            // InternalDeviceDefinition.g:1077:1: ( ( ( rule__Trigger__Group_1_3_0__0 ) ) | ( ( rule__Trigger__Group_1_3_1__0 ) ) )
             int alt10=2;
             int LA10_0 = input.LA(1);
 
-            if ( (LA10_0==75) ) {
+            if ( (LA10_0==77) ) {
                 alt10=1;
             }
-            else if ( (LA10_0==76) ) {
+            else if ( (LA10_0==78) ) {
                 alt10=2;
             }
             else {
@@ -3529,14 +3591,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             }
             switch (alt10) {
                 case 1 :
-                    // InternalDeviceDefinition.g:1066:2: ( ( rule__Trigger__Group_1_3_0__0 ) )
+                    // InternalDeviceDefinition.g:1078:2: ( ( rule__Trigger__Group_1_3_0__0 ) )
                     {
-                    // InternalDeviceDefinition.g:1066:2: ( ( rule__Trigger__Group_1_3_0__0 ) )
-                    // InternalDeviceDefinition.g:1067:3: ( rule__Trigger__Group_1_3_0__0 )
+                    // InternalDeviceDefinition.g:1078:2: ( ( rule__Trigger__Group_1_3_0__0 ) )
+                    // InternalDeviceDefinition.g:1079:3: ( rule__Trigger__Group_1_3_0__0 )
                     {
                      before(grammarAccess.getTriggerAccess().getGroup_1_3_0()); 
-                    // InternalDeviceDefinition.g:1068:3: ( rule__Trigger__Group_1_3_0__0 )
-                    // InternalDeviceDefinition.g:1068:4: rule__Trigger__Group_1_3_0__0
+                    // InternalDeviceDefinition.g:1080:3: ( rule__Trigger__Group_1_3_0__0 )
+                    // InternalDeviceDefinition.g:1080:4: rule__Trigger__Group_1_3_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Trigger__Group_1_3_0__0();
@@ -3554,14 +3616,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 2 :
-                    // InternalDeviceDefinition.g:1072:2: ( ( rule__Trigger__Group_1_3_1__0 ) )
+                    // InternalDeviceDefinition.g:1084:2: ( ( rule__Trigger__Group_1_3_1__0 ) )
                     {
-                    // InternalDeviceDefinition.g:1072:2: ( ( rule__Trigger__Group_1_3_1__0 ) )
-                    // InternalDeviceDefinition.g:1073:3: ( rule__Trigger__Group_1_3_1__0 )
+                    // InternalDeviceDefinition.g:1084:2: ( ( rule__Trigger__Group_1_3_1__0 ) )
+                    // InternalDeviceDefinition.g:1085:3: ( rule__Trigger__Group_1_3_1__0 )
                     {
                      before(grammarAccess.getTriggerAccess().getGroup_1_3_1()); 
-                    // InternalDeviceDefinition.g:1074:3: ( rule__Trigger__Group_1_3_1__0 )
-                    // InternalDeviceDefinition.g:1074:4: rule__Trigger__Group_1_3_1__0
+                    // InternalDeviceDefinition.g:1086:3: ( rule__Trigger__Group_1_3_1__0 )
+                    // InternalDeviceDefinition.g:1086:4: rule__Trigger__Group_1_3_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Trigger__Group_1_3_1__0();
@@ -3596,21 +3658,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Primitive__Alternatives"
-    // InternalDeviceDefinition.g:1082:1: rule__Primitive__Alternatives : ( ( ( rule__Primitive__Group_0__0 ) ) | ( ( rule__Primitive__Group_1__0 ) ) | ( ruleNumberPrimitive ) );
+    // InternalDeviceDefinition.g:1094:1: rule__Primitive__Alternatives : ( ( ( rule__Primitive__Group_0__0 ) ) | ( ( rule__Primitive__Group_1__0 ) ) | ( ruleNumberPrimitive ) );
     public final void rule__Primitive__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1086:1: ( ( ( rule__Primitive__Group_0__0 ) ) | ( ( rule__Primitive__Group_1__0 ) ) | ( ruleNumberPrimitive ) )
+            // InternalDeviceDefinition.g:1098:1: ( ( ( rule__Primitive__Group_0__0 ) ) | ( ( rule__Primitive__Group_1__0 ) ) | ( ruleNumberPrimitive ) )
             int alt11=3;
             switch ( input.LA(1) ) {
-            case 79:
+            case 81:
                 {
                 alt11=1;
                 }
                 break;
-            case 80:
+            case 82:
                 {
                 alt11=2;
                 }
@@ -3630,14 +3692,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
             switch (alt11) {
                 case 1 :
-                    // InternalDeviceDefinition.g:1087:2: ( ( rule__Primitive__Group_0__0 ) )
+                    // InternalDeviceDefinition.g:1099:2: ( ( rule__Primitive__Group_0__0 ) )
                     {
-                    // InternalDeviceDefinition.g:1087:2: ( ( rule__Primitive__Group_0__0 ) )
-                    // InternalDeviceDefinition.g:1088:3: ( rule__Primitive__Group_0__0 )
+                    // InternalDeviceDefinition.g:1099:2: ( ( rule__Primitive__Group_0__0 ) )
+                    // InternalDeviceDefinition.g:1100:3: ( rule__Primitive__Group_0__0 )
                     {
                      before(grammarAccess.getPrimitiveAccess().getGroup_0()); 
-                    // InternalDeviceDefinition.g:1089:3: ( rule__Primitive__Group_0__0 )
-                    // InternalDeviceDefinition.g:1089:4: rule__Primitive__Group_0__0
+                    // InternalDeviceDefinition.g:1101:3: ( rule__Primitive__Group_0__0 )
+                    // InternalDeviceDefinition.g:1101:4: rule__Primitive__Group_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Primitive__Group_0__0();
@@ -3655,14 +3717,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 2 :
-                    // InternalDeviceDefinition.g:1093:2: ( ( rule__Primitive__Group_1__0 ) )
+                    // InternalDeviceDefinition.g:1105:2: ( ( rule__Primitive__Group_1__0 ) )
                     {
-                    // InternalDeviceDefinition.g:1093:2: ( ( rule__Primitive__Group_1__0 ) )
-                    // InternalDeviceDefinition.g:1094:3: ( rule__Primitive__Group_1__0 )
+                    // InternalDeviceDefinition.g:1105:2: ( ( rule__Primitive__Group_1__0 ) )
+                    // InternalDeviceDefinition.g:1106:3: ( rule__Primitive__Group_1__0 )
                     {
                      before(grammarAccess.getPrimitiveAccess().getGroup_1()); 
-                    // InternalDeviceDefinition.g:1095:3: ( rule__Primitive__Group_1__0 )
-                    // InternalDeviceDefinition.g:1095:4: rule__Primitive__Group_1__0
+                    // InternalDeviceDefinition.g:1107:3: ( rule__Primitive__Group_1__0 )
+                    // InternalDeviceDefinition.g:1107:4: rule__Primitive__Group_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Primitive__Group_1__0();
@@ -3680,10 +3742,10 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 3 :
-                    // InternalDeviceDefinition.g:1099:2: ( ruleNumberPrimitive )
+                    // InternalDeviceDefinition.g:1111:2: ( ruleNumberPrimitive )
                     {
-                    // InternalDeviceDefinition.g:1099:2: ( ruleNumberPrimitive )
-                    // InternalDeviceDefinition.g:1100:3: ruleNumberPrimitive
+                    // InternalDeviceDefinition.g:1111:2: ( ruleNumberPrimitive )
+                    // InternalDeviceDefinition.g:1112:3: ruleNumberPrimitive
                     {
                      before(grammarAccess.getPrimitiveAccess().getNumberPrimitiveParserRuleCall_2()); 
                     pushFollow(FOLLOW_2);
@@ -3716,13 +3778,13 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__NumberPrimitive__Alternatives"
-    // InternalDeviceDefinition.g:1109:1: rule__NumberPrimitive__Alternatives : ( ( ( rule__NumberPrimitive__Group_0__0 ) ) | ( ( rule__NumberPrimitive__Group_1__0 ) ) );
+    // InternalDeviceDefinition.g:1121:1: rule__NumberPrimitive__Alternatives : ( ( ( rule__NumberPrimitive__Group_0__0 ) ) | ( ( rule__NumberPrimitive__Group_1__0 ) ) );
     public final void rule__NumberPrimitive__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1113:1: ( ( ( rule__NumberPrimitive__Group_0__0 ) ) | ( ( rule__NumberPrimitive__Group_1__0 ) ) )
+            // InternalDeviceDefinition.g:1125:1: ( ( ( rule__NumberPrimitive__Group_0__0 ) ) | ( ( rule__NumberPrimitive__Group_1__0 ) ) )
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -3740,14 +3802,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             }
             switch (alt12) {
                 case 1 :
-                    // InternalDeviceDefinition.g:1114:2: ( ( rule__NumberPrimitive__Group_0__0 ) )
+                    // InternalDeviceDefinition.g:1126:2: ( ( rule__NumberPrimitive__Group_0__0 ) )
                     {
-                    // InternalDeviceDefinition.g:1114:2: ( ( rule__NumberPrimitive__Group_0__0 ) )
-                    // InternalDeviceDefinition.g:1115:3: ( rule__NumberPrimitive__Group_0__0 )
+                    // InternalDeviceDefinition.g:1126:2: ( ( rule__NumberPrimitive__Group_0__0 ) )
+                    // InternalDeviceDefinition.g:1127:3: ( rule__NumberPrimitive__Group_0__0 )
                     {
                      before(grammarAccess.getNumberPrimitiveAccess().getGroup_0()); 
-                    // InternalDeviceDefinition.g:1116:3: ( rule__NumberPrimitive__Group_0__0 )
-                    // InternalDeviceDefinition.g:1116:4: rule__NumberPrimitive__Group_0__0
+                    // InternalDeviceDefinition.g:1128:3: ( rule__NumberPrimitive__Group_0__0 )
+                    // InternalDeviceDefinition.g:1128:4: rule__NumberPrimitive__Group_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__NumberPrimitive__Group_0__0();
@@ -3765,14 +3827,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 2 :
-                    // InternalDeviceDefinition.g:1120:2: ( ( rule__NumberPrimitive__Group_1__0 ) )
+                    // InternalDeviceDefinition.g:1132:2: ( ( rule__NumberPrimitive__Group_1__0 ) )
                     {
-                    // InternalDeviceDefinition.g:1120:2: ( ( rule__NumberPrimitive__Group_1__0 ) )
-                    // InternalDeviceDefinition.g:1121:3: ( rule__NumberPrimitive__Group_1__0 )
+                    // InternalDeviceDefinition.g:1132:2: ( ( rule__NumberPrimitive__Group_1__0 ) )
+                    // InternalDeviceDefinition.g:1133:3: ( rule__NumberPrimitive__Group_1__0 )
                     {
                      before(grammarAccess.getNumberPrimitiveAccess().getGroup_1()); 
-                    // InternalDeviceDefinition.g:1122:3: ( rule__NumberPrimitive__Group_1__0 )
-                    // InternalDeviceDefinition.g:1122:4: rule__NumberPrimitive__Group_1__0
+                    // InternalDeviceDefinition.g:1134:3: ( rule__NumberPrimitive__Group_1__0 )
+                    // InternalDeviceDefinition.g:1134:4: rule__NumberPrimitive__Group_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__NumberPrimitive__Group_1__0();
@@ -3807,20 +3869,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Exp__Alternatives_1_0"
-    // InternalDeviceDefinition.g:1130:1: rule__Exp__Alternatives_1_0 : ( ( ( rule__Exp__Group_1_0_0__0 ) ) | ( ( rule__Exp__Group_1_0_1__0 ) ) );
+    // InternalDeviceDefinition.g:1142:1: rule__Exp__Alternatives_1_0 : ( ( ( rule__Exp__Group_1_0_0__0 ) ) | ( ( rule__Exp__Group_1_0_1__0 ) ) );
     public final void rule__Exp__Alternatives_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1134:1: ( ( ( rule__Exp__Group_1_0_0__0 ) ) | ( ( rule__Exp__Group_1_0_1__0 ) ) )
+            // InternalDeviceDefinition.g:1146:1: ( ( ( rule__Exp__Group_1_0_0__0 ) ) | ( ( rule__Exp__Group_1_0_1__0 ) ) )
             int alt13=2;
             int LA13_0 = input.LA(1);
 
-            if ( (LA13_0==81) ) {
+            if ( (LA13_0==83) ) {
                 alt13=1;
             }
-            else if ( (LA13_0==82) ) {
+            else if ( (LA13_0==84) ) {
                 alt13=2;
             }
             else {
@@ -3831,14 +3893,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             }
             switch (alt13) {
                 case 1 :
-                    // InternalDeviceDefinition.g:1135:2: ( ( rule__Exp__Group_1_0_0__0 ) )
+                    // InternalDeviceDefinition.g:1147:2: ( ( rule__Exp__Group_1_0_0__0 ) )
                     {
-                    // InternalDeviceDefinition.g:1135:2: ( ( rule__Exp__Group_1_0_0__0 ) )
-                    // InternalDeviceDefinition.g:1136:3: ( rule__Exp__Group_1_0_0__0 )
+                    // InternalDeviceDefinition.g:1147:2: ( ( rule__Exp__Group_1_0_0__0 ) )
+                    // InternalDeviceDefinition.g:1148:3: ( rule__Exp__Group_1_0_0__0 )
                     {
                      before(grammarAccess.getExpAccess().getGroup_1_0_0()); 
-                    // InternalDeviceDefinition.g:1137:3: ( rule__Exp__Group_1_0_0__0 )
-                    // InternalDeviceDefinition.g:1137:4: rule__Exp__Group_1_0_0__0
+                    // InternalDeviceDefinition.g:1149:3: ( rule__Exp__Group_1_0_0__0 )
+                    // InternalDeviceDefinition.g:1149:4: rule__Exp__Group_1_0_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Exp__Group_1_0_0__0();
@@ -3856,14 +3918,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 2 :
-                    // InternalDeviceDefinition.g:1141:2: ( ( rule__Exp__Group_1_0_1__0 ) )
+                    // InternalDeviceDefinition.g:1153:2: ( ( rule__Exp__Group_1_0_1__0 ) )
                     {
-                    // InternalDeviceDefinition.g:1141:2: ( ( rule__Exp__Group_1_0_1__0 ) )
-                    // InternalDeviceDefinition.g:1142:3: ( rule__Exp__Group_1_0_1__0 )
+                    // InternalDeviceDefinition.g:1153:2: ( ( rule__Exp__Group_1_0_1__0 ) )
+                    // InternalDeviceDefinition.g:1154:3: ( rule__Exp__Group_1_0_1__0 )
                     {
                      before(grammarAccess.getExpAccess().getGroup_1_0_1()); 
-                    // InternalDeviceDefinition.g:1143:3: ( rule__Exp__Group_1_0_1__0 )
-                    // InternalDeviceDefinition.g:1143:4: rule__Exp__Group_1_0_1__0
+                    // InternalDeviceDefinition.g:1155:3: ( rule__Exp__Group_1_0_1__0 )
+                    // InternalDeviceDefinition.g:1155:4: rule__Exp__Group_1_0_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Exp__Group_1_0_1__0();
@@ -3898,20 +3960,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Factor__Alternatives_1_0"
-    // InternalDeviceDefinition.g:1151:1: rule__Factor__Alternatives_1_0 : ( ( ( rule__Factor__Group_1_0_0__0 ) ) | ( ( rule__Factor__Group_1_0_1__0 ) ) );
+    // InternalDeviceDefinition.g:1163:1: rule__Factor__Alternatives_1_0 : ( ( ( rule__Factor__Group_1_0_0__0 ) ) | ( ( rule__Factor__Group_1_0_1__0 ) ) );
     public final void rule__Factor__Alternatives_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1155:1: ( ( ( rule__Factor__Group_1_0_0__0 ) ) | ( ( rule__Factor__Group_1_0_1__0 ) ) )
+            // InternalDeviceDefinition.g:1167:1: ( ( ( rule__Factor__Group_1_0_0__0 ) ) | ( ( rule__Factor__Group_1_0_1__0 ) ) )
             int alt14=2;
             int LA14_0 = input.LA(1);
 
-            if ( (LA14_0==83) ) {
+            if ( (LA14_0==85) ) {
                 alt14=1;
             }
-            else if ( (LA14_0==84) ) {
+            else if ( (LA14_0==86) ) {
                 alt14=2;
             }
             else {
@@ -3922,14 +3984,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             }
             switch (alt14) {
                 case 1 :
-                    // InternalDeviceDefinition.g:1156:2: ( ( rule__Factor__Group_1_0_0__0 ) )
+                    // InternalDeviceDefinition.g:1168:2: ( ( rule__Factor__Group_1_0_0__0 ) )
                     {
-                    // InternalDeviceDefinition.g:1156:2: ( ( rule__Factor__Group_1_0_0__0 ) )
-                    // InternalDeviceDefinition.g:1157:3: ( rule__Factor__Group_1_0_0__0 )
+                    // InternalDeviceDefinition.g:1168:2: ( ( rule__Factor__Group_1_0_0__0 ) )
+                    // InternalDeviceDefinition.g:1169:3: ( rule__Factor__Group_1_0_0__0 )
                     {
                      before(grammarAccess.getFactorAccess().getGroup_1_0_0()); 
-                    // InternalDeviceDefinition.g:1158:3: ( rule__Factor__Group_1_0_0__0 )
-                    // InternalDeviceDefinition.g:1158:4: rule__Factor__Group_1_0_0__0
+                    // InternalDeviceDefinition.g:1170:3: ( rule__Factor__Group_1_0_0__0 )
+                    // InternalDeviceDefinition.g:1170:4: rule__Factor__Group_1_0_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Factor__Group_1_0_0__0();
@@ -3947,14 +4009,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 2 :
-                    // InternalDeviceDefinition.g:1162:2: ( ( rule__Factor__Group_1_0_1__0 ) )
+                    // InternalDeviceDefinition.g:1174:2: ( ( rule__Factor__Group_1_0_1__0 ) )
                     {
-                    // InternalDeviceDefinition.g:1162:2: ( ( rule__Factor__Group_1_0_1__0 ) )
-                    // InternalDeviceDefinition.g:1163:3: ( rule__Factor__Group_1_0_1__0 )
+                    // InternalDeviceDefinition.g:1174:2: ( ( rule__Factor__Group_1_0_1__0 ) )
+                    // InternalDeviceDefinition.g:1175:3: ( rule__Factor__Group_1_0_1__0 )
                     {
                      before(grammarAccess.getFactorAccess().getGroup_1_0_1()); 
-                    // InternalDeviceDefinition.g:1164:3: ( rule__Factor__Group_1_0_1__0 )
-                    // InternalDeviceDefinition.g:1164:4: rule__Factor__Group_1_0_1__0
+                    // InternalDeviceDefinition.g:1176:3: ( rule__Factor__Group_1_0_1__0 )
+                    // InternalDeviceDefinition.g:1176:4: rule__Factor__Group_1_0_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Factor__Group_1_0_1__0();
@@ -3989,20 +4051,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Compare__Alternatives_1_0"
-    // InternalDeviceDefinition.g:1172:1: rule__Compare__Alternatives_1_0 : ( ( ( rule__Compare__Group_1_0_0__0 ) ) | ( ( rule__Compare__Group_1_0_1__0 ) ) );
+    // InternalDeviceDefinition.g:1184:1: rule__Compare__Alternatives_1_0 : ( ( ( rule__Compare__Group_1_0_0__0 ) ) | ( ( rule__Compare__Group_1_0_1__0 ) ) );
     public final void rule__Compare__Alternatives_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1176:1: ( ( ( rule__Compare__Group_1_0_0__0 ) ) | ( ( rule__Compare__Group_1_0_1__0 ) ) )
+            // InternalDeviceDefinition.g:1188:1: ( ( ( rule__Compare__Group_1_0_0__0 ) ) | ( ( rule__Compare__Group_1_0_1__0 ) ) )
             int alt15=2;
             int LA15_0 = input.LA(1);
 
-            if ( (LA15_0==85) ) {
+            if ( (LA15_0==87) ) {
                 alt15=1;
             }
-            else if ( (LA15_0==86) ) {
+            else if ( (LA15_0==88) ) {
                 alt15=2;
             }
             else {
@@ -4013,14 +4075,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             }
             switch (alt15) {
                 case 1 :
-                    // InternalDeviceDefinition.g:1177:2: ( ( rule__Compare__Group_1_0_0__0 ) )
+                    // InternalDeviceDefinition.g:1189:2: ( ( rule__Compare__Group_1_0_0__0 ) )
                     {
-                    // InternalDeviceDefinition.g:1177:2: ( ( rule__Compare__Group_1_0_0__0 ) )
-                    // InternalDeviceDefinition.g:1178:3: ( rule__Compare__Group_1_0_0__0 )
+                    // InternalDeviceDefinition.g:1189:2: ( ( rule__Compare__Group_1_0_0__0 ) )
+                    // InternalDeviceDefinition.g:1190:3: ( rule__Compare__Group_1_0_0__0 )
                     {
                      before(grammarAccess.getCompareAccess().getGroup_1_0_0()); 
-                    // InternalDeviceDefinition.g:1179:3: ( rule__Compare__Group_1_0_0__0 )
-                    // InternalDeviceDefinition.g:1179:4: rule__Compare__Group_1_0_0__0
+                    // InternalDeviceDefinition.g:1191:3: ( rule__Compare__Group_1_0_0__0 )
+                    // InternalDeviceDefinition.g:1191:4: rule__Compare__Group_1_0_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Compare__Group_1_0_0__0();
@@ -4038,14 +4100,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 2 :
-                    // InternalDeviceDefinition.g:1183:2: ( ( rule__Compare__Group_1_0_1__0 ) )
+                    // InternalDeviceDefinition.g:1195:2: ( ( rule__Compare__Group_1_0_1__0 ) )
                     {
-                    // InternalDeviceDefinition.g:1183:2: ( ( rule__Compare__Group_1_0_1__0 ) )
-                    // InternalDeviceDefinition.g:1184:3: ( rule__Compare__Group_1_0_1__0 )
+                    // InternalDeviceDefinition.g:1195:2: ( ( rule__Compare__Group_1_0_1__0 ) )
+                    // InternalDeviceDefinition.g:1196:3: ( rule__Compare__Group_1_0_1__0 )
                     {
                      before(grammarAccess.getCompareAccess().getGroup_1_0_1()); 
-                    // InternalDeviceDefinition.g:1185:3: ( rule__Compare__Group_1_0_1__0 )
-                    // InternalDeviceDefinition.g:1185:4: rule__Compare__Group_1_0_1__0
+                    // InternalDeviceDefinition.g:1197:3: ( rule__Compare__Group_1_0_1__0 )
+                    // InternalDeviceDefinition.g:1197:4: rule__Compare__Group_1_0_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Compare__Group_1_0_1__0();
@@ -4080,20 +4142,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CompareOrEquals__Alternatives_1_0"
-    // InternalDeviceDefinition.g:1193:1: rule__CompareOrEquals__Alternatives_1_0 : ( ( ( rule__CompareOrEquals__Group_1_0_0__0 ) ) | ( ( rule__CompareOrEquals__Group_1_0_1__0 ) ) );
+    // InternalDeviceDefinition.g:1205:1: rule__CompareOrEquals__Alternatives_1_0 : ( ( ( rule__CompareOrEquals__Group_1_0_0__0 ) ) | ( ( rule__CompareOrEquals__Group_1_0_1__0 ) ) );
     public final void rule__CompareOrEquals__Alternatives_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1197:1: ( ( ( rule__CompareOrEquals__Group_1_0_0__0 ) ) | ( ( rule__CompareOrEquals__Group_1_0_1__0 ) ) )
+            // InternalDeviceDefinition.g:1209:1: ( ( ( rule__CompareOrEquals__Group_1_0_0__0 ) ) | ( ( rule__CompareOrEquals__Group_1_0_1__0 ) ) )
             int alt16=2;
             int LA16_0 = input.LA(1);
 
-            if ( (LA16_0==87) ) {
+            if ( (LA16_0==89) ) {
                 alt16=1;
             }
-            else if ( (LA16_0==88) ) {
+            else if ( (LA16_0==90) ) {
                 alt16=2;
             }
             else {
@@ -4104,14 +4166,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             }
             switch (alt16) {
                 case 1 :
-                    // InternalDeviceDefinition.g:1198:2: ( ( rule__CompareOrEquals__Group_1_0_0__0 ) )
+                    // InternalDeviceDefinition.g:1210:2: ( ( rule__CompareOrEquals__Group_1_0_0__0 ) )
                     {
-                    // InternalDeviceDefinition.g:1198:2: ( ( rule__CompareOrEquals__Group_1_0_0__0 ) )
-                    // InternalDeviceDefinition.g:1199:3: ( rule__CompareOrEquals__Group_1_0_0__0 )
+                    // InternalDeviceDefinition.g:1210:2: ( ( rule__CompareOrEquals__Group_1_0_0__0 ) )
+                    // InternalDeviceDefinition.g:1211:3: ( rule__CompareOrEquals__Group_1_0_0__0 )
                     {
                      before(grammarAccess.getCompareOrEqualsAccess().getGroup_1_0_0()); 
-                    // InternalDeviceDefinition.g:1200:3: ( rule__CompareOrEquals__Group_1_0_0__0 )
-                    // InternalDeviceDefinition.g:1200:4: rule__CompareOrEquals__Group_1_0_0__0
+                    // InternalDeviceDefinition.g:1212:3: ( rule__CompareOrEquals__Group_1_0_0__0 )
+                    // InternalDeviceDefinition.g:1212:4: rule__CompareOrEquals__Group_1_0_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__CompareOrEquals__Group_1_0_0__0();
@@ -4129,14 +4191,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 2 :
-                    // InternalDeviceDefinition.g:1204:2: ( ( rule__CompareOrEquals__Group_1_0_1__0 ) )
+                    // InternalDeviceDefinition.g:1216:2: ( ( rule__CompareOrEquals__Group_1_0_1__0 ) )
                     {
-                    // InternalDeviceDefinition.g:1204:2: ( ( rule__CompareOrEquals__Group_1_0_1__0 ) )
-                    // InternalDeviceDefinition.g:1205:3: ( rule__CompareOrEquals__Group_1_0_1__0 )
+                    // InternalDeviceDefinition.g:1216:2: ( ( rule__CompareOrEquals__Group_1_0_1__0 ) )
+                    // InternalDeviceDefinition.g:1217:3: ( rule__CompareOrEquals__Group_1_0_1__0 )
                     {
                      before(grammarAccess.getCompareOrEqualsAccess().getGroup_1_0_1()); 
-                    // InternalDeviceDefinition.g:1206:3: ( rule__CompareOrEquals__Group_1_0_1__0 )
-                    // InternalDeviceDefinition.g:1206:4: rule__CompareOrEquals__Group_1_0_1__0
+                    // InternalDeviceDefinition.g:1218:3: ( rule__CompareOrEquals__Group_1_0_1__0 )
+                    // InternalDeviceDefinition.g:1218:4: rule__CompareOrEquals__Group_1_0_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__CompareOrEquals__Group_1_0_1__0();
@@ -4171,20 +4233,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__EqualsOrNotEquals__Alternatives_1_0"
-    // InternalDeviceDefinition.g:1214:1: rule__EqualsOrNotEquals__Alternatives_1_0 : ( ( ( rule__EqualsOrNotEquals__Group_1_0_0__0 ) ) | ( ( rule__EqualsOrNotEquals__Group_1_0_1__0 ) ) );
+    // InternalDeviceDefinition.g:1226:1: rule__EqualsOrNotEquals__Alternatives_1_0 : ( ( ( rule__EqualsOrNotEquals__Group_1_0_0__0 ) ) | ( ( rule__EqualsOrNotEquals__Group_1_0_1__0 ) ) );
     public final void rule__EqualsOrNotEquals__Alternatives_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1218:1: ( ( ( rule__EqualsOrNotEquals__Group_1_0_0__0 ) ) | ( ( rule__EqualsOrNotEquals__Group_1_0_1__0 ) ) )
+            // InternalDeviceDefinition.g:1230:1: ( ( ( rule__EqualsOrNotEquals__Group_1_0_0__0 ) ) | ( ( rule__EqualsOrNotEquals__Group_1_0_1__0 ) ) )
             int alt17=2;
             int LA17_0 = input.LA(1);
 
-            if ( (LA17_0==89) ) {
+            if ( (LA17_0==91) ) {
                 alt17=1;
             }
-            else if ( (LA17_0==90) ) {
+            else if ( (LA17_0==92) ) {
                 alt17=2;
             }
             else {
@@ -4195,14 +4257,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             }
             switch (alt17) {
                 case 1 :
-                    // InternalDeviceDefinition.g:1219:2: ( ( rule__EqualsOrNotEquals__Group_1_0_0__0 ) )
+                    // InternalDeviceDefinition.g:1231:2: ( ( rule__EqualsOrNotEquals__Group_1_0_0__0 ) )
                     {
-                    // InternalDeviceDefinition.g:1219:2: ( ( rule__EqualsOrNotEquals__Group_1_0_0__0 ) )
-                    // InternalDeviceDefinition.g:1220:3: ( rule__EqualsOrNotEquals__Group_1_0_0__0 )
+                    // InternalDeviceDefinition.g:1231:2: ( ( rule__EqualsOrNotEquals__Group_1_0_0__0 ) )
+                    // InternalDeviceDefinition.g:1232:3: ( rule__EqualsOrNotEquals__Group_1_0_0__0 )
                     {
                      before(grammarAccess.getEqualsOrNotEqualsAccess().getGroup_1_0_0()); 
-                    // InternalDeviceDefinition.g:1221:3: ( rule__EqualsOrNotEquals__Group_1_0_0__0 )
-                    // InternalDeviceDefinition.g:1221:4: rule__EqualsOrNotEquals__Group_1_0_0__0
+                    // InternalDeviceDefinition.g:1233:3: ( rule__EqualsOrNotEquals__Group_1_0_0__0 )
+                    // InternalDeviceDefinition.g:1233:4: rule__EqualsOrNotEquals__Group_1_0_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__EqualsOrNotEquals__Group_1_0_0__0();
@@ -4220,14 +4282,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 2 :
-                    // InternalDeviceDefinition.g:1225:2: ( ( rule__EqualsOrNotEquals__Group_1_0_1__0 ) )
+                    // InternalDeviceDefinition.g:1237:2: ( ( rule__EqualsOrNotEquals__Group_1_0_1__0 ) )
                     {
-                    // InternalDeviceDefinition.g:1225:2: ( ( rule__EqualsOrNotEquals__Group_1_0_1__0 ) )
-                    // InternalDeviceDefinition.g:1226:3: ( rule__EqualsOrNotEquals__Group_1_0_1__0 )
+                    // InternalDeviceDefinition.g:1237:2: ( ( rule__EqualsOrNotEquals__Group_1_0_1__0 ) )
+                    // InternalDeviceDefinition.g:1238:3: ( rule__EqualsOrNotEquals__Group_1_0_1__0 )
                     {
                      before(grammarAccess.getEqualsOrNotEqualsAccess().getGroup_1_0_1()); 
-                    // InternalDeviceDefinition.g:1227:3: ( rule__EqualsOrNotEquals__Group_1_0_1__0 )
-                    // InternalDeviceDefinition.g:1227:4: rule__EqualsOrNotEquals__Group_1_0_1__0
+                    // InternalDeviceDefinition.g:1239:3: ( rule__EqualsOrNotEquals__Group_1_0_1__0 )
+                    // InternalDeviceDefinition.g:1239:4: rule__EqualsOrNotEquals__Group_1_0_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__EqualsOrNotEquals__Group_1_0_1__0();
@@ -4262,20 +4324,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__AndOr__Alternatives_1_0"
-    // InternalDeviceDefinition.g:1235:1: rule__AndOr__Alternatives_1_0 : ( ( ( rule__AndOr__Group_1_0_0__0 ) ) | ( ( rule__AndOr__Group_1_0_1__0 ) ) );
+    // InternalDeviceDefinition.g:1247:1: rule__AndOr__Alternatives_1_0 : ( ( ( rule__AndOr__Group_1_0_0__0 ) ) | ( ( rule__AndOr__Group_1_0_1__0 ) ) );
     public final void rule__AndOr__Alternatives_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1239:1: ( ( ( rule__AndOr__Group_1_0_0__0 ) ) | ( ( rule__AndOr__Group_1_0_1__0 ) ) )
+            // InternalDeviceDefinition.g:1251:1: ( ( ( rule__AndOr__Group_1_0_0__0 ) ) | ( ( rule__AndOr__Group_1_0_1__0 ) ) )
             int alt18=2;
             int LA18_0 = input.LA(1);
 
             if ( (LA18_0==39) ) {
                 alt18=1;
             }
-            else if ( (LA18_0==91) ) {
+            else if ( (LA18_0==93) ) {
                 alt18=2;
             }
             else {
@@ -4286,14 +4348,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             }
             switch (alt18) {
                 case 1 :
-                    // InternalDeviceDefinition.g:1240:2: ( ( rule__AndOr__Group_1_0_0__0 ) )
+                    // InternalDeviceDefinition.g:1252:2: ( ( rule__AndOr__Group_1_0_0__0 ) )
                     {
-                    // InternalDeviceDefinition.g:1240:2: ( ( rule__AndOr__Group_1_0_0__0 ) )
-                    // InternalDeviceDefinition.g:1241:3: ( rule__AndOr__Group_1_0_0__0 )
+                    // InternalDeviceDefinition.g:1252:2: ( ( rule__AndOr__Group_1_0_0__0 ) )
+                    // InternalDeviceDefinition.g:1253:3: ( rule__AndOr__Group_1_0_0__0 )
                     {
                      before(grammarAccess.getAndOrAccess().getGroup_1_0_0()); 
-                    // InternalDeviceDefinition.g:1242:3: ( rule__AndOr__Group_1_0_0__0 )
-                    // InternalDeviceDefinition.g:1242:4: rule__AndOr__Group_1_0_0__0
+                    // InternalDeviceDefinition.g:1254:3: ( rule__AndOr__Group_1_0_0__0 )
+                    // InternalDeviceDefinition.g:1254:4: rule__AndOr__Group_1_0_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__AndOr__Group_1_0_0__0();
@@ -4311,14 +4373,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 2 :
-                    // InternalDeviceDefinition.g:1246:2: ( ( rule__AndOr__Group_1_0_1__0 ) )
+                    // InternalDeviceDefinition.g:1258:2: ( ( rule__AndOr__Group_1_0_1__0 ) )
                     {
-                    // InternalDeviceDefinition.g:1246:2: ( ( rule__AndOr__Group_1_0_1__0 ) )
-                    // InternalDeviceDefinition.g:1247:3: ( rule__AndOr__Group_1_0_1__0 )
+                    // InternalDeviceDefinition.g:1258:2: ( ( rule__AndOr__Group_1_0_1__0 ) )
+                    // InternalDeviceDefinition.g:1259:3: ( rule__AndOr__Group_1_0_1__0 )
                     {
                      before(grammarAccess.getAndOrAccess().getGroup_1_0_1()); 
-                    // InternalDeviceDefinition.g:1248:3: ( rule__AndOr__Group_1_0_1__0 )
-                    // InternalDeviceDefinition.g:1248:4: rule__AndOr__Group_1_0_1__0
+                    // InternalDeviceDefinition.g:1260:3: ( rule__AndOr__Group_1_0_1__0 )
+                    // InternalDeviceDefinition.g:1260:4: rule__AndOr__Group_1_0_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__AndOr__Group_1_0_1__0();
@@ -4353,19 +4415,19 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Primary__Alternatives"
-    // InternalDeviceDefinition.g:1256:1: rule__Primary__Alternatives : ( ( rulePrimitive ) | ( ruleParenthesis ) | ( ruleVariableUse ) | ( ruleExternalCall ) | ( ( rule__Primary__Group_4__0 ) ) );
+    // InternalDeviceDefinition.g:1268:1: rule__Primary__Alternatives : ( ( rulePrimitive ) | ( ruleParenthesis ) | ( ruleVariableUse ) | ( ruleExternalCall ) | ( ( rule__Primary__Group_4__0 ) ) );
     public final void rule__Primary__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1260:1: ( ( rulePrimitive ) | ( ruleParenthesis ) | ( ruleVariableUse ) | ( ruleExternalCall ) | ( ( rule__Primary__Group_4__0 ) ) )
+            // InternalDeviceDefinition.g:1272:1: ( ( rulePrimitive ) | ( ruleParenthesis ) | ( ruleVariableUse ) | ( ruleExternalCall ) | ( ( rule__Primary__Group_4__0 ) ) )
             int alt19=5;
             switch ( input.LA(1) ) {
             case RULE_DECIMAL:
             case RULE_INT:
-            case 79:
-            case 80:
+            case 81:
+            case 82:
                 {
                 alt19=1;
                 }
@@ -4380,12 +4442,12 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                 alt19=3;
                 }
                 break;
-            case 93:
+            case 95:
                 {
                 alt19=4;
                 }
                 break;
-            case 92:
+            case 94:
                 {
                 alt19=5;
                 }
@@ -4399,10 +4461,10 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
             switch (alt19) {
                 case 1 :
-                    // InternalDeviceDefinition.g:1261:2: ( rulePrimitive )
+                    // InternalDeviceDefinition.g:1273:2: ( rulePrimitive )
                     {
-                    // InternalDeviceDefinition.g:1261:2: ( rulePrimitive )
-                    // InternalDeviceDefinition.g:1262:3: rulePrimitive
+                    // InternalDeviceDefinition.g:1273:2: ( rulePrimitive )
+                    // InternalDeviceDefinition.g:1274:3: rulePrimitive
                     {
                      before(grammarAccess.getPrimaryAccess().getPrimitiveParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -4418,10 +4480,10 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 2 :
-                    // InternalDeviceDefinition.g:1267:2: ( ruleParenthesis )
+                    // InternalDeviceDefinition.g:1279:2: ( ruleParenthesis )
                     {
-                    // InternalDeviceDefinition.g:1267:2: ( ruleParenthesis )
-                    // InternalDeviceDefinition.g:1268:3: ruleParenthesis
+                    // InternalDeviceDefinition.g:1279:2: ( ruleParenthesis )
+                    // InternalDeviceDefinition.g:1280:3: ruleParenthesis
                     {
                      before(grammarAccess.getPrimaryAccess().getParenthesisParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -4437,10 +4499,10 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 3 :
-                    // InternalDeviceDefinition.g:1273:2: ( ruleVariableUse )
+                    // InternalDeviceDefinition.g:1285:2: ( ruleVariableUse )
                     {
-                    // InternalDeviceDefinition.g:1273:2: ( ruleVariableUse )
-                    // InternalDeviceDefinition.g:1274:3: ruleVariableUse
+                    // InternalDeviceDefinition.g:1285:2: ( ruleVariableUse )
+                    // InternalDeviceDefinition.g:1286:3: ruleVariableUse
                     {
                      before(grammarAccess.getPrimaryAccess().getVariableUseParserRuleCall_2()); 
                     pushFollow(FOLLOW_2);
@@ -4456,10 +4518,10 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 4 :
-                    // InternalDeviceDefinition.g:1279:2: ( ruleExternalCall )
+                    // InternalDeviceDefinition.g:1291:2: ( ruleExternalCall )
                     {
-                    // InternalDeviceDefinition.g:1279:2: ( ruleExternalCall )
-                    // InternalDeviceDefinition.g:1280:3: ruleExternalCall
+                    // InternalDeviceDefinition.g:1291:2: ( ruleExternalCall )
+                    // InternalDeviceDefinition.g:1292:3: ruleExternalCall
                     {
                      before(grammarAccess.getPrimaryAccess().getExternalCallParserRuleCall_3()); 
                     pushFollow(FOLLOW_2);
@@ -4475,14 +4537,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 5 :
-                    // InternalDeviceDefinition.g:1285:2: ( ( rule__Primary__Group_4__0 ) )
+                    // InternalDeviceDefinition.g:1297:2: ( ( rule__Primary__Group_4__0 ) )
                     {
-                    // InternalDeviceDefinition.g:1285:2: ( ( rule__Primary__Group_4__0 ) )
-                    // InternalDeviceDefinition.g:1286:3: ( rule__Primary__Group_4__0 )
+                    // InternalDeviceDefinition.g:1297:2: ( ( rule__Primary__Group_4__0 ) )
+                    // InternalDeviceDefinition.g:1298:3: ( rule__Primary__Group_4__0 )
                     {
                      before(grammarAccess.getPrimaryAccess().getGroup_4()); 
-                    // InternalDeviceDefinition.g:1287:3: ( rule__Primary__Group_4__0 )
-                    // InternalDeviceDefinition.g:1287:4: rule__Primary__Group_4__0
+                    // InternalDeviceDefinition.g:1299:3: ( rule__Primary__Group_4__0 )
+                    // InternalDeviceDefinition.g:1299:4: rule__Primary__Group_4__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Primary__Group_4__0();
@@ -4517,13 +4579,13 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ExternalVariableUse__Alternatives_1"
-    // InternalDeviceDefinition.g:1295:1: rule__ExternalVariableUse__Alternatives_1 : ( ( '.' ) | ( '->' ) );
+    // InternalDeviceDefinition.g:1307:1: rule__ExternalVariableUse__Alternatives_1 : ( ( '.' ) | ( '->' ) );
     public final void rule__ExternalVariableUse__Alternatives_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1299:1: ( ( '.' ) | ( '->' ) )
+            // InternalDeviceDefinition.g:1311:1: ( ( '.' ) | ( '->' ) )
             int alt20=2;
             int LA20_0 = input.LA(1);
 
@@ -4541,10 +4603,10 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             }
             switch (alt20) {
                 case 1 :
-                    // InternalDeviceDefinition.g:1300:2: ( '.' )
+                    // InternalDeviceDefinition.g:1312:2: ( '.' )
                     {
-                    // InternalDeviceDefinition.g:1300:2: ( '.' )
-                    // InternalDeviceDefinition.g:1301:3: '.'
+                    // InternalDeviceDefinition.g:1312:2: ( '.' )
+                    // InternalDeviceDefinition.g:1313:3: '.'
                     {
                      before(grammarAccess.getExternalVariableUseAccess().getFullStopKeyword_1_0()); 
                     match(input,26,FOLLOW_2); 
@@ -4556,10 +4618,10 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 2 :
-                    // InternalDeviceDefinition.g:1306:2: ( '->' )
+                    // InternalDeviceDefinition.g:1318:2: ( '->' )
                     {
-                    // InternalDeviceDefinition.g:1306:2: ( '->' )
-                    // InternalDeviceDefinition.g:1307:3: '->'
+                    // InternalDeviceDefinition.g:1318:2: ( '->' )
+                    // InternalDeviceDefinition.g:1319:3: '->'
                     {
                      before(grammarAccess.getExternalVariableUseAccess().getHyphenMinusGreaterThanSignKeyword_1_1()); 
                     match(input,27,FOLLOW_2); 
@@ -4588,13 +4650,13 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__GraphVariableUse__Alternatives_1"
-    // InternalDeviceDefinition.g:1316:1: rule__GraphVariableUse__Alternatives_1 : ( ( '.' ) | ( '->' ) );
+    // InternalDeviceDefinition.g:1328:1: rule__GraphVariableUse__Alternatives_1 : ( ( '.' ) | ( '->' ) );
     public final void rule__GraphVariableUse__Alternatives_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1320:1: ( ( '.' ) | ( '->' ) )
+            // InternalDeviceDefinition.g:1332:1: ( ( '.' ) | ( '->' ) )
             int alt21=2;
             int LA21_0 = input.LA(1);
 
@@ -4612,10 +4674,10 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             }
             switch (alt21) {
                 case 1 :
-                    // InternalDeviceDefinition.g:1321:2: ( '.' )
+                    // InternalDeviceDefinition.g:1333:2: ( '.' )
                     {
-                    // InternalDeviceDefinition.g:1321:2: ( '.' )
-                    // InternalDeviceDefinition.g:1322:3: '.'
+                    // InternalDeviceDefinition.g:1333:2: ( '.' )
+                    // InternalDeviceDefinition.g:1334:3: '.'
                     {
                      before(grammarAccess.getGraphVariableUseAccess().getFullStopKeyword_1_0()); 
                     match(input,26,FOLLOW_2); 
@@ -4627,10 +4689,10 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 2 :
-                    // InternalDeviceDefinition.g:1327:2: ( '->' )
+                    // InternalDeviceDefinition.g:1339:2: ( '->' )
                     {
-                    // InternalDeviceDefinition.g:1327:2: ( '->' )
-                    // InternalDeviceDefinition.g:1328:3: '->'
+                    // InternalDeviceDefinition.g:1339:2: ( '->' )
+                    // InternalDeviceDefinition.g:1340:3: '->'
                     {
                      before(grammarAccess.getGraphVariableUseAccess().getHyphenMinusGreaterThanSignKeyword_1_1()); 
                     match(input,27,FOLLOW_2); 
@@ -4659,13 +4721,13 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__GraphVariableUse__Alternatives_3"
-    // InternalDeviceDefinition.g:1337:1: rule__GraphVariableUse__Alternatives_3 : ( ( '.' ) | ( '->' ) );
+    // InternalDeviceDefinition.g:1349:1: rule__GraphVariableUse__Alternatives_3 : ( ( '.' ) | ( '->' ) );
     public final void rule__GraphVariableUse__Alternatives_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1341:1: ( ( '.' ) | ( '->' ) )
+            // InternalDeviceDefinition.g:1353:1: ( ( '.' ) | ( '->' ) )
             int alt22=2;
             int LA22_0 = input.LA(1);
 
@@ -4683,10 +4745,10 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             }
             switch (alt22) {
                 case 1 :
-                    // InternalDeviceDefinition.g:1342:2: ( '.' )
+                    // InternalDeviceDefinition.g:1354:2: ( '.' )
                     {
-                    // InternalDeviceDefinition.g:1342:2: ( '.' )
-                    // InternalDeviceDefinition.g:1343:3: '.'
+                    // InternalDeviceDefinition.g:1354:2: ( '.' )
+                    // InternalDeviceDefinition.g:1355:3: '.'
                     {
                      before(grammarAccess.getGraphVariableUseAccess().getFullStopKeyword_3_0()); 
                     match(input,26,FOLLOW_2); 
@@ -4698,10 +4760,10 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 2 :
-                    // InternalDeviceDefinition.g:1348:2: ( '->' )
+                    // InternalDeviceDefinition.g:1360:2: ( '->' )
                     {
-                    // InternalDeviceDefinition.g:1348:2: ( '->' )
-                    // InternalDeviceDefinition.g:1349:3: '->'
+                    // InternalDeviceDefinition.g:1360:2: ( '->' )
+                    // InternalDeviceDefinition.g:1361:3: '->'
                     {
                      before(grammarAccess.getGraphVariableUseAccess().getHyphenMinusGreaterThanSignKeyword_3_1()); 
                     match(input,27,FOLLOW_2); 
@@ -4730,13 +4792,13 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__VariableUse__Alternatives"
-    // InternalDeviceDefinition.g:1358:1: rule__VariableUse__Alternatives : ( ( ruleInternalVariableUse ) | ( ruleExternalVariableUse ) | ( ruleGraphVariableUse ) );
+    // InternalDeviceDefinition.g:1370:1: rule__VariableUse__Alternatives : ( ( ruleInternalVariableUse ) | ( ruleExternalVariableUse ) | ( ruleGraphVariableUse ) );
     public final void rule__VariableUse__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1362:1: ( ( ruleInternalVariableUse ) | ( ruleExternalVariableUse ) | ( ruleGraphVariableUse ) )
+            // InternalDeviceDefinition.g:1374:1: ( ( ruleInternalVariableUse ) | ( ruleExternalVariableUse ) | ( ruleGraphVariableUse ) )
             int alt23=3;
             int LA23_0 = input.LA(1);
 
@@ -4749,7 +4811,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                     if ( (LA23_2==RULE_ID) ) {
                         int LA23_5 = input.LA(4);
 
-                        if ( (LA23_5==EOF||(LA23_5>=39 && LA23_5<=40)||(LA23_5>=49 && LA23_5<=50)||LA23_5==59||LA23_5==62||LA23_5==64||LA23_5==69||LA23_5==72||(LA23_5>=75 && LA23_5<=77)||(LA23_5>=81 && LA23_5<=91)) ) {
+                        if ( (LA23_5==EOF||(LA23_5>=39 && LA23_5<=40)||(LA23_5>=49 && LA23_5<=50)||LA23_5==59||LA23_5==62||LA23_5==64||LA23_5==69||LA23_5==74||(LA23_5>=77 && LA23_5<=79)||(LA23_5>=83 && LA23_5<=93)) ) {
                             alt23=2;
                         }
                         else if ( ((LA23_5>=26 && LA23_5<=27)) ) {
@@ -4777,7 +4839,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                     if ( (LA23_3==RULE_ID) ) {
                         int LA23_5 = input.LA(4);
 
-                        if ( (LA23_5==EOF||(LA23_5>=39 && LA23_5<=40)||(LA23_5>=49 && LA23_5<=50)||LA23_5==59||LA23_5==62||LA23_5==64||LA23_5==69||LA23_5==72||(LA23_5>=75 && LA23_5<=77)||(LA23_5>=81 && LA23_5<=91)) ) {
+                        if ( (LA23_5==EOF||(LA23_5>=39 && LA23_5<=40)||(LA23_5>=49 && LA23_5<=50)||LA23_5==59||LA23_5==62||LA23_5==64||LA23_5==69||LA23_5==74||(LA23_5>=77 && LA23_5<=79)||(LA23_5>=83 && LA23_5<=93)) ) {
                             alt23=2;
                         }
                         else if ( ((LA23_5>=26 && LA23_5<=27)) ) {
@@ -4807,12 +4869,10 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                 case 62:
                 case 64:
                 case 69:
-                case 72:
-                case 75:
-                case 76:
+                case 74:
                 case 77:
-                case 81:
-                case 82:
+                case 78:
+                case 79:
                 case 83:
                 case 84:
                 case 85:
@@ -4822,6 +4882,8 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                 case 89:
                 case 90:
                 case 91:
+                case 92:
+                case 93:
                     {
                     alt23=1;
                     }
@@ -4842,10 +4904,10 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             }
             switch (alt23) {
                 case 1 :
-                    // InternalDeviceDefinition.g:1363:2: ( ruleInternalVariableUse )
+                    // InternalDeviceDefinition.g:1375:2: ( ruleInternalVariableUse )
                     {
-                    // InternalDeviceDefinition.g:1363:2: ( ruleInternalVariableUse )
-                    // InternalDeviceDefinition.g:1364:3: ruleInternalVariableUse
+                    // InternalDeviceDefinition.g:1375:2: ( ruleInternalVariableUse )
+                    // InternalDeviceDefinition.g:1376:3: ruleInternalVariableUse
                     {
                      before(grammarAccess.getVariableUseAccess().getInternalVariableUseParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -4861,10 +4923,10 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 2 :
-                    // InternalDeviceDefinition.g:1369:2: ( ruleExternalVariableUse )
+                    // InternalDeviceDefinition.g:1381:2: ( ruleExternalVariableUse )
                     {
-                    // InternalDeviceDefinition.g:1369:2: ( ruleExternalVariableUse )
-                    // InternalDeviceDefinition.g:1370:3: ruleExternalVariableUse
+                    // InternalDeviceDefinition.g:1381:2: ( ruleExternalVariableUse )
+                    // InternalDeviceDefinition.g:1382:3: ruleExternalVariableUse
                     {
                      before(grammarAccess.getVariableUseAccess().getExternalVariableUseParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -4880,10 +4942,10 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 3 :
-                    // InternalDeviceDefinition.g:1375:2: ( ruleGraphVariableUse )
+                    // InternalDeviceDefinition.g:1387:2: ( ruleGraphVariableUse )
                     {
-                    // InternalDeviceDefinition.g:1375:2: ( ruleGraphVariableUse )
-                    // InternalDeviceDefinition.g:1376:3: ruleGraphVariableUse
+                    // InternalDeviceDefinition.g:1387:2: ( ruleGraphVariableUse )
+                    // InternalDeviceDefinition.g:1388:3: ruleGraphVariableUse
                     {
                      before(grammarAccess.getVariableUseAccess().getGraphVariableUseParserRuleCall_2()); 
                     pushFollow(FOLLOW_2);
@@ -4916,13 +4978,13 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ColorPreset__Alternatives"
-    // InternalDeviceDefinition.g:1385:1: rule__ColorPreset__Alternatives : ( ( ( 'red' ) ) | ( ( 'green' ) ) | ( ( 'blue' ) ) | ( ( 'yellow' ) ) );
+    // InternalDeviceDefinition.g:1397:1: rule__ColorPreset__Alternatives : ( ( ( 'red' ) ) | ( ( 'green' ) ) | ( ( 'blue' ) ) | ( ( 'yellow' ) ) );
     public final void rule__ColorPreset__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1389:1: ( ( ( 'red' ) ) | ( ( 'green' ) ) | ( ( 'blue' ) ) | ( ( 'yellow' ) ) )
+            // InternalDeviceDefinition.g:1401:1: ( ( ( 'red' ) ) | ( ( 'green' ) ) | ( ( 'blue' ) ) | ( ( 'yellow' ) ) )
             int alt24=4;
             switch ( input.LA(1) ) {
             case 28:
@@ -4954,14 +5016,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
             switch (alt24) {
                 case 1 :
-                    // InternalDeviceDefinition.g:1390:2: ( ( 'red' ) )
+                    // InternalDeviceDefinition.g:1402:2: ( ( 'red' ) )
                     {
-                    // InternalDeviceDefinition.g:1390:2: ( ( 'red' ) )
-                    // InternalDeviceDefinition.g:1391:3: ( 'red' )
+                    // InternalDeviceDefinition.g:1402:2: ( ( 'red' ) )
+                    // InternalDeviceDefinition.g:1403:3: ( 'red' )
                     {
                      before(grammarAccess.getColorPresetAccess().getRedEnumLiteralDeclaration_0()); 
-                    // InternalDeviceDefinition.g:1392:3: ( 'red' )
-                    // InternalDeviceDefinition.g:1392:4: 'red'
+                    // InternalDeviceDefinition.g:1404:3: ( 'red' )
+                    // InternalDeviceDefinition.g:1404:4: 'red'
                     {
                     match(input,28,FOLLOW_2); 
 
@@ -4975,14 +5037,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 2 :
-                    // InternalDeviceDefinition.g:1396:2: ( ( 'green' ) )
+                    // InternalDeviceDefinition.g:1408:2: ( ( 'green' ) )
                     {
-                    // InternalDeviceDefinition.g:1396:2: ( ( 'green' ) )
-                    // InternalDeviceDefinition.g:1397:3: ( 'green' )
+                    // InternalDeviceDefinition.g:1408:2: ( ( 'green' ) )
+                    // InternalDeviceDefinition.g:1409:3: ( 'green' )
                     {
                      before(grammarAccess.getColorPresetAccess().getGreenEnumLiteralDeclaration_1()); 
-                    // InternalDeviceDefinition.g:1398:3: ( 'green' )
-                    // InternalDeviceDefinition.g:1398:4: 'green'
+                    // InternalDeviceDefinition.g:1410:3: ( 'green' )
+                    // InternalDeviceDefinition.g:1410:4: 'green'
                     {
                     match(input,29,FOLLOW_2); 
 
@@ -4996,14 +5058,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 3 :
-                    // InternalDeviceDefinition.g:1402:2: ( ( 'blue' ) )
+                    // InternalDeviceDefinition.g:1414:2: ( ( 'blue' ) )
                     {
-                    // InternalDeviceDefinition.g:1402:2: ( ( 'blue' ) )
-                    // InternalDeviceDefinition.g:1403:3: ( 'blue' )
+                    // InternalDeviceDefinition.g:1414:2: ( ( 'blue' ) )
+                    // InternalDeviceDefinition.g:1415:3: ( 'blue' )
                     {
                      before(grammarAccess.getColorPresetAccess().getBlueEnumLiteralDeclaration_2()); 
-                    // InternalDeviceDefinition.g:1404:3: ( 'blue' )
-                    // InternalDeviceDefinition.g:1404:4: 'blue'
+                    // InternalDeviceDefinition.g:1416:3: ( 'blue' )
+                    // InternalDeviceDefinition.g:1416:4: 'blue'
                     {
                     match(input,30,FOLLOW_2); 
 
@@ -5017,14 +5079,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 4 :
-                    // InternalDeviceDefinition.g:1408:2: ( ( 'yellow' ) )
+                    // InternalDeviceDefinition.g:1420:2: ( ( 'yellow' ) )
                     {
-                    // InternalDeviceDefinition.g:1408:2: ( ( 'yellow' ) )
-                    // InternalDeviceDefinition.g:1409:3: ( 'yellow' )
+                    // InternalDeviceDefinition.g:1420:2: ( ( 'yellow' ) )
+                    // InternalDeviceDefinition.g:1421:3: ( 'yellow' )
                     {
                      before(grammarAccess.getColorPresetAccess().getYellowEnumLiteralDeclaration_3()); 
-                    // InternalDeviceDefinition.g:1410:3: ( 'yellow' )
-                    // InternalDeviceDefinition.g:1410:4: 'yellow'
+                    // InternalDeviceDefinition.g:1422:3: ( 'yellow' )
+                    // InternalDeviceDefinition.g:1422:4: 'yellow'
                     {
                     match(input,31,FOLLOW_2); 
 
@@ -5055,14 +5117,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group__0"
-    // InternalDeviceDefinition.g:1418:1: rule__System__Group__0 : rule__System__Group__0__Impl rule__System__Group__1 ;
+    // InternalDeviceDefinition.g:1430:1: rule__System__Group__0 : rule__System__Group__0__Impl rule__System__Group__1 ;
     public final void rule__System__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1422:1: ( rule__System__Group__0__Impl rule__System__Group__1 )
-            // InternalDeviceDefinition.g:1423:2: rule__System__Group__0__Impl rule__System__Group__1
+            // InternalDeviceDefinition.g:1434:1: ( rule__System__Group__0__Impl rule__System__Group__1 )
+            // InternalDeviceDefinition.g:1435:2: rule__System__Group__0__Impl rule__System__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__System__Group__0__Impl();
@@ -5093,17 +5155,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group__0__Impl"
-    // InternalDeviceDefinition.g:1430:1: rule__System__Group__0__Impl : ( 'System' ) ;
+    // InternalDeviceDefinition.g:1442:1: rule__System__Group__0__Impl : ( 'System' ) ;
     public final void rule__System__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1434:1: ( ( 'System' ) )
-            // InternalDeviceDefinition.g:1435:1: ( 'System' )
+            // InternalDeviceDefinition.g:1446:1: ( ( 'System' ) )
+            // InternalDeviceDefinition.g:1447:1: ( 'System' )
             {
-            // InternalDeviceDefinition.g:1435:1: ( 'System' )
-            // InternalDeviceDefinition.g:1436:2: 'System'
+            // InternalDeviceDefinition.g:1447:1: ( 'System' )
+            // InternalDeviceDefinition.g:1448:2: 'System'
             {
              before(grammarAccess.getSystemAccess().getSystemKeyword_0()); 
             match(input,32,FOLLOW_2); 
@@ -5130,14 +5192,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group__1"
-    // InternalDeviceDefinition.g:1445:1: rule__System__Group__1 : rule__System__Group__1__Impl rule__System__Group__2 ;
+    // InternalDeviceDefinition.g:1457:1: rule__System__Group__1 : rule__System__Group__1__Impl rule__System__Group__2 ;
     public final void rule__System__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1449:1: ( rule__System__Group__1__Impl rule__System__Group__2 )
-            // InternalDeviceDefinition.g:1450:2: rule__System__Group__1__Impl rule__System__Group__2
+            // InternalDeviceDefinition.g:1461:1: ( rule__System__Group__1__Impl rule__System__Group__2 )
+            // InternalDeviceDefinition.g:1462:2: rule__System__Group__1__Impl rule__System__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__System__Group__1__Impl();
@@ -5168,21 +5230,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group__1__Impl"
-    // InternalDeviceDefinition.g:1457:1: rule__System__Group__1__Impl : ( ( rule__System__NameAssignment_1 ) ) ;
+    // InternalDeviceDefinition.g:1469:1: rule__System__Group__1__Impl : ( ( rule__System__NameAssignment_1 ) ) ;
     public final void rule__System__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1461:1: ( ( ( rule__System__NameAssignment_1 ) ) )
-            // InternalDeviceDefinition.g:1462:1: ( ( rule__System__NameAssignment_1 ) )
+            // InternalDeviceDefinition.g:1473:1: ( ( ( rule__System__NameAssignment_1 ) ) )
+            // InternalDeviceDefinition.g:1474:1: ( ( rule__System__NameAssignment_1 ) )
             {
-            // InternalDeviceDefinition.g:1462:1: ( ( rule__System__NameAssignment_1 ) )
-            // InternalDeviceDefinition.g:1463:2: ( rule__System__NameAssignment_1 )
+            // InternalDeviceDefinition.g:1474:1: ( ( rule__System__NameAssignment_1 ) )
+            // InternalDeviceDefinition.g:1475:2: ( rule__System__NameAssignment_1 )
             {
              before(grammarAccess.getSystemAccess().getNameAssignment_1()); 
-            // InternalDeviceDefinition.g:1464:2: ( rule__System__NameAssignment_1 )
-            // InternalDeviceDefinition.g:1464:3: rule__System__NameAssignment_1
+            // InternalDeviceDefinition.g:1476:2: ( rule__System__NameAssignment_1 )
+            // InternalDeviceDefinition.g:1476:3: rule__System__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__System__NameAssignment_1();
@@ -5215,14 +5277,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group__2"
-    // InternalDeviceDefinition.g:1472:1: rule__System__Group__2 : rule__System__Group__2__Impl rule__System__Group__3 ;
+    // InternalDeviceDefinition.g:1484:1: rule__System__Group__2 : rule__System__Group__2__Impl rule__System__Group__3 ;
     public final void rule__System__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1476:1: ( rule__System__Group__2__Impl rule__System__Group__3 )
-            // InternalDeviceDefinition.g:1477:2: rule__System__Group__2__Impl rule__System__Group__3
+            // InternalDeviceDefinition.g:1488:1: ( rule__System__Group__2__Impl rule__System__Group__3 )
+            // InternalDeviceDefinition.g:1489:2: rule__System__Group__2__Impl rule__System__Group__3
             {
             pushFollow(FOLLOW_5);
             rule__System__Group__2__Impl();
@@ -5253,17 +5315,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group__2__Impl"
-    // InternalDeviceDefinition.g:1484:1: rule__System__Group__2__Impl : ( ':' ) ;
+    // InternalDeviceDefinition.g:1496:1: rule__System__Group__2__Impl : ( ':' ) ;
     public final void rule__System__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1488:1: ( ( ':' ) )
-            // InternalDeviceDefinition.g:1489:1: ( ':' )
+            // InternalDeviceDefinition.g:1500:1: ( ( ':' ) )
+            // InternalDeviceDefinition.g:1501:1: ( ':' )
             {
-            // InternalDeviceDefinition.g:1489:1: ( ':' )
-            // InternalDeviceDefinition.g:1490:2: ':'
+            // InternalDeviceDefinition.g:1501:1: ( ':' )
+            // InternalDeviceDefinition.g:1502:2: ':'
             {
              before(grammarAccess.getSystemAccess().getColonKeyword_2()); 
             match(input,33,FOLLOW_2); 
@@ -5290,14 +5352,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group__3"
-    // InternalDeviceDefinition.g:1499:1: rule__System__Group__3 : rule__System__Group__3__Impl rule__System__Group__4 ;
+    // InternalDeviceDefinition.g:1511:1: rule__System__Group__3 : rule__System__Group__3__Impl rule__System__Group__4 ;
     public final void rule__System__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1503:1: ( rule__System__Group__3__Impl rule__System__Group__4 )
-            // InternalDeviceDefinition.g:1504:2: rule__System__Group__3__Impl rule__System__Group__4
+            // InternalDeviceDefinition.g:1515:1: ( rule__System__Group__3__Impl rule__System__Group__4 )
+            // InternalDeviceDefinition.g:1516:2: rule__System__Group__3__Impl rule__System__Group__4
             {
             pushFollow(FOLLOW_6);
             rule__System__Group__3__Impl();
@@ -5328,17 +5390,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group__3__Impl"
-    // InternalDeviceDefinition.g:1511:1: rule__System__Group__3__Impl : ( 'wifi' ) ;
+    // InternalDeviceDefinition.g:1523:1: rule__System__Group__3__Impl : ( 'wifi' ) ;
     public final void rule__System__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1515:1: ( ( 'wifi' ) )
-            // InternalDeviceDefinition.g:1516:1: ( 'wifi' )
+            // InternalDeviceDefinition.g:1527:1: ( ( 'wifi' ) )
+            // InternalDeviceDefinition.g:1528:1: ( 'wifi' )
             {
-            // InternalDeviceDefinition.g:1516:1: ( 'wifi' )
-            // InternalDeviceDefinition.g:1517:2: 'wifi'
+            // InternalDeviceDefinition.g:1528:1: ( 'wifi' )
+            // InternalDeviceDefinition.g:1529:2: 'wifi'
             {
              before(grammarAccess.getSystemAccess().getWifiKeyword_3()); 
             match(input,34,FOLLOW_2); 
@@ -5365,14 +5427,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group__4"
-    // InternalDeviceDefinition.g:1526:1: rule__System__Group__4 : rule__System__Group__4__Impl rule__System__Group__5 ;
+    // InternalDeviceDefinition.g:1538:1: rule__System__Group__4 : rule__System__Group__4__Impl rule__System__Group__5 ;
     public final void rule__System__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1530:1: ( rule__System__Group__4__Impl rule__System__Group__5 )
-            // InternalDeviceDefinition.g:1531:2: rule__System__Group__4__Impl rule__System__Group__5
+            // InternalDeviceDefinition.g:1542:1: ( rule__System__Group__4__Impl rule__System__Group__5 )
+            // InternalDeviceDefinition.g:1543:2: rule__System__Group__4__Impl rule__System__Group__5
             {
             pushFollow(FOLLOW_7);
             rule__System__Group__4__Impl();
@@ -5403,21 +5465,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group__4__Impl"
-    // InternalDeviceDefinition.g:1538:1: rule__System__Group__4__Impl : ( ( rule__System__WifiSsidAssignment_4 ) ) ;
+    // InternalDeviceDefinition.g:1550:1: rule__System__Group__4__Impl : ( ( rule__System__WifiSsidAssignment_4 ) ) ;
     public final void rule__System__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1542:1: ( ( ( rule__System__WifiSsidAssignment_4 ) ) )
-            // InternalDeviceDefinition.g:1543:1: ( ( rule__System__WifiSsidAssignment_4 ) )
+            // InternalDeviceDefinition.g:1554:1: ( ( ( rule__System__WifiSsidAssignment_4 ) ) )
+            // InternalDeviceDefinition.g:1555:1: ( ( rule__System__WifiSsidAssignment_4 ) )
             {
-            // InternalDeviceDefinition.g:1543:1: ( ( rule__System__WifiSsidAssignment_4 ) )
-            // InternalDeviceDefinition.g:1544:2: ( rule__System__WifiSsidAssignment_4 )
+            // InternalDeviceDefinition.g:1555:1: ( ( rule__System__WifiSsidAssignment_4 ) )
+            // InternalDeviceDefinition.g:1556:2: ( rule__System__WifiSsidAssignment_4 )
             {
              before(grammarAccess.getSystemAccess().getWifiSsidAssignment_4()); 
-            // InternalDeviceDefinition.g:1545:2: ( rule__System__WifiSsidAssignment_4 )
-            // InternalDeviceDefinition.g:1545:3: rule__System__WifiSsidAssignment_4
+            // InternalDeviceDefinition.g:1557:2: ( rule__System__WifiSsidAssignment_4 )
+            // InternalDeviceDefinition.g:1557:3: rule__System__WifiSsidAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__System__WifiSsidAssignment_4();
@@ -5450,14 +5512,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group__5"
-    // InternalDeviceDefinition.g:1553:1: rule__System__Group__5 : rule__System__Group__5__Impl rule__System__Group__6 ;
+    // InternalDeviceDefinition.g:1565:1: rule__System__Group__5 : rule__System__Group__5__Impl rule__System__Group__6 ;
     public final void rule__System__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1557:1: ( rule__System__Group__5__Impl rule__System__Group__6 )
-            // InternalDeviceDefinition.g:1558:2: rule__System__Group__5__Impl rule__System__Group__6
+            // InternalDeviceDefinition.g:1569:1: ( rule__System__Group__5__Impl rule__System__Group__6 )
+            // InternalDeviceDefinition.g:1570:2: rule__System__Group__5__Impl rule__System__Group__6
             {
             pushFollow(FOLLOW_7);
             rule__System__Group__5__Impl();
@@ -5488,20 +5550,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group__5__Impl"
-    // InternalDeviceDefinition.g:1565:1: rule__System__Group__5__Impl : ( ( rule__System__Group_5__0 )? ) ;
+    // InternalDeviceDefinition.g:1577:1: rule__System__Group__5__Impl : ( ( rule__System__Group_5__0 )? ) ;
     public final void rule__System__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1569:1: ( ( ( rule__System__Group_5__0 )? ) )
-            // InternalDeviceDefinition.g:1570:1: ( ( rule__System__Group_5__0 )? )
+            // InternalDeviceDefinition.g:1581:1: ( ( ( rule__System__Group_5__0 )? ) )
+            // InternalDeviceDefinition.g:1582:1: ( ( rule__System__Group_5__0 )? )
             {
-            // InternalDeviceDefinition.g:1570:1: ( ( rule__System__Group_5__0 )? )
-            // InternalDeviceDefinition.g:1571:2: ( rule__System__Group_5__0 )?
+            // InternalDeviceDefinition.g:1582:1: ( ( rule__System__Group_5__0 )? )
+            // InternalDeviceDefinition.g:1583:2: ( rule__System__Group_5__0 )?
             {
              before(grammarAccess.getSystemAccess().getGroup_5()); 
-            // InternalDeviceDefinition.g:1572:2: ( rule__System__Group_5__0 )?
+            // InternalDeviceDefinition.g:1584:2: ( rule__System__Group_5__0 )?
             int alt25=2;
             int LA25_0 = input.LA(1);
 
@@ -5510,7 +5572,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             }
             switch (alt25) {
                 case 1 :
-                    // InternalDeviceDefinition.g:1572:3: rule__System__Group_5__0
+                    // InternalDeviceDefinition.g:1584:3: rule__System__Group_5__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__System__Group_5__0();
@@ -5546,14 +5608,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group__6"
-    // InternalDeviceDefinition.g:1580:1: rule__System__Group__6 : rule__System__Group__6__Impl rule__System__Group__7 ;
+    // InternalDeviceDefinition.g:1592:1: rule__System__Group__6 : rule__System__Group__6__Impl rule__System__Group__7 ;
     public final void rule__System__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1584:1: ( rule__System__Group__6__Impl rule__System__Group__7 )
-            // InternalDeviceDefinition.g:1585:2: rule__System__Group__6__Impl rule__System__Group__7
+            // InternalDeviceDefinition.g:1596:1: ( rule__System__Group__6__Impl rule__System__Group__7 )
+            // InternalDeviceDefinition.g:1597:2: rule__System__Group__6__Impl rule__System__Group__7
             {
             pushFollow(FOLLOW_6);
             rule__System__Group__6__Impl();
@@ -5584,17 +5646,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group__6__Impl"
-    // InternalDeviceDefinition.g:1592:1: rule__System__Group__6__Impl : ( 'mqtt' ) ;
+    // InternalDeviceDefinition.g:1604:1: rule__System__Group__6__Impl : ( 'mqtt' ) ;
     public final void rule__System__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1596:1: ( ( 'mqtt' ) )
-            // InternalDeviceDefinition.g:1597:1: ( 'mqtt' )
+            // InternalDeviceDefinition.g:1608:1: ( ( 'mqtt' ) )
+            // InternalDeviceDefinition.g:1609:1: ( 'mqtt' )
             {
-            // InternalDeviceDefinition.g:1597:1: ( 'mqtt' )
-            // InternalDeviceDefinition.g:1598:2: 'mqtt'
+            // InternalDeviceDefinition.g:1609:1: ( 'mqtt' )
+            // InternalDeviceDefinition.g:1610:2: 'mqtt'
             {
              before(grammarAccess.getSystemAccess().getMqttKeyword_6()); 
             match(input,35,FOLLOW_2); 
@@ -5621,14 +5683,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group__7"
-    // InternalDeviceDefinition.g:1607:1: rule__System__Group__7 : rule__System__Group__7__Impl rule__System__Group__8 ;
+    // InternalDeviceDefinition.g:1619:1: rule__System__Group__7 : rule__System__Group__7__Impl rule__System__Group__8 ;
     public final void rule__System__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1611:1: ( rule__System__Group__7__Impl rule__System__Group__8 )
-            // InternalDeviceDefinition.g:1612:2: rule__System__Group__7__Impl rule__System__Group__8
+            // InternalDeviceDefinition.g:1623:1: ( rule__System__Group__7__Impl rule__System__Group__8 )
+            // InternalDeviceDefinition.g:1624:2: rule__System__Group__7__Impl rule__System__Group__8
             {
             pushFollow(FOLLOW_8);
             rule__System__Group__7__Impl();
@@ -5659,21 +5721,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group__7__Impl"
-    // InternalDeviceDefinition.g:1619:1: rule__System__Group__7__Impl : ( ( rule__System__MqttHostAssignment_7 ) ) ;
+    // InternalDeviceDefinition.g:1631:1: rule__System__Group__7__Impl : ( ( rule__System__MqttHostAssignment_7 ) ) ;
     public final void rule__System__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1623:1: ( ( ( rule__System__MqttHostAssignment_7 ) ) )
-            // InternalDeviceDefinition.g:1624:1: ( ( rule__System__MqttHostAssignment_7 ) )
+            // InternalDeviceDefinition.g:1635:1: ( ( ( rule__System__MqttHostAssignment_7 ) ) )
+            // InternalDeviceDefinition.g:1636:1: ( ( rule__System__MqttHostAssignment_7 ) )
             {
-            // InternalDeviceDefinition.g:1624:1: ( ( rule__System__MqttHostAssignment_7 ) )
-            // InternalDeviceDefinition.g:1625:2: ( rule__System__MqttHostAssignment_7 )
+            // InternalDeviceDefinition.g:1636:1: ( ( rule__System__MqttHostAssignment_7 ) )
+            // InternalDeviceDefinition.g:1637:2: ( rule__System__MqttHostAssignment_7 )
             {
              before(grammarAccess.getSystemAccess().getMqttHostAssignment_7()); 
-            // InternalDeviceDefinition.g:1626:2: ( rule__System__MqttHostAssignment_7 )
-            // InternalDeviceDefinition.g:1626:3: rule__System__MqttHostAssignment_7
+            // InternalDeviceDefinition.g:1638:2: ( rule__System__MqttHostAssignment_7 )
+            // InternalDeviceDefinition.g:1638:3: rule__System__MqttHostAssignment_7
             {
             pushFollow(FOLLOW_2);
             rule__System__MqttHostAssignment_7();
@@ -5706,14 +5768,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group__8"
-    // InternalDeviceDefinition.g:1634:1: rule__System__Group__8 : rule__System__Group__8__Impl rule__System__Group__9 ;
+    // InternalDeviceDefinition.g:1646:1: rule__System__Group__8 : rule__System__Group__8__Impl rule__System__Group__9 ;
     public final void rule__System__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1638:1: ( rule__System__Group__8__Impl rule__System__Group__9 )
-            // InternalDeviceDefinition.g:1639:2: rule__System__Group__8__Impl rule__System__Group__9
+            // InternalDeviceDefinition.g:1650:1: ( rule__System__Group__8__Impl rule__System__Group__9 )
+            // InternalDeviceDefinition.g:1651:2: rule__System__Group__8__Impl rule__System__Group__9
             {
             pushFollow(FOLLOW_8);
             rule__System__Group__8__Impl();
@@ -5744,20 +5806,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group__8__Impl"
-    // InternalDeviceDefinition.g:1646:1: rule__System__Group__8__Impl : ( ( rule__System__Group_8__0 )? ) ;
+    // InternalDeviceDefinition.g:1658:1: rule__System__Group__8__Impl : ( ( rule__System__Group_8__0 )? ) ;
     public final void rule__System__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1650:1: ( ( ( rule__System__Group_8__0 )? ) )
-            // InternalDeviceDefinition.g:1651:1: ( ( rule__System__Group_8__0 )? )
+            // InternalDeviceDefinition.g:1662:1: ( ( ( rule__System__Group_8__0 )? ) )
+            // InternalDeviceDefinition.g:1663:1: ( ( rule__System__Group_8__0 )? )
             {
-            // InternalDeviceDefinition.g:1651:1: ( ( rule__System__Group_8__0 )? )
-            // InternalDeviceDefinition.g:1652:2: ( rule__System__Group_8__0 )?
+            // InternalDeviceDefinition.g:1663:1: ( ( rule__System__Group_8__0 )? )
+            // InternalDeviceDefinition.g:1664:2: ( rule__System__Group_8__0 )?
             {
              before(grammarAccess.getSystemAccess().getGroup_8()); 
-            // InternalDeviceDefinition.g:1653:2: ( rule__System__Group_8__0 )?
+            // InternalDeviceDefinition.g:1665:2: ( rule__System__Group_8__0 )?
             int alt26=2;
             int LA26_0 = input.LA(1);
 
@@ -5766,7 +5828,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             }
             switch (alt26) {
                 case 1 :
-                    // InternalDeviceDefinition.g:1653:3: rule__System__Group_8__0
+                    // InternalDeviceDefinition.g:1665:3: rule__System__Group_8__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__System__Group_8__0();
@@ -5802,14 +5864,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group__9"
-    // InternalDeviceDefinition.g:1661:1: rule__System__Group__9 : rule__System__Group__9__Impl rule__System__Group__10 ;
+    // InternalDeviceDefinition.g:1673:1: rule__System__Group__9 : rule__System__Group__9__Impl rule__System__Group__10 ;
     public final void rule__System__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1665:1: ( rule__System__Group__9__Impl rule__System__Group__10 )
-            // InternalDeviceDefinition.g:1666:2: rule__System__Group__9__Impl rule__System__Group__10
+            // InternalDeviceDefinition.g:1677:1: ( rule__System__Group__9__Impl rule__System__Group__10 )
+            // InternalDeviceDefinition.g:1678:2: rule__System__Group__9__Impl rule__System__Group__10
             {
             pushFollow(FOLLOW_9);
             rule__System__Group__9__Impl();
@@ -5840,21 +5902,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group__9__Impl"
-    // InternalDeviceDefinition.g:1673:1: rule__System__Group__9__Impl : ( ( rule__System__GatewayAssignment_9 ) ) ;
+    // InternalDeviceDefinition.g:1685:1: rule__System__Group__9__Impl : ( ( rule__System__GatewayAssignment_9 ) ) ;
     public final void rule__System__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1677:1: ( ( ( rule__System__GatewayAssignment_9 ) ) )
-            // InternalDeviceDefinition.g:1678:1: ( ( rule__System__GatewayAssignment_9 ) )
+            // InternalDeviceDefinition.g:1689:1: ( ( ( rule__System__GatewayAssignment_9 ) ) )
+            // InternalDeviceDefinition.g:1690:1: ( ( rule__System__GatewayAssignment_9 ) )
             {
-            // InternalDeviceDefinition.g:1678:1: ( ( rule__System__GatewayAssignment_9 ) )
-            // InternalDeviceDefinition.g:1679:2: ( rule__System__GatewayAssignment_9 )
+            // InternalDeviceDefinition.g:1690:1: ( ( rule__System__GatewayAssignment_9 ) )
+            // InternalDeviceDefinition.g:1691:2: ( rule__System__GatewayAssignment_9 )
             {
              before(grammarAccess.getSystemAccess().getGatewayAssignment_9()); 
-            // InternalDeviceDefinition.g:1680:2: ( rule__System__GatewayAssignment_9 )
-            // InternalDeviceDefinition.g:1680:3: rule__System__GatewayAssignment_9
+            // InternalDeviceDefinition.g:1692:2: ( rule__System__GatewayAssignment_9 )
+            // InternalDeviceDefinition.g:1692:3: rule__System__GatewayAssignment_9
             {
             pushFollow(FOLLOW_2);
             rule__System__GatewayAssignment_9();
@@ -5887,14 +5949,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group__10"
-    // InternalDeviceDefinition.g:1688:1: rule__System__Group__10 : rule__System__Group__10__Impl ;
+    // InternalDeviceDefinition.g:1700:1: rule__System__Group__10 : rule__System__Group__10__Impl ;
     public final void rule__System__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1692:1: ( rule__System__Group__10__Impl )
-            // InternalDeviceDefinition.g:1693:2: rule__System__Group__10__Impl
+            // InternalDeviceDefinition.g:1704:1: ( rule__System__Group__10__Impl )
+            // InternalDeviceDefinition.g:1705:2: rule__System__Group__10__Impl
             {
             pushFollow(FOLLOW_2);
             rule__System__Group__10__Impl();
@@ -5920,20 +5982,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group__10__Impl"
-    // InternalDeviceDefinition.g:1699:1: rule__System__Group__10__Impl : ( ( rule__System__GraphsAssignment_10 )* ) ;
+    // InternalDeviceDefinition.g:1711:1: rule__System__Group__10__Impl : ( ( rule__System__GraphsAssignment_10 )* ) ;
     public final void rule__System__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1703:1: ( ( ( rule__System__GraphsAssignment_10 )* ) )
-            // InternalDeviceDefinition.g:1704:1: ( ( rule__System__GraphsAssignment_10 )* )
+            // InternalDeviceDefinition.g:1715:1: ( ( ( rule__System__GraphsAssignment_10 )* ) )
+            // InternalDeviceDefinition.g:1716:1: ( ( rule__System__GraphsAssignment_10 )* )
             {
-            // InternalDeviceDefinition.g:1704:1: ( ( rule__System__GraphsAssignment_10 )* )
-            // InternalDeviceDefinition.g:1705:2: ( rule__System__GraphsAssignment_10 )*
+            // InternalDeviceDefinition.g:1716:1: ( ( rule__System__GraphsAssignment_10 )* )
+            // InternalDeviceDefinition.g:1717:2: ( rule__System__GraphsAssignment_10 )*
             {
              before(grammarAccess.getSystemAccess().getGraphsAssignment_10()); 
-            // InternalDeviceDefinition.g:1706:2: ( rule__System__GraphsAssignment_10 )*
+            // InternalDeviceDefinition.g:1718:2: ( rule__System__GraphsAssignment_10 )*
             loop27:
             do {
                 int alt27=2;
@@ -5946,7 +6008,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
                 switch (alt27) {
             	case 1 :
-            	    // InternalDeviceDefinition.g:1706:3: rule__System__GraphsAssignment_10
+            	    // InternalDeviceDefinition.g:1718:3: rule__System__GraphsAssignment_10
             	    {
             	    pushFollow(FOLLOW_10);
             	    rule__System__GraphsAssignment_10();
@@ -5985,14 +6047,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group_5__0"
-    // InternalDeviceDefinition.g:1715:1: rule__System__Group_5__0 : rule__System__Group_5__0__Impl rule__System__Group_5__1 ;
+    // InternalDeviceDefinition.g:1727:1: rule__System__Group_5__0 : rule__System__Group_5__0__Impl rule__System__Group_5__1 ;
     public final void rule__System__Group_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1719:1: ( rule__System__Group_5__0__Impl rule__System__Group_5__1 )
-            // InternalDeviceDefinition.g:1720:2: rule__System__Group_5__0__Impl rule__System__Group_5__1
+            // InternalDeviceDefinition.g:1731:1: ( rule__System__Group_5__0__Impl rule__System__Group_5__1 )
+            // InternalDeviceDefinition.g:1732:2: rule__System__Group_5__0__Impl rule__System__Group_5__1
             {
             pushFollow(FOLLOW_11);
             rule__System__Group_5__0__Impl();
@@ -6023,17 +6085,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group_5__0__Impl"
-    // InternalDeviceDefinition.g:1727:1: rule__System__Group_5__0__Impl : ( 'with' ) ;
+    // InternalDeviceDefinition.g:1739:1: rule__System__Group_5__0__Impl : ( 'with' ) ;
     public final void rule__System__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1731:1: ( ( 'with' ) )
-            // InternalDeviceDefinition.g:1732:1: ( 'with' )
+            // InternalDeviceDefinition.g:1743:1: ( ( 'with' ) )
+            // InternalDeviceDefinition.g:1744:1: ( 'with' )
             {
-            // InternalDeviceDefinition.g:1732:1: ( 'with' )
-            // InternalDeviceDefinition.g:1733:2: 'with'
+            // InternalDeviceDefinition.g:1744:1: ( 'with' )
+            // InternalDeviceDefinition.g:1745:2: 'with'
             {
              before(grammarAccess.getSystemAccess().getWithKeyword_5_0()); 
             match(input,36,FOLLOW_2); 
@@ -6060,14 +6122,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group_5__1"
-    // InternalDeviceDefinition.g:1742:1: rule__System__Group_5__1 : rule__System__Group_5__1__Impl rule__System__Group_5__2 ;
+    // InternalDeviceDefinition.g:1754:1: rule__System__Group_5__1 : rule__System__Group_5__1__Impl rule__System__Group_5__2 ;
     public final void rule__System__Group_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1746:1: ( rule__System__Group_5__1__Impl rule__System__Group_5__2 )
-            // InternalDeviceDefinition.g:1747:2: rule__System__Group_5__1__Impl rule__System__Group_5__2
+            // InternalDeviceDefinition.g:1758:1: ( rule__System__Group_5__1__Impl rule__System__Group_5__2 )
+            // InternalDeviceDefinition.g:1759:2: rule__System__Group_5__1__Impl rule__System__Group_5__2
             {
             pushFollow(FOLLOW_6);
             rule__System__Group_5__1__Impl();
@@ -6098,17 +6160,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group_5__1__Impl"
-    // InternalDeviceDefinition.g:1754:1: rule__System__Group_5__1__Impl : ( 'password' ) ;
+    // InternalDeviceDefinition.g:1766:1: rule__System__Group_5__1__Impl : ( 'password' ) ;
     public final void rule__System__Group_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1758:1: ( ( 'password' ) )
-            // InternalDeviceDefinition.g:1759:1: ( 'password' )
+            // InternalDeviceDefinition.g:1770:1: ( ( 'password' ) )
+            // InternalDeviceDefinition.g:1771:1: ( 'password' )
             {
-            // InternalDeviceDefinition.g:1759:1: ( 'password' )
-            // InternalDeviceDefinition.g:1760:2: 'password'
+            // InternalDeviceDefinition.g:1771:1: ( 'password' )
+            // InternalDeviceDefinition.g:1772:2: 'password'
             {
              before(grammarAccess.getSystemAccess().getPasswordKeyword_5_1()); 
             match(input,37,FOLLOW_2); 
@@ -6135,14 +6197,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group_5__2"
-    // InternalDeviceDefinition.g:1769:1: rule__System__Group_5__2 : rule__System__Group_5__2__Impl ;
+    // InternalDeviceDefinition.g:1781:1: rule__System__Group_5__2 : rule__System__Group_5__2__Impl ;
     public final void rule__System__Group_5__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1773:1: ( rule__System__Group_5__2__Impl )
-            // InternalDeviceDefinition.g:1774:2: rule__System__Group_5__2__Impl
+            // InternalDeviceDefinition.g:1785:1: ( rule__System__Group_5__2__Impl )
+            // InternalDeviceDefinition.g:1786:2: rule__System__Group_5__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__System__Group_5__2__Impl();
@@ -6168,21 +6230,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group_5__2__Impl"
-    // InternalDeviceDefinition.g:1780:1: rule__System__Group_5__2__Impl : ( ( rule__System__WifiPasswordAssignment_5_2 ) ) ;
+    // InternalDeviceDefinition.g:1792:1: rule__System__Group_5__2__Impl : ( ( rule__System__WifiPasswordAssignment_5_2 ) ) ;
     public final void rule__System__Group_5__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1784:1: ( ( ( rule__System__WifiPasswordAssignment_5_2 ) ) )
-            // InternalDeviceDefinition.g:1785:1: ( ( rule__System__WifiPasswordAssignment_5_2 ) )
+            // InternalDeviceDefinition.g:1796:1: ( ( ( rule__System__WifiPasswordAssignment_5_2 ) ) )
+            // InternalDeviceDefinition.g:1797:1: ( ( rule__System__WifiPasswordAssignment_5_2 ) )
             {
-            // InternalDeviceDefinition.g:1785:1: ( ( rule__System__WifiPasswordAssignment_5_2 ) )
-            // InternalDeviceDefinition.g:1786:2: ( rule__System__WifiPasswordAssignment_5_2 )
+            // InternalDeviceDefinition.g:1797:1: ( ( rule__System__WifiPasswordAssignment_5_2 ) )
+            // InternalDeviceDefinition.g:1798:2: ( rule__System__WifiPasswordAssignment_5_2 )
             {
              before(grammarAccess.getSystemAccess().getWifiPasswordAssignment_5_2()); 
-            // InternalDeviceDefinition.g:1787:2: ( rule__System__WifiPasswordAssignment_5_2 )
-            // InternalDeviceDefinition.g:1787:3: rule__System__WifiPasswordAssignment_5_2
+            // InternalDeviceDefinition.g:1799:2: ( rule__System__WifiPasswordAssignment_5_2 )
+            // InternalDeviceDefinition.g:1799:3: rule__System__WifiPasswordAssignment_5_2
             {
             pushFollow(FOLLOW_2);
             rule__System__WifiPasswordAssignment_5_2();
@@ -6215,14 +6277,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group_8__0"
-    // InternalDeviceDefinition.g:1796:1: rule__System__Group_8__0 : rule__System__Group_8__0__Impl rule__System__Group_8__1 ;
+    // InternalDeviceDefinition.g:1808:1: rule__System__Group_8__0 : rule__System__Group_8__0__Impl rule__System__Group_8__1 ;
     public final void rule__System__Group_8__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1800:1: ( rule__System__Group_8__0__Impl rule__System__Group_8__1 )
-            // InternalDeviceDefinition.g:1801:2: rule__System__Group_8__0__Impl rule__System__Group_8__1
+            // InternalDeviceDefinition.g:1812:1: ( rule__System__Group_8__0__Impl rule__System__Group_8__1 )
+            // InternalDeviceDefinition.g:1813:2: rule__System__Group_8__0__Impl rule__System__Group_8__1
             {
             pushFollow(FOLLOW_12);
             rule__System__Group_8__0__Impl();
@@ -6253,17 +6315,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group_8__0__Impl"
-    // InternalDeviceDefinition.g:1808:1: rule__System__Group_8__0__Impl : ( 'with' ) ;
+    // InternalDeviceDefinition.g:1820:1: rule__System__Group_8__0__Impl : ( 'with' ) ;
     public final void rule__System__Group_8__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1812:1: ( ( 'with' ) )
-            // InternalDeviceDefinition.g:1813:1: ( 'with' )
+            // InternalDeviceDefinition.g:1824:1: ( ( 'with' ) )
+            // InternalDeviceDefinition.g:1825:1: ( 'with' )
             {
-            // InternalDeviceDefinition.g:1813:1: ( 'with' )
-            // InternalDeviceDefinition.g:1814:2: 'with'
+            // InternalDeviceDefinition.g:1825:1: ( 'with' )
+            // InternalDeviceDefinition.g:1826:2: 'with'
             {
              before(grammarAccess.getSystemAccess().getWithKeyword_8_0()); 
             match(input,36,FOLLOW_2); 
@@ -6290,14 +6352,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group_8__1"
-    // InternalDeviceDefinition.g:1823:1: rule__System__Group_8__1 : rule__System__Group_8__1__Impl rule__System__Group_8__2 ;
+    // InternalDeviceDefinition.g:1835:1: rule__System__Group_8__1 : rule__System__Group_8__1__Impl rule__System__Group_8__2 ;
     public final void rule__System__Group_8__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1827:1: ( rule__System__Group_8__1__Impl rule__System__Group_8__2 )
-            // InternalDeviceDefinition.g:1828:2: rule__System__Group_8__1__Impl rule__System__Group_8__2
+            // InternalDeviceDefinition.g:1839:1: ( rule__System__Group_8__1__Impl rule__System__Group_8__2 )
+            // InternalDeviceDefinition.g:1840:2: rule__System__Group_8__1__Impl rule__System__Group_8__2
             {
             pushFollow(FOLLOW_6);
             rule__System__Group_8__1__Impl();
@@ -6328,17 +6390,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group_8__1__Impl"
-    // InternalDeviceDefinition.g:1835:1: rule__System__Group_8__1__Impl : ( 'username' ) ;
+    // InternalDeviceDefinition.g:1847:1: rule__System__Group_8__1__Impl : ( 'username' ) ;
     public final void rule__System__Group_8__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1839:1: ( ( 'username' ) )
-            // InternalDeviceDefinition.g:1840:1: ( 'username' )
+            // InternalDeviceDefinition.g:1851:1: ( ( 'username' ) )
+            // InternalDeviceDefinition.g:1852:1: ( 'username' )
             {
-            // InternalDeviceDefinition.g:1840:1: ( 'username' )
-            // InternalDeviceDefinition.g:1841:2: 'username'
+            // InternalDeviceDefinition.g:1852:1: ( 'username' )
+            // InternalDeviceDefinition.g:1853:2: 'username'
             {
              before(grammarAccess.getSystemAccess().getUsernameKeyword_8_1()); 
             match(input,38,FOLLOW_2); 
@@ -6365,14 +6427,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group_8__2"
-    // InternalDeviceDefinition.g:1850:1: rule__System__Group_8__2 : rule__System__Group_8__2__Impl rule__System__Group_8__3 ;
+    // InternalDeviceDefinition.g:1862:1: rule__System__Group_8__2 : rule__System__Group_8__2__Impl rule__System__Group_8__3 ;
     public final void rule__System__Group_8__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1854:1: ( rule__System__Group_8__2__Impl rule__System__Group_8__3 )
-            // InternalDeviceDefinition.g:1855:2: rule__System__Group_8__2__Impl rule__System__Group_8__3
+            // InternalDeviceDefinition.g:1866:1: ( rule__System__Group_8__2__Impl rule__System__Group_8__3 )
+            // InternalDeviceDefinition.g:1867:2: rule__System__Group_8__2__Impl rule__System__Group_8__3
             {
             pushFollow(FOLLOW_13);
             rule__System__Group_8__2__Impl();
@@ -6403,21 +6465,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group_8__2__Impl"
-    // InternalDeviceDefinition.g:1862:1: rule__System__Group_8__2__Impl : ( ( rule__System__MqttUsernameAssignment_8_2 ) ) ;
+    // InternalDeviceDefinition.g:1874:1: rule__System__Group_8__2__Impl : ( ( rule__System__MqttUsernameAssignment_8_2 ) ) ;
     public final void rule__System__Group_8__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1866:1: ( ( ( rule__System__MqttUsernameAssignment_8_2 ) ) )
-            // InternalDeviceDefinition.g:1867:1: ( ( rule__System__MqttUsernameAssignment_8_2 ) )
+            // InternalDeviceDefinition.g:1878:1: ( ( ( rule__System__MqttUsernameAssignment_8_2 ) ) )
+            // InternalDeviceDefinition.g:1879:1: ( ( rule__System__MqttUsernameAssignment_8_2 ) )
             {
-            // InternalDeviceDefinition.g:1867:1: ( ( rule__System__MqttUsernameAssignment_8_2 ) )
-            // InternalDeviceDefinition.g:1868:2: ( rule__System__MqttUsernameAssignment_8_2 )
+            // InternalDeviceDefinition.g:1879:1: ( ( rule__System__MqttUsernameAssignment_8_2 ) )
+            // InternalDeviceDefinition.g:1880:2: ( rule__System__MqttUsernameAssignment_8_2 )
             {
              before(grammarAccess.getSystemAccess().getMqttUsernameAssignment_8_2()); 
-            // InternalDeviceDefinition.g:1869:2: ( rule__System__MqttUsernameAssignment_8_2 )
-            // InternalDeviceDefinition.g:1869:3: rule__System__MqttUsernameAssignment_8_2
+            // InternalDeviceDefinition.g:1881:2: ( rule__System__MqttUsernameAssignment_8_2 )
+            // InternalDeviceDefinition.g:1881:3: rule__System__MqttUsernameAssignment_8_2
             {
             pushFollow(FOLLOW_2);
             rule__System__MqttUsernameAssignment_8_2();
@@ -6450,14 +6512,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group_8__3"
-    // InternalDeviceDefinition.g:1877:1: rule__System__Group_8__3 : rule__System__Group_8__3__Impl rule__System__Group_8__4 ;
+    // InternalDeviceDefinition.g:1889:1: rule__System__Group_8__3 : rule__System__Group_8__3__Impl rule__System__Group_8__4 ;
     public final void rule__System__Group_8__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1881:1: ( rule__System__Group_8__3__Impl rule__System__Group_8__4 )
-            // InternalDeviceDefinition.g:1882:2: rule__System__Group_8__3__Impl rule__System__Group_8__4
+            // InternalDeviceDefinition.g:1893:1: ( rule__System__Group_8__3__Impl rule__System__Group_8__4 )
+            // InternalDeviceDefinition.g:1894:2: rule__System__Group_8__3__Impl rule__System__Group_8__4
             {
             pushFollow(FOLLOW_11);
             rule__System__Group_8__3__Impl();
@@ -6488,17 +6550,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group_8__3__Impl"
-    // InternalDeviceDefinition.g:1889:1: rule__System__Group_8__3__Impl : ( 'and' ) ;
+    // InternalDeviceDefinition.g:1901:1: rule__System__Group_8__3__Impl : ( 'and' ) ;
     public final void rule__System__Group_8__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1893:1: ( ( 'and' ) )
-            // InternalDeviceDefinition.g:1894:1: ( 'and' )
+            // InternalDeviceDefinition.g:1905:1: ( ( 'and' ) )
+            // InternalDeviceDefinition.g:1906:1: ( 'and' )
             {
-            // InternalDeviceDefinition.g:1894:1: ( 'and' )
-            // InternalDeviceDefinition.g:1895:2: 'and'
+            // InternalDeviceDefinition.g:1906:1: ( 'and' )
+            // InternalDeviceDefinition.g:1907:2: 'and'
             {
              before(grammarAccess.getSystemAccess().getAndKeyword_8_3()); 
             match(input,39,FOLLOW_2); 
@@ -6525,14 +6587,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group_8__4"
-    // InternalDeviceDefinition.g:1904:1: rule__System__Group_8__4 : rule__System__Group_8__4__Impl rule__System__Group_8__5 ;
+    // InternalDeviceDefinition.g:1916:1: rule__System__Group_8__4 : rule__System__Group_8__4__Impl rule__System__Group_8__5 ;
     public final void rule__System__Group_8__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1908:1: ( rule__System__Group_8__4__Impl rule__System__Group_8__5 )
-            // InternalDeviceDefinition.g:1909:2: rule__System__Group_8__4__Impl rule__System__Group_8__5
+            // InternalDeviceDefinition.g:1920:1: ( rule__System__Group_8__4__Impl rule__System__Group_8__5 )
+            // InternalDeviceDefinition.g:1921:2: rule__System__Group_8__4__Impl rule__System__Group_8__5
             {
             pushFollow(FOLLOW_6);
             rule__System__Group_8__4__Impl();
@@ -6563,17 +6625,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group_8__4__Impl"
-    // InternalDeviceDefinition.g:1916:1: rule__System__Group_8__4__Impl : ( 'password' ) ;
+    // InternalDeviceDefinition.g:1928:1: rule__System__Group_8__4__Impl : ( 'password' ) ;
     public final void rule__System__Group_8__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1920:1: ( ( 'password' ) )
-            // InternalDeviceDefinition.g:1921:1: ( 'password' )
+            // InternalDeviceDefinition.g:1932:1: ( ( 'password' ) )
+            // InternalDeviceDefinition.g:1933:1: ( 'password' )
             {
-            // InternalDeviceDefinition.g:1921:1: ( 'password' )
-            // InternalDeviceDefinition.g:1922:2: 'password'
+            // InternalDeviceDefinition.g:1933:1: ( 'password' )
+            // InternalDeviceDefinition.g:1934:2: 'password'
             {
              before(grammarAccess.getSystemAccess().getPasswordKeyword_8_4()); 
             match(input,37,FOLLOW_2); 
@@ -6600,14 +6662,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group_8__5"
-    // InternalDeviceDefinition.g:1931:1: rule__System__Group_8__5 : rule__System__Group_8__5__Impl ;
+    // InternalDeviceDefinition.g:1943:1: rule__System__Group_8__5 : rule__System__Group_8__5__Impl ;
     public final void rule__System__Group_8__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1935:1: ( rule__System__Group_8__5__Impl )
-            // InternalDeviceDefinition.g:1936:2: rule__System__Group_8__5__Impl
+            // InternalDeviceDefinition.g:1947:1: ( rule__System__Group_8__5__Impl )
+            // InternalDeviceDefinition.g:1948:2: rule__System__Group_8__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__System__Group_8__5__Impl();
@@ -6633,21 +6695,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__Group_8__5__Impl"
-    // InternalDeviceDefinition.g:1942:1: rule__System__Group_8__5__Impl : ( ( rule__System__MqttPasswordAssignment_8_5 ) ) ;
+    // InternalDeviceDefinition.g:1954:1: rule__System__Group_8__5__Impl : ( ( rule__System__MqttPasswordAssignment_8_5 ) ) ;
     public final void rule__System__Group_8__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1946:1: ( ( ( rule__System__MqttPasswordAssignment_8_5 ) ) )
-            // InternalDeviceDefinition.g:1947:1: ( ( rule__System__MqttPasswordAssignment_8_5 ) )
+            // InternalDeviceDefinition.g:1958:1: ( ( ( rule__System__MqttPasswordAssignment_8_5 ) ) )
+            // InternalDeviceDefinition.g:1959:1: ( ( rule__System__MqttPasswordAssignment_8_5 ) )
             {
-            // InternalDeviceDefinition.g:1947:1: ( ( rule__System__MqttPasswordAssignment_8_5 ) )
-            // InternalDeviceDefinition.g:1948:2: ( rule__System__MqttPasswordAssignment_8_5 )
+            // InternalDeviceDefinition.g:1959:1: ( ( rule__System__MqttPasswordAssignment_8_5 ) )
+            // InternalDeviceDefinition.g:1960:2: ( rule__System__MqttPasswordAssignment_8_5 )
             {
              before(grammarAccess.getSystemAccess().getMqttPasswordAssignment_8_5()); 
-            // InternalDeviceDefinition.g:1949:2: ( rule__System__MqttPasswordAssignment_8_5 )
-            // InternalDeviceDefinition.g:1949:3: rule__System__MqttPasswordAssignment_8_5
+            // InternalDeviceDefinition.g:1961:2: ( rule__System__MqttPasswordAssignment_8_5 )
+            // InternalDeviceDefinition.g:1961:3: rule__System__MqttPasswordAssignment_8_5
             {
             pushFollow(FOLLOW_2);
             rule__System__MqttPasswordAssignment_8_5();
@@ -6680,14 +6742,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Graph__Group__0"
-    // InternalDeviceDefinition.g:1958:1: rule__Graph__Group__0 : rule__Graph__Group__0__Impl rule__Graph__Group__1 ;
+    // InternalDeviceDefinition.g:1970:1: rule__Graph__Group__0 : rule__Graph__Group__0__Impl rule__Graph__Group__1 ;
     public final void rule__Graph__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1962:1: ( rule__Graph__Group__0__Impl rule__Graph__Group__1 )
-            // InternalDeviceDefinition.g:1963:2: rule__Graph__Group__0__Impl rule__Graph__Group__1
+            // InternalDeviceDefinition.g:1974:1: ( rule__Graph__Group__0__Impl rule__Graph__Group__1 )
+            // InternalDeviceDefinition.g:1975:2: rule__Graph__Group__0__Impl rule__Graph__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__Graph__Group__0__Impl();
@@ -6718,17 +6780,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Graph__Group__0__Impl"
-    // InternalDeviceDefinition.g:1970:1: rule__Graph__Group__0__Impl : ( 'Graph' ) ;
+    // InternalDeviceDefinition.g:1982:1: rule__Graph__Group__0__Impl : ( 'Graph' ) ;
     public final void rule__Graph__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1974:1: ( ( 'Graph' ) )
-            // InternalDeviceDefinition.g:1975:1: ( 'Graph' )
+            // InternalDeviceDefinition.g:1986:1: ( ( 'Graph' ) )
+            // InternalDeviceDefinition.g:1987:1: ( 'Graph' )
             {
-            // InternalDeviceDefinition.g:1975:1: ( 'Graph' )
-            // InternalDeviceDefinition.g:1976:2: 'Graph'
+            // InternalDeviceDefinition.g:1987:1: ( 'Graph' )
+            // InternalDeviceDefinition.g:1988:2: 'Graph'
             {
              before(grammarAccess.getGraphAccess().getGraphKeyword_0()); 
             match(input,40,FOLLOW_2); 
@@ -6755,14 +6817,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Graph__Group__1"
-    // InternalDeviceDefinition.g:1985:1: rule__Graph__Group__1 : rule__Graph__Group__1__Impl rule__Graph__Group__2 ;
+    // InternalDeviceDefinition.g:1997:1: rule__Graph__Group__1 : rule__Graph__Group__1__Impl rule__Graph__Group__2 ;
     public final void rule__Graph__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:1989:1: ( rule__Graph__Group__1__Impl rule__Graph__Group__2 )
-            // InternalDeviceDefinition.g:1990:2: rule__Graph__Group__1__Impl rule__Graph__Group__2
+            // InternalDeviceDefinition.g:2001:1: ( rule__Graph__Group__1__Impl rule__Graph__Group__2 )
+            // InternalDeviceDefinition.g:2002:2: rule__Graph__Group__1__Impl rule__Graph__Group__2
             {
             pushFollow(FOLLOW_14);
             rule__Graph__Group__1__Impl();
@@ -6793,17 +6855,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Graph__Group__1__Impl"
-    // InternalDeviceDefinition.g:1997:1: rule__Graph__Group__1__Impl : ( ':' ) ;
+    // InternalDeviceDefinition.g:2009:1: rule__Graph__Group__1__Impl : ( ':' ) ;
     public final void rule__Graph__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2001:1: ( ( ':' ) )
-            // InternalDeviceDefinition.g:2002:1: ( ':' )
+            // InternalDeviceDefinition.g:2013:1: ( ( ':' ) )
+            // InternalDeviceDefinition.g:2014:1: ( ':' )
             {
-            // InternalDeviceDefinition.g:2002:1: ( ':' )
-            // InternalDeviceDefinition.g:2003:2: ':'
+            // InternalDeviceDefinition.g:2014:1: ( ':' )
+            // InternalDeviceDefinition.g:2015:2: ':'
             {
              before(grammarAccess.getGraphAccess().getColonKeyword_1()); 
             match(input,33,FOLLOW_2); 
@@ -6830,14 +6892,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Graph__Group__2"
-    // InternalDeviceDefinition.g:2012:1: rule__Graph__Group__2 : rule__Graph__Group__2__Impl rule__Graph__Group__3 ;
+    // InternalDeviceDefinition.g:2024:1: rule__Graph__Group__2 : rule__Graph__Group__2__Impl rule__Graph__Group__3 ;
     public final void rule__Graph__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2016:1: ( rule__Graph__Group__2__Impl rule__Graph__Group__3 )
-            // InternalDeviceDefinition.g:2017:2: rule__Graph__Group__2__Impl rule__Graph__Group__3
+            // InternalDeviceDefinition.g:2028:1: ( rule__Graph__Group__2__Impl rule__Graph__Group__3 )
+            // InternalDeviceDefinition.g:2029:2: rule__Graph__Group__2__Impl rule__Graph__Group__3
             {
             pushFollow(FOLLOW_6);
             rule__Graph__Group__2__Impl();
@@ -6868,17 +6930,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Graph__Group__2__Impl"
-    // InternalDeviceDefinition.g:2024:1: rule__Graph__Group__2__Impl : ( 'category' ) ;
+    // InternalDeviceDefinition.g:2036:1: rule__Graph__Group__2__Impl : ( 'category' ) ;
     public final void rule__Graph__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2028:1: ( ( 'category' ) )
-            // InternalDeviceDefinition.g:2029:1: ( 'category' )
+            // InternalDeviceDefinition.g:2040:1: ( ( 'category' ) )
+            // InternalDeviceDefinition.g:2041:1: ( 'category' )
             {
-            // InternalDeviceDefinition.g:2029:1: ( 'category' )
-            // InternalDeviceDefinition.g:2030:2: 'category'
+            // InternalDeviceDefinition.g:2041:1: ( 'category' )
+            // InternalDeviceDefinition.g:2042:2: 'category'
             {
              before(grammarAccess.getGraphAccess().getCategoryKeyword_2()); 
             match(input,41,FOLLOW_2); 
@@ -6905,14 +6967,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Graph__Group__3"
-    // InternalDeviceDefinition.g:2039:1: rule__Graph__Group__3 : rule__Graph__Group__3__Impl rule__Graph__Group__4 ;
+    // InternalDeviceDefinition.g:2051:1: rule__Graph__Group__3 : rule__Graph__Group__3__Impl rule__Graph__Group__4 ;
     public final void rule__Graph__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2043:1: ( rule__Graph__Group__3__Impl rule__Graph__Group__4 )
-            // InternalDeviceDefinition.g:2044:2: rule__Graph__Group__3__Impl rule__Graph__Group__4
+            // InternalDeviceDefinition.g:2055:1: ( rule__Graph__Group__3__Impl rule__Graph__Group__4 )
+            // InternalDeviceDefinition.g:2056:2: rule__Graph__Group__3__Impl rule__Graph__Group__4
             {
             pushFollow(FOLLOW_15);
             rule__Graph__Group__3__Impl();
@@ -6943,21 +7005,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Graph__Group__3__Impl"
-    // InternalDeviceDefinition.g:2051:1: rule__Graph__Group__3__Impl : ( ( rule__Graph__CategoryAssignment_3 ) ) ;
+    // InternalDeviceDefinition.g:2063:1: rule__Graph__Group__3__Impl : ( ( rule__Graph__CategoryAssignment_3 ) ) ;
     public final void rule__Graph__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2055:1: ( ( ( rule__Graph__CategoryAssignment_3 ) ) )
-            // InternalDeviceDefinition.g:2056:1: ( ( rule__Graph__CategoryAssignment_3 ) )
+            // InternalDeviceDefinition.g:2067:1: ( ( ( rule__Graph__CategoryAssignment_3 ) ) )
+            // InternalDeviceDefinition.g:2068:1: ( ( rule__Graph__CategoryAssignment_3 ) )
             {
-            // InternalDeviceDefinition.g:2056:1: ( ( rule__Graph__CategoryAssignment_3 ) )
-            // InternalDeviceDefinition.g:2057:2: ( rule__Graph__CategoryAssignment_3 )
+            // InternalDeviceDefinition.g:2068:1: ( ( rule__Graph__CategoryAssignment_3 ) )
+            // InternalDeviceDefinition.g:2069:2: ( rule__Graph__CategoryAssignment_3 )
             {
              before(grammarAccess.getGraphAccess().getCategoryAssignment_3()); 
-            // InternalDeviceDefinition.g:2058:2: ( rule__Graph__CategoryAssignment_3 )
-            // InternalDeviceDefinition.g:2058:3: rule__Graph__CategoryAssignment_3
+            // InternalDeviceDefinition.g:2070:2: ( rule__Graph__CategoryAssignment_3 )
+            // InternalDeviceDefinition.g:2070:3: rule__Graph__CategoryAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__Graph__CategoryAssignment_3();
@@ -6990,14 +7052,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Graph__Group__4"
-    // InternalDeviceDefinition.g:2066:1: rule__Graph__Group__4 : rule__Graph__Group__4__Impl rule__Graph__Group__5 ;
+    // InternalDeviceDefinition.g:2078:1: rule__Graph__Group__4 : rule__Graph__Group__4__Impl rule__Graph__Group__5 ;
     public final void rule__Graph__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2070:1: ( rule__Graph__Group__4__Impl rule__Graph__Group__5 )
-            // InternalDeviceDefinition.g:2071:2: rule__Graph__Group__4__Impl rule__Graph__Group__5
+            // InternalDeviceDefinition.g:2082:1: ( rule__Graph__Group__4__Impl rule__Graph__Group__5 )
+            // InternalDeviceDefinition.g:2083:2: rule__Graph__Group__4__Impl rule__Graph__Group__5
             {
             pushFollow(FOLLOW_6);
             rule__Graph__Group__4__Impl();
@@ -7028,17 +7090,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Graph__Group__4__Impl"
-    // InternalDeviceDefinition.g:2078:1: rule__Graph__Group__4__Impl : ( 'title' ) ;
+    // InternalDeviceDefinition.g:2090:1: rule__Graph__Group__4__Impl : ( 'title' ) ;
     public final void rule__Graph__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2082:1: ( ( 'title' ) )
-            // InternalDeviceDefinition.g:2083:1: ( 'title' )
+            // InternalDeviceDefinition.g:2094:1: ( ( 'title' ) )
+            // InternalDeviceDefinition.g:2095:1: ( 'title' )
             {
-            // InternalDeviceDefinition.g:2083:1: ( 'title' )
-            // InternalDeviceDefinition.g:2084:2: 'title'
+            // InternalDeviceDefinition.g:2095:1: ( 'title' )
+            // InternalDeviceDefinition.g:2096:2: 'title'
             {
              before(grammarAccess.getGraphAccess().getTitleKeyword_4()); 
             match(input,42,FOLLOW_2); 
@@ -7065,14 +7127,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Graph__Group__5"
-    // InternalDeviceDefinition.g:2093:1: rule__Graph__Group__5 : rule__Graph__Group__5__Impl rule__Graph__Group__6 ;
+    // InternalDeviceDefinition.g:2105:1: rule__Graph__Group__5 : rule__Graph__Group__5__Impl rule__Graph__Group__6 ;
     public final void rule__Graph__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2097:1: ( rule__Graph__Group__5__Impl rule__Graph__Group__6 )
-            // InternalDeviceDefinition.g:2098:2: rule__Graph__Group__5__Impl rule__Graph__Group__6
+            // InternalDeviceDefinition.g:2109:1: ( rule__Graph__Group__5__Impl rule__Graph__Group__6 )
+            // InternalDeviceDefinition.g:2110:2: rule__Graph__Group__5__Impl rule__Graph__Group__6
             {
             pushFollow(FOLLOW_16);
             rule__Graph__Group__5__Impl();
@@ -7103,21 +7165,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Graph__Group__5__Impl"
-    // InternalDeviceDefinition.g:2105:1: rule__Graph__Group__5__Impl : ( ( rule__Graph__TitleAssignment_5 ) ) ;
+    // InternalDeviceDefinition.g:2117:1: rule__Graph__Group__5__Impl : ( ( rule__Graph__TitleAssignment_5 ) ) ;
     public final void rule__Graph__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2109:1: ( ( ( rule__Graph__TitleAssignment_5 ) ) )
-            // InternalDeviceDefinition.g:2110:1: ( ( rule__Graph__TitleAssignment_5 ) )
+            // InternalDeviceDefinition.g:2121:1: ( ( ( rule__Graph__TitleAssignment_5 ) ) )
+            // InternalDeviceDefinition.g:2122:1: ( ( rule__Graph__TitleAssignment_5 ) )
             {
-            // InternalDeviceDefinition.g:2110:1: ( ( rule__Graph__TitleAssignment_5 ) )
-            // InternalDeviceDefinition.g:2111:2: ( rule__Graph__TitleAssignment_5 )
+            // InternalDeviceDefinition.g:2122:1: ( ( rule__Graph__TitleAssignment_5 ) )
+            // InternalDeviceDefinition.g:2123:2: ( rule__Graph__TitleAssignment_5 )
             {
              before(grammarAccess.getGraphAccess().getTitleAssignment_5()); 
-            // InternalDeviceDefinition.g:2112:2: ( rule__Graph__TitleAssignment_5 )
-            // InternalDeviceDefinition.g:2112:3: rule__Graph__TitleAssignment_5
+            // InternalDeviceDefinition.g:2124:2: ( rule__Graph__TitleAssignment_5 )
+            // InternalDeviceDefinition.g:2124:3: rule__Graph__TitleAssignment_5
             {
             pushFollow(FOLLOW_2);
             rule__Graph__TitleAssignment_5();
@@ -7150,14 +7212,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Graph__Group__6"
-    // InternalDeviceDefinition.g:2120:1: rule__Graph__Group__6 : rule__Graph__Group__6__Impl rule__Graph__Group__7 ;
+    // InternalDeviceDefinition.g:2132:1: rule__Graph__Group__6 : rule__Graph__Group__6__Impl rule__Graph__Group__7 ;
     public final void rule__Graph__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2124:1: ( rule__Graph__Group__6__Impl rule__Graph__Group__7 )
-            // InternalDeviceDefinition.g:2125:2: rule__Graph__Group__6__Impl rule__Graph__Group__7
+            // InternalDeviceDefinition.g:2136:1: ( rule__Graph__Group__6__Impl rule__Graph__Group__7 )
+            // InternalDeviceDefinition.g:2137:2: rule__Graph__Group__6__Impl rule__Graph__Group__7
             {
             pushFollow(FOLLOW_6);
             rule__Graph__Group__6__Impl();
@@ -7188,17 +7250,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Graph__Group__6__Impl"
-    // InternalDeviceDefinition.g:2132:1: rule__Graph__Group__6__Impl : ( 'x' ) ;
+    // InternalDeviceDefinition.g:2144:1: rule__Graph__Group__6__Impl : ( 'x' ) ;
     public final void rule__Graph__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2136:1: ( ( 'x' ) )
-            // InternalDeviceDefinition.g:2137:1: ( 'x' )
+            // InternalDeviceDefinition.g:2148:1: ( ( 'x' ) )
+            // InternalDeviceDefinition.g:2149:1: ( 'x' )
             {
-            // InternalDeviceDefinition.g:2137:1: ( 'x' )
-            // InternalDeviceDefinition.g:2138:2: 'x'
+            // InternalDeviceDefinition.g:2149:1: ( 'x' )
+            // InternalDeviceDefinition.g:2150:2: 'x'
             {
              before(grammarAccess.getGraphAccess().getXKeyword_6()); 
             match(input,43,FOLLOW_2); 
@@ -7225,14 +7287,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Graph__Group__7"
-    // InternalDeviceDefinition.g:2147:1: rule__Graph__Group__7 : rule__Graph__Group__7__Impl rule__Graph__Group__8 ;
+    // InternalDeviceDefinition.g:2159:1: rule__Graph__Group__7 : rule__Graph__Group__7__Impl rule__Graph__Group__8 ;
     public final void rule__Graph__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2151:1: ( rule__Graph__Group__7__Impl rule__Graph__Group__8 )
-            // InternalDeviceDefinition.g:2152:2: rule__Graph__Group__7__Impl rule__Graph__Group__8
+            // InternalDeviceDefinition.g:2163:1: ( rule__Graph__Group__7__Impl rule__Graph__Group__8 )
+            // InternalDeviceDefinition.g:2164:2: rule__Graph__Group__7__Impl rule__Graph__Group__8
             {
             pushFollow(FOLLOW_17);
             rule__Graph__Group__7__Impl();
@@ -7263,21 +7325,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Graph__Group__7__Impl"
-    // InternalDeviceDefinition.g:2159:1: rule__Graph__Group__7__Impl : ( ( rule__Graph__XlabelAssignment_7 ) ) ;
+    // InternalDeviceDefinition.g:2171:1: rule__Graph__Group__7__Impl : ( ( rule__Graph__XlabelAssignment_7 ) ) ;
     public final void rule__Graph__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2163:1: ( ( ( rule__Graph__XlabelAssignment_7 ) ) )
-            // InternalDeviceDefinition.g:2164:1: ( ( rule__Graph__XlabelAssignment_7 ) )
+            // InternalDeviceDefinition.g:2175:1: ( ( ( rule__Graph__XlabelAssignment_7 ) ) )
+            // InternalDeviceDefinition.g:2176:1: ( ( rule__Graph__XlabelAssignment_7 ) )
             {
-            // InternalDeviceDefinition.g:2164:1: ( ( rule__Graph__XlabelAssignment_7 ) )
-            // InternalDeviceDefinition.g:2165:2: ( rule__Graph__XlabelAssignment_7 )
+            // InternalDeviceDefinition.g:2176:1: ( ( rule__Graph__XlabelAssignment_7 ) )
+            // InternalDeviceDefinition.g:2177:2: ( rule__Graph__XlabelAssignment_7 )
             {
              before(grammarAccess.getGraphAccess().getXlabelAssignment_7()); 
-            // InternalDeviceDefinition.g:2166:2: ( rule__Graph__XlabelAssignment_7 )
-            // InternalDeviceDefinition.g:2166:3: rule__Graph__XlabelAssignment_7
+            // InternalDeviceDefinition.g:2178:2: ( rule__Graph__XlabelAssignment_7 )
+            // InternalDeviceDefinition.g:2178:3: rule__Graph__XlabelAssignment_7
             {
             pushFollow(FOLLOW_2);
             rule__Graph__XlabelAssignment_7();
@@ -7310,14 +7372,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Graph__Group__8"
-    // InternalDeviceDefinition.g:2174:1: rule__Graph__Group__8 : rule__Graph__Group__8__Impl rule__Graph__Group__9 ;
+    // InternalDeviceDefinition.g:2186:1: rule__Graph__Group__8 : rule__Graph__Group__8__Impl rule__Graph__Group__9 ;
     public final void rule__Graph__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2178:1: ( rule__Graph__Group__8__Impl rule__Graph__Group__9 )
-            // InternalDeviceDefinition.g:2179:2: rule__Graph__Group__8__Impl rule__Graph__Group__9
+            // InternalDeviceDefinition.g:2190:1: ( rule__Graph__Group__8__Impl rule__Graph__Group__9 )
+            // InternalDeviceDefinition.g:2191:2: rule__Graph__Group__8__Impl rule__Graph__Group__9
             {
             pushFollow(FOLLOW_6);
             rule__Graph__Group__8__Impl();
@@ -7348,17 +7410,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Graph__Group__8__Impl"
-    // InternalDeviceDefinition.g:2186:1: rule__Graph__Group__8__Impl : ( 'y' ) ;
+    // InternalDeviceDefinition.g:2198:1: rule__Graph__Group__8__Impl : ( 'y' ) ;
     public final void rule__Graph__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2190:1: ( ( 'y' ) )
-            // InternalDeviceDefinition.g:2191:1: ( 'y' )
+            // InternalDeviceDefinition.g:2202:1: ( ( 'y' ) )
+            // InternalDeviceDefinition.g:2203:1: ( 'y' )
             {
-            // InternalDeviceDefinition.g:2191:1: ( 'y' )
-            // InternalDeviceDefinition.g:2192:2: 'y'
+            // InternalDeviceDefinition.g:2203:1: ( 'y' )
+            // InternalDeviceDefinition.g:2204:2: 'y'
             {
              before(grammarAccess.getGraphAccess().getYKeyword_8()); 
             match(input,44,FOLLOW_2); 
@@ -7385,14 +7447,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Graph__Group__9"
-    // InternalDeviceDefinition.g:2201:1: rule__Graph__Group__9 : rule__Graph__Group__9__Impl rule__Graph__Group__10 ;
+    // InternalDeviceDefinition.g:2213:1: rule__Graph__Group__9 : rule__Graph__Group__9__Impl rule__Graph__Group__10 ;
     public final void rule__Graph__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2205:1: ( rule__Graph__Group__9__Impl rule__Graph__Group__10 )
-            // InternalDeviceDefinition.g:2206:2: rule__Graph__Group__9__Impl rule__Graph__Group__10
+            // InternalDeviceDefinition.g:2217:1: ( rule__Graph__Group__9__Impl rule__Graph__Group__10 )
+            // InternalDeviceDefinition.g:2218:2: rule__Graph__Group__9__Impl rule__Graph__Group__10
             {
             pushFollow(FOLLOW_18);
             rule__Graph__Group__9__Impl();
@@ -7423,21 +7485,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Graph__Group__9__Impl"
-    // InternalDeviceDefinition.g:2213:1: rule__Graph__Group__9__Impl : ( ( rule__Graph__YlabelAssignment_9 ) ) ;
+    // InternalDeviceDefinition.g:2225:1: rule__Graph__Group__9__Impl : ( ( rule__Graph__YlabelAssignment_9 ) ) ;
     public final void rule__Graph__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2217:1: ( ( ( rule__Graph__YlabelAssignment_9 ) ) )
-            // InternalDeviceDefinition.g:2218:1: ( ( rule__Graph__YlabelAssignment_9 ) )
+            // InternalDeviceDefinition.g:2229:1: ( ( ( rule__Graph__YlabelAssignment_9 ) ) )
+            // InternalDeviceDefinition.g:2230:1: ( ( rule__Graph__YlabelAssignment_9 ) )
             {
-            // InternalDeviceDefinition.g:2218:1: ( ( rule__Graph__YlabelAssignment_9 ) )
-            // InternalDeviceDefinition.g:2219:2: ( rule__Graph__YlabelAssignment_9 )
+            // InternalDeviceDefinition.g:2230:1: ( ( rule__Graph__YlabelAssignment_9 ) )
+            // InternalDeviceDefinition.g:2231:2: ( rule__Graph__YlabelAssignment_9 )
             {
              before(grammarAccess.getGraphAccess().getYlabelAssignment_9()); 
-            // InternalDeviceDefinition.g:2220:2: ( rule__Graph__YlabelAssignment_9 )
-            // InternalDeviceDefinition.g:2220:3: rule__Graph__YlabelAssignment_9
+            // InternalDeviceDefinition.g:2232:2: ( rule__Graph__YlabelAssignment_9 )
+            // InternalDeviceDefinition.g:2232:3: rule__Graph__YlabelAssignment_9
             {
             pushFollow(FOLLOW_2);
             rule__Graph__YlabelAssignment_9();
@@ -7470,14 +7532,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Graph__Group__10"
-    // InternalDeviceDefinition.g:2228:1: rule__Graph__Group__10 : rule__Graph__Group__10__Impl ;
+    // InternalDeviceDefinition.g:2240:1: rule__Graph__Group__10 : rule__Graph__Group__10__Impl ;
     public final void rule__Graph__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2232:1: ( rule__Graph__Group__10__Impl )
-            // InternalDeviceDefinition.g:2233:2: rule__Graph__Group__10__Impl
+            // InternalDeviceDefinition.g:2244:1: ( rule__Graph__Group__10__Impl )
+            // InternalDeviceDefinition.g:2245:2: rule__Graph__Group__10__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Graph__Group__10__Impl();
@@ -7503,24 +7565,24 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Graph__Group__10__Impl"
-    // InternalDeviceDefinition.g:2239:1: rule__Graph__Group__10__Impl : ( ( ( rule__Graph__LinesAssignment_10 ) ) ( ( rule__Graph__LinesAssignment_10 )* ) ) ;
+    // InternalDeviceDefinition.g:2251:1: rule__Graph__Group__10__Impl : ( ( ( rule__Graph__LinesAssignment_10 ) ) ( ( rule__Graph__LinesAssignment_10 )* ) ) ;
     public final void rule__Graph__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2243:1: ( ( ( ( rule__Graph__LinesAssignment_10 ) ) ( ( rule__Graph__LinesAssignment_10 )* ) ) )
-            // InternalDeviceDefinition.g:2244:1: ( ( ( rule__Graph__LinesAssignment_10 ) ) ( ( rule__Graph__LinesAssignment_10 )* ) )
+            // InternalDeviceDefinition.g:2255:1: ( ( ( ( rule__Graph__LinesAssignment_10 ) ) ( ( rule__Graph__LinesAssignment_10 )* ) ) )
+            // InternalDeviceDefinition.g:2256:1: ( ( ( rule__Graph__LinesAssignment_10 ) ) ( ( rule__Graph__LinesAssignment_10 )* ) )
             {
-            // InternalDeviceDefinition.g:2244:1: ( ( ( rule__Graph__LinesAssignment_10 ) ) ( ( rule__Graph__LinesAssignment_10 )* ) )
-            // InternalDeviceDefinition.g:2245:2: ( ( rule__Graph__LinesAssignment_10 ) ) ( ( rule__Graph__LinesAssignment_10 )* )
+            // InternalDeviceDefinition.g:2256:1: ( ( ( rule__Graph__LinesAssignment_10 ) ) ( ( rule__Graph__LinesAssignment_10 )* ) )
+            // InternalDeviceDefinition.g:2257:2: ( ( rule__Graph__LinesAssignment_10 ) ) ( ( rule__Graph__LinesAssignment_10 )* )
             {
-            // InternalDeviceDefinition.g:2245:2: ( ( rule__Graph__LinesAssignment_10 ) )
-            // InternalDeviceDefinition.g:2246:3: ( rule__Graph__LinesAssignment_10 )
+            // InternalDeviceDefinition.g:2257:2: ( ( rule__Graph__LinesAssignment_10 ) )
+            // InternalDeviceDefinition.g:2258:3: ( rule__Graph__LinesAssignment_10 )
             {
              before(grammarAccess.getGraphAccess().getLinesAssignment_10()); 
-            // InternalDeviceDefinition.g:2247:3: ( rule__Graph__LinesAssignment_10 )
-            // InternalDeviceDefinition.g:2247:4: rule__Graph__LinesAssignment_10
+            // InternalDeviceDefinition.g:2259:3: ( rule__Graph__LinesAssignment_10 )
+            // InternalDeviceDefinition.g:2259:4: rule__Graph__LinesAssignment_10
             {
             pushFollow(FOLLOW_19);
             rule__Graph__LinesAssignment_10();
@@ -7534,11 +7596,11 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
             }
 
-            // InternalDeviceDefinition.g:2250:2: ( ( rule__Graph__LinesAssignment_10 )* )
-            // InternalDeviceDefinition.g:2251:3: ( rule__Graph__LinesAssignment_10 )*
+            // InternalDeviceDefinition.g:2262:2: ( ( rule__Graph__LinesAssignment_10 )* )
+            // InternalDeviceDefinition.g:2263:3: ( rule__Graph__LinesAssignment_10 )*
             {
              before(grammarAccess.getGraphAccess().getLinesAssignment_10()); 
-            // InternalDeviceDefinition.g:2252:3: ( rule__Graph__LinesAssignment_10 )*
+            // InternalDeviceDefinition.g:2264:3: ( rule__Graph__LinesAssignment_10 )*
             loop28:
             do {
                 int alt28=2;
@@ -7551,7 +7613,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
                 switch (alt28) {
             	case 1 :
-            	    // InternalDeviceDefinition.g:2252:4: rule__Graph__LinesAssignment_10
+            	    // InternalDeviceDefinition.g:2264:4: rule__Graph__LinesAssignment_10
             	    {
             	    pushFollow(FOLLOW_19);
             	    rule__Graph__LinesAssignment_10();
@@ -7593,14 +7655,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__GraphLine__Group__0"
-    // InternalDeviceDefinition.g:2262:1: rule__GraphLine__Group__0 : rule__GraphLine__Group__0__Impl rule__GraphLine__Group__1 ;
+    // InternalDeviceDefinition.g:2274:1: rule__GraphLine__Group__0 : rule__GraphLine__Group__0__Impl rule__GraphLine__Group__1 ;
     public final void rule__GraphLine__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2266:1: ( rule__GraphLine__Group__0__Impl rule__GraphLine__Group__1 )
-            // InternalDeviceDefinition.g:2267:2: rule__GraphLine__Group__0__Impl rule__GraphLine__Group__1
+            // InternalDeviceDefinition.g:2278:1: ( rule__GraphLine__Group__0__Impl rule__GraphLine__Group__1 )
+            // InternalDeviceDefinition.g:2279:2: rule__GraphLine__Group__0__Impl rule__GraphLine__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__GraphLine__Group__0__Impl();
@@ -7631,17 +7693,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__GraphLine__Group__0__Impl"
-    // InternalDeviceDefinition.g:2274:1: rule__GraphLine__Group__0__Impl : ( 'line' ) ;
+    // InternalDeviceDefinition.g:2286:1: rule__GraphLine__Group__0__Impl : ( 'line' ) ;
     public final void rule__GraphLine__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2278:1: ( ( 'line' ) )
-            // InternalDeviceDefinition.g:2279:1: ( 'line' )
+            // InternalDeviceDefinition.g:2290:1: ( ( 'line' ) )
+            // InternalDeviceDefinition.g:2291:1: ( 'line' )
             {
-            // InternalDeviceDefinition.g:2279:1: ( 'line' )
-            // InternalDeviceDefinition.g:2280:2: 'line'
+            // InternalDeviceDefinition.g:2291:1: ( 'line' )
+            // InternalDeviceDefinition.g:2292:2: 'line'
             {
              before(grammarAccess.getGraphLineAccess().getLineKeyword_0()); 
             match(input,45,FOLLOW_2); 
@@ -7668,14 +7730,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__GraphLine__Group__1"
-    // InternalDeviceDefinition.g:2289:1: rule__GraphLine__Group__1 : rule__GraphLine__Group__1__Impl rule__GraphLine__Group__2 ;
+    // InternalDeviceDefinition.g:2301:1: rule__GraphLine__Group__1 : rule__GraphLine__Group__1__Impl rule__GraphLine__Group__2 ;
     public final void rule__GraphLine__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2293:1: ( rule__GraphLine__Group__1__Impl rule__GraphLine__Group__2 )
-            // InternalDeviceDefinition.g:2294:2: rule__GraphLine__Group__1__Impl rule__GraphLine__Group__2
+            // InternalDeviceDefinition.g:2305:1: ( rule__GraphLine__Group__1__Impl rule__GraphLine__Group__2 )
+            // InternalDeviceDefinition.g:2306:2: rule__GraphLine__Group__1__Impl rule__GraphLine__Group__2
             {
             pushFollow(FOLLOW_20);
             rule__GraphLine__Group__1__Impl();
@@ -7706,21 +7768,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__GraphLine__Group__1__Impl"
-    // InternalDeviceDefinition.g:2301:1: rule__GraphLine__Group__1__Impl : ( ( rule__GraphLine__OutputAssignment_1 ) ) ;
+    // InternalDeviceDefinition.g:2313:1: rule__GraphLine__Group__1__Impl : ( ( rule__GraphLine__OutputAssignment_1 ) ) ;
     public final void rule__GraphLine__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2305:1: ( ( ( rule__GraphLine__OutputAssignment_1 ) ) )
-            // InternalDeviceDefinition.g:2306:1: ( ( rule__GraphLine__OutputAssignment_1 ) )
+            // InternalDeviceDefinition.g:2317:1: ( ( ( rule__GraphLine__OutputAssignment_1 ) ) )
+            // InternalDeviceDefinition.g:2318:1: ( ( rule__GraphLine__OutputAssignment_1 ) )
             {
-            // InternalDeviceDefinition.g:2306:1: ( ( rule__GraphLine__OutputAssignment_1 ) )
-            // InternalDeviceDefinition.g:2307:2: ( rule__GraphLine__OutputAssignment_1 )
+            // InternalDeviceDefinition.g:2318:1: ( ( rule__GraphLine__OutputAssignment_1 ) )
+            // InternalDeviceDefinition.g:2319:2: ( rule__GraphLine__OutputAssignment_1 )
             {
              before(grammarAccess.getGraphLineAccess().getOutputAssignment_1()); 
-            // InternalDeviceDefinition.g:2308:2: ( rule__GraphLine__OutputAssignment_1 )
-            // InternalDeviceDefinition.g:2308:3: rule__GraphLine__OutputAssignment_1
+            // InternalDeviceDefinition.g:2320:2: ( rule__GraphLine__OutputAssignment_1 )
+            // InternalDeviceDefinition.g:2320:3: rule__GraphLine__OutputAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__GraphLine__OutputAssignment_1();
@@ -7753,14 +7815,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__GraphLine__Group__2"
-    // InternalDeviceDefinition.g:2316:1: rule__GraphLine__Group__2 : rule__GraphLine__Group__2__Impl rule__GraphLine__Group__3 ;
+    // InternalDeviceDefinition.g:2328:1: rule__GraphLine__Group__2 : rule__GraphLine__Group__2__Impl rule__GraphLine__Group__3 ;
     public final void rule__GraphLine__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2320:1: ( rule__GraphLine__Group__2__Impl rule__GraphLine__Group__3 )
-            // InternalDeviceDefinition.g:2321:2: rule__GraphLine__Group__2__Impl rule__GraphLine__Group__3
+            // InternalDeviceDefinition.g:2332:1: ( rule__GraphLine__Group__2__Impl rule__GraphLine__Group__3 )
+            // InternalDeviceDefinition.g:2333:2: rule__GraphLine__Group__2__Impl rule__GraphLine__Group__3
             {
             pushFollow(FOLLOW_20);
             rule__GraphLine__Group__2__Impl();
@@ -7791,20 +7853,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__GraphLine__Group__2__Impl"
-    // InternalDeviceDefinition.g:2328:1: rule__GraphLine__Group__2__Impl : ( ( rule__GraphLine__Group_2__0 )? ) ;
+    // InternalDeviceDefinition.g:2340:1: rule__GraphLine__Group__2__Impl : ( ( rule__GraphLine__Group_2__0 )? ) ;
     public final void rule__GraphLine__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2332:1: ( ( ( rule__GraphLine__Group_2__0 )? ) )
-            // InternalDeviceDefinition.g:2333:1: ( ( rule__GraphLine__Group_2__0 )? )
+            // InternalDeviceDefinition.g:2344:1: ( ( ( rule__GraphLine__Group_2__0 )? ) )
+            // InternalDeviceDefinition.g:2345:1: ( ( rule__GraphLine__Group_2__0 )? )
             {
-            // InternalDeviceDefinition.g:2333:1: ( ( rule__GraphLine__Group_2__0 )? )
-            // InternalDeviceDefinition.g:2334:2: ( rule__GraphLine__Group_2__0 )?
+            // InternalDeviceDefinition.g:2345:1: ( ( rule__GraphLine__Group_2__0 )? )
+            // InternalDeviceDefinition.g:2346:2: ( rule__GraphLine__Group_2__0 )?
             {
              before(grammarAccess.getGraphLineAccess().getGroup_2()); 
-            // InternalDeviceDefinition.g:2335:2: ( rule__GraphLine__Group_2__0 )?
+            // InternalDeviceDefinition.g:2347:2: ( rule__GraphLine__Group_2__0 )?
             int alt29=2;
             int LA29_0 = input.LA(1);
 
@@ -7813,7 +7875,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             }
             switch (alt29) {
                 case 1 :
-                    // InternalDeviceDefinition.g:2335:3: rule__GraphLine__Group_2__0
+                    // InternalDeviceDefinition.g:2347:3: rule__GraphLine__Group_2__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__GraphLine__Group_2__0();
@@ -7849,14 +7911,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__GraphLine__Group__3"
-    // InternalDeviceDefinition.g:2343:1: rule__GraphLine__Group__3 : rule__GraphLine__Group__3__Impl ;
+    // InternalDeviceDefinition.g:2355:1: rule__GraphLine__Group__3 : rule__GraphLine__Group__3__Impl ;
     public final void rule__GraphLine__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2347:1: ( rule__GraphLine__Group__3__Impl )
-            // InternalDeviceDefinition.g:2348:2: rule__GraphLine__Group__3__Impl
+            // InternalDeviceDefinition.g:2359:1: ( rule__GraphLine__Group__3__Impl )
+            // InternalDeviceDefinition.g:2360:2: rule__GraphLine__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__GraphLine__Group__3__Impl();
@@ -7882,20 +7944,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__GraphLine__Group__3__Impl"
-    // InternalDeviceDefinition.g:2354:1: rule__GraphLine__Group__3__Impl : ( ( rule__GraphLine__Group_3__0 )? ) ;
+    // InternalDeviceDefinition.g:2366:1: rule__GraphLine__Group__3__Impl : ( ( rule__GraphLine__Group_3__0 )? ) ;
     public final void rule__GraphLine__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2358:1: ( ( ( rule__GraphLine__Group_3__0 )? ) )
-            // InternalDeviceDefinition.g:2359:1: ( ( rule__GraphLine__Group_3__0 )? )
+            // InternalDeviceDefinition.g:2370:1: ( ( ( rule__GraphLine__Group_3__0 )? ) )
+            // InternalDeviceDefinition.g:2371:1: ( ( rule__GraphLine__Group_3__0 )? )
             {
-            // InternalDeviceDefinition.g:2359:1: ( ( rule__GraphLine__Group_3__0 )? )
-            // InternalDeviceDefinition.g:2360:2: ( rule__GraphLine__Group_3__0 )?
+            // InternalDeviceDefinition.g:2371:1: ( ( rule__GraphLine__Group_3__0 )? )
+            // InternalDeviceDefinition.g:2372:2: ( rule__GraphLine__Group_3__0 )?
             {
              before(grammarAccess.getGraphLineAccess().getGroup_3()); 
-            // InternalDeviceDefinition.g:2361:2: ( rule__GraphLine__Group_3__0 )?
+            // InternalDeviceDefinition.g:2373:2: ( rule__GraphLine__Group_3__0 )?
             int alt30=2;
             int LA30_0 = input.LA(1);
 
@@ -7904,7 +7966,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             }
             switch (alt30) {
                 case 1 :
-                    // InternalDeviceDefinition.g:2361:3: rule__GraphLine__Group_3__0
+                    // InternalDeviceDefinition.g:2373:3: rule__GraphLine__Group_3__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__GraphLine__Group_3__0();
@@ -7940,14 +8002,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__GraphLine__Group_2__0"
-    // InternalDeviceDefinition.g:2370:1: rule__GraphLine__Group_2__0 : rule__GraphLine__Group_2__0__Impl rule__GraphLine__Group_2__1 ;
+    // InternalDeviceDefinition.g:2382:1: rule__GraphLine__Group_2__0 : rule__GraphLine__Group_2__0__Impl rule__GraphLine__Group_2__1 ;
     public final void rule__GraphLine__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2374:1: ( rule__GraphLine__Group_2__0__Impl rule__GraphLine__Group_2__1 )
-            // InternalDeviceDefinition.g:2375:2: rule__GraphLine__Group_2__0__Impl rule__GraphLine__Group_2__1
+            // InternalDeviceDefinition.g:2386:1: ( rule__GraphLine__Group_2__0__Impl rule__GraphLine__Group_2__1 )
+            // InternalDeviceDefinition.g:2387:2: rule__GraphLine__Group_2__0__Impl rule__GraphLine__Group_2__1
             {
             pushFollow(FOLLOW_6);
             rule__GraphLine__Group_2__0__Impl();
@@ -7978,17 +8040,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__GraphLine__Group_2__0__Impl"
-    // InternalDeviceDefinition.g:2382:1: rule__GraphLine__Group_2__0__Impl : ( 'legend' ) ;
+    // InternalDeviceDefinition.g:2394:1: rule__GraphLine__Group_2__0__Impl : ( 'legend' ) ;
     public final void rule__GraphLine__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2386:1: ( ( 'legend' ) )
-            // InternalDeviceDefinition.g:2387:1: ( 'legend' )
+            // InternalDeviceDefinition.g:2398:1: ( ( 'legend' ) )
+            // InternalDeviceDefinition.g:2399:1: ( 'legend' )
             {
-            // InternalDeviceDefinition.g:2387:1: ( 'legend' )
-            // InternalDeviceDefinition.g:2388:2: 'legend'
+            // InternalDeviceDefinition.g:2399:1: ( 'legend' )
+            // InternalDeviceDefinition.g:2400:2: 'legend'
             {
              before(grammarAccess.getGraphLineAccess().getLegendKeyword_2_0()); 
             match(input,46,FOLLOW_2); 
@@ -8015,14 +8077,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__GraphLine__Group_2__1"
-    // InternalDeviceDefinition.g:2397:1: rule__GraphLine__Group_2__1 : rule__GraphLine__Group_2__1__Impl ;
+    // InternalDeviceDefinition.g:2409:1: rule__GraphLine__Group_2__1 : rule__GraphLine__Group_2__1__Impl ;
     public final void rule__GraphLine__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2401:1: ( rule__GraphLine__Group_2__1__Impl )
-            // InternalDeviceDefinition.g:2402:2: rule__GraphLine__Group_2__1__Impl
+            // InternalDeviceDefinition.g:2413:1: ( rule__GraphLine__Group_2__1__Impl )
+            // InternalDeviceDefinition.g:2414:2: rule__GraphLine__Group_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__GraphLine__Group_2__1__Impl();
@@ -8048,21 +8110,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__GraphLine__Group_2__1__Impl"
-    // InternalDeviceDefinition.g:2408:1: rule__GraphLine__Group_2__1__Impl : ( ( rule__GraphLine__LegendAssignment_2_1 ) ) ;
+    // InternalDeviceDefinition.g:2420:1: rule__GraphLine__Group_2__1__Impl : ( ( rule__GraphLine__LegendAssignment_2_1 ) ) ;
     public final void rule__GraphLine__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2412:1: ( ( ( rule__GraphLine__LegendAssignment_2_1 ) ) )
-            // InternalDeviceDefinition.g:2413:1: ( ( rule__GraphLine__LegendAssignment_2_1 ) )
+            // InternalDeviceDefinition.g:2424:1: ( ( ( rule__GraphLine__LegendAssignment_2_1 ) ) )
+            // InternalDeviceDefinition.g:2425:1: ( ( rule__GraphLine__LegendAssignment_2_1 ) )
             {
-            // InternalDeviceDefinition.g:2413:1: ( ( rule__GraphLine__LegendAssignment_2_1 ) )
-            // InternalDeviceDefinition.g:2414:2: ( rule__GraphLine__LegendAssignment_2_1 )
+            // InternalDeviceDefinition.g:2425:1: ( ( rule__GraphLine__LegendAssignment_2_1 ) )
+            // InternalDeviceDefinition.g:2426:2: ( rule__GraphLine__LegendAssignment_2_1 )
             {
              before(grammarAccess.getGraphLineAccess().getLegendAssignment_2_1()); 
-            // InternalDeviceDefinition.g:2415:2: ( rule__GraphLine__LegendAssignment_2_1 )
-            // InternalDeviceDefinition.g:2415:3: rule__GraphLine__LegendAssignment_2_1
+            // InternalDeviceDefinition.g:2427:2: ( rule__GraphLine__LegendAssignment_2_1 )
+            // InternalDeviceDefinition.g:2427:3: rule__GraphLine__LegendAssignment_2_1
             {
             pushFollow(FOLLOW_2);
             rule__GraphLine__LegendAssignment_2_1();
@@ -8095,14 +8157,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__GraphLine__Group_3__0"
-    // InternalDeviceDefinition.g:2424:1: rule__GraphLine__Group_3__0 : rule__GraphLine__Group_3__0__Impl rule__GraphLine__Group_3__1 ;
+    // InternalDeviceDefinition.g:2436:1: rule__GraphLine__Group_3__0 : rule__GraphLine__Group_3__0__Impl rule__GraphLine__Group_3__1 ;
     public final void rule__GraphLine__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2428:1: ( rule__GraphLine__Group_3__0__Impl rule__GraphLine__Group_3__1 )
-            // InternalDeviceDefinition.g:2429:2: rule__GraphLine__Group_3__0__Impl rule__GraphLine__Group_3__1
+            // InternalDeviceDefinition.g:2440:1: ( rule__GraphLine__Group_3__0__Impl rule__GraphLine__Group_3__1 )
+            // InternalDeviceDefinition.g:2441:2: rule__GraphLine__Group_3__0__Impl rule__GraphLine__Group_3__1
             {
             pushFollow(FOLLOW_21);
             rule__GraphLine__Group_3__0__Impl();
@@ -8133,17 +8195,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__GraphLine__Group_3__0__Impl"
-    // InternalDeviceDefinition.g:2436:1: rule__GraphLine__Group_3__0__Impl : ( 'color' ) ;
+    // InternalDeviceDefinition.g:2448:1: rule__GraphLine__Group_3__0__Impl : ( 'color' ) ;
     public final void rule__GraphLine__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2440:1: ( ( 'color' ) )
-            // InternalDeviceDefinition.g:2441:1: ( 'color' )
+            // InternalDeviceDefinition.g:2452:1: ( ( 'color' ) )
+            // InternalDeviceDefinition.g:2453:1: ( 'color' )
             {
-            // InternalDeviceDefinition.g:2441:1: ( 'color' )
-            // InternalDeviceDefinition.g:2442:2: 'color'
+            // InternalDeviceDefinition.g:2453:1: ( 'color' )
+            // InternalDeviceDefinition.g:2454:2: 'color'
             {
              before(grammarAccess.getGraphLineAccess().getColorKeyword_3_0()); 
             match(input,47,FOLLOW_2); 
@@ -8170,14 +8232,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__GraphLine__Group_3__1"
-    // InternalDeviceDefinition.g:2451:1: rule__GraphLine__Group_3__1 : rule__GraphLine__Group_3__1__Impl ;
+    // InternalDeviceDefinition.g:2463:1: rule__GraphLine__Group_3__1 : rule__GraphLine__Group_3__1__Impl ;
     public final void rule__GraphLine__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2455:1: ( rule__GraphLine__Group_3__1__Impl )
-            // InternalDeviceDefinition.g:2456:2: rule__GraphLine__Group_3__1__Impl
+            // InternalDeviceDefinition.g:2467:1: ( rule__GraphLine__Group_3__1__Impl )
+            // InternalDeviceDefinition.g:2468:2: rule__GraphLine__Group_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__GraphLine__Group_3__1__Impl();
@@ -8203,21 +8265,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__GraphLine__Group_3__1__Impl"
-    // InternalDeviceDefinition.g:2462:1: rule__GraphLine__Group_3__1__Impl : ( ( rule__GraphLine__ColorAssignment_3_1 ) ) ;
+    // InternalDeviceDefinition.g:2474:1: rule__GraphLine__Group_3__1__Impl : ( ( rule__GraphLine__ColorAssignment_3_1 ) ) ;
     public final void rule__GraphLine__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2466:1: ( ( ( rule__GraphLine__ColorAssignment_3_1 ) ) )
-            // InternalDeviceDefinition.g:2467:1: ( ( rule__GraphLine__ColorAssignment_3_1 ) )
+            // InternalDeviceDefinition.g:2478:1: ( ( ( rule__GraphLine__ColorAssignment_3_1 ) ) )
+            // InternalDeviceDefinition.g:2479:1: ( ( rule__GraphLine__ColorAssignment_3_1 ) )
             {
-            // InternalDeviceDefinition.g:2467:1: ( ( rule__GraphLine__ColorAssignment_3_1 ) )
-            // InternalDeviceDefinition.g:2468:2: ( rule__GraphLine__ColorAssignment_3_1 )
+            // InternalDeviceDefinition.g:2479:1: ( ( rule__GraphLine__ColorAssignment_3_1 ) )
+            // InternalDeviceDefinition.g:2480:2: ( rule__GraphLine__ColorAssignment_3_1 )
             {
              before(grammarAccess.getGraphLineAccess().getColorAssignment_3_1()); 
-            // InternalDeviceDefinition.g:2469:2: ( rule__GraphLine__ColorAssignment_3_1 )
-            // InternalDeviceDefinition.g:2469:3: rule__GraphLine__ColorAssignment_3_1
+            // InternalDeviceDefinition.g:2481:2: ( rule__GraphLine__ColorAssignment_3_1 )
+            // InternalDeviceDefinition.g:2481:3: rule__GraphLine__ColorAssignment_3_1
             {
             pushFollow(FOLLOW_2);
             rule__GraphLine__ColorAssignment_3_1();
@@ -8250,14 +8312,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Color__Group_0__0"
-    // InternalDeviceDefinition.g:2478:1: rule__Color__Group_0__0 : rule__Color__Group_0__0__Impl rule__Color__Group_0__1 ;
+    // InternalDeviceDefinition.g:2490:1: rule__Color__Group_0__0 : rule__Color__Group_0__0__Impl rule__Color__Group_0__1 ;
     public final void rule__Color__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2482:1: ( rule__Color__Group_0__0__Impl rule__Color__Group_0__1 )
-            // InternalDeviceDefinition.g:2483:2: rule__Color__Group_0__0__Impl rule__Color__Group_0__1
+            // InternalDeviceDefinition.g:2494:1: ( rule__Color__Group_0__0__Impl rule__Color__Group_0__1 )
+            // InternalDeviceDefinition.g:2495:2: rule__Color__Group_0__0__Impl rule__Color__Group_0__1
             {
             pushFollow(FOLLOW_22);
             rule__Color__Group_0__0__Impl();
@@ -8288,21 +8350,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Color__Group_0__0__Impl"
-    // InternalDeviceDefinition.g:2490:1: rule__Color__Group_0__0__Impl : ( () ) ;
+    // InternalDeviceDefinition.g:2502:1: rule__Color__Group_0__0__Impl : ( () ) ;
     public final void rule__Color__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2494:1: ( ( () ) )
-            // InternalDeviceDefinition.g:2495:1: ( () )
+            // InternalDeviceDefinition.g:2506:1: ( ( () ) )
+            // InternalDeviceDefinition.g:2507:1: ( () )
             {
-            // InternalDeviceDefinition.g:2495:1: ( () )
-            // InternalDeviceDefinition.g:2496:2: ()
+            // InternalDeviceDefinition.g:2507:1: ( () )
+            // InternalDeviceDefinition.g:2508:2: ()
             {
              before(grammarAccess.getColorAccess().getRGBAction_0_0()); 
-            // InternalDeviceDefinition.g:2497:2: ()
-            // InternalDeviceDefinition.g:2497:3: 
+            // InternalDeviceDefinition.g:2509:2: ()
+            // InternalDeviceDefinition.g:2509:3: 
             {
             }
 
@@ -8325,14 +8387,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Color__Group_0__1"
-    // InternalDeviceDefinition.g:2505:1: rule__Color__Group_0__1 : rule__Color__Group_0__1__Impl rule__Color__Group_0__2 ;
+    // InternalDeviceDefinition.g:2517:1: rule__Color__Group_0__1 : rule__Color__Group_0__1__Impl rule__Color__Group_0__2 ;
     public final void rule__Color__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2509:1: ( rule__Color__Group_0__1__Impl rule__Color__Group_0__2 )
-            // InternalDeviceDefinition.g:2510:2: rule__Color__Group_0__1__Impl rule__Color__Group_0__2
+            // InternalDeviceDefinition.g:2521:1: ( rule__Color__Group_0__1__Impl rule__Color__Group_0__2 )
+            // InternalDeviceDefinition.g:2522:2: rule__Color__Group_0__1__Impl rule__Color__Group_0__2
             {
             pushFollow(FOLLOW_23);
             rule__Color__Group_0__1__Impl();
@@ -8363,17 +8425,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Color__Group_0__1__Impl"
-    // InternalDeviceDefinition.g:2517:1: rule__Color__Group_0__1__Impl : ( '(' ) ;
+    // InternalDeviceDefinition.g:2529:1: rule__Color__Group_0__1__Impl : ( '(' ) ;
     public final void rule__Color__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2521:1: ( ( '(' ) )
-            // InternalDeviceDefinition.g:2522:1: ( '(' )
+            // InternalDeviceDefinition.g:2533:1: ( ( '(' ) )
+            // InternalDeviceDefinition.g:2534:1: ( '(' )
             {
-            // InternalDeviceDefinition.g:2522:1: ( '(' )
-            // InternalDeviceDefinition.g:2523:2: '('
+            // InternalDeviceDefinition.g:2534:1: ( '(' )
+            // InternalDeviceDefinition.g:2535:2: '('
             {
              before(grammarAccess.getColorAccess().getLeftParenthesisKeyword_0_1()); 
             match(input,48,FOLLOW_2); 
@@ -8400,14 +8462,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Color__Group_0__2"
-    // InternalDeviceDefinition.g:2532:1: rule__Color__Group_0__2 : rule__Color__Group_0__2__Impl rule__Color__Group_0__3 ;
+    // InternalDeviceDefinition.g:2544:1: rule__Color__Group_0__2 : rule__Color__Group_0__2__Impl rule__Color__Group_0__3 ;
     public final void rule__Color__Group_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2536:1: ( rule__Color__Group_0__2__Impl rule__Color__Group_0__3 )
-            // InternalDeviceDefinition.g:2537:2: rule__Color__Group_0__2__Impl rule__Color__Group_0__3
+            // InternalDeviceDefinition.g:2548:1: ( rule__Color__Group_0__2__Impl rule__Color__Group_0__3 )
+            // InternalDeviceDefinition.g:2549:2: rule__Color__Group_0__2__Impl rule__Color__Group_0__3
             {
             pushFollow(FOLLOW_24);
             rule__Color__Group_0__2__Impl();
@@ -8438,21 +8500,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Color__Group_0__2__Impl"
-    // InternalDeviceDefinition.g:2544:1: rule__Color__Group_0__2__Impl : ( ( rule__Color__RedAssignment_0_2 ) ) ;
+    // InternalDeviceDefinition.g:2556:1: rule__Color__Group_0__2__Impl : ( ( rule__Color__RedAssignment_0_2 ) ) ;
     public final void rule__Color__Group_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2548:1: ( ( ( rule__Color__RedAssignment_0_2 ) ) )
-            // InternalDeviceDefinition.g:2549:1: ( ( rule__Color__RedAssignment_0_2 ) )
+            // InternalDeviceDefinition.g:2560:1: ( ( ( rule__Color__RedAssignment_0_2 ) ) )
+            // InternalDeviceDefinition.g:2561:1: ( ( rule__Color__RedAssignment_0_2 ) )
             {
-            // InternalDeviceDefinition.g:2549:1: ( ( rule__Color__RedAssignment_0_2 ) )
-            // InternalDeviceDefinition.g:2550:2: ( rule__Color__RedAssignment_0_2 )
+            // InternalDeviceDefinition.g:2561:1: ( ( rule__Color__RedAssignment_0_2 ) )
+            // InternalDeviceDefinition.g:2562:2: ( rule__Color__RedAssignment_0_2 )
             {
              before(grammarAccess.getColorAccess().getRedAssignment_0_2()); 
-            // InternalDeviceDefinition.g:2551:2: ( rule__Color__RedAssignment_0_2 )
-            // InternalDeviceDefinition.g:2551:3: rule__Color__RedAssignment_0_2
+            // InternalDeviceDefinition.g:2563:2: ( rule__Color__RedAssignment_0_2 )
+            // InternalDeviceDefinition.g:2563:3: rule__Color__RedAssignment_0_2
             {
             pushFollow(FOLLOW_2);
             rule__Color__RedAssignment_0_2();
@@ -8485,14 +8547,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Color__Group_0__3"
-    // InternalDeviceDefinition.g:2559:1: rule__Color__Group_0__3 : rule__Color__Group_0__3__Impl rule__Color__Group_0__4 ;
+    // InternalDeviceDefinition.g:2571:1: rule__Color__Group_0__3 : rule__Color__Group_0__3__Impl rule__Color__Group_0__4 ;
     public final void rule__Color__Group_0__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2563:1: ( rule__Color__Group_0__3__Impl rule__Color__Group_0__4 )
-            // InternalDeviceDefinition.g:2564:2: rule__Color__Group_0__3__Impl rule__Color__Group_0__4
+            // InternalDeviceDefinition.g:2575:1: ( rule__Color__Group_0__3__Impl rule__Color__Group_0__4 )
+            // InternalDeviceDefinition.g:2576:2: rule__Color__Group_0__3__Impl rule__Color__Group_0__4
             {
             pushFollow(FOLLOW_23);
             rule__Color__Group_0__3__Impl();
@@ -8523,17 +8585,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Color__Group_0__3__Impl"
-    // InternalDeviceDefinition.g:2571:1: rule__Color__Group_0__3__Impl : ( ',' ) ;
+    // InternalDeviceDefinition.g:2583:1: rule__Color__Group_0__3__Impl : ( ',' ) ;
     public final void rule__Color__Group_0__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2575:1: ( ( ',' ) )
-            // InternalDeviceDefinition.g:2576:1: ( ',' )
+            // InternalDeviceDefinition.g:2587:1: ( ( ',' ) )
+            // InternalDeviceDefinition.g:2588:1: ( ',' )
             {
-            // InternalDeviceDefinition.g:2576:1: ( ',' )
-            // InternalDeviceDefinition.g:2577:2: ','
+            // InternalDeviceDefinition.g:2588:1: ( ',' )
+            // InternalDeviceDefinition.g:2589:2: ','
             {
              before(grammarAccess.getColorAccess().getCommaKeyword_0_3()); 
             match(input,49,FOLLOW_2); 
@@ -8560,14 +8622,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Color__Group_0__4"
-    // InternalDeviceDefinition.g:2586:1: rule__Color__Group_0__4 : rule__Color__Group_0__4__Impl rule__Color__Group_0__5 ;
+    // InternalDeviceDefinition.g:2598:1: rule__Color__Group_0__4 : rule__Color__Group_0__4__Impl rule__Color__Group_0__5 ;
     public final void rule__Color__Group_0__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2590:1: ( rule__Color__Group_0__4__Impl rule__Color__Group_0__5 )
-            // InternalDeviceDefinition.g:2591:2: rule__Color__Group_0__4__Impl rule__Color__Group_0__5
+            // InternalDeviceDefinition.g:2602:1: ( rule__Color__Group_0__4__Impl rule__Color__Group_0__5 )
+            // InternalDeviceDefinition.g:2603:2: rule__Color__Group_0__4__Impl rule__Color__Group_0__5
             {
             pushFollow(FOLLOW_24);
             rule__Color__Group_0__4__Impl();
@@ -8598,21 +8660,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Color__Group_0__4__Impl"
-    // InternalDeviceDefinition.g:2598:1: rule__Color__Group_0__4__Impl : ( ( rule__Color__GreenAssignment_0_4 ) ) ;
+    // InternalDeviceDefinition.g:2610:1: rule__Color__Group_0__4__Impl : ( ( rule__Color__GreenAssignment_0_4 ) ) ;
     public final void rule__Color__Group_0__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2602:1: ( ( ( rule__Color__GreenAssignment_0_4 ) ) )
-            // InternalDeviceDefinition.g:2603:1: ( ( rule__Color__GreenAssignment_0_4 ) )
+            // InternalDeviceDefinition.g:2614:1: ( ( ( rule__Color__GreenAssignment_0_4 ) ) )
+            // InternalDeviceDefinition.g:2615:1: ( ( rule__Color__GreenAssignment_0_4 ) )
             {
-            // InternalDeviceDefinition.g:2603:1: ( ( rule__Color__GreenAssignment_0_4 ) )
-            // InternalDeviceDefinition.g:2604:2: ( rule__Color__GreenAssignment_0_4 )
+            // InternalDeviceDefinition.g:2615:1: ( ( rule__Color__GreenAssignment_0_4 ) )
+            // InternalDeviceDefinition.g:2616:2: ( rule__Color__GreenAssignment_0_4 )
             {
              before(grammarAccess.getColorAccess().getGreenAssignment_0_4()); 
-            // InternalDeviceDefinition.g:2605:2: ( rule__Color__GreenAssignment_0_4 )
-            // InternalDeviceDefinition.g:2605:3: rule__Color__GreenAssignment_0_4
+            // InternalDeviceDefinition.g:2617:2: ( rule__Color__GreenAssignment_0_4 )
+            // InternalDeviceDefinition.g:2617:3: rule__Color__GreenAssignment_0_4
             {
             pushFollow(FOLLOW_2);
             rule__Color__GreenAssignment_0_4();
@@ -8645,14 +8707,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Color__Group_0__5"
-    // InternalDeviceDefinition.g:2613:1: rule__Color__Group_0__5 : rule__Color__Group_0__5__Impl rule__Color__Group_0__6 ;
+    // InternalDeviceDefinition.g:2625:1: rule__Color__Group_0__5 : rule__Color__Group_0__5__Impl rule__Color__Group_0__6 ;
     public final void rule__Color__Group_0__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2617:1: ( rule__Color__Group_0__5__Impl rule__Color__Group_0__6 )
-            // InternalDeviceDefinition.g:2618:2: rule__Color__Group_0__5__Impl rule__Color__Group_0__6
+            // InternalDeviceDefinition.g:2629:1: ( rule__Color__Group_0__5__Impl rule__Color__Group_0__6 )
+            // InternalDeviceDefinition.g:2630:2: rule__Color__Group_0__5__Impl rule__Color__Group_0__6
             {
             pushFollow(FOLLOW_23);
             rule__Color__Group_0__5__Impl();
@@ -8683,17 +8745,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Color__Group_0__5__Impl"
-    // InternalDeviceDefinition.g:2625:1: rule__Color__Group_0__5__Impl : ( ',' ) ;
+    // InternalDeviceDefinition.g:2637:1: rule__Color__Group_0__5__Impl : ( ',' ) ;
     public final void rule__Color__Group_0__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2629:1: ( ( ',' ) )
-            // InternalDeviceDefinition.g:2630:1: ( ',' )
+            // InternalDeviceDefinition.g:2641:1: ( ( ',' ) )
+            // InternalDeviceDefinition.g:2642:1: ( ',' )
             {
-            // InternalDeviceDefinition.g:2630:1: ( ',' )
-            // InternalDeviceDefinition.g:2631:2: ','
+            // InternalDeviceDefinition.g:2642:1: ( ',' )
+            // InternalDeviceDefinition.g:2643:2: ','
             {
              before(grammarAccess.getColorAccess().getCommaKeyword_0_5()); 
             match(input,49,FOLLOW_2); 
@@ -8720,14 +8782,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Color__Group_0__6"
-    // InternalDeviceDefinition.g:2640:1: rule__Color__Group_0__6 : rule__Color__Group_0__6__Impl rule__Color__Group_0__7 ;
+    // InternalDeviceDefinition.g:2652:1: rule__Color__Group_0__6 : rule__Color__Group_0__6__Impl rule__Color__Group_0__7 ;
     public final void rule__Color__Group_0__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2644:1: ( rule__Color__Group_0__6__Impl rule__Color__Group_0__7 )
-            // InternalDeviceDefinition.g:2645:2: rule__Color__Group_0__6__Impl rule__Color__Group_0__7
+            // InternalDeviceDefinition.g:2656:1: ( rule__Color__Group_0__6__Impl rule__Color__Group_0__7 )
+            // InternalDeviceDefinition.g:2657:2: rule__Color__Group_0__6__Impl rule__Color__Group_0__7
             {
             pushFollow(FOLLOW_25);
             rule__Color__Group_0__6__Impl();
@@ -8758,21 +8820,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Color__Group_0__6__Impl"
-    // InternalDeviceDefinition.g:2652:1: rule__Color__Group_0__6__Impl : ( ( rule__Color__BlueAssignment_0_6 ) ) ;
+    // InternalDeviceDefinition.g:2664:1: rule__Color__Group_0__6__Impl : ( ( rule__Color__BlueAssignment_0_6 ) ) ;
     public final void rule__Color__Group_0__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2656:1: ( ( ( rule__Color__BlueAssignment_0_6 ) ) )
-            // InternalDeviceDefinition.g:2657:1: ( ( rule__Color__BlueAssignment_0_6 ) )
+            // InternalDeviceDefinition.g:2668:1: ( ( ( rule__Color__BlueAssignment_0_6 ) ) )
+            // InternalDeviceDefinition.g:2669:1: ( ( rule__Color__BlueAssignment_0_6 ) )
             {
-            // InternalDeviceDefinition.g:2657:1: ( ( rule__Color__BlueAssignment_0_6 ) )
-            // InternalDeviceDefinition.g:2658:2: ( rule__Color__BlueAssignment_0_6 )
+            // InternalDeviceDefinition.g:2669:1: ( ( rule__Color__BlueAssignment_0_6 ) )
+            // InternalDeviceDefinition.g:2670:2: ( rule__Color__BlueAssignment_0_6 )
             {
              before(grammarAccess.getColorAccess().getBlueAssignment_0_6()); 
-            // InternalDeviceDefinition.g:2659:2: ( rule__Color__BlueAssignment_0_6 )
-            // InternalDeviceDefinition.g:2659:3: rule__Color__BlueAssignment_0_6
+            // InternalDeviceDefinition.g:2671:2: ( rule__Color__BlueAssignment_0_6 )
+            // InternalDeviceDefinition.g:2671:3: rule__Color__BlueAssignment_0_6
             {
             pushFollow(FOLLOW_2);
             rule__Color__BlueAssignment_0_6();
@@ -8805,14 +8867,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Color__Group_0__7"
-    // InternalDeviceDefinition.g:2667:1: rule__Color__Group_0__7 : rule__Color__Group_0__7__Impl ;
+    // InternalDeviceDefinition.g:2679:1: rule__Color__Group_0__7 : rule__Color__Group_0__7__Impl ;
     public final void rule__Color__Group_0__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2671:1: ( rule__Color__Group_0__7__Impl )
-            // InternalDeviceDefinition.g:2672:2: rule__Color__Group_0__7__Impl
+            // InternalDeviceDefinition.g:2683:1: ( rule__Color__Group_0__7__Impl )
+            // InternalDeviceDefinition.g:2684:2: rule__Color__Group_0__7__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Color__Group_0__7__Impl();
@@ -8838,17 +8900,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Color__Group_0__7__Impl"
-    // InternalDeviceDefinition.g:2678:1: rule__Color__Group_0__7__Impl : ( ')' ) ;
+    // InternalDeviceDefinition.g:2690:1: rule__Color__Group_0__7__Impl : ( ')' ) ;
     public final void rule__Color__Group_0__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2682:1: ( ( ')' ) )
-            // InternalDeviceDefinition.g:2683:1: ( ')' )
+            // InternalDeviceDefinition.g:2694:1: ( ( ')' ) )
+            // InternalDeviceDefinition.g:2695:1: ( ')' )
             {
-            // InternalDeviceDefinition.g:2683:1: ( ')' )
-            // InternalDeviceDefinition.g:2684:2: ')'
+            // InternalDeviceDefinition.g:2695:1: ( ')' )
+            // InternalDeviceDefinition.g:2696:2: ')'
             {
              before(grammarAccess.getColorAccess().getRightParenthesisKeyword_0_7()); 
             match(input,50,FOLLOW_2); 
@@ -8875,14 +8937,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Color__Group_1__0"
-    // InternalDeviceDefinition.g:2694:1: rule__Color__Group_1__0 : rule__Color__Group_1__0__Impl rule__Color__Group_1__1 ;
+    // InternalDeviceDefinition.g:2706:1: rule__Color__Group_1__0 : rule__Color__Group_1__0__Impl rule__Color__Group_1__1 ;
     public final void rule__Color__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2698:1: ( rule__Color__Group_1__0__Impl rule__Color__Group_1__1 )
-            // InternalDeviceDefinition.g:2699:2: rule__Color__Group_1__0__Impl rule__Color__Group_1__1
+            // InternalDeviceDefinition.g:2710:1: ( rule__Color__Group_1__0__Impl rule__Color__Group_1__1 )
+            // InternalDeviceDefinition.g:2711:2: rule__Color__Group_1__0__Impl rule__Color__Group_1__1
             {
             pushFollow(FOLLOW_26);
             rule__Color__Group_1__0__Impl();
@@ -8913,21 +8975,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Color__Group_1__0__Impl"
-    // InternalDeviceDefinition.g:2706:1: rule__Color__Group_1__0__Impl : ( () ) ;
+    // InternalDeviceDefinition.g:2718:1: rule__Color__Group_1__0__Impl : ( () ) ;
     public final void rule__Color__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2710:1: ( ( () ) )
-            // InternalDeviceDefinition.g:2711:1: ( () )
+            // InternalDeviceDefinition.g:2722:1: ( ( () ) )
+            // InternalDeviceDefinition.g:2723:1: ( () )
             {
-            // InternalDeviceDefinition.g:2711:1: ( () )
-            // InternalDeviceDefinition.g:2712:2: ()
+            // InternalDeviceDefinition.g:2723:1: ( () )
+            // InternalDeviceDefinition.g:2724:2: ()
             {
              before(grammarAccess.getColorAccess().getPresetAction_1_0()); 
-            // InternalDeviceDefinition.g:2713:2: ()
-            // InternalDeviceDefinition.g:2713:3: 
+            // InternalDeviceDefinition.g:2725:2: ()
+            // InternalDeviceDefinition.g:2725:3: 
             {
             }
 
@@ -8950,14 +9012,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Color__Group_1__1"
-    // InternalDeviceDefinition.g:2721:1: rule__Color__Group_1__1 : rule__Color__Group_1__1__Impl ;
+    // InternalDeviceDefinition.g:2733:1: rule__Color__Group_1__1 : rule__Color__Group_1__1__Impl ;
     public final void rule__Color__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2725:1: ( rule__Color__Group_1__1__Impl )
-            // InternalDeviceDefinition.g:2726:2: rule__Color__Group_1__1__Impl
+            // InternalDeviceDefinition.g:2737:1: ( rule__Color__Group_1__1__Impl )
+            // InternalDeviceDefinition.g:2738:2: rule__Color__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Color__Group_1__1__Impl();
@@ -8983,21 +9045,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Color__Group_1__1__Impl"
-    // InternalDeviceDefinition.g:2732:1: rule__Color__Group_1__1__Impl : ( ( rule__Color__PresetAssignment_1_1 ) ) ;
+    // InternalDeviceDefinition.g:2744:1: rule__Color__Group_1__1__Impl : ( ( rule__Color__PresetAssignment_1_1 ) ) ;
     public final void rule__Color__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2736:1: ( ( ( rule__Color__PresetAssignment_1_1 ) ) )
-            // InternalDeviceDefinition.g:2737:1: ( ( rule__Color__PresetAssignment_1_1 ) )
+            // InternalDeviceDefinition.g:2748:1: ( ( ( rule__Color__PresetAssignment_1_1 ) ) )
+            // InternalDeviceDefinition.g:2749:1: ( ( rule__Color__PresetAssignment_1_1 ) )
             {
-            // InternalDeviceDefinition.g:2737:1: ( ( rule__Color__PresetAssignment_1_1 ) )
-            // InternalDeviceDefinition.g:2738:2: ( rule__Color__PresetAssignment_1_1 )
+            // InternalDeviceDefinition.g:2749:1: ( ( rule__Color__PresetAssignment_1_1 ) )
+            // InternalDeviceDefinition.g:2750:2: ( rule__Color__PresetAssignment_1_1 )
             {
              before(grammarAccess.getColorAccess().getPresetAssignment_1_1()); 
-            // InternalDeviceDefinition.g:2739:2: ( rule__Color__PresetAssignment_1_1 )
-            // InternalDeviceDefinition.g:2739:3: rule__Color__PresetAssignment_1_1
+            // InternalDeviceDefinition.g:2751:2: ( rule__Color__PresetAssignment_1_1 )
+            // InternalDeviceDefinition.g:2751:3: rule__Color__PresetAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__Color__PresetAssignment_1_1();
@@ -9030,14 +9092,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Color__Group_2__0"
-    // InternalDeviceDefinition.g:2748:1: rule__Color__Group_2__0 : rule__Color__Group_2__0__Impl rule__Color__Group_2__1 ;
+    // InternalDeviceDefinition.g:2760:1: rule__Color__Group_2__0 : rule__Color__Group_2__0__Impl rule__Color__Group_2__1 ;
     public final void rule__Color__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2752:1: ( rule__Color__Group_2__0__Impl rule__Color__Group_2__1 )
-            // InternalDeviceDefinition.g:2753:2: rule__Color__Group_2__0__Impl rule__Color__Group_2__1
+            // InternalDeviceDefinition.g:2764:1: ( rule__Color__Group_2__0__Impl rule__Color__Group_2__1 )
+            // InternalDeviceDefinition.g:2765:2: rule__Color__Group_2__0__Impl rule__Color__Group_2__1
             {
             pushFollow(FOLLOW_21);
             rule__Color__Group_2__0__Impl();
@@ -9068,21 +9130,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Color__Group_2__0__Impl"
-    // InternalDeviceDefinition.g:2760:1: rule__Color__Group_2__0__Impl : ( () ) ;
+    // InternalDeviceDefinition.g:2772:1: rule__Color__Group_2__0__Impl : ( () ) ;
     public final void rule__Color__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2764:1: ( ( () ) )
-            // InternalDeviceDefinition.g:2765:1: ( () )
+            // InternalDeviceDefinition.g:2776:1: ( ( () ) )
+            // InternalDeviceDefinition.g:2777:1: ( () )
             {
-            // InternalDeviceDefinition.g:2765:1: ( () )
-            // InternalDeviceDefinition.g:2766:2: ()
+            // InternalDeviceDefinition.g:2777:1: ( () )
+            // InternalDeviceDefinition.g:2778:2: ()
             {
              before(grammarAccess.getColorAccess().getRandomAction_2_0()); 
-            // InternalDeviceDefinition.g:2767:2: ()
-            // InternalDeviceDefinition.g:2767:3: 
+            // InternalDeviceDefinition.g:2779:2: ()
+            // InternalDeviceDefinition.g:2779:3: 
             {
             }
 
@@ -9105,14 +9167,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Color__Group_2__1"
-    // InternalDeviceDefinition.g:2775:1: rule__Color__Group_2__1 : rule__Color__Group_2__1__Impl ;
+    // InternalDeviceDefinition.g:2787:1: rule__Color__Group_2__1 : rule__Color__Group_2__1__Impl ;
     public final void rule__Color__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2779:1: ( rule__Color__Group_2__1__Impl )
-            // InternalDeviceDefinition.g:2780:2: rule__Color__Group_2__1__Impl
+            // InternalDeviceDefinition.g:2791:1: ( rule__Color__Group_2__1__Impl )
+            // InternalDeviceDefinition.g:2792:2: rule__Color__Group_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Color__Group_2__1__Impl();
@@ -9138,17 +9200,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Color__Group_2__1__Impl"
-    // InternalDeviceDefinition.g:2786:1: rule__Color__Group_2__1__Impl : ( 'random' ) ;
+    // InternalDeviceDefinition.g:2798:1: rule__Color__Group_2__1__Impl : ( 'random' ) ;
     public final void rule__Color__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2790:1: ( ( 'random' ) )
-            // InternalDeviceDefinition.g:2791:1: ( 'random' )
+            // InternalDeviceDefinition.g:2802:1: ( ( 'random' ) )
+            // InternalDeviceDefinition.g:2803:1: ( 'random' )
             {
-            // InternalDeviceDefinition.g:2791:1: ( 'random' )
-            // InternalDeviceDefinition.g:2792:2: 'random'
+            // InternalDeviceDefinition.g:2803:1: ( 'random' )
+            // InternalDeviceDefinition.g:2804:2: 'random'
             {
              before(grammarAccess.getColorAccess().getRandomKeyword_2_1()); 
             match(input,51,FOLLOW_2); 
@@ -9175,14 +9237,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__Group__0"
-    // InternalDeviceDefinition.g:2802:1: rule__Gateway__Group__0 : rule__Gateway__Group__0__Impl rule__Gateway__Group__1 ;
+    // InternalDeviceDefinition.g:2814:1: rule__Gateway__Group__0 : rule__Gateway__Group__0__Impl rule__Gateway__Group__1 ;
     public final void rule__Gateway__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2806:1: ( rule__Gateway__Group__0__Impl rule__Gateway__Group__1 )
-            // InternalDeviceDefinition.g:2807:2: rule__Gateway__Group__0__Impl rule__Gateway__Group__1
+            // InternalDeviceDefinition.g:2818:1: ( rule__Gateway__Group__0__Impl rule__Gateway__Group__1 )
+            // InternalDeviceDefinition.g:2819:2: rule__Gateway__Group__0__Impl rule__Gateway__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__Gateway__Group__0__Impl();
@@ -9213,17 +9275,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__Group__0__Impl"
-    // InternalDeviceDefinition.g:2814:1: rule__Gateway__Group__0__Impl : ( 'Gateway' ) ;
+    // InternalDeviceDefinition.g:2826:1: rule__Gateway__Group__0__Impl : ( 'Gateway' ) ;
     public final void rule__Gateway__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2818:1: ( ( 'Gateway' ) )
-            // InternalDeviceDefinition.g:2819:1: ( 'Gateway' )
+            // InternalDeviceDefinition.g:2830:1: ( ( 'Gateway' ) )
+            // InternalDeviceDefinition.g:2831:1: ( 'Gateway' )
             {
-            // InternalDeviceDefinition.g:2819:1: ( 'Gateway' )
-            // InternalDeviceDefinition.g:2820:2: 'Gateway'
+            // InternalDeviceDefinition.g:2831:1: ( 'Gateway' )
+            // InternalDeviceDefinition.g:2832:2: 'Gateway'
             {
              before(grammarAccess.getGatewayAccess().getGatewayKeyword_0()); 
             match(input,52,FOLLOW_2); 
@@ -9250,14 +9312,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__Group__1"
-    // InternalDeviceDefinition.g:2829:1: rule__Gateway__Group__1 : rule__Gateway__Group__1__Impl rule__Gateway__Group__2 ;
+    // InternalDeviceDefinition.g:2841:1: rule__Gateway__Group__1 : rule__Gateway__Group__1__Impl rule__Gateway__Group__2 ;
     public final void rule__Gateway__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2833:1: ( rule__Gateway__Group__1__Impl rule__Gateway__Group__2 )
-            // InternalDeviceDefinition.g:2834:2: rule__Gateway__Group__1__Impl rule__Gateway__Group__2
+            // InternalDeviceDefinition.g:2845:1: ( rule__Gateway__Group__1__Impl rule__Gateway__Group__2 )
+            // InternalDeviceDefinition.g:2846:2: rule__Gateway__Group__1__Impl rule__Gateway__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__Gateway__Group__1__Impl();
@@ -9288,21 +9350,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__Group__1__Impl"
-    // InternalDeviceDefinition.g:2841:1: rule__Gateway__Group__1__Impl : ( ( rule__Gateway__NameAssignment_1 ) ) ;
+    // InternalDeviceDefinition.g:2853:1: rule__Gateway__Group__1__Impl : ( ( rule__Gateway__NameAssignment_1 ) ) ;
     public final void rule__Gateway__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2845:1: ( ( ( rule__Gateway__NameAssignment_1 ) ) )
-            // InternalDeviceDefinition.g:2846:1: ( ( rule__Gateway__NameAssignment_1 ) )
+            // InternalDeviceDefinition.g:2857:1: ( ( ( rule__Gateway__NameAssignment_1 ) ) )
+            // InternalDeviceDefinition.g:2858:1: ( ( rule__Gateway__NameAssignment_1 ) )
             {
-            // InternalDeviceDefinition.g:2846:1: ( ( rule__Gateway__NameAssignment_1 ) )
-            // InternalDeviceDefinition.g:2847:2: ( rule__Gateway__NameAssignment_1 )
+            // InternalDeviceDefinition.g:2858:1: ( ( rule__Gateway__NameAssignment_1 ) )
+            // InternalDeviceDefinition.g:2859:2: ( rule__Gateway__NameAssignment_1 )
             {
              before(grammarAccess.getGatewayAccess().getNameAssignment_1()); 
-            // InternalDeviceDefinition.g:2848:2: ( rule__Gateway__NameAssignment_1 )
-            // InternalDeviceDefinition.g:2848:3: rule__Gateway__NameAssignment_1
+            // InternalDeviceDefinition.g:2860:2: ( rule__Gateway__NameAssignment_1 )
+            // InternalDeviceDefinition.g:2860:3: rule__Gateway__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Gateway__NameAssignment_1();
@@ -9335,14 +9397,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__Group__2"
-    // InternalDeviceDefinition.g:2856:1: rule__Gateway__Group__2 : rule__Gateway__Group__2__Impl rule__Gateway__Group__3 ;
+    // InternalDeviceDefinition.g:2868:1: rule__Gateway__Group__2 : rule__Gateway__Group__2__Impl rule__Gateway__Group__3 ;
     public final void rule__Gateway__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2860:1: ( rule__Gateway__Group__2__Impl rule__Gateway__Group__3 )
-            // InternalDeviceDefinition.g:2861:2: rule__Gateway__Group__2__Impl rule__Gateway__Group__3
+            // InternalDeviceDefinition.g:2872:1: ( rule__Gateway__Group__2__Impl rule__Gateway__Group__3 )
+            // InternalDeviceDefinition.g:2873:2: rule__Gateway__Group__2__Impl rule__Gateway__Group__3
             {
             pushFollow(FOLLOW_27);
             rule__Gateway__Group__2__Impl();
@@ -9373,17 +9435,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__Group__2__Impl"
-    // InternalDeviceDefinition.g:2868:1: rule__Gateway__Group__2__Impl : ( ':' ) ;
+    // InternalDeviceDefinition.g:2880:1: rule__Gateway__Group__2__Impl : ( ':' ) ;
     public final void rule__Gateway__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2872:1: ( ( ':' ) )
-            // InternalDeviceDefinition.g:2873:1: ( ':' )
+            // InternalDeviceDefinition.g:2884:1: ( ( ':' ) )
+            // InternalDeviceDefinition.g:2885:1: ( ':' )
             {
-            // InternalDeviceDefinition.g:2873:1: ( ':' )
-            // InternalDeviceDefinition.g:2874:2: ':'
+            // InternalDeviceDefinition.g:2885:1: ( ':' )
+            // InternalDeviceDefinition.g:2886:2: ':'
             {
              before(grammarAccess.getGatewayAccess().getColonKeyword_2()); 
             match(input,33,FOLLOW_2); 
@@ -9410,14 +9472,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__Group__3"
-    // InternalDeviceDefinition.g:2883:1: rule__Gateway__Group__3 : rule__Gateway__Group__3__Impl rule__Gateway__Group__4 ;
+    // InternalDeviceDefinition.g:2895:1: rule__Gateway__Group__3 : rule__Gateway__Group__3__Impl rule__Gateway__Group__4 ;
     public final void rule__Gateway__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2887:1: ( rule__Gateway__Group__3__Impl rule__Gateway__Group__4 )
-            // InternalDeviceDefinition.g:2888:2: rule__Gateway__Group__3__Impl rule__Gateway__Group__4
+            // InternalDeviceDefinition.g:2899:1: ( rule__Gateway__Group__3__Impl rule__Gateway__Group__4 )
+            // InternalDeviceDefinition.g:2900:2: rule__Gateway__Group__3__Impl rule__Gateway__Group__4
             {
             pushFollow(FOLLOW_28);
             rule__Gateway__Group__3__Impl();
@@ -9448,17 +9510,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__Group__3__Impl"
-    // InternalDeviceDefinition.g:2895:1: rule__Gateway__Group__3__Impl : ( 'mac' ) ;
+    // InternalDeviceDefinition.g:2907:1: rule__Gateway__Group__3__Impl : ( 'mac' ) ;
     public final void rule__Gateway__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2899:1: ( ( 'mac' ) )
-            // InternalDeviceDefinition.g:2900:1: ( 'mac' )
+            // InternalDeviceDefinition.g:2911:1: ( ( 'mac' ) )
+            // InternalDeviceDefinition.g:2912:1: ( 'mac' )
             {
-            // InternalDeviceDefinition.g:2900:1: ( 'mac' )
-            // InternalDeviceDefinition.g:2901:2: 'mac'
+            // InternalDeviceDefinition.g:2912:1: ( 'mac' )
+            // InternalDeviceDefinition.g:2913:2: 'mac'
             {
              before(grammarAccess.getGatewayAccess().getMacKeyword_3()); 
             match(input,53,FOLLOW_2); 
@@ -9485,14 +9547,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__Group__4"
-    // InternalDeviceDefinition.g:2910:1: rule__Gateway__Group__4 : rule__Gateway__Group__4__Impl rule__Gateway__Group__5 ;
+    // InternalDeviceDefinition.g:2922:1: rule__Gateway__Group__4 : rule__Gateway__Group__4__Impl rule__Gateway__Group__5 ;
     public final void rule__Gateway__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2914:1: ( rule__Gateway__Group__4__Impl rule__Gateway__Group__5 )
-            // InternalDeviceDefinition.g:2915:2: rule__Gateway__Group__4__Impl rule__Gateway__Group__5
+            // InternalDeviceDefinition.g:2926:1: ( rule__Gateway__Group__4__Impl rule__Gateway__Group__5 )
+            // InternalDeviceDefinition.g:2927:2: rule__Gateway__Group__4__Impl rule__Gateway__Group__5
             {
             pushFollow(FOLLOW_29);
             rule__Gateway__Group__4__Impl();
@@ -9523,21 +9585,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__Group__4__Impl"
-    // InternalDeviceDefinition.g:2922:1: rule__Gateway__Group__4__Impl : ( ( rule__Gateway__MacAssignment_4 ) ) ;
+    // InternalDeviceDefinition.g:2934:1: rule__Gateway__Group__4__Impl : ( ( rule__Gateway__MacAssignment_4 ) ) ;
     public final void rule__Gateway__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2926:1: ( ( ( rule__Gateway__MacAssignment_4 ) ) )
-            // InternalDeviceDefinition.g:2927:1: ( ( rule__Gateway__MacAssignment_4 ) )
+            // InternalDeviceDefinition.g:2938:1: ( ( ( rule__Gateway__MacAssignment_4 ) ) )
+            // InternalDeviceDefinition.g:2939:1: ( ( rule__Gateway__MacAssignment_4 ) )
             {
-            // InternalDeviceDefinition.g:2927:1: ( ( rule__Gateway__MacAssignment_4 ) )
-            // InternalDeviceDefinition.g:2928:2: ( rule__Gateway__MacAssignment_4 )
+            // InternalDeviceDefinition.g:2939:1: ( ( rule__Gateway__MacAssignment_4 ) )
+            // InternalDeviceDefinition.g:2940:2: ( rule__Gateway__MacAssignment_4 )
             {
              before(grammarAccess.getGatewayAccess().getMacAssignment_4()); 
-            // InternalDeviceDefinition.g:2929:2: ( rule__Gateway__MacAssignment_4 )
-            // InternalDeviceDefinition.g:2929:3: rule__Gateway__MacAssignment_4
+            // InternalDeviceDefinition.g:2941:2: ( rule__Gateway__MacAssignment_4 )
+            // InternalDeviceDefinition.g:2941:3: rule__Gateway__MacAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__Gateway__MacAssignment_4();
@@ -9570,14 +9632,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__Group__5"
-    // InternalDeviceDefinition.g:2937:1: rule__Gateway__Group__5 : rule__Gateway__Group__5__Impl rule__Gateway__Group__6 ;
+    // InternalDeviceDefinition.g:2949:1: rule__Gateway__Group__5 : rule__Gateway__Group__5__Impl rule__Gateway__Group__6 ;
     public final void rule__Gateway__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2941:1: ( rule__Gateway__Group__5__Impl rule__Gateway__Group__6 )
-            // InternalDeviceDefinition.g:2942:2: rule__Gateway__Group__5__Impl rule__Gateway__Group__6
+            // InternalDeviceDefinition.g:2953:1: ( rule__Gateway__Group__5__Impl rule__Gateway__Group__6 )
+            // InternalDeviceDefinition.g:2954:2: rule__Gateway__Group__5__Impl rule__Gateway__Group__6
             {
             pushFollow(FOLLOW_30);
             rule__Gateway__Group__5__Impl();
@@ -9608,17 +9670,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__Group__5__Impl"
-    // InternalDeviceDefinition.g:2949:1: rule__Gateway__Group__5__Impl : ( 'channel' ) ;
+    // InternalDeviceDefinition.g:2961:1: rule__Gateway__Group__5__Impl : ( 'channel' ) ;
     public final void rule__Gateway__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2953:1: ( ( 'channel' ) )
-            // InternalDeviceDefinition.g:2954:1: ( 'channel' )
+            // InternalDeviceDefinition.g:2965:1: ( ( 'channel' ) )
+            // InternalDeviceDefinition.g:2966:1: ( 'channel' )
             {
-            // InternalDeviceDefinition.g:2954:1: ( 'channel' )
-            // InternalDeviceDefinition.g:2955:2: 'channel'
+            // InternalDeviceDefinition.g:2966:1: ( 'channel' )
+            // InternalDeviceDefinition.g:2967:2: 'channel'
             {
              before(grammarAccess.getGatewayAccess().getChannelKeyword_5()); 
             match(input,54,FOLLOW_2); 
@@ -9645,14 +9707,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__Group__6"
-    // InternalDeviceDefinition.g:2964:1: rule__Gateway__Group__6 : rule__Gateway__Group__6__Impl rule__Gateway__Group__7 ;
+    // InternalDeviceDefinition.g:2976:1: rule__Gateway__Group__6 : rule__Gateway__Group__6__Impl rule__Gateway__Group__7 ;
     public final void rule__Gateway__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2968:1: ( rule__Gateway__Group__6__Impl rule__Gateway__Group__7 )
-            // InternalDeviceDefinition.g:2969:2: rule__Gateway__Group__6__Impl rule__Gateway__Group__7
+            // InternalDeviceDefinition.g:2980:1: ( rule__Gateway__Group__6__Impl rule__Gateway__Group__7 )
+            // InternalDeviceDefinition.g:2981:2: rule__Gateway__Group__6__Impl rule__Gateway__Group__7
             {
             pushFollow(FOLLOW_31);
             rule__Gateway__Group__6__Impl();
@@ -9683,21 +9745,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__Group__6__Impl"
-    // InternalDeviceDefinition.g:2976:1: rule__Gateway__Group__6__Impl : ( ( rule__Gateway__ChannelAssignment_6 ) ) ;
+    // InternalDeviceDefinition.g:2988:1: rule__Gateway__Group__6__Impl : ( ( rule__Gateway__ChannelAssignment_6 ) ) ;
     public final void rule__Gateway__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2980:1: ( ( ( rule__Gateway__ChannelAssignment_6 ) ) )
-            // InternalDeviceDefinition.g:2981:1: ( ( rule__Gateway__ChannelAssignment_6 ) )
+            // InternalDeviceDefinition.g:2992:1: ( ( ( rule__Gateway__ChannelAssignment_6 ) ) )
+            // InternalDeviceDefinition.g:2993:1: ( ( rule__Gateway__ChannelAssignment_6 ) )
             {
-            // InternalDeviceDefinition.g:2981:1: ( ( rule__Gateway__ChannelAssignment_6 ) )
-            // InternalDeviceDefinition.g:2982:2: ( rule__Gateway__ChannelAssignment_6 )
+            // InternalDeviceDefinition.g:2993:1: ( ( rule__Gateway__ChannelAssignment_6 ) )
+            // InternalDeviceDefinition.g:2994:2: ( rule__Gateway__ChannelAssignment_6 )
             {
              before(grammarAccess.getGatewayAccess().getChannelAssignment_6()); 
-            // InternalDeviceDefinition.g:2983:2: ( rule__Gateway__ChannelAssignment_6 )
-            // InternalDeviceDefinition.g:2983:3: rule__Gateway__ChannelAssignment_6
+            // InternalDeviceDefinition.g:2995:2: ( rule__Gateway__ChannelAssignment_6 )
+            // InternalDeviceDefinition.g:2995:3: rule__Gateway__ChannelAssignment_6
             {
             pushFollow(FOLLOW_2);
             rule__Gateway__ChannelAssignment_6();
@@ -9730,14 +9792,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__Group__7"
-    // InternalDeviceDefinition.g:2991:1: rule__Gateway__Group__7 : rule__Gateway__Group__7__Impl rule__Gateway__Group__8 ;
+    // InternalDeviceDefinition.g:3003:1: rule__Gateway__Group__7 : rule__Gateway__Group__7__Impl rule__Gateway__Group__8 ;
     public final void rule__Gateway__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:2995:1: ( rule__Gateway__Group__7__Impl rule__Gateway__Group__8 )
-            // InternalDeviceDefinition.g:2996:2: rule__Gateway__Group__7__Impl rule__Gateway__Group__8
+            // InternalDeviceDefinition.g:3007:1: ( rule__Gateway__Group__7__Impl rule__Gateway__Group__8 )
+            // InternalDeviceDefinition.g:3008:2: rule__Gateway__Group__7__Impl rule__Gateway__Group__8
             {
             pushFollow(FOLLOW_31);
             rule__Gateway__Group__7__Impl();
@@ -9768,20 +9830,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__Group__7__Impl"
-    // InternalDeviceDefinition.g:3003:1: rule__Gateway__Group__7__Impl : ( ( rule__Gateway__Group_7__0 )? ) ;
+    // InternalDeviceDefinition.g:3015:1: rule__Gateway__Group__7__Impl : ( ( rule__Gateway__Group_7__0 )? ) ;
     public final void rule__Gateway__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3007:1: ( ( ( rule__Gateway__Group_7__0 )? ) )
-            // InternalDeviceDefinition.g:3008:1: ( ( rule__Gateway__Group_7__0 )? )
+            // InternalDeviceDefinition.g:3019:1: ( ( ( rule__Gateway__Group_7__0 )? ) )
+            // InternalDeviceDefinition.g:3020:1: ( ( rule__Gateway__Group_7__0 )? )
             {
-            // InternalDeviceDefinition.g:3008:1: ( ( rule__Gateway__Group_7__0 )? )
-            // InternalDeviceDefinition.g:3009:2: ( rule__Gateway__Group_7__0 )?
+            // InternalDeviceDefinition.g:3020:1: ( ( rule__Gateway__Group_7__0 )? )
+            // InternalDeviceDefinition.g:3021:2: ( rule__Gateway__Group_7__0 )?
             {
              before(grammarAccess.getGatewayAccess().getGroup_7()); 
-            // InternalDeviceDefinition.g:3010:2: ( rule__Gateway__Group_7__0 )?
+            // InternalDeviceDefinition.g:3022:2: ( rule__Gateway__Group_7__0 )?
             int alt31=2;
             int LA31_0 = input.LA(1);
 
@@ -9790,7 +9852,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             }
             switch (alt31) {
                 case 1 :
-                    // InternalDeviceDefinition.g:3010:3: rule__Gateway__Group_7__0
+                    // InternalDeviceDefinition.g:3022:3: rule__Gateway__Group_7__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Gateway__Group_7__0();
@@ -9826,14 +9888,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__Group__8"
-    // InternalDeviceDefinition.g:3018:1: rule__Gateway__Group__8 : rule__Gateway__Group__8__Impl rule__Gateway__Group__9 ;
+    // InternalDeviceDefinition.g:3030:1: rule__Gateway__Group__8 : rule__Gateway__Group__8__Impl rule__Gateway__Group__9 ;
     public final void rule__Gateway__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3022:1: ( rule__Gateway__Group__8__Impl rule__Gateway__Group__9 )
-            // InternalDeviceDefinition.g:3023:2: rule__Gateway__Group__8__Impl rule__Gateway__Group__9
+            // InternalDeviceDefinition.g:3034:1: ( rule__Gateway__Group__8__Impl rule__Gateway__Group__9 )
+            // InternalDeviceDefinition.g:3035:2: rule__Gateway__Group__8__Impl rule__Gateway__Group__9
             {
             pushFollow(FOLLOW_31);
             rule__Gateway__Group__8__Impl();
@@ -9864,20 +9926,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__Group__8__Impl"
-    // InternalDeviceDefinition.g:3030:1: rule__Gateway__Group__8__Impl : ( ( rule__Gateway__Group_8__0 )? ) ;
+    // InternalDeviceDefinition.g:3042:1: rule__Gateway__Group__8__Impl : ( ( rule__Gateway__Group_8__0 )? ) ;
     public final void rule__Gateway__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3034:1: ( ( ( rule__Gateway__Group_8__0 )? ) )
-            // InternalDeviceDefinition.g:3035:1: ( ( rule__Gateway__Group_8__0 )? )
+            // InternalDeviceDefinition.g:3046:1: ( ( ( rule__Gateway__Group_8__0 )? ) )
+            // InternalDeviceDefinition.g:3047:1: ( ( rule__Gateway__Group_8__0 )? )
             {
-            // InternalDeviceDefinition.g:3035:1: ( ( rule__Gateway__Group_8__0 )? )
-            // InternalDeviceDefinition.g:3036:2: ( rule__Gateway__Group_8__0 )?
+            // InternalDeviceDefinition.g:3047:1: ( ( rule__Gateway__Group_8__0 )? )
+            // InternalDeviceDefinition.g:3048:2: ( rule__Gateway__Group_8__0 )?
             {
              before(grammarAccess.getGatewayAccess().getGroup_8()); 
-            // InternalDeviceDefinition.g:3037:2: ( rule__Gateway__Group_8__0 )?
+            // InternalDeviceDefinition.g:3049:2: ( rule__Gateway__Group_8__0 )?
             int alt32=2;
             int LA32_0 = input.LA(1);
 
@@ -9886,7 +9948,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             }
             switch (alt32) {
                 case 1 :
-                    // InternalDeviceDefinition.g:3037:3: rule__Gateway__Group_8__0
+                    // InternalDeviceDefinition.g:3049:3: rule__Gateway__Group_8__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Gateway__Group_8__0();
@@ -9922,14 +9984,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__Group__9"
-    // InternalDeviceDefinition.g:3045:1: rule__Gateway__Group__9 : rule__Gateway__Group__9__Impl ;
+    // InternalDeviceDefinition.g:3057:1: rule__Gateway__Group__9 : rule__Gateway__Group__9__Impl ;
     public final void rule__Gateway__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3049:1: ( rule__Gateway__Group__9__Impl )
-            // InternalDeviceDefinition.g:3050:2: rule__Gateway__Group__9__Impl
+            // InternalDeviceDefinition.g:3061:1: ( rule__Gateway__Group__9__Impl )
+            // InternalDeviceDefinition.g:3062:2: rule__Gateway__Group__9__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Gateway__Group__9__Impl();
@@ -9955,24 +10017,24 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__Group__9__Impl"
-    // InternalDeviceDefinition.g:3056:1: rule__Gateway__Group__9__Impl : ( ( ( rule__Gateway__WorkersAssignment_9 ) ) ( ( rule__Gateway__WorkersAssignment_9 )* ) ) ;
+    // InternalDeviceDefinition.g:3068:1: rule__Gateway__Group__9__Impl : ( ( ( rule__Gateway__WorkersAssignment_9 ) ) ( ( rule__Gateway__WorkersAssignment_9 )* ) ) ;
     public final void rule__Gateway__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3060:1: ( ( ( ( rule__Gateway__WorkersAssignment_9 ) ) ( ( rule__Gateway__WorkersAssignment_9 )* ) ) )
-            // InternalDeviceDefinition.g:3061:1: ( ( ( rule__Gateway__WorkersAssignment_9 ) ) ( ( rule__Gateway__WorkersAssignment_9 )* ) )
+            // InternalDeviceDefinition.g:3072:1: ( ( ( ( rule__Gateway__WorkersAssignment_9 ) ) ( ( rule__Gateway__WorkersAssignment_9 )* ) ) )
+            // InternalDeviceDefinition.g:3073:1: ( ( ( rule__Gateway__WorkersAssignment_9 ) ) ( ( rule__Gateway__WorkersAssignment_9 )* ) )
             {
-            // InternalDeviceDefinition.g:3061:1: ( ( ( rule__Gateway__WorkersAssignment_9 ) ) ( ( rule__Gateway__WorkersAssignment_9 )* ) )
-            // InternalDeviceDefinition.g:3062:2: ( ( rule__Gateway__WorkersAssignment_9 ) ) ( ( rule__Gateway__WorkersAssignment_9 )* )
+            // InternalDeviceDefinition.g:3073:1: ( ( ( rule__Gateway__WorkersAssignment_9 ) ) ( ( rule__Gateway__WorkersAssignment_9 )* ) )
+            // InternalDeviceDefinition.g:3074:2: ( ( rule__Gateway__WorkersAssignment_9 ) ) ( ( rule__Gateway__WorkersAssignment_9 )* )
             {
-            // InternalDeviceDefinition.g:3062:2: ( ( rule__Gateway__WorkersAssignment_9 ) )
-            // InternalDeviceDefinition.g:3063:3: ( rule__Gateway__WorkersAssignment_9 )
+            // InternalDeviceDefinition.g:3074:2: ( ( rule__Gateway__WorkersAssignment_9 ) )
+            // InternalDeviceDefinition.g:3075:3: ( rule__Gateway__WorkersAssignment_9 )
             {
              before(grammarAccess.getGatewayAccess().getWorkersAssignment_9()); 
-            // InternalDeviceDefinition.g:3064:3: ( rule__Gateway__WorkersAssignment_9 )
-            // InternalDeviceDefinition.g:3064:4: rule__Gateway__WorkersAssignment_9
+            // InternalDeviceDefinition.g:3076:3: ( rule__Gateway__WorkersAssignment_9 )
+            // InternalDeviceDefinition.g:3076:4: rule__Gateway__WorkersAssignment_9
             {
             pushFollow(FOLLOW_32);
             rule__Gateway__WorkersAssignment_9();
@@ -9986,11 +10048,11 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
             }
 
-            // InternalDeviceDefinition.g:3067:2: ( ( rule__Gateway__WorkersAssignment_9 )* )
-            // InternalDeviceDefinition.g:3068:3: ( rule__Gateway__WorkersAssignment_9 )*
+            // InternalDeviceDefinition.g:3079:2: ( ( rule__Gateway__WorkersAssignment_9 )* )
+            // InternalDeviceDefinition.g:3080:3: ( rule__Gateway__WorkersAssignment_9 )*
             {
              before(grammarAccess.getGatewayAccess().getWorkersAssignment_9()); 
-            // InternalDeviceDefinition.g:3069:3: ( rule__Gateway__WorkersAssignment_9 )*
+            // InternalDeviceDefinition.g:3081:3: ( rule__Gateway__WorkersAssignment_9 )*
             loop33:
             do {
                 int alt33=2;
@@ -10003,7 +10065,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
                 switch (alt33) {
             	case 1 :
-            	    // InternalDeviceDefinition.g:3069:4: rule__Gateway__WorkersAssignment_9
+            	    // InternalDeviceDefinition.g:3081:4: rule__Gateway__WorkersAssignment_9
             	    {
             	    pushFollow(FOLLOW_32);
             	    rule__Gateway__WorkersAssignment_9();
@@ -10045,14 +10107,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__Group_7__0"
-    // InternalDeviceDefinition.g:3079:1: rule__Gateway__Group_7__0 : rule__Gateway__Group_7__0__Impl rule__Gateway__Group_7__1 ;
+    // InternalDeviceDefinition.g:3091:1: rule__Gateway__Group_7__0 : rule__Gateway__Group_7__0__Impl rule__Gateway__Group_7__1 ;
     public final void rule__Gateway__Group_7__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3083:1: ( rule__Gateway__Group_7__0__Impl rule__Gateway__Group_7__1 )
-            // InternalDeviceDefinition.g:3084:2: rule__Gateway__Group_7__0__Impl rule__Gateway__Group_7__1
+            // InternalDeviceDefinition.g:3095:1: ( rule__Gateway__Group_7__0__Impl rule__Gateway__Group_7__1 )
+            // InternalDeviceDefinition.g:3096:2: rule__Gateway__Group_7__0__Impl rule__Gateway__Group_7__1
             {
             pushFollow(FOLLOW_33);
             rule__Gateway__Group_7__0__Impl();
@@ -10083,17 +10145,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__Group_7__0__Impl"
-    // InternalDeviceDefinition.g:3091:1: rule__Gateway__Group_7__0__Impl : ( 'error' ) ;
+    // InternalDeviceDefinition.g:3103:1: rule__Gateway__Group_7__0__Impl : ( 'error' ) ;
     public final void rule__Gateway__Group_7__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3095:1: ( ( 'error' ) )
-            // InternalDeviceDefinition.g:3096:1: ( 'error' )
+            // InternalDeviceDefinition.g:3107:1: ( ( 'error' ) )
+            // InternalDeviceDefinition.g:3108:1: ( 'error' )
             {
-            // InternalDeviceDefinition.g:3096:1: ( 'error' )
-            // InternalDeviceDefinition.g:3097:2: 'error'
+            // InternalDeviceDefinition.g:3108:1: ( 'error' )
+            // InternalDeviceDefinition.g:3109:2: 'error'
             {
              before(grammarAccess.getGatewayAccess().getErrorKeyword_7_0()); 
             match(input,55,FOLLOW_2); 
@@ -10120,14 +10182,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__Group_7__1"
-    // InternalDeviceDefinition.g:3106:1: rule__Gateway__Group_7__1 : rule__Gateway__Group_7__1__Impl rule__Gateway__Group_7__2 ;
+    // InternalDeviceDefinition.g:3118:1: rule__Gateway__Group_7__1 : rule__Gateway__Group_7__1__Impl rule__Gateway__Group_7__2 ;
     public final void rule__Gateway__Group_7__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3110:1: ( rule__Gateway__Group_7__1__Impl rule__Gateway__Group_7__2 )
-            // InternalDeviceDefinition.g:3111:2: rule__Gateway__Group_7__1__Impl rule__Gateway__Group_7__2
+            // InternalDeviceDefinition.g:3122:1: ( rule__Gateway__Group_7__1__Impl rule__Gateway__Group_7__2 )
+            // InternalDeviceDefinition.g:3123:2: rule__Gateway__Group_7__1__Impl rule__Gateway__Group_7__2
             {
             pushFollow(FOLLOW_30);
             rule__Gateway__Group_7__1__Impl();
@@ -10158,17 +10220,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__Group_7__1__Impl"
-    // InternalDeviceDefinition.g:3118:1: rule__Gateway__Group_7__1__Impl : ( 'light' ) ;
+    // InternalDeviceDefinition.g:3130:1: rule__Gateway__Group_7__1__Impl : ( 'light' ) ;
     public final void rule__Gateway__Group_7__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3122:1: ( ( 'light' ) )
-            // InternalDeviceDefinition.g:3123:1: ( 'light' )
+            // InternalDeviceDefinition.g:3134:1: ( ( 'light' ) )
+            // InternalDeviceDefinition.g:3135:1: ( 'light' )
             {
-            // InternalDeviceDefinition.g:3123:1: ( 'light' )
-            // InternalDeviceDefinition.g:3124:2: 'light'
+            // InternalDeviceDefinition.g:3135:1: ( 'light' )
+            // InternalDeviceDefinition.g:3136:2: 'light'
             {
              before(grammarAccess.getGatewayAccess().getLightKeyword_7_1()); 
             match(input,56,FOLLOW_2); 
@@ -10195,14 +10257,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__Group_7__2"
-    // InternalDeviceDefinition.g:3133:1: rule__Gateway__Group_7__2 : rule__Gateway__Group_7__2__Impl ;
+    // InternalDeviceDefinition.g:3145:1: rule__Gateway__Group_7__2 : rule__Gateway__Group_7__2__Impl ;
     public final void rule__Gateway__Group_7__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3137:1: ( rule__Gateway__Group_7__2__Impl )
-            // InternalDeviceDefinition.g:3138:2: rule__Gateway__Group_7__2__Impl
+            // InternalDeviceDefinition.g:3149:1: ( rule__Gateway__Group_7__2__Impl )
+            // InternalDeviceDefinition.g:3150:2: rule__Gateway__Group_7__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Gateway__Group_7__2__Impl();
@@ -10228,21 +10290,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__Group_7__2__Impl"
-    // InternalDeviceDefinition.g:3144:1: rule__Gateway__Group_7__2__Impl : ( ( rule__Gateway__ErrorLedAssignment_7_2 ) ) ;
+    // InternalDeviceDefinition.g:3156:1: rule__Gateway__Group_7__2__Impl : ( ( rule__Gateway__ErrorLedAssignment_7_2 ) ) ;
     public final void rule__Gateway__Group_7__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3148:1: ( ( ( rule__Gateway__ErrorLedAssignment_7_2 ) ) )
-            // InternalDeviceDefinition.g:3149:1: ( ( rule__Gateway__ErrorLedAssignment_7_2 ) )
+            // InternalDeviceDefinition.g:3160:1: ( ( ( rule__Gateway__ErrorLedAssignment_7_2 ) ) )
+            // InternalDeviceDefinition.g:3161:1: ( ( rule__Gateway__ErrorLedAssignment_7_2 ) )
             {
-            // InternalDeviceDefinition.g:3149:1: ( ( rule__Gateway__ErrorLedAssignment_7_2 ) )
-            // InternalDeviceDefinition.g:3150:2: ( rule__Gateway__ErrorLedAssignment_7_2 )
+            // InternalDeviceDefinition.g:3161:1: ( ( rule__Gateway__ErrorLedAssignment_7_2 ) )
+            // InternalDeviceDefinition.g:3162:2: ( rule__Gateway__ErrorLedAssignment_7_2 )
             {
              before(grammarAccess.getGatewayAccess().getErrorLedAssignment_7_2()); 
-            // InternalDeviceDefinition.g:3151:2: ( rule__Gateway__ErrorLedAssignment_7_2 )
-            // InternalDeviceDefinition.g:3151:3: rule__Gateway__ErrorLedAssignment_7_2
+            // InternalDeviceDefinition.g:3163:2: ( rule__Gateway__ErrorLedAssignment_7_2 )
+            // InternalDeviceDefinition.g:3163:3: rule__Gateway__ErrorLedAssignment_7_2
             {
             pushFollow(FOLLOW_2);
             rule__Gateway__ErrorLedAssignment_7_2();
@@ -10275,14 +10337,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__Group_8__0"
-    // InternalDeviceDefinition.g:3160:1: rule__Gateway__Group_8__0 : rule__Gateway__Group_8__0__Impl rule__Gateway__Group_8__1 ;
+    // InternalDeviceDefinition.g:3172:1: rule__Gateway__Group_8__0 : rule__Gateway__Group_8__0__Impl rule__Gateway__Group_8__1 ;
     public final void rule__Gateway__Group_8__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3164:1: ( rule__Gateway__Group_8__0__Impl rule__Gateway__Group_8__1 )
-            // InternalDeviceDefinition.g:3165:2: rule__Gateway__Group_8__0__Impl rule__Gateway__Group_8__1
+            // InternalDeviceDefinition.g:3176:1: ( rule__Gateway__Group_8__0__Impl rule__Gateway__Group_8__1 )
+            // InternalDeviceDefinition.g:3177:2: rule__Gateway__Group_8__0__Impl rule__Gateway__Group_8__1
             {
             pushFollow(FOLLOW_30);
             rule__Gateway__Group_8__0__Impl();
@@ -10313,17 +10375,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__Group_8__0__Impl"
-    // InternalDeviceDefinition.g:3172:1: rule__Gateway__Group_8__0__Impl : ( 'retries' ) ;
+    // InternalDeviceDefinition.g:3184:1: rule__Gateway__Group_8__0__Impl : ( 'retries' ) ;
     public final void rule__Gateway__Group_8__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3176:1: ( ( 'retries' ) )
-            // InternalDeviceDefinition.g:3177:1: ( 'retries' )
+            // InternalDeviceDefinition.g:3188:1: ( ( 'retries' ) )
+            // InternalDeviceDefinition.g:3189:1: ( 'retries' )
             {
-            // InternalDeviceDefinition.g:3177:1: ( 'retries' )
-            // InternalDeviceDefinition.g:3178:2: 'retries'
+            // InternalDeviceDefinition.g:3189:1: ( 'retries' )
+            // InternalDeviceDefinition.g:3190:2: 'retries'
             {
              before(grammarAccess.getGatewayAccess().getRetriesKeyword_8_0()); 
             match(input,57,FOLLOW_2); 
@@ -10350,14 +10412,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__Group_8__1"
-    // InternalDeviceDefinition.g:3187:1: rule__Gateway__Group_8__1 : rule__Gateway__Group_8__1__Impl rule__Gateway__Group_8__2 ;
+    // InternalDeviceDefinition.g:3199:1: rule__Gateway__Group_8__1 : rule__Gateway__Group_8__1__Impl rule__Gateway__Group_8__2 ;
     public final void rule__Gateway__Group_8__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3191:1: ( rule__Gateway__Group_8__1__Impl rule__Gateway__Group_8__2 )
-            // InternalDeviceDefinition.g:3192:2: rule__Gateway__Group_8__1__Impl rule__Gateway__Group_8__2
+            // InternalDeviceDefinition.g:3203:1: ( rule__Gateway__Group_8__1__Impl rule__Gateway__Group_8__2 )
+            // InternalDeviceDefinition.g:3204:2: rule__Gateway__Group_8__1__Impl rule__Gateway__Group_8__2
             {
             pushFollow(FOLLOW_34);
             rule__Gateway__Group_8__1__Impl();
@@ -10388,21 +10450,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__Group_8__1__Impl"
-    // InternalDeviceDefinition.g:3199:1: rule__Gateway__Group_8__1__Impl : ( ( rule__Gateway__RetriesAssignment_8_1 ) ) ;
+    // InternalDeviceDefinition.g:3211:1: rule__Gateway__Group_8__1__Impl : ( ( rule__Gateway__RetriesAssignment_8_1 ) ) ;
     public final void rule__Gateway__Group_8__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3203:1: ( ( ( rule__Gateway__RetriesAssignment_8_1 ) ) )
-            // InternalDeviceDefinition.g:3204:1: ( ( rule__Gateway__RetriesAssignment_8_1 ) )
+            // InternalDeviceDefinition.g:3215:1: ( ( ( rule__Gateway__RetriesAssignment_8_1 ) ) )
+            // InternalDeviceDefinition.g:3216:1: ( ( rule__Gateway__RetriesAssignment_8_1 ) )
             {
-            // InternalDeviceDefinition.g:3204:1: ( ( rule__Gateway__RetriesAssignment_8_1 ) )
-            // InternalDeviceDefinition.g:3205:2: ( rule__Gateway__RetriesAssignment_8_1 )
+            // InternalDeviceDefinition.g:3216:1: ( ( rule__Gateway__RetriesAssignment_8_1 ) )
+            // InternalDeviceDefinition.g:3217:2: ( rule__Gateway__RetriesAssignment_8_1 )
             {
              before(grammarAccess.getGatewayAccess().getRetriesAssignment_8_1()); 
-            // InternalDeviceDefinition.g:3206:2: ( rule__Gateway__RetriesAssignment_8_1 )
-            // InternalDeviceDefinition.g:3206:3: rule__Gateway__RetriesAssignment_8_1
+            // InternalDeviceDefinition.g:3218:2: ( rule__Gateway__RetriesAssignment_8_1 )
+            // InternalDeviceDefinition.g:3218:3: rule__Gateway__RetriesAssignment_8_1
             {
             pushFollow(FOLLOW_2);
             rule__Gateway__RetriesAssignment_8_1();
@@ -10435,14 +10497,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__Group_8__2"
-    // InternalDeviceDefinition.g:3214:1: rule__Gateway__Group_8__2 : rule__Gateway__Group_8__2__Impl rule__Gateway__Group_8__3 ;
+    // InternalDeviceDefinition.g:3226:1: rule__Gateway__Group_8__2 : rule__Gateway__Group_8__2__Impl rule__Gateway__Group_8__3 ;
     public final void rule__Gateway__Group_8__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3218:1: ( rule__Gateway__Group_8__2__Impl rule__Gateway__Group_8__3 )
-            // InternalDeviceDefinition.g:3219:2: rule__Gateway__Group_8__2__Impl rule__Gateway__Group_8__3
+            // InternalDeviceDefinition.g:3230:1: ( rule__Gateway__Group_8__2__Impl rule__Gateway__Group_8__3 )
+            // InternalDeviceDefinition.g:3231:2: rule__Gateway__Group_8__2__Impl rule__Gateway__Group_8__3
             {
             pushFollow(FOLLOW_35);
             rule__Gateway__Group_8__2__Impl();
@@ -10473,17 +10535,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__Group_8__2__Impl"
-    // InternalDeviceDefinition.g:3226:1: rule__Gateway__Group_8__2__Impl : ( 'with' ) ;
+    // InternalDeviceDefinition.g:3238:1: rule__Gateway__Group_8__2__Impl : ( 'with' ) ;
     public final void rule__Gateway__Group_8__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3230:1: ( ( 'with' ) )
-            // InternalDeviceDefinition.g:3231:1: ( 'with' )
+            // InternalDeviceDefinition.g:3242:1: ( ( 'with' ) )
+            // InternalDeviceDefinition.g:3243:1: ( 'with' )
             {
-            // InternalDeviceDefinition.g:3231:1: ( 'with' )
-            // InternalDeviceDefinition.g:3232:2: 'with'
+            // InternalDeviceDefinition.g:3243:1: ( 'with' )
+            // InternalDeviceDefinition.g:3244:2: 'with'
             {
              before(grammarAccess.getGatewayAccess().getWithKeyword_8_2()); 
             match(input,36,FOLLOW_2); 
@@ -10510,14 +10572,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__Group_8__3"
-    // InternalDeviceDefinition.g:3241:1: rule__Gateway__Group_8__3 : rule__Gateway__Group_8__3__Impl rule__Gateway__Group_8__4 ;
+    // InternalDeviceDefinition.g:3253:1: rule__Gateway__Group_8__3 : rule__Gateway__Group_8__3__Impl rule__Gateway__Group_8__4 ;
     public final void rule__Gateway__Group_8__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3245:1: ( rule__Gateway__Group_8__3__Impl rule__Gateway__Group_8__4 )
-            // InternalDeviceDefinition.g:3246:2: rule__Gateway__Group_8__3__Impl rule__Gateway__Group_8__4
+            // InternalDeviceDefinition.g:3257:1: ( rule__Gateway__Group_8__3__Impl rule__Gateway__Group_8__4 )
+            // InternalDeviceDefinition.g:3258:2: rule__Gateway__Group_8__3__Impl rule__Gateway__Group_8__4
             {
             pushFollow(FOLLOW_36);
             rule__Gateway__Group_8__3__Impl();
@@ -10548,17 +10610,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__Group_8__3__Impl"
-    // InternalDeviceDefinition.g:3253:1: rule__Gateway__Group_8__3__Impl : ( 'delay' ) ;
+    // InternalDeviceDefinition.g:3265:1: rule__Gateway__Group_8__3__Impl : ( 'delay' ) ;
     public final void rule__Gateway__Group_8__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3257:1: ( ( 'delay' ) )
-            // InternalDeviceDefinition.g:3258:1: ( 'delay' )
+            // InternalDeviceDefinition.g:3269:1: ( ( 'delay' ) )
+            // InternalDeviceDefinition.g:3270:1: ( 'delay' )
             {
-            // InternalDeviceDefinition.g:3258:1: ( 'delay' )
-            // InternalDeviceDefinition.g:3259:2: 'delay'
+            // InternalDeviceDefinition.g:3270:1: ( 'delay' )
+            // InternalDeviceDefinition.g:3271:2: 'delay'
             {
              before(grammarAccess.getGatewayAccess().getDelayKeyword_8_3()); 
             match(input,58,FOLLOW_2); 
@@ -10585,14 +10647,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__Group_8__4"
-    // InternalDeviceDefinition.g:3268:1: rule__Gateway__Group_8__4 : rule__Gateway__Group_8__4__Impl rule__Gateway__Group_8__5 ;
+    // InternalDeviceDefinition.g:3280:1: rule__Gateway__Group_8__4 : rule__Gateway__Group_8__4__Impl rule__Gateway__Group_8__5 ;
     public final void rule__Gateway__Group_8__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3272:1: ( rule__Gateway__Group_8__4__Impl rule__Gateway__Group_8__5 )
-            // InternalDeviceDefinition.g:3273:2: rule__Gateway__Group_8__4__Impl rule__Gateway__Group_8__5
+            // InternalDeviceDefinition.g:3284:1: ( rule__Gateway__Group_8__4__Impl rule__Gateway__Group_8__5 )
+            // InternalDeviceDefinition.g:3285:2: rule__Gateway__Group_8__4__Impl rule__Gateway__Group_8__5
             {
             pushFollow(FOLLOW_37);
             rule__Gateway__Group_8__4__Impl();
@@ -10623,21 +10685,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__Group_8__4__Impl"
-    // InternalDeviceDefinition.g:3280:1: rule__Gateway__Group_8__4__Impl : ( ( rule__Gateway__DelayAssignment_8_4 ) ) ;
+    // InternalDeviceDefinition.g:3292:1: rule__Gateway__Group_8__4__Impl : ( ( rule__Gateway__DelayAssignment_8_4 ) ) ;
     public final void rule__Gateway__Group_8__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3284:1: ( ( ( rule__Gateway__DelayAssignment_8_4 ) ) )
-            // InternalDeviceDefinition.g:3285:1: ( ( rule__Gateway__DelayAssignment_8_4 ) )
+            // InternalDeviceDefinition.g:3296:1: ( ( ( rule__Gateway__DelayAssignment_8_4 ) ) )
+            // InternalDeviceDefinition.g:3297:1: ( ( rule__Gateway__DelayAssignment_8_4 ) )
             {
-            // InternalDeviceDefinition.g:3285:1: ( ( rule__Gateway__DelayAssignment_8_4 ) )
-            // InternalDeviceDefinition.g:3286:2: ( rule__Gateway__DelayAssignment_8_4 )
+            // InternalDeviceDefinition.g:3297:1: ( ( rule__Gateway__DelayAssignment_8_4 ) )
+            // InternalDeviceDefinition.g:3298:2: ( rule__Gateway__DelayAssignment_8_4 )
             {
              before(grammarAccess.getGatewayAccess().getDelayAssignment_8_4()); 
-            // InternalDeviceDefinition.g:3287:2: ( rule__Gateway__DelayAssignment_8_4 )
-            // InternalDeviceDefinition.g:3287:3: rule__Gateway__DelayAssignment_8_4
+            // InternalDeviceDefinition.g:3299:2: ( rule__Gateway__DelayAssignment_8_4 )
+            // InternalDeviceDefinition.g:3299:3: rule__Gateway__DelayAssignment_8_4
             {
             pushFollow(FOLLOW_2);
             rule__Gateway__DelayAssignment_8_4();
@@ -10670,14 +10732,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__Group_8__5"
-    // InternalDeviceDefinition.g:3295:1: rule__Gateway__Group_8__5 : rule__Gateway__Group_8__5__Impl ;
+    // InternalDeviceDefinition.g:3307:1: rule__Gateway__Group_8__5 : rule__Gateway__Group_8__5__Impl ;
     public final void rule__Gateway__Group_8__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3299:1: ( rule__Gateway__Group_8__5__Impl )
-            // InternalDeviceDefinition.g:3300:2: rule__Gateway__Group_8__5__Impl
+            // InternalDeviceDefinition.g:3311:1: ( rule__Gateway__Group_8__5__Impl )
+            // InternalDeviceDefinition.g:3312:2: rule__Gateway__Group_8__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Gateway__Group_8__5__Impl();
@@ -10703,21 +10765,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__Group_8__5__Impl"
-    // InternalDeviceDefinition.g:3306:1: rule__Gateway__Group_8__5__Impl : ( ( rule__Gateway__DelayTimeUnitAssignment_8_5 ) ) ;
+    // InternalDeviceDefinition.g:3318:1: rule__Gateway__Group_8__5__Impl : ( ( rule__Gateway__DelayTimeUnitAssignment_8_5 ) ) ;
     public final void rule__Gateway__Group_8__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3310:1: ( ( ( rule__Gateway__DelayTimeUnitAssignment_8_5 ) ) )
-            // InternalDeviceDefinition.g:3311:1: ( ( rule__Gateway__DelayTimeUnitAssignment_8_5 ) )
+            // InternalDeviceDefinition.g:3322:1: ( ( ( rule__Gateway__DelayTimeUnitAssignment_8_5 ) ) )
+            // InternalDeviceDefinition.g:3323:1: ( ( rule__Gateway__DelayTimeUnitAssignment_8_5 ) )
             {
-            // InternalDeviceDefinition.g:3311:1: ( ( rule__Gateway__DelayTimeUnitAssignment_8_5 ) )
-            // InternalDeviceDefinition.g:3312:2: ( rule__Gateway__DelayTimeUnitAssignment_8_5 )
+            // InternalDeviceDefinition.g:3323:1: ( ( rule__Gateway__DelayTimeUnitAssignment_8_5 ) )
+            // InternalDeviceDefinition.g:3324:2: ( rule__Gateway__DelayTimeUnitAssignment_8_5 )
             {
              before(grammarAccess.getGatewayAccess().getDelayTimeUnitAssignment_8_5()); 
-            // InternalDeviceDefinition.g:3313:2: ( rule__Gateway__DelayTimeUnitAssignment_8_5 )
-            // InternalDeviceDefinition.g:3313:3: rule__Gateway__DelayTimeUnitAssignment_8_5
+            // InternalDeviceDefinition.g:3325:2: ( rule__Gateway__DelayTimeUnitAssignment_8_5 )
+            // InternalDeviceDefinition.g:3325:3: rule__Gateway__DelayTimeUnitAssignment_8_5
             {
             pushFollow(FOLLOW_2);
             rule__Gateway__DelayTimeUnitAssignment_8_5();
@@ -10750,14 +10812,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group__0"
-    // InternalDeviceDefinition.g:3322:1: rule__Worker__Group__0 : rule__Worker__Group__0__Impl rule__Worker__Group__1 ;
+    // InternalDeviceDefinition.g:3334:1: rule__Worker__Group__0 : rule__Worker__Group__0__Impl rule__Worker__Group__1 ;
     public final void rule__Worker__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3326:1: ( rule__Worker__Group__0__Impl rule__Worker__Group__1 )
-            // InternalDeviceDefinition.g:3327:2: rule__Worker__Group__0__Impl rule__Worker__Group__1
+            // InternalDeviceDefinition.g:3338:1: ( rule__Worker__Group__0__Impl rule__Worker__Group__1 )
+            // InternalDeviceDefinition.g:3339:2: rule__Worker__Group__0__Impl rule__Worker__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__Worker__Group__0__Impl();
@@ -10788,17 +10850,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group__0__Impl"
-    // InternalDeviceDefinition.g:3334:1: rule__Worker__Group__0__Impl : ( 'Worker' ) ;
+    // InternalDeviceDefinition.g:3346:1: rule__Worker__Group__0__Impl : ( 'Worker' ) ;
     public final void rule__Worker__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3338:1: ( ( 'Worker' ) )
-            // InternalDeviceDefinition.g:3339:1: ( 'Worker' )
+            // InternalDeviceDefinition.g:3350:1: ( ( 'Worker' ) )
+            // InternalDeviceDefinition.g:3351:1: ( 'Worker' )
             {
-            // InternalDeviceDefinition.g:3339:1: ( 'Worker' )
-            // InternalDeviceDefinition.g:3340:2: 'Worker'
+            // InternalDeviceDefinition.g:3351:1: ( 'Worker' )
+            // InternalDeviceDefinition.g:3352:2: 'Worker'
             {
              before(grammarAccess.getWorkerAccess().getWorkerKeyword_0()); 
             match(input,59,FOLLOW_2); 
@@ -10825,14 +10887,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group__1"
-    // InternalDeviceDefinition.g:3349:1: rule__Worker__Group__1 : rule__Worker__Group__1__Impl rule__Worker__Group__2 ;
+    // InternalDeviceDefinition.g:3361:1: rule__Worker__Group__1 : rule__Worker__Group__1__Impl rule__Worker__Group__2 ;
     public final void rule__Worker__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3353:1: ( rule__Worker__Group__1__Impl rule__Worker__Group__2 )
-            // InternalDeviceDefinition.g:3354:2: rule__Worker__Group__1__Impl rule__Worker__Group__2
+            // InternalDeviceDefinition.g:3365:1: ( rule__Worker__Group__1__Impl rule__Worker__Group__2 )
+            // InternalDeviceDefinition.g:3366:2: rule__Worker__Group__1__Impl rule__Worker__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__Worker__Group__1__Impl();
@@ -10863,21 +10925,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group__1__Impl"
-    // InternalDeviceDefinition.g:3361:1: rule__Worker__Group__1__Impl : ( ( rule__Worker__NameAssignment_1 ) ) ;
+    // InternalDeviceDefinition.g:3373:1: rule__Worker__Group__1__Impl : ( ( rule__Worker__NameAssignment_1 ) ) ;
     public final void rule__Worker__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3365:1: ( ( ( rule__Worker__NameAssignment_1 ) ) )
-            // InternalDeviceDefinition.g:3366:1: ( ( rule__Worker__NameAssignment_1 ) )
+            // InternalDeviceDefinition.g:3377:1: ( ( ( rule__Worker__NameAssignment_1 ) ) )
+            // InternalDeviceDefinition.g:3378:1: ( ( rule__Worker__NameAssignment_1 ) )
             {
-            // InternalDeviceDefinition.g:3366:1: ( ( rule__Worker__NameAssignment_1 ) )
-            // InternalDeviceDefinition.g:3367:2: ( rule__Worker__NameAssignment_1 )
+            // InternalDeviceDefinition.g:3378:1: ( ( rule__Worker__NameAssignment_1 ) )
+            // InternalDeviceDefinition.g:3379:2: ( rule__Worker__NameAssignment_1 )
             {
              before(grammarAccess.getWorkerAccess().getNameAssignment_1()); 
-            // InternalDeviceDefinition.g:3368:2: ( rule__Worker__NameAssignment_1 )
-            // InternalDeviceDefinition.g:3368:3: rule__Worker__NameAssignment_1
+            // InternalDeviceDefinition.g:3380:2: ( rule__Worker__NameAssignment_1 )
+            // InternalDeviceDefinition.g:3380:3: rule__Worker__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Worker__NameAssignment_1();
@@ -10910,14 +10972,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group__2"
-    // InternalDeviceDefinition.g:3376:1: rule__Worker__Group__2 : rule__Worker__Group__2__Impl rule__Worker__Group__3 ;
+    // InternalDeviceDefinition.g:3388:1: rule__Worker__Group__2 : rule__Worker__Group__2__Impl rule__Worker__Group__3 ;
     public final void rule__Worker__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3380:1: ( rule__Worker__Group__2__Impl rule__Worker__Group__3 )
-            // InternalDeviceDefinition.g:3381:2: rule__Worker__Group__2__Impl rule__Worker__Group__3
+            // InternalDeviceDefinition.g:3392:1: ( rule__Worker__Group__2__Impl rule__Worker__Group__3 )
+            // InternalDeviceDefinition.g:3393:2: rule__Worker__Group__2__Impl rule__Worker__Group__3
             {
             pushFollow(FOLLOW_27);
             rule__Worker__Group__2__Impl();
@@ -10948,17 +11010,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group__2__Impl"
-    // InternalDeviceDefinition.g:3388:1: rule__Worker__Group__2__Impl : ( ':' ) ;
+    // InternalDeviceDefinition.g:3400:1: rule__Worker__Group__2__Impl : ( ':' ) ;
     public final void rule__Worker__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3392:1: ( ( ':' ) )
-            // InternalDeviceDefinition.g:3393:1: ( ':' )
+            // InternalDeviceDefinition.g:3404:1: ( ( ':' ) )
+            // InternalDeviceDefinition.g:3405:1: ( ':' )
             {
-            // InternalDeviceDefinition.g:3393:1: ( ':' )
-            // InternalDeviceDefinition.g:3394:2: ':'
+            // InternalDeviceDefinition.g:3405:1: ( ':' )
+            // InternalDeviceDefinition.g:3406:2: ':'
             {
              before(grammarAccess.getWorkerAccess().getColonKeyword_2()); 
             match(input,33,FOLLOW_2); 
@@ -10985,14 +11047,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group__3"
-    // InternalDeviceDefinition.g:3403:1: rule__Worker__Group__3 : rule__Worker__Group__3__Impl rule__Worker__Group__4 ;
+    // InternalDeviceDefinition.g:3415:1: rule__Worker__Group__3 : rule__Worker__Group__3__Impl rule__Worker__Group__4 ;
     public final void rule__Worker__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3407:1: ( rule__Worker__Group__3__Impl rule__Worker__Group__4 )
-            // InternalDeviceDefinition.g:3408:2: rule__Worker__Group__3__Impl rule__Worker__Group__4
+            // InternalDeviceDefinition.g:3419:1: ( rule__Worker__Group__3__Impl rule__Worker__Group__4 )
+            // InternalDeviceDefinition.g:3420:2: rule__Worker__Group__3__Impl rule__Worker__Group__4
             {
             pushFollow(FOLLOW_28);
             rule__Worker__Group__3__Impl();
@@ -11023,17 +11085,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group__3__Impl"
-    // InternalDeviceDefinition.g:3415:1: rule__Worker__Group__3__Impl : ( 'mac' ) ;
+    // InternalDeviceDefinition.g:3427:1: rule__Worker__Group__3__Impl : ( 'mac' ) ;
     public final void rule__Worker__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3419:1: ( ( 'mac' ) )
-            // InternalDeviceDefinition.g:3420:1: ( 'mac' )
+            // InternalDeviceDefinition.g:3431:1: ( ( 'mac' ) )
+            // InternalDeviceDefinition.g:3432:1: ( 'mac' )
             {
-            // InternalDeviceDefinition.g:3420:1: ( 'mac' )
-            // InternalDeviceDefinition.g:3421:2: 'mac'
+            // InternalDeviceDefinition.g:3432:1: ( 'mac' )
+            // InternalDeviceDefinition.g:3433:2: 'mac'
             {
              before(grammarAccess.getWorkerAccess().getMacKeyword_3()); 
             match(input,53,FOLLOW_2); 
@@ -11060,14 +11122,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group__4"
-    // InternalDeviceDefinition.g:3430:1: rule__Worker__Group__4 : rule__Worker__Group__4__Impl rule__Worker__Group__5 ;
+    // InternalDeviceDefinition.g:3442:1: rule__Worker__Group__4 : rule__Worker__Group__4__Impl rule__Worker__Group__5 ;
     public final void rule__Worker__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3434:1: ( rule__Worker__Group__4__Impl rule__Worker__Group__5 )
-            // InternalDeviceDefinition.g:3435:2: rule__Worker__Group__4__Impl rule__Worker__Group__5
+            // InternalDeviceDefinition.g:3446:1: ( rule__Worker__Group__4__Impl rule__Worker__Group__5 )
+            // InternalDeviceDefinition.g:3447:2: rule__Worker__Group__4__Impl rule__Worker__Group__5
             {
             pushFollow(FOLLOW_38);
             rule__Worker__Group__4__Impl();
@@ -11098,21 +11160,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group__4__Impl"
-    // InternalDeviceDefinition.g:3442:1: rule__Worker__Group__4__Impl : ( ( rule__Worker__MacAssignment_4 ) ) ;
+    // InternalDeviceDefinition.g:3454:1: rule__Worker__Group__4__Impl : ( ( rule__Worker__MacAssignment_4 ) ) ;
     public final void rule__Worker__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3446:1: ( ( ( rule__Worker__MacAssignment_4 ) ) )
-            // InternalDeviceDefinition.g:3447:1: ( ( rule__Worker__MacAssignment_4 ) )
+            // InternalDeviceDefinition.g:3458:1: ( ( ( rule__Worker__MacAssignment_4 ) ) )
+            // InternalDeviceDefinition.g:3459:1: ( ( rule__Worker__MacAssignment_4 ) )
             {
-            // InternalDeviceDefinition.g:3447:1: ( ( rule__Worker__MacAssignment_4 ) )
-            // InternalDeviceDefinition.g:3448:2: ( rule__Worker__MacAssignment_4 )
+            // InternalDeviceDefinition.g:3459:1: ( ( rule__Worker__MacAssignment_4 ) )
+            // InternalDeviceDefinition.g:3460:2: ( rule__Worker__MacAssignment_4 )
             {
              before(grammarAccess.getWorkerAccess().getMacAssignment_4()); 
-            // InternalDeviceDefinition.g:3449:2: ( rule__Worker__MacAssignment_4 )
-            // InternalDeviceDefinition.g:3449:3: rule__Worker__MacAssignment_4
+            // InternalDeviceDefinition.g:3461:2: ( rule__Worker__MacAssignment_4 )
+            // InternalDeviceDefinition.g:3461:3: rule__Worker__MacAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__Worker__MacAssignment_4();
@@ -11145,14 +11207,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group__5"
-    // InternalDeviceDefinition.g:3457:1: rule__Worker__Group__5 : rule__Worker__Group__5__Impl rule__Worker__Group__6 ;
+    // InternalDeviceDefinition.g:3469:1: rule__Worker__Group__5 : rule__Worker__Group__5__Impl rule__Worker__Group__6 ;
     public final void rule__Worker__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3461:1: ( rule__Worker__Group__5__Impl rule__Worker__Group__6 )
-            // InternalDeviceDefinition.g:3462:2: rule__Worker__Group__5__Impl rule__Worker__Group__6
+            // InternalDeviceDefinition.g:3473:1: ( rule__Worker__Group__5__Impl rule__Worker__Group__6 )
+            // InternalDeviceDefinition.g:3474:2: rule__Worker__Group__5__Impl rule__Worker__Group__6
             {
             pushFollow(FOLLOW_39);
             rule__Worker__Group__5__Impl();
@@ -11183,17 +11245,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group__5__Impl"
-    // InternalDeviceDefinition.g:3469:1: rule__Worker__Group__5__Impl : ( 'sleep' ) ;
+    // InternalDeviceDefinition.g:3481:1: rule__Worker__Group__5__Impl : ( 'sleep' ) ;
     public final void rule__Worker__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3473:1: ( ( 'sleep' ) )
-            // InternalDeviceDefinition.g:3474:1: ( 'sleep' )
+            // InternalDeviceDefinition.g:3485:1: ( ( 'sleep' ) )
+            // InternalDeviceDefinition.g:3486:1: ( 'sleep' )
             {
-            // InternalDeviceDefinition.g:3474:1: ( 'sleep' )
-            // InternalDeviceDefinition.g:3475:2: 'sleep'
+            // InternalDeviceDefinition.g:3486:1: ( 'sleep' )
+            // InternalDeviceDefinition.g:3487:2: 'sleep'
             {
              before(grammarAccess.getWorkerAccess().getSleepKeyword_5()); 
             match(input,60,FOLLOW_2); 
@@ -11220,14 +11282,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group__6"
-    // InternalDeviceDefinition.g:3484:1: rule__Worker__Group__6 : rule__Worker__Group__6__Impl rule__Worker__Group__7 ;
+    // InternalDeviceDefinition.g:3496:1: rule__Worker__Group__6 : rule__Worker__Group__6__Impl rule__Worker__Group__7 ;
     public final void rule__Worker__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3488:1: ( rule__Worker__Group__6__Impl rule__Worker__Group__7 )
-            // InternalDeviceDefinition.g:3489:2: rule__Worker__Group__6__Impl rule__Worker__Group__7
+            // InternalDeviceDefinition.g:3500:1: ( rule__Worker__Group__6__Impl rule__Worker__Group__7 )
+            // InternalDeviceDefinition.g:3501:2: rule__Worker__Group__6__Impl rule__Worker__Group__7
             {
             pushFollow(FOLLOW_36);
             rule__Worker__Group__6__Impl();
@@ -11258,17 +11320,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group__6__Impl"
-    // InternalDeviceDefinition.g:3496:1: rule__Worker__Group__6__Impl : ( 'for' ) ;
+    // InternalDeviceDefinition.g:3508:1: rule__Worker__Group__6__Impl : ( 'for' ) ;
     public final void rule__Worker__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3500:1: ( ( 'for' ) )
-            // InternalDeviceDefinition.g:3501:1: ( 'for' )
+            // InternalDeviceDefinition.g:3512:1: ( ( 'for' ) )
+            // InternalDeviceDefinition.g:3513:1: ( 'for' )
             {
-            // InternalDeviceDefinition.g:3501:1: ( 'for' )
-            // InternalDeviceDefinition.g:3502:2: 'for'
+            // InternalDeviceDefinition.g:3513:1: ( 'for' )
+            // InternalDeviceDefinition.g:3514:2: 'for'
             {
              before(grammarAccess.getWorkerAccess().getForKeyword_6()); 
             match(input,61,FOLLOW_2); 
@@ -11295,14 +11357,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group__7"
-    // InternalDeviceDefinition.g:3511:1: rule__Worker__Group__7 : rule__Worker__Group__7__Impl rule__Worker__Group__8 ;
+    // InternalDeviceDefinition.g:3523:1: rule__Worker__Group__7 : rule__Worker__Group__7__Impl rule__Worker__Group__8 ;
     public final void rule__Worker__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3515:1: ( rule__Worker__Group__7__Impl rule__Worker__Group__8 )
-            // InternalDeviceDefinition.g:3516:2: rule__Worker__Group__7__Impl rule__Worker__Group__8
+            // InternalDeviceDefinition.g:3527:1: ( rule__Worker__Group__7__Impl rule__Worker__Group__8 )
+            // InternalDeviceDefinition.g:3528:2: rule__Worker__Group__7__Impl rule__Worker__Group__8
             {
             pushFollow(FOLLOW_37);
             rule__Worker__Group__7__Impl();
@@ -11333,21 +11395,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group__7__Impl"
-    // InternalDeviceDefinition.g:3523:1: rule__Worker__Group__7__Impl : ( ( rule__Worker__SleepTimeAssignment_7 ) ) ;
+    // InternalDeviceDefinition.g:3535:1: rule__Worker__Group__7__Impl : ( ( rule__Worker__SleepTimeAssignment_7 ) ) ;
     public final void rule__Worker__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3527:1: ( ( ( rule__Worker__SleepTimeAssignment_7 ) ) )
-            // InternalDeviceDefinition.g:3528:1: ( ( rule__Worker__SleepTimeAssignment_7 ) )
+            // InternalDeviceDefinition.g:3539:1: ( ( ( rule__Worker__SleepTimeAssignment_7 ) ) )
+            // InternalDeviceDefinition.g:3540:1: ( ( rule__Worker__SleepTimeAssignment_7 ) )
             {
-            // InternalDeviceDefinition.g:3528:1: ( ( rule__Worker__SleepTimeAssignment_7 ) )
-            // InternalDeviceDefinition.g:3529:2: ( rule__Worker__SleepTimeAssignment_7 )
+            // InternalDeviceDefinition.g:3540:1: ( ( rule__Worker__SleepTimeAssignment_7 ) )
+            // InternalDeviceDefinition.g:3541:2: ( rule__Worker__SleepTimeAssignment_7 )
             {
              before(grammarAccess.getWorkerAccess().getSleepTimeAssignment_7()); 
-            // InternalDeviceDefinition.g:3530:2: ( rule__Worker__SleepTimeAssignment_7 )
-            // InternalDeviceDefinition.g:3530:3: rule__Worker__SleepTimeAssignment_7
+            // InternalDeviceDefinition.g:3542:2: ( rule__Worker__SleepTimeAssignment_7 )
+            // InternalDeviceDefinition.g:3542:3: rule__Worker__SleepTimeAssignment_7
             {
             pushFollow(FOLLOW_2);
             rule__Worker__SleepTimeAssignment_7();
@@ -11380,14 +11442,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group__8"
-    // InternalDeviceDefinition.g:3538:1: rule__Worker__Group__8 : rule__Worker__Group__8__Impl rule__Worker__Group__9 ;
+    // InternalDeviceDefinition.g:3550:1: rule__Worker__Group__8 : rule__Worker__Group__8__Impl rule__Worker__Group__9 ;
     public final void rule__Worker__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3542:1: ( rule__Worker__Group__8__Impl rule__Worker__Group__9 )
-            // InternalDeviceDefinition.g:3543:2: rule__Worker__Group__8__Impl rule__Worker__Group__9
+            // InternalDeviceDefinition.g:3554:1: ( rule__Worker__Group__8__Impl rule__Worker__Group__9 )
+            // InternalDeviceDefinition.g:3555:2: rule__Worker__Group__8__Impl rule__Worker__Group__9
             {
             pushFollow(FOLLOW_40);
             rule__Worker__Group__8__Impl();
@@ -11418,21 +11480,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group__8__Impl"
-    // InternalDeviceDefinition.g:3550:1: rule__Worker__Group__8__Impl : ( ( rule__Worker__TimeUnitAssignment_8 ) ) ;
+    // InternalDeviceDefinition.g:3562:1: rule__Worker__Group__8__Impl : ( ( rule__Worker__TimeUnitAssignment_8 ) ) ;
     public final void rule__Worker__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3554:1: ( ( ( rule__Worker__TimeUnitAssignment_8 ) ) )
-            // InternalDeviceDefinition.g:3555:1: ( ( rule__Worker__TimeUnitAssignment_8 ) )
+            // InternalDeviceDefinition.g:3566:1: ( ( ( rule__Worker__TimeUnitAssignment_8 ) ) )
+            // InternalDeviceDefinition.g:3567:1: ( ( rule__Worker__TimeUnitAssignment_8 ) )
             {
-            // InternalDeviceDefinition.g:3555:1: ( ( rule__Worker__TimeUnitAssignment_8 ) )
-            // InternalDeviceDefinition.g:3556:2: ( rule__Worker__TimeUnitAssignment_8 )
+            // InternalDeviceDefinition.g:3567:1: ( ( rule__Worker__TimeUnitAssignment_8 ) )
+            // InternalDeviceDefinition.g:3568:2: ( rule__Worker__TimeUnitAssignment_8 )
             {
              before(grammarAccess.getWorkerAccess().getTimeUnitAssignment_8()); 
-            // InternalDeviceDefinition.g:3557:2: ( rule__Worker__TimeUnitAssignment_8 )
-            // InternalDeviceDefinition.g:3557:3: rule__Worker__TimeUnitAssignment_8
+            // InternalDeviceDefinition.g:3569:2: ( rule__Worker__TimeUnitAssignment_8 )
+            // InternalDeviceDefinition.g:3569:3: rule__Worker__TimeUnitAssignment_8
             {
             pushFollow(FOLLOW_2);
             rule__Worker__TimeUnitAssignment_8();
@@ -11465,14 +11527,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group__9"
-    // InternalDeviceDefinition.g:3565:1: rule__Worker__Group__9 : rule__Worker__Group__9__Impl rule__Worker__Group__10 ;
+    // InternalDeviceDefinition.g:3577:1: rule__Worker__Group__9 : rule__Worker__Group__9__Impl rule__Worker__Group__10 ;
     public final void rule__Worker__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3569:1: ( rule__Worker__Group__9__Impl rule__Worker__Group__10 )
-            // InternalDeviceDefinition.g:3570:2: rule__Worker__Group__9__Impl rule__Worker__Group__10
+            // InternalDeviceDefinition.g:3581:1: ( rule__Worker__Group__9__Impl rule__Worker__Group__10 )
+            // InternalDeviceDefinition.g:3582:2: rule__Worker__Group__9__Impl rule__Worker__Group__10
             {
             pushFollow(FOLLOW_40);
             rule__Worker__Group__9__Impl();
@@ -11503,20 +11565,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group__9__Impl"
-    // InternalDeviceDefinition.g:3577:1: rule__Worker__Group__9__Impl : ( ( rule__Worker__Group_9__0 )? ) ;
+    // InternalDeviceDefinition.g:3589:1: rule__Worker__Group__9__Impl : ( ( rule__Worker__Group_9__0 )? ) ;
     public final void rule__Worker__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3581:1: ( ( ( rule__Worker__Group_9__0 )? ) )
-            // InternalDeviceDefinition.g:3582:1: ( ( rule__Worker__Group_9__0 )? )
+            // InternalDeviceDefinition.g:3593:1: ( ( ( rule__Worker__Group_9__0 )? ) )
+            // InternalDeviceDefinition.g:3594:1: ( ( rule__Worker__Group_9__0 )? )
             {
-            // InternalDeviceDefinition.g:3582:1: ( ( rule__Worker__Group_9__0 )? )
-            // InternalDeviceDefinition.g:3583:2: ( rule__Worker__Group_9__0 )?
+            // InternalDeviceDefinition.g:3594:1: ( ( rule__Worker__Group_9__0 )? )
+            // InternalDeviceDefinition.g:3595:2: ( rule__Worker__Group_9__0 )?
             {
              before(grammarAccess.getWorkerAccess().getGroup_9()); 
-            // InternalDeviceDefinition.g:3584:2: ( rule__Worker__Group_9__0 )?
+            // InternalDeviceDefinition.g:3596:2: ( rule__Worker__Group_9__0 )?
             int alt34=2;
             int LA34_0 = input.LA(1);
 
@@ -11525,7 +11587,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             }
             switch (alt34) {
                 case 1 :
-                    // InternalDeviceDefinition.g:3584:3: rule__Worker__Group_9__0
+                    // InternalDeviceDefinition.g:3596:3: rule__Worker__Group_9__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Worker__Group_9__0();
@@ -11561,14 +11623,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group__10"
-    // InternalDeviceDefinition.g:3592:1: rule__Worker__Group__10 : rule__Worker__Group__10__Impl rule__Worker__Group__11 ;
+    // InternalDeviceDefinition.g:3604:1: rule__Worker__Group__10 : rule__Worker__Group__10__Impl rule__Worker__Group__11 ;
     public final void rule__Worker__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3596:1: ( rule__Worker__Group__10__Impl rule__Worker__Group__11 )
-            // InternalDeviceDefinition.g:3597:2: rule__Worker__Group__10__Impl rule__Worker__Group__11
+            // InternalDeviceDefinition.g:3608:1: ( rule__Worker__Group__10__Impl rule__Worker__Group__11 )
+            // InternalDeviceDefinition.g:3609:2: rule__Worker__Group__10__Impl rule__Worker__Group__11
             {
             pushFollow(FOLLOW_40);
             rule__Worker__Group__10__Impl();
@@ -11599,20 +11661,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group__10__Impl"
-    // InternalDeviceDefinition.g:3604:1: rule__Worker__Group__10__Impl : ( ( rule__Worker__Group_10__0 )? ) ;
+    // InternalDeviceDefinition.g:3616:1: rule__Worker__Group__10__Impl : ( ( rule__Worker__Group_10__0 )? ) ;
     public final void rule__Worker__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3608:1: ( ( ( rule__Worker__Group_10__0 )? ) )
-            // InternalDeviceDefinition.g:3609:1: ( ( rule__Worker__Group_10__0 )? )
+            // InternalDeviceDefinition.g:3620:1: ( ( ( rule__Worker__Group_10__0 )? ) )
+            // InternalDeviceDefinition.g:3621:1: ( ( rule__Worker__Group_10__0 )? )
             {
-            // InternalDeviceDefinition.g:3609:1: ( ( rule__Worker__Group_10__0 )? )
-            // InternalDeviceDefinition.g:3610:2: ( rule__Worker__Group_10__0 )?
+            // InternalDeviceDefinition.g:3621:1: ( ( rule__Worker__Group_10__0 )? )
+            // InternalDeviceDefinition.g:3622:2: ( rule__Worker__Group_10__0 )?
             {
              before(grammarAccess.getWorkerAccess().getGroup_10()); 
-            // InternalDeviceDefinition.g:3611:2: ( rule__Worker__Group_10__0 )?
+            // InternalDeviceDefinition.g:3623:2: ( rule__Worker__Group_10__0 )?
             int alt35=2;
             int LA35_0 = input.LA(1);
 
@@ -11621,7 +11683,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             }
             switch (alt35) {
                 case 1 :
-                    // InternalDeviceDefinition.g:3611:3: rule__Worker__Group_10__0
+                    // InternalDeviceDefinition.g:3623:3: rule__Worker__Group_10__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Worker__Group_10__0();
@@ -11657,14 +11719,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group__11"
-    // InternalDeviceDefinition.g:3619:1: rule__Worker__Group__11 : rule__Worker__Group__11__Impl ;
+    // InternalDeviceDefinition.g:3631:1: rule__Worker__Group__11 : rule__Worker__Group__11__Impl ;
     public final void rule__Worker__Group__11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3623:1: ( rule__Worker__Group__11__Impl )
-            // InternalDeviceDefinition.g:3624:2: rule__Worker__Group__11__Impl
+            // InternalDeviceDefinition.g:3635:1: ( rule__Worker__Group__11__Impl )
+            // InternalDeviceDefinition.g:3636:2: rule__Worker__Group__11__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Worker__Group__11__Impl();
@@ -11690,33 +11752,33 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group__11__Impl"
-    // InternalDeviceDefinition.g:3630:1: rule__Worker__Group__11__Impl : ( ( rule__Worker__DevicesAssignment_11 )* ) ;
+    // InternalDeviceDefinition.g:3642:1: rule__Worker__Group__11__Impl : ( ( rule__Worker__DevicesAssignment_11 )* ) ;
     public final void rule__Worker__Group__11__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3634:1: ( ( ( rule__Worker__DevicesAssignment_11 )* ) )
-            // InternalDeviceDefinition.g:3635:1: ( ( rule__Worker__DevicesAssignment_11 )* )
+            // InternalDeviceDefinition.g:3646:1: ( ( ( rule__Worker__DevicesAssignment_11 )* ) )
+            // InternalDeviceDefinition.g:3647:1: ( ( rule__Worker__DevicesAssignment_11 )* )
             {
-            // InternalDeviceDefinition.g:3635:1: ( ( rule__Worker__DevicesAssignment_11 )* )
-            // InternalDeviceDefinition.g:3636:2: ( rule__Worker__DevicesAssignment_11 )*
+            // InternalDeviceDefinition.g:3647:1: ( ( rule__Worker__DevicesAssignment_11 )* )
+            // InternalDeviceDefinition.g:3648:2: ( rule__Worker__DevicesAssignment_11 )*
             {
              before(grammarAccess.getWorkerAccess().getDevicesAssignment_11()); 
-            // InternalDeviceDefinition.g:3637:2: ( rule__Worker__DevicesAssignment_11 )*
+            // InternalDeviceDefinition.g:3649:2: ( rule__Worker__DevicesAssignment_11 )*
             loop36:
             do {
                 int alt36=2;
                 int LA36_0 = input.LA(1);
 
-                if ( (LA36_0==62||LA36_0==72) ) {
+                if ( (LA36_0==62||LA36_0==74) ) {
                     alt36=1;
                 }
 
 
                 switch (alt36) {
             	case 1 :
-            	    // InternalDeviceDefinition.g:3637:3: rule__Worker__DevicesAssignment_11
+            	    // InternalDeviceDefinition.g:3649:3: rule__Worker__DevicesAssignment_11
             	    {
             	    pushFollow(FOLLOW_41);
             	    rule__Worker__DevicesAssignment_11();
@@ -11755,14 +11817,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group_9__0"
-    // InternalDeviceDefinition.g:3646:1: rule__Worker__Group_9__0 : rule__Worker__Group_9__0__Impl rule__Worker__Group_9__1 ;
+    // InternalDeviceDefinition.g:3658:1: rule__Worker__Group_9__0 : rule__Worker__Group_9__0__Impl rule__Worker__Group_9__1 ;
     public final void rule__Worker__Group_9__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3650:1: ( rule__Worker__Group_9__0__Impl rule__Worker__Group_9__1 )
-            // InternalDeviceDefinition.g:3651:2: rule__Worker__Group_9__0__Impl rule__Worker__Group_9__1
+            // InternalDeviceDefinition.g:3662:1: ( rule__Worker__Group_9__0__Impl rule__Worker__Group_9__1 )
+            // InternalDeviceDefinition.g:3663:2: rule__Worker__Group_9__0__Impl rule__Worker__Group_9__1
             {
             pushFollow(FOLLOW_33);
             rule__Worker__Group_9__0__Impl();
@@ -11793,17 +11855,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group_9__0__Impl"
-    // InternalDeviceDefinition.g:3658:1: rule__Worker__Group_9__0__Impl : ( 'error' ) ;
+    // InternalDeviceDefinition.g:3670:1: rule__Worker__Group_9__0__Impl : ( 'error' ) ;
     public final void rule__Worker__Group_9__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3662:1: ( ( 'error' ) )
-            // InternalDeviceDefinition.g:3663:1: ( 'error' )
+            // InternalDeviceDefinition.g:3674:1: ( ( 'error' ) )
+            // InternalDeviceDefinition.g:3675:1: ( 'error' )
             {
-            // InternalDeviceDefinition.g:3663:1: ( 'error' )
-            // InternalDeviceDefinition.g:3664:2: 'error'
+            // InternalDeviceDefinition.g:3675:1: ( 'error' )
+            // InternalDeviceDefinition.g:3676:2: 'error'
             {
              before(grammarAccess.getWorkerAccess().getErrorKeyword_9_0()); 
             match(input,55,FOLLOW_2); 
@@ -11830,14 +11892,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group_9__1"
-    // InternalDeviceDefinition.g:3673:1: rule__Worker__Group_9__1 : rule__Worker__Group_9__1__Impl rule__Worker__Group_9__2 ;
+    // InternalDeviceDefinition.g:3685:1: rule__Worker__Group_9__1 : rule__Worker__Group_9__1__Impl rule__Worker__Group_9__2 ;
     public final void rule__Worker__Group_9__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3677:1: ( rule__Worker__Group_9__1__Impl rule__Worker__Group_9__2 )
-            // InternalDeviceDefinition.g:3678:2: rule__Worker__Group_9__1__Impl rule__Worker__Group_9__2
+            // InternalDeviceDefinition.g:3689:1: ( rule__Worker__Group_9__1__Impl rule__Worker__Group_9__2 )
+            // InternalDeviceDefinition.g:3690:2: rule__Worker__Group_9__1__Impl rule__Worker__Group_9__2
             {
             pushFollow(FOLLOW_30);
             rule__Worker__Group_9__1__Impl();
@@ -11868,17 +11930,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group_9__1__Impl"
-    // InternalDeviceDefinition.g:3685:1: rule__Worker__Group_9__1__Impl : ( 'light' ) ;
+    // InternalDeviceDefinition.g:3697:1: rule__Worker__Group_9__1__Impl : ( 'light' ) ;
     public final void rule__Worker__Group_9__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3689:1: ( ( 'light' ) )
-            // InternalDeviceDefinition.g:3690:1: ( 'light' )
+            // InternalDeviceDefinition.g:3701:1: ( ( 'light' ) )
+            // InternalDeviceDefinition.g:3702:1: ( 'light' )
             {
-            // InternalDeviceDefinition.g:3690:1: ( 'light' )
-            // InternalDeviceDefinition.g:3691:2: 'light'
+            // InternalDeviceDefinition.g:3702:1: ( 'light' )
+            // InternalDeviceDefinition.g:3703:2: 'light'
             {
              before(grammarAccess.getWorkerAccess().getLightKeyword_9_1()); 
             match(input,56,FOLLOW_2); 
@@ -11905,14 +11967,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group_9__2"
-    // InternalDeviceDefinition.g:3700:1: rule__Worker__Group_9__2 : rule__Worker__Group_9__2__Impl ;
+    // InternalDeviceDefinition.g:3712:1: rule__Worker__Group_9__2 : rule__Worker__Group_9__2__Impl ;
     public final void rule__Worker__Group_9__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3704:1: ( rule__Worker__Group_9__2__Impl )
-            // InternalDeviceDefinition.g:3705:2: rule__Worker__Group_9__2__Impl
+            // InternalDeviceDefinition.g:3716:1: ( rule__Worker__Group_9__2__Impl )
+            // InternalDeviceDefinition.g:3717:2: rule__Worker__Group_9__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Worker__Group_9__2__Impl();
@@ -11938,21 +12000,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group_9__2__Impl"
-    // InternalDeviceDefinition.g:3711:1: rule__Worker__Group_9__2__Impl : ( ( rule__Worker__ErrorLedAssignment_9_2 ) ) ;
+    // InternalDeviceDefinition.g:3723:1: rule__Worker__Group_9__2__Impl : ( ( rule__Worker__ErrorLedAssignment_9_2 ) ) ;
     public final void rule__Worker__Group_9__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3715:1: ( ( ( rule__Worker__ErrorLedAssignment_9_2 ) ) )
-            // InternalDeviceDefinition.g:3716:1: ( ( rule__Worker__ErrorLedAssignment_9_2 ) )
+            // InternalDeviceDefinition.g:3727:1: ( ( ( rule__Worker__ErrorLedAssignment_9_2 ) ) )
+            // InternalDeviceDefinition.g:3728:1: ( ( rule__Worker__ErrorLedAssignment_9_2 ) )
             {
-            // InternalDeviceDefinition.g:3716:1: ( ( rule__Worker__ErrorLedAssignment_9_2 ) )
-            // InternalDeviceDefinition.g:3717:2: ( rule__Worker__ErrorLedAssignment_9_2 )
+            // InternalDeviceDefinition.g:3728:1: ( ( rule__Worker__ErrorLedAssignment_9_2 ) )
+            // InternalDeviceDefinition.g:3729:2: ( rule__Worker__ErrorLedAssignment_9_2 )
             {
              before(grammarAccess.getWorkerAccess().getErrorLedAssignment_9_2()); 
-            // InternalDeviceDefinition.g:3718:2: ( rule__Worker__ErrorLedAssignment_9_2 )
-            // InternalDeviceDefinition.g:3718:3: rule__Worker__ErrorLedAssignment_9_2
+            // InternalDeviceDefinition.g:3730:2: ( rule__Worker__ErrorLedAssignment_9_2 )
+            // InternalDeviceDefinition.g:3730:3: rule__Worker__ErrorLedAssignment_9_2
             {
             pushFollow(FOLLOW_2);
             rule__Worker__ErrorLedAssignment_9_2();
@@ -11985,14 +12047,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group_10__0"
-    // InternalDeviceDefinition.g:3727:1: rule__Worker__Group_10__0 : rule__Worker__Group_10__0__Impl rule__Worker__Group_10__1 ;
+    // InternalDeviceDefinition.g:3739:1: rule__Worker__Group_10__0 : rule__Worker__Group_10__0__Impl rule__Worker__Group_10__1 ;
     public final void rule__Worker__Group_10__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3731:1: ( rule__Worker__Group_10__0__Impl rule__Worker__Group_10__1 )
-            // InternalDeviceDefinition.g:3732:2: rule__Worker__Group_10__0__Impl rule__Worker__Group_10__1
+            // InternalDeviceDefinition.g:3743:1: ( rule__Worker__Group_10__0__Impl rule__Worker__Group_10__1 )
+            // InternalDeviceDefinition.g:3744:2: rule__Worker__Group_10__0__Impl rule__Worker__Group_10__1
             {
             pushFollow(FOLLOW_30);
             rule__Worker__Group_10__0__Impl();
@@ -12023,17 +12085,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group_10__0__Impl"
-    // InternalDeviceDefinition.g:3739:1: rule__Worker__Group_10__0__Impl : ( 'retries' ) ;
+    // InternalDeviceDefinition.g:3751:1: rule__Worker__Group_10__0__Impl : ( 'retries' ) ;
     public final void rule__Worker__Group_10__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3743:1: ( ( 'retries' ) )
-            // InternalDeviceDefinition.g:3744:1: ( 'retries' )
+            // InternalDeviceDefinition.g:3755:1: ( ( 'retries' ) )
+            // InternalDeviceDefinition.g:3756:1: ( 'retries' )
             {
-            // InternalDeviceDefinition.g:3744:1: ( 'retries' )
-            // InternalDeviceDefinition.g:3745:2: 'retries'
+            // InternalDeviceDefinition.g:3756:1: ( 'retries' )
+            // InternalDeviceDefinition.g:3757:2: 'retries'
             {
              before(grammarAccess.getWorkerAccess().getRetriesKeyword_10_0()); 
             match(input,57,FOLLOW_2); 
@@ -12060,14 +12122,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group_10__1"
-    // InternalDeviceDefinition.g:3754:1: rule__Worker__Group_10__1 : rule__Worker__Group_10__1__Impl rule__Worker__Group_10__2 ;
+    // InternalDeviceDefinition.g:3766:1: rule__Worker__Group_10__1 : rule__Worker__Group_10__1__Impl rule__Worker__Group_10__2 ;
     public final void rule__Worker__Group_10__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3758:1: ( rule__Worker__Group_10__1__Impl rule__Worker__Group_10__2 )
-            // InternalDeviceDefinition.g:3759:2: rule__Worker__Group_10__1__Impl rule__Worker__Group_10__2
+            // InternalDeviceDefinition.g:3770:1: ( rule__Worker__Group_10__1__Impl rule__Worker__Group_10__2 )
+            // InternalDeviceDefinition.g:3771:2: rule__Worker__Group_10__1__Impl rule__Worker__Group_10__2
             {
             pushFollow(FOLLOW_34);
             rule__Worker__Group_10__1__Impl();
@@ -12098,21 +12160,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group_10__1__Impl"
-    // InternalDeviceDefinition.g:3766:1: rule__Worker__Group_10__1__Impl : ( ( rule__Worker__RetriesAssignment_10_1 ) ) ;
+    // InternalDeviceDefinition.g:3778:1: rule__Worker__Group_10__1__Impl : ( ( rule__Worker__RetriesAssignment_10_1 ) ) ;
     public final void rule__Worker__Group_10__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3770:1: ( ( ( rule__Worker__RetriesAssignment_10_1 ) ) )
-            // InternalDeviceDefinition.g:3771:1: ( ( rule__Worker__RetriesAssignment_10_1 ) )
+            // InternalDeviceDefinition.g:3782:1: ( ( ( rule__Worker__RetriesAssignment_10_1 ) ) )
+            // InternalDeviceDefinition.g:3783:1: ( ( rule__Worker__RetriesAssignment_10_1 ) )
             {
-            // InternalDeviceDefinition.g:3771:1: ( ( rule__Worker__RetriesAssignment_10_1 ) )
-            // InternalDeviceDefinition.g:3772:2: ( rule__Worker__RetriesAssignment_10_1 )
+            // InternalDeviceDefinition.g:3783:1: ( ( rule__Worker__RetriesAssignment_10_1 ) )
+            // InternalDeviceDefinition.g:3784:2: ( rule__Worker__RetriesAssignment_10_1 )
             {
              before(grammarAccess.getWorkerAccess().getRetriesAssignment_10_1()); 
-            // InternalDeviceDefinition.g:3773:2: ( rule__Worker__RetriesAssignment_10_1 )
-            // InternalDeviceDefinition.g:3773:3: rule__Worker__RetriesAssignment_10_1
+            // InternalDeviceDefinition.g:3785:2: ( rule__Worker__RetriesAssignment_10_1 )
+            // InternalDeviceDefinition.g:3785:3: rule__Worker__RetriesAssignment_10_1
             {
             pushFollow(FOLLOW_2);
             rule__Worker__RetriesAssignment_10_1();
@@ -12145,14 +12207,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group_10__2"
-    // InternalDeviceDefinition.g:3781:1: rule__Worker__Group_10__2 : rule__Worker__Group_10__2__Impl rule__Worker__Group_10__3 ;
+    // InternalDeviceDefinition.g:3793:1: rule__Worker__Group_10__2 : rule__Worker__Group_10__2__Impl rule__Worker__Group_10__3 ;
     public final void rule__Worker__Group_10__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3785:1: ( rule__Worker__Group_10__2__Impl rule__Worker__Group_10__3 )
-            // InternalDeviceDefinition.g:3786:2: rule__Worker__Group_10__2__Impl rule__Worker__Group_10__3
+            // InternalDeviceDefinition.g:3797:1: ( rule__Worker__Group_10__2__Impl rule__Worker__Group_10__3 )
+            // InternalDeviceDefinition.g:3798:2: rule__Worker__Group_10__2__Impl rule__Worker__Group_10__3
             {
             pushFollow(FOLLOW_35);
             rule__Worker__Group_10__2__Impl();
@@ -12183,17 +12245,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group_10__2__Impl"
-    // InternalDeviceDefinition.g:3793:1: rule__Worker__Group_10__2__Impl : ( 'with' ) ;
+    // InternalDeviceDefinition.g:3805:1: rule__Worker__Group_10__2__Impl : ( 'with' ) ;
     public final void rule__Worker__Group_10__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3797:1: ( ( 'with' ) )
-            // InternalDeviceDefinition.g:3798:1: ( 'with' )
+            // InternalDeviceDefinition.g:3809:1: ( ( 'with' ) )
+            // InternalDeviceDefinition.g:3810:1: ( 'with' )
             {
-            // InternalDeviceDefinition.g:3798:1: ( 'with' )
-            // InternalDeviceDefinition.g:3799:2: 'with'
+            // InternalDeviceDefinition.g:3810:1: ( 'with' )
+            // InternalDeviceDefinition.g:3811:2: 'with'
             {
              before(grammarAccess.getWorkerAccess().getWithKeyword_10_2()); 
             match(input,36,FOLLOW_2); 
@@ -12220,14 +12282,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group_10__3"
-    // InternalDeviceDefinition.g:3808:1: rule__Worker__Group_10__3 : rule__Worker__Group_10__3__Impl rule__Worker__Group_10__4 ;
+    // InternalDeviceDefinition.g:3820:1: rule__Worker__Group_10__3 : rule__Worker__Group_10__3__Impl rule__Worker__Group_10__4 ;
     public final void rule__Worker__Group_10__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3812:1: ( rule__Worker__Group_10__3__Impl rule__Worker__Group_10__4 )
-            // InternalDeviceDefinition.g:3813:2: rule__Worker__Group_10__3__Impl rule__Worker__Group_10__4
+            // InternalDeviceDefinition.g:3824:1: ( rule__Worker__Group_10__3__Impl rule__Worker__Group_10__4 )
+            // InternalDeviceDefinition.g:3825:2: rule__Worker__Group_10__3__Impl rule__Worker__Group_10__4
             {
             pushFollow(FOLLOW_36);
             rule__Worker__Group_10__3__Impl();
@@ -12258,17 +12320,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group_10__3__Impl"
-    // InternalDeviceDefinition.g:3820:1: rule__Worker__Group_10__3__Impl : ( 'delay' ) ;
+    // InternalDeviceDefinition.g:3832:1: rule__Worker__Group_10__3__Impl : ( 'delay' ) ;
     public final void rule__Worker__Group_10__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3824:1: ( ( 'delay' ) )
-            // InternalDeviceDefinition.g:3825:1: ( 'delay' )
+            // InternalDeviceDefinition.g:3836:1: ( ( 'delay' ) )
+            // InternalDeviceDefinition.g:3837:1: ( 'delay' )
             {
-            // InternalDeviceDefinition.g:3825:1: ( 'delay' )
-            // InternalDeviceDefinition.g:3826:2: 'delay'
+            // InternalDeviceDefinition.g:3837:1: ( 'delay' )
+            // InternalDeviceDefinition.g:3838:2: 'delay'
             {
              before(grammarAccess.getWorkerAccess().getDelayKeyword_10_3()); 
             match(input,58,FOLLOW_2); 
@@ -12295,14 +12357,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group_10__4"
-    // InternalDeviceDefinition.g:3835:1: rule__Worker__Group_10__4 : rule__Worker__Group_10__4__Impl rule__Worker__Group_10__5 ;
+    // InternalDeviceDefinition.g:3847:1: rule__Worker__Group_10__4 : rule__Worker__Group_10__4__Impl rule__Worker__Group_10__5 ;
     public final void rule__Worker__Group_10__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3839:1: ( rule__Worker__Group_10__4__Impl rule__Worker__Group_10__5 )
-            // InternalDeviceDefinition.g:3840:2: rule__Worker__Group_10__4__Impl rule__Worker__Group_10__5
+            // InternalDeviceDefinition.g:3851:1: ( rule__Worker__Group_10__4__Impl rule__Worker__Group_10__5 )
+            // InternalDeviceDefinition.g:3852:2: rule__Worker__Group_10__4__Impl rule__Worker__Group_10__5
             {
             pushFollow(FOLLOW_37);
             rule__Worker__Group_10__4__Impl();
@@ -12333,21 +12395,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group_10__4__Impl"
-    // InternalDeviceDefinition.g:3847:1: rule__Worker__Group_10__4__Impl : ( ( rule__Worker__DelayAssignment_10_4 ) ) ;
+    // InternalDeviceDefinition.g:3859:1: rule__Worker__Group_10__4__Impl : ( ( rule__Worker__DelayAssignment_10_4 ) ) ;
     public final void rule__Worker__Group_10__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3851:1: ( ( ( rule__Worker__DelayAssignment_10_4 ) ) )
-            // InternalDeviceDefinition.g:3852:1: ( ( rule__Worker__DelayAssignment_10_4 ) )
+            // InternalDeviceDefinition.g:3863:1: ( ( ( rule__Worker__DelayAssignment_10_4 ) ) )
+            // InternalDeviceDefinition.g:3864:1: ( ( rule__Worker__DelayAssignment_10_4 ) )
             {
-            // InternalDeviceDefinition.g:3852:1: ( ( rule__Worker__DelayAssignment_10_4 ) )
-            // InternalDeviceDefinition.g:3853:2: ( rule__Worker__DelayAssignment_10_4 )
+            // InternalDeviceDefinition.g:3864:1: ( ( rule__Worker__DelayAssignment_10_4 ) )
+            // InternalDeviceDefinition.g:3865:2: ( rule__Worker__DelayAssignment_10_4 )
             {
              before(grammarAccess.getWorkerAccess().getDelayAssignment_10_4()); 
-            // InternalDeviceDefinition.g:3854:2: ( rule__Worker__DelayAssignment_10_4 )
-            // InternalDeviceDefinition.g:3854:3: rule__Worker__DelayAssignment_10_4
+            // InternalDeviceDefinition.g:3866:2: ( rule__Worker__DelayAssignment_10_4 )
+            // InternalDeviceDefinition.g:3866:3: rule__Worker__DelayAssignment_10_4
             {
             pushFollow(FOLLOW_2);
             rule__Worker__DelayAssignment_10_4();
@@ -12380,14 +12442,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group_10__5"
-    // InternalDeviceDefinition.g:3862:1: rule__Worker__Group_10__5 : rule__Worker__Group_10__5__Impl ;
+    // InternalDeviceDefinition.g:3874:1: rule__Worker__Group_10__5 : rule__Worker__Group_10__5__Impl ;
     public final void rule__Worker__Group_10__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3866:1: ( rule__Worker__Group_10__5__Impl )
-            // InternalDeviceDefinition.g:3867:2: rule__Worker__Group_10__5__Impl
+            // InternalDeviceDefinition.g:3878:1: ( rule__Worker__Group_10__5__Impl )
+            // InternalDeviceDefinition.g:3879:2: rule__Worker__Group_10__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Worker__Group_10__5__Impl();
@@ -12413,21 +12475,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__Group_10__5__Impl"
-    // InternalDeviceDefinition.g:3873:1: rule__Worker__Group_10__5__Impl : ( ( rule__Worker__DelayTimeUnitAssignment_10_5 ) ) ;
+    // InternalDeviceDefinition.g:3885:1: rule__Worker__Group_10__5__Impl : ( ( rule__Worker__DelayTimeUnitAssignment_10_5 ) ) ;
     public final void rule__Worker__Group_10__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3877:1: ( ( ( rule__Worker__DelayTimeUnitAssignment_10_5 ) ) )
-            // InternalDeviceDefinition.g:3878:1: ( ( rule__Worker__DelayTimeUnitAssignment_10_5 ) )
+            // InternalDeviceDefinition.g:3889:1: ( ( ( rule__Worker__DelayTimeUnitAssignment_10_5 ) ) )
+            // InternalDeviceDefinition.g:3890:1: ( ( rule__Worker__DelayTimeUnitAssignment_10_5 ) )
             {
-            // InternalDeviceDefinition.g:3878:1: ( ( rule__Worker__DelayTimeUnitAssignment_10_5 ) )
-            // InternalDeviceDefinition.g:3879:2: ( rule__Worker__DelayTimeUnitAssignment_10_5 )
+            // InternalDeviceDefinition.g:3890:1: ( ( rule__Worker__DelayTimeUnitAssignment_10_5 ) )
+            // InternalDeviceDefinition.g:3891:2: ( rule__Worker__DelayTimeUnitAssignment_10_5 )
             {
              before(grammarAccess.getWorkerAccess().getDelayTimeUnitAssignment_10_5()); 
-            // InternalDeviceDefinition.g:3880:2: ( rule__Worker__DelayTimeUnitAssignment_10_5 )
-            // InternalDeviceDefinition.g:3880:3: rule__Worker__DelayTimeUnitAssignment_10_5
+            // InternalDeviceDefinition.g:3892:2: ( rule__Worker__DelayTimeUnitAssignment_10_5 )
+            // InternalDeviceDefinition.g:3892:3: rule__Worker__DelayTimeUnitAssignment_10_5
             {
             pushFollow(FOLLOW_2);
             rule__Worker__DelayTimeUnitAssignment_10_5();
@@ -12460,14 +12522,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Sensor__Group__0"
-    // InternalDeviceDefinition.g:3889:1: rule__Sensor__Group__0 : rule__Sensor__Group__0__Impl rule__Sensor__Group__1 ;
+    // InternalDeviceDefinition.g:3901:1: rule__Sensor__Group__0 : rule__Sensor__Group__0__Impl rule__Sensor__Group__1 ;
     public final void rule__Sensor__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3893:1: ( rule__Sensor__Group__0__Impl rule__Sensor__Group__1 )
-            // InternalDeviceDefinition.g:3894:2: rule__Sensor__Group__0__Impl rule__Sensor__Group__1
+            // InternalDeviceDefinition.g:3905:1: ( rule__Sensor__Group__0__Impl rule__Sensor__Group__1 )
+            // InternalDeviceDefinition.g:3906:2: rule__Sensor__Group__0__Impl rule__Sensor__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__Sensor__Group__0__Impl();
@@ -12498,17 +12560,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Sensor__Group__0__Impl"
-    // InternalDeviceDefinition.g:3901:1: rule__Sensor__Group__0__Impl : ( 'Sensor' ) ;
+    // InternalDeviceDefinition.g:3913:1: rule__Sensor__Group__0__Impl : ( 'Sensor' ) ;
     public final void rule__Sensor__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3905:1: ( ( 'Sensor' ) )
-            // InternalDeviceDefinition.g:3906:1: ( 'Sensor' )
+            // InternalDeviceDefinition.g:3917:1: ( ( 'Sensor' ) )
+            // InternalDeviceDefinition.g:3918:1: ( 'Sensor' )
             {
-            // InternalDeviceDefinition.g:3906:1: ( 'Sensor' )
-            // InternalDeviceDefinition.g:3907:2: 'Sensor'
+            // InternalDeviceDefinition.g:3918:1: ( 'Sensor' )
+            // InternalDeviceDefinition.g:3919:2: 'Sensor'
             {
              before(grammarAccess.getSensorAccess().getSensorKeyword_0()); 
             match(input,62,FOLLOW_2); 
@@ -12535,14 +12597,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Sensor__Group__1"
-    // InternalDeviceDefinition.g:3916:1: rule__Sensor__Group__1 : rule__Sensor__Group__1__Impl rule__Sensor__Group__2 ;
+    // InternalDeviceDefinition.g:3928:1: rule__Sensor__Group__1 : rule__Sensor__Group__1__Impl rule__Sensor__Group__2 ;
     public final void rule__Sensor__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3920:1: ( rule__Sensor__Group__1__Impl rule__Sensor__Group__2 )
-            // InternalDeviceDefinition.g:3921:2: rule__Sensor__Group__1__Impl rule__Sensor__Group__2
+            // InternalDeviceDefinition.g:3932:1: ( rule__Sensor__Group__1__Impl rule__Sensor__Group__2 )
+            // InternalDeviceDefinition.g:3933:2: rule__Sensor__Group__1__Impl rule__Sensor__Group__2
             {
             pushFollow(FOLLOW_3);
             rule__Sensor__Group__1__Impl();
@@ -12573,21 +12635,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Sensor__Group__1__Impl"
-    // InternalDeviceDefinition.g:3928:1: rule__Sensor__Group__1__Impl : ( ( rule__Sensor__TypeAssignment_1 ) ) ;
+    // InternalDeviceDefinition.g:3940:1: rule__Sensor__Group__1__Impl : ( ( rule__Sensor__TypeAssignment_1 ) ) ;
     public final void rule__Sensor__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3932:1: ( ( ( rule__Sensor__TypeAssignment_1 ) ) )
-            // InternalDeviceDefinition.g:3933:1: ( ( rule__Sensor__TypeAssignment_1 ) )
+            // InternalDeviceDefinition.g:3944:1: ( ( ( rule__Sensor__TypeAssignment_1 ) ) )
+            // InternalDeviceDefinition.g:3945:1: ( ( rule__Sensor__TypeAssignment_1 ) )
             {
-            // InternalDeviceDefinition.g:3933:1: ( ( rule__Sensor__TypeAssignment_1 ) )
-            // InternalDeviceDefinition.g:3934:2: ( rule__Sensor__TypeAssignment_1 )
+            // InternalDeviceDefinition.g:3945:1: ( ( rule__Sensor__TypeAssignment_1 ) )
+            // InternalDeviceDefinition.g:3946:2: ( rule__Sensor__TypeAssignment_1 )
             {
              before(grammarAccess.getSensorAccess().getTypeAssignment_1()); 
-            // InternalDeviceDefinition.g:3935:2: ( rule__Sensor__TypeAssignment_1 )
-            // InternalDeviceDefinition.g:3935:3: rule__Sensor__TypeAssignment_1
+            // InternalDeviceDefinition.g:3947:2: ( rule__Sensor__TypeAssignment_1 )
+            // InternalDeviceDefinition.g:3947:3: rule__Sensor__TypeAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Sensor__TypeAssignment_1();
@@ -12620,14 +12682,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Sensor__Group__2"
-    // InternalDeviceDefinition.g:3943:1: rule__Sensor__Group__2 : rule__Sensor__Group__2__Impl rule__Sensor__Group__3 ;
+    // InternalDeviceDefinition.g:3955:1: rule__Sensor__Group__2 : rule__Sensor__Group__2__Impl rule__Sensor__Group__3 ;
     public final void rule__Sensor__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3947:1: ( rule__Sensor__Group__2__Impl rule__Sensor__Group__3 )
-            // InternalDeviceDefinition.g:3948:2: rule__Sensor__Group__2__Impl rule__Sensor__Group__3
+            // InternalDeviceDefinition.g:3959:1: ( rule__Sensor__Group__2__Impl rule__Sensor__Group__3 )
+            // InternalDeviceDefinition.g:3960:2: rule__Sensor__Group__2__Impl rule__Sensor__Group__3
             {
             pushFollow(FOLLOW_4);
             rule__Sensor__Group__2__Impl();
@@ -12658,21 +12720,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Sensor__Group__2__Impl"
-    // InternalDeviceDefinition.g:3955:1: rule__Sensor__Group__2__Impl : ( ( rule__Sensor__NameAssignment_2 ) ) ;
+    // InternalDeviceDefinition.g:3967:1: rule__Sensor__Group__2__Impl : ( ( rule__Sensor__NameAssignment_2 ) ) ;
     public final void rule__Sensor__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3959:1: ( ( ( rule__Sensor__NameAssignment_2 ) ) )
-            // InternalDeviceDefinition.g:3960:1: ( ( rule__Sensor__NameAssignment_2 ) )
+            // InternalDeviceDefinition.g:3971:1: ( ( ( rule__Sensor__NameAssignment_2 ) ) )
+            // InternalDeviceDefinition.g:3972:1: ( ( rule__Sensor__NameAssignment_2 ) )
             {
-            // InternalDeviceDefinition.g:3960:1: ( ( rule__Sensor__NameAssignment_2 ) )
-            // InternalDeviceDefinition.g:3961:2: ( rule__Sensor__NameAssignment_2 )
+            // InternalDeviceDefinition.g:3972:1: ( ( rule__Sensor__NameAssignment_2 ) )
+            // InternalDeviceDefinition.g:3973:2: ( rule__Sensor__NameAssignment_2 )
             {
              before(grammarAccess.getSensorAccess().getNameAssignment_2()); 
-            // InternalDeviceDefinition.g:3962:2: ( rule__Sensor__NameAssignment_2 )
-            // InternalDeviceDefinition.g:3962:3: rule__Sensor__NameAssignment_2
+            // InternalDeviceDefinition.g:3974:2: ( rule__Sensor__NameAssignment_2 )
+            // InternalDeviceDefinition.g:3974:3: rule__Sensor__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Sensor__NameAssignment_2();
@@ -12705,14 +12767,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Sensor__Group__3"
-    // InternalDeviceDefinition.g:3970:1: rule__Sensor__Group__3 : rule__Sensor__Group__3__Impl rule__Sensor__Group__4 ;
+    // InternalDeviceDefinition.g:3982:1: rule__Sensor__Group__3 : rule__Sensor__Group__3__Impl rule__Sensor__Group__4 ;
     public final void rule__Sensor__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3974:1: ( rule__Sensor__Group__3__Impl rule__Sensor__Group__4 )
-            // InternalDeviceDefinition.g:3975:2: rule__Sensor__Group__3__Impl rule__Sensor__Group__4
+            // InternalDeviceDefinition.g:3986:1: ( rule__Sensor__Group__3__Impl rule__Sensor__Group__4 )
+            // InternalDeviceDefinition.g:3987:2: rule__Sensor__Group__3__Impl rule__Sensor__Group__4
             {
             pushFollow(FOLLOW_42);
             rule__Sensor__Group__3__Impl();
@@ -12743,17 +12805,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Sensor__Group__3__Impl"
-    // InternalDeviceDefinition.g:3982:1: rule__Sensor__Group__3__Impl : ( ':' ) ;
+    // InternalDeviceDefinition.g:3994:1: rule__Sensor__Group__3__Impl : ( ':' ) ;
     public final void rule__Sensor__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:3986:1: ( ( ':' ) )
-            // InternalDeviceDefinition.g:3987:1: ( ':' )
+            // InternalDeviceDefinition.g:3998:1: ( ( ':' ) )
+            // InternalDeviceDefinition.g:3999:1: ( ':' )
             {
-            // InternalDeviceDefinition.g:3987:1: ( ':' )
-            // InternalDeviceDefinition.g:3988:2: ':'
+            // InternalDeviceDefinition.g:3999:1: ( ':' )
+            // InternalDeviceDefinition.g:4000:2: ':'
             {
              before(grammarAccess.getSensorAccess().getColonKeyword_3()); 
             match(input,33,FOLLOW_2); 
@@ -12780,14 +12842,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Sensor__Group__4"
-    // InternalDeviceDefinition.g:3997:1: rule__Sensor__Group__4 : rule__Sensor__Group__4__Impl rule__Sensor__Group__5 ;
+    // InternalDeviceDefinition.g:4009:1: rule__Sensor__Group__4 : rule__Sensor__Group__4__Impl rule__Sensor__Group__5 ;
     public final void rule__Sensor__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4001:1: ( rule__Sensor__Group__4__Impl rule__Sensor__Group__5 )
-            // InternalDeviceDefinition.g:4002:2: rule__Sensor__Group__4__Impl rule__Sensor__Group__5
+            // InternalDeviceDefinition.g:4013:1: ( rule__Sensor__Group__4__Impl rule__Sensor__Group__5 )
+            // InternalDeviceDefinition.g:4014:2: rule__Sensor__Group__4__Impl rule__Sensor__Group__5
             {
             pushFollow(FOLLOW_42);
             rule__Sensor__Group__4__Impl();
@@ -12818,20 +12880,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Sensor__Group__4__Impl"
-    // InternalDeviceDefinition.g:4009:1: rule__Sensor__Group__4__Impl : ( ( rule__Sensor__Group_4__0 )? ) ;
+    // InternalDeviceDefinition.g:4021:1: rule__Sensor__Group__4__Impl : ( ( rule__Sensor__Group_4__0 )? ) ;
     public final void rule__Sensor__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4013:1: ( ( ( rule__Sensor__Group_4__0 )? ) )
-            // InternalDeviceDefinition.g:4014:1: ( ( rule__Sensor__Group_4__0 )? )
+            // InternalDeviceDefinition.g:4025:1: ( ( ( rule__Sensor__Group_4__0 )? ) )
+            // InternalDeviceDefinition.g:4026:1: ( ( rule__Sensor__Group_4__0 )? )
             {
-            // InternalDeviceDefinition.g:4014:1: ( ( rule__Sensor__Group_4__0 )? )
-            // InternalDeviceDefinition.g:4015:2: ( rule__Sensor__Group_4__0 )?
+            // InternalDeviceDefinition.g:4026:1: ( ( rule__Sensor__Group_4__0 )? )
+            // InternalDeviceDefinition.g:4027:2: ( rule__Sensor__Group_4__0 )?
             {
              before(grammarAccess.getSensorAccess().getGroup_4()); 
-            // InternalDeviceDefinition.g:4016:2: ( rule__Sensor__Group_4__0 )?
+            // InternalDeviceDefinition.g:4028:2: ( rule__Sensor__Group_4__0 )?
             int alt37=2;
             int LA37_0 = input.LA(1);
 
@@ -12840,7 +12902,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             }
             switch (alt37) {
                 case 1 :
-                    // InternalDeviceDefinition.g:4016:3: rule__Sensor__Group_4__0
+                    // InternalDeviceDefinition.g:4028:3: rule__Sensor__Group_4__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Sensor__Group_4__0();
@@ -12876,14 +12938,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Sensor__Group__5"
-    // InternalDeviceDefinition.g:4024:1: rule__Sensor__Group__5 : rule__Sensor__Group__5__Impl rule__Sensor__Group__6 ;
+    // InternalDeviceDefinition.g:4036:1: rule__Sensor__Group__5 : rule__Sensor__Group__5__Impl rule__Sensor__Group__6 ;
     public final void rule__Sensor__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4028:1: ( rule__Sensor__Group__5__Impl rule__Sensor__Group__6 )
-            // InternalDeviceDefinition.g:4029:2: rule__Sensor__Group__5__Impl rule__Sensor__Group__6
+            // InternalDeviceDefinition.g:4040:1: ( rule__Sensor__Group__5__Impl rule__Sensor__Group__6 )
+            // InternalDeviceDefinition.g:4041:2: rule__Sensor__Group__5__Impl rule__Sensor__Group__6
             {
             pushFollow(FOLLOW_42);
             rule__Sensor__Group__5__Impl();
@@ -12914,20 +12976,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Sensor__Group__5__Impl"
-    // InternalDeviceDefinition.g:4036:1: rule__Sensor__Group__5__Impl : ( ( rule__Sensor__OutputsAssignment_5 )* ) ;
+    // InternalDeviceDefinition.g:4048:1: rule__Sensor__Group__5__Impl : ( ( rule__Sensor__OutputsAssignment_5 )* ) ;
     public final void rule__Sensor__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4040:1: ( ( ( rule__Sensor__OutputsAssignment_5 )* ) )
-            // InternalDeviceDefinition.g:4041:1: ( ( rule__Sensor__OutputsAssignment_5 )* )
+            // InternalDeviceDefinition.g:4052:1: ( ( ( rule__Sensor__OutputsAssignment_5 )* ) )
+            // InternalDeviceDefinition.g:4053:1: ( ( rule__Sensor__OutputsAssignment_5 )* )
             {
-            // InternalDeviceDefinition.g:4041:1: ( ( rule__Sensor__OutputsAssignment_5 )* )
-            // InternalDeviceDefinition.g:4042:2: ( rule__Sensor__OutputsAssignment_5 )*
+            // InternalDeviceDefinition.g:4053:1: ( ( rule__Sensor__OutputsAssignment_5 )* )
+            // InternalDeviceDefinition.g:4054:2: ( rule__Sensor__OutputsAssignment_5 )*
             {
              before(grammarAccess.getSensorAccess().getOutputsAssignment_5()); 
-            // InternalDeviceDefinition.g:4043:2: ( rule__Sensor__OutputsAssignment_5 )*
+            // InternalDeviceDefinition.g:4055:2: ( rule__Sensor__OutputsAssignment_5 )*
             loop38:
             do {
                 int alt38=2;
@@ -12940,7 +13002,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
                 switch (alt38) {
             	case 1 :
-            	    // InternalDeviceDefinition.g:4043:3: rule__Sensor__OutputsAssignment_5
+            	    // InternalDeviceDefinition.g:4055:3: rule__Sensor__OutputsAssignment_5
             	    {
             	    pushFollow(FOLLOW_43);
             	    rule__Sensor__OutputsAssignment_5();
@@ -12979,14 +13041,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Sensor__Group__6"
-    // InternalDeviceDefinition.g:4051:1: rule__Sensor__Group__6 : rule__Sensor__Group__6__Impl rule__Sensor__Group__7 ;
+    // InternalDeviceDefinition.g:4063:1: rule__Sensor__Group__6 : rule__Sensor__Group__6__Impl rule__Sensor__Group__7 ;
     public final void rule__Sensor__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4055:1: ( rule__Sensor__Group__6__Impl rule__Sensor__Group__7 )
-            // InternalDeviceDefinition.g:4056:2: rule__Sensor__Group__6__Impl rule__Sensor__Group__7
+            // InternalDeviceDefinition.g:4067:1: ( rule__Sensor__Group__6__Impl rule__Sensor__Group__7 )
+            // InternalDeviceDefinition.g:4068:2: rule__Sensor__Group__6__Impl rule__Sensor__Group__7
             {
             pushFollow(FOLLOW_42);
             rule__Sensor__Group__6__Impl();
@@ -13017,33 +13079,33 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Sensor__Group__6__Impl"
-    // InternalDeviceDefinition.g:4063:1: rule__Sensor__Group__6__Impl : ( ( rule__Sensor__SettingsAssignment_6 )* ) ;
+    // InternalDeviceDefinition.g:4075:1: rule__Sensor__Group__6__Impl : ( ( rule__Sensor__SettingsAssignment_6 )* ) ;
     public final void rule__Sensor__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4067:1: ( ( ( rule__Sensor__SettingsAssignment_6 )* ) )
-            // InternalDeviceDefinition.g:4068:1: ( ( rule__Sensor__SettingsAssignment_6 )* )
+            // InternalDeviceDefinition.g:4079:1: ( ( ( rule__Sensor__SettingsAssignment_6 )* ) )
+            // InternalDeviceDefinition.g:4080:1: ( ( rule__Sensor__SettingsAssignment_6 )* )
             {
-            // InternalDeviceDefinition.g:4068:1: ( ( rule__Sensor__SettingsAssignment_6 )* )
-            // InternalDeviceDefinition.g:4069:2: ( rule__Sensor__SettingsAssignment_6 )*
+            // InternalDeviceDefinition.g:4080:1: ( ( rule__Sensor__SettingsAssignment_6 )* )
+            // InternalDeviceDefinition.g:4081:2: ( rule__Sensor__SettingsAssignment_6 )*
             {
              before(grammarAccess.getSensorAccess().getSettingsAssignment_6()); 
-            // InternalDeviceDefinition.g:4070:2: ( rule__Sensor__SettingsAssignment_6 )*
+            // InternalDeviceDefinition.g:4082:2: ( rule__Sensor__SettingsAssignment_6 )*
             loop39:
             do {
                 int alt39=2;
                 int LA39_0 = input.LA(1);
 
-                if ( (LA39_0==77) ) {
+                if ( (LA39_0==79) ) {
                     alt39=1;
                 }
 
 
                 switch (alt39) {
             	case 1 :
-            	    // InternalDeviceDefinition.g:4070:3: rule__Sensor__SettingsAssignment_6
+            	    // InternalDeviceDefinition.g:4082:3: rule__Sensor__SettingsAssignment_6
             	    {
             	    pushFollow(FOLLOW_44);
             	    rule__Sensor__SettingsAssignment_6();
@@ -13082,14 +13144,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Sensor__Group__7"
-    // InternalDeviceDefinition.g:4078:1: rule__Sensor__Group__7 : rule__Sensor__Group__7__Impl ;
+    // InternalDeviceDefinition.g:4090:1: rule__Sensor__Group__7 : rule__Sensor__Group__7__Impl ;
     public final void rule__Sensor__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4082:1: ( rule__Sensor__Group__7__Impl )
-            // InternalDeviceDefinition.g:4083:2: rule__Sensor__Group__7__Impl
+            // InternalDeviceDefinition.g:4094:1: ( rule__Sensor__Group__7__Impl )
+            // InternalDeviceDefinition.g:4095:2: rule__Sensor__Group__7__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Sensor__Group__7__Impl();
@@ -13115,20 +13177,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Sensor__Group__7__Impl"
-    // InternalDeviceDefinition.g:4089:1: rule__Sensor__Group__7__Impl : ( ( rule__Sensor__Group_7__0 )? ) ;
+    // InternalDeviceDefinition.g:4101:1: rule__Sensor__Group__7__Impl : ( ( rule__Sensor__Group_7__0 )? ) ;
     public final void rule__Sensor__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4093:1: ( ( ( rule__Sensor__Group_7__0 )? ) )
-            // InternalDeviceDefinition.g:4094:1: ( ( rule__Sensor__Group_7__0 )? )
+            // InternalDeviceDefinition.g:4105:1: ( ( ( rule__Sensor__Group_7__0 )? ) )
+            // InternalDeviceDefinition.g:4106:1: ( ( rule__Sensor__Group_7__0 )? )
             {
-            // InternalDeviceDefinition.g:4094:1: ( ( rule__Sensor__Group_7__0 )? )
-            // InternalDeviceDefinition.g:4095:2: ( rule__Sensor__Group_7__0 )?
+            // InternalDeviceDefinition.g:4106:1: ( ( rule__Sensor__Group_7__0 )? )
+            // InternalDeviceDefinition.g:4107:2: ( rule__Sensor__Group_7__0 )?
             {
              before(grammarAccess.getSensorAccess().getGroup_7()); 
-            // InternalDeviceDefinition.g:4096:2: ( rule__Sensor__Group_7__0 )?
+            // InternalDeviceDefinition.g:4108:2: ( rule__Sensor__Group_7__0 )?
             int alt40=2;
             int LA40_0 = input.LA(1);
 
@@ -13137,7 +13199,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             }
             switch (alt40) {
                 case 1 :
-                    // InternalDeviceDefinition.g:4096:3: rule__Sensor__Group_7__0
+                    // InternalDeviceDefinition.g:4108:3: rule__Sensor__Group_7__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Sensor__Group_7__0();
@@ -13173,14 +13235,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Sensor__Group_4__0"
-    // InternalDeviceDefinition.g:4105:1: rule__Sensor__Group_4__0 : rule__Sensor__Group_4__0__Impl rule__Sensor__Group_4__1 ;
+    // InternalDeviceDefinition.g:4117:1: rule__Sensor__Group_4__0 : rule__Sensor__Group_4__0__Impl rule__Sensor__Group_4__1 ;
     public final void rule__Sensor__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4109:1: ( rule__Sensor__Group_4__0__Impl rule__Sensor__Group_4__1 )
-            // InternalDeviceDefinition.g:4110:2: rule__Sensor__Group_4__0__Impl rule__Sensor__Group_4__1
+            // InternalDeviceDefinition.g:4121:1: ( rule__Sensor__Group_4__0__Impl rule__Sensor__Group_4__1 )
+            // InternalDeviceDefinition.g:4122:2: rule__Sensor__Group_4__0__Impl rule__Sensor__Group_4__1
             {
             pushFollow(FOLLOW_45);
             rule__Sensor__Group_4__0__Impl();
@@ -13211,17 +13273,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Sensor__Group_4__0__Impl"
-    // InternalDeviceDefinition.g:4117:1: rule__Sensor__Group_4__0__Impl : ( 'pins' ) ;
+    // InternalDeviceDefinition.g:4129:1: rule__Sensor__Group_4__0__Impl : ( 'pins' ) ;
     public final void rule__Sensor__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4121:1: ( ( 'pins' ) )
-            // InternalDeviceDefinition.g:4122:1: ( 'pins' )
+            // InternalDeviceDefinition.g:4133:1: ( ( 'pins' ) )
+            // InternalDeviceDefinition.g:4134:1: ( 'pins' )
             {
-            // InternalDeviceDefinition.g:4122:1: ( 'pins' )
-            // InternalDeviceDefinition.g:4123:2: 'pins'
+            // InternalDeviceDefinition.g:4134:1: ( 'pins' )
+            // InternalDeviceDefinition.g:4135:2: 'pins'
             {
              before(grammarAccess.getSensorAccess().getPinsKeyword_4_0()); 
             match(input,63,FOLLOW_2); 
@@ -13248,14 +13310,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Sensor__Group_4__1"
-    // InternalDeviceDefinition.g:4132:1: rule__Sensor__Group_4__1 : rule__Sensor__Group_4__1__Impl rule__Sensor__Group_4__2 ;
+    // InternalDeviceDefinition.g:4144:1: rule__Sensor__Group_4__1 : rule__Sensor__Group_4__1__Impl rule__Sensor__Group_4__2 ;
     public final void rule__Sensor__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4136:1: ( rule__Sensor__Group_4__1__Impl rule__Sensor__Group_4__2 )
-            // InternalDeviceDefinition.g:4137:2: rule__Sensor__Group_4__1__Impl rule__Sensor__Group_4__2
+            // InternalDeviceDefinition.g:4148:1: ( rule__Sensor__Group_4__1__Impl rule__Sensor__Group_4__2 )
+            // InternalDeviceDefinition.g:4149:2: rule__Sensor__Group_4__1__Impl rule__Sensor__Group_4__2
             {
             pushFollow(FOLLOW_45);
             rule__Sensor__Group_4__1__Impl();
@@ -13286,20 +13348,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Sensor__Group_4__1__Impl"
-    // InternalDeviceDefinition.g:4144:1: rule__Sensor__Group_4__1__Impl : ( ( rule__Sensor__PinsAssignment_4_1 )* ) ;
+    // InternalDeviceDefinition.g:4156:1: rule__Sensor__Group_4__1__Impl : ( ( rule__Sensor__PinsAssignment_4_1 )* ) ;
     public final void rule__Sensor__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4148:1: ( ( ( rule__Sensor__PinsAssignment_4_1 )* ) )
-            // InternalDeviceDefinition.g:4149:1: ( ( rule__Sensor__PinsAssignment_4_1 )* )
+            // InternalDeviceDefinition.g:4160:1: ( ( ( rule__Sensor__PinsAssignment_4_1 )* ) )
+            // InternalDeviceDefinition.g:4161:1: ( ( rule__Sensor__PinsAssignment_4_1 )* )
             {
-            // InternalDeviceDefinition.g:4149:1: ( ( rule__Sensor__PinsAssignment_4_1 )* )
-            // InternalDeviceDefinition.g:4150:2: ( rule__Sensor__PinsAssignment_4_1 )*
+            // InternalDeviceDefinition.g:4161:1: ( ( rule__Sensor__PinsAssignment_4_1 )* )
+            // InternalDeviceDefinition.g:4162:2: ( rule__Sensor__PinsAssignment_4_1 )*
             {
              before(grammarAccess.getSensorAccess().getPinsAssignment_4_1()); 
-            // InternalDeviceDefinition.g:4151:2: ( rule__Sensor__PinsAssignment_4_1 )*
+            // InternalDeviceDefinition.g:4163:2: ( rule__Sensor__PinsAssignment_4_1 )*
             loop41:
             do {
                 int alt41=2;
@@ -13308,20 +13370,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
                 if ( (LA41_0==69) ) {
                     int LA41_2 = input.LA(2);
 
-                    if ( (LA41_2==RULE_INT) ) {
+                    if ( (LA41_2==RULE_ID||LA41_2==RULE_INT) ) {
                         alt41=1;
                     }
 
 
                 }
-                else if ( ((LA41_0>=66 && LA41_0<=68)) ) {
+                else if ( ((LA41_0>=66 && LA41_0<=68)||(LA41_0>=70 && LA41_0<=71)) ) {
                     alt41=1;
                 }
 
 
                 switch (alt41) {
             	case 1 :
-            	    // InternalDeviceDefinition.g:4151:3: rule__Sensor__PinsAssignment_4_1
+            	    // InternalDeviceDefinition.g:4163:3: rule__Sensor__PinsAssignment_4_1
             	    {
             	    pushFollow(FOLLOW_46);
             	    rule__Sensor__PinsAssignment_4_1();
@@ -13360,14 +13422,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Sensor__Group_4__2"
-    // InternalDeviceDefinition.g:4159:1: rule__Sensor__Group_4__2 : rule__Sensor__Group_4__2__Impl ;
+    // InternalDeviceDefinition.g:4171:1: rule__Sensor__Group_4__2 : rule__Sensor__Group_4__2__Impl ;
     public final void rule__Sensor__Group_4__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4163:1: ( rule__Sensor__Group_4__2__Impl )
-            // InternalDeviceDefinition.g:4164:2: rule__Sensor__Group_4__2__Impl
+            // InternalDeviceDefinition.g:4175:1: ( rule__Sensor__Group_4__2__Impl )
+            // InternalDeviceDefinition.g:4176:2: rule__Sensor__Group_4__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Sensor__Group_4__2__Impl();
@@ -13393,20 +13455,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Sensor__Group_4__2__Impl"
-    // InternalDeviceDefinition.g:4170:1: rule__Sensor__Group_4__2__Impl : ( ( rule__Sensor__Group_4_2__0 )* ) ;
+    // InternalDeviceDefinition.g:4182:1: rule__Sensor__Group_4__2__Impl : ( ( rule__Sensor__Group_4_2__0 )* ) ;
     public final void rule__Sensor__Group_4__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4174:1: ( ( ( rule__Sensor__Group_4_2__0 )* ) )
-            // InternalDeviceDefinition.g:4175:1: ( ( rule__Sensor__Group_4_2__0 )* )
+            // InternalDeviceDefinition.g:4186:1: ( ( ( rule__Sensor__Group_4_2__0 )* ) )
+            // InternalDeviceDefinition.g:4187:1: ( ( rule__Sensor__Group_4_2__0 )* )
             {
-            // InternalDeviceDefinition.g:4175:1: ( ( rule__Sensor__Group_4_2__0 )* )
-            // InternalDeviceDefinition.g:4176:2: ( rule__Sensor__Group_4_2__0 )*
+            // InternalDeviceDefinition.g:4187:1: ( ( rule__Sensor__Group_4_2__0 )* )
+            // InternalDeviceDefinition.g:4188:2: ( rule__Sensor__Group_4_2__0 )*
             {
              before(grammarAccess.getSensorAccess().getGroup_4_2()); 
-            // InternalDeviceDefinition.g:4177:2: ( rule__Sensor__Group_4_2__0 )*
+            // InternalDeviceDefinition.g:4189:2: ( rule__Sensor__Group_4_2__0 )*
             loop42:
             do {
                 int alt42=2;
@@ -13419,7 +13481,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
                 switch (alt42) {
             	case 1 :
-            	    // InternalDeviceDefinition.g:4177:3: rule__Sensor__Group_4_2__0
+            	    // InternalDeviceDefinition.g:4189:3: rule__Sensor__Group_4_2__0
             	    {
             	    pushFollow(FOLLOW_47);
             	    rule__Sensor__Group_4_2__0();
@@ -13458,14 +13520,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Sensor__Group_4_2__0"
-    // InternalDeviceDefinition.g:4186:1: rule__Sensor__Group_4_2__0 : rule__Sensor__Group_4_2__0__Impl rule__Sensor__Group_4_2__1 ;
+    // InternalDeviceDefinition.g:4198:1: rule__Sensor__Group_4_2__0 : rule__Sensor__Group_4_2__0__Impl rule__Sensor__Group_4_2__1 ;
     public final void rule__Sensor__Group_4_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4190:1: ( rule__Sensor__Group_4_2__0__Impl rule__Sensor__Group_4_2__1 )
-            // InternalDeviceDefinition.g:4191:2: rule__Sensor__Group_4_2__0__Impl rule__Sensor__Group_4_2__1
+            // InternalDeviceDefinition.g:4202:1: ( rule__Sensor__Group_4_2__0__Impl rule__Sensor__Group_4_2__1 )
+            // InternalDeviceDefinition.g:4203:2: rule__Sensor__Group_4_2__0__Impl rule__Sensor__Group_4_2__1
             {
             pushFollow(FOLLOW_48);
             rule__Sensor__Group_4_2__0__Impl();
@@ -13496,17 +13558,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Sensor__Group_4_2__0__Impl"
-    // InternalDeviceDefinition.g:4198:1: rule__Sensor__Group_4_2__0__Impl : ( ',' ) ;
+    // InternalDeviceDefinition.g:4210:1: rule__Sensor__Group_4_2__0__Impl : ( ',' ) ;
     public final void rule__Sensor__Group_4_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4202:1: ( ( ',' ) )
-            // InternalDeviceDefinition.g:4203:1: ( ',' )
+            // InternalDeviceDefinition.g:4214:1: ( ( ',' ) )
+            // InternalDeviceDefinition.g:4215:1: ( ',' )
             {
-            // InternalDeviceDefinition.g:4203:1: ( ',' )
-            // InternalDeviceDefinition.g:4204:2: ','
+            // InternalDeviceDefinition.g:4215:1: ( ',' )
+            // InternalDeviceDefinition.g:4216:2: ','
             {
              before(grammarAccess.getSensorAccess().getCommaKeyword_4_2_0()); 
             match(input,49,FOLLOW_2); 
@@ -13533,14 +13595,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Sensor__Group_4_2__1"
-    // InternalDeviceDefinition.g:4213:1: rule__Sensor__Group_4_2__1 : rule__Sensor__Group_4_2__1__Impl ;
+    // InternalDeviceDefinition.g:4225:1: rule__Sensor__Group_4_2__1 : rule__Sensor__Group_4_2__1__Impl ;
     public final void rule__Sensor__Group_4_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4217:1: ( rule__Sensor__Group_4_2__1__Impl )
-            // InternalDeviceDefinition.g:4218:2: rule__Sensor__Group_4_2__1__Impl
+            // InternalDeviceDefinition.g:4229:1: ( rule__Sensor__Group_4_2__1__Impl )
+            // InternalDeviceDefinition.g:4230:2: rule__Sensor__Group_4_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Sensor__Group_4_2__1__Impl();
@@ -13566,21 +13628,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Sensor__Group_4_2__1__Impl"
-    // InternalDeviceDefinition.g:4224:1: rule__Sensor__Group_4_2__1__Impl : ( ( rule__Sensor__PinsAssignment_4_2_1 ) ) ;
+    // InternalDeviceDefinition.g:4236:1: rule__Sensor__Group_4_2__1__Impl : ( ( rule__Sensor__PinsAssignment_4_2_1 ) ) ;
     public final void rule__Sensor__Group_4_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4228:1: ( ( ( rule__Sensor__PinsAssignment_4_2_1 ) ) )
-            // InternalDeviceDefinition.g:4229:1: ( ( rule__Sensor__PinsAssignment_4_2_1 ) )
+            // InternalDeviceDefinition.g:4240:1: ( ( ( rule__Sensor__PinsAssignment_4_2_1 ) ) )
+            // InternalDeviceDefinition.g:4241:1: ( ( rule__Sensor__PinsAssignment_4_2_1 ) )
             {
-            // InternalDeviceDefinition.g:4229:1: ( ( rule__Sensor__PinsAssignment_4_2_1 ) )
-            // InternalDeviceDefinition.g:4230:2: ( rule__Sensor__PinsAssignment_4_2_1 )
+            // InternalDeviceDefinition.g:4241:1: ( ( rule__Sensor__PinsAssignment_4_2_1 ) )
+            // InternalDeviceDefinition.g:4242:2: ( rule__Sensor__PinsAssignment_4_2_1 )
             {
              before(grammarAccess.getSensorAccess().getPinsAssignment_4_2_1()); 
-            // InternalDeviceDefinition.g:4231:2: ( rule__Sensor__PinsAssignment_4_2_1 )
-            // InternalDeviceDefinition.g:4231:3: rule__Sensor__PinsAssignment_4_2_1
+            // InternalDeviceDefinition.g:4243:2: ( rule__Sensor__PinsAssignment_4_2_1 )
+            // InternalDeviceDefinition.g:4243:3: rule__Sensor__PinsAssignment_4_2_1
             {
             pushFollow(FOLLOW_2);
             rule__Sensor__PinsAssignment_4_2_1();
@@ -13613,14 +13675,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Sensor__Group_7__0"
-    // InternalDeviceDefinition.g:4240:1: rule__Sensor__Group_7__0 : rule__Sensor__Group_7__0__Impl rule__Sensor__Group_7__1 ;
+    // InternalDeviceDefinition.g:4252:1: rule__Sensor__Group_7__0 : rule__Sensor__Group_7__0__Impl rule__Sensor__Group_7__1 ;
     public final void rule__Sensor__Group_7__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4244:1: ( rule__Sensor__Group_7__0__Impl rule__Sensor__Group_7__1 )
-            // InternalDeviceDefinition.g:4245:2: rule__Sensor__Group_7__0__Impl rule__Sensor__Group_7__1
+            // InternalDeviceDefinition.g:4256:1: ( rule__Sensor__Group_7__0__Impl rule__Sensor__Group_7__1 )
+            // InternalDeviceDefinition.g:4257:2: rule__Sensor__Group_7__0__Impl rule__Sensor__Group_7__1
             {
             pushFollow(FOLLOW_49);
             rule__Sensor__Group_7__0__Impl();
@@ -13651,17 +13713,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Sensor__Group_7__0__Impl"
-    // InternalDeviceDefinition.g:4252:1: rule__Sensor__Group_7__0__Impl : ( 'sample' ) ;
+    // InternalDeviceDefinition.g:4264:1: rule__Sensor__Group_7__0__Impl : ( 'sample' ) ;
     public final void rule__Sensor__Group_7__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4256:1: ( ( 'sample' ) )
-            // InternalDeviceDefinition.g:4257:1: ( 'sample' )
+            // InternalDeviceDefinition.g:4268:1: ( ( 'sample' ) )
+            // InternalDeviceDefinition.g:4269:1: ( 'sample' )
             {
-            // InternalDeviceDefinition.g:4257:1: ( 'sample' )
-            // InternalDeviceDefinition.g:4258:2: 'sample'
+            // InternalDeviceDefinition.g:4269:1: ( 'sample' )
+            // InternalDeviceDefinition.g:4270:2: 'sample'
             {
              before(grammarAccess.getSensorAccess().getSampleKeyword_7_0()); 
             match(input,64,FOLLOW_2); 
@@ -13688,14 +13750,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Sensor__Group_7__1"
-    // InternalDeviceDefinition.g:4267:1: rule__Sensor__Group_7__1 : rule__Sensor__Group_7__1__Impl rule__Sensor__Group_7__2 ;
+    // InternalDeviceDefinition.g:4279:1: rule__Sensor__Group_7__1 : rule__Sensor__Group_7__1__Impl rule__Sensor__Group_7__2 ;
     public final void rule__Sensor__Group_7__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4271:1: ( rule__Sensor__Group_7__1__Impl rule__Sensor__Group_7__2 )
-            // InternalDeviceDefinition.g:4272:2: rule__Sensor__Group_7__1__Impl rule__Sensor__Group_7__2
+            // InternalDeviceDefinition.g:4283:1: ( rule__Sensor__Group_7__1__Impl rule__Sensor__Group_7__2 )
+            // InternalDeviceDefinition.g:4284:2: rule__Sensor__Group_7__1__Impl rule__Sensor__Group_7__2
             {
             pushFollow(FOLLOW_50);
             rule__Sensor__Group_7__1__Impl();
@@ -13726,17 +13788,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Sensor__Group_7__1__Impl"
-    // InternalDeviceDefinition.g:4279:1: rule__Sensor__Group_7__1__Impl : ( 'if' ) ;
+    // InternalDeviceDefinition.g:4291:1: rule__Sensor__Group_7__1__Impl : ( 'if' ) ;
     public final void rule__Sensor__Group_7__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4283:1: ( ( 'if' ) )
-            // InternalDeviceDefinition.g:4284:1: ( 'if' )
+            // InternalDeviceDefinition.g:4295:1: ( ( 'if' ) )
+            // InternalDeviceDefinition.g:4296:1: ( 'if' )
             {
-            // InternalDeviceDefinition.g:4284:1: ( 'if' )
-            // InternalDeviceDefinition.g:4285:2: 'if'
+            // InternalDeviceDefinition.g:4296:1: ( 'if' )
+            // InternalDeviceDefinition.g:4297:2: 'if'
             {
              before(grammarAccess.getSensorAccess().getIfKeyword_7_1()); 
             match(input,65,FOLLOW_2); 
@@ -13763,14 +13825,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Sensor__Group_7__2"
-    // InternalDeviceDefinition.g:4294:1: rule__Sensor__Group_7__2 : rule__Sensor__Group_7__2__Impl ;
+    // InternalDeviceDefinition.g:4306:1: rule__Sensor__Group_7__2 : rule__Sensor__Group_7__2__Impl ;
     public final void rule__Sensor__Group_7__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4298:1: ( rule__Sensor__Group_7__2__Impl )
-            // InternalDeviceDefinition.g:4299:2: rule__Sensor__Group_7__2__Impl
+            // InternalDeviceDefinition.g:4310:1: ( rule__Sensor__Group_7__2__Impl )
+            // InternalDeviceDefinition.g:4311:2: rule__Sensor__Group_7__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Sensor__Group_7__2__Impl();
@@ -13796,21 +13858,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Sensor__Group_7__2__Impl"
-    // InternalDeviceDefinition.g:4305:1: rule__Sensor__Group_7__2__Impl : ( ( rule__Sensor__PredicateAssignment_7_2 ) ) ;
+    // InternalDeviceDefinition.g:4317:1: rule__Sensor__Group_7__2__Impl : ( ( rule__Sensor__PredicateAssignment_7_2 ) ) ;
     public final void rule__Sensor__Group_7__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4309:1: ( ( ( rule__Sensor__PredicateAssignment_7_2 ) ) )
-            // InternalDeviceDefinition.g:4310:1: ( ( rule__Sensor__PredicateAssignment_7_2 ) )
+            // InternalDeviceDefinition.g:4321:1: ( ( ( rule__Sensor__PredicateAssignment_7_2 ) ) )
+            // InternalDeviceDefinition.g:4322:1: ( ( rule__Sensor__PredicateAssignment_7_2 ) )
             {
-            // InternalDeviceDefinition.g:4310:1: ( ( rule__Sensor__PredicateAssignment_7_2 ) )
-            // InternalDeviceDefinition.g:4311:2: ( rule__Sensor__PredicateAssignment_7_2 )
+            // InternalDeviceDefinition.g:4322:1: ( ( rule__Sensor__PredicateAssignment_7_2 ) )
+            // InternalDeviceDefinition.g:4323:2: ( rule__Sensor__PredicateAssignment_7_2 )
             {
              before(grammarAccess.getSensorAccess().getPredicateAssignment_7_2()); 
-            // InternalDeviceDefinition.g:4312:2: ( rule__Sensor__PredicateAssignment_7_2 )
-            // InternalDeviceDefinition.g:4312:3: rule__Sensor__PredicateAssignment_7_2
+            // InternalDeviceDefinition.g:4324:2: ( rule__Sensor__PredicateAssignment_7_2 )
+            // InternalDeviceDefinition.g:4324:3: rule__Sensor__PredicateAssignment_7_2
             {
             pushFollow(FOLLOW_2);
             rule__Sensor__PredicateAssignment_7_2();
@@ -13843,16 +13905,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Pin__Group__0"
-    // InternalDeviceDefinition.g:4321:1: rule__Pin__Group__0 : rule__Pin__Group__0__Impl rule__Pin__Group__1 ;
+    // InternalDeviceDefinition.g:4333:1: rule__Pin__Group__0 : rule__Pin__Group__0__Impl rule__Pin__Group__1 ;
     public final void rule__Pin__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4325:1: ( rule__Pin__Group__0__Impl rule__Pin__Group__1 )
-            // InternalDeviceDefinition.g:4326:2: rule__Pin__Group__0__Impl rule__Pin__Group__1
+            // InternalDeviceDefinition.g:4337:1: ( rule__Pin__Group__0__Impl rule__Pin__Group__1 )
+            // InternalDeviceDefinition.g:4338:2: rule__Pin__Group__0__Impl rule__Pin__Group__1
             {
-            pushFollow(FOLLOW_30);
+            pushFollow(FOLLOW_51);
             rule__Pin__Group__0__Impl();
 
             state._fsp--;
@@ -13881,21 +13943,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Pin__Group__0__Impl"
-    // InternalDeviceDefinition.g:4333:1: rule__Pin__Group__0__Impl : ( ( rule__Pin__TypeAssignment_0 ) ) ;
+    // InternalDeviceDefinition.g:4345:1: rule__Pin__Group__0__Impl : ( ( rule__Pin__TypeAssignment_0 ) ) ;
     public final void rule__Pin__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4337:1: ( ( ( rule__Pin__TypeAssignment_0 ) ) )
-            // InternalDeviceDefinition.g:4338:1: ( ( rule__Pin__TypeAssignment_0 ) )
+            // InternalDeviceDefinition.g:4349:1: ( ( ( rule__Pin__TypeAssignment_0 ) ) )
+            // InternalDeviceDefinition.g:4350:1: ( ( rule__Pin__TypeAssignment_0 ) )
             {
-            // InternalDeviceDefinition.g:4338:1: ( ( rule__Pin__TypeAssignment_0 ) )
-            // InternalDeviceDefinition.g:4339:2: ( rule__Pin__TypeAssignment_0 )
+            // InternalDeviceDefinition.g:4350:1: ( ( rule__Pin__TypeAssignment_0 ) )
+            // InternalDeviceDefinition.g:4351:2: ( rule__Pin__TypeAssignment_0 )
             {
              before(grammarAccess.getPinAccess().getTypeAssignment_0()); 
-            // InternalDeviceDefinition.g:4340:2: ( rule__Pin__TypeAssignment_0 )
-            // InternalDeviceDefinition.g:4340:3: rule__Pin__TypeAssignment_0
+            // InternalDeviceDefinition.g:4352:2: ( rule__Pin__TypeAssignment_0 )
+            // InternalDeviceDefinition.g:4352:3: rule__Pin__TypeAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__Pin__TypeAssignment_0();
@@ -13928,17 +13990,22 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Pin__Group__1"
-    // InternalDeviceDefinition.g:4348:1: rule__Pin__Group__1 : rule__Pin__Group__1__Impl ;
+    // InternalDeviceDefinition.g:4360:1: rule__Pin__Group__1 : rule__Pin__Group__1__Impl rule__Pin__Group__2 ;
     public final void rule__Pin__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4352:1: ( rule__Pin__Group__1__Impl )
-            // InternalDeviceDefinition.g:4353:2: rule__Pin__Group__1__Impl
+            // InternalDeviceDefinition.g:4364:1: ( rule__Pin__Group__1__Impl rule__Pin__Group__2 )
+            // InternalDeviceDefinition.g:4365:2: rule__Pin__Group__1__Impl rule__Pin__Group__2
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_51);
             rule__Pin__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Pin__Group__2();
 
             state._fsp--;
 
@@ -13961,31 +14028,42 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Pin__Group__1__Impl"
-    // InternalDeviceDefinition.g:4359:1: rule__Pin__Group__1__Impl : ( ( rule__Pin__NumberAssignment_1 ) ) ;
+    // InternalDeviceDefinition.g:4372:1: rule__Pin__Group__1__Impl : ( ( rule__Pin__PinIdAssignment_1 )? ) ;
     public final void rule__Pin__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4363:1: ( ( ( rule__Pin__NumberAssignment_1 ) ) )
-            // InternalDeviceDefinition.g:4364:1: ( ( rule__Pin__NumberAssignment_1 ) )
+            // InternalDeviceDefinition.g:4376:1: ( ( ( rule__Pin__PinIdAssignment_1 )? ) )
+            // InternalDeviceDefinition.g:4377:1: ( ( rule__Pin__PinIdAssignment_1 )? )
             {
-            // InternalDeviceDefinition.g:4364:1: ( ( rule__Pin__NumberAssignment_1 ) )
-            // InternalDeviceDefinition.g:4365:2: ( rule__Pin__NumberAssignment_1 )
+            // InternalDeviceDefinition.g:4377:1: ( ( rule__Pin__PinIdAssignment_1 )? )
+            // InternalDeviceDefinition.g:4378:2: ( rule__Pin__PinIdAssignment_1 )?
             {
-             before(grammarAccess.getPinAccess().getNumberAssignment_1()); 
-            // InternalDeviceDefinition.g:4366:2: ( rule__Pin__NumberAssignment_1 )
-            // InternalDeviceDefinition.g:4366:3: rule__Pin__NumberAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__Pin__NumberAssignment_1();
+             before(grammarAccess.getPinAccess().getPinIdAssignment_1()); 
+            // InternalDeviceDefinition.g:4379:2: ( rule__Pin__PinIdAssignment_1 )?
+            int alt43=2;
+            int LA43_0 = input.LA(1);
 
-            state._fsp--;
+            if ( (LA43_0==RULE_ID) ) {
+                alt43=1;
+            }
+            switch (alt43) {
+                case 1 :
+                    // InternalDeviceDefinition.g:4379:3: rule__Pin__PinIdAssignment_1
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Pin__PinIdAssignment_1();
 
+                    state._fsp--;
+
+
+                    }
+                    break;
 
             }
 
-             after(grammarAccess.getPinAccess().getNumberAssignment_1()); 
+             after(grammarAccess.getPinAccess().getPinIdAssignment_1()); 
 
             }
 
@@ -14007,17 +14085,97 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
     // $ANTLR end "rule__Pin__Group__1__Impl"
 
 
+    // $ANTLR start "rule__Pin__Group__2"
+    // InternalDeviceDefinition.g:4387:1: rule__Pin__Group__2 : rule__Pin__Group__2__Impl ;
+    public final void rule__Pin__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDeviceDefinition.g:4391:1: ( rule__Pin__Group__2__Impl )
+            // InternalDeviceDefinition.g:4392:2: rule__Pin__Group__2__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Pin__Group__2__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Pin__Group__2"
+
+
+    // $ANTLR start "rule__Pin__Group__2__Impl"
+    // InternalDeviceDefinition.g:4398:1: rule__Pin__Group__2__Impl : ( ( rule__Pin__NumberAssignment_2 ) ) ;
+    public final void rule__Pin__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDeviceDefinition.g:4402:1: ( ( ( rule__Pin__NumberAssignment_2 ) ) )
+            // InternalDeviceDefinition.g:4403:1: ( ( rule__Pin__NumberAssignment_2 ) )
+            {
+            // InternalDeviceDefinition.g:4403:1: ( ( rule__Pin__NumberAssignment_2 ) )
+            // InternalDeviceDefinition.g:4404:2: ( rule__Pin__NumberAssignment_2 )
+            {
+             before(grammarAccess.getPinAccess().getNumberAssignment_2()); 
+            // InternalDeviceDefinition.g:4405:2: ( rule__Pin__NumberAssignment_2 )
+            // InternalDeviceDefinition.g:4405:3: rule__Pin__NumberAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__Pin__NumberAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getPinAccess().getNumberAssignment_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Pin__Group__2__Impl"
+
+
     // $ANTLR start "rule__PinType__Group_0__0"
-    // InternalDeviceDefinition.g:4375:1: rule__PinType__Group_0__0 : rule__PinType__Group_0__0__Impl rule__PinType__Group_0__1 ;
+    // InternalDeviceDefinition.g:4414:1: rule__PinType__Group_0__0 : rule__PinType__Group_0__0__Impl rule__PinType__Group_0__1 ;
     public final void rule__PinType__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4379:1: ( rule__PinType__Group_0__0__Impl rule__PinType__Group_0__1 )
-            // InternalDeviceDefinition.g:4380:2: rule__PinType__Group_0__0__Impl rule__PinType__Group_0__1
+            // InternalDeviceDefinition.g:4418:1: ( rule__PinType__Group_0__0__Impl rule__PinType__Group_0__1 )
+            // InternalDeviceDefinition.g:4419:2: rule__PinType__Group_0__0__Impl rule__PinType__Group_0__1
             {
-            pushFollow(FOLLOW_51);
+            pushFollow(FOLLOW_52);
             rule__PinType__Group_0__0__Impl();
 
             state._fsp--;
@@ -14046,21 +14204,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__PinType__Group_0__0__Impl"
-    // InternalDeviceDefinition.g:4387:1: rule__PinType__Group_0__0__Impl : ( () ) ;
+    // InternalDeviceDefinition.g:4426:1: rule__PinType__Group_0__0__Impl : ( () ) ;
     public final void rule__PinType__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4391:1: ( ( () ) )
-            // InternalDeviceDefinition.g:4392:1: ( () )
+            // InternalDeviceDefinition.g:4430:1: ( ( () ) )
+            // InternalDeviceDefinition.g:4431:1: ( () )
             {
-            // InternalDeviceDefinition.g:4392:1: ( () )
-            // InternalDeviceDefinition.g:4393:2: ()
+            // InternalDeviceDefinition.g:4431:1: ( () )
+            // InternalDeviceDefinition.g:4432:2: ()
             {
              before(grammarAccess.getPinTypeAccess().getADCAction_0_0()); 
-            // InternalDeviceDefinition.g:4394:2: ()
-            // InternalDeviceDefinition.g:4394:3: 
+            // InternalDeviceDefinition.g:4433:2: ()
+            // InternalDeviceDefinition.g:4433:3: 
             {
             }
 
@@ -14083,14 +14241,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__PinType__Group_0__1"
-    // InternalDeviceDefinition.g:4402:1: rule__PinType__Group_0__1 : rule__PinType__Group_0__1__Impl ;
+    // InternalDeviceDefinition.g:4441:1: rule__PinType__Group_0__1 : rule__PinType__Group_0__1__Impl ;
     public final void rule__PinType__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4406:1: ( rule__PinType__Group_0__1__Impl )
-            // InternalDeviceDefinition.g:4407:2: rule__PinType__Group_0__1__Impl
+            // InternalDeviceDefinition.g:4445:1: ( rule__PinType__Group_0__1__Impl )
+            // InternalDeviceDefinition.g:4446:2: rule__PinType__Group_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__PinType__Group_0__1__Impl();
@@ -14116,17 +14274,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__PinType__Group_0__1__Impl"
-    // InternalDeviceDefinition.g:4413:1: rule__PinType__Group_0__1__Impl : ( 'adc' ) ;
+    // InternalDeviceDefinition.g:4452:1: rule__PinType__Group_0__1__Impl : ( 'adc' ) ;
     public final void rule__PinType__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4417:1: ( ( 'adc' ) )
-            // InternalDeviceDefinition.g:4418:1: ( 'adc' )
+            // InternalDeviceDefinition.g:4456:1: ( ( 'adc' ) )
+            // InternalDeviceDefinition.g:4457:1: ( 'adc' )
             {
-            // InternalDeviceDefinition.g:4418:1: ( 'adc' )
-            // InternalDeviceDefinition.g:4419:2: 'adc'
+            // InternalDeviceDefinition.g:4457:1: ( 'adc' )
+            // InternalDeviceDefinition.g:4458:2: 'adc'
             {
              before(grammarAccess.getPinTypeAccess().getAdcKeyword_0_1()); 
             match(input,66,FOLLOW_2); 
@@ -14153,16 +14311,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__PinType__Group_1__0"
-    // InternalDeviceDefinition.g:4429:1: rule__PinType__Group_1__0 : rule__PinType__Group_1__0__Impl rule__PinType__Group_1__1 ;
+    // InternalDeviceDefinition.g:4468:1: rule__PinType__Group_1__0 : rule__PinType__Group_1__0__Impl rule__PinType__Group_1__1 ;
     public final void rule__PinType__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4433:1: ( rule__PinType__Group_1__0__Impl rule__PinType__Group_1__1 )
-            // InternalDeviceDefinition.g:4434:2: rule__PinType__Group_1__0__Impl rule__PinType__Group_1__1
+            // InternalDeviceDefinition.g:4472:1: ( rule__PinType__Group_1__0__Impl rule__PinType__Group_1__1 )
+            // InternalDeviceDefinition.g:4473:2: rule__PinType__Group_1__0__Impl rule__PinType__Group_1__1
             {
-            pushFollow(FOLLOW_52);
+            pushFollow(FOLLOW_53);
             rule__PinType__Group_1__0__Impl();
 
             state._fsp--;
@@ -14191,21 +14349,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__PinType__Group_1__0__Impl"
-    // InternalDeviceDefinition.g:4441:1: rule__PinType__Group_1__0__Impl : ( () ) ;
+    // InternalDeviceDefinition.g:4480:1: rule__PinType__Group_1__0__Impl : ( () ) ;
     public final void rule__PinType__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4445:1: ( ( () ) )
-            // InternalDeviceDefinition.g:4446:1: ( () )
+            // InternalDeviceDefinition.g:4484:1: ( ( () ) )
+            // InternalDeviceDefinition.g:4485:1: ( () )
             {
-            // InternalDeviceDefinition.g:4446:1: ( () )
-            // InternalDeviceDefinition.g:4447:2: ()
+            // InternalDeviceDefinition.g:4485:1: ( () )
+            // InternalDeviceDefinition.g:4486:2: ()
             {
              before(grammarAccess.getPinTypeAccess().getDACAction_1_0()); 
-            // InternalDeviceDefinition.g:4448:2: ()
-            // InternalDeviceDefinition.g:4448:3: 
+            // InternalDeviceDefinition.g:4487:2: ()
+            // InternalDeviceDefinition.g:4487:3: 
             {
             }
 
@@ -14228,14 +14386,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__PinType__Group_1__1"
-    // InternalDeviceDefinition.g:4456:1: rule__PinType__Group_1__1 : rule__PinType__Group_1__1__Impl ;
+    // InternalDeviceDefinition.g:4495:1: rule__PinType__Group_1__1 : rule__PinType__Group_1__1__Impl ;
     public final void rule__PinType__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4460:1: ( rule__PinType__Group_1__1__Impl )
-            // InternalDeviceDefinition.g:4461:2: rule__PinType__Group_1__1__Impl
+            // InternalDeviceDefinition.g:4499:1: ( rule__PinType__Group_1__1__Impl )
+            // InternalDeviceDefinition.g:4500:2: rule__PinType__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__PinType__Group_1__1__Impl();
@@ -14261,17 +14419,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__PinType__Group_1__1__Impl"
-    // InternalDeviceDefinition.g:4467:1: rule__PinType__Group_1__1__Impl : ( 'dac' ) ;
+    // InternalDeviceDefinition.g:4506:1: rule__PinType__Group_1__1__Impl : ( 'dac' ) ;
     public final void rule__PinType__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4471:1: ( ( 'dac' ) )
-            // InternalDeviceDefinition.g:4472:1: ( 'dac' )
+            // InternalDeviceDefinition.g:4510:1: ( ( 'dac' ) )
+            // InternalDeviceDefinition.g:4511:1: ( 'dac' )
             {
-            // InternalDeviceDefinition.g:4472:1: ( 'dac' )
-            // InternalDeviceDefinition.g:4473:2: 'dac'
+            // InternalDeviceDefinition.g:4511:1: ( 'dac' )
+            // InternalDeviceDefinition.g:4512:2: 'dac'
             {
              before(grammarAccess.getPinTypeAccess().getDacKeyword_1_1()); 
             match(input,67,FOLLOW_2); 
@@ -14298,16 +14456,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__PinType__Group_2__0"
-    // InternalDeviceDefinition.g:4483:1: rule__PinType__Group_2__0 : rule__PinType__Group_2__0__Impl rule__PinType__Group_2__1 ;
+    // InternalDeviceDefinition.g:4522:1: rule__PinType__Group_2__0 : rule__PinType__Group_2__0__Impl rule__PinType__Group_2__1 ;
     public final void rule__PinType__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4487:1: ( rule__PinType__Group_2__0__Impl rule__PinType__Group_2__1 )
-            // InternalDeviceDefinition.g:4488:2: rule__PinType__Group_2__0__Impl rule__PinType__Group_2__1
+            // InternalDeviceDefinition.g:4526:1: ( rule__PinType__Group_2__0__Impl rule__PinType__Group_2__1 )
+            // InternalDeviceDefinition.g:4527:2: rule__PinType__Group_2__0__Impl rule__PinType__Group_2__1
             {
-            pushFollow(FOLLOW_53);
+            pushFollow(FOLLOW_54);
             rule__PinType__Group_2__0__Impl();
 
             state._fsp--;
@@ -14336,21 +14494,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__PinType__Group_2__0__Impl"
-    // InternalDeviceDefinition.g:4495:1: rule__PinType__Group_2__0__Impl : ( () ) ;
+    // InternalDeviceDefinition.g:4534:1: rule__PinType__Group_2__0__Impl : ( () ) ;
     public final void rule__PinType__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4499:1: ( ( () ) )
-            // InternalDeviceDefinition.g:4500:1: ( () )
+            // InternalDeviceDefinition.g:4538:1: ( ( () ) )
+            // InternalDeviceDefinition.g:4539:1: ( () )
             {
-            // InternalDeviceDefinition.g:4500:1: ( () )
-            // InternalDeviceDefinition.g:4501:2: ()
+            // InternalDeviceDefinition.g:4539:1: ( () )
+            // InternalDeviceDefinition.g:4540:2: ()
             {
              before(grammarAccess.getPinTypeAccess().getGenericInAction_2_0()); 
-            // InternalDeviceDefinition.g:4502:2: ()
-            // InternalDeviceDefinition.g:4502:3: 
+            // InternalDeviceDefinition.g:4541:2: ()
+            // InternalDeviceDefinition.g:4541:3: 
             {
             }
 
@@ -14373,14 +14531,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__PinType__Group_2__1"
-    // InternalDeviceDefinition.g:4510:1: rule__PinType__Group_2__1 : rule__PinType__Group_2__1__Impl ;
+    // InternalDeviceDefinition.g:4549:1: rule__PinType__Group_2__1 : rule__PinType__Group_2__1__Impl ;
     public final void rule__PinType__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4514:1: ( rule__PinType__Group_2__1__Impl )
-            // InternalDeviceDefinition.g:4515:2: rule__PinType__Group_2__1__Impl
+            // InternalDeviceDefinition.g:4553:1: ( rule__PinType__Group_2__1__Impl )
+            // InternalDeviceDefinition.g:4554:2: rule__PinType__Group_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__PinType__Group_2__1__Impl();
@@ -14406,17 +14564,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__PinType__Group_2__1__Impl"
-    // InternalDeviceDefinition.g:4521:1: rule__PinType__Group_2__1__Impl : ( 'in' ) ;
+    // InternalDeviceDefinition.g:4560:1: rule__PinType__Group_2__1__Impl : ( 'in' ) ;
     public final void rule__PinType__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4525:1: ( ( 'in' ) )
-            // InternalDeviceDefinition.g:4526:1: ( 'in' )
+            // InternalDeviceDefinition.g:4564:1: ( ( 'in' ) )
+            // InternalDeviceDefinition.g:4565:1: ( 'in' )
             {
-            // InternalDeviceDefinition.g:4526:1: ( 'in' )
-            // InternalDeviceDefinition.g:4527:2: 'in'
+            // InternalDeviceDefinition.g:4565:1: ( 'in' )
+            // InternalDeviceDefinition.g:4566:2: 'in'
             {
              before(grammarAccess.getPinTypeAccess().getInKeyword_2_1()); 
             match(input,68,FOLLOW_2); 
@@ -14443,16 +14601,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__PinType__Group_3__0"
-    // InternalDeviceDefinition.g:4537:1: rule__PinType__Group_3__0 : rule__PinType__Group_3__0__Impl rule__PinType__Group_3__1 ;
+    // InternalDeviceDefinition.g:4576:1: rule__PinType__Group_3__0 : rule__PinType__Group_3__0__Impl rule__PinType__Group_3__1 ;
     public final void rule__PinType__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4541:1: ( rule__PinType__Group_3__0__Impl rule__PinType__Group_3__1 )
-            // InternalDeviceDefinition.g:4542:2: rule__PinType__Group_3__0__Impl rule__PinType__Group_3__1
+            // InternalDeviceDefinition.g:4580:1: ( rule__PinType__Group_3__0__Impl rule__PinType__Group_3__1 )
+            // InternalDeviceDefinition.g:4581:2: rule__PinType__Group_3__0__Impl rule__PinType__Group_3__1
             {
-            pushFollow(FOLLOW_48);
+            pushFollow(FOLLOW_55);
             rule__PinType__Group_3__0__Impl();
 
             state._fsp--;
@@ -14481,21 +14639,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__PinType__Group_3__0__Impl"
-    // InternalDeviceDefinition.g:4549:1: rule__PinType__Group_3__0__Impl : ( () ) ;
+    // InternalDeviceDefinition.g:4588:1: rule__PinType__Group_3__0__Impl : ( () ) ;
     public final void rule__PinType__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4553:1: ( ( () ) )
-            // InternalDeviceDefinition.g:4554:1: ( () )
+            // InternalDeviceDefinition.g:4592:1: ( ( () ) )
+            // InternalDeviceDefinition.g:4593:1: ( () )
             {
-            // InternalDeviceDefinition.g:4554:1: ( () )
-            // InternalDeviceDefinition.g:4555:2: ()
+            // InternalDeviceDefinition.g:4593:1: ( () )
+            // InternalDeviceDefinition.g:4594:2: ()
             {
              before(grammarAccess.getPinTypeAccess().getGenericOutAction_3_0()); 
-            // InternalDeviceDefinition.g:4556:2: ()
-            // InternalDeviceDefinition.g:4556:3: 
+            // InternalDeviceDefinition.g:4595:2: ()
+            // InternalDeviceDefinition.g:4595:3: 
             {
             }
 
@@ -14518,14 +14676,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__PinType__Group_3__1"
-    // InternalDeviceDefinition.g:4564:1: rule__PinType__Group_3__1 : rule__PinType__Group_3__1__Impl ;
+    // InternalDeviceDefinition.g:4603:1: rule__PinType__Group_3__1 : rule__PinType__Group_3__1__Impl ;
     public final void rule__PinType__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4568:1: ( rule__PinType__Group_3__1__Impl )
-            // InternalDeviceDefinition.g:4569:2: rule__PinType__Group_3__1__Impl
+            // InternalDeviceDefinition.g:4607:1: ( rule__PinType__Group_3__1__Impl )
+            // InternalDeviceDefinition.g:4608:2: rule__PinType__Group_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__PinType__Group_3__1__Impl();
@@ -14551,17 +14709,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__PinType__Group_3__1__Impl"
-    // InternalDeviceDefinition.g:4575:1: rule__PinType__Group_3__1__Impl : ( 'out' ) ;
+    // InternalDeviceDefinition.g:4614:1: rule__PinType__Group_3__1__Impl : ( 'out' ) ;
     public final void rule__PinType__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4579:1: ( ( 'out' ) )
-            // InternalDeviceDefinition.g:4580:1: ( 'out' )
+            // InternalDeviceDefinition.g:4618:1: ( ( 'out' ) )
+            // InternalDeviceDefinition.g:4619:1: ( 'out' )
             {
-            // InternalDeviceDefinition.g:4580:1: ( 'out' )
-            // InternalDeviceDefinition.g:4581:2: 'out'
+            // InternalDeviceDefinition.g:4619:1: ( 'out' )
+            // InternalDeviceDefinition.g:4620:2: 'out'
             {
              before(grammarAccess.getPinTypeAccess().getOutKeyword_3_1()); 
             match(input,69,FOLLOW_2); 
@@ -14587,17 +14745,307 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
     // $ANTLR end "rule__PinType__Group_3__1__Impl"
 
 
+    // $ANTLR start "rule__PinType__Group_4__0"
+    // InternalDeviceDefinition.g:4630:1: rule__PinType__Group_4__0 : rule__PinType__Group_4__0__Impl rule__PinType__Group_4__1 ;
+    public final void rule__PinType__Group_4__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDeviceDefinition.g:4634:1: ( rule__PinType__Group_4__0__Impl rule__PinType__Group_4__1 )
+            // InternalDeviceDefinition.g:4635:2: rule__PinType__Group_4__0__Impl rule__PinType__Group_4__1
+            {
+            pushFollow(FOLLOW_56);
+            rule__PinType__Group_4__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__PinType__Group_4__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PinType__Group_4__0"
+
+
+    // $ANTLR start "rule__PinType__Group_4__0__Impl"
+    // InternalDeviceDefinition.g:4642:1: rule__PinType__Group_4__0__Impl : ( () ) ;
+    public final void rule__PinType__Group_4__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDeviceDefinition.g:4646:1: ( ( () ) )
+            // InternalDeviceDefinition.g:4647:1: ( () )
+            {
+            // InternalDeviceDefinition.g:4647:1: ( () )
+            // InternalDeviceDefinition.g:4648:2: ()
+            {
+             before(grammarAccess.getPinTypeAccess().getSerialDataAction_4_0()); 
+            // InternalDeviceDefinition.g:4649:2: ()
+            // InternalDeviceDefinition.g:4649:3: 
+            {
+            }
+
+             after(grammarAccess.getPinTypeAccess().getSerialDataAction_4_0()); 
+
+            }
+
+
+            }
+
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PinType__Group_4__0__Impl"
+
+
+    // $ANTLR start "rule__PinType__Group_4__1"
+    // InternalDeviceDefinition.g:4657:1: rule__PinType__Group_4__1 : rule__PinType__Group_4__1__Impl ;
+    public final void rule__PinType__Group_4__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDeviceDefinition.g:4661:1: ( rule__PinType__Group_4__1__Impl )
+            // InternalDeviceDefinition.g:4662:2: rule__PinType__Group_4__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__PinType__Group_4__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PinType__Group_4__1"
+
+
+    // $ANTLR start "rule__PinType__Group_4__1__Impl"
+    // InternalDeviceDefinition.g:4668:1: rule__PinType__Group_4__1__Impl : ( 'sda' ) ;
+    public final void rule__PinType__Group_4__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDeviceDefinition.g:4672:1: ( ( 'sda' ) )
+            // InternalDeviceDefinition.g:4673:1: ( 'sda' )
+            {
+            // InternalDeviceDefinition.g:4673:1: ( 'sda' )
+            // InternalDeviceDefinition.g:4674:2: 'sda'
+            {
+             before(grammarAccess.getPinTypeAccess().getSdaKeyword_4_1()); 
+            match(input,70,FOLLOW_2); 
+             after(grammarAccess.getPinTypeAccess().getSdaKeyword_4_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PinType__Group_4__1__Impl"
+
+
+    // $ANTLR start "rule__PinType__Group_5__0"
+    // InternalDeviceDefinition.g:4684:1: rule__PinType__Group_5__0 : rule__PinType__Group_5__0__Impl rule__PinType__Group_5__1 ;
+    public final void rule__PinType__Group_5__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDeviceDefinition.g:4688:1: ( rule__PinType__Group_5__0__Impl rule__PinType__Group_5__1 )
+            // InternalDeviceDefinition.g:4689:2: rule__PinType__Group_5__0__Impl rule__PinType__Group_5__1
+            {
+            pushFollow(FOLLOW_48);
+            rule__PinType__Group_5__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__PinType__Group_5__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PinType__Group_5__0"
+
+
+    // $ANTLR start "rule__PinType__Group_5__0__Impl"
+    // InternalDeviceDefinition.g:4696:1: rule__PinType__Group_5__0__Impl : ( () ) ;
+    public final void rule__PinType__Group_5__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDeviceDefinition.g:4700:1: ( ( () ) )
+            // InternalDeviceDefinition.g:4701:1: ( () )
+            {
+            // InternalDeviceDefinition.g:4701:1: ( () )
+            // InternalDeviceDefinition.g:4702:2: ()
+            {
+             before(grammarAccess.getPinTypeAccess().getSerialClockAction_5_0()); 
+            // InternalDeviceDefinition.g:4703:2: ()
+            // InternalDeviceDefinition.g:4703:3: 
+            {
+            }
+
+             after(grammarAccess.getPinTypeAccess().getSerialClockAction_5_0()); 
+
+            }
+
+
+            }
+
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PinType__Group_5__0__Impl"
+
+
+    // $ANTLR start "rule__PinType__Group_5__1"
+    // InternalDeviceDefinition.g:4711:1: rule__PinType__Group_5__1 : rule__PinType__Group_5__1__Impl ;
+    public final void rule__PinType__Group_5__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDeviceDefinition.g:4715:1: ( rule__PinType__Group_5__1__Impl )
+            // InternalDeviceDefinition.g:4716:2: rule__PinType__Group_5__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__PinType__Group_5__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PinType__Group_5__1"
+
+
+    // $ANTLR start "rule__PinType__Group_5__1__Impl"
+    // InternalDeviceDefinition.g:4722:1: rule__PinType__Group_5__1__Impl : ( 'scl' ) ;
+    public final void rule__PinType__Group_5__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDeviceDefinition.g:4726:1: ( ( 'scl' ) )
+            // InternalDeviceDefinition.g:4727:1: ( 'scl' )
+            {
+            // InternalDeviceDefinition.g:4727:1: ( 'scl' )
+            // InternalDeviceDefinition.g:4728:2: 'scl'
+            {
+             before(grammarAccess.getPinTypeAccess().getSclKeyword_5_1()); 
+            match(input,71,FOLLOW_2); 
+             after(grammarAccess.getPinTypeAccess().getSclKeyword_5_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PinType__Group_5__1__Impl"
+
+
     // $ANTLR start "rule__TimeUnit__Group_0__0"
-    // InternalDeviceDefinition.g:4591:1: rule__TimeUnit__Group_0__0 : rule__TimeUnit__Group_0__0__Impl rule__TimeUnit__Group_0__1 ;
+    // InternalDeviceDefinition.g:4738:1: rule__TimeUnit__Group_0__0 : rule__TimeUnit__Group_0__0__Impl rule__TimeUnit__Group_0__1 ;
     public final void rule__TimeUnit__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4595:1: ( rule__TimeUnit__Group_0__0__Impl rule__TimeUnit__Group_0__1 )
-            // InternalDeviceDefinition.g:4596:2: rule__TimeUnit__Group_0__0__Impl rule__TimeUnit__Group_0__1
+            // InternalDeviceDefinition.g:4742:1: ( rule__TimeUnit__Group_0__0__Impl rule__TimeUnit__Group_0__1 )
+            // InternalDeviceDefinition.g:4743:2: rule__TimeUnit__Group_0__0__Impl rule__TimeUnit__Group_0__1
             {
-            pushFollow(FOLLOW_54);
+            pushFollow(FOLLOW_57);
             rule__TimeUnit__Group_0__0__Impl();
 
             state._fsp--;
@@ -14626,21 +15074,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__TimeUnit__Group_0__0__Impl"
-    // InternalDeviceDefinition.g:4603:1: rule__TimeUnit__Group_0__0__Impl : ( () ) ;
+    // InternalDeviceDefinition.g:4750:1: rule__TimeUnit__Group_0__0__Impl : ( () ) ;
     public final void rule__TimeUnit__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4607:1: ( ( () ) )
-            // InternalDeviceDefinition.g:4608:1: ( () )
+            // InternalDeviceDefinition.g:4754:1: ( ( () ) )
+            // InternalDeviceDefinition.g:4755:1: ( () )
             {
-            // InternalDeviceDefinition.g:4608:1: ( () )
-            // InternalDeviceDefinition.g:4609:2: ()
+            // InternalDeviceDefinition.g:4755:1: ( () )
+            // InternalDeviceDefinition.g:4756:2: ()
             {
              before(grammarAccess.getTimeUnitAccess().getMillisecondAction_0_0()); 
-            // InternalDeviceDefinition.g:4610:2: ()
-            // InternalDeviceDefinition.g:4610:3: 
+            // InternalDeviceDefinition.g:4757:2: ()
+            // InternalDeviceDefinition.g:4757:3: 
             {
             }
 
@@ -14663,14 +15111,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__TimeUnit__Group_0__1"
-    // InternalDeviceDefinition.g:4618:1: rule__TimeUnit__Group_0__1 : rule__TimeUnit__Group_0__1__Impl ;
+    // InternalDeviceDefinition.g:4765:1: rule__TimeUnit__Group_0__1 : rule__TimeUnit__Group_0__1__Impl ;
     public final void rule__TimeUnit__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4622:1: ( rule__TimeUnit__Group_0__1__Impl )
-            // InternalDeviceDefinition.g:4623:2: rule__TimeUnit__Group_0__1__Impl
+            // InternalDeviceDefinition.g:4769:1: ( rule__TimeUnit__Group_0__1__Impl )
+            // InternalDeviceDefinition.g:4770:2: rule__TimeUnit__Group_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__TimeUnit__Group_0__1__Impl();
@@ -14696,21 +15144,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__TimeUnit__Group_0__1__Impl"
-    // InternalDeviceDefinition.g:4629:1: rule__TimeUnit__Group_0__1__Impl : ( ( rule__TimeUnit__Alternatives_0_1 ) ) ;
+    // InternalDeviceDefinition.g:4776:1: rule__TimeUnit__Group_0__1__Impl : ( ( rule__TimeUnit__Alternatives_0_1 ) ) ;
     public final void rule__TimeUnit__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4633:1: ( ( ( rule__TimeUnit__Alternatives_0_1 ) ) )
-            // InternalDeviceDefinition.g:4634:1: ( ( rule__TimeUnit__Alternatives_0_1 ) )
+            // InternalDeviceDefinition.g:4780:1: ( ( ( rule__TimeUnit__Alternatives_0_1 ) ) )
+            // InternalDeviceDefinition.g:4781:1: ( ( rule__TimeUnit__Alternatives_0_1 ) )
             {
-            // InternalDeviceDefinition.g:4634:1: ( ( rule__TimeUnit__Alternatives_0_1 ) )
-            // InternalDeviceDefinition.g:4635:2: ( rule__TimeUnit__Alternatives_0_1 )
+            // InternalDeviceDefinition.g:4781:1: ( ( rule__TimeUnit__Alternatives_0_1 ) )
+            // InternalDeviceDefinition.g:4782:2: ( rule__TimeUnit__Alternatives_0_1 )
             {
              before(grammarAccess.getTimeUnitAccess().getAlternatives_0_1()); 
-            // InternalDeviceDefinition.g:4636:2: ( rule__TimeUnit__Alternatives_0_1 )
-            // InternalDeviceDefinition.g:4636:3: rule__TimeUnit__Alternatives_0_1
+            // InternalDeviceDefinition.g:4783:2: ( rule__TimeUnit__Alternatives_0_1 )
+            // InternalDeviceDefinition.g:4783:3: rule__TimeUnit__Alternatives_0_1
             {
             pushFollow(FOLLOW_2);
             rule__TimeUnit__Alternatives_0_1();
@@ -14743,16 +15191,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__TimeUnit__Group_1__0"
-    // InternalDeviceDefinition.g:4645:1: rule__TimeUnit__Group_1__0 : rule__TimeUnit__Group_1__0__Impl rule__TimeUnit__Group_1__1 ;
+    // InternalDeviceDefinition.g:4792:1: rule__TimeUnit__Group_1__0 : rule__TimeUnit__Group_1__0__Impl rule__TimeUnit__Group_1__1 ;
     public final void rule__TimeUnit__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4649:1: ( rule__TimeUnit__Group_1__0__Impl rule__TimeUnit__Group_1__1 )
-            // InternalDeviceDefinition.g:4650:2: rule__TimeUnit__Group_1__0__Impl rule__TimeUnit__Group_1__1
+            // InternalDeviceDefinition.g:4796:1: ( rule__TimeUnit__Group_1__0__Impl rule__TimeUnit__Group_1__1 )
+            // InternalDeviceDefinition.g:4797:2: rule__TimeUnit__Group_1__0__Impl rule__TimeUnit__Group_1__1
             {
-            pushFollow(FOLLOW_55);
+            pushFollow(FOLLOW_58);
             rule__TimeUnit__Group_1__0__Impl();
 
             state._fsp--;
@@ -14781,21 +15229,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__TimeUnit__Group_1__0__Impl"
-    // InternalDeviceDefinition.g:4657:1: rule__TimeUnit__Group_1__0__Impl : ( () ) ;
+    // InternalDeviceDefinition.g:4804:1: rule__TimeUnit__Group_1__0__Impl : ( () ) ;
     public final void rule__TimeUnit__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4661:1: ( ( () ) )
-            // InternalDeviceDefinition.g:4662:1: ( () )
+            // InternalDeviceDefinition.g:4808:1: ( ( () ) )
+            // InternalDeviceDefinition.g:4809:1: ( () )
             {
-            // InternalDeviceDefinition.g:4662:1: ( () )
-            // InternalDeviceDefinition.g:4663:2: ()
+            // InternalDeviceDefinition.g:4809:1: ( () )
+            // InternalDeviceDefinition.g:4810:2: ()
             {
              before(grammarAccess.getTimeUnitAccess().getSecondAction_1_0()); 
-            // InternalDeviceDefinition.g:4664:2: ()
-            // InternalDeviceDefinition.g:4664:3: 
+            // InternalDeviceDefinition.g:4811:2: ()
+            // InternalDeviceDefinition.g:4811:3: 
             {
             }
 
@@ -14818,14 +15266,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__TimeUnit__Group_1__1"
-    // InternalDeviceDefinition.g:4672:1: rule__TimeUnit__Group_1__1 : rule__TimeUnit__Group_1__1__Impl ;
+    // InternalDeviceDefinition.g:4819:1: rule__TimeUnit__Group_1__1 : rule__TimeUnit__Group_1__1__Impl ;
     public final void rule__TimeUnit__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4676:1: ( rule__TimeUnit__Group_1__1__Impl )
-            // InternalDeviceDefinition.g:4677:2: rule__TimeUnit__Group_1__1__Impl
+            // InternalDeviceDefinition.g:4823:1: ( rule__TimeUnit__Group_1__1__Impl )
+            // InternalDeviceDefinition.g:4824:2: rule__TimeUnit__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__TimeUnit__Group_1__1__Impl();
@@ -14851,21 +15299,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__TimeUnit__Group_1__1__Impl"
-    // InternalDeviceDefinition.g:4683:1: rule__TimeUnit__Group_1__1__Impl : ( ( rule__TimeUnit__Alternatives_1_1 ) ) ;
+    // InternalDeviceDefinition.g:4830:1: rule__TimeUnit__Group_1__1__Impl : ( ( rule__TimeUnit__Alternatives_1_1 ) ) ;
     public final void rule__TimeUnit__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4687:1: ( ( ( rule__TimeUnit__Alternatives_1_1 ) ) )
-            // InternalDeviceDefinition.g:4688:1: ( ( rule__TimeUnit__Alternatives_1_1 ) )
+            // InternalDeviceDefinition.g:4834:1: ( ( ( rule__TimeUnit__Alternatives_1_1 ) ) )
+            // InternalDeviceDefinition.g:4835:1: ( ( rule__TimeUnit__Alternatives_1_1 ) )
             {
-            // InternalDeviceDefinition.g:4688:1: ( ( rule__TimeUnit__Alternatives_1_1 ) )
-            // InternalDeviceDefinition.g:4689:2: ( rule__TimeUnit__Alternatives_1_1 )
+            // InternalDeviceDefinition.g:4835:1: ( ( rule__TimeUnit__Alternatives_1_1 ) )
+            // InternalDeviceDefinition.g:4836:2: ( rule__TimeUnit__Alternatives_1_1 )
             {
              before(grammarAccess.getTimeUnitAccess().getAlternatives_1_1()); 
-            // InternalDeviceDefinition.g:4690:2: ( rule__TimeUnit__Alternatives_1_1 )
-            // InternalDeviceDefinition.g:4690:3: rule__TimeUnit__Alternatives_1_1
+            // InternalDeviceDefinition.g:4837:2: ( rule__TimeUnit__Alternatives_1_1 )
+            // InternalDeviceDefinition.g:4837:3: rule__TimeUnit__Alternatives_1_1
             {
             pushFollow(FOLLOW_2);
             rule__TimeUnit__Alternatives_1_1();
@@ -14898,16 +15346,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__TimeUnit__Group_2__0"
-    // InternalDeviceDefinition.g:4699:1: rule__TimeUnit__Group_2__0 : rule__TimeUnit__Group_2__0__Impl rule__TimeUnit__Group_2__1 ;
+    // InternalDeviceDefinition.g:4846:1: rule__TimeUnit__Group_2__0 : rule__TimeUnit__Group_2__0__Impl rule__TimeUnit__Group_2__1 ;
     public final void rule__TimeUnit__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4703:1: ( rule__TimeUnit__Group_2__0__Impl rule__TimeUnit__Group_2__1 )
-            // InternalDeviceDefinition.g:4704:2: rule__TimeUnit__Group_2__0__Impl rule__TimeUnit__Group_2__1
+            // InternalDeviceDefinition.g:4850:1: ( rule__TimeUnit__Group_2__0__Impl rule__TimeUnit__Group_2__1 )
+            // InternalDeviceDefinition.g:4851:2: rule__TimeUnit__Group_2__0__Impl rule__TimeUnit__Group_2__1
             {
-            pushFollow(FOLLOW_56);
+            pushFollow(FOLLOW_59);
             rule__TimeUnit__Group_2__0__Impl();
 
             state._fsp--;
@@ -14936,21 +15384,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__TimeUnit__Group_2__0__Impl"
-    // InternalDeviceDefinition.g:4711:1: rule__TimeUnit__Group_2__0__Impl : ( () ) ;
+    // InternalDeviceDefinition.g:4858:1: rule__TimeUnit__Group_2__0__Impl : ( () ) ;
     public final void rule__TimeUnit__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4715:1: ( ( () ) )
-            // InternalDeviceDefinition.g:4716:1: ( () )
+            // InternalDeviceDefinition.g:4862:1: ( ( () ) )
+            // InternalDeviceDefinition.g:4863:1: ( () )
             {
-            // InternalDeviceDefinition.g:4716:1: ( () )
-            // InternalDeviceDefinition.g:4717:2: ()
+            // InternalDeviceDefinition.g:4863:1: ( () )
+            // InternalDeviceDefinition.g:4864:2: ()
             {
              before(grammarAccess.getTimeUnitAccess().getMinuteAction_2_0()); 
-            // InternalDeviceDefinition.g:4718:2: ()
-            // InternalDeviceDefinition.g:4718:3: 
+            // InternalDeviceDefinition.g:4865:2: ()
+            // InternalDeviceDefinition.g:4865:3: 
             {
             }
 
@@ -14973,14 +15421,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__TimeUnit__Group_2__1"
-    // InternalDeviceDefinition.g:4726:1: rule__TimeUnit__Group_2__1 : rule__TimeUnit__Group_2__1__Impl ;
+    // InternalDeviceDefinition.g:4873:1: rule__TimeUnit__Group_2__1 : rule__TimeUnit__Group_2__1__Impl ;
     public final void rule__TimeUnit__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4730:1: ( rule__TimeUnit__Group_2__1__Impl )
-            // InternalDeviceDefinition.g:4731:2: rule__TimeUnit__Group_2__1__Impl
+            // InternalDeviceDefinition.g:4877:1: ( rule__TimeUnit__Group_2__1__Impl )
+            // InternalDeviceDefinition.g:4878:2: rule__TimeUnit__Group_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__TimeUnit__Group_2__1__Impl();
@@ -15006,21 +15454,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__TimeUnit__Group_2__1__Impl"
-    // InternalDeviceDefinition.g:4737:1: rule__TimeUnit__Group_2__1__Impl : ( ( rule__TimeUnit__Alternatives_2_1 ) ) ;
+    // InternalDeviceDefinition.g:4884:1: rule__TimeUnit__Group_2__1__Impl : ( ( rule__TimeUnit__Alternatives_2_1 ) ) ;
     public final void rule__TimeUnit__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4741:1: ( ( ( rule__TimeUnit__Alternatives_2_1 ) ) )
-            // InternalDeviceDefinition.g:4742:1: ( ( rule__TimeUnit__Alternatives_2_1 ) )
+            // InternalDeviceDefinition.g:4888:1: ( ( ( rule__TimeUnit__Alternatives_2_1 ) ) )
+            // InternalDeviceDefinition.g:4889:1: ( ( rule__TimeUnit__Alternatives_2_1 ) )
             {
-            // InternalDeviceDefinition.g:4742:1: ( ( rule__TimeUnit__Alternatives_2_1 ) )
-            // InternalDeviceDefinition.g:4743:2: ( rule__TimeUnit__Alternatives_2_1 )
+            // InternalDeviceDefinition.g:4889:1: ( ( rule__TimeUnit__Alternatives_2_1 ) )
+            // InternalDeviceDefinition.g:4890:2: ( rule__TimeUnit__Alternatives_2_1 )
             {
              before(grammarAccess.getTimeUnitAccess().getAlternatives_2_1()); 
-            // InternalDeviceDefinition.g:4744:2: ( rule__TimeUnit__Alternatives_2_1 )
-            // InternalDeviceDefinition.g:4744:3: rule__TimeUnit__Alternatives_2_1
+            // InternalDeviceDefinition.g:4891:2: ( rule__TimeUnit__Alternatives_2_1 )
+            // InternalDeviceDefinition.g:4891:3: rule__TimeUnit__Alternatives_2_1
             {
             pushFollow(FOLLOW_2);
             rule__TimeUnit__Alternatives_2_1();
@@ -15053,14 +15501,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__TimeUnit__Group_3__0"
-    // InternalDeviceDefinition.g:4753:1: rule__TimeUnit__Group_3__0 : rule__TimeUnit__Group_3__0__Impl rule__TimeUnit__Group_3__1 ;
+    // InternalDeviceDefinition.g:4900:1: rule__TimeUnit__Group_3__0 : rule__TimeUnit__Group_3__0__Impl rule__TimeUnit__Group_3__1 ;
     public final void rule__TimeUnit__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4757:1: ( rule__TimeUnit__Group_3__0__Impl rule__TimeUnit__Group_3__1 )
-            // InternalDeviceDefinition.g:4758:2: rule__TimeUnit__Group_3__0__Impl rule__TimeUnit__Group_3__1
+            // InternalDeviceDefinition.g:4904:1: ( rule__TimeUnit__Group_3__0__Impl rule__TimeUnit__Group_3__1 )
+            // InternalDeviceDefinition.g:4905:2: rule__TimeUnit__Group_3__0__Impl rule__TimeUnit__Group_3__1
             {
             pushFollow(FOLLOW_37);
             rule__TimeUnit__Group_3__0__Impl();
@@ -15091,21 +15539,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__TimeUnit__Group_3__0__Impl"
-    // InternalDeviceDefinition.g:4765:1: rule__TimeUnit__Group_3__0__Impl : ( () ) ;
+    // InternalDeviceDefinition.g:4912:1: rule__TimeUnit__Group_3__0__Impl : ( () ) ;
     public final void rule__TimeUnit__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4769:1: ( ( () ) )
-            // InternalDeviceDefinition.g:4770:1: ( () )
+            // InternalDeviceDefinition.g:4916:1: ( ( () ) )
+            // InternalDeviceDefinition.g:4917:1: ( () )
             {
-            // InternalDeviceDefinition.g:4770:1: ( () )
-            // InternalDeviceDefinition.g:4771:2: ()
+            // InternalDeviceDefinition.g:4917:1: ( () )
+            // InternalDeviceDefinition.g:4918:2: ()
             {
              before(grammarAccess.getTimeUnitAccess().getHourAction_3_0()); 
-            // InternalDeviceDefinition.g:4772:2: ()
-            // InternalDeviceDefinition.g:4772:3: 
+            // InternalDeviceDefinition.g:4919:2: ()
+            // InternalDeviceDefinition.g:4919:3: 
             {
             }
 
@@ -15128,14 +15576,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__TimeUnit__Group_3__1"
-    // InternalDeviceDefinition.g:4780:1: rule__TimeUnit__Group_3__1 : rule__TimeUnit__Group_3__1__Impl ;
+    // InternalDeviceDefinition.g:4927:1: rule__TimeUnit__Group_3__1 : rule__TimeUnit__Group_3__1__Impl ;
     public final void rule__TimeUnit__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4784:1: ( rule__TimeUnit__Group_3__1__Impl )
-            // InternalDeviceDefinition.g:4785:2: rule__TimeUnit__Group_3__1__Impl
+            // InternalDeviceDefinition.g:4931:1: ( rule__TimeUnit__Group_3__1__Impl )
+            // InternalDeviceDefinition.g:4932:2: rule__TimeUnit__Group_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__TimeUnit__Group_3__1__Impl();
@@ -15161,21 +15609,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__TimeUnit__Group_3__1__Impl"
-    // InternalDeviceDefinition.g:4791:1: rule__TimeUnit__Group_3__1__Impl : ( ( rule__TimeUnit__Alternatives_3_1 ) ) ;
+    // InternalDeviceDefinition.g:4938:1: rule__TimeUnit__Group_3__1__Impl : ( ( rule__TimeUnit__Alternatives_3_1 ) ) ;
     public final void rule__TimeUnit__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4795:1: ( ( ( rule__TimeUnit__Alternatives_3_1 ) ) )
-            // InternalDeviceDefinition.g:4796:1: ( ( rule__TimeUnit__Alternatives_3_1 ) )
+            // InternalDeviceDefinition.g:4942:1: ( ( ( rule__TimeUnit__Alternatives_3_1 ) ) )
+            // InternalDeviceDefinition.g:4943:1: ( ( rule__TimeUnit__Alternatives_3_1 ) )
             {
-            // InternalDeviceDefinition.g:4796:1: ( ( rule__TimeUnit__Alternatives_3_1 ) )
-            // InternalDeviceDefinition.g:4797:2: ( rule__TimeUnit__Alternatives_3_1 )
+            // InternalDeviceDefinition.g:4943:1: ( ( rule__TimeUnit__Alternatives_3_1 ) )
+            // InternalDeviceDefinition.g:4944:2: ( rule__TimeUnit__Alternatives_3_1 )
             {
              before(grammarAccess.getTimeUnitAccess().getAlternatives_3_1()); 
-            // InternalDeviceDefinition.g:4798:2: ( rule__TimeUnit__Alternatives_3_1 )
-            // InternalDeviceDefinition.g:4798:3: rule__TimeUnit__Alternatives_3_1
+            // InternalDeviceDefinition.g:4945:2: ( rule__TimeUnit__Alternatives_3_1 )
+            // InternalDeviceDefinition.g:4945:3: rule__TimeUnit__Alternatives_3_1
             {
             pushFollow(FOLLOW_2);
             rule__TimeUnit__Alternatives_3_1();
@@ -15208,16 +15656,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SensorOutput__Group__0"
-    // InternalDeviceDefinition.g:4807:1: rule__SensorOutput__Group__0 : rule__SensorOutput__Group__0__Impl rule__SensorOutput__Group__1 ;
+    // InternalDeviceDefinition.g:4954:1: rule__SensorOutput__Group__0 : rule__SensorOutput__Group__0__Impl rule__SensorOutput__Group__1 ;
     public final void rule__SensorOutput__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4811:1: ( rule__SensorOutput__Group__0__Impl rule__SensorOutput__Group__1 )
-            // InternalDeviceDefinition.g:4812:2: rule__SensorOutput__Group__0__Impl rule__SensorOutput__Group__1
+            // InternalDeviceDefinition.g:4958:1: ( rule__SensorOutput__Group__0__Impl rule__SensorOutput__Group__1 )
+            // InternalDeviceDefinition.g:4959:2: rule__SensorOutput__Group__0__Impl rule__SensorOutput__Group__1
             {
-            pushFollow(FOLLOW_57);
+            pushFollow(FOLLOW_60);
             rule__SensorOutput__Group__0__Impl();
 
             state._fsp--;
@@ -15246,17 +15694,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SensorOutput__Group__0__Impl"
-    // InternalDeviceDefinition.g:4819:1: rule__SensorOutput__Group__0__Impl : ( 'out' ) ;
+    // InternalDeviceDefinition.g:4966:1: rule__SensorOutput__Group__0__Impl : ( 'out' ) ;
     public final void rule__SensorOutput__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4823:1: ( ( 'out' ) )
-            // InternalDeviceDefinition.g:4824:1: ( 'out' )
+            // InternalDeviceDefinition.g:4970:1: ( ( 'out' ) )
+            // InternalDeviceDefinition.g:4971:1: ( 'out' )
             {
-            // InternalDeviceDefinition.g:4824:1: ( 'out' )
-            // InternalDeviceDefinition.g:4825:2: 'out'
+            // InternalDeviceDefinition.g:4971:1: ( 'out' )
+            // InternalDeviceDefinition.g:4972:2: 'out'
             {
              before(grammarAccess.getSensorOutputAccess().getOutKeyword_0()); 
             match(input,69,FOLLOW_2); 
@@ -15283,16 +15731,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SensorOutput__Group__1"
-    // InternalDeviceDefinition.g:4834:1: rule__SensorOutput__Group__1 : rule__SensorOutput__Group__1__Impl rule__SensorOutput__Group__2 ;
+    // InternalDeviceDefinition.g:4981:1: rule__SensorOutput__Group__1 : rule__SensorOutput__Group__1__Impl rule__SensorOutput__Group__2 ;
     public final void rule__SensorOutput__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4838:1: ( rule__SensorOutput__Group__1__Impl rule__SensorOutput__Group__2 )
-            // InternalDeviceDefinition.g:4839:2: rule__SensorOutput__Group__1__Impl rule__SensorOutput__Group__2
+            // InternalDeviceDefinition.g:4985:1: ( rule__SensorOutput__Group__1__Impl rule__SensorOutput__Group__2 )
+            // InternalDeviceDefinition.g:4986:2: rule__SensorOutput__Group__1__Impl rule__SensorOutput__Group__2
             {
-            pushFollow(FOLLOW_57);
+            pushFollow(FOLLOW_60);
             rule__SensorOutput__Group__1__Impl();
 
             state._fsp--;
@@ -15321,29 +15769,29 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SensorOutput__Group__1__Impl"
-    // InternalDeviceDefinition.g:4846:1: rule__SensorOutput__Group__1__Impl : ( ( rule__SensorOutput__OutputAssignment_1 )? ) ;
+    // InternalDeviceDefinition.g:4993:1: rule__SensorOutput__Group__1__Impl : ( ( rule__SensorOutput__OutputAssignment_1 )? ) ;
     public final void rule__SensorOutput__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4850:1: ( ( ( rule__SensorOutput__OutputAssignment_1 )? ) )
-            // InternalDeviceDefinition.g:4851:1: ( ( rule__SensorOutput__OutputAssignment_1 )? )
+            // InternalDeviceDefinition.g:4997:1: ( ( ( rule__SensorOutput__OutputAssignment_1 )? ) )
+            // InternalDeviceDefinition.g:4998:1: ( ( rule__SensorOutput__OutputAssignment_1 )? )
             {
-            // InternalDeviceDefinition.g:4851:1: ( ( rule__SensorOutput__OutputAssignment_1 )? )
-            // InternalDeviceDefinition.g:4852:2: ( rule__SensorOutput__OutputAssignment_1 )?
+            // InternalDeviceDefinition.g:4998:1: ( ( rule__SensorOutput__OutputAssignment_1 )? )
+            // InternalDeviceDefinition.g:4999:2: ( rule__SensorOutput__OutputAssignment_1 )?
             {
              before(grammarAccess.getSensorOutputAccess().getOutputAssignment_1()); 
-            // InternalDeviceDefinition.g:4853:2: ( rule__SensorOutput__OutputAssignment_1 )?
-            int alt43=2;
-            int LA43_0 = input.LA(1);
+            // InternalDeviceDefinition.g:5000:2: ( rule__SensorOutput__OutputAssignment_1 )?
+            int alt44=2;
+            int LA44_0 = input.LA(1);
 
-            if ( (LA43_0==RULE_STRING) ) {
-                alt43=1;
+            if ( (LA44_0==RULE_STRING) ) {
+                alt44=1;
             }
-            switch (alt43) {
+            switch (alt44) {
                 case 1 :
-                    // InternalDeviceDefinition.g:4853:3: rule__SensorOutput__OutputAssignment_1
+                    // InternalDeviceDefinition.g:5000:3: rule__SensorOutput__OutputAssignment_1
                     {
                     pushFollow(FOLLOW_2);
                     rule__SensorOutput__OutputAssignment_1();
@@ -15379,14 +15827,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SensorOutput__Group__2"
-    // InternalDeviceDefinition.g:4861:1: rule__SensorOutput__Group__2 : rule__SensorOutput__Group__2__Impl rule__SensorOutput__Group__3 ;
+    // InternalDeviceDefinition.g:5008:1: rule__SensorOutput__Group__2 : rule__SensorOutput__Group__2__Impl rule__SensorOutput__Group__3 ;
     public final void rule__SensorOutput__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4865:1: ( rule__SensorOutput__Group__2__Impl rule__SensorOutput__Group__3 )
-            // InternalDeviceDefinition.g:4866:2: rule__SensorOutput__Group__2__Impl rule__SensorOutput__Group__3
+            // InternalDeviceDefinition.g:5012:1: ( rule__SensorOutput__Group__2__Impl rule__SensorOutput__Group__3 )
+            // InternalDeviceDefinition.g:5013:2: rule__SensorOutput__Group__2__Impl rule__SensorOutput__Group__3
             {
             pushFollow(FOLLOW_3);
             rule__SensorOutput__Group__2__Impl();
@@ -15417,20 +15865,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SensorOutput__Group__2__Impl"
-    // InternalDeviceDefinition.g:4873:1: rule__SensorOutput__Group__2__Impl : ( 'as' ) ;
+    // InternalDeviceDefinition.g:5020:1: rule__SensorOutput__Group__2__Impl : ( 'as' ) ;
     public final void rule__SensorOutput__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4877:1: ( ( 'as' ) )
-            // InternalDeviceDefinition.g:4878:1: ( 'as' )
+            // InternalDeviceDefinition.g:5024:1: ( ( 'as' ) )
+            // InternalDeviceDefinition.g:5025:1: ( 'as' )
             {
-            // InternalDeviceDefinition.g:4878:1: ( 'as' )
-            // InternalDeviceDefinition.g:4879:2: 'as'
+            // InternalDeviceDefinition.g:5025:1: ( 'as' )
+            // InternalDeviceDefinition.g:5026:2: 'as'
             {
              before(grammarAccess.getSensorOutputAccess().getAsKeyword_2()); 
-            match(input,70,FOLLOW_2); 
+            match(input,72,FOLLOW_2); 
              after(grammarAccess.getSensorOutputAccess().getAsKeyword_2()); 
 
             }
@@ -15454,14 +15902,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SensorOutput__Group__3"
-    // InternalDeviceDefinition.g:4888:1: rule__SensorOutput__Group__3 : rule__SensorOutput__Group__3__Impl rule__SensorOutput__Group__4 ;
+    // InternalDeviceDefinition.g:5035:1: rule__SensorOutput__Group__3 : rule__SensorOutput__Group__3__Impl rule__SensorOutput__Group__4 ;
     public final void rule__SensorOutput__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4892:1: ( rule__SensorOutput__Group__3__Impl rule__SensorOutput__Group__4 )
-            // InternalDeviceDefinition.g:4893:2: rule__SensorOutput__Group__3__Impl rule__SensorOutput__Group__4
+            // InternalDeviceDefinition.g:5039:1: ( rule__SensorOutput__Group__3__Impl rule__SensorOutput__Group__4 )
+            // InternalDeviceDefinition.g:5040:2: rule__SensorOutput__Group__3__Impl rule__SensorOutput__Group__4
             {
             pushFollow(FOLLOW_34);
             rule__SensorOutput__Group__3__Impl();
@@ -15492,21 +15940,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SensorOutput__Group__3__Impl"
-    // InternalDeviceDefinition.g:4900:1: rule__SensorOutput__Group__3__Impl : ( ( rule__SensorOutput__NameAssignment_3 ) ) ;
+    // InternalDeviceDefinition.g:5047:1: rule__SensorOutput__Group__3__Impl : ( ( rule__SensorOutput__NameAssignment_3 ) ) ;
     public final void rule__SensorOutput__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4904:1: ( ( ( rule__SensorOutput__NameAssignment_3 ) ) )
-            // InternalDeviceDefinition.g:4905:1: ( ( rule__SensorOutput__NameAssignment_3 ) )
+            // InternalDeviceDefinition.g:5051:1: ( ( ( rule__SensorOutput__NameAssignment_3 ) ) )
+            // InternalDeviceDefinition.g:5052:1: ( ( rule__SensorOutput__NameAssignment_3 ) )
             {
-            // InternalDeviceDefinition.g:4905:1: ( ( rule__SensorOutput__NameAssignment_3 ) )
-            // InternalDeviceDefinition.g:4906:2: ( rule__SensorOutput__NameAssignment_3 )
+            // InternalDeviceDefinition.g:5052:1: ( ( rule__SensorOutput__NameAssignment_3 ) )
+            // InternalDeviceDefinition.g:5053:2: ( rule__SensorOutput__NameAssignment_3 )
             {
              before(grammarAccess.getSensorOutputAccess().getNameAssignment_3()); 
-            // InternalDeviceDefinition.g:4907:2: ( rule__SensorOutput__NameAssignment_3 )
-            // InternalDeviceDefinition.g:4907:3: rule__SensorOutput__NameAssignment_3
+            // InternalDeviceDefinition.g:5054:2: ( rule__SensorOutput__NameAssignment_3 )
+            // InternalDeviceDefinition.g:5054:3: rule__SensorOutput__NameAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__SensorOutput__NameAssignment_3();
@@ -15539,14 +15987,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SensorOutput__Group__4"
-    // InternalDeviceDefinition.g:4915:1: rule__SensorOutput__Group__4 : rule__SensorOutput__Group__4__Impl ;
+    // InternalDeviceDefinition.g:5062:1: rule__SensorOutput__Group__4 : rule__SensorOutput__Group__4__Impl ;
     public final void rule__SensorOutput__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4919:1: ( rule__SensorOutput__Group__4__Impl )
-            // InternalDeviceDefinition.g:4920:2: rule__SensorOutput__Group__4__Impl
+            // InternalDeviceDefinition.g:5066:1: ( rule__SensorOutput__Group__4__Impl )
+            // InternalDeviceDefinition.g:5067:2: rule__SensorOutput__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SensorOutput__Group__4__Impl();
@@ -15572,29 +16020,29 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SensorOutput__Group__4__Impl"
-    // InternalDeviceDefinition.g:4926:1: rule__SensorOutput__Group__4__Impl : ( ( rule__SensorOutput__Group_4__0 )? ) ;
+    // InternalDeviceDefinition.g:5073:1: rule__SensorOutput__Group__4__Impl : ( ( rule__SensorOutput__Group_4__0 )? ) ;
     public final void rule__SensorOutput__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4930:1: ( ( ( rule__SensorOutput__Group_4__0 )? ) )
-            // InternalDeviceDefinition.g:4931:1: ( ( rule__SensorOutput__Group_4__0 )? )
+            // InternalDeviceDefinition.g:5077:1: ( ( ( rule__SensorOutput__Group_4__0 )? ) )
+            // InternalDeviceDefinition.g:5078:1: ( ( rule__SensorOutput__Group_4__0 )? )
             {
-            // InternalDeviceDefinition.g:4931:1: ( ( rule__SensorOutput__Group_4__0 )? )
-            // InternalDeviceDefinition.g:4932:2: ( rule__SensorOutput__Group_4__0 )?
+            // InternalDeviceDefinition.g:5078:1: ( ( rule__SensorOutput__Group_4__0 )? )
+            // InternalDeviceDefinition.g:5079:2: ( rule__SensorOutput__Group_4__0 )?
             {
              before(grammarAccess.getSensorOutputAccess().getGroup_4()); 
-            // InternalDeviceDefinition.g:4933:2: ( rule__SensorOutput__Group_4__0 )?
-            int alt44=2;
-            int LA44_0 = input.LA(1);
+            // InternalDeviceDefinition.g:5080:2: ( rule__SensorOutput__Group_4__0 )?
+            int alt45=2;
+            int LA45_0 = input.LA(1);
 
-            if ( (LA44_0==36) ) {
-                alt44=1;
+            if ( (LA45_0==36) ) {
+                alt45=1;
             }
-            switch (alt44) {
+            switch (alt45) {
                 case 1 :
-                    // InternalDeviceDefinition.g:4933:3: rule__SensorOutput__Group_4__0
+                    // InternalDeviceDefinition.g:5080:3: rule__SensorOutput__Group_4__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__SensorOutput__Group_4__0();
@@ -15630,16 +16078,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SensorOutput__Group_4__0"
-    // InternalDeviceDefinition.g:4942:1: rule__SensorOutput__Group_4__0 : rule__SensorOutput__Group_4__0__Impl rule__SensorOutput__Group_4__1 ;
+    // InternalDeviceDefinition.g:5089:1: rule__SensorOutput__Group_4__0 : rule__SensorOutput__Group_4__0__Impl rule__SensorOutput__Group_4__1 ;
     public final void rule__SensorOutput__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4946:1: ( rule__SensorOutput__Group_4__0__Impl rule__SensorOutput__Group_4__1 )
-            // InternalDeviceDefinition.g:4947:2: rule__SensorOutput__Group_4__0__Impl rule__SensorOutput__Group_4__1
+            // InternalDeviceDefinition.g:5093:1: ( rule__SensorOutput__Group_4__0__Impl rule__SensorOutput__Group_4__1 )
+            // InternalDeviceDefinition.g:5094:2: rule__SensorOutput__Group_4__0__Impl rule__SensorOutput__Group_4__1
             {
-            pushFollow(FOLLOW_58);
+            pushFollow(FOLLOW_61);
             rule__SensorOutput__Group_4__0__Impl();
 
             state._fsp--;
@@ -15668,17 +16116,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SensorOutput__Group_4__0__Impl"
-    // InternalDeviceDefinition.g:4954:1: rule__SensorOutput__Group_4__0__Impl : ( 'with' ) ;
+    // InternalDeviceDefinition.g:5101:1: rule__SensorOutput__Group_4__0__Impl : ( 'with' ) ;
     public final void rule__SensorOutput__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4958:1: ( ( 'with' ) )
-            // InternalDeviceDefinition.g:4959:1: ( 'with' )
+            // InternalDeviceDefinition.g:5105:1: ( ( 'with' ) )
+            // InternalDeviceDefinition.g:5106:1: ( 'with' )
             {
-            // InternalDeviceDefinition.g:4959:1: ( 'with' )
-            // InternalDeviceDefinition.g:4960:2: 'with'
+            // InternalDeviceDefinition.g:5106:1: ( 'with' )
+            // InternalDeviceDefinition.g:5107:2: 'with'
             {
              before(grammarAccess.getSensorOutputAccess().getWithKeyword_4_0()); 
             match(input,36,FOLLOW_2); 
@@ -15705,14 +16153,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SensorOutput__Group_4__1"
-    // InternalDeviceDefinition.g:4969:1: rule__SensorOutput__Group_4__1 : rule__SensorOutput__Group_4__1__Impl rule__SensorOutput__Group_4__2 ;
+    // InternalDeviceDefinition.g:5116:1: rule__SensorOutput__Group_4__1 : rule__SensorOutput__Group_4__1__Impl rule__SensorOutput__Group_4__2 ;
     public final void rule__SensorOutput__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4973:1: ( rule__SensorOutput__Group_4__1__Impl rule__SensorOutput__Group_4__2 )
-            // InternalDeviceDefinition.g:4974:2: rule__SensorOutput__Group_4__1__Impl rule__SensorOutput__Group_4__2
+            // InternalDeviceDefinition.g:5120:1: ( rule__SensorOutput__Group_4__1__Impl rule__SensorOutput__Group_4__2 )
+            // InternalDeviceDefinition.g:5121:2: rule__SensorOutput__Group_4__1__Impl rule__SensorOutput__Group_4__2
             {
             pushFollow(FOLLOW_50);
             rule__SensorOutput__Group_4__1__Impl();
@@ -15743,20 +16191,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SensorOutput__Group_4__1__Impl"
-    // InternalDeviceDefinition.g:4981:1: rule__SensorOutput__Group_4__1__Impl : ( 'mapping' ) ;
+    // InternalDeviceDefinition.g:5128:1: rule__SensorOutput__Group_4__1__Impl : ( 'mapping' ) ;
     public final void rule__SensorOutput__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:4985:1: ( ( 'mapping' ) )
-            // InternalDeviceDefinition.g:4986:1: ( 'mapping' )
+            // InternalDeviceDefinition.g:5132:1: ( ( 'mapping' ) )
+            // InternalDeviceDefinition.g:5133:1: ( 'mapping' )
             {
-            // InternalDeviceDefinition.g:4986:1: ( 'mapping' )
-            // InternalDeviceDefinition.g:4987:2: 'mapping'
+            // InternalDeviceDefinition.g:5133:1: ( 'mapping' )
+            // InternalDeviceDefinition.g:5134:2: 'mapping'
             {
              before(grammarAccess.getSensorOutputAccess().getMappingKeyword_4_1()); 
-            match(input,71,FOLLOW_2); 
+            match(input,73,FOLLOW_2); 
              after(grammarAccess.getSensorOutputAccess().getMappingKeyword_4_1()); 
 
             }
@@ -15780,14 +16228,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SensorOutput__Group_4__2"
-    // InternalDeviceDefinition.g:4996:1: rule__SensorOutput__Group_4__2 : rule__SensorOutput__Group_4__2__Impl ;
+    // InternalDeviceDefinition.g:5143:1: rule__SensorOutput__Group_4__2 : rule__SensorOutput__Group_4__2__Impl ;
     public final void rule__SensorOutput__Group_4__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5000:1: ( rule__SensorOutput__Group_4__2__Impl )
-            // InternalDeviceDefinition.g:5001:2: rule__SensorOutput__Group_4__2__Impl
+            // InternalDeviceDefinition.g:5147:1: ( rule__SensorOutput__Group_4__2__Impl )
+            // InternalDeviceDefinition.g:5148:2: rule__SensorOutput__Group_4__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SensorOutput__Group_4__2__Impl();
@@ -15813,21 +16261,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SensorOutput__Group_4__2__Impl"
-    // InternalDeviceDefinition.g:5007:1: rule__SensorOutput__Group_4__2__Impl : ( ( rule__SensorOutput__MappingAssignment_4_2 ) ) ;
+    // InternalDeviceDefinition.g:5154:1: rule__SensorOutput__Group_4__2__Impl : ( ( rule__SensorOutput__MappingAssignment_4_2 ) ) ;
     public final void rule__SensorOutput__Group_4__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5011:1: ( ( ( rule__SensorOutput__MappingAssignment_4_2 ) ) )
-            // InternalDeviceDefinition.g:5012:1: ( ( rule__SensorOutput__MappingAssignment_4_2 ) )
+            // InternalDeviceDefinition.g:5158:1: ( ( ( rule__SensorOutput__MappingAssignment_4_2 ) ) )
+            // InternalDeviceDefinition.g:5159:1: ( ( rule__SensorOutput__MappingAssignment_4_2 ) )
             {
-            // InternalDeviceDefinition.g:5012:1: ( ( rule__SensorOutput__MappingAssignment_4_2 ) )
-            // InternalDeviceDefinition.g:5013:2: ( rule__SensorOutput__MappingAssignment_4_2 )
+            // InternalDeviceDefinition.g:5159:1: ( ( rule__SensorOutput__MappingAssignment_4_2 ) )
+            // InternalDeviceDefinition.g:5160:2: ( rule__SensorOutput__MappingAssignment_4_2 )
             {
              before(grammarAccess.getSensorOutputAccess().getMappingAssignment_4_2()); 
-            // InternalDeviceDefinition.g:5014:2: ( rule__SensorOutput__MappingAssignment_4_2 )
-            // InternalDeviceDefinition.g:5014:3: rule__SensorOutput__MappingAssignment_4_2
+            // InternalDeviceDefinition.g:5161:2: ( rule__SensorOutput__MappingAssignment_4_2 )
+            // InternalDeviceDefinition.g:5161:3: rule__SensorOutput__MappingAssignment_4_2
             {
             pushFollow(FOLLOW_2);
             rule__SensorOutput__MappingAssignment_4_2();
@@ -15860,14 +16308,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Actuator__Group__0"
-    // InternalDeviceDefinition.g:5023:1: rule__Actuator__Group__0 : rule__Actuator__Group__0__Impl rule__Actuator__Group__1 ;
+    // InternalDeviceDefinition.g:5170:1: rule__Actuator__Group__0 : rule__Actuator__Group__0__Impl rule__Actuator__Group__1 ;
     public final void rule__Actuator__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5027:1: ( rule__Actuator__Group__0__Impl rule__Actuator__Group__1 )
-            // InternalDeviceDefinition.g:5028:2: rule__Actuator__Group__0__Impl rule__Actuator__Group__1
+            // InternalDeviceDefinition.g:5174:1: ( rule__Actuator__Group__0__Impl rule__Actuator__Group__1 )
+            // InternalDeviceDefinition.g:5175:2: rule__Actuator__Group__0__Impl rule__Actuator__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__Actuator__Group__0__Impl();
@@ -15898,20 +16346,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Actuator__Group__0__Impl"
-    // InternalDeviceDefinition.g:5035:1: rule__Actuator__Group__0__Impl : ( 'Actuator' ) ;
+    // InternalDeviceDefinition.g:5182:1: rule__Actuator__Group__0__Impl : ( 'Actuator' ) ;
     public final void rule__Actuator__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5039:1: ( ( 'Actuator' ) )
-            // InternalDeviceDefinition.g:5040:1: ( 'Actuator' )
+            // InternalDeviceDefinition.g:5186:1: ( ( 'Actuator' ) )
+            // InternalDeviceDefinition.g:5187:1: ( 'Actuator' )
             {
-            // InternalDeviceDefinition.g:5040:1: ( 'Actuator' )
-            // InternalDeviceDefinition.g:5041:2: 'Actuator'
+            // InternalDeviceDefinition.g:5187:1: ( 'Actuator' )
+            // InternalDeviceDefinition.g:5188:2: 'Actuator'
             {
              before(grammarAccess.getActuatorAccess().getActuatorKeyword_0()); 
-            match(input,72,FOLLOW_2); 
+            match(input,74,FOLLOW_2); 
              after(grammarAccess.getActuatorAccess().getActuatorKeyword_0()); 
 
             }
@@ -15935,14 +16383,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Actuator__Group__1"
-    // InternalDeviceDefinition.g:5050:1: rule__Actuator__Group__1 : rule__Actuator__Group__1__Impl rule__Actuator__Group__2 ;
+    // InternalDeviceDefinition.g:5197:1: rule__Actuator__Group__1 : rule__Actuator__Group__1__Impl rule__Actuator__Group__2 ;
     public final void rule__Actuator__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5054:1: ( rule__Actuator__Group__1__Impl rule__Actuator__Group__2 )
-            // InternalDeviceDefinition.g:5055:2: rule__Actuator__Group__1__Impl rule__Actuator__Group__2
+            // InternalDeviceDefinition.g:5201:1: ( rule__Actuator__Group__1__Impl rule__Actuator__Group__2 )
+            // InternalDeviceDefinition.g:5202:2: rule__Actuator__Group__1__Impl rule__Actuator__Group__2
             {
             pushFollow(FOLLOW_3);
             rule__Actuator__Group__1__Impl();
@@ -15973,21 +16421,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Actuator__Group__1__Impl"
-    // InternalDeviceDefinition.g:5062:1: rule__Actuator__Group__1__Impl : ( ( rule__Actuator__TypeAssignment_1 ) ) ;
+    // InternalDeviceDefinition.g:5209:1: rule__Actuator__Group__1__Impl : ( ( rule__Actuator__TypeAssignment_1 ) ) ;
     public final void rule__Actuator__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5066:1: ( ( ( rule__Actuator__TypeAssignment_1 ) ) )
-            // InternalDeviceDefinition.g:5067:1: ( ( rule__Actuator__TypeAssignment_1 ) )
+            // InternalDeviceDefinition.g:5213:1: ( ( ( rule__Actuator__TypeAssignment_1 ) ) )
+            // InternalDeviceDefinition.g:5214:1: ( ( rule__Actuator__TypeAssignment_1 ) )
             {
-            // InternalDeviceDefinition.g:5067:1: ( ( rule__Actuator__TypeAssignment_1 ) )
-            // InternalDeviceDefinition.g:5068:2: ( rule__Actuator__TypeAssignment_1 )
+            // InternalDeviceDefinition.g:5214:1: ( ( rule__Actuator__TypeAssignment_1 ) )
+            // InternalDeviceDefinition.g:5215:2: ( rule__Actuator__TypeAssignment_1 )
             {
              before(grammarAccess.getActuatorAccess().getTypeAssignment_1()); 
-            // InternalDeviceDefinition.g:5069:2: ( rule__Actuator__TypeAssignment_1 )
-            // InternalDeviceDefinition.g:5069:3: rule__Actuator__TypeAssignment_1
+            // InternalDeviceDefinition.g:5216:2: ( rule__Actuator__TypeAssignment_1 )
+            // InternalDeviceDefinition.g:5216:3: rule__Actuator__TypeAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Actuator__TypeAssignment_1();
@@ -16020,14 +16468,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Actuator__Group__2"
-    // InternalDeviceDefinition.g:5077:1: rule__Actuator__Group__2 : rule__Actuator__Group__2__Impl rule__Actuator__Group__3 ;
+    // InternalDeviceDefinition.g:5224:1: rule__Actuator__Group__2 : rule__Actuator__Group__2__Impl rule__Actuator__Group__3 ;
     public final void rule__Actuator__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5081:1: ( rule__Actuator__Group__2__Impl rule__Actuator__Group__3 )
-            // InternalDeviceDefinition.g:5082:2: rule__Actuator__Group__2__Impl rule__Actuator__Group__3
+            // InternalDeviceDefinition.g:5228:1: ( rule__Actuator__Group__2__Impl rule__Actuator__Group__3 )
+            // InternalDeviceDefinition.g:5229:2: rule__Actuator__Group__2__Impl rule__Actuator__Group__3
             {
             pushFollow(FOLLOW_4);
             rule__Actuator__Group__2__Impl();
@@ -16058,21 +16506,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Actuator__Group__2__Impl"
-    // InternalDeviceDefinition.g:5089:1: rule__Actuator__Group__2__Impl : ( ( rule__Actuator__NameAssignment_2 ) ) ;
+    // InternalDeviceDefinition.g:5236:1: rule__Actuator__Group__2__Impl : ( ( rule__Actuator__NameAssignment_2 ) ) ;
     public final void rule__Actuator__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5093:1: ( ( ( rule__Actuator__NameAssignment_2 ) ) )
-            // InternalDeviceDefinition.g:5094:1: ( ( rule__Actuator__NameAssignment_2 ) )
+            // InternalDeviceDefinition.g:5240:1: ( ( ( rule__Actuator__NameAssignment_2 ) ) )
+            // InternalDeviceDefinition.g:5241:1: ( ( rule__Actuator__NameAssignment_2 ) )
             {
-            // InternalDeviceDefinition.g:5094:1: ( ( rule__Actuator__NameAssignment_2 ) )
-            // InternalDeviceDefinition.g:5095:2: ( rule__Actuator__NameAssignment_2 )
+            // InternalDeviceDefinition.g:5241:1: ( ( rule__Actuator__NameAssignment_2 ) )
+            // InternalDeviceDefinition.g:5242:2: ( rule__Actuator__NameAssignment_2 )
             {
              before(grammarAccess.getActuatorAccess().getNameAssignment_2()); 
-            // InternalDeviceDefinition.g:5096:2: ( rule__Actuator__NameAssignment_2 )
-            // InternalDeviceDefinition.g:5096:3: rule__Actuator__NameAssignment_2
+            // InternalDeviceDefinition.g:5243:2: ( rule__Actuator__NameAssignment_2 )
+            // InternalDeviceDefinition.g:5243:3: rule__Actuator__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Actuator__NameAssignment_2();
@@ -16105,16 +16553,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Actuator__Group__3"
-    // InternalDeviceDefinition.g:5104:1: rule__Actuator__Group__3 : rule__Actuator__Group__3__Impl rule__Actuator__Group__4 ;
+    // InternalDeviceDefinition.g:5251:1: rule__Actuator__Group__3 : rule__Actuator__Group__3__Impl rule__Actuator__Group__4 ;
     public final void rule__Actuator__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5108:1: ( rule__Actuator__Group__3__Impl rule__Actuator__Group__4 )
-            // InternalDeviceDefinition.g:5109:2: rule__Actuator__Group__3__Impl rule__Actuator__Group__4
+            // InternalDeviceDefinition.g:5255:1: ( rule__Actuator__Group__3__Impl rule__Actuator__Group__4 )
+            // InternalDeviceDefinition.g:5256:2: rule__Actuator__Group__3__Impl rule__Actuator__Group__4
             {
-            pushFollow(FOLLOW_59);
+            pushFollow(FOLLOW_62);
             rule__Actuator__Group__3__Impl();
 
             state._fsp--;
@@ -16143,17 +16591,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Actuator__Group__3__Impl"
-    // InternalDeviceDefinition.g:5116:1: rule__Actuator__Group__3__Impl : ( ':' ) ;
+    // InternalDeviceDefinition.g:5263:1: rule__Actuator__Group__3__Impl : ( ':' ) ;
     public final void rule__Actuator__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5120:1: ( ( ':' ) )
-            // InternalDeviceDefinition.g:5121:1: ( ':' )
+            // InternalDeviceDefinition.g:5267:1: ( ( ':' ) )
+            // InternalDeviceDefinition.g:5268:1: ( ':' )
             {
-            // InternalDeviceDefinition.g:5121:1: ( ':' )
-            // InternalDeviceDefinition.g:5122:2: ':'
+            // InternalDeviceDefinition.g:5268:1: ( ':' )
+            // InternalDeviceDefinition.g:5269:2: ':'
             {
              before(grammarAccess.getActuatorAccess().getColonKeyword_3()); 
             match(input,33,FOLLOW_2); 
@@ -16180,16 +16628,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Actuator__Group__4"
-    // InternalDeviceDefinition.g:5131:1: rule__Actuator__Group__4 : rule__Actuator__Group__4__Impl rule__Actuator__Group__5 ;
+    // InternalDeviceDefinition.g:5278:1: rule__Actuator__Group__4 : rule__Actuator__Group__4__Impl rule__Actuator__Group__5 ;
     public final void rule__Actuator__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5135:1: ( rule__Actuator__Group__4__Impl rule__Actuator__Group__5 )
-            // InternalDeviceDefinition.g:5136:2: rule__Actuator__Group__4__Impl rule__Actuator__Group__5
+            // InternalDeviceDefinition.g:5282:1: ( rule__Actuator__Group__4__Impl rule__Actuator__Group__5 )
+            // InternalDeviceDefinition.g:5283:2: rule__Actuator__Group__4__Impl rule__Actuator__Group__5
             {
-            pushFollow(FOLLOW_60);
+            pushFollow(FOLLOW_63);
             rule__Actuator__Group__4__Impl();
 
             state._fsp--;
@@ -16218,17 +16666,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Actuator__Group__4__Impl"
-    // InternalDeviceDefinition.g:5143:1: rule__Actuator__Group__4__Impl : ( 'pins' ) ;
+    // InternalDeviceDefinition.g:5290:1: rule__Actuator__Group__4__Impl : ( 'pins' ) ;
     public final void rule__Actuator__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5147:1: ( ( 'pins' ) )
-            // InternalDeviceDefinition.g:5148:1: ( 'pins' )
+            // InternalDeviceDefinition.g:5294:1: ( ( 'pins' ) )
+            // InternalDeviceDefinition.g:5295:1: ( 'pins' )
             {
-            // InternalDeviceDefinition.g:5148:1: ( 'pins' )
-            // InternalDeviceDefinition.g:5149:2: 'pins'
+            // InternalDeviceDefinition.g:5295:1: ( 'pins' )
+            // InternalDeviceDefinition.g:5296:2: 'pins'
             {
              before(grammarAccess.getActuatorAccess().getPinsKeyword_4()); 
             match(input,63,FOLLOW_2); 
@@ -16255,16 +16703,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Actuator__Group__5"
-    // InternalDeviceDefinition.g:5158:1: rule__Actuator__Group__5 : rule__Actuator__Group__5__Impl rule__Actuator__Group__6 ;
+    // InternalDeviceDefinition.g:5305:1: rule__Actuator__Group__5 : rule__Actuator__Group__5__Impl rule__Actuator__Group__6 ;
     public final void rule__Actuator__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5162:1: ( rule__Actuator__Group__5__Impl rule__Actuator__Group__6 )
-            // InternalDeviceDefinition.g:5163:2: rule__Actuator__Group__5__Impl rule__Actuator__Group__6
+            // InternalDeviceDefinition.g:5309:1: ( rule__Actuator__Group__5__Impl rule__Actuator__Group__6 )
+            // InternalDeviceDefinition.g:5310:2: rule__Actuator__Group__5__Impl rule__Actuator__Group__6
             {
-            pushFollow(FOLLOW_60);
+            pushFollow(FOLLOW_63);
             rule__Actuator__Group__5__Impl();
 
             state._fsp--;
@@ -16293,33 +16741,33 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Actuator__Group__5__Impl"
-    // InternalDeviceDefinition.g:5170:1: rule__Actuator__Group__5__Impl : ( ( rule__Actuator__PinsAssignment_5 )* ) ;
+    // InternalDeviceDefinition.g:5317:1: rule__Actuator__Group__5__Impl : ( ( rule__Actuator__PinsAssignment_5 )* ) ;
     public final void rule__Actuator__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5174:1: ( ( ( rule__Actuator__PinsAssignment_5 )* ) )
-            // InternalDeviceDefinition.g:5175:1: ( ( rule__Actuator__PinsAssignment_5 )* )
+            // InternalDeviceDefinition.g:5321:1: ( ( ( rule__Actuator__PinsAssignment_5 )* ) )
+            // InternalDeviceDefinition.g:5322:1: ( ( rule__Actuator__PinsAssignment_5 )* )
             {
-            // InternalDeviceDefinition.g:5175:1: ( ( rule__Actuator__PinsAssignment_5 )* )
-            // InternalDeviceDefinition.g:5176:2: ( rule__Actuator__PinsAssignment_5 )*
+            // InternalDeviceDefinition.g:5322:1: ( ( rule__Actuator__PinsAssignment_5 )* )
+            // InternalDeviceDefinition.g:5323:2: ( rule__Actuator__PinsAssignment_5 )*
             {
              before(grammarAccess.getActuatorAccess().getPinsAssignment_5()); 
-            // InternalDeviceDefinition.g:5177:2: ( rule__Actuator__PinsAssignment_5 )*
-            loop45:
+            // InternalDeviceDefinition.g:5324:2: ( rule__Actuator__PinsAssignment_5 )*
+            loop46:
             do {
-                int alt45=2;
-                int LA45_0 = input.LA(1);
+                int alt46=2;
+                int LA46_0 = input.LA(1);
 
-                if ( ((LA45_0>=66 && LA45_0<=69)) ) {
-                    alt45=1;
+                if ( ((LA46_0>=66 && LA46_0<=71)) ) {
+                    alt46=1;
                 }
 
 
-                switch (alt45) {
+                switch (alt46) {
             	case 1 :
-            	    // InternalDeviceDefinition.g:5177:3: rule__Actuator__PinsAssignment_5
+            	    // InternalDeviceDefinition.g:5324:3: rule__Actuator__PinsAssignment_5
             	    {
             	    pushFollow(FOLLOW_46);
             	    rule__Actuator__PinsAssignment_5();
@@ -16331,7 +16779,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             	    break;
 
             	default :
-            	    break loop45;
+            	    break loop46;
                 }
             } while (true);
 
@@ -16358,16 +16806,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Actuator__Group__6"
-    // InternalDeviceDefinition.g:5185:1: rule__Actuator__Group__6 : rule__Actuator__Group__6__Impl rule__Actuator__Group__7 ;
+    // InternalDeviceDefinition.g:5332:1: rule__Actuator__Group__6 : rule__Actuator__Group__6__Impl rule__Actuator__Group__7 ;
     public final void rule__Actuator__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5189:1: ( rule__Actuator__Group__6__Impl rule__Actuator__Group__7 )
-            // InternalDeviceDefinition.g:5190:2: rule__Actuator__Group__6__Impl rule__Actuator__Group__7
+            // InternalDeviceDefinition.g:5336:1: ( rule__Actuator__Group__6__Impl rule__Actuator__Group__7 )
+            // InternalDeviceDefinition.g:5337:2: rule__Actuator__Group__6__Impl rule__Actuator__Group__7
             {
-            pushFollow(FOLLOW_60);
+            pushFollow(FOLLOW_63);
             rule__Actuator__Group__6__Impl();
 
             state._fsp--;
@@ -16396,33 +16844,33 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Actuator__Group__6__Impl"
-    // InternalDeviceDefinition.g:5197:1: rule__Actuator__Group__6__Impl : ( ( rule__Actuator__Group_6__0 )* ) ;
+    // InternalDeviceDefinition.g:5344:1: rule__Actuator__Group__6__Impl : ( ( rule__Actuator__Group_6__0 )* ) ;
     public final void rule__Actuator__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5201:1: ( ( ( rule__Actuator__Group_6__0 )* ) )
-            // InternalDeviceDefinition.g:5202:1: ( ( rule__Actuator__Group_6__0 )* )
+            // InternalDeviceDefinition.g:5348:1: ( ( ( rule__Actuator__Group_6__0 )* ) )
+            // InternalDeviceDefinition.g:5349:1: ( ( rule__Actuator__Group_6__0 )* )
             {
-            // InternalDeviceDefinition.g:5202:1: ( ( rule__Actuator__Group_6__0 )* )
-            // InternalDeviceDefinition.g:5203:2: ( rule__Actuator__Group_6__0 )*
+            // InternalDeviceDefinition.g:5349:1: ( ( rule__Actuator__Group_6__0 )* )
+            // InternalDeviceDefinition.g:5350:2: ( rule__Actuator__Group_6__0 )*
             {
              before(grammarAccess.getActuatorAccess().getGroup_6()); 
-            // InternalDeviceDefinition.g:5204:2: ( rule__Actuator__Group_6__0 )*
-            loop46:
+            // InternalDeviceDefinition.g:5351:2: ( rule__Actuator__Group_6__0 )*
+            loop47:
             do {
-                int alt46=2;
-                int LA46_0 = input.LA(1);
+                int alt47=2;
+                int LA47_0 = input.LA(1);
 
-                if ( (LA46_0==49) ) {
-                    alt46=1;
+                if ( (LA47_0==49) ) {
+                    alt47=1;
                 }
 
 
-                switch (alt46) {
+                switch (alt47) {
             	case 1 :
-            	    // InternalDeviceDefinition.g:5204:3: rule__Actuator__Group_6__0
+            	    // InternalDeviceDefinition.g:5351:3: rule__Actuator__Group_6__0
             	    {
             	    pushFollow(FOLLOW_47);
             	    rule__Actuator__Group_6__0();
@@ -16434,7 +16882,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             	    break;
 
             	default :
-            	    break loop46;
+            	    break loop47;
                 }
             } while (true);
 
@@ -16461,16 +16909,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Actuator__Group__7"
-    // InternalDeviceDefinition.g:5212:1: rule__Actuator__Group__7 : rule__Actuator__Group__7__Impl rule__Actuator__Group__8 ;
+    // InternalDeviceDefinition.g:5359:1: rule__Actuator__Group__7 : rule__Actuator__Group__7__Impl rule__Actuator__Group__8 ;
     public final void rule__Actuator__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5216:1: ( rule__Actuator__Group__7__Impl rule__Actuator__Group__8 )
-            // InternalDeviceDefinition.g:5217:2: rule__Actuator__Group__7__Impl rule__Actuator__Group__8
+            // InternalDeviceDefinition.g:5363:1: ( rule__Actuator__Group__7__Impl rule__Actuator__Group__8 )
+            // InternalDeviceDefinition.g:5364:2: rule__Actuator__Group__7__Impl rule__Actuator__Group__8
             {
-            pushFollow(FOLLOW_60);
+            pushFollow(FOLLOW_63);
             rule__Actuator__Group__7__Impl();
 
             state._fsp--;
@@ -16499,33 +16947,33 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Actuator__Group__7__Impl"
-    // InternalDeviceDefinition.g:5224:1: rule__Actuator__Group__7__Impl : ( ( rule__Actuator__SettingsAssignment_7 )* ) ;
+    // InternalDeviceDefinition.g:5371:1: rule__Actuator__Group__7__Impl : ( ( rule__Actuator__SettingsAssignment_7 )* ) ;
     public final void rule__Actuator__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5228:1: ( ( ( rule__Actuator__SettingsAssignment_7 )* ) )
-            // InternalDeviceDefinition.g:5229:1: ( ( rule__Actuator__SettingsAssignment_7 )* )
+            // InternalDeviceDefinition.g:5375:1: ( ( ( rule__Actuator__SettingsAssignment_7 )* ) )
+            // InternalDeviceDefinition.g:5376:1: ( ( rule__Actuator__SettingsAssignment_7 )* )
             {
-            // InternalDeviceDefinition.g:5229:1: ( ( rule__Actuator__SettingsAssignment_7 )* )
-            // InternalDeviceDefinition.g:5230:2: ( rule__Actuator__SettingsAssignment_7 )*
+            // InternalDeviceDefinition.g:5376:1: ( ( rule__Actuator__SettingsAssignment_7 )* )
+            // InternalDeviceDefinition.g:5377:2: ( rule__Actuator__SettingsAssignment_7 )*
             {
              before(grammarAccess.getActuatorAccess().getSettingsAssignment_7()); 
-            // InternalDeviceDefinition.g:5231:2: ( rule__Actuator__SettingsAssignment_7 )*
-            loop47:
+            // InternalDeviceDefinition.g:5378:2: ( rule__Actuator__SettingsAssignment_7 )*
+            loop48:
             do {
-                int alt47=2;
-                int LA47_0 = input.LA(1);
+                int alt48=2;
+                int LA48_0 = input.LA(1);
 
-                if ( (LA47_0==77) ) {
-                    alt47=1;
+                if ( (LA48_0==79) ) {
+                    alt48=1;
                 }
 
 
-                switch (alt47) {
+                switch (alt48) {
             	case 1 :
-            	    // InternalDeviceDefinition.g:5231:3: rule__Actuator__SettingsAssignment_7
+            	    // InternalDeviceDefinition.g:5378:3: rule__Actuator__SettingsAssignment_7
             	    {
             	    pushFollow(FOLLOW_44);
             	    rule__Actuator__SettingsAssignment_7();
@@ -16537,7 +16985,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             	    break;
 
             	default :
-            	    break loop47;
+            	    break loop48;
                 }
             } while (true);
 
@@ -16564,14 +17012,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Actuator__Group__8"
-    // InternalDeviceDefinition.g:5239:1: rule__Actuator__Group__8 : rule__Actuator__Group__8__Impl ;
+    // InternalDeviceDefinition.g:5386:1: rule__Actuator__Group__8 : rule__Actuator__Group__8__Impl ;
     public final void rule__Actuator__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5243:1: ( rule__Actuator__Group__8__Impl )
-            // InternalDeviceDefinition.g:5244:2: rule__Actuator__Group__8__Impl
+            // InternalDeviceDefinition.g:5390:1: ( rule__Actuator__Group__8__Impl )
+            // InternalDeviceDefinition.g:5391:2: rule__Actuator__Group__8__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Actuator__Group__8__Impl();
@@ -16597,27 +17045,38 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Actuator__Group__8__Impl"
-    // InternalDeviceDefinition.g:5250:1: rule__Actuator__Group__8__Impl : ( ( rule__Actuator__TriggerAssignment_8 ) ) ;
+    // InternalDeviceDefinition.g:5397:1: rule__Actuator__Group__8__Impl : ( ( rule__Actuator__TriggerAssignment_8 )? ) ;
     public final void rule__Actuator__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5254:1: ( ( ( rule__Actuator__TriggerAssignment_8 ) ) )
-            // InternalDeviceDefinition.g:5255:1: ( ( rule__Actuator__TriggerAssignment_8 ) )
+            // InternalDeviceDefinition.g:5401:1: ( ( ( rule__Actuator__TriggerAssignment_8 )? ) )
+            // InternalDeviceDefinition.g:5402:1: ( ( rule__Actuator__TriggerAssignment_8 )? )
             {
-            // InternalDeviceDefinition.g:5255:1: ( ( rule__Actuator__TriggerAssignment_8 ) )
-            // InternalDeviceDefinition.g:5256:2: ( rule__Actuator__TriggerAssignment_8 )
+            // InternalDeviceDefinition.g:5402:1: ( ( rule__Actuator__TriggerAssignment_8 )? )
+            // InternalDeviceDefinition.g:5403:2: ( rule__Actuator__TriggerAssignment_8 )?
             {
              before(grammarAccess.getActuatorAccess().getTriggerAssignment_8()); 
-            // InternalDeviceDefinition.g:5257:2: ( rule__Actuator__TriggerAssignment_8 )
-            // InternalDeviceDefinition.g:5257:3: rule__Actuator__TriggerAssignment_8
-            {
-            pushFollow(FOLLOW_2);
-            rule__Actuator__TriggerAssignment_8();
+            // InternalDeviceDefinition.g:5404:2: ( rule__Actuator__TriggerAssignment_8 )?
+            int alt49=2;
+            int LA49_0 = input.LA(1);
 
-            state._fsp--;
+            if ( ((LA49_0>=75 && LA49_0<=76)) ) {
+                alt49=1;
+            }
+            switch (alt49) {
+                case 1 :
+                    // InternalDeviceDefinition.g:5404:3: rule__Actuator__TriggerAssignment_8
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Actuator__TriggerAssignment_8();
 
+                    state._fsp--;
+
+
+                    }
+                    break;
 
             }
 
@@ -16644,14 +17103,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Actuator__Group_6__0"
-    // InternalDeviceDefinition.g:5266:1: rule__Actuator__Group_6__0 : rule__Actuator__Group_6__0__Impl rule__Actuator__Group_6__1 ;
+    // InternalDeviceDefinition.g:5413:1: rule__Actuator__Group_6__0 : rule__Actuator__Group_6__0__Impl rule__Actuator__Group_6__1 ;
     public final void rule__Actuator__Group_6__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5270:1: ( rule__Actuator__Group_6__0__Impl rule__Actuator__Group_6__1 )
-            // InternalDeviceDefinition.g:5271:2: rule__Actuator__Group_6__0__Impl rule__Actuator__Group_6__1
+            // InternalDeviceDefinition.g:5417:1: ( rule__Actuator__Group_6__0__Impl rule__Actuator__Group_6__1 )
+            // InternalDeviceDefinition.g:5418:2: rule__Actuator__Group_6__0__Impl rule__Actuator__Group_6__1
             {
             pushFollow(FOLLOW_48);
             rule__Actuator__Group_6__0__Impl();
@@ -16682,17 +17141,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Actuator__Group_6__0__Impl"
-    // InternalDeviceDefinition.g:5278:1: rule__Actuator__Group_6__0__Impl : ( ',' ) ;
+    // InternalDeviceDefinition.g:5425:1: rule__Actuator__Group_6__0__Impl : ( ',' ) ;
     public final void rule__Actuator__Group_6__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5282:1: ( ( ',' ) )
-            // InternalDeviceDefinition.g:5283:1: ( ',' )
+            // InternalDeviceDefinition.g:5429:1: ( ( ',' ) )
+            // InternalDeviceDefinition.g:5430:1: ( ',' )
             {
-            // InternalDeviceDefinition.g:5283:1: ( ',' )
-            // InternalDeviceDefinition.g:5284:2: ','
+            // InternalDeviceDefinition.g:5430:1: ( ',' )
+            // InternalDeviceDefinition.g:5431:2: ','
             {
              before(grammarAccess.getActuatorAccess().getCommaKeyword_6_0()); 
             match(input,49,FOLLOW_2); 
@@ -16719,14 +17178,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Actuator__Group_6__1"
-    // InternalDeviceDefinition.g:5293:1: rule__Actuator__Group_6__1 : rule__Actuator__Group_6__1__Impl ;
+    // InternalDeviceDefinition.g:5440:1: rule__Actuator__Group_6__1 : rule__Actuator__Group_6__1__Impl ;
     public final void rule__Actuator__Group_6__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5297:1: ( rule__Actuator__Group_6__1__Impl )
-            // InternalDeviceDefinition.g:5298:2: rule__Actuator__Group_6__1__Impl
+            // InternalDeviceDefinition.g:5444:1: ( rule__Actuator__Group_6__1__Impl )
+            // InternalDeviceDefinition.g:5445:2: rule__Actuator__Group_6__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Actuator__Group_6__1__Impl();
@@ -16752,21 +17211,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Actuator__Group_6__1__Impl"
-    // InternalDeviceDefinition.g:5304:1: rule__Actuator__Group_6__1__Impl : ( ( rule__Actuator__PinsAssignment_6_1 ) ) ;
+    // InternalDeviceDefinition.g:5451:1: rule__Actuator__Group_6__1__Impl : ( ( rule__Actuator__PinsAssignment_6_1 ) ) ;
     public final void rule__Actuator__Group_6__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5308:1: ( ( ( rule__Actuator__PinsAssignment_6_1 ) ) )
-            // InternalDeviceDefinition.g:5309:1: ( ( rule__Actuator__PinsAssignment_6_1 ) )
+            // InternalDeviceDefinition.g:5455:1: ( ( ( rule__Actuator__PinsAssignment_6_1 ) ) )
+            // InternalDeviceDefinition.g:5456:1: ( ( rule__Actuator__PinsAssignment_6_1 ) )
             {
-            // InternalDeviceDefinition.g:5309:1: ( ( rule__Actuator__PinsAssignment_6_1 ) )
-            // InternalDeviceDefinition.g:5310:2: ( rule__Actuator__PinsAssignment_6_1 )
+            // InternalDeviceDefinition.g:5456:1: ( ( rule__Actuator__PinsAssignment_6_1 ) )
+            // InternalDeviceDefinition.g:5457:2: ( rule__Actuator__PinsAssignment_6_1 )
             {
              before(grammarAccess.getActuatorAccess().getPinsAssignment_6_1()); 
-            // InternalDeviceDefinition.g:5311:2: ( rule__Actuator__PinsAssignment_6_1 )
-            // InternalDeviceDefinition.g:5311:3: rule__Actuator__PinsAssignment_6_1
+            // InternalDeviceDefinition.g:5458:2: ( rule__Actuator__PinsAssignment_6_1 )
+            // InternalDeviceDefinition.g:5458:3: rule__Actuator__PinsAssignment_6_1
             {
             pushFollow(FOLLOW_2);
             rule__Actuator__PinsAssignment_6_1();
@@ -16799,16 +17258,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Trigger__Group_0__0"
-    // InternalDeviceDefinition.g:5320:1: rule__Trigger__Group_0__0 : rule__Trigger__Group_0__0__Impl rule__Trigger__Group_0__1 ;
+    // InternalDeviceDefinition.g:5467:1: rule__Trigger__Group_0__0 : rule__Trigger__Group_0__0__Impl rule__Trigger__Group_0__1 ;
     public final void rule__Trigger__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5324:1: ( rule__Trigger__Group_0__0__Impl rule__Trigger__Group_0__1 )
-            // InternalDeviceDefinition.g:5325:2: rule__Trigger__Group_0__0__Impl rule__Trigger__Group_0__1
+            // InternalDeviceDefinition.g:5471:1: ( rule__Trigger__Group_0__0__Impl rule__Trigger__Group_0__1 )
+            // InternalDeviceDefinition.g:5472:2: rule__Trigger__Group_0__0__Impl rule__Trigger__Group_0__1
             {
-            pushFollow(FOLLOW_61);
+            pushFollow(FOLLOW_64);
             rule__Trigger__Group_0__0__Impl();
 
             state._fsp--;
@@ -16837,21 +17296,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Trigger__Group_0__0__Impl"
-    // InternalDeviceDefinition.g:5332:1: rule__Trigger__Group_0__0__Impl : ( () ) ;
+    // InternalDeviceDefinition.g:5479:1: rule__Trigger__Group_0__0__Impl : ( () ) ;
     public final void rule__Trigger__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5336:1: ( ( () ) )
-            // InternalDeviceDefinition.g:5337:1: ( () )
+            // InternalDeviceDefinition.g:5483:1: ( ( () ) )
+            // InternalDeviceDefinition.g:5484:1: ( () )
             {
-            // InternalDeviceDefinition.g:5337:1: ( () )
-            // InternalDeviceDefinition.g:5338:2: ()
+            // InternalDeviceDefinition.g:5484:1: ( () )
+            // InternalDeviceDefinition.g:5485:2: ()
             {
              before(grammarAccess.getTriggerAccess().getWhenAction_0_0()); 
-            // InternalDeviceDefinition.g:5339:2: ()
-            // InternalDeviceDefinition.g:5339:3: 
+            // InternalDeviceDefinition.g:5486:2: ()
+            // InternalDeviceDefinition.g:5486:3: 
             {
             }
 
@@ -16874,14 +17333,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Trigger__Group_0__1"
-    // InternalDeviceDefinition.g:5347:1: rule__Trigger__Group_0__1 : rule__Trigger__Group_0__1__Impl rule__Trigger__Group_0__2 ;
+    // InternalDeviceDefinition.g:5494:1: rule__Trigger__Group_0__1 : rule__Trigger__Group_0__1__Impl rule__Trigger__Group_0__2 ;
     public final void rule__Trigger__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5351:1: ( rule__Trigger__Group_0__1__Impl rule__Trigger__Group_0__2 )
-            // InternalDeviceDefinition.g:5352:2: rule__Trigger__Group_0__1__Impl rule__Trigger__Group_0__2
+            // InternalDeviceDefinition.g:5498:1: ( rule__Trigger__Group_0__1__Impl rule__Trigger__Group_0__2 )
+            // InternalDeviceDefinition.g:5499:2: rule__Trigger__Group_0__1__Impl rule__Trigger__Group_0__2
             {
             pushFollow(FOLLOW_50);
             rule__Trigger__Group_0__1__Impl();
@@ -16912,20 +17371,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Trigger__Group_0__1__Impl"
-    // InternalDeviceDefinition.g:5359:1: rule__Trigger__Group_0__1__Impl : ( 'when' ) ;
+    // InternalDeviceDefinition.g:5506:1: rule__Trigger__Group_0__1__Impl : ( 'when' ) ;
     public final void rule__Trigger__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5363:1: ( ( 'when' ) )
-            // InternalDeviceDefinition.g:5364:1: ( 'when' )
+            // InternalDeviceDefinition.g:5510:1: ( ( 'when' ) )
+            // InternalDeviceDefinition.g:5511:1: ( 'when' )
             {
-            // InternalDeviceDefinition.g:5364:1: ( 'when' )
-            // InternalDeviceDefinition.g:5365:2: 'when'
+            // InternalDeviceDefinition.g:5511:1: ( 'when' )
+            // InternalDeviceDefinition.g:5512:2: 'when'
             {
              before(grammarAccess.getTriggerAccess().getWhenKeyword_0_1()); 
-            match(input,73,FOLLOW_2); 
+            match(input,75,FOLLOW_2); 
              after(grammarAccess.getTriggerAccess().getWhenKeyword_0_1()); 
 
             }
@@ -16949,14 +17408,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Trigger__Group_0__2"
-    // InternalDeviceDefinition.g:5374:1: rule__Trigger__Group_0__2 : rule__Trigger__Group_0__2__Impl ;
+    // InternalDeviceDefinition.g:5521:1: rule__Trigger__Group_0__2 : rule__Trigger__Group_0__2__Impl ;
     public final void rule__Trigger__Group_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5378:1: ( rule__Trigger__Group_0__2__Impl )
-            // InternalDeviceDefinition.g:5379:2: rule__Trigger__Group_0__2__Impl
+            // InternalDeviceDefinition.g:5525:1: ( rule__Trigger__Group_0__2__Impl )
+            // InternalDeviceDefinition.g:5526:2: rule__Trigger__Group_0__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Trigger__Group_0__2__Impl();
@@ -16982,21 +17441,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Trigger__Group_0__2__Impl"
-    // InternalDeviceDefinition.g:5385:1: rule__Trigger__Group_0__2__Impl : ( ( rule__Trigger__ExpAssignment_0_2 ) ) ;
+    // InternalDeviceDefinition.g:5532:1: rule__Trigger__Group_0__2__Impl : ( ( rule__Trigger__ExpAssignment_0_2 ) ) ;
     public final void rule__Trigger__Group_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5389:1: ( ( ( rule__Trigger__ExpAssignment_0_2 ) ) )
-            // InternalDeviceDefinition.g:5390:1: ( ( rule__Trigger__ExpAssignment_0_2 ) )
+            // InternalDeviceDefinition.g:5536:1: ( ( ( rule__Trigger__ExpAssignment_0_2 ) ) )
+            // InternalDeviceDefinition.g:5537:1: ( ( rule__Trigger__ExpAssignment_0_2 ) )
             {
-            // InternalDeviceDefinition.g:5390:1: ( ( rule__Trigger__ExpAssignment_0_2 ) )
-            // InternalDeviceDefinition.g:5391:2: ( rule__Trigger__ExpAssignment_0_2 )
+            // InternalDeviceDefinition.g:5537:1: ( ( rule__Trigger__ExpAssignment_0_2 ) )
+            // InternalDeviceDefinition.g:5538:2: ( rule__Trigger__ExpAssignment_0_2 )
             {
              before(grammarAccess.getTriggerAccess().getExpAssignment_0_2()); 
-            // InternalDeviceDefinition.g:5392:2: ( rule__Trigger__ExpAssignment_0_2 )
-            // InternalDeviceDefinition.g:5392:3: rule__Trigger__ExpAssignment_0_2
+            // InternalDeviceDefinition.g:5539:2: ( rule__Trigger__ExpAssignment_0_2 )
+            // InternalDeviceDefinition.g:5539:3: rule__Trigger__ExpAssignment_0_2
             {
             pushFollow(FOLLOW_2);
             rule__Trigger__ExpAssignment_0_2();
@@ -17029,16 +17488,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Trigger__Group_1__0"
-    // InternalDeviceDefinition.g:5401:1: rule__Trigger__Group_1__0 : rule__Trigger__Group_1__0__Impl rule__Trigger__Group_1__1 ;
+    // InternalDeviceDefinition.g:5548:1: rule__Trigger__Group_1__0 : rule__Trigger__Group_1__0__Impl rule__Trigger__Group_1__1 ;
     public final void rule__Trigger__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5405:1: ( rule__Trigger__Group_1__0__Impl rule__Trigger__Group_1__1 )
-            // InternalDeviceDefinition.g:5406:2: rule__Trigger__Group_1__0__Impl rule__Trigger__Group_1__1
+            // InternalDeviceDefinition.g:5552:1: ( rule__Trigger__Group_1__0__Impl rule__Trigger__Group_1__1 )
+            // InternalDeviceDefinition.g:5553:2: rule__Trigger__Group_1__0__Impl rule__Trigger__Group_1__1
             {
-            pushFollow(FOLLOW_60);
+            pushFollow(FOLLOW_65);
             rule__Trigger__Group_1__0__Impl();
 
             state._fsp--;
@@ -17067,21 +17526,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Trigger__Group_1__0__Impl"
-    // InternalDeviceDefinition.g:5413:1: rule__Trigger__Group_1__0__Impl : ( () ) ;
+    // InternalDeviceDefinition.g:5560:1: rule__Trigger__Group_1__0__Impl : ( () ) ;
     public final void rule__Trigger__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5417:1: ( ( () ) )
-            // InternalDeviceDefinition.g:5418:1: ( () )
+            // InternalDeviceDefinition.g:5564:1: ( ( () ) )
+            // InternalDeviceDefinition.g:5565:1: ( () )
             {
-            // InternalDeviceDefinition.g:5418:1: ( () )
-            // InternalDeviceDefinition.g:5419:2: ()
+            // InternalDeviceDefinition.g:5565:1: ( () )
+            // InternalDeviceDefinition.g:5566:2: ()
             {
              before(grammarAccess.getTriggerAccess().getOnOffAction_1_0()); 
-            // InternalDeviceDefinition.g:5420:2: ()
-            // InternalDeviceDefinition.g:5420:3: 
+            // InternalDeviceDefinition.g:5567:2: ()
+            // InternalDeviceDefinition.g:5567:3: 
             {
             }
 
@@ -17104,14 +17563,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Trigger__Group_1__1"
-    // InternalDeviceDefinition.g:5428:1: rule__Trigger__Group_1__1 : rule__Trigger__Group_1__1__Impl rule__Trigger__Group_1__2 ;
+    // InternalDeviceDefinition.g:5575:1: rule__Trigger__Group_1__1 : rule__Trigger__Group_1__1__Impl rule__Trigger__Group_1__2 ;
     public final void rule__Trigger__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5432:1: ( rule__Trigger__Group_1__1__Impl rule__Trigger__Group_1__2 )
-            // InternalDeviceDefinition.g:5433:2: rule__Trigger__Group_1__1__Impl rule__Trigger__Group_1__2
+            // InternalDeviceDefinition.g:5579:1: ( rule__Trigger__Group_1__1__Impl rule__Trigger__Group_1__2 )
+            // InternalDeviceDefinition.g:5580:2: rule__Trigger__Group_1__1__Impl rule__Trigger__Group_1__2
             {
             pushFollow(FOLLOW_50);
             rule__Trigger__Group_1__1__Impl();
@@ -17142,20 +17601,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Trigger__Group_1__1__Impl"
-    // InternalDeviceDefinition.g:5440:1: rule__Trigger__Group_1__1__Impl : ( 'on' ) ;
+    // InternalDeviceDefinition.g:5587:1: rule__Trigger__Group_1__1__Impl : ( 'on' ) ;
     public final void rule__Trigger__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5444:1: ( ( 'on' ) )
-            // InternalDeviceDefinition.g:5445:1: ( 'on' )
+            // InternalDeviceDefinition.g:5591:1: ( ( 'on' ) )
+            // InternalDeviceDefinition.g:5592:1: ( 'on' )
             {
-            // InternalDeviceDefinition.g:5445:1: ( 'on' )
-            // InternalDeviceDefinition.g:5446:2: 'on'
+            // InternalDeviceDefinition.g:5592:1: ( 'on' )
+            // InternalDeviceDefinition.g:5593:2: 'on'
             {
              before(grammarAccess.getTriggerAccess().getOnKeyword_1_1()); 
-            match(input,74,FOLLOW_2); 
+            match(input,76,FOLLOW_2); 
              after(grammarAccess.getTriggerAccess().getOnKeyword_1_1()); 
 
             }
@@ -17179,16 +17638,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Trigger__Group_1__2"
-    // InternalDeviceDefinition.g:5455:1: rule__Trigger__Group_1__2 : rule__Trigger__Group_1__2__Impl rule__Trigger__Group_1__3 ;
+    // InternalDeviceDefinition.g:5602:1: rule__Trigger__Group_1__2 : rule__Trigger__Group_1__2__Impl rule__Trigger__Group_1__3 ;
     public final void rule__Trigger__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5459:1: ( rule__Trigger__Group_1__2__Impl rule__Trigger__Group_1__3 )
-            // InternalDeviceDefinition.g:5460:2: rule__Trigger__Group_1__2__Impl rule__Trigger__Group_1__3
+            // InternalDeviceDefinition.g:5606:1: ( rule__Trigger__Group_1__2__Impl rule__Trigger__Group_1__3 )
+            // InternalDeviceDefinition.g:5607:2: rule__Trigger__Group_1__2__Impl rule__Trigger__Group_1__3
             {
-            pushFollow(FOLLOW_62);
+            pushFollow(FOLLOW_66);
             rule__Trigger__Group_1__2__Impl();
 
             state._fsp--;
@@ -17217,21 +17676,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Trigger__Group_1__2__Impl"
-    // InternalDeviceDefinition.g:5467:1: rule__Trigger__Group_1__2__Impl : ( ( rule__Trigger__OnExpAssignment_1_2 ) ) ;
+    // InternalDeviceDefinition.g:5614:1: rule__Trigger__Group_1__2__Impl : ( ( rule__Trigger__OnExpAssignment_1_2 ) ) ;
     public final void rule__Trigger__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5471:1: ( ( ( rule__Trigger__OnExpAssignment_1_2 ) ) )
-            // InternalDeviceDefinition.g:5472:1: ( ( rule__Trigger__OnExpAssignment_1_2 ) )
+            // InternalDeviceDefinition.g:5618:1: ( ( ( rule__Trigger__OnExpAssignment_1_2 ) ) )
+            // InternalDeviceDefinition.g:5619:1: ( ( rule__Trigger__OnExpAssignment_1_2 ) )
             {
-            // InternalDeviceDefinition.g:5472:1: ( ( rule__Trigger__OnExpAssignment_1_2 ) )
-            // InternalDeviceDefinition.g:5473:2: ( rule__Trigger__OnExpAssignment_1_2 )
+            // InternalDeviceDefinition.g:5619:1: ( ( rule__Trigger__OnExpAssignment_1_2 ) )
+            // InternalDeviceDefinition.g:5620:2: ( rule__Trigger__OnExpAssignment_1_2 )
             {
              before(grammarAccess.getTriggerAccess().getOnExpAssignment_1_2()); 
-            // InternalDeviceDefinition.g:5474:2: ( rule__Trigger__OnExpAssignment_1_2 )
-            // InternalDeviceDefinition.g:5474:3: rule__Trigger__OnExpAssignment_1_2
+            // InternalDeviceDefinition.g:5621:2: ( rule__Trigger__OnExpAssignment_1_2 )
+            // InternalDeviceDefinition.g:5621:3: rule__Trigger__OnExpAssignment_1_2
             {
             pushFollow(FOLLOW_2);
             rule__Trigger__OnExpAssignment_1_2();
@@ -17264,14 +17723,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Trigger__Group_1__3"
-    // InternalDeviceDefinition.g:5482:1: rule__Trigger__Group_1__3 : rule__Trigger__Group_1__3__Impl ;
+    // InternalDeviceDefinition.g:5629:1: rule__Trigger__Group_1__3 : rule__Trigger__Group_1__3__Impl ;
     public final void rule__Trigger__Group_1__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5486:1: ( rule__Trigger__Group_1__3__Impl )
-            // InternalDeviceDefinition.g:5487:2: rule__Trigger__Group_1__3__Impl
+            // InternalDeviceDefinition.g:5633:1: ( rule__Trigger__Group_1__3__Impl )
+            // InternalDeviceDefinition.g:5634:2: rule__Trigger__Group_1__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Trigger__Group_1__3__Impl();
@@ -17297,21 +17756,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Trigger__Group_1__3__Impl"
-    // InternalDeviceDefinition.g:5493:1: rule__Trigger__Group_1__3__Impl : ( ( rule__Trigger__Alternatives_1_3 ) ) ;
+    // InternalDeviceDefinition.g:5640:1: rule__Trigger__Group_1__3__Impl : ( ( rule__Trigger__Alternatives_1_3 ) ) ;
     public final void rule__Trigger__Group_1__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5497:1: ( ( ( rule__Trigger__Alternatives_1_3 ) ) )
-            // InternalDeviceDefinition.g:5498:1: ( ( rule__Trigger__Alternatives_1_3 ) )
+            // InternalDeviceDefinition.g:5644:1: ( ( ( rule__Trigger__Alternatives_1_3 ) ) )
+            // InternalDeviceDefinition.g:5645:1: ( ( rule__Trigger__Alternatives_1_3 ) )
             {
-            // InternalDeviceDefinition.g:5498:1: ( ( rule__Trigger__Alternatives_1_3 ) )
-            // InternalDeviceDefinition.g:5499:2: ( rule__Trigger__Alternatives_1_3 )
+            // InternalDeviceDefinition.g:5645:1: ( ( rule__Trigger__Alternatives_1_3 ) )
+            // InternalDeviceDefinition.g:5646:2: ( rule__Trigger__Alternatives_1_3 )
             {
              before(grammarAccess.getTriggerAccess().getAlternatives_1_3()); 
-            // InternalDeviceDefinition.g:5500:2: ( rule__Trigger__Alternatives_1_3 )
-            // InternalDeviceDefinition.g:5500:3: rule__Trigger__Alternatives_1_3
+            // InternalDeviceDefinition.g:5647:2: ( rule__Trigger__Alternatives_1_3 )
+            // InternalDeviceDefinition.g:5647:3: rule__Trigger__Alternatives_1_3
             {
             pushFollow(FOLLOW_2);
             rule__Trigger__Alternatives_1_3();
@@ -17344,14 +17803,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Trigger__Group_1_3_0__0"
-    // InternalDeviceDefinition.g:5509:1: rule__Trigger__Group_1_3_0__0 : rule__Trigger__Group_1_3_0__0__Impl rule__Trigger__Group_1_3_0__1 ;
+    // InternalDeviceDefinition.g:5656:1: rule__Trigger__Group_1_3_0__0 : rule__Trigger__Group_1_3_0__0__Impl rule__Trigger__Group_1_3_0__1 ;
     public final void rule__Trigger__Group_1_3_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5513:1: ( rule__Trigger__Group_1_3_0__0__Impl rule__Trigger__Group_1_3_0__1 )
-            // InternalDeviceDefinition.g:5514:2: rule__Trigger__Group_1_3_0__0__Impl rule__Trigger__Group_1_3_0__1
+            // InternalDeviceDefinition.g:5660:1: ( rule__Trigger__Group_1_3_0__0__Impl rule__Trigger__Group_1_3_0__1 )
+            // InternalDeviceDefinition.g:5661:2: rule__Trigger__Group_1_3_0__0__Impl rule__Trigger__Group_1_3_0__1
             {
             pushFollow(FOLLOW_50);
             rule__Trigger__Group_1_3_0__0__Impl();
@@ -17382,20 +17841,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Trigger__Group_1_3_0__0__Impl"
-    // InternalDeviceDefinition.g:5521:1: rule__Trigger__Group_1_3_0__0__Impl : ( 'off' ) ;
+    // InternalDeviceDefinition.g:5668:1: rule__Trigger__Group_1_3_0__0__Impl : ( 'off' ) ;
     public final void rule__Trigger__Group_1_3_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5525:1: ( ( 'off' ) )
-            // InternalDeviceDefinition.g:5526:1: ( 'off' )
+            // InternalDeviceDefinition.g:5672:1: ( ( 'off' ) )
+            // InternalDeviceDefinition.g:5673:1: ( 'off' )
             {
-            // InternalDeviceDefinition.g:5526:1: ( 'off' )
-            // InternalDeviceDefinition.g:5527:2: 'off'
+            // InternalDeviceDefinition.g:5673:1: ( 'off' )
+            // InternalDeviceDefinition.g:5674:2: 'off'
             {
              before(grammarAccess.getTriggerAccess().getOffKeyword_1_3_0_0()); 
-            match(input,75,FOLLOW_2); 
+            match(input,77,FOLLOW_2); 
              after(grammarAccess.getTriggerAccess().getOffKeyword_1_3_0_0()); 
 
             }
@@ -17419,14 +17878,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Trigger__Group_1_3_0__1"
-    // InternalDeviceDefinition.g:5536:1: rule__Trigger__Group_1_3_0__1 : rule__Trigger__Group_1_3_0__1__Impl ;
+    // InternalDeviceDefinition.g:5683:1: rule__Trigger__Group_1_3_0__1 : rule__Trigger__Group_1_3_0__1__Impl ;
     public final void rule__Trigger__Group_1_3_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5540:1: ( rule__Trigger__Group_1_3_0__1__Impl )
-            // InternalDeviceDefinition.g:5541:2: rule__Trigger__Group_1_3_0__1__Impl
+            // InternalDeviceDefinition.g:5687:1: ( rule__Trigger__Group_1_3_0__1__Impl )
+            // InternalDeviceDefinition.g:5688:2: rule__Trigger__Group_1_3_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Trigger__Group_1_3_0__1__Impl();
@@ -17452,21 +17911,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Trigger__Group_1_3_0__1__Impl"
-    // InternalDeviceDefinition.g:5547:1: rule__Trigger__Group_1_3_0__1__Impl : ( ( rule__Trigger__OffExpAssignment_1_3_0_1 ) ) ;
+    // InternalDeviceDefinition.g:5694:1: rule__Trigger__Group_1_3_0__1__Impl : ( ( rule__Trigger__OffExpAssignment_1_3_0_1 ) ) ;
     public final void rule__Trigger__Group_1_3_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5551:1: ( ( ( rule__Trigger__OffExpAssignment_1_3_0_1 ) ) )
-            // InternalDeviceDefinition.g:5552:1: ( ( rule__Trigger__OffExpAssignment_1_3_0_1 ) )
+            // InternalDeviceDefinition.g:5698:1: ( ( ( rule__Trigger__OffExpAssignment_1_3_0_1 ) ) )
+            // InternalDeviceDefinition.g:5699:1: ( ( rule__Trigger__OffExpAssignment_1_3_0_1 ) )
             {
-            // InternalDeviceDefinition.g:5552:1: ( ( rule__Trigger__OffExpAssignment_1_3_0_1 ) )
-            // InternalDeviceDefinition.g:5553:2: ( rule__Trigger__OffExpAssignment_1_3_0_1 )
+            // InternalDeviceDefinition.g:5699:1: ( ( rule__Trigger__OffExpAssignment_1_3_0_1 ) )
+            // InternalDeviceDefinition.g:5700:2: ( rule__Trigger__OffExpAssignment_1_3_0_1 )
             {
              before(grammarAccess.getTriggerAccess().getOffExpAssignment_1_3_0_1()); 
-            // InternalDeviceDefinition.g:5554:2: ( rule__Trigger__OffExpAssignment_1_3_0_1 )
-            // InternalDeviceDefinition.g:5554:3: rule__Trigger__OffExpAssignment_1_3_0_1
+            // InternalDeviceDefinition.g:5701:2: ( rule__Trigger__OffExpAssignment_1_3_0_1 )
+            // InternalDeviceDefinition.g:5701:3: rule__Trigger__OffExpAssignment_1_3_0_1
             {
             pushFollow(FOLLOW_2);
             rule__Trigger__OffExpAssignment_1_3_0_1();
@@ -17499,14 +17958,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Trigger__Group_1_3_1__0"
-    // InternalDeviceDefinition.g:5563:1: rule__Trigger__Group_1_3_1__0 : rule__Trigger__Group_1_3_1__0__Impl rule__Trigger__Group_1_3_1__1 ;
+    // InternalDeviceDefinition.g:5710:1: rule__Trigger__Group_1_3_1__0 : rule__Trigger__Group_1_3_1__0__Impl rule__Trigger__Group_1_3_1__1 ;
     public final void rule__Trigger__Group_1_3_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5567:1: ( rule__Trigger__Group_1_3_1__0__Impl rule__Trigger__Group_1_3_1__1 )
-            // InternalDeviceDefinition.g:5568:2: rule__Trigger__Group_1_3_1__0__Impl rule__Trigger__Group_1_3_1__1
+            // InternalDeviceDefinition.g:5714:1: ( rule__Trigger__Group_1_3_1__0__Impl rule__Trigger__Group_1_3_1__1 )
+            // InternalDeviceDefinition.g:5715:2: rule__Trigger__Group_1_3_1__0__Impl rule__Trigger__Group_1_3_1__1
             {
             pushFollow(FOLLOW_39);
             rule__Trigger__Group_1_3_1__0__Impl();
@@ -17537,20 +17996,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Trigger__Group_1_3_1__0__Impl"
-    // InternalDeviceDefinition.g:5575:1: rule__Trigger__Group_1_3_1__0__Impl : ( 'run' ) ;
+    // InternalDeviceDefinition.g:5722:1: rule__Trigger__Group_1_3_1__0__Impl : ( 'run' ) ;
     public final void rule__Trigger__Group_1_3_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5579:1: ( ( 'run' ) )
-            // InternalDeviceDefinition.g:5580:1: ( 'run' )
+            // InternalDeviceDefinition.g:5726:1: ( ( 'run' ) )
+            // InternalDeviceDefinition.g:5727:1: ( 'run' )
             {
-            // InternalDeviceDefinition.g:5580:1: ( 'run' )
-            // InternalDeviceDefinition.g:5581:2: 'run'
+            // InternalDeviceDefinition.g:5727:1: ( 'run' )
+            // InternalDeviceDefinition.g:5728:2: 'run'
             {
              before(grammarAccess.getTriggerAccess().getRunKeyword_1_3_1_0()); 
-            match(input,76,FOLLOW_2); 
+            match(input,78,FOLLOW_2); 
              after(grammarAccess.getTriggerAccess().getRunKeyword_1_3_1_0()); 
 
             }
@@ -17574,14 +18033,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Trigger__Group_1_3_1__1"
-    // InternalDeviceDefinition.g:5590:1: rule__Trigger__Group_1_3_1__1 : rule__Trigger__Group_1_3_1__1__Impl rule__Trigger__Group_1_3_1__2 ;
+    // InternalDeviceDefinition.g:5737:1: rule__Trigger__Group_1_3_1__1 : rule__Trigger__Group_1_3_1__1__Impl rule__Trigger__Group_1_3_1__2 ;
     public final void rule__Trigger__Group_1_3_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5594:1: ( rule__Trigger__Group_1_3_1__1__Impl rule__Trigger__Group_1_3_1__2 )
-            // InternalDeviceDefinition.g:5595:2: rule__Trigger__Group_1_3_1__1__Impl rule__Trigger__Group_1_3_1__2
+            // InternalDeviceDefinition.g:5741:1: ( rule__Trigger__Group_1_3_1__1__Impl rule__Trigger__Group_1_3_1__2 )
+            // InternalDeviceDefinition.g:5742:2: rule__Trigger__Group_1_3_1__1__Impl rule__Trigger__Group_1_3_1__2
             {
             pushFollow(FOLLOW_30);
             rule__Trigger__Group_1_3_1__1__Impl();
@@ -17612,17 +18071,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Trigger__Group_1_3_1__1__Impl"
-    // InternalDeviceDefinition.g:5602:1: rule__Trigger__Group_1_3_1__1__Impl : ( 'for' ) ;
+    // InternalDeviceDefinition.g:5749:1: rule__Trigger__Group_1_3_1__1__Impl : ( 'for' ) ;
     public final void rule__Trigger__Group_1_3_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5606:1: ( ( 'for' ) )
-            // InternalDeviceDefinition.g:5607:1: ( 'for' )
+            // InternalDeviceDefinition.g:5753:1: ( ( 'for' ) )
+            // InternalDeviceDefinition.g:5754:1: ( 'for' )
             {
-            // InternalDeviceDefinition.g:5607:1: ( 'for' )
-            // InternalDeviceDefinition.g:5608:2: 'for'
+            // InternalDeviceDefinition.g:5754:1: ( 'for' )
+            // InternalDeviceDefinition.g:5755:2: 'for'
             {
              before(grammarAccess.getTriggerAccess().getForKeyword_1_3_1_1()); 
             match(input,61,FOLLOW_2); 
@@ -17649,14 +18108,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Trigger__Group_1_3_1__2"
-    // InternalDeviceDefinition.g:5617:1: rule__Trigger__Group_1_3_1__2 : rule__Trigger__Group_1_3_1__2__Impl rule__Trigger__Group_1_3_1__3 ;
+    // InternalDeviceDefinition.g:5764:1: rule__Trigger__Group_1_3_1__2 : rule__Trigger__Group_1_3_1__2__Impl rule__Trigger__Group_1_3_1__3 ;
     public final void rule__Trigger__Group_1_3_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5621:1: ( rule__Trigger__Group_1_3_1__2__Impl rule__Trigger__Group_1_3_1__3 )
-            // InternalDeviceDefinition.g:5622:2: rule__Trigger__Group_1_3_1__2__Impl rule__Trigger__Group_1_3_1__3
+            // InternalDeviceDefinition.g:5768:1: ( rule__Trigger__Group_1_3_1__2__Impl rule__Trigger__Group_1_3_1__3 )
+            // InternalDeviceDefinition.g:5769:2: rule__Trigger__Group_1_3_1__2__Impl rule__Trigger__Group_1_3_1__3
             {
             pushFollow(FOLLOW_37);
             rule__Trigger__Group_1_3_1__2__Impl();
@@ -17687,21 +18146,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Trigger__Group_1_3_1__2__Impl"
-    // InternalDeviceDefinition.g:5629:1: rule__Trigger__Group_1_3_1__2__Impl : ( ( rule__Trigger__TimeAssignment_1_3_1_2 ) ) ;
+    // InternalDeviceDefinition.g:5776:1: rule__Trigger__Group_1_3_1__2__Impl : ( ( rule__Trigger__TimeAssignment_1_3_1_2 ) ) ;
     public final void rule__Trigger__Group_1_3_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5633:1: ( ( ( rule__Trigger__TimeAssignment_1_3_1_2 ) ) )
-            // InternalDeviceDefinition.g:5634:1: ( ( rule__Trigger__TimeAssignment_1_3_1_2 ) )
+            // InternalDeviceDefinition.g:5780:1: ( ( ( rule__Trigger__TimeAssignment_1_3_1_2 ) ) )
+            // InternalDeviceDefinition.g:5781:1: ( ( rule__Trigger__TimeAssignment_1_3_1_2 ) )
             {
-            // InternalDeviceDefinition.g:5634:1: ( ( rule__Trigger__TimeAssignment_1_3_1_2 ) )
-            // InternalDeviceDefinition.g:5635:2: ( rule__Trigger__TimeAssignment_1_3_1_2 )
+            // InternalDeviceDefinition.g:5781:1: ( ( rule__Trigger__TimeAssignment_1_3_1_2 ) )
+            // InternalDeviceDefinition.g:5782:2: ( rule__Trigger__TimeAssignment_1_3_1_2 )
             {
              before(grammarAccess.getTriggerAccess().getTimeAssignment_1_3_1_2()); 
-            // InternalDeviceDefinition.g:5636:2: ( rule__Trigger__TimeAssignment_1_3_1_2 )
-            // InternalDeviceDefinition.g:5636:3: rule__Trigger__TimeAssignment_1_3_1_2
+            // InternalDeviceDefinition.g:5783:2: ( rule__Trigger__TimeAssignment_1_3_1_2 )
+            // InternalDeviceDefinition.g:5783:3: rule__Trigger__TimeAssignment_1_3_1_2
             {
             pushFollow(FOLLOW_2);
             rule__Trigger__TimeAssignment_1_3_1_2();
@@ -17734,14 +18193,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Trigger__Group_1_3_1__3"
-    // InternalDeviceDefinition.g:5644:1: rule__Trigger__Group_1_3_1__3 : rule__Trigger__Group_1_3_1__3__Impl ;
+    // InternalDeviceDefinition.g:5791:1: rule__Trigger__Group_1_3_1__3 : rule__Trigger__Group_1_3_1__3__Impl ;
     public final void rule__Trigger__Group_1_3_1__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5648:1: ( rule__Trigger__Group_1_3_1__3__Impl )
-            // InternalDeviceDefinition.g:5649:2: rule__Trigger__Group_1_3_1__3__Impl
+            // InternalDeviceDefinition.g:5795:1: ( rule__Trigger__Group_1_3_1__3__Impl )
+            // InternalDeviceDefinition.g:5796:2: rule__Trigger__Group_1_3_1__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Trigger__Group_1_3_1__3__Impl();
@@ -17767,21 +18226,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Trigger__Group_1_3_1__3__Impl"
-    // InternalDeviceDefinition.g:5655:1: rule__Trigger__Group_1_3_1__3__Impl : ( ( rule__Trigger__UnitAssignment_1_3_1_3 ) ) ;
+    // InternalDeviceDefinition.g:5802:1: rule__Trigger__Group_1_3_1__3__Impl : ( ( rule__Trigger__UnitAssignment_1_3_1_3 ) ) ;
     public final void rule__Trigger__Group_1_3_1__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5659:1: ( ( ( rule__Trigger__UnitAssignment_1_3_1_3 ) ) )
-            // InternalDeviceDefinition.g:5660:1: ( ( rule__Trigger__UnitAssignment_1_3_1_3 ) )
+            // InternalDeviceDefinition.g:5806:1: ( ( ( rule__Trigger__UnitAssignment_1_3_1_3 ) ) )
+            // InternalDeviceDefinition.g:5807:1: ( ( rule__Trigger__UnitAssignment_1_3_1_3 ) )
             {
-            // InternalDeviceDefinition.g:5660:1: ( ( rule__Trigger__UnitAssignment_1_3_1_3 ) )
-            // InternalDeviceDefinition.g:5661:2: ( rule__Trigger__UnitAssignment_1_3_1_3 )
+            // InternalDeviceDefinition.g:5807:1: ( ( rule__Trigger__UnitAssignment_1_3_1_3 ) )
+            // InternalDeviceDefinition.g:5808:2: ( rule__Trigger__UnitAssignment_1_3_1_3 )
             {
              before(grammarAccess.getTriggerAccess().getUnitAssignment_1_3_1_3()); 
-            // InternalDeviceDefinition.g:5662:2: ( rule__Trigger__UnitAssignment_1_3_1_3 )
-            // InternalDeviceDefinition.g:5662:3: rule__Trigger__UnitAssignment_1_3_1_3
+            // InternalDeviceDefinition.g:5809:2: ( rule__Trigger__UnitAssignment_1_3_1_3 )
+            // InternalDeviceDefinition.g:5809:3: rule__Trigger__UnitAssignment_1_3_1_3
             {
             pushFollow(FOLLOW_2);
             rule__Trigger__UnitAssignment_1_3_1_3();
@@ -17814,14 +18273,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Setting__Group__0"
-    // InternalDeviceDefinition.g:5671:1: rule__Setting__Group__0 : rule__Setting__Group__0__Impl rule__Setting__Group__1 ;
+    // InternalDeviceDefinition.g:5818:1: rule__Setting__Group__0 : rule__Setting__Group__0__Impl rule__Setting__Group__1 ;
     public final void rule__Setting__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5675:1: ( rule__Setting__Group__0__Impl rule__Setting__Group__1 )
-            // InternalDeviceDefinition.g:5676:2: rule__Setting__Group__0__Impl rule__Setting__Group__1
+            // InternalDeviceDefinition.g:5822:1: ( rule__Setting__Group__0__Impl rule__Setting__Group__1 )
+            // InternalDeviceDefinition.g:5823:2: rule__Setting__Group__0__Impl rule__Setting__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__Setting__Group__0__Impl();
@@ -17852,20 +18311,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Setting__Group__0__Impl"
-    // InternalDeviceDefinition.g:5683:1: rule__Setting__Group__0__Impl : ( 'setting' ) ;
+    // InternalDeviceDefinition.g:5830:1: rule__Setting__Group__0__Impl : ( 'setting' ) ;
     public final void rule__Setting__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5687:1: ( ( 'setting' ) )
-            // InternalDeviceDefinition.g:5688:1: ( 'setting' )
+            // InternalDeviceDefinition.g:5834:1: ( ( 'setting' ) )
+            // InternalDeviceDefinition.g:5835:1: ( 'setting' )
             {
-            // InternalDeviceDefinition.g:5688:1: ( 'setting' )
-            // InternalDeviceDefinition.g:5689:2: 'setting'
+            // InternalDeviceDefinition.g:5835:1: ( 'setting' )
+            // InternalDeviceDefinition.g:5836:2: 'setting'
             {
              before(grammarAccess.getSettingAccess().getSettingKeyword_0()); 
-            match(input,77,FOLLOW_2); 
+            match(input,79,FOLLOW_2); 
              after(grammarAccess.getSettingAccess().getSettingKeyword_0()); 
 
             }
@@ -17889,16 +18348,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Setting__Group__1"
-    // InternalDeviceDefinition.g:5698:1: rule__Setting__Group__1 : rule__Setting__Group__1__Impl rule__Setting__Group__2 ;
+    // InternalDeviceDefinition.g:5845:1: rule__Setting__Group__1 : rule__Setting__Group__1__Impl rule__Setting__Group__2 ;
     public final void rule__Setting__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5702:1: ( rule__Setting__Group__1__Impl rule__Setting__Group__2 )
-            // InternalDeviceDefinition.g:5703:2: rule__Setting__Group__1__Impl rule__Setting__Group__2
+            // InternalDeviceDefinition.g:5849:1: ( rule__Setting__Group__1__Impl rule__Setting__Group__2 )
+            // InternalDeviceDefinition.g:5850:2: rule__Setting__Group__1__Impl rule__Setting__Group__2
             {
-            pushFollow(FOLLOW_63);
+            pushFollow(FOLLOW_67);
             rule__Setting__Group__1__Impl();
 
             state._fsp--;
@@ -17927,21 +18386,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Setting__Group__1__Impl"
-    // InternalDeviceDefinition.g:5710:1: rule__Setting__Group__1__Impl : ( ( rule__Setting__NameAssignment_1 ) ) ;
+    // InternalDeviceDefinition.g:5857:1: rule__Setting__Group__1__Impl : ( ( rule__Setting__NameAssignment_1 ) ) ;
     public final void rule__Setting__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5714:1: ( ( ( rule__Setting__NameAssignment_1 ) ) )
-            // InternalDeviceDefinition.g:5715:1: ( ( rule__Setting__NameAssignment_1 ) )
+            // InternalDeviceDefinition.g:5861:1: ( ( ( rule__Setting__NameAssignment_1 ) ) )
+            // InternalDeviceDefinition.g:5862:1: ( ( rule__Setting__NameAssignment_1 ) )
             {
-            // InternalDeviceDefinition.g:5715:1: ( ( rule__Setting__NameAssignment_1 ) )
-            // InternalDeviceDefinition.g:5716:2: ( rule__Setting__NameAssignment_1 )
+            // InternalDeviceDefinition.g:5862:1: ( ( rule__Setting__NameAssignment_1 ) )
+            // InternalDeviceDefinition.g:5863:2: ( rule__Setting__NameAssignment_1 )
             {
              before(grammarAccess.getSettingAccess().getNameAssignment_1()); 
-            // InternalDeviceDefinition.g:5717:2: ( rule__Setting__NameAssignment_1 )
-            // InternalDeviceDefinition.g:5717:3: rule__Setting__NameAssignment_1
+            // InternalDeviceDefinition.g:5864:2: ( rule__Setting__NameAssignment_1 )
+            // InternalDeviceDefinition.g:5864:3: rule__Setting__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Setting__NameAssignment_1();
@@ -17974,16 +18433,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Setting__Group__2"
-    // InternalDeviceDefinition.g:5725:1: rule__Setting__Group__2 : rule__Setting__Group__2__Impl rule__Setting__Group__3 ;
+    // InternalDeviceDefinition.g:5872:1: rule__Setting__Group__2 : rule__Setting__Group__2__Impl rule__Setting__Group__3 ;
     public final void rule__Setting__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5729:1: ( rule__Setting__Group__2__Impl rule__Setting__Group__3 )
-            // InternalDeviceDefinition.g:5730:2: rule__Setting__Group__2__Impl rule__Setting__Group__3
+            // InternalDeviceDefinition.g:5876:1: ( rule__Setting__Group__2__Impl rule__Setting__Group__3 )
+            // InternalDeviceDefinition.g:5877:2: rule__Setting__Group__2__Impl rule__Setting__Group__3
             {
-            pushFollow(FOLLOW_64);
+            pushFollow(FOLLOW_68);
             rule__Setting__Group__2__Impl();
 
             state._fsp--;
@@ -18012,20 +18471,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Setting__Group__2__Impl"
-    // InternalDeviceDefinition.g:5737:1: rule__Setting__Group__2__Impl : ( '=' ) ;
+    // InternalDeviceDefinition.g:5884:1: rule__Setting__Group__2__Impl : ( '=' ) ;
     public final void rule__Setting__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5741:1: ( ( '=' ) )
-            // InternalDeviceDefinition.g:5742:1: ( '=' )
+            // InternalDeviceDefinition.g:5888:1: ( ( '=' ) )
+            // InternalDeviceDefinition.g:5889:1: ( '=' )
             {
-            // InternalDeviceDefinition.g:5742:1: ( '=' )
-            // InternalDeviceDefinition.g:5743:2: '='
+            // InternalDeviceDefinition.g:5889:1: ( '=' )
+            // InternalDeviceDefinition.g:5890:2: '='
             {
              before(grammarAccess.getSettingAccess().getEqualsSignKeyword_2()); 
-            match(input,78,FOLLOW_2); 
+            match(input,80,FOLLOW_2); 
              after(grammarAccess.getSettingAccess().getEqualsSignKeyword_2()); 
 
             }
@@ -18049,14 +18508,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Setting__Group__3"
-    // InternalDeviceDefinition.g:5752:1: rule__Setting__Group__3 : rule__Setting__Group__3__Impl ;
+    // InternalDeviceDefinition.g:5899:1: rule__Setting__Group__3 : rule__Setting__Group__3__Impl ;
     public final void rule__Setting__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5756:1: ( rule__Setting__Group__3__Impl )
-            // InternalDeviceDefinition.g:5757:2: rule__Setting__Group__3__Impl
+            // InternalDeviceDefinition.g:5903:1: ( rule__Setting__Group__3__Impl )
+            // InternalDeviceDefinition.g:5904:2: rule__Setting__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Setting__Group__3__Impl();
@@ -18082,21 +18541,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Setting__Group__3__Impl"
-    // InternalDeviceDefinition.g:5763:1: rule__Setting__Group__3__Impl : ( ( rule__Setting__ValueAssignment_3 ) ) ;
+    // InternalDeviceDefinition.g:5910:1: rule__Setting__Group__3__Impl : ( ( rule__Setting__ValueAssignment_3 ) ) ;
     public final void rule__Setting__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5767:1: ( ( ( rule__Setting__ValueAssignment_3 ) ) )
-            // InternalDeviceDefinition.g:5768:1: ( ( rule__Setting__ValueAssignment_3 ) )
+            // InternalDeviceDefinition.g:5914:1: ( ( ( rule__Setting__ValueAssignment_3 ) ) )
+            // InternalDeviceDefinition.g:5915:1: ( ( rule__Setting__ValueAssignment_3 ) )
             {
-            // InternalDeviceDefinition.g:5768:1: ( ( rule__Setting__ValueAssignment_3 ) )
-            // InternalDeviceDefinition.g:5769:2: ( rule__Setting__ValueAssignment_3 )
+            // InternalDeviceDefinition.g:5915:1: ( ( rule__Setting__ValueAssignment_3 ) )
+            // InternalDeviceDefinition.g:5916:2: ( rule__Setting__ValueAssignment_3 )
             {
              before(grammarAccess.getSettingAccess().getValueAssignment_3()); 
-            // InternalDeviceDefinition.g:5770:2: ( rule__Setting__ValueAssignment_3 )
-            // InternalDeviceDefinition.g:5770:3: rule__Setting__ValueAssignment_3
+            // InternalDeviceDefinition.g:5917:2: ( rule__Setting__ValueAssignment_3 )
+            // InternalDeviceDefinition.g:5917:3: rule__Setting__ValueAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__Setting__ValueAssignment_3();
@@ -18129,16 +18588,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Primitive__Group_0__0"
-    // InternalDeviceDefinition.g:5779:1: rule__Primitive__Group_0__0 : rule__Primitive__Group_0__0__Impl rule__Primitive__Group_0__1 ;
+    // InternalDeviceDefinition.g:5926:1: rule__Primitive__Group_0__0 : rule__Primitive__Group_0__0__Impl rule__Primitive__Group_0__1 ;
     public final void rule__Primitive__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5783:1: ( rule__Primitive__Group_0__0__Impl rule__Primitive__Group_0__1 )
-            // InternalDeviceDefinition.g:5784:2: rule__Primitive__Group_0__0__Impl rule__Primitive__Group_0__1
+            // InternalDeviceDefinition.g:5930:1: ( rule__Primitive__Group_0__0__Impl rule__Primitive__Group_0__1 )
+            // InternalDeviceDefinition.g:5931:2: rule__Primitive__Group_0__0__Impl rule__Primitive__Group_0__1
             {
-            pushFollow(FOLLOW_65);
+            pushFollow(FOLLOW_69);
             rule__Primitive__Group_0__0__Impl();
 
             state._fsp--;
@@ -18167,21 +18626,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Primitive__Group_0__0__Impl"
-    // InternalDeviceDefinition.g:5791:1: rule__Primitive__Group_0__0__Impl : ( () ) ;
+    // InternalDeviceDefinition.g:5938:1: rule__Primitive__Group_0__0__Impl : ( () ) ;
     public final void rule__Primitive__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5795:1: ( ( () ) )
-            // InternalDeviceDefinition.g:5796:1: ( () )
+            // InternalDeviceDefinition.g:5942:1: ( ( () ) )
+            // InternalDeviceDefinition.g:5943:1: ( () )
             {
-            // InternalDeviceDefinition.g:5796:1: ( () )
-            // InternalDeviceDefinition.g:5797:2: ()
+            // InternalDeviceDefinition.g:5943:1: ( () )
+            // InternalDeviceDefinition.g:5944:2: ()
             {
              before(grammarAccess.getPrimitiveAccess().getBooleanTrueAction_0_0()); 
-            // InternalDeviceDefinition.g:5798:2: ()
-            // InternalDeviceDefinition.g:5798:3: 
+            // InternalDeviceDefinition.g:5945:2: ()
+            // InternalDeviceDefinition.g:5945:3: 
             {
             }
 
@@ -18204,14 +18663,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Primitive__Group_0__1"
-    // InternalDeviceDefinition.g:5806:1: rule__Primitive__Group_0__1 : rule__Primitive__Group_0__1__Impl ;
+    // InternalDeviceDefinition.g:5953:1: rule__Primitive__Group_0__1 : rule__Primitive__Group_0__1__Impl ;
     public final void rule__Primitive__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5810:1: ( rule__Primitive__Group_0__1__Impl )
-            // InternalDeviceDefinition.g:5811:2: rule__Primitive__Group_0__1__Impl
+            // InternalDeviceDefinition.g:5957:1: ( rule__Primitive__Group_0__1__Impl )
+            // InternalDeviceDefinition.g:5958:2: rule__Primitive__Group_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Primitive__Group_0__1__Impl();
@@ -18237,20 +18696,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Primitive__Group_0__1__Impl"
-    // InternalDeviceDefinition.g:5817:1: rule__Primitive__Group_0__1__Impl : ( 'TRUE' ) ;
+    // InternalDeviceDefinition.g:5964:1: rule__Primitive__Group_0__1__Impl : ( 'TRUE' ) ;
     public final void rule__Primitive__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5821:1: ( ( 'TRUE' ) )
-            // InternalDeviceDefinition.g:5822:1: ( 'TRUE' )
+            // InternalDeviceDefinition.g:5968:1: ( ( 'TRUE' ) )
+            // InternalDeviceDefinition.g:5969:1: ( 'TRUE' )
             {
-            // InternalDeviceDefinition.g:5822:1: ( 'TRUE' )
-            // InternalDeviceDefinition.g:5823:2: 'TRUE'
+            // InternalDeviceDefinition.g:5969:1: ( 'TRUE' )
+            // InternalDeviceDefinition.g:5970:2: 'TRUE'
             {
              before(grammarAccess.getPrimitiveAccess().getTRUEKeyword_0_1()); 
-            match(input,79,FOLLOW_2); 
+            match(input,81,FOLLOW_2); 
              after(grammarAccess.getPrimitiveAccess().getTRUEKeyword_0_1()); 
 
             }
@@ -18274,16 +18733,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Primitive__Group_1__0"
-    // InternalDeviceDefinition.g:5833:1: rule__Primitive__Group_1__0 : rule__Primitive__Group_1__0__Impl rule__Primitive__Group_1__1 ;
+    // InternalDeviceDefinition.g:5980:1: rule__Primitive__Group_1__0 : rule__Primitive__Group_1__0__Impl rule__Primitive__Group_1__1 ;
     public final void rule__Primitive__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5837:1: ( rule__Primitive__Group_1__0__Impl rule__Primitive__Group_1__1 )
-            // InternalDeviceDefinition.g:5838:2: rule__Primitive__Group_1__0__Impl rule__Primitive__Group_1__1
+            // InternalDeviceDefinition.g:5984:1: ( rule__Primitive__Group_1__0__Impl rule__Primitive__Group_1__1 )
+            // InternalDeviceDefinition.g:5985:2: rule__Primitive__Group_1__0__Impl rule__Primitive__Group_1__1
             {
-            pushFollow(FOLLOW_66);
+            pushFollow(FOLLOW_70);
             rule__Primitive__Group_1__0__Impl();
 
             state._fsp--;
@@ -18312,21 +18771,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Primitive__Group_1__0__Impl"
-    // InternalDeviceDefinition.g:5845:1: rule__Primitive__Group_1__0__Impl : ( () ) ;
+    // InternalDeviceDefinition.g:5992:1: rule__Primitive__Group_1__0__Impl : ( () ) ;
     public final void rule__Primitive__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5849:1: ( ( () ) )
-            // InternalDeviceDefinition.g:5850:1: ( () )
+            // InternalDeviceDefinition.g:5996:1: ( ( () ) )
+            // InternalDeviceDefinition.g:5997:1: ( () )
             {
-            // InternalDeviceDefinition.g:5850:1: ( () )
-            // InternalDeviceDefinition.g:5851:2: ()
+            // InternalDeviceDefinition.g:5997:1: ( () )
+            // InternalDeviceDefinition.g:5998:2: ()
             {
              before(grammarAccess.getPrimitiveAccess().getBooleanFalseAction_1_0()); 
-            // InternalDeviceDefinition.g:5852:2: ()
-            // InternalDeviceDefinition.g:5852:3: 
+            // InternalDeviceDefinition.g:5999:2: ()
+            // InternalDeviceDefinition.g:5999:3: 
             {
             }
 
@@ -18349,14 +18808,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Primitive__Group_1__1"
-    // InternalDeviceDefinition.g:5860:1: rule__Primitive__Group_1__1 : rule__Primitive__Group_1__1__Impl ;
+    // InternalDeviceDefinition.g:6007:1: rule__Primitive__Group_1__1 : rule__Primitive__Group_1__1__Impl ;
     public final void rule__Primitive__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5864:1: ( rule__Primitive__Group_1__1__Impl )
-            // InternalDeviceDefinition.g:5865:2: rule__Primitive__Group_1__1__Impl
+            // InternalDeviceDefinition.g:6011:1: ( rule__Primitive__Group_1__1__Impl )
+            // InternalDeviceDefinition.g:6012:2: rule__Primitive__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Primitive__Group_1__1__Impl();
@@ -18382,20 +18841,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Primitive__Group_1__1__Impl"
-    // InternalDeviceDefinition.g:5871:1: rule__Primitive__Group_1__1__Impl : ( 'FALSE' ) ;
+    // InternalDeviceDefinition.g:6018:1: rule__Primitive__Group_1__1__Impl : ( 'FALSE' ) ;
     public final void rule__Primitive__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5875:1: ( ( 'FALSE' ) )
-            // InternalDeviceDefinition.g:5876:1: ( 'FALSE' )
+            // InternalDeviceDefinition.g:6022:1: ( ( 'FALSE' ) )
+            // InternalDeviceDefinition.g:6023:1: ( 'FALSE' )
             {
-            // InternalDeviceDefinition.g:5876:1: ( 'FALSE' )
-            // InternalDeviceDefinition.g:5877:2: 'FALSE'
+            // InternalDeviceDefinition.g:6023:1: ( 'FALSE' )
+            // InternalDeviceDefinition.g:6024:2: 'FALSE'
             {
              before(grammarAccess.getPrimitiveAccess().getFALSEKeyword_1_1()); 
-            match(input,80,FOLLOW_2); 
+            match(input,82,FOLLOW_2); 
              after(grammarAccess.getPrimitiveAccess().getFALSEKeyword_1_1()); 
 
             }
@@ -18419,14 +18878,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__NumberPrimitive__Group_0__0"
-    // InternalDeviceDefinition.g:5887:1: rule__NumberPrimitive__Group_0__0 : rule__NumberPrimitive__Group_0__0__Impl rule__NumberPrimitive__Group_0__1 ;
+    // InternalDeviceDefinition.g:6034:1: rule__NumberPrimitive__Group_0__0 : rule__NumberPrimitive__Group_0__0__Impl rule__NumberPrimitive__Group_0__1 ;
     public final void rule__NumberPrimitive__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5891:1: ( rule__NumberPrimitive__Group_0__0__Impl rule__NumberPrimitive__Group_0__1 )
-            // InternalDeviceDefinition.g:5892:2: rule__NumberPrimitive__Group_0__0__Impl rule__NumberPrimitive__Group_0__1
+            // InternalDeviceDefinition.g:6038:1: ( rule__NumberPrimitive__Group_0__0__Impl rule__NumberPrimitive__Group_0__1 )
+            // InternalDeviceDefinition.g:6039:2: rule__NumberPrimitive__Group_0__0__Impl rule__NumberPrimitive__Group_0__1
             {
             pushFollow(FOLLOW_30);
             rule__NumberPrimitive__Group_0__0__Impl();
@@ -18457,21 +18916,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__NumberPrimitive__Group_0__0__Impl"
-    // InternalDeviceDefinition.g:5899:1: rule__NumberPrimitive__Group_0__0__Impl : ( () ) ;
+    // InternalDeviceDefinition.g:6046:1: rule__NumberPrimitive__Group_0__0__Impl : ( () ) ;
     public final void rule__NumberPrimitive__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5903:1: ( ( () ) )
-            // InternalDeviceDefinition.g:5904:1: ( () )
+            // InternalDeviceDefinition.g:6050:1: ( ( () ) )
+            // InternalDeviceDefinition.g:6051:1: ( () )
             {
-            // InternalDeviceDefinition.g:5904:1: ( () )
-            // InternalDeviceDefinition.g:5905:2: ()
+            // InternalDeviceDefinition.g:6051:1: ( () )
+            // InternalDeviceDefinition.g:6052:2: ()
             {
              before(grammarAccess.getNumberPrimitiveAccess().getIntPrimitiveAction_0_0()); 
-            // InternalDeviceDefinition.g:5906:2: ()
-            // InternalDeviceDefinition.g:5906:3: 
+            // InternalDeviceDefinition.g:6053:2: ()
+            // InternalDeviceDefinition.g:6053:3: 
             {
             }
 
@@ -18494,14 +18953,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__NumberPrimitive__Group_0__1"
-    // InternalDeviceDefinition.g:5914:1: rule__NumberPrimitive__Group_0__1 : rule__NumberPrimitive__Group_0__1__Impl ;
+    // InternalDeviceDefinition.g:6061:1: rule__NumberPrimitive__Group_0__1 : rule__NumberPrimitive__Group_0__1__Impl ;
     public final void rule__NumberPrimitive__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5918:1: ( rule__NumberPrimitive__Group_0__1__Impl )
-            // InternalDeviceDefinition.g:5919:2: rule__NumberPrimitive__Group_0__1__Impl
+            // InternalDeviceDefinition.g:6065:1: ( rule__NumberPrimitive__Group_0__1__Impl )
+            // InternalDeviceDefinition.g:6066:2: rule__NumberPrimitive__Group_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__NumberPrimitive__Group_0__1__Impl();
@@ -18527,21 +18986,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__NumberPrimitive__Group_0__1__Impl"
-    // InternalDeviceDefinition.g:5925:1: rule__NumberPrimitive__Group_0__1__Impl : ( ( rule__NumberPrimitive__ValueAssignment_0_1 ) ) ;
+    // InternalDeviceDefinition.g:6072:1: rule__NumberPrimitive__Group_0__1__Impl : ( ( rule__NumberPrimitive__ValueAssignment_0_1 ) ) ;
     public final void rule__NumberPrimitive__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5929:1: ( ( ( rule__NumberPrimitive__ValueAssignment_0_1 ) ) )
-            // InternalDeviceDefinition.g:5930:1: ( ( rule__NumberPrimitive__ValueAssignment_0_1 ) )
+            // InternalDeviceDefinition.g:6076:1: ( ( ( rule__NumberPrimitive__ValueAssignment_0_1 ) ) )
+            // InternalDeviceDefinition.g:6077:1: ( ( rule__NumberPrimitive__ValueAssignment_0_1 ) )
             {
-            // InternalDeviceDefinition.g:5930:1: ( ( rule__NumberPrimitive__ValueAssignment_0_1 ) )
-            // InternalDeviceDefinition.g:5931:2: ( rule__NumberPrimitive__ValueAssignment_0_1 )
+            // InternalDeviceDefinition.g:6077:1: ( ( rule__NumberPrimitive__ValueAssignment_0_1 ) )
+            // InternalDeviceDefinition.g:6078:2: ( rule__NumberPrimitive__ValueAssignment_0_1 )
             {
              before(grammarAccess.getNumberPrimitiveAccess().getValueAssignment_0_1()); 
-            // InternalDeviceDefinition.g:5932:2: ( rule__NumberPrimitive__ValueAssignment_0_1 )
-            // InternalDeviceDefinition.g:5932:3: rule__NumberPrimitive__ValueAssignment_0_1
+            // InternalDeviceDefinition.g:6079:2: ( rule__NumberPrimitive__ValueAssignment_0_1 )
+            // InternalDeviceDefinition.g:6079:3: rule__NumberPrimitive__ValueAssignment_0_1
             {
             pushFollow(FOLLOW_2);
             rule__NumberPrimitive__ValueAssignment_0_1();
@@ -18574,14 +19033,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__NumberPrimitive__Group_1__0"
-    // InternalDeviceDefinition.g:5941:1: rule__NumberPrimitive__Group_1__0 : rule__NumberPrimitive__Group_1__0__Impl rule__NumberPrimitive__Group_1__1 ;
+    // InternalDeviceDefinition.g:6088:1: rule__NumberPrimitive__Group_1__0 : rule__NumberPrimitive__Group_1__0__Impl rule__NumberPrimitive__Group_1__1 ;
     public final void rule__NumberPrimitive__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5945:1: ( rule__NumberPrimitive__Group_1__0__Impl rule__NumberPrimitive__Group_1__1 )
-            // InternalDeviceDefinition.g:5946:2: rule__NumberPrimitive__Group_1__0__Impl rule__NumberPrimitive__Group_1__1
+            // InternalDeviceDefinition.g:6092:1: ( rule__NumberPrimitive__Group_1__0__Impl rule__NumberPrimitive__Group_1__1 )
+            // InternalDeviceDefinition.g:6093:2: rule__NumberPrimitive__Group_1__0__Impl rule__NumberPrimitive__Group_1__1
             {
             pushFollow(FOLLOW_36);
             rule__NumberPrimitive__Group_1__0__Impl();
@@ -18612,21 +19071,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__NumberPrimitive__Group_1__0__Impl"
-    // InternalDeviceDefinition.g:5953:1: rule__NumberPrimitive__Group_1__0__Impl : ( () ) ;
+    // InternalDeviceDefinition.g:6100:1: rule__NumberPrimitive__Group_1__0__Impl : ( () ) ;
     public final void rule__NumberPrimitive__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5957:1: ( ( () ) )
-            // InternalDeviceDefinition.g:5958:1: ( () )
+            // InternalDeviceDefinition.g:6104:1: ( ( () ) )
+            // InternalDeviceDefinition.g:6105:1: ( () )
             {
-            // InternalDeviceDefinition.g:5958:1: ( () )
-            // InternalDeviceDefinition.g:5959:2: ()
+            // InternalDeviceDefinition.g:6105:1: ( () )
+            // InternalDeviceDefinition.g:6106:2: ()
             {
              before(grammarAccess.getNumberPrimitiveAccess().getDecimalPrimitiveAction_1_0()); 
-            // InternalDeviceDefinition.g:5960:2: ()
-            // InternalDeviceDefinition.g:5960:3: 
+            // InternalDeviceDefinition.g:6107:2: ()
+            // InternalDeviceDefinition.g:6107:3: 
             {
             }
 
@@ -18649,14 +19108,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__NumberPrimitive__Group_1__1"
-    // InternalDeviceDefinition.g:5968:1: rule__NumberPrimitive__Group_1__1 : rule__NumberPrimitive__Group_1__1__Impl ;
+    // InternalDeviceDefinition.g:6115:1: rule__NumberPrimitive__Group_1__1 : rule__NumberPrimitive__Group_1__1__Impl ;
     public final void rule__NumberPrimitive__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5972:1: ( rule__NumberPrimitive__Group_1__1__Impl )
-            // InternalDeviceDefinition.g:5973:2: rule__NumberPrimitive__Group_1__1__Impl
+            // InternalDeviceDefinition.g:6119:1: ( rule__NumberPrimitive__Group_1__1__Impl )
+            // InternalDeviceDefinition.g:6120:2: rule__NumberPrimitive__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__NumberPrimitive__Group_1__1__Impl();
@@ -18682,21 +19141,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__NumberPrimitive__Group_1__1__Impl"
-    // InternalDeviceDefinition.g:5979:1: rule__NumberPrimitive__Group_1__1__Impl : ( ( rule__NumberPrimitive__ValueAssignment_1_1 ) ) ;
+    // InternalDeviceDefinition.g:6126:1: rule__NumberPrimitive__Group_1__1__Impl : ( ( rule__NumberPrimitive__ValueAssignment_1_1 ) ) ;
     public final void rule__NumberPrimitive__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5983:1: ( ( ( rule__NumberPrimitive__ValueAssignment_1_1 ) ) )
-            // InternalDeviceDefinition.g:5984:1: ( ( rule__NumberPrimitive__ValueAssignment_1_1 ) )
+            // InternalDeviceDefinition.g:6130:1: ( ( ( rule__NumberPrimitive__ValueAssignment_1_1 ) ) )
+            // InternalDeviceDefinition.g:6131:1: ( ( rule__NumberPrimitive__ValueAssignment_1_1 ) )
             {
-            // InternalDeviceDefinition.g:5984:1: ( ( rule__NumberPrimitive__ValueAssignment_1_1 ) )
-            // InternalDeviceDefinition.g:5985:2: ( rule__NumberPrimitive__ValueAssignment_1_1 )
+            // InternalDeviceDefinition.g:6131:1: ( ( rule__NumberPrimitive__ValueAssignment_1_1 ) )
+            // InternalDeviceDefinition.g:6132:2: ( rule__NumberPrimitive__ValueAssignment_1_1 )
             {
              before(grammarAccess.getNumberPrimitiveAccess().getValueAssignment_1_1()); 
-            // InternalDeviceDefinition.g:5986:2: ( rule__NumberPrimitive__ValueAssignment_1_1 )
-            // InternalDeviceDefinition.g:5986:3: rule__NumberPrimitive__ValueAssignment_1_1
+            // InternalDeviceDefinition.g:6133:2: ( rule__NumberPrimitive__ValueAssignment_1_1 )
+            // InternalDeviceDefinition.g:6133:3: rule__NumberPrimitive__ValueAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__NumberPrimitive__ValueAssignment_1_1();
@@ -18729,16 +19188,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Exp__Group__0"
-    // InternalDeviceDefinition.g:5995:1: rule__Exp__Group__0 : rule__Exp__Group__0__Impl rule__Exp__Group__1 ;
+    // InternalDeviceDefinition.g:6142:1: rule__Exp__Group__0 : rule__Exp__Group__0__Impl rule__Exp__Group__1 ;
     public final void rule__Exp__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:5999:1: ( rule__Exp__Group__0__Impl rule__Exp__Group__1 )
-            // InternalDeviceDefinition.g:6000:2: rule__Exp__Group__0__Impl rule__Exp__Group__1
+            // InternalDeviceDefinition.g:6146:1: ( rule__Exp__Group__0__Impl rule__Exp__Group__1 )
+            // InternalDeviceDefinition.g:6147:2: rule__Exp__Group__0__Impl rule__Exp__Group__1
             {
-            pushFollow(FOLLOW_67);
+            pushFollow(FOLLOW_71);
             rule__Exp__Group__0__Impl();
 
             state._fsp--;
@@ -18767,17 +19226,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Exp__Group__0__Impl"
-    // InternalDeviceDefinition.g:6007:1: rule__Exp__Group__0__Impl : ( ruleFactor ) ;
+    // InternalDeviceDefinition.g:6154:1: rule__Exp__Group__0__Impl : ( ruleFactor ) ;
     public final void rule__Exp__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6011:1: ( ( ruleFactor ) )
-            // InternalDeviceDefinition.g:6012:1: ( ruleFactor )
+            // InternalDeviceDefinition.g:6158:1: ( ( ruleFactor ) )
+            // InternalDeviceDefinition.g:6159:1: ( ruleFactor )
             {
-            // InternalDeviceDefinition.g:6012:1: ( ruleFactor )
-            // InternalDeviceDefinition.g:6013:2: ruleFactor
+            // InternalDeviceDefinition.g:6159:1: ( ruleFactor )
+            // InternalDeviceDefinition.g:6160:2: ruleFactor
             {
              before(grammarAccess.getExpAccess().getFactorParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -18808,14 +19267,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Exp__Group__1"
-    // InternalDeviceDefinition.g:6022:1: rule__Exp__Group__1 : rule__Exp__Group__1__Impl ;
+    // InternalDeviceDefinition.g:6169:1: rule__Exp__Group__1 : rule__Exp__Group__1__Impl ;
     public final void rule__Exp__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6026:1: ( rule__Exp__Group__1__Impl )
-            // InternalDeviceDefinition.g:6027:2: rule__Exp__Group__1__Impl
+            // InternalDeviceDefinition.g:6173:1: ( rule__Exp__Group__1__Impl )
+            // InternalDeviceDefinition.g:6174:2: rule__Exp__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Exp__Group__1__Impl();
@@ -18841,35 +19300,35 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Exp__Group__1__Impl"
-    // InternalDeviceDefinition.g:6033:1: rule__Exp__Group__1__Impl : ( ( rule__Exp__Group_1__0 )* ) ;
+    // InternalDeviceDefinition.g:6180:1: rule__Exp__Group__1__Impl : ( ( rule__Exp__Group_1__0 )* ) ;
     public final void rule__Exp__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6037:1: ( ( ( rule__Exp__Group_1__0 )* ) )
-            // InternalDeviceDefinition.g:6038:1: ( ( rule__Exp__Group_1__0 )* )
+            // InternalDeviceDefinition.g:6184:1: ( ( ( rule__Exp__Group_1__0 )* ) )
+            // InternalDeviceDefinition.g:6185:1: ( ( rule__Exp__Group_1__0 )* )
             {
-            // InternalDeviceDefinition.g:6038:1: ( ( rule__Exp__Group_1__0 )* )
-            // InternalDeviceDefinition.g:6039:2: ( rule__Exp__Group_1__0 )*
+            // InternalDeviceDefinition.g:6185:1: ( ( rule__Exp__Group_1__0 )* )
+            // InternalDeviceDefinition.g:6186:2: ( rule__Exp__Group_1__0 )*
             {
              before(grammarAccess.getExpAccess().getGroup_1()); 
-            // InternalDeviceDefinition.g:6040:2: ( rule__Exp__Group_1__0 )*
-            loop48:
+            // InternalDeviceDefinition.g:6187:2: ( rule__Exp__Group_1__0 )*
+            loop50:
             do {
-                int alt48=2;
-                int LA48_0 = input.LA(1);
+                int alt50=2;
+                int LA50_0 = input.LA(1);
 
-                if ( ((LA48_0>=81 && LA48_0<=82)) ) {
-                    alt48=1;
+                if ( ((LA50_0>=83 && LA50_0<=84)) ) {
+                    alt50=1;
                 }
 
 
-                switch (alt48) {
+                switch (alt50) {
             	case 1 :
-            	    // InternalDeviceDefinition.g:6040:3: rule__Exp__Group_1__0
+            	    // InternalDeviceDefinition.g:6187:3: rule__Exp__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_68);
+            	    pushFollow(FOLLOW_72);
             	    rule__Exp__Group_1__0();
 
             	    state._fsp--;
@@ -18879,7 +19338,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             	    break;
 
             	default :
-            	    break loop48;
+            	    break loop50;
                 }
             } while (true);
 
@@ -18906,14 +19365,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Exp__Group_1__0"
-    // InternalDeviceDefinition.g:6049:1: rule__Exp__Group_1__0 : rule__Exp__Group_1__0__Impl rule__Exp__Group_1__1 ;
+    // InternalDeviceDefinition.g:6196:1: rule__Exp__Group_1__0 : rule__Exp__Group_1__0__Impl rule__Exp__Group_1__1 ;
     public final void rule__Exp__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6053:1: ( rule__Exp__Group_1__0__Impl rule__Exp__Group_1__1 )
-            // InternalDeviceDefinition.g:6054:2: rule__Exp__Group_1__0__Impl rule__Exp__Group_1__1
+            // InternalDeviceDefinition.g:6200:1: ( rule__Exp__Group_1__0__Impl rule__Exp__Group_1__1 )
+            // InternalDeviceDefinition.g:6201:2: rule__Exp__Group_1__0__Impl rule__Exp__Group_1__1
             {
             pushFollow(FOLLOW_50);
             rule__Exp__Group_1__0__Impl();
@@ -18944,21 +19403,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Exp__Group_1__0__Impl"
-    // InternalDeviceDefinition.g:6061:1: rule__Exp__Group_1__0__Impl : ( ( rule__Exp__Alternatives_1_0 ) ) ;
+    // InternalDeviceDefinition.g:6208:1: rule__Exp__Group_1__0__Impl : ( ( rule__Exp__Alternatives_1_0 ) ) ;
     public final void rule__Exp__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6065:1: ( ( ( rule__Exp__Alternatives_1_0 ) ) )
-            // InternalDeviceDefinition.g:6066:1: ( ( rule__Exp__Alternatives_1_0 ) )
+            // InternalDeviceDefinition.g:6212:1: ( ( ( rule__Exp__Alternatives_1_0 ) ) )
+            // InternalDeviceDefinition.g:6213:1: ( ( rule__Exp__Alternatives_1_0 ) )
             {
-            // InternalDeviceDefinition.g:6066:1: ( ( rule__Exp__Alternatives_1_0 ) )
-            // InternalDeviceDefinition.g:6067:2: ( rule__Exp__Alternatives_1_0 )
+            // InternalDeviceDefinition.g:6213:1: ( ( rule__Exp__Alternatives_1_0 ) )
+            // InternalDeviceDefinition.g:6214:2: ( rule__Exp__Alternatives_1_0 )
             {
              before(grammarAccess.getExpAccess().getAlternatives_1_0()); 
-            // InternalDeviceDefinition.g:6068:2: ( rule__Exp__Alternatives_1_0 )
-            // InternalDeviceDefinition.g:6068:3: rule__Exp__Alternatives_1_0
+            // InternalDeviceDefinition.g:6215:2: ( rule__Exp__Alternatives_1_0 )
+            // InternalDeviceDefinition.g:6215:3: rule__Exp__Alternatives_1_0
             {
             pushFollow(FOLLOW_2);
             rule__Exp__Alternatives_1_0();
@@ -18991,14 +19450,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Exp__Group_1__1"
-    // InternalDeviceDefinition.g:6076:1: rule__Exp__Group_1__1 : rule__Exp__Group_1__1__Impl ;
+    // InternalDeviceDefinition.g:6223:1: rule__Exp__Group_1__1 : rule__Exp__Group_1__1__Impl ;
     public final void rule__Exp__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6080:1: ( rule__Exp__Group_1__1__Impl )
-            // InternalDeviceDefinition.g:6081:2: rule__Exp__Group_1__1__Impl
+            // InternalDeviceDefinition.g:6227:1: ( rule__Exp__Group_1__1__Impl )
+            // InternalDeviceDefinition.g:6228:2: rule__Exp__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Exp__Group_1__1__Impl();
@@ -19024,21 +19483,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Exp__Group_1__1__Impl"
-    // InternalDeviceDefinition.g:6087:1: rule__Exp__Group_1__1__Impl : ( ( rule__Exp__RightAssignment_1_1 ) ) ;
+    // InternalDeviceDefinition.g:6234:1: rule__Exp__Group_1__1__Impl : ( ( rule__Exp__RightAssignment_1_1 ) ) ;
     public final void rule__Exp__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6091:1: ( ( ( rule__Exp__RightAssignment_1_1 ) ) )
-            // InternalDeviceDefinition.g:6092:1: ( ( rule__Exp__RightAssignment_1_1 ) )
+            // InternalDeviceDefinition.g:6238:1: ( ( ( rule__Exp__RightAssignment_1_1 ) ) )
+            // InternalDeviceDefinition.g:6239:1: ( ( rule__Exp__RightAssignment_1_1 ) )
             {
-            // InternalDeviceDefinition.g:6092:1: ( ( rule__Exp__RightAssignment_1_1 ) )
-            // InternalDeviceDefinition.g:6093:2: ( rule__Exp__RightAssignment_1_1 )
+            // InternalDeviceDefinition.g:6239:1: ( ( rule__Exp__RightAssignment_1_1 ) )
+            // InternalDeviceDefinition.g:6240:2: ( rule__Exp__RightAssignment_1_1 )
             {
              before(grammarAccess.getExpAccess().getRightAssignment_1_1()); 
-            // InternalDeviceDefinition.g:6094:2: ( rule__Exp__RightAssignment_1_1 )
-            // InternalDeviceDefinition.g:6094:3: rule__Exp__RightAssignment_1_1
+            // InternalDeviceDefinition.g:6241:2: ( rule__Exp__RightAssignment_1_1 )
+            // InternalDeviceDefinition.g:6241:3: rule__Exp__RightAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__Exp__RightAssignment_1_1();
@@ -19071,16 +19530,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Exp__Group_1_0_0__0"
-    // InternalDeviceDefinition.g:6103:1: rule__Exp__Group_1_0_0__0 : rule__Exp__Group_1_0_0__0__Impl rule__Exp__Group_1_0_0__1 ;
+    // InternalDeviceDefinition.g:6250:1: rule__Exp__Group_1_0_0__0 : rule__Exp__Group_1_0_0__0__Impl rule__Exp__Group_1_0_0__1 ;
     public final void rule__Exp__Group_1_0_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6107:1: ( rule__Exp__Group_1_0_0__0__Impl rule__Exp__Group_1_0_0__1 )
-            // InternalDeviceDefinition.g:6108:2: rule__Exp__Group_1_0_0__0__Impl rule__Exp__Group_1_0_0__1
+            // InternalDeviceDefinition.g:6254:1: ( rule__Exp__Group_1_0_0__0__Impl rule__Exp__Group_1_0_0__1 )
+            // InternalDeviceDefinition.g:6255:2: rule__Exp__Group_1_0_0__0__Impl rule__Exp__Group_1_0_0__1
             {
-            pushFollow(FOLLOW_69);
+            pushFollow(FOLLOW_73);
             rule__Exp__Group_1_0_0__0__Impl();
 
             state._fsp--;
@@ -19109,21 +19568,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Exp__Group_1_0_0__0__Impl"
-    // InternalDeviceDefinition.g:6115:1: rule__Exp__Group_1_0_0__0__Impl : ( () ) ;
+    // InternalDeviceDefinition.g:6262:1: rule__Exp__Group_1_0_0__0__Impl : ( () ) ;
     public final void rule__Exp__Group_1_0_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6119:1: ( ( () ) )
-            // InternalDeviceDefinition.g:6120:1: ( () )
+            // InternalDeviceDefinition.g:6266:1: ( ( () ) )
+            // InternalDeviceDefinition.g:6267:1: ( () )
             {
-            // InternalDeviceDefinition.g:6120:1: ( () )
-            // InternalDeviceDefinition.g:6121:2: ()
+            // InternalDeviceDefinition.g:6267:1: ( () )
+            // InternalDeviceDefinition.g:6268:2: ()
             {
              before(grammarAccess.getExpAccess().getPlusLeftAction_1_0_0_0()); 
-            // InternalDeviceDefinition.g:6122:2: ()
-            // InternalDeviceDefinition.g:6122:3: 
+            // InternalDeviceDefinition.g:6269:2: ()
+            // InternalDeviceDefinition.g:6269:3: 
             {
             }
 
@@ -19146,14 +19605,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Exp__Group_1_0_0__1"
-    // InternalDeviceDefinition.g:6130:1: rule__Exp__Group_1_0_0__1 : rule__Exp__Group_1_0_0__1__Impl ;
+    // InternalDeviceDefinition.g:6277:1: rule__Exp__Group_1_0_0__1 : rule__Exp__Group_1_0_0__1__Impl ;
     public final void rule__Exp__Group_1_0_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6134:1: ( rule__Exp__Group_1_0_0__1__Impl )
-            // InternalDeviceDefinition.g:6135:2: rule__Exp__Group_1_0_0__1__Impl
+            // InternalDeviceDefinition.g:6281:1: ( rule__Exp__Group_1_0_0__1__Impl )
+            // InternalDeviceDefinition.g:6282:2: rule__Exp__Group_1_0_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Exp__Group_1_0_0__1__Impl();
@@ -19179,20 +19638,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Exp__Group_1_0_0__1__Impl"
-    // InternalDeviceDefinition.g:6141:1: rule__Exp__Group_1_0_0__1__Impl : ( '+' ) ;
+    // InternalDeviceDefinition.g:6288:1: rule__Exp__Group_1_0_0__1__Impl : ( '+' ) ;
     public final void rule__Exp__Group_1_0_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6145:1: ( ( '+' ) )
-            // InternalDeviceDefinition.g:6146:1: ( '+' )
+            // InternalDeviceDefinition.g:6292:1: ( ( '+' ) )
+            // InternalDeviceDefinition.g:6293:1: ( '+' )
             {
-            // InternalDeviceDefinition.g:6146:1: ( '+' )
-            // InternalDeviceDefinition.g:6147:2: '+'
+            // InternalDeviceDefinition.g:6293:1: ( '+' )
+            // InternalDeviceDefinition.g:6294:2: '+'
             {
              before(grammarAccess.getExpAccess().getPlusSignKeyword_1_0_0_1()); 
-            match(input,81,FOLLOW_2); 
+            match(input,83,FOLLOW_2); 
              after(grammarAccess.getExpAccess().getPlusSignKeyword_1_0_0_1()); 
 
             }
@@ -19216,16 +19675,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Exp__Group_1_0_1__0"
-    // InternalDeviceDefinition.g:6157:1: rule__Exp__Group_1_0_1__0 : rule__Exp__Group_1_0_1__0__Impl rule__Exp__Group_1_0_1__1 ;
+    // InternalDeviceDefinition.g:6304:1: rule__Exp__Group_1_0_1__0 : rule__Exp__Group_1_0_1__0__Impl rule__Exp__Group_1_0_1__1 ;
     public final void rule__Exp__Group_1_0_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6161:1: ( rule__Exp__Group_1_0_1__0__Impl rule__Exp__Group_1_0_1__1 )
-            // InternalDeviceDefinition.g:6162:2: rule__Exp__Group_1_0_1__0__Impl rule__Exp__Group_1_0_1__1
+            // InternalDeviceDefinition.g:6308:1: ( rule__Exp__Group_1_0_1__0__Impl rule__Exp__Group_1_0_1__1 )
+            // InternalDeviceDefinition.g:6309:2: rule__Exp__Group_1_0_1__0__Impl rule__Exp__Group_1_0_1__1
             {
-            pushFollow(FOLLOW_67);
+            pushFollow(FOLLOW_71);
             rule__Exp__Group_1_0_1__0__Impl();
 
             state._fsp--;
@@ -19254,21 +19713,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Exp__Group_1_0_1__0__Impl"
-    // InternalDeviceDefinition.g:6169:1: rule__Exp__Group_1_0_1__0__Impl : ( () ) ;
+    // InternalDeviceDefinition.g:6316:1: rule__Exp__Group_1_0_1__0__Impl : ( () ) ;
     public final void rule__Exp__Group_1_0_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6173:1: ( ( () ) )
-            // InternalDeviceDefinition.g:6174:1: ( () )
+            // InternalDeviceDefinition.g:6320:1: ( ( () ) )
+            // InternalDeviceDefinition.g:6321:1: ( () )
             {
-            // InternalDeviceDefinition.g:6174:1: ( () )
-            // InternalDeviceDefinition.g:6175:2: ()
+            // InternalDeviceDefinition.g:6321:1: ( () )
+            // InternalDeviceDefinition.g:6322:2: ()
             {
              before(grammarAccess.getExpAccess().getMinusLeftAction_1_0_1_0()); 
-            // InternalDeviceDefinition.g:6176:2: ()
-            // InternalDeviceDefinition.g:6176:3: 
+            // InternalDeviceDefinition.g:6323:2: ()
+            // InternalDeviceDefinition.g:6323:3: 
             {
             }
 
@@ -19291,14 +19750,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Exp__Group_1_0_1__1"
-    // InternalDeviceDefinition.g:6184:1: rule__Exp__Group_1_0_1__1 : rule__Exp__Group_1_0_1__1__Impl ;
+    // InternalDeviceDefinition.g:6331:1: rule__Exp__Group_1_0_1__1 : rule__Exp__Group_1_0_1__1__Impl ;
     public final void rule__Exp__Group_1_0_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6188:1: ( rule__Exp__Group_1_0_1__1__Impl )
-            // InternalDeviceDefinition.g:6189:2: rule__Exp__Group_1_0_1__1__Impl
+            // InternalDeviceDefinition.g:6335:1: ( rule__Exp__Group_1_0_1__1__Impl )
+            // InternalDeviceDefinition.g:6336:2: rule__Exp__Group_1_0_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Exp__Group_1_0_1__1__Impl();
@@ -19324,20 +19783,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Exp__Group_1_0_1__1__Impl"
-    // InternalDeviceDefinition.g:6195:1: rule__Exp__Group_1_0_1__1__Impl : ( '-' ) ;
+    // InternalDeviceDefinition.g:6342:1: rule__Exp__Group_1_0_1__1__Impl : ( '-' ) ;
     public final void rule__Exp__Group_1_0_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6199:1: ( ( '-' ) )
-            // InternalDeviceDefinition.g:6200:1: ( '-' )
+            // InternalDeviceDefinition.g:6346:1: ( ( '-' ) )
+            // InternalDeviceDefinition.g:6347:1: ( '-' )
             {
-            // InternalDeviceDefinition.g:6200:1: ( '-' )
-            // InternalDeviceDefinition.g:6201:2: '-'
+            // InternalDeviceDefinition.g:6347:1: ( '-' )
+            // InternalDeviceDefinition.g:6348:2: '-'
             {
              before(grammarAccess.getExpAccess().getHyphenMinusKeyword_1_0_1_1()); 
-            match(input,82,FOLLOW_2); 
+            match(input,84,FOLLOW_2); 
              after(grammarAccess.getExpAccess().getHyphenMinusKeyword_1_0_1_1()); 
 
             }
@@ -19361,16 +19820,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Factor__Group__0"
-    // InternalDeviceDefinition.g:6211:1: rule__Factor__Group__0 : rule__Factor__Group__0__Impl rule__Factor__Group__1 ;
+    // InternalDeviceDefinition.g:6358:1: rule__Factor__Group__0 : rule__Factor__Group__0__Impl rule__Factor__Group__1 ;
     public final void rule__Factor__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6215:1: ( rule__Factor__Group__0__Impl rule__Factor__Group__1 )
-            // InternalDeviceDefinition.g:6216:2: rule__Factor__Group__0__Impl rule__Factor__Group__1
+            // InternalDeviceDefinition.g:6362:1: ( rule__Factor__Group__0__Impl rule__Factor__Group__1 )
+            // InternalDeviceDefinition.g:6363:2: rule__Factor__Group__0__Impl rule__Factor__Group__1
             {
-            pushFollow(FOLLOW_70);
+            pushFollow(FOLLOW_74);
             rule__Factor__Group__0__Impl();
 
             state._fsp--;
@@ -19399,17 +19858,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Factor__Group__0__Impl"
-    // InternalDeviceDefinition.g:6223:1: rule__Factor__Group__0__Impl : ( ruleCompare ) ;
+    // InternalDeviceDefinition.g:6370:1: rule__Factor__Group__0__Impl : ( ruleCompare ) ;
     public final void rule__Factor__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6227:1: ( ( ruleCompare ) )
-            // InternalDeviceDefinition.g:6228:1: ( ruleCompare )
+            // InternalDeviceDefinition.g:6374:1: ( ( ruleCompare ) )
+            // InternalDeviceDefinition.g:6375:1: ( ruleCompare )
             {
-            // InternalDeviceDefinition.g:6228:1: ( ruleCompare )
-            // InternalDeviceDefinition.g:6229:2: ruleCompare
+            // InternalDeviceDefinition.g:6375:1: ( ruleCompare )
+            // InternalDeviceDefinition.g:6376:2: ruleCompare
             {
              before(grammarAccess.getFactorAccess().getCompareParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -19440,14 +19899,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Factor__Group__1"
-    // InternalDeviceDefinition.g:6238:1: rule__Factor__Group__1 : rule__Factor__Group__1__Impl ;
+    // InternalDeviceDefinition.g:6385:1: rule__Factor__Group__1 : rule__Factor__Group__1__Impl ;
     public final void rule__Factor__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6242:1: ( rule__Factor__Group__1__Impl )
-            // InternalDeviceDefinition.g:6243:2: rule__Factor__Group__1__Impl
+            // InternalDeviceDefinition.g:6389:1: ( rule__Factor__Group__1__Impl )
+            // InternalDeviceDefinition.g:6390:2: rule__Factor__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Factor__Group__1__Impl();
@@ -19473,35 +19932,35 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Factor__Group__1__Impl"
-    // InternalDeviceDefinition.g:6249:1: rule__Factor__Group__1__Impl : ( ( rule__Factor__Group_1__0 )* ) ;
+    // InternalDeviceDefinition.g:6396:1: rule__Factor__Group__1__Impl : ( ( rule__Factor__Group_1__0 )* ) ;
     public final void rule__Factor__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6253:1: ( ( ( rule__Factor__Group_1__0 )* ) )
-            // InternalDeviceDefinition.g:6254:1: ( ( rule__Factor__Group_1__0 )* )
+            // InternalDeviceDefinition.g:6400:1: ( ( ( rule__Factor__Group_1__0 )* ) )
+            // InternalDeviceDefinition.g:6401:1: ( ( rule__Factor__Group_1__0 )* )
             {
-            // InternalDeviceDefinition.g:6254:1: ( ( rule__Factor__Group_1__0 )* )
-            // InternalDeviceDefinition.g:6255:2: ( rule__Factor__Group_1__0 )*
+            // InternalDeviceDefinition.g:6401:1: ( ( rule__Factor__Group_1__0 )* )
+            // InternalDeviceDefinition.g:6402:2: ( rule__Factor__Group_1__0 )*
             {
              before(grammarAccess.getFactorAccess().getGroup_1()); 
-            // InternalDeviceDefinition.g:6256:2: ( rule__Factor__Group_1__0 )*
-            loop49:
+            // InternalDeviceDefinition.g:6403:2: ( rule__Factor__Group_1__0 )*
+            loop51:
             do {
-                int alt49=2;
-                int LA49_0 = input.LA(1);
+                int alt51=2;
+                int LA51_0 = input.LA(1);
 
-                if ( ((LA49_0>=83 && LA49_0<=84)) ) {
-                    alt49=1;
+                if ( ((LA51_0>=85 && LA51_0<=86)) ) {
+                    alt51=1;
                 }
 
 
-                switch (alt49) {
+                switch (alt51) {
             	case 1 :
-            	    // InternalDeviceDefinition.g:6256:3: rule__Factor__Group_1__0
+            	    // InternalDeviceDefinition.g:6403:3: rule__Factor__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_71);
+            	    pushFollow(FOLLOW_75);
             	    rule__Factor__Group_1__0();
 
             	    state._fsp--;
@@ -19511,7 +19970,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             	    break;
 
             	default :
-            	    break loop49;
+            	    break loop51;
                 }
             } while (true);
 
@@ -19538,14 +19997,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Factor__Group_1__0"
-    // InternalDeviceDefinition.g:6265:1: rule__Factor__Group_1__0 : rule__Factor__Group_1__0__Impl rule__Factor__Group_1__1 ;
+    // InternalDeviceDefinition.g:6412:1: rule__Factor__Group_1__0 : rule__Factor__Group_1__0__Impl rule__Factor__Group_1__1 ;
     public final void rule__Factor__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6269:1: ( rule__Factor__Group_1__0__Impl rule__Factor__Group_1__1 )
-            // InternalDeviceDefinition.g:6270:2: rule__Factor__Group_1__0__Impl rule__Factor__Group_1__1
+            // InternalDeviceDefinition.g:6416:1: ( rule__Factor__Group_1__0__Impl rule__Factor__Group_1__1 )
+            // InternalDeviceDefinition.g:6417:2: rule__Factor__Group_1__0__Impl rule__Factor__Group_1__1
             {
             pushFollow(FOLLOW_50);
             rule__Factor__Group_1__0__Impl();
@@ -19576,21 +20035,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Factor__Group_1__0__Impl"
-    // InternalDeviceDefinition.g:6277:1: rule__Factor__Group_1__0__Impl : ( ( rule__Factor__Alternatives_1_0 ) ) ;
+    // InternalDeviceDefinition.g:6424:1: rule__Factor__Group_1__0__Impl : ( ( rule__Factor__Alternatives_1_0 ) ) ;
     public final void rule__Factor__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6281:1: ( ( ( rule__Factor__Alternatives_1_0 ) ) )
-            // InternalDeviceDefinition.g:6282:1: ( ( rule__Factor__Alternatives_1_0 ) )
+            // InternalDeviceDefinition.g:6428:1: ( ( ( rule__Factor__Alternatives_1_0 ) ) )
+            // InternalDeviceDefinition.g:6429:1: ( ( rule__Factor__Alternatives_1_0 ) )
             {
-            // InternalDeviceDefinition.g:6282:1: ( ( rule__Factor__Alternatives_1_0 ) )
-            // InternalDeviceDefinition.g:6283:2: ( rule__Factor__Alternatives_1_0 )
+            // InternalDeviceDefinition.g:6429:1: ( ( rule__Factor__Alternatives_1_0 ) )
+            // InternalDeviceDefinition.g:6430:2: ( rule__Factor__Alternatives_1_0 )
             {
              before(grammarAccess.getFactorAccess().getAlternatives_1_0()); 
-            // InternalDeviceDefinition.g:6284:2: ( rule__Factor__Alternatives_1_0 )
-            // InternalDeviceDefinition.g:6284:3: rule__Factor__Alternatives_1_0
+            // InternalDeviceDefinition.g:6431:2: ( rule__Factor__Alternatives_1_0 )
+            // InternalDeviceDefinition.g:6431:3: rule__Factor__Alternatives_1_0
             {
             pushFollow(FOLLOW_2);
             rule__Factor__Alternatives_1_0();
@@ -19623,14 +20082,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Factor__Group_1__1"
-    // InternalDeviceDefinition.g:6292:1: rule__Factor__Group_1__1 : rule__Factor__Group_1__1__Impl ;
+    // InternalDeviceDefinition.g:6439:1: rule__Factor__Group_1__1 : rule__Factor__Group_1__1__Impl ;
     public final void rule__Factor__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6296:1: ( rule__Factor__Group_1__1__Impl )
-            // InternalDeviceDefinition.g:6297:2: rule__Factor__Group_1__1__Impl
+            // InternalDeviceDefinition.g:6443:1: ( rule__Factor__Group_1__1__Impl )
+            // InternalDeviceDefinition.g:6444:2: rule__Factor__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Factor__Group_1__1__Impl();
@@ -19656,21 +20115,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Factor__Group_1__1__Impl"
-    // InternalDeviceDefinition.g:6303:1: rule__Factor__Group_1__1__Impl : ( ( rule__Factor__RightAssignment_1_1 ) ) ;
+    // InternalDeviceDefinition.g:6450:1: rule__Factor__Group_1__1__Impl : ( ( rule__Factor__RightAssignment_1_1 ) ) ;
     public final void rule__Factor__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6307:1: ( ( ( rule__Factor__RightAssignment_1_1 ) ) )
-            // InternalDeviceDefinition.g:6308:1: ( ( rule__Factor__RightAssignment_1_1 ) )
+            // InternalDeviceDefinition.g:6454:1: ( ( ( rule__Factor__RightAssignment_1_1 ) ) )
+            // InternalDeviceDefinition.g:6455:1: ( ( rule__Factor__RightAssignment_1_1 ) )
             {
-            // InternalDeviceDefinition.g:6308:1: ( ( rule__Factor__RightAssignment_1_1 ) )
-            // InternalDeviceDefinition.g:6309:2: ( rule__Factor__RightAssignment_1_1 )
+            // InternalDeviceDefinition.g:6455:1: ( ( rule__Factor__RightAssignment_1_1 ) )
+            // InternalDeviceDefinition.g:6456:2: ( rule__Factor__RightAssignment_1_1 )
             {
              before(grammarAccess.getFactorAccess().getRightAssignment_1_1()); 
-            // InternalDeviceDefinition.g:6310:2: ( rule__Factor__RightAssignment_1_1 )
-            // InternalDeviceDefinition.g:6310:3: rule__Factor__RightAssignment_1_1
+            // InternalDeviceDefinition.g:6457:2: ( rule__Factor__RightAssignment_1_1 )
+            // InternalDeviceDefinition.g:6457:3: rule__Factor__RightAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__Factor__RightAssignment_1_1();
@@ -19703,16 +20162,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Factor__Group_1_0_0__0"
-    // InternalDeviceDefinition.g:6319:1: rule__Factor__Group_1_0_0__0 : rule__Factor__Group_1_0_0__0__Impl rule__Factor__Group_1_0_0__1 ;
+    // InternalDeviceDefinition.g:6466:1: rule__Factor__Group_1_0_0__0 : rule__Factor__Group_1_0_0__0__Impl rule__Factor__Group_1_0_0__1 ;
     public final void rule__Factor__Group_1_0_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6323:1: ( rule__Factor__Group_1_0_0__0__Impl rule__Factor__Group_1_0_0__1 )
-            // InternalDeviceDefinition.g:6324:2: rule__Factor__Group_1_0_0__0__Impl rule__Factor__Group_1_0_0__1
+            // InternalDeviceDefinition.g:6470:1: ( rule__Factor__Group_1_0_0__0__Impl rule__Factor__Group_1_0_0__1 )
+            // InternalDeviceDefinition.g:6471:2: rule__Factor__Group_1_0_0__0__Impl rule__Factor__Group_1_0_0__1
             {
-            pushFollow(FOLLOW_72);
+            pushFollow(FOLLOW_76);
             rule__Factor__Group_1_0_0__0__Impl();
 
             state._fsp--;
@@ -19741,21 +20200,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Factor__Group_1_0_0__0__Impl"
-    // InternalDeviceDefinition.g:6331:1: rule__Factor__Group_1_0_0__0__Impl : ( () ) ;
+    // InternalDeviceDefinition.g:6478:1: rule__Factor__Group_1_0_0__0__Impl : ( () ) ;
     public final void rule__Factor__Group_1_0_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6335:1: ( ( () ) )
-            // InternalDeviceDefinition.g:6336:1: ( () )
+            // InternalDeviceDefinition.g:6482:1: ( ( () ) )
+            // InternalDeviceDefinition.g:6483:1: ( () )
             {
-            // InternalDeviceDefinition.g:6336:1: ( () )
-            // InternalDeviceDefinition.g:6337:2: ()
+            // InternalDeviceDefinition.g:6483:1: ( () )
+            // InternalDeviceDefinition.g:6484:2: ()
             {
              before(grammarAccess.getFactorAccess().getMultLeftAction_1_0_0_0()); 
-            // InternalDeviceDefinition.g:6338:2: ()
-            // InternalDeviceDefinition.g:6338:3: 
+            // InternalDeviceDefinition.g:6485:2: ()
+            // InternalDeviceDefinition.g:6485:3: 
             {
             }
 
@@ -19778,14 +20237,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Factor__Group_1_0_0__1"
-    // InternalDeviceDefinition.g:6346:1: rule__Factor__Group_1_0_0__1 : rule__Factor__Group_1_0_0__1__Impl ;
+    // InternalDeviceDefinition.g:6493:1: rule__Factor__Group_1_0_0__1 : rule__Factor__Group_1_0_0__1__Impl ;
     public final void rule__Factor__Group_1_0_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6350:1: ( rule__Factor__Group_1_0_0__1__Impl )
-            // InternalDeviceDefinition.g:6351:2: rule__Factor__Group_1_0_0__1__Impl
+            // InternalDeviceDefinition.g:6497:1: ( rule__Factor__Group_1_0_0__1__Impl )
+            // InternalDeviceDefinition.g:6498:2: rule__Factor__Group_1_0_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Factor__Group_1_0_0__1__Impl();
@@ -19811,20 +20270,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Factor__Group_1_0_0__1__Impl"
-    // InternalDeviceDefinition.g:6357:1: rule__Factor__Group_1_0_0__1__Impl : ( '*' ) ;
+    // InternalDeviceDefinition.g:6504:1: rule__Factor__Group_1_0_0__1__Impl : ( '*' ) ;
     public final void rule__Factor__Group_1_0_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6361:1: ( ( '*' ) )
-            // InternalDeviceDefinition.g:6362:1: ( '*' )
+            // InternalDeviceDefinition.g:6508:1: ( ( '*' ) )
+            // InternalDeviceDefinition.g:6509:1: ( '*' )
             {
-            // InternalDeviceDefinition.g:6362:1: ( '*' )
-            // InternalDeviceDefinition.g:6363:2: '*'
+            // InternalDeviceDefinition.g:6509:1: ( '*' )
+            // InternalDeviceDefinition.g:6510:2: '*'
             {
              before(grammarAccess.getFactorAccess().getAsteriskKeyword_1_0_0_1()); 
-            match(input,83,FOLLOW_2); 
+            match(input,85,FOLLOW_2); 
              after(grammarAccess.getFactorAccess().getAsteriskKeyword_1_0_0_1()); 
 
             }
@@ -19848,16 +20307,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Factor__Group_1_0_1__0"
-    // InternalDeviceDefinition.g:6373:1: rule__Factor__Group_1_0_1__0 : rule__Factor__Group_1_0_1__0__Impl rule__Factor__Group_1_0_1__1 ;
+    // InternalDeviceDefinition.g:6520:1: rule__Factor__Group_1_0_1__0 : rule__Factor__Group_1_0_1__0__Impl rule__Factor__Group_1_0_1__1 ;
     public final void rule__Factor__Group_1_0_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6377:1: ( rule__Factor__Group_1_0_1__0__Impl rule__Factor__Group_1_0_1__1 )
-            // InternalDeviceDefinition.g:6378:2: rule__Factor__Group_1_0_1__0__Impl rule__Factor__Group_1_0_1__1
+            // InternalDeviceDefinition.g:6524:1: ( rule__Factor__Group_1_0_1__0__Impl rule__Factor__Group_1_0_1__1 )
+            // InternalDeviceDefinition.g:6525:2: rule__Factor__Group_1_0_1__0__Impl rule__Factor__Group_1_0_1__1
             {
-            pushFollow(FOLLOW_70);
+            pushFollow(FOLLOW_74);
             rule__Factor__Group_1_0_1__0__Impl();
 
             state._fsp--;
@@ -19886,21 +20345,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Factor__Group_1_0_1__0__Impl"
-    // InternalDeviceDefinition.g:6385:1: rule__Factor__Group_1_0_1__0__Impl : ( () ) ;
+    // InternalDeviceDefinition.g:6532:1: rule__Factor__Group_1_0_1__0__Impl : ( () ) ;
     public final void rule__Factor__Group_1_0_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6389:1: ( ( () ) )
-            // InternalDeviceDefinition.g:6390:1: ( () )
+            // InternalDeviceDefinition.g:6536:1: ( ( () ) )
+            // InternalDeviceDefinition.g:6537:1: ( () )
             {
-            // InternalDeviceDefinition.g:6390:1: ( () )
-            // InternalDeviceDefinition.g:6391:2: ()
+            // InternalDeviceDefinition.g:6537:1: ( () )
+            // InternalDeviceDefinition.g:6538:2: ()
             {
              before(grammarAccess.getFactorAccess().getDivLeftAction_1_0_1_0()); 
-            // InternalDeviceDefinition.g:6392:2: ()
-            // InternalDeviceDefinition.g:6392:3: 
+            // InternalDeviceDefinition.g:6539:2: ()
+            // InternalDeviceDefinition.g:6539:3: 
             {
             }
 
@@ -19923,14 +20382,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Factor__Group_1_0_1__1"
-    // InternalDeviceDefinition.g:6400:1: rule__Factor__Group_1_0_1__1 : rule__Factor__Group_1_0_1__1__Impl ;
+    // InternalDeviceDefinition.g:6547:1: rule__Factor__Group_1_0_1__1 : rule__Factor__Group_1_0_1__1__Impl ;
     public final void rule__Factor__Group_1_0_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6404:1: ( rule__Factor__Group_1_0_1__1__Impl )
-            // InternalDeviceDefinition.g:6405:2: rule__Factor__Group_1_0_1__1__Impl
+            // InternalDeviceDefinition.g:6551:1: ( rule__Factor__Group_1_0_1__1__Impl )
+            // InternalDeviceDefinition.g:6552:2: rule__Factor__Group_1_0_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Factor__Group_1_0_1__1__Impl();
@@ -19956,20 +20415,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Factor__Group_1_0_1__1__Impl"
-    // InternalDeviceDefinition.g:6411:1: rule__Factor__Group_1_0_1__1__Impl : ( '/' ) ;
+    // InternalDeviceDefinition.g:6558:1: rule__Factor__Group_1_0_1__1__Impl : ( '/' ) ;
     public final void rule__Factor__Group_1_0_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6415:1: ( ( '/' ) )
-            // InternalDeviceDefinition.g:6416:1: ( '/' )
+            // InternalDeviceDefinition.g:6562:1: ( ( '/' ) )
+            // InternalDeviceDefinition.g:6563:1: ( '/' )
             {
-            // InternalDeviceDefinition.g:6416:1: ( '/' )
-            // InternalDeviceDefinition.g:6417:2: '/'
+            // InternalDeviceDefinition.g:6563:1: ( '/' )
+            // InternalDeviceDefinition.g:6564:2: '/'
             {
              before(grammarAccess.getFactorAccess().getSolidusKeyword_1_0_1_1()); 
-            match(input,84,FOLLOW_2); 
+            match(input,86,FOLLOW_2); 
              after(grammarAccess.getFactorAccess().getSolidusKeyword_1_0_1_1()); 
 
             }
@@ -19993,16 +20452,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Compare__Group__0"
-    // InternalDeviceDefinition.g:6427:1: rule__Compare__Group__0 : rule__Compare__Group__0__Impl rule__Compare__Group__1 ;
+    // InternalDeviceDefinition.g:6574:1: rule__Compare__Group__0 : rule__Compare__Group__0__Impl rule__Compare__Group__1 ;
     public final void rule__Compare__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6431:1: ( rule__Compare__Group__0__Impl rule__Compare__Group__1 )
-            // InternalDeviceDefinition.g:6432:2: rule__Compare__Group__0__Impl rule__Compare__Group__1
+            // InternalDeviceDefinition.g:6578:1: ( rule__Compare__Group__0__Impl rule__Compare__Group__1 )
+            // InternalDeviceDefinition.g:6579:2: rule__Compare__Group__0__Impl rule__Compare__Group__1
             {
-            pushFollow(FOLLOW_73);
+            pushFollow(FOLLOW_77);
             rule__Compare__Group__0__Impl();
 
             state._fsp--;
@@ -20031,17 +20490,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Compare__Group__0__Impl"
-    // InternalDeviceDefinition.g:6439:1: rule__Compare__Group__0__Impl : ( ruleCompareOrEquals ) ;
+    // InternalDeviceDefinition.g:6586:1: rule__Compare__Group__0__Impl : ( ruleCompareOrEquals ) ;
     public final void rule__Compare__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6443:1: ( ( ruleCompareOrEquals ) )
-            // InternalDeviceDefinition.g:6444:1: ( ruleCompareOrEquals )
+            // InternalDeviceDefinition.g:6590:1: ( ( ruleCompareOrEquals ) )
+            // InternalDeviceDefinition.g:6591:1: ( ruleCompareOrEquals )
             {
-            // InternalDeviceDefinition.g:6444:1: ( ruleCompareOrEquals )
-            // InternalDeviceDefinition.g:6445:2: ruleCompareOrEquals
+            // InternalDeviceDefinition.g:6591:1: ( ruleCompareOrEquals )
+            // InternalDeviceDefinition.g:6592:2: ruleCompareOrEquals
             {
              before(grammarAccess.getCompareAccess().getCompareOrEqualsParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -20072,14 +20531,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Compare__Group__1"
-    // InternalDeviceDefinition.g:6454:1: rule__Compare__Group__1 : rule__Compare__Group__1__Impl ;
+    // InternalDeviceDefinition.g:6601:1: rule__Compare__Group__1 : rule__Compare__Group__1__Impl ;
     public final void rule__Compare__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6458:1: ( rule__Compare__Group__1__Impl )
-            // InternalDeviceDefinition.g:6459:2: rule__Compare__Group__1__Impl
+            // InternalDeviceDefinition.g:6605:1: ( rule__Compare__Group__1__Impl )
+            // InternalDeviceDefinition.g:6606:2: rule__Compare__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Compare__Group__1__Impl();
@@ -20105,35 +20564,35 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Compare__Group__1__Impl"
-    // InternalDeviceDefinition.g:6465:1: rule__Compare__Group__1__Impl : ( ( rule__Compare__Group_1__0 )* ) ;
+    // InternalDeviceDefinition.g:6612:1: rule__Compare__Group__1__Impl : ( ( rule__Compare__Group_1__0 )* ) ;
     public final void rule__Compare__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6469:1: ( ( ( rule__Compare__Group_1__0 )* ) )
-            // InternalDeviceDefinition.g:6470:1: ( ( rule__Compare__Group_1__0 )* )
+            // InternalDeviceDefinition.g:6616:1: ( ( ( rule__Compare__Group_1__0 )* ) )
+            // InternalDeviceDefinition.g:6617:1: ( ( rule__Compare__Group_1__0 )* )
             {
-            // InternalDeviceDefinition.g:6470:1: ( ( rule__Compare__Group_1__0 )* )
-            // InternalDeviceDefinition.g:6471:2: ( rule__Compare__Group_1__0 )*
+            // InternalDeviceDefinition.g:6617:1: ( ( rule__Compare__Group_1__0 )* )
+            // InternalDeviceDefinition.g:6618:2: ( rule__Compare__Group_1__0 )*
             {
              before(grammarAccess.getCompareAccess().getGroup_1()); 
-            // InternalDeviceDefinition.g:6472:2: ( rule__Compare__Group_1__0 )*
-            loop50:
+            // InternalDeviceDefinition.g:6619:2: ( rule__Compare__Group_1__0 )*
+            loop52:
             do {
-                int alt50=2;
-                int LA50_0 = input.LA(1);
+                int alt52=2;
+                int LA52_0 = input.LA(1);
 
-                if ( ((LA50_0>=85 && LA50_0<=86)) ) {
-                    alt50=1;
+                if ( ((LA52_0>=87 && LA52_0<=88)) ) {
+                    alt52=1;
                 }
 
 
-                switch (alt50) {
+                switch (alt52) {
             	case 1 :
-            	    // InternalDeviceDefinition.g:6472:3: rule__Compare__Group_1__0
+            	    // InternalDeviceDefinition.g:6619:3: rule__Compare__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_74);
+            	    pushFollow(FOLLOW_78);
             	    rule__Compare__Group_1__0();
 
             	    state._fsp--;
@@ -20143,7 +20602,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             	    break;
 
             	default :
-            	    break loop50;
+            	    break loop52;
                 }
             } while (true);
 
@@ -20170,14 +20629,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Compare__Group_1__0"
-    // InternalDeviceDefinition.g:6481:1: rule__Compare__Group_1__0 : rule__Compare__Group_1__0__Impl rule__Compare__Group_1__1 ;
+    // InternalDeviceDefinition.g:6628:1: rule__Compare__Group_1__0 : rule__Compare__Group_1__0__Impl rule__Compare__Group_1__1 ;
     public final void rule__Compare__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6485:1: ( rule__Compare__Group_1__0__Impl rule__Compare__Group_1__1 )
-            // InternalDeviceDefinition.g:6486:2: rule__Compare__Group_1__0__Impl rule__Compare__Group_1__1
+            // InternalDeviceDefinition.g:6632:1: ( rule__Compare__Group_1__0__Impl rule__Compare__Group_1__1 )
+            // InternalDeviceDefinition.g:6633:2: rule__Compare__Group_1__0__Impl rule__Compare__Group_1__1
             {
             pushFollow(FOLLOW_50);
             rule__Compare__Group_1__0__Impl();
@@ -20208,21 +20667,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Compare__Group_1__0__Impl"
-    // InternalDeviceDefinition.g:6493:1: rule__Compare__Group_1__0__Impl : ( ( rule__Compare__Alternatives_1_0 ) ) ;
+    // InternalDeviceDefinition.g:6640:1: rule__Compare__Group_1__0__Impl : ( ( rule__Compare__Alternatives_1_0 ) ) ;
     public final void rule__Compare__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6497:1: ( ( ( rule__Compare__Alternatives_1_0 ) ) )
-            // InternalDeviceDefinition.g:6498:1: ( ( rule__Compare__Alternatives_1_0 ) )
+            // InternalDeviceDefinition.g:6644:1: ( ( ( rule__Compare__Alternatives_1_0 ) ) )
+            // InternalDeviceDefinition.g:6645:1: ( ( rule__Compare__Alternatives_1_0 ) )
             {
-            // InternalDeviceDefinition.g:6498:1: ( ( rule__Compare__Alternatives_1_0 ) )
-            // InternalDeviceDefinition.g:6499:2: ( rule__Compare__Alternatives_1_0 )
+            // InternalDeviceDefinition.g:6645:1: ( ( rule__Compare__Alternatives_1_0 ) )
+            // InternalDeviceDefinition.g:6646:2: ( rule__Compare__Alternatives_1_0 )
             {
              before(grammarAccess.getCompareAccess().getAlternatives_1_0()); 
-            // InternalDeviceDefinition.g:6500:2: ( rule__Compare__Alternatives_1_0 )
-            // InternalDeviceDefinition.g:6500:3: rule__Compare__Alternatives_1_0
+            // InternalDeviceDefinition.g:6647:2: ( rule__Compare__Alternatives_1_0 )
+            // InternalDeviceDefinition.g:6647:3: rule__Compare__Alternatives_1_0
             {
             pushFollow(FOLLOW_2);
             rule__Compare__Alternatives_1_0();
@@ -20255,14 +20714,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Compare__Group_1__1"
-    // InternalDeviceDefinition.g:6508:1: rule__Compare__Group_1__1 : rule__Compare__Group_1__1__Impl ;
+    // InternalDeviceDefinition.g:6655:1: rule__Compare__Group_1__1 : rule__Compare__Group_1__1__Impl ;
     public final void rule__Compare__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6512:1: ( rule__Compare__Group_1__1__Impl )
-            // InternalDeviceDefinition.g:6513:2: rule__Compare__Group_1__1__Impl
+            // InternalDeviceDefinition.g:6659:1: ( rule__Compare__Group_1__1__Impl )
+            // InternalDeviceDefinition.g:6660:2: rule__Compare__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Compare__Group_1__1__Impl();
@@ -20288,21 +20747,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Compare__Group_1__1__Impl"
-    // InternalDeviceDefinition.g:6519:1: rule__Compare__Group_1__1__Impl : ( ( rule__Compare__RightAssignment_1_1 ) ) ;
+    // InternalDeviceDefinition.g:6666:1: rule__Compare__Group_1__1__Impl : ( ( rule__Compare__RightAssignment_1_1 ) ) ;
     public final void rule__Compare__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6523:1: ( ( ( rule__Compare__RightAssignment_1_1 ) ) )
-            // InternalDeviceDefinition.g:6524:1: ( ( rule__Compare__RightAssignment_1_1 ) )
+            // InternalDeviceDefinition.g:6670:1: ( ( ( rule__Compare__RightAssignment_1_1 ) ) )
+            // InternalDeviceDefinition.g:6671:1: ( ( rule__Compare__RightAssignment_1_1 ) )
             {
-            // InternalDeviceDefinition.g:6524:1: ( ( rule__Compare__RightAssignment_1_1 ) )
-            // InternalDeviceDefinition.g:6525:2: ( rule__Compare__RightAssignment_1_1 )
+            // InternalDeviceDefinition.g:6671:1: ( ( rule__Compare__RightAssignment_1_1 ) )
+            // InternalDeviceDefinition.g:6672:2: ( rule__Compare__RightAssignment_1_1 )
             {
              before(grammarAccess.getCompareAccess().getRightAssignment_1_1()); 
-            // InternalDeviceDefinition.g:6526:2: ( rule__Compare__RightAssignment_1_1 )
-            // InternalDeviceDefinition.g:6526:3: rule__Compare__RightAssignment_1_1
+            // InternalDeviceDefinition.g:6673:2: ( rule__Compare__RightAssignment_1_1 )
+            // InternalDeviceDefinition.g:6673:3: rule__Compare__RightAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__Compare__RightAssignment_1_1();
@@ -20335,16 +20794,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Compare__Group_1_0_0__0"
-    // InternalDeviceDefinition.g:6535:1: rule__Compare__Group_1_0_0__0 : rule__Compare__Group_1_0_0__0__Impl rule__Compare__Group_1_0_0__1 ;
+    // InternalDeviceDefinition.g:6682:1: rule__Compare__Group_1_0_0__0 : rule__Compare__Group_1_0_0__0__Impl rule__Compare__Group_1_0_0__1 ;
     public final void rule__Compare__Group_1_0_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6539:1: ( rule__Compare__Group_1_0_0__0__Impl rule__Compare__Group_1_0_0__1 )
-            // InternalDeviceDefinition.g:6540:2: rule__Compare__Group_1_0_0__0__Impl rule__Compare__Group_1_0_0__1
+            // InternalDeviceDefinition.g:6686:1: ( rule__Compare__Group_1_0_0__0__Impl rule__Compare__Group_1_0_0__1 )
+            // InternalDeviceDefinition.g:6687:2: rule__Compare__Group_1_0_0__0__Impl rule__Compare__Group_1_0_0__1
             {
-            pushFollow(FOLLOW_75);
+            pushFollow(FOLLOW_79);
             rule__Compare__Group_1_0_0__0__Impl();
 
             state._fsp--;
@@ -20373,21 +20832,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Compare__Group_1_0_0__0__Impl"
-    // InternalDeviceDefinition.g:6547:1: rule__Compare__Group_1_0_0__0__Impl : ( () ) ;
+    // InternalDeviceDefinition.g:6694:1: rule__Compare__Group_1_0_0__0__Impl : ( () ) ;
     public final void rule__Compare__Group_1_0_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6551:1: ( ( () ) )
-            // InternalDeviceDefinition.g:6552:1: ( () )
+            // InternalDeviceDefinition.g:6698:1: ( ( () ) )
+            // InternalDeviceDefinition.g:6699:1: ( () )
             {
-            // InternalDeviceDefinition.g:6552:1: ( () )
-            // InternalDeviceDefinition.g:6553:2: ()
+            // InternalDeviceDefinition.g:6699:1: ( () )
+            // InternalDeviceDefinition.g:6700:2: ()
             {
              before(grammarAccess.getCompareAccess().getGreaterLeftAction_1_0_0_0()); 
-            // InternalDeviceDefinition.g:6554:2: ()
-            // InternalDeviceDefinition.g:6554:3: 
+            // InternalDeviceDefinition.g:6701:2: ()
+            // InternalDeviceDefinition.g:6701:3: 
             {
             }
 
@@ -20410,14 +20869,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Compare__Group_1_0_0__1"
-    // InternalDeviceDefinition.g:6562:1: rule__Compare__Group_1_0_0__1 : rule__Compare__Group_1_0_0__1__Impl ;
+    // InternalDeviceDefinition.g:6709:1: rule__Compare__Group_1_0_0__1 : rule__Compare__Group_1_0_0__1__Impl ;
     public final void rule__Compare__Group_1_0_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6566:1: ( rule__Compare__Group_1_0_0__1__Impl )
-            // InternalDeviceDefinition.g:6567:2: rule__Compare__Group_1_0_0__1__Impl
+            // InternalDeviceDefinition.g:6713:1: ( rule__Compare__Group_1_0_0__1__Impl )
+            // InternalDeviceDefinition.g:6714:2: rule__Compare__Group_1_0_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Compare__Group_1_0_0__1__Impl();
@@ -20443,20 +20902,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Compare__Group_1_0_0__1__Impl"
-    // InternalDeviceDefinition.g:6573:1: rule__Compare__Group_1_0_0__1__Impl : ( '>' ) ;
+    // InternalDeviceDefinition.g:6720:1: rule__Compare__Group_1_0_0__1__Impl : ( '>' ) ;
     public final void rule__Compare__Group_1_0_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6577:1: ( ( '>' ) )
-            // InternalDeviceDefinition.g:6578:1: ( '>' )
+            // InternalDeviceDefinition.g:6724:1: ( ( '>' ) )
+            // InternalDeviceDefinition.g:6725:1: ( '>' )
             {
-            // InternalDeviceDefinition.g:6578:1: ( '>' )
-            // InternalDeviceDefinition.g:6579:2: '>'
+            // InternalDeviceDefinition.g:6725:1: ( '>' )
+            // InternalDeviceDefinition.g:6726:2: '>'
             {
              before(grammarAccess.getCompareAccess().getGreaterThanSignKeyword_1_0_0_1()); 
-            match(input,85,FOLLOW_2); 
+            match(input,87,FOLLOW_2); 
              after(grammarAccess.getCompareAccess().getGreaterThanSignKeyword_1_0_0_1()); 
 
             }
@@ -20480,16 +20939,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Compare__Group_1_0_1__0"
-    // InternalDeviceDefinition.g:6589:1: rule__Compare__Group_1_0_1__0 : rule__Compare__Group_1_0_1__0__Impl rule__Compare__Group_1_0_1__1 ;
+    // InternalDeviceDefinition.g:6736:1: rule__Compare__Group_1_0_1__0 : rule__Compare__Group_1_0_1__0__Impl rule__Compare__Group_1_0_1__1 ;
     public final void rule__Compare__Group_1_0_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6593:1: ( rule__Compare__Group_1_0_1__0__Impl rule__Compare__Group_1_0_1__1 )
-            // InternalDeviceDefinition.g:6594:2: rule__Compare__Group_1_0_1__0__Impl rule__Compare__Group_1_0_1__1
+            // InternalDeviceDefinition.g:6740:1: ( rule__Compare__Group_1_0_1__0__Impl rule__Compare__Group_1_0_1__1 )
+            // InternalDeviceDefinition.g:6741:2: rule__Compare__Group_1_0_1__0__Impl rule__Compare__Group_1_0_1__1
             {
-            pushFollow(FOLLOW_73);
+            pushFollow(FOLLOW_77);
             rule__Compare__Group_1_0_1__0__Impl();
 
             state._fsp--;
@@ -20518,21 +20977,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Compare__Group_1_0_1__0__Impl"
-    // InternalDeviceDefinition.g:6601:1: rule__Compare__Group_1_0_1__0__Impl : ( () ) ;
+    // InternalDeviceDefinition.g:6748:1: rule__Compare__Group_1_0_1__0__Impl : ( () ) ;
     public final void rule__Compare__Group_1_0_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6605:1: ( ( () ) )
-            // InternalDeviceDefinition.g:6606:1: ( () )
+            // InternalDeviceDefinition.g:6752:1: ( ( () ) )
+            // InternalDeviceDefinition.g:6753:1: ( () )
             {
-            // InternalDeviceDefinition.g:6606:1: ( () )
-            // InternalDeviceDefinition.g:6607:2: ()
+            // InternalDeviceDefinition.g:6753:1: ( () )
+            // InternalDeviceDefinition.g:6754:2: ()
             {
              before(grammarAccess.getCompareAccess().getLesserLeftAction_1_0_1_0()); 
-            // InternalDeviceDefinition.g:6608:2: ()
-            // InternalDeviceDefinition.g:6608:3: 
+            // InternalDeviceDefinition.g:6755:2: ()
+            // InternalDeviceDefinition.g:6755:3: 
             {
             }
 
@@ -20555,14 +21014,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Compare__Group_1_0_1__1"
-    // InternalDeviceDefinition.g:6616:1: rule__Compare__Group_1_0_1__1 : rule__Compare__Group_1_0_1__1__Impl ;
+    // InternalDeviceDefinition.g:6763:1: rule__Compare__Group_1_0_1__1 : rule__Compare__Group_1_0_1__1__Impl ;
     public final void rule__Compare__Group_1_0_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6620:1: ( rule__Compare__Group_1_0_1__1__Impl )
-            // InternalDeviceDefinition.g:6621:2: rule__Compare__Group_1_0_1__1__Impl
+            // InternalDeviceDefinition.g:6767:1: ( rule__Compare__Group_1_0_1__1__Impl )
+            // InternalDeviceDefinition.g:6768:2: rule__Compare__Group_1_0_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Compare__Group_1_0_1__1__Impl();
@@ -20588,20 +21047,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Compare__Group_1_0_1__1__Impl"
-    // InternalDeviceDefinition.g:6627:1: rule__Compare__Group_1_0_1__1__Impl : ( '<' ) ;
+    // InternalDeviceDefinition.g:6774:1: rule__Compare__Group_1_0_1__1__Impl : ( '<' ) ;
     public final void rule__Compare__Group_1_0_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6631:1: ( ( '<' ) )
-            // InternalDeviceDefinition.g:6632:1: ( '<' )
+            // InternalDeviceDefinition.g:6778:1: ( ( '<' ) )
+            // InternalDeviceDefinition.g:6779:1: ( '<' )
             {
-            // InternalDeviceDefinition.g:6632:1: ( '<' )
-            // InternalDeviceDefinition.g:6633:2: '<'
+            // InternalDeviceDefinition.g:6779:1: ( '<' )
+            // InternalDeviceDefinition.g:6780:2: '<'
             {
              before(grammarAccess.getCompareAccess().getLessThanSignKeyword_1_0_1_1()); 
-            match(input,86,FOLLOW_2); 
+            match(input,88,FOLLOW_2); 
              after(grammarAccess.getCompareAccess().getLessThanSignKeyword_1_0_1_1()); 
 
             }
@@ -20625,16 +21084,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CompareOrEquals__Group__0"
-    // InternalDeviceDefinition.g:6643:1: rule__CompareOrEquals__Group__0 : rule__CompareOrEquals__Group__0__Impl rule__CompareOrEquals__Group__1 ;
+    // InternalDeviceDefinition.g:6790:1: rule__CompareOrEquals__Group__0 : rule__CompareOrEquals__Group__0__Impl rule__CompareOrEquals__Group__1 ;
     public final void rule__CompareOrEquals__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6647:1: ( rule__CompareOrEquals__Group__0__Impl rule__CompareOrEquals__Group__1 )
-            // InternalDeviceDefinition.g:6648:2: rule__CompareOrEquals__Group__0__Impl rule__CompareOrEquals__Group__1
+            // InternalDeviceDefinition.g:6794:1: ( rule__CompareOrEquals__Group__0__Impl rule__CompareOrEquals__Group__1 )
+            // InternalDeviceDefinition.g:6795:2: rule__CompareOrEquals__Group__0__Impl rule__CompareOrEquals__Group__1
             {
-            pushFollow(FOLLOW_76);
+            pushFollow(FOLLOW_80);
             rule__CompareOrEquals__Group__0__Impl();
 
             state._fsp--;
@@ -20663,17 +21122,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CompareOrEquals__Group__0__Impl"
-    // InternalDeviceDefinition.g:6655:1: rule__CompareOrEquals__Group__0__Impl : ( ruleEqualsOrNotEquals ) ;
+    // InternalDeviceDefinition.g:6802:1: rule__CompareOrEquals__Group__0__Impl : ( ruleEqualsOrNotEquals ) ;
     public final void rule__CompareOrEquals__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6659:1: ( ( ruleEqualsOrNotEquals ) )
-            // InternalDeviceDefinition.g:6660:1: ( ruleEqualsOrNotEquals )
+            // InternalDeviceDefinition.g:6806:1: ( ( ruleEqualsOrNotEquals ) )
+            // InternalDeviceDefinition.g:6807:1: ( ruleEqualsOrNotEquals )
             {
-            // InternalDeviceDefinition.g:6660:1: ( ruleEqualsOrNotEquals )
-            // InternalDeviceDefinition.g:6661:2: ruleEqualsOrNotEquals
+            // InternalDeviceDefinition.g:6807:1: ( ruleEqualsOrNotEquals )
+            // InternalDeviceDefinition.g:6808:2: ruleEqualsOrNotEquals
             {
              before(grammarAccess.getCompareOrEqualsAccess().getEqualsOrNotEqualsParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -20704,14 +21163,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CompareOrEquals__Group__1"
-    // InternalDeviceDefinition.g:6670:1: rule__CompareOrEquals__Group__1 : rule__CompareOrEquals__Group__1__Impl ;
+    // InternalDeviceDefinition.g:6817:1: rule__CompareOrEquals__Group__1 : rule__CompareOrEquals__Group__1__Impl ;
     public final void rule__CompareOrEquals__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6674:1: ( rule__CompareOrEquals__Group__1__Impl )
-            // InternalDeviceDefinition.g:6675:2: rule__CompareOrEquals__Group__1__Impl
+            // InternalDeviceDefinition.g:6821:1: ( rule__CompareOrEquals__Group__1__Impl )
+            // InternalDeviceDefinition.g:6822:2: rule__CompareOrEquals__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__CompareOrEquals__Group__1__Impl();
@@ -20737,35 +21196,35 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CompareOrEquals__Group__1__Impl"
-    // InternalDeviceDefinition.g:6681:1: rule__CompareOrEquals__Group__1__Impl : ( ( rule__CompareOrEquals__Group_1__0 )* ) ;
+    // InternalDeviceDefinition.g:6828:1: rule__CompareOrEquals__Group__1__Impl : ( ( rule__CompareOrEquals__Group_1__0 )* ) ;
     public final void rule__CompareOrEquals__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6685:1: ( ( ( rule__CompareOrEquals__Group_1__0 )* ) )
-            // InternalDeviceDefinition.g:6686:1: ( ( rule__CompareOrEquals__Group_1__0 )* )
+            // InternalDeviceDefinition.g:6832:1: ( ( ( rule__CompareOrEquals__Group_1__0 )* ) )
+            // InternalDeviceDefinition.g:6833:1: ( ( rule__CompareOrEquals__Group_1__0 )* )
             {
-            // InternalDeviceDefinition.g:6686:1: ( ( rule__CompareOrEquals__Group_1__0 )* )
-            // InternalDeviceDefinition.g:6687:2: ( rule__CompareOrEquals__Group_1__0 )*
+            // InternalDeviceDefinition.g:6833:1: ( ( rule__CompareOrEquals__Group_1__0 )* )
+            // InternalDeviceDefinition.g:6834:2: ( rule__CompareOrEquals__Group_1__0 )*
             {
              before(grammarAccess.getCompareOrEqualsAccess().getGroup_1()); 
-            // InternalDeviceDefinition.g:6688:2: ( rule__CompareOrEquals__Group_1__0 )*
-            loop51:
+            // InternalDeviceDefinition.g:6835:2: ( rule__CompareOrEquals__Group_1__0 )*
+            loop53:
             do {
-                int alt51=2;
-                int LA51_0 = input.LA(1);
+                int alt53=2;
+                int LA53_0 = input.LA(1);
 
-                if ( ((LA51_0>=87 && LA51_0<=88)) ) {
-                    alt51=1;
+                if ( ((LA53_0>=89 && LA53_0<=90)) ) {
+                    alt53=1;
                 }
 
 
-                switch (alt51) {
+                switch (alt53) {
             	case 1 :
-            	    // InternalDeviceDefinition.g:6688:3: rule__CompareOrEquals__Group_1__0
+            	    // InternalDeviceDefinition.g:6835:3: rule__CompareOrEquals__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_77);
+            	    pushFollow(FOLLOW_81);
             	    rule__CompareOrEquals__Group_1__0();
 
             	    state._fsp--;
@@ -20775,7 +21234,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             	    break;
 
             	default :
-            	    break loop51;
+            	    break loop53;
                 }
             } while (true);
 
@@ -20802,14 +21261,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CompareOrEquals__Group_1__0"
-    // InternalDeviceDefinition.g:6697:1: rule__CompareOrEquals__Group_1__0 : rule__CompareOrEquals__Group_1__0__Impl rule__CompareOrEquals__Group_1__1 ;
+    // InternalDeviceDefinition.g:6844:1: rule__CompareOrEquals__Group_1__0 : rule__CompareOrEquals__Group_1__0__Impl rule__CompareOrEquals__Group_1__1 ;
     public final void rule__CompareOrEquals__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6701:1: ( rule__CompareOrEquals__Group_1__0__Impl rule__CompareOrEquals__Group_1__1 )
-            // InternalDeviceDefinition.g:6702:2: rule__CompareOrEquals__Group_1__0__Impl rule__CompareOrEquals__Group_1__1
+            // InternalDeviceDefinition.g:6848:1: ( rule__CompareOrEquals__Group_1__0__Impl rule__CompareOrEquals__Group_1__1 )
+            // InternalDeviceDefinition.g:6849:2: rule__CompareOrEquals__Group_1__0__Impl rule__CompareOrEquals__Group_1__1
             {
             pushFollow(FOLLOW_50);
             rule__CompareOrEquals__Group_1__0__Impl();
@@ -20840,21 +21299,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CompareOrEquals__Group_1__0__Impl"
-    // InternalDeviceDefinition.g:6709:1: rule__CompareOrEquals__Group_1__0__Impl : ( ( rule__CompareOrEquals__Alternatives_1_0 ) ) ;
+    // InternalDeviceDefinition.g:6856:1: rule__CompareOrEquals__Group_1__0__Impl : ( ( rule__CompareOrEquals__Alternatives_1_0 ) ) ;
     public final void rule__CompareOrEquals__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6713:1: ( ( ( rule__CompareOrEquals__Alternatives_1_0 ) ) )
-            // InternalDeviceDefinition.g:6714:1: ( ( rule__CompareOrEquals__Alternatives_1_0 ) )
+            // InternalDeviceDefinition.g:6860:1: ( ( ( rule__CompareOrEquals__Alternatives_1_0 ) ) )
+            // InternalDeviceDefinition.g:6861:1: ( ( rule__CompareOrEquals__Alternatives_1_0 ) )
             {
-            // InternalDeviceDefinition.g:6714:1: ( ( rule__CompareOrEquals__Alternatives_1_0 ) )
-            // InternalDeviceDefinition.g:6715:2: ( rule__CompareOrEquals__Alternatives_1_0 )
+            // InternalDeviceDefinition.g:6861:1: ( ( rule__CompareOrEquals__Alternatives_1_0 ) )
+            // InternalDeviceDefinition.g:6862:2: ( rule__CompareOrEquals__Alternatives_1_0 )
             {
              before(grammarAccess.getCompareOrEqualsAccess().getAlternatives_1_0()); 
-            // InternalDeviceDefinition.g:6716:2: ( rule__CompareOrEquals__Alternatives_1_0 )
-            // InternalDeviceDefinition.g:6716:3: rule__CompareOrEquals__Alternatives_1_0
+            // InternalDeviceDefinition.g:6863:2: ( rule__CompareOrEquals__Alternatives_1_0 )
+            // InternalDeviceDefinition.g:6863:3: rule__CompareOrEquals__Alternatives_1_0
             {
             pushFollow(FOLLOW_2);
             rule__CompareOrEquals__Alternatives_1_0();
@@ -20887,14 +21346,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CompareOrEquals__Group_1__1"
-    // InternalDeviceDefinition.g:6724:1: rule__CompareOrEquals__Group_1__1 : rule__CompareOrEquals__Group_1__1__Impl ;
+    // InternalDeviceDefinition.g:6871:1: rule__CompareOrEquals__Group_1__1 : rule__CompareOrEquals__Group_1__1__Impl ;
     public final void rule__CompareOrEquals__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6728:1: ( rule__CompareOrEquals__Group_1__1__Impl )
-            // InternalDeviceDefinition.g:6729:2: rule__CompareOrEquals__Group_1__1__Impl
+            // InternalDeviceDefinition.g:6875:1: ( rule__CompareOrEquals__Group_1__1__Impl )
+            // InternalDeviceDefinition.g:6876:2: rule__CompareOrEquals__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__CompareOrEquals__Group_1__1__Impl();
@@ -20920,21 +21379,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CompareOrEquals__Group_1__1__Impl"
-    // InternalDeviceDefinition.g:6735:1: rule__CompareOrEquals__Group_1__1__Impl : ( ( rule__CompareOrEquals__RightAssignment_1_1 ) ) ;
+    // InternalDeviceDefinition.g:6882:1: rule__CompareOrEquals__Group_1__1__Impl : ( ( rule__CompareOrEquals__RightAssignment_1_1 ) ) ;
     public final void rule__CompareOrEquals__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6739:1: ( ( ( rule__CompareOrEquals__RightAssignment_1_1 ) ) )
-            // InternalDeviceDefinition.g:6740:1: ( ( rule__CompareOrEquals__RightAssignment_1_1 ) )
+            // InternalDeviceDefinition.g:6886:1: ( ( ( rule__CompareOrEquals__RightAssignment_1_1 ) ) )
+            // InternalDeviceDefinition.g:6887:1: ( ( rule__CompareOrEquals__RightAssignment_1_1 ) )
             {
-            // InternalDeviceDefinition.g:6740:1: ( ( rule__CompareOrEquals__RightAssignment_1_1 ) )
-            // InternalDeviceDefinition.g:6741:2: ( rule__CompareOrEquals__RightAssignment_1_1 )
+            // InternalDeviceDefinition.g:6887:1: ( ( rule__CompareOrEquals__RightAssignment_1_1 ) )
+            // InternalDeviceDefinition.g:6888:2: ( rule__CompareOrEquals__RightAssignment_1_1 )
             {
              before(grammarAccess.getCompareOrEqualsAccess().getRightAssignment_1_1()); 
-            // InternalDeviceDefinition.g:6742:2: ( rule__CompareOrEquals__RightAssignment_1_1 )
-            // InternalDeviceDefinition.g:6742:3: rule__CompareOrEquals__RightAssignment_1_1
+            // InternalDeviceDefinition.g:6889:2: ( rule__CompareOrEquals__RightAssignment_1_1 )
+            // InternalDeviceDefinition.g:6889:3: rule__CompareOrEquals__RightAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__CompareOrEquals__RightAssignment_1_1();
@@ -20967,16 +21426,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CompareOrEquals__Group_1_0_0__0"
-    // InternalDeviceDefinition.g:6751:1: rule__CompareOrEquals__Group_1_0_0__0 : rule__CompareOrEquals__Group_1_0_0__0__Impl rule__CompareOrEquals__Group_1_0_0__1 ;
+    // InternalDeviceDefinition.g:6898:1: rule__CompareOrEquals__Group_1_0_0__0 : rule__CompareOrEquals__Group_1_0_0__0__Impl rule__CompareOrEquals__Group_1_0_0__1 ;
     public final void rule__CompareOrEquals__Group_1_0_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6755:1: ( rule__CompareOrEquals__Group_1_0_0__0__Impl rule__CompareOrEquals__Group_1_0_0__1 )
-            // InternalDeviceDefinition.g:6756:2: rule__CompareOrEquals__Group_1_0_0__0__Impl rule__CompareOrEquals__Group_1_0_0__1
+            // InternalDeviceDefinition.g:6902:1: ( rule__CompareOrEquals__Group_1_0_0__0__Impl rule__CompareOrEquals__Group_1_0_0__1 )
+            // InternalDeviceDefinition.g:6903:2: rule__CompareOrEquals__Group_1_0_0__0__Impl rule__CompareOrEquals__Group_1_0_0__1
             {
-            pushFollow(FOLLOW_78);
+            pushFollow(FOLLOW_82);
             rule__CompareOrEquals__Group_1_0_0__0__Impl();
 
             state._fsp--;
@@ -21005,21 +21464,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CompareOrEquals__Group_1_0_0__0__Impl"
-    // InternalDeviceDefinition.g:6763:1: rule__CompareOrEquals__Group_1_0_0__0__Impl : ( () ) ;
+    // InternalDeviceDefinition.g:6910:1: rule__CompareOrEquals__Group_1_0_0__0__Impl : ( () ) ;
     public final void rule__CompareOrEquals__Group_1_0_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6767:1: ( ( () ) )
-            // InternalDeviceDefinition.g:6768:1: ( () )
+            // InternalDeviceDefinition.g:6914:1: ( ( () ) )
+            // InternalDeviceDefinition.g:6915:1: ( () )
             {
-            // InternalDeviceDefinition.g:6768:1: ( () )
-            // InternalDeviceDefinition.g:6769:2: ()
+            // InternalDeviceDefinition.g:6915:1: ( () )
+            // InternalDeviceDefinition.g:6916:2: ()
             {
              before(grammarAccess.getCompareOrEqualsAccess().getGreaterOrEqualsLeftAction_1_0_0_0()); 
-            // InternalDeviceDefinition.g:6770:2: ()
-            // InternalDeviceDefinition.g:6770:3: 
+            // InternalDeviceDefinition.g:6917:2: ()
+            // InternalDeviceDefinition.g:6917:3: 
             {
             }
 
@@ -21042,14 +21501,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CompareOrEquals__Group_1_0_0__1"
-    // InternalDeviceDefinition.g:6778:1: rule__CompareOrEquals__Group_1_0_0__1 : rule__CompareOrEquals__Group_1_0_0__1__Impl ;
+    // InternalDeviceDefinition.g:6925:1: rule__CompareOrEquals__Group_1_0_0__1 : rule__CompareOrEquals__Group_1_0_0__1__Impl ;
     public final void rule__CompareOrEquals__Group_1_0_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6782:1: ( rule__CompareOrEquals__Group_1_0_0__1__Impl )
-            // InternalDeviceDefinition.g:6783:2: rule__CompareOrEquals__Group_1_0_0__1__Impl
+            // InternalDeviceDefinition.g:6929:1: ( rule__CompareOrEquals__Group_1_0_0__1__Impl )
+            // InternalDeviceDefinition.g:6930:2: rule__CompareOrEquals__Group_1_0_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__CompareOrEquals__Group_1_0_0__1__Impl();
@@ -21075,20 +21534,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CompareOrEquals__Group_1_0_0__1__Impl"
-    // InternalDeviceDefinition.g:6789:1: rule__CompareOrEquals__Group_1_0_0__1__Impl : ( '>=' ) ;
+    // InternalDeviceDefinition.g:6936:1: rule__CompareOrEquals__Group_1_0_0__1__Impl : ( '>=' ) ;
     public final void rule__CompareOrEquals__Group_1_0_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6793:1: ( ( '>=' ) )
-            // InternalDeviceDefinition.g:6794:1: ( '>=' )
+            // InternalDeviceDefinition.g:6940:1: ( ( '>=' ) )
+            // InternalDeviceDefinition.g:6941:1: ( '>=' )
             {
-            // InternalDeviceDefinition.g:6794:1: ( '>=' )
-            // InternalDeviceDefinition.g:6795:2: '>='
+            // InternalDeviceDefinition.g:6941:1: ( '>=' )
+            // InternalDeviceDefinition.g:6942:2: '>='
             {
              before(grammarAccess.getCompareOrEqualsAccess().getGreaterThanSignEqualsSignKeyword_1_0_0_1()); 
-            match(input,87,FOLLOW_2); 
+            match(input,89,FOLLOW_2); 
              after(grammarAccess.getCompareOrEqualsAccess().getGreaterThanSignEqualsSignKeyword_1_0_0_1()); 
 
             }
@@ -21112,16 +21571,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CompareOrEquals__Group_1_0_1__0"
-    // InternalDeviceDefinition.g:6805:1: rule__CompareOrEquals__Group_1_0_1__0 : rule__CompareOrEquals__Group_1_0_1__0__Impl rule__CompareOrEquals__Group_1_0_1__1 ;
+    // InternalDeviceDefinition.g:6952:1: rule__CompareOrEquals__Group_1_0_1__0 : rule__CompareOrEquals__Group_1_0_1__0__Impl rule__CompareOrEquals__Group_1_0_1__1 ;
     public final void rule__CompareOrEquals__Group_1_0_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6809:1: ( rule__CompareOrEquals__Group_1_0_1__0__Impl rule__CompareOrEquals__Group_1_0_1__1 )
-            // InternalDeviceDefinition.g:6810:2: rule__CompareOrEquals__Group_1_0_1__0__Impl rule__CompareOrEquals__Group_1_0_1__1
+            // InternalDeviceDefinition.g:6956:1: ( rule__CompareOrEquals__Group_1_0_1__0__Impl rule__CompareOrEquals__Group_1_0_1__1 )
+            // InternalDeviceDefinition.g:6957:2: rule__CompareOrEquals__Group_1_0_1__0__Impl rule__CompareOrEquals__Group_1_0_1__1
             {
-            pushFollow(FOLLOW_76);
+            pushFollow(FOLLOW_80);
             rule__CompareOrEquals__Group_1_0_1__0__Impl();
 
             state._fsp--;
@@ -21150,21 +21609,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CompareOrEquals__Group_1_0_1__0__Impl"
-    // InternalDeviceDefinition.g:6817:1: rule__CompareOrEquals__Group_1_0_1__0__Impl : ( () ) ;
+    // InternalDeviceDefinition.g:6964:1: rule__CompareOrEquals__Group_1_0_1__0__Impl : ( () ) ;
     public final void rule__CompareOrEquals__Group_1_0_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6821:1: ( ( () ) )
-            // InternalDeviceDefinition.g:6822:1: ( () )
+            // InternalDeviceDefinition.g:6968:1: ( ( () ) )
+            // InternalDeviceDefinition.g:6969:1: ( () )
             {
-            // InternalDeviceDefinition.g:6822:1: ( () )
-            // InternalDeviceDefinition.g:6823:2: ()
+            // InternalDeviceDefinition.g:6969:1: ( () )
+            // InternalDeviceDefinition.g:6970:2: ()
             {
              before(grammarAccess.getCompareOrEqualsAccess().getLesserOrEqualsLeftAction_1_0_1_0()); 
-            // InternalDeviceDefinition.g:6824:2: ()
-            // InternalDeviceDefinition.g:6824:3: 
+            // InternalDeviceDefinition.g:6971:2: ()
+            // InternalDeviceDefinition.g:6971:3: 
             {
             }
 
@@ -21187,14 +21646,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CompareOrEquals__Group_1_0_1__1"
-    // InternalDeviceDefinition.g:6832:1: rule__CompareOrEquals__Group_1_0_1__1 : rule__CompareOrEquals__Group_1_0_1__1__Impl ;
+    // InternalDeviceDefinition.g:6979:1: rule__CompareOrEquals__Group_1_0_1__1 : rule__CompareOrEquals__Group_1_0_1__1__Impl ;
     public final void rule__CompareOrEquals__Group_1_0_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6836:1: ( rule__CompareOrEquals__Group_1_0_1__1__Impl )
-            // InternalDeviceDefinition.g:6837:2: rule__CompareOrEquals__Group_1_0_1__1__Impl
+            // InternalDeviceDefinition.g:6983:1: ( rule__CompareOrEquals__Group_1_0_1__1__Impl )
+            // InternalDeviceDefinition.g:6984:2: rule__CompareOrEquals__Group_1_0_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__CompareOrEquals__Group_1_0_1__1__Impl();
@@ -21220,20 +21679,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CompareOrEquals__Group_1_0_1__1__Impl"
-    // InternalDeviceDefinition.g:6843:1: rule__CompareOrEquals__Group_1_0_1__1__Impl : ( '<=' ) ;
+    // InternalDeviceDefinition.g:6990:1: rule__CompareOrEquals__Group_1_0_1__1__Impl : ( '<=' ) ;
     public final void rule__CompareOrEquals__Group_1_0_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6847:1: ( ( '<=' ) )
-            // InternalDeviceDefinition.g:6848:1: ( '<=' )
+            // InternalDeviceDefinition.g:6994:1: ( ( '<=' ) )
+            // InternalDeviceDefinition.g:6995:1: ( '<=' )
             {
-            // InternalDeviceDefinition.g:6848:1: ( '<=' )
-            // InternalDeviceDefinition.g:6849:2: '<='
+            // InternalDeviceDefinition.g:6995:1: ( '<=' )
+            // InternalDeviceDefinition.g:6996:2: '<='
             {
              before(grammarAccess.getCompareOrEqualsAccess().getLessThanSignEqualsSignKeyword_1_0_1_1()); 
-            match(input,88,FOLLOW_2); 
+            match(input,90,FOLLOW_2); 
              after(grammarAccess.getCompareOrEqualsAccess().getLessThanSignEqualsSignKeyword_1_0_1_1()); 
 
             }
@@ -21257,16 +21716,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__EqualsOrNotEquals__Group__0"
-    // InternalDeviceDefinition.g:6859:1: rule__EqualsOrNotEquals__Group__0 : rule__EqualsOrNotEquals__Group__0__Impl rule__EqualsOrNotEquals__Group__1 ;
+    // InternalDeviceDefinition.g:7006:1: rule__EqualsOrNotEquals__Group__0 : rule__EqualsOrNotEquals__Group__0__Impl rule__EqualsOrNotEquals__Group__1 ;
     public final void rule__EqualsOrNotEquals__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6863:1: ( rule__EqualsOrNotEquals__Group__0__Impl rule__EqualsOrNotEquals__Group__1 )
-            // InternalDeviceDefinition.g:6864:2: rule__EqualsOrNotEquals__Group__0__Impl rule__EqualsOrNotEquals__Group__1
+            // InternalDeviceDefinition.g:7010:1: ( rule__EqualsOrNotEquals__Group__0__Impl rule__EqualsOrNotEquals__Group__1 )
+            // InternalDeviceDefinition.g:7011:2: rule__EqualsOrNotEquals__Group__0__Impl rule__EqualsOrNotEquals__Group__1
             {
-            pushFollow(FOLLOW_79);
+            pushFollow(FOLLOW_83);
             rule__EqualsOrNotEquals__Group__0__Impl();
 
             state._fsp--;
@@ -21295,17 +21754,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__EqualsOrNotEquals__Group__0__Impl"
-    // InternalDeviceDefinition.g:6871:1: rule__EqualsOrNotEquals__Group__0__Impl : ( ruleAndOr ) ;
+    // InternalDeviceDefinition.g:7018:1: rule__EqualsOrNotEquals__Group__0__Impl : ( ruleAndOr ) ;
     public final void rule__EqualsOrNotEquals__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6875:1: ( ( ruleAndOr ) )
-            // InternalDeviceDefinition.g:6876:1: ( ruleAndOr )
+            // InternalDeviceDefinition.g:7022:1: ( ( ruleAndOr ) )
+            // InternalDeviceDefinition.g:7023:1: ( ruleAndOr )
             {
-            // InternalDeviceDefinition.g:6876:1: ( ruleAndOr )
-            // InternalDeviceDefinition.g:6877:2: ruleAndOr
+            // InternalDeviceDefinition.g:7023:1: ( ruleAndOr )
+            // InternalDeviceDefinition.g:7024:2: ruleAndOr
             {
              before(grammarAccess.getEqualsOrNotEqualsAccess().getAndOrParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -21336,14 +21795,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__EqualsOrNotEquals__Group__1"
-    // InternalDeviceDefinition.g:6886:1: rule__EqualsOrNotEquals__Group__1 : rule__EqualsOrNotEquals__Group__1__Impl ;
+    // InternalDeviceDefinition.g:7033:1: rule__EqualsOrNotEquals__Group__1 : rule__EqualsOrNotEquals__Group__1__Impl ;
     public final void rule__EqualsOrNotEquals__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6890:1: ( rule__EqualsOrNotEquals__Group__1__Impl )
-            // InternalDeviceDefinition.g:6891:2: rule__EqualsOrNotEquals__Group__1__Impl
+            // InternalDeviceDefinition.g:7037:1: ( rule__EqualsOrNotEquals__Group__1__Impl )
+            // InternalDeviceDefinition.g:7038:2: rule__EqualsOrNotEquals__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EqualsOrNotEquals__Group__1__Impl();
@@ -21369,35 +21828,35 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__EqualsOrNotEquals__Group__1__Impl"
-    // InternalDeviceDefinition.g:6897:1: rule__EqualsOrNotEquals__Group__1__Impl : ( ( rule__EqualsOrNotEquals__Group_1__0 )* ) ;
+    // InternalDeviceDefinition.g:7044:1: rule__EqualsOrNotEquals__Group__1__Impl : ( ( rule__EqualsOrNotEquals__Group_1__0 )* ) ;
     public final void rule__EqualsOrNotEquals__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6901:1: ( ( ( rule__EqualsOrNotEquals__Group_1__0 )* ) )
-            // InternalDeviceDefinition.g:6902:1: ( ( rule__EqualsOrNotEquals__Group_1__0 )* )
+            // InternalDeviceDefinition.g:7048:1: ( ( ( rule__EqualsOrNotEquals__Group_1__0 )* ) )
+            // InternalDeviceDefinition.g:7049:1: ( ( rule__EqualsOrNotEquals__Group_1__0 )* )
             {
-            // InternalDeviceDefinition.g:6902:1: ( ( rule__EqualsOrNotEquals__Group_1__0 )* )
-            // InternalDeviceDefinition.g:6903:2: ( rule__EqualsOrNotEquals__Group_1__0 )*
+            // InternalDeviceDefinition.g:7049:1: ( ( rule__EqualsOrNotEquals__Group_1__0 )* )
+            // InternalDeviceDefinition.g:7050:2: ( rule__EqualsOrNotEquals__Group_1__0 )*
             {
              before(grammarAccess.getEqualsOrNotEqualsAccess().getGroup_1()); 
-            // InternalDeviceDefinition.g:6904:2: ( rule__EqualsOrNotEquals__Group_1__0 )*
-            loop52:
+            // InternalDeviceDefinition.g:7051:2: ( rule__EqualsOrNotEquals__Group_1__0 )*
+            loop54:
             do {
-                int alt52=2;
-                int LA52_0 = input.LA(1);
+                int alt54=2;
+                int LA54_0 = input.LA(1);
 
-                if ( ((LA52_0>=89 && LA52_0<=90)) ) {
-                    alt52=1;
+                if ( ((LA54_0>=91 && LA54_0<=92)) ) {
+                    alt54=1;
                 }
 
 
-                switch (alt52) {
+                switch (alt54) {
             	case 1 :
-            	    // InternalDeviceDefinition.g:6904:3: rule__EqualsOrNotEquals__Group_1__0
+            	    // InternalDeviceDefinition.g:7051:3: rule__EqualsOrNotEquals__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_80);
+            	    pushFollow(FOLLOW_84);
             	    rule__EqualsOrNotEquals__Group_1__0();
 
             	    state._fsp--;
@@ -21407,7 +21866,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             	    break;
 
             	default :
-            	    break loop52;
+            	    break loop54;
                 }
             } while (true);
 
@@ -21434,14 +21893,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__EqualsOrNotEquals__Group_1__0"
-    // InternalDeviceDefinition.g:6913:1: rule__EqualsOrNotEquals__Group_1__0 : rule__EqualsOrNotEquals__Group_1__0__Impl rule__EqualsOrNotEquals__Group_1__1 ;
+    // InternalDeviceDefinition.g:7060:1: rule__EqualsOrNotEquals__Group_1__0 : rule__EqualsOrNotEquals__Group_1__0__Impl rule__EqualsOrNotEquals__Group_1__1 ;
     public final void rule__EqualsOrNotEquals__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6917:1: ( rule__EqualsOrNotEquals__Group_1__0__Impl rule__EqualsOrNotEquals__Group_1__1 )
-            // InternalDeviceDefinition.g:6918:2: rule__EqualsOrNotEquals__Group_1__0__Impl rule__EqualsOrNotEquals__Group_1__1
+            // InternalDeviceDefinition.g:7064:1: ( rule__EqualsOrNotEquals__Group_1__0__Impl rule__EqualsOrNotEquals__Group_1__1 )
+            // InternalDeviceDefinition.g:7065:2: rule__EqualsOrNotEquals__Group_1__0__Impl rule__EqualsOrNotEquals__Group_1__1
             {
             pushFollow(FOLLOW_50);
             rule__EqualsOrNotEquals__Group_1__0__Impl();
@@ -21472,21 +21931,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__EqualsOrNotEquals__Group_1__0__Impl"
-    // InternalDeviceDefinition.g:6925:1: rule__EqualsOrNotEquals__Group_1__0__Impl : ( ( rule__EqualsOrNotEquals__Alternatives_1_0 ) ) ;
+    // InternalDeviceDefinition.g:7072:1: rule__EqualsOrNotEquals__Group_1__0__Impl : ( ( rule__EqualsOrNotEquals__Alternatives_1_0 ) ) ;
     public final void rule__EqualsOrNotEquals__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6929:1: ( ( ( rule__EqualsOrNotEquals__Alternatives_1_0 ) ) )
-            // InternalDeviceDefinition.g:6930:1: ( ( rule__EqualsOrNotEquals__Alternatives_1_0 ) )
+            // InternalDeviceDefinition.g:7076:1: ( ( ( rule__EqualsOrNotEquals__Alternatives_1_0 ) ) )
+            // InternalDeviceDefinition.g:7077:1: ( ( rule__EqualsOrNotEquals__Alternatives_1_0 ) )
             {
-            // InternalDeviceDefinition.g:6930:1: ( ( rule__EqualsOrNotEquals__Alternatives_1_0 ) )
-            // InternalDeviceDefinition.g:6931:2: ( rule__EqualsOrNotEquals__Alternatives_1_0 )
+            // InternalDeviceDefinition.g:7077:1: ( ( rule__EqualsOrNotEquals__Alternatives_1_0 ) )
+            // InternalDeviceDefinition.g:7078:2: ( rule__EqualsOrNotEquals__Alternatives_1_0 )
             {
              before(grammarAccess.getEqualsOrNotEqualsAccess().getAlternatives_1_0()); 
-            // InternalDeviceDefinition.g:6932:2: ( rule__EqualsOrNotEquals__Alternatives_1_0 )
-            // InternalDeviceDefinition.g:6932:3: rule__EqualsOrNotEquals__Alternatives_1_0
+            // InternalDeviceDefinition.g:7079:2: ( rule__EqualsOrNotEquals__Alternatives_1_0 )
+            // InternalDeviceDefinition.g:7079:3: rule__EqualsOrNotEquals__Alternatives_1_0
             {
             pushFollow(FOLLOW_2);
             rule__EqualsOrNotEquals__Alternatives_1_0();
@@ -21519,14 +21978,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__EqualsOrNotEquals__Group_1__1"
-    // InternalDeviceDefinition.g:6940:1: rule__EqualsOrNotEquals__Group_1__1 : rule__EqualsOrNotEquals__Group_1__1__Impl ;
+    // InternalDeviceDefinition.g:7087:1: rule__EqualsOrNotEquals__Group_1__1 : rule__EqualsOrNotEquals__Group_1__1__Impl ;
     public final void rule__EqualsOrNotEquals__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6944:1: ( rule__EqualsOrNotEquals__Group_1__1__Impl )
-            // InternalDeviceDefinition.g:6945:2: rule__EqualsOrNotEquals__Group_1__1__Impl
+            // InternalDeviceDefinition.g:7091:1: ( rule__EqualsOrNotEquals__Group_1__1__Impl )
+            // InternalDeviceDefinition.g:7092:2: rule__EqualsOrNotEquals__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EqualsOrNotEquals__Group_1__1__Impl();
@@ -21552,21 +22011,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__EqualsOrNotEquals__Group_1__1__Impl"
-    // InternalDeviceDefinition.g:6951:1: rule__EqualsOrNotEquals__Group_1__1__Impl : ( ( rule__EqualsOrNotEquals__RightAssignment_1_1 ) ) ;
+    // InternalDeviceDefinition.g:7098:1: rule__EqualsOrNotEquals__Group_1__1__Impl : ( ( rule__EqualsOrNotEquals__RightAssignment_1_1 ) ) ;
     public final void rule__EqualsOrNotEquals__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6955:1: ( ( ( rule__EqualsOrNotEquals__RightAssignment_1_1 ) ) )
-            // InternalDeviceDefinition.g:6956:1: ( ( rule__EqualsOrNotEquals__RightAssignment_1_1 ) )
+            // InternalDeviceDefinition.g:7102:1: ( ( ( rule__EqualsOrNotEquals__RightAssignment_1_1 ) ) )
+            // InternalDeviceDefinition.g:7103:1: ( ( rule__EqualsOrNotEquals__RightAssignment_1_1 ) )
             {
-            // InternalDeviceDefinition.g:6956:1: ( ( rule__EqualsOrNotEquals__RightAssignment_1_1 ) )
-            // InternalDeviceDefinition.g:6957:2: ( rule__EqualsOrNotEquals__RightAssignment_1_1 )
+            // InternalDeviceDefinition.g:7103:1: ( ( rule__EqualsOrNotEquals__RightAssignment_1_1 ) )
+            // InternalDeviceDefinition.g:7104:2: ( rule__EqualsOrNotEquals__RightAssignment_1_1 )
             {
              before(grammarAccess.getEqualsOrNotEqualsAccess().getRightAssignment_1_1()); 
-            // InternalDeviceDefinition.g:6958:2: ( rule__EqualsOrNotEquals__RightAssignment_1_1 )
-            // InternalDeviceDefinition.g:6958:3: rule__EqualsOrNotEquals__RightAssignment_1_1
+            // InternalDeviceDefinition.g:7105:2: ( rule__EqualsOrNotEquals__RightAssignment_1_1 )
+            // InternalDeviceDefinition.g:7105:3: rule__EqualsOrNotEquals__RightAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__EqualsOrNotEquals__RightAssignment_1_1();
@@ -21599,16 +22058,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__EqualsOrNotEquals__Group_1_0_0__0"
-    // InternalDeviceDefinition.g:6967:1: rule__EqualsOrNotEquals__Group_1_0_0__0 : rule__EqualsOrNotEquals__Group_1_0_0__0__Impl rule__EqualsOrNotEquals__Group_1_0_0__1 ;
+    // InternalDeviceDefinition.g:7114:1: rule__EqualsOrNotEquals__Group_1_0_0__0 : rule__EqualsOrNotEquals__Group_1_0_0__0__Impl rule__EqualsOrNotEquals__Group_1_0_0__1 ;
     public final void rule__EqualsOrNotEquals__Group_1_0_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6971:1: ( rule__EqualsOrNotEquals__Group_1_0_0__0__Impl rule__EqualsOrNotEquals__Group_1_0_0__1 )
-            // InternalDeviceDefinition.g:6972:2: rule__EqualsOrNotEquals__Group_1_0_0__0__Impl rule__EqualsOrNotEquals__Group_1_0_0__1
+            // InternalDeviceDefinition.g:7118:1: ( rule__EqualsOrNotEquals__Group_1_0_0__0__Impl rule__EqualsOrNotEquals__Group_1_0_0__1 )
+            // InternalDeviceDefinition.g:7119:2: rule__EqualsOrNotEquals__Group_1_0_0__0__Impl rule__EqualsOrNotEquals__Group_1_0_0__1
             {
-            pushFollow(FOLLOW_81);
+            pushFollow(FOLLOW_85);
             rule__EqualsOrNotEquals__Group_1_0_0__0__Impl();
 
             state._fsp--;
@@ -21637,21 +22096,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__EqualsOrNotEquals__Group_1_0_0__0__Impl"
-    // InternalDeviceDefinition.g:6979:1: rule__EqualsOrNotEquals__Group_1_0_0__0__Impl : ( () ) ;
+    // InternalDeviceDefinition.g:7126:1: rule__EqualsOrNotEquals__Group_1_0_0__0__Impl : ( () ) ;
     public final void rule__EqualsOrNotEquals__Group_1_0_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6983:1: ( ( () ) )
-            // InternalDeviceDefinition.g:6984:1: ( () )
+            // InternalDeviceDefinition.g:7130:1: ( ( () ) )
+            // InternalDeviceDefinition.g:7131:1: ( () )
             {
-            // InternalDeviceDefinition.g:6984:1: ( () )
-            // InternalDeviceDefinition.g:6985:2: ()
+            // InternalDeviceDefinition.g:7131:1: ( () )
+            // InternalDeviceDefinition.g:7132:2: ()
             {
              before(grammarAccess.getEqualsOrNotEqualsAccess().getEqualsLeftAction_1_0_0_0()); 
-            // InternalDeviceDefinition.g:6986:2: ()
-            // InternalDeviceDefinition.g:6986:3: 
+            // InternalDeviceDefinition.g:7133:2: ()
+            // InternalDeviceDefinition.g:7133:3: 
             {
             }
 
@@ -21674,14 +22133,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__EqualsOrNotEquals__Group_1_0_0__1"
-    // InternalDeviceDefinition.g:6994:1: rule__EqualsOrNotEquals__Group_1_0_0__1 : rule__EqualsOrNotEquals__Group_1_0_0__1__Impl ;
+    // InternalDeviceDefinition.g:7141:1: rule__EqualsOrNotEquals__Group_1_0_0__1 : rule__EqualsOrNotEquals__Group_1_0_0__1__Impl ;
     public final void rule__EqualsOrNotEquals__Group_1_0_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:6998:1: ( rule__EqualsOrNotEquals__Group_1_0_0__1__Impl )
-            // InternalDeviceDefinition.g:6999:2: rule__EqualsOrNotEquals__Group_1_0_0__1__Impl
+            // InternalDeviceDefinition.g:7145:1: ( rule__EqualsOrNotEquals__Group_1_0_0__1__Impl )
+            // InternalDeviceDefinition.g:7146:2: rule__EqualsOrNotEquals__Group_1_0_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EqualsOrNotEquals__Group_1_0_0__1__Impl();
@@ -21707,20 +22166,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__EqualsOrNotEquals__Group_1_0_0__1__Impl"
-    // InternalDeviceDefinition.g:7005:1: rule__EqualsOrNotEquals__Group_1_0_0__1__Impl : ( '==' ) ;
+    // InternalDeviceDefinition.g:7152:1: rule__EqualsOrNotEquals__Group_1_0_0__1__Impl : ( '==' ) ;
     public final void rule__EqualsOrNotEquals__Group_1_0_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7009:1: ( ( '==' ) )
-            // InternalDeviceDefinition.g:7010:1: ( '==' )
+            // InternalDeviceDefinition.g:7156:1: ( ( '==' ) )
+            // InternalDeviceDefinition.g:7157:1: ( '==' )
             {
-            // InternalDeviceDefinition.g:7010:1: ( '==' )
-            // InternalDeviceDefinition.g:7011:2: '=='
+            // InternalDeviceDefinition.g:7157:1: ( '==' )
+            // InternalDeviceDefinition.g:7158:2: '=='
             {
              before(grammarAccess.getEqualsOrNotEqualsAccess().getEqualsSignEqualsSignKeyword_1_0_0_1()); 
-            match(input,89,FOLLOW_2); 
+            match(input,91,FOLLOW_2); 
              after(grammarAccess.getEqualsOrNotEqualsAccess().getEqualsSignEqualsSignKeyword_1_0_0_1()); 
 
             }
@@ -21744,16 +22203,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__EqualsOrNotEquals__Group_1_0_1__0"
-    // InternalDeviceDefinition.g:7021:1: rule__EqualsOrNotEquals__Group_1_0_1__0 : rule__EqualsOrNotEquals__Group_1_0_1__0__Impl rule__EqualsOrNotEquals__Group_1_0_1__1 ;
+    // InternalDeviceDefinition.g:7168:1: rule__EqualsOrNotEquals__Group_1_0_1__0 : rule__EqualsOrNotEquals__Group_1_0_1__0__Impl rule__EqualsOrNotEquals__Group_1_0_1__1 ;
     public final void rule__EqualsOrNotEquals__Group_1_0_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7025:1: ( rule__EqualsOrNotEquals__Group_1_0_1__0__Impl rule__EqualsOrNotEquals__Group_1_0_1__1 )
-            // InternalDeviceDefinition.g:7026:2: rule__EqualsOrNotEquals__Group_1_0_1__0__Impl rule__EqualsOrNotEquals__Group_1_0_1__1
+            // InternalDeviceDefinition.g:7172:1: ( rule__EqualsOrNotEquals__Group_1_0_1__0__Impl rule__EqualsOrNotEquals__Group_1_0_1__1 )
+            // InternalDeviceDefinition.g:7173:2: rule__EqualsOrNotEquals__Group_1_0_1__0__Impl rule__EqualsOrNotEquals__Group_1_0_1__1
             {
-            pushFollow(FOLLOW_79);
+            pushFollow(FOLLOW_83);
             rule__EqualsOrNotEquals__Group_1_0_1__0__Impl();
 
             state._fsp--;
@@ -21782,21 +22241,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__EqualsOrNotEquals__Group_1_0_1__0__Impl"
-    // InternalDeviceDefinition.g:7033:1: rule__EqualsOrNotEquals__Group_1_0_1__0__Impl : ( () ) ;
+    // InternalDeviceDefinition.g:7180:1: rule__EqualsOrNotEquals__Group_1_0_1__0__Impl : ( () ) ;
     public final void rule__EqualsOrNotEquals__Group_1_0_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7037:1: ( ( () ) )
-            // InternalDeviceDefinition.g:7038:1: ( () )
+            // InternalDeviceDefinition.g:7184:1: ( ( () ) )
+            // InternalDeviceDefinition.g:7185:1: ( () )
             {
-            // InternalDeviceDefinition.g:7038:1: ( () )
-            // InternalDeviceDefinition.g:7039:2: ()
+            // InternalDeviceDefinition.g:7185:1: ( () )
+            // InternalDeviceDefinition.g:7186:2: ()
             {
              before(grammarAccess.getEqualsOrNotEqualsAccess().getNotEqualsLeftAction_1_0_1_0()); 
-            // InternalDeviceDefinition.g:7040:2: ()
-            // InternalDeviceDefinition.g:7040:3: 
+            // InternalDeviceDefinition.g:7187:2: ()
+            // InternalDeviceDefinition.g:7187:3: 
             {
             }
 
@@ -21819,14 +22278,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__EqualsOrNotEquals__Group_1_0_1__1"
-    // InternalDeviceDefinition.g:7048:1: rule__EqualsOrNotEquals__Group_1_0_1__1 : rule__EqualsOrNotEquals__Group_1_0_1__1__Impl ;
+    // InternalDeviceDefinition.g:7195:1: rule__EqualsOrNotEquals__Group_1_0_1__1 : rule__EqualsOrNotEquals__Group_1_0_1__1__Impl ;
     public final void rule__EqualsOrNotEquals__Group_1_0_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7052:1: ( rule__EqualsOrNotEquals__Group_1_0_1__1__Impl )
-            // InternalDeviceDefinition.g:7053:2: rule__EqualsOrNotEquals__Group_1_0_1__1__Impl
+            // InternalDeviceDefinition.g:7199:1: ( rule__EqualsOrNotEquals__Group_1_0_1__1__Impl )
+            // InternalDeviceDefinition.g:7200:2: rule__EqualsOrNotEquals__Group_1_0_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EqualsOrNotEquals__Group_1_0_1__1__Impl();
@@ -21852,20 +22311,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__EqualsOrNotEquals__Group_1_0_1__1__Impl"
-    // InternalDeviceDefinition.g:7059:1: rule__EqualsOrNotEquals__Group_1_0_1__1__Impl : ( '!=' ) ;
+    // InternalDeviceDefinition.g:7206:1: rule__EqualsOrNotEquals__Group_1_0_1__1__Impl : ( '!=' ) ;
     public final void rule__EqualsOrNotEquals__Group_1_0_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7063:1: ( ( '!=' ) )
-            // InternalDeviceDefinition.g:7064:1: ( '!=' )
+            // InternalDeviceDefinition.g:7210:1: ( ( '!=' ) )
+            // InternalDeviceDefinition.g:7211:1: ( '!=' )
             {
-            // InternalDeviceDefinition.g:7064:1: ( '!=' )
-            // InternalDeviceDefinition.g:7065:2: '!='
+            // InternalDeviceDefinition.g:7211:1: ( '!=' )
+            // InternalDeviceDefinition.g:7212:2: '!='
             {
              before(grammarAccess.getEqualsOrNotEqualsAccess().getExclamationMarkEqualsSignKeyword_1_0_1_1()); 
-            match(input,90,FOLLOW_2); 
+            match(input,92,FOLLOW_2); 
              after(grammarAccess.getEqualsOrNotEqualsAccess().getExclamationMarkEqualsSignKeyword_1_0_1_1()); 
 
             }
@@ -21889,16 +22348,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__AndOr__Group__0"
-    // InternalDeviceDefinition.g:7075:1: rule__AndOr__Group__0 : rule__AndOr__Group__0__Impl rule__AndOr__Group__1 ;
+    // InternalDeviceDefinition.g:7222:1: rule__AndOr__Group__0 : rule__AndOr__Group__0__Impl rule__AndOr__Group__1 ;
     public final void rule__AndOr__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7079:1: ( rule__AndOr__Group__0__Impl rule__AndOr__Group__1 )
-            // InternalDeviceDefinition.g:7080:2: rule__AndOr__Group__0__Impl rule__AndOr__Group__1
+            // InternalDeviceDefinition.g:7226:1: ( rule__AndOr__Group__0__Impl rule__AndOr__Group__1 )
+            // InternalDeviceDefinition.g:7227:2: rule__AndOr__Group__0__Impl rule__AndOr__Group__1
             {
-            pushFollow(FOLLOW_82);
+            pushFollow(FOLLOW_86);
             rule__AndOr__Group__0__Impl();
 
             state._fsp--;
@@ -21927,17 +22386,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__AndOr__Group__0__Impl"
-    // InternalDeviceDefinition.g:7087:1: rule__AndOr__Group__0__Impl : ( rulePrimary ) ;
+    // InternalDeviceDefinition.g:7234:1: rule__AndOr__Group__0__Impl : ( rulePrimary ) ;
     public final void rule__AndOr__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7091:1: ( ( rulePrimary ) )
-            // InternalDeviceDefinition.g:7092:1: ( rulePrimary )
+            // InternalDeviceDefinition.g:7238:1: ( ( rulePrimary ) )
+            // InternalDeviceDefinition.g:7239:1: ( rulePrimary )
             {
-            // InternalDeviceDefinition.g:7092:1: ( rulePrimary )
-            // InternalDeviceDefinition.g:7093:2: rulePrimary
+            // InternalDeviceDefinition.g:7239:1: ( rulePrimary )
+            // InternalDeviceDefinition.g:7240:2: rulePrimary
             {
              before(grammarAccess.getAndOrAccess().getPrimaryParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -21968,14 +22427,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__AndOr__Group__1"
-    // InternalDeviceDefinition.g:7102:1: rule__AndOr__Group__1 : rule__AndOr__Group__1__Impl ;
+    // InternalDeviceDefinition.g:7249:1: rule__AndOr__Group__1 : rule__AndOr__Group__1__Impl ;
     public final void rule__AndOr__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7106:1: ( rule__AndOr__Group__1__Impl )
-            // InternalDeviceDefinition.g:7107:2: rule__AndOr__Group__1__Impl
+            // InternalDeviceDefinition.g:7253:1: ( rule__AndOr__Group__1__Impl )
+            // InternalDeviceDefinition.g:7254:2: rule__AndOr__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AndOr__Group__1__Impl();
@@ -22001,35 +22460,35 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__AndOr__Group__1__Impl"
-    // InternalDeviceDefinition.g:7113:1: rule__AndOr__Group__1__Impl : ( ( rule__AndOr__Group_1__0 )* ) ;
+    // InternalDeviceDefinition.g:7260:1: rule__AndOr__Group__1__Impl : ( ( rule__AndOr__Group_1__0 )* ) ;
     public final void rule__AndOr__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7117:1: ( ( ( rule__AndOr__Group_1__0 )* ) )
-            // InternalDeviceDefinition.g:7118:1: ( ( rule__AndOr__Group_1__0 )* )
+            // InternalDeviceDefinition.g:7264:1: ( ( ( rule__AndOr__Group_1__0 )* ) )
+            // InternalDeviceDefinition.g:7265:1: ( ( rule__AndOr__Group_1__0 )* )
             {
-            // InternalDeviceDefinition.g:7118:1: ( ( rule__AndOr__Group_1__0 )* )
-            // InternalDeviceDefinition.g:7119:2: ( rule__AndOr__Group_1__0 )*
+            // InternalDeviceDefinition.g:7265:1: ( ( rule__AndOr__Group_1__0 )* )
+            // InternalDeviceDefinition.g:7266:2: ( rule__AndOr__Group_1__0 )*
             {
              before(grammarAccess.getAndOrAccess().getGroup_1()); 
-            // InternalDeviceDefinition.g:7120:2: ( rule__AndOr__Group_1__0 )*
-            loop53:
+            // InternalDeviceDefinition.g:7267:2: ( rule__AndOr__Group_1__0 )*
+            loop55:
             do {
-                int alt53=2;
-                int LA53_0 = input.LA(1);
+                int alt55=2;
+                int LA55_0 = input.LA(1);
 
-                if ( (LA53_0==39||LA53_0==91) ) {
-                    alt53=1;
+                if ( (LA55_0==39||LA55_0==93) ) {
+                    alt55=1;
                 }
 
 
-                switch (alt53) {
+                switch (alt55) {
             	case 1 :
-            	    // InternalDeviceDefinition.g:7120:3: rule__AndOr__Group_1__0
+            	    // InternalDeviceDefinition.g:7267:3: rule__AndOr__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_83);
+            	    pushFollow(FOLLOW_87);
             	    rule__AndOr__Group_1__0();
 
             	    state._fsp--;
@@ -22039,7 +22498,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             	    break;
 
             	default :
-            	    break loop53;
+            	    break loop55;
                 }
             } while (true);
 
@@ -22066,14 +22525,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__AndOr__Group_1__0"
-    // InternalDeviceDefinition.g:7129:1: rule__AndOr__Group_1__0 : rule__AndOr__Group_1__0__Impl rule__AndOr__Group_1__1 ;
+    // InternalDeviceDefinition.g:7276:1: rule__AndOr__Group_1__0 : rule__AndOr__Group_1__0__Impl rule__AndOr__Group_1__1 ;
     public final void rule__AndOr__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7133:1: ( rule__AndOr__Group_1__0__Impl rule__AndOr__Group_1__1 )
-            // InternalDeviceDefinition.g:7134:2: rule__AndOr__Group_1__0__Impl rule__AndOr__Group_1__1
+            // InternalDeviceDefinition.g:7280:1: ( rule__AndOr__Group_1__0__Impl rule__AndOr__Group_1__1 )
+            // InternalDeviceDefinition.g:7281:2: rule__AndOr__Group_1__0__Impl rule__AndOr__Group_1__1
             {
             pushFollow(FOLLOW_50);
             rule__AndOr__Group_1__0__Impl();
@@ -22104,21 +22563,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__AndOr__Group_1__0__Impl"
-    // InternalDeviceDefinition.g:7141:1: rule__AndOr__Group_1__0__Impl : ( ( rule__AndOr__Alternatives_1_0 ) ) ;
+    // InternalDeviceDefinition.g:7288:1: rule__AndOr__Group_1__0__Impl : ( ( rule__AndOr__Alternatives_1_0 ) ) ;
     public final void rule__AndOr__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7145:1: ( ( ( rule__AndOr__Alternatives_1_0 ) ) )
-            // InternalDeviceDefinition.g:7146:1: ( ( rule__AndOr__Alternatives_1_0 ) )
+            // InternalDeviceDefinition.g:7292:1: ( ( ( rule__AndOr__Alternatives_1_0 ) ) )
+            // InternalDeviceDefinition.g:7293:1: ( ( rule__AndOr__Alternatives_1_0 ) )
             {
-            // InternalDeviceDefinition.g:7146:1: ( ( rule__AndOr__Alternatives_1_0 ) )
-            // InternalDeviceDefinition.g:7147:2: ( rule__AndOr__Alternatives_1_0 )
+            // InternalDeviceDefinition.g:7293:1: ( ( rule__AndOr__Alternatives_1_0 ) )
+            // InternalDeviceDefinition.g:7294:2: ( rule__AndOr__Alternatives_1_0 )
             {
              before(grammarAccess.getAndOrAccess().getAlternatives_1_0()); 
-            // InternalDeviceDefinition.g:7148:2: ( rule__AndOr__Alternatives_1_0 )
-            // InternalDeviceDefinition.g:7148:3: rule__AndOr__Alternatives_1_0
+            // InternalDeviceDefinition.g:7295:2: ( rule__AndOr__Alternatives_1_0 )
+            // InternalDeviceDefinition.g:7295:3: rule__AndOr__Alternatives_1_0
             {
             pushFollow(FOLLOW_2);
             rule__AndOr__Alternatives_1_0();
@@ -22151,14 +22610,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__AndOr__Group_1__1"
-    // InternalDeviceDefinition.g:7156:1: rule__AndOr__Group_1__1 : rule__AndOr__Group_1__1__Impl ;
+    // InternalDeviceDefinition.g:7303:1: rule__AndOr__Group_1__1 : rule__AndOr__Group_1__1__Impl ;
     public final void rule__AndOr__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7160:1: ( rule__AndOr__Group_1__1__Impl )
-            // InternalDeviceDefinition.g:7161:2: rule__AndOr__Group_1__1__Impl
+            // InternalDeviceDefinition.g:7307:1: ( rule__AndOr__Group_1__1__Impl )
+            // InternalDeviceDefinition.g:7308:2: rule__AndOr__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AndOr__Group_1__1__Impl();
@@ -22184,21 +22643,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__AndOr__Group_1__1__Impl"
-    // InternalDeviceDefinition.g:7167:1: rule__AndOr__Group_1__1__Impl : ( ( rule__AndOr__RightAssignment_1_1 ) ) ;
+    // InternalDeviceDefinition.g:7314:1: rule__AndOr__Group_1__1__Impl : ( ( rule__AndOr__RightAssignment_1_1 ) ) ;
     public final void rule__AndOr__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7171:1: ( ( ( rule__AndOr__RightAssignment_1_1 ) ) )
-            // InternalDeviceDefinition.g:7172:1: ( ( rule__AndOr__RightAssignment_1_1 ) )
+            // InternalDeviceDefinition.g:7318:1: ( ( ( rule__AndOr__RightAssignment_1_1 ) ) )
+            // InternalDeviceDefinition.g:7319:1: ( ( rule__AndOr__RightAssignment_1_1 ) )
             {
-            // InternalDeviceDefinition.g:7172:1: ( ( rule__AndOr__RightAssignment_1_1 ) )
-            // InternalDeviceDefinition.g:7173:2: ( rule__AndOr__RightAssignment_1_1 )
+            // InternalDeviceDefinition.g:7319:1: ( ( rule__AndOr__RightAssignment_1_1 ) )
+            // InternalDeviceDefinition.g:7320:2: ( rule__AndOr__RightAssignment_1_1 )
             {
              before(grammarAccess.getAndOrAccess().getRightAssignment_1_1()); 
-            // InternalDeviceDefinition.g:7174:2: ( rule__AndOr__RightAssignment_1_1 )
-            // InternalDeviceDefinition.g:7174:3: rule__AndOr__RightAssignment_1_1
+            // InternalDeviceDefinition.g:7321:2: ( rule__AndOr__RightAssignment_1_1 )
+            // InternalDeviceDefinition.g:7321:3: rule__AndOr__RightAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__AndOr__RightAssignment_1_1();
@@ -22231,14 +22690,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__AndOr__Group_1_0_0__0"
-    // InternalDeviceDefinition.g:7183:1: rule__AndOr__Group_1_0_0__0 : rule__AndOr__Group_1_0_0__0__Impl rule__AndOr__Group_1_0_0__1 ;
+    // InternalDeviceDefinition.g:7330:1: rule__AndOr__Group_1_0_0__0 : rule__AndOr__Group_1_0_0__0__Impl rule__AndOr__Group_1_0_0__1 ;
     public final void rule__AndOr__Group_1_0_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7187:1: ( rule__AndOr__Group_1_0_0__0__Impl rule__AndOr__Group_1_0_0__1 )
-            // InternalDeviceDefinition.g:7188:2: rule__AndOr__Group_1_0_0__0__Impl rule__AndOr__Group_1_0_0__1
+            // InternalDeviceDefinition.g:7334:1: ( rule__AndOr__Group_1_0_0__0__Impl rule__AndOr__Group_1_0_0__1 )
+            // InternalDeviceDefinition.g:7335:2: rule__AndOr__Group_1_0_0__0__Impl rule__AndOr__Group_1_0_0__1
             {
             pushFollow(FOLLOW_13);
             rule__AndOr__Group_1_0_0__0__Impl();
@@ -22269,21 +22728,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__AndOr__Group_1_0_0__0__Impl"
-    // InternalDeviceDefinition.g:7195:1: rule__AndOr__Group_1_0_0__0__Impl : ( () ) ;
+    // InternalDeviceDefinition.g:7342:1: rule__AndOr__Group_1_0_0__0__Impl : ( () ) ;
     public final void rule__AndOr__Group_1_0_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7199:1: ( ( () ) )
-            // InternalDeviceDefinition.g:7200:1: ( () )
+            // InternalDeviceDefinition.g:7346:1: ( ( () ) )
+            // InternalDeviceDefinition.g:7347:1: ( () )
             {
-            // InternalDeviceDefinition.g:7200:1: ( () )
-            // InternalDeviceDefinition.g:7201:2: ()
+            // InternalDeviceDefinition.g:7347:1: ( () )
+            // InternalDeviceDefinition.g:7348:2: ()
             {
              before(grammarAccess.getAndOrAccess().getAndLeftAction_1_0_0_0()); 
-            // InternalDeviceDefinition.g:7202:2: ()
-            // InternalDeviceDefinition.g:7202:3: 
+            // InternalDeviceDefinition.g:7349:2: ()
+            // InternalDeviceDefinition.g:7349:3: 
             {
             }
 
@@ -22306,14 +22765,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__AndOr__Group_1_0_0__1"
-    // InternalDeviceDefinition.g:7210:1: rule__AndOr__Group_1_0_0__1 : rule__AndOr__Group_1_0_0__1__Impl ;
+    // InternalDeviceDefinition.g:7357:1: rule__AndOr__Group_1_0_0__1 : rule__AndOr__Group_1_0_0__1__Impl ;
     public final void rule__AndOr__Group_1_0_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7214:1: ( rule__AndOr__Group_1_0_0__1__Impl )
-            // InternalDeviceDefinition.g:7215:2: rule__AndOr__Group_1_0_0__1__Impl
+            // InternalDeviceDefinition.g:7361:1: ( rule__AndOr__Group_1_0_0__1__Impl )
+            // InternalDeviceDefinition.g:7362:2: rule__AndOr__Group_1_0_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AndOr__Group_1_0_0__1__Impl();
@@ -22339,17 +22798,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__AndOr__Group_1_0_0__1__Impl"
-    // InternalDeviceDefinition.g:7221:1: rule__AndOr__Group_1_0_0__1__Impl : ( 'and' ) ;
+    // InternalDeviceDefinition.g:7368:1: rule__AndOr__Group_1_0_0__1__Impl : ( 'and' ) ;
     public final void rule__AndOr__Group_1_0_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7225:1: ( ( 'and' ) )
-            // InternalDeviceDefinition.g:7226:1: ( 'and' )
+            // InternalDeviceDefinition.g:7372:1: ( ( 'and' ) )
+            // InternalDeviceDefinition.g:7373:1: ( 'and' )
             {
-            // InternalDeviceDefinition.g:7226:1: ( 'and' )
-            // InternalDeviceDefinition.g:7227:2: 'and'
+            // InternalDeviceDefinition.g:7373:1: ( 'and' )
+            // InternalDeviceDefinition.g:7374:2: 'and'
             {
              before(grammarAccess.getAndOrAccess().getAndKeyword_1_0_0_1()); 
             match(input,39,FOLLOW_2); 
@@ -22376,16 +22835,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__AndOr__Group_1_0_1__0"
-    // InternalDeviceDefinition.g:7237:1: rule__AndOr__Group_1_0_1__0 : rule__AndOr__Group_1_0_1__0__Impl rule__AndOr__Group_1_0_1__1 ;
+    // InternalDeviceDefinition.g:7384:1: rule__AndOr__Group_1_0_1__0 : rule__AndOr__Group_1_0_1__0__Impl rule__AndOr__Group_1_0_1__1 ;
     public final void rule__AndOr__Group_1_0_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7241:1: ( rule__AndOr__Group_1_0_1__0__Impl rule__AndOr__Group_1_0_1__1 )
-            // InternalDeviceDefinition.g:7242:2: rule__AndOr__Group_1_0_1__0__Impl rule__AndOr__Group_1_0_1__1
+            // InternalDeviceDefinition.g:7388:1: ( rule__AndOr__Group_1_0_1__0__Impl rule__AndOr__Group_1_0_1__1 )
+            // InternalDeviceDefinition.g:7389:2: rule__AndOr__Group_1_0_1__0__Impl rule__AndOr__Group_1_0_1__1
             {
-            pushFollow(FOLLOW_82);
+            pushFollow(FOLLOW_86);
             rule__AndOr__Group_1_0_1__0__Impl();
 
             state._fsp--;
@@ -22414,21 +22873,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__AndOr__Group_1_0_1__0__Impl"
-    // InternalDeviceDefinition.g:7249:1: rule__AndOr__Group_1_0_1__0__Impl : ( () ) ;
+    // InternalDeviceDefinition.g:7396:1: rule__AndOr__Group_1_0_1__0__Impl : ( () ) ;
     public final void rule__AndOr__Group_1_0_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7253:1: ( ( () ) )
-            // InternalDeviceDefinition.g:7254:1: ( () )
+            // InternalDeviceDefinition.g:7400:1: ( ( () ) )
+            // InternalDeviceDefinition.g:7401:1: ( () )
             {
-            // InternalDeviceDefinition.g:7254:1: ( () )
-            // InternalDeviceDefinition.g:7255:2: ()
+            // InternalDeviceDefinition.g:7401:1: ( () )
+            // InternalDeviceDefinition.g:7402:2: ()
             {
              before(grammarAccess.getAndOrAccess().getOrLeftAction_1_0_1_0()); 
-            // InternalDeviceDefinition.g:7256:2: ()
-            // InternalDeviceDefinition.g:7256:3: 
+            // InternalDeviceDefinition.g:7403:2: ()
+            // InternalDeviceDefinition.g:7403:3: 
             {
             }
 
@@ -22451,14 +22910,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__AndOr__Group_1_0_1__1"
-    // InternalDeviceDefinition.g:7264:1: rule__AndOr__Group_1_0_1__1 : rule__AndOr__Group_1_0_1__1__Impl ;
+    // InternalDeviceDefinition.g:7411:1: rule__AndOr__Group_1_0_1__1 : rule__AndOr__Group_1_0_1__1__Impl ;
     public final void rule__AndOr__Group_1_0_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7268:1: ( rule__AndOr__Group_1_0_1__1__Impl )
-            // InternalDeviceDefinition.g:7269:2: rule__AndOr__Group_1_0_1__1__Impl
+            // InternalDeviceDefinition.g:7415:1: ( rule__AndOr__Group_1_0_1__1__Impl )
+            // InternalDeviceDefinition.g:7416:2: rule__AndOr__Group_1_0_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AndOr__Group_1_0_1__1__Impl();
@@ -22484,20 +22943,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__AndOr__Group_1_0_1__1__Impl"
-    // InternalDeviceDefinition.g:7275:1: rule__AndOr__Group_1_0_1__1__Impl : ( 'or' ) ;
+    // InternalDeviceDefinition.g:7422:1: rule__AndOr__Group_1_0_1__1__Impl : ( 'or' ) ;
     public final void rule__AndOr__Group_1_0_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7279:1: ( ( 'or' ) )
-            // InternalDeviceDefinition.g:7280:1: ( 'or' )
+            // InternalDeviceDefinition.g:7426:1: ( ( 'or' ) )
+            // InternalDeviceDefinition.g:7427:1: ( 'or' )
             {
-            // InternalDeviceDefinition.g:7280:1: ( 'or' )
-            // InternalDeviceDefinition.g:7281:2: 'or'
+            // InternalDeviceDefinition.g:7427:1: ( 'or' )
+            // InternalDeviceDefinition.g:7428:2: 'or'
             {
              before(grammarAccess.getAndOrAccess().getOrKeyword_1_0_1_1()); 
-            match(input,91,FOLLOW_2); 
+            match(input,93,FOLLOW_2); 
              after(grammarAccess.getAndOrAccess().getOrKeyword_1_0_1_1()); 
 
             }
@@ -22521,14 +22980,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Primary__Group_4__0"
-    // InternalDeviceDefinition.g:7291:1: rule__Primary__Group_4__0 : rule__Primary__Group_4__0__Impl rule__Primary__Group_4__1 ;
+    // InternalDeviceDefinition.g:7438:1: rule__Primary__Group_4__0 : rule__Primary__Group_4__0__Impl rule__Primary__Group_4__1 ;
     public final void rule__Primary__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7295:1: ( rule__Primary__Group_4__0__Impl rule__Primary__Group_4__1 )
-            // InternalDeviceDefinition.g:7296:2: rule__Primary__Group_4__0__Impl rule__Primary__Group_4__1
+            // InternalDeviceDefinition.g:7442:1: ( rule__Primary__Group_4__0__Impl rule__Primary__Group_4__1 )
+            // InternalDeviceDefinition.g:7443:2: rule__Primary__Group_4__0__Impl rule__Primary__Group_4__1
             {
             pushFollow(FOLLOW_50);
             rule__Primary__Group_4__0__Impl();
@@ -22559,21 +23018,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Primary__Group_4__0__Impl"
-    // InternalDeviceDefinition.g:7303:1: rule__Primary__Group_4__0__Impl : ( () ) ;
+    // InternalDeviceDefinition.g:7450:1: rule__Primary__Group_4__0__Impl : ( () ) ;
     public final void rule__Primary__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7307:1: ( ( () ) )
-            // InternalDeviceDefinition.g:7308:1: ( () )
+            // InternalDeviceDefinition.g:7454:1: ( ( () ) )
+            // InternalDeviceDefinition.g:7455:1: ( () )
             {
-            // InternalDeviceDefinition.g:7308:1: ( () )
-            // InternalDeviceDefinition.g:7309:2: ()
+            // InternalDeviceDefinition.g:7455:1: ( () )
+            // InternalDeviceDefinition.g:7456:2: ()
             {
              before(grammarAccess.getPrimaryAccess().getValueAction_4_0()); 
-            // InternalDeviceDefinition.g:7310:2: ()
-            // InternalDeviceDefinition.g:7310:3: 
+            // InternalDeviceDefinition.g:7457:2: ()
+            // InternalDeviceDefinition.g:7457:3: 
             {
             }
 
@@ -22596,14 +23055,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Primary__Group_4__1"
-    // InternalDeviceDefinition.g:7318:1: rule__Primary__Group_4__1 : rule__Primary__Group_4__1__Impl ;
+    // InternalDeviceDefinition.g:7465:1: rule__Primary__Group_4__1 : rule__Primary__Group_4__1__Impl ;
     public final void rule__Primary__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7322:1: ( rule__Primary__Group_4__1__Impl )
-            // InternalDeviceDefinition.g:7323:2: rule__Primary__Group_4__1__Impl
+            // InternalDeviceDefinition.g:7469:1: ( rule__Primary__Group_4__1__Impl )
+            // InternalDeviceDefinition.g:7470:2: rule__Primary__Group_4__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Primary__Group_4__1__Impl();
@@ -22629,20 +23088,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Primary__Group_4__1__Impl"
-    // InternalDeviceDefinition.g:7329:1: rule__Primary__Group_4__1__Impl : ( 'value' ) ;
+    // InternalDeviceDefinition.g:7476:1: rule__Primary__Group_4__1__Impl : ( 'value' ) ;
     public final void rule__Primary__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7333:1: ( ( 'value' ) )
-            // InternalDeviceDefinition.g:7334:1: ( 'value' )
+            // InternalDeviceDefinition.g:7480:1: ( ( 'value' ) )
+            // InternalDeviceDefinition.g:7481:1: ( 'value' )
             {
-            // InternalDeviceDefinition.g:7334:1: ( 'value' )
-            // InternalDeviceDefinition.g:7335:2: 'value'
+            // InternalDeviceDefinition.g:7481:1: ( 'value' )
+            // InternalDeviceDefinition.g:7482:2: 'value'
             {
              before(grammarAccess.getPrimaryAccess().getValueKeyword_4_1()); 
-            match(input,92,FOLLOW_2); 
+            match(input,94,FOLLOW_2); 
              after(grammarAccess.getPrimaryAccess().getValueKeyword_4_1()); 
 
             }
@@ -22666,14 +23125,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ExternalCall__Group__0"
-    // InternalDeviceDefinition.g:7345:1: rule__ExternalCall__Group__0 : rule__ExternalCall__Group__0__Impl rule__ExternalCall__Group__1 ;
+    // InternalDeviceDefinition.g:7492:1: rule__ExternalCall__Group__0 : rule__ExternalCall__Group__0__Impl rule__ExternalCall__Group__1 ;
     public final void rule__ExternalCall__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7349:1: ( rule__ExternalCall__Group__0__Impl rule__ExternalCall__Group__1 )
-            // InternalDeviceDefinition.g:7350:2: rule__ExternalCall__Group__0__Impl rule__ExternalCall__Group__1
+            // InternalDeviceDefinition.g:7496:1: ( rule__ExternalCall__Group__0__Impl rule__ExternalCall__Group__1 )
+            // InternalDeviceDefinition.g:7497:2: rule__ExternalCall__Group__0__Impl rule__ExternalCall__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__ExternalCall__Group__0__Impl();
@@ -22704,20 +23163,20 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ExternalCall__Group__0__Impl"
-    // InternalDeviceDefinition.g:7357:1: rule__ExternalCall__Group__0__Impl : ( 'call' ) ;
+    // InternalDeviceDefinition.g:7504:1: rule__ExternalCall__Group__0__Impl : ( 'call' ) ;
     public final void rule__ExternalCall__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7361:1: ( ( 'call' ) )
-            // InternalDeviceDefinition.g:7362:1: ( 'call' )
+            // InternalDeviceDefinition.g:7508:1: ( ( 'call' ) )
+            // InternalDeviceDefinition.g:7509:1: ( 'call' )
             {
-            // InternalDeviceDefinition.g:7362:1: ( 'call' )
-            // InternalDeviceDefinition.g:7363:2: 'call'
+            // InternalDeviceDefinition.g:7509:1: ( 'call' )
+            // InternalDeviceDefinition.g:7510:2: 'call'
             {
              before(grammarAccess.getExternalCallAccess().getCallKeyword_0()); 
-            match(input,93,FOLLOW_2); 
+            match(input,95,FOLLOW_2); 
              after(grammarAccess.getExternalCallAccess().getCallKeyword_0()); 
 
             }
@@ -22741,14 +23200,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ExternalCall__Group__1"
-    // InternalDeviceDefinition.g:7372:1: rule__ExternalCall__Group__1 : rule__ExternalCall__Group__1__Impl rule__ExternalCall__Group__2 ;
+    // InternalDeviceDefinition.g:7519:1: rule__ExternalCall__Group__1 : rule__ExternalCall__Group__1__Impl rule__ExternalCall__Group__2 ;
     public final void rule__ExternalCall__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7376:1: ( rule__ExternalCall__Group__1__Impl rule__ExternalCall__Group__2 )
-            // InternalDeviceDefinition.g:7377:2: rule__ExternalCall__Group__1__Impl rule__ExternalCall__Group__2
+            // InternalDeviceDefinition.g:7523:1: ( rule__ExternalCall__Group__1__Impl rule__ExternalCall__Group__2 )
+            // InternalDeviceDefinition.g:7524:2: rule__ExternalCall__Group__1__Impl rule__ExternalCall__Group__2
             {
             pushFollow(FOLLOW_22);
             rule__ExternalCall__Group__1__Impl();
@@ -22779,21 +23238,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ExternalCall__Group__1__Impl"
-    // InternalDeviceDefinition.g:7384:1: rule__ExternalCall__Group__1__Impl : ( ( rule__ExternalCall__FuncAssignment_1 ) ) ;
+    // InternalDeviceDefinition.g:7531:1: rule__ExternalCall__Group__1__Impl : ( ( rule__ExternalCall__FuncAssignment_1 ) ) ;
     public final void rule__ExternalCall__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7388:1: ( ( ( rule__ExternalCall__FuncAssignment_1 ) ) )
-            // InternalDeviceDefinition.g:7389:1: ( ( rule__ExternalCall__FuncAssignment_1 ) )
+            // InternalDeviceDefinition.g:7535:1: ( ( ( rule__ExternalCall__FuncAssignment_1 ) ) )
+            // InternalDeviceDefinition.g:7536:1: ( ( rule__ExternalCall__FuncAssignment_1 ) )
             {
-            // InternalDeviceDefinition.g:7389:1: ( ( rule__ExternalCall__FuncAssignment_1 ) )
-            // InternalDeviceDefinition.g:7390:2: ( rule__ExternalCall__FuncAssignment_1 )
+            // InternalDeviceDefinition.g:7536:1: ( ( rule__ExternalCall__FuncAssignment_1 ) )
+            // InternalDeviceDefinition.g:7537:2: ( rule__ExternalCall__FuncAssignment_1 )
             {
              before(grammarAccess.getExternalCallAccess().getFuncAssignment_1()); 
-            // InternalDeviceDefinition.g:7391:2: ( rule__ExternalCall__FuncAssignment_1 )
-            // InternalDeviceDefinition.g:7391:3: rule__ExternalCall__FuncAssignment_1
+            // InternalDeviceDefinition.g:7538:2: ( rule__ExternalCall__FuncAssignment_1 )
+            // InternalDeviceDefinition.g:7538:3: rule__ExternalCall__FuncAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__ExternalCall__FuncAssignment_1();
@@ -22826,16 +23285,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ExternalCall__Group__2"
-    // InternalDeviceDefinition.g:7399:1: rule__ExternalCall__Group__2 : rule__ExternalCall__Group__2__Impl rule__ExternalCall__Group__3 ;
+    // InternalDeviceDefinition.g:7546:1: rule__ExternalCall__Group__2 : rule__ExternalCall__Group__2__Impl rule__ExternalCall__Group__3 ;
     public final void rule__ExternalCall__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7403:1: ( rule__ExternalCall__Group__2__Impl rule__ExternalCall__Group__3 )
-            // InternalDeviceDefinition.g:7404:2: rule__ExternalCall__Group__2__Impl rule__ExternalCall__Group__3
+            // InternalDeviceDefinition.g:7550:1: ( rule__ExternalCall__Group__2__Impl rule__ExternalCall__Group__3 )
+            // InternalDeviceDefinition.g:7551:2: rule__ExternalCall__Group__2__Impl rule__ExternalCall__Group__3
             {
-            pushFollow(FOLLOW_84);
+            pushFollow(FOLLOW_88);
             rule__ExternalCall__Group__2__Impl();
 
             state._fsp--;
@@ -22864,17 +23323,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ExternalCall__Group__2__Impl"
-    // InternalDeviceDefinition.g:7411:1: rule__ExternalCall__Group__2__Impl : ( '(' ) ;
+    // InternalDeviceDefinition.g:7558:1: rule__ExternalCall__Group__2__Impl : ( '(' ) ;
     public final void rule__ExternalCall__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7415:1: ( ( '(' ) )
-            // InternalDeviceDefinition.g:7416:1: ( '(' )
+            // InternalDeviceDefinition.g:7562:1: ( ( '(' ) )
+            // InternalDeviceDefinition.g:7563:1: ( '(' )
             {
-            // InternalDeviceDefinition.g:7416:1: ( '(' )
-            // InternalDeviceDefinition.g:7417:2: '('
+            // InternalDeviceDefinition.g:7563:1: ( '(' )
+            // InternalDeviceDefinition.g:7564:2: '('
             {
              before(grammarAccess.getExternalCallAccess().getLeftParenthesisKeyword_2()); 
             match(input,48,FOLLOW_2); 
@@ -22901,16 +23360,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ExternalCall__Group__3"
-    // InternalDeviceDefinition.g:7426:1: rule__ExternalCall__Group__3 : rule__ExternalCall__Group__3__Impl rule__ExternalCall__Group__4 ;
+    // InternalDeviceDefinition.g:7573:1: rule__ExternalCall__Group__3 : rule__ExternalCall__Group__3__Impl rule__ExternalCall__Group__4 ;
     public final void rule__ExternalCall__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7430:1: ( rule__ExternalCall__Group__3__Impl rule__ExternalCall__Group__4 )
-            // InternalDeviceDefinition.g:7431:2: rule__ExternalCall__Group__3__Impl rule__ExternalCall__Group__4
+            // InternalDeviceDefinition.g:7577:1: ( rule__ExternalCall__Group__3__Impl rule__ExternalCall__Group__4 )
+            // InternalDeviceDefinition.g:7578:2: rule__ExternalCall__Group__3__Impl rule__ExternalCall__Group__4
             {
-            pushFollow(FOLLOW_84);
+            pushFollow(FOLLOW_88);
             rule__ExternalCall__Group__3__Impl();
 
             state._fsp--;
@@ -22939,29 +23398,29 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ExternalCall__Group__3__Impl"
-    // InternalDeviceDefinition.g:7438:1: rule__ExternalCall__Group__3__Impl : ( ( rule__ExternalCall__ArgsAssignment_3 )? ) ;
+    // InternalDeviceDefinition.g:7585:1: rule__ExternalCall__Group__3__Impl : ( ( rule__ExternalCall__ArgsAssignment_3 )? ) ;
     public final void rule__ExternalCall__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7442:1: ( ( ( rule__ExternalCall__ArgsAssignment_3 )? ) )
-            // InternalDeviceDefinition.g:7443:1: ( ( rule__ExternalCall__ArgsAssignment_3 )? )
+            // InternalDeviceDefinition.g:7589:1: ( ( ( rule__ExternalCall__ArgsAssignment_3 )? ) )
+            // InternalDeviceDefinition.g:7590:1: ( ( rule__ExternalCall__ArgsAssignment_3 )? )
             {
-            // InternalDeviceDefinition.g:7443:1: ( ( rule__ExternalCall__ArgsAssignment_3 )? )
-            // InternalDeviceDefinition.g:7444:2: ( rule__ExternalCall__ArgsAssignment_3 )?
+            // InternalDeviceDefinition.g:7590:1: ( ( rule__ExternalCall__ArgsAssignment_3 )? )
+            // InternalDeviceDefinition.g:7591:2: ( rule__ExternalCall__ArgsAssignment_3 )?
             {
              before(grammarAccess.getExternalCallAccess().getArgsAssignment_3()); 
-            // InternalDeviceDefinition.g:7445:2: ( rule__ExternalCall__ArgsAssignment_3 )?
-            int alt54=2;
-            int LA54_0 = input.LA(1);
+            // InternalDeviceDefinition.g:7592:2: ( rule__ExternalCall__ArgsAssignment_3 )?
+            int alt56=2;
+            int LA56_0 = input.LA(1);
 
-            if ( (LA54_0==RULE_ID||LA54_0==RULE_DECIMAL||LA54_0==RULE_INT||LA54_0==48||(LA54_0>=79 && LA54_0<=80)||(LA54_0>=92 && LA54_0<=93)) ) {
-                alt54=1;
+            if ( (LA56_0==RULE_ID||LA56_0==RULE_DECIMAL||LA56_0==RULE_INT||LA56_0==48||(LA56_0>=81 && LA56_0<=82)||(LA56_0>=94 && LA56_0<=95)) ) {
+                alt56=1;
             }
-            switch (alt54) {
+            switch (alt56) {
                 case 1 :
-                    // InternalDeviceDefinition.g:7445:3: rule__ExternalCall__ArgsAssignment_3
+                    // InternalDeviceDefinition.g:7592:3: rule__ExternalCall__ArgsAssignment_3
                     {
                     pushFollow(FOLLOW_2);
                     rule__ExternalCall__ArgsAssignment_3();
@@ -22997,16 +23456,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ExternalCall__Group__4"
-    // InternalDeviceDefinition.g:7453:1: rule__ExternalCall__Group__4 : rule__ExternalCall__Group__4__Impl rule__ExternalCall__Group__5 ;
+    // InternalDeviceDefinition.g:7600:1: rule__ExternalCall__Group__4 : rule__ExternalCall__Group__4__Impl rule__ExternalCall__Group__5 ;
     public final void rule__ExternalCall__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7457:1: ( rule__ExternalCall__Group__4__Impl rule__ExternalCall__Group__5 )
-            // InternalDeviceDefinition.g:7458:2: rule__ExternalCall__Group__4__Impl rule__ExternalCall__Group__5
+            // InternalDeviceDefinition.g:7604:1: ( rule__ExternalCall__Group__4__Impl rule__ExternalCall__Group__5 )
+            // InternalDeviceDefinition.g:7605:2: rule__ExternalCall__Group__4__Impl rule__ExternalCall__Group__5
             {
-            pushFollow(FOLLOW_84);
+            pushFollow(FOLLOW_88);
             rule__ExternalCall__Group__4__Impl();
 
             state._fsp--;
@@ -23035,33 +23494,33 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ExternalCall__Group__4__Impl"
-    // InternalDeviceDefinition.g:7465:1: rule__ExternalCall__Group__4__Impl : ( ( rule__ExternalCall__Group_4__0 )* ) ;
+    // InternalDeviceDefinition.g:7612:1: rule__ExternalCall__Group__4__Impl : ( ( rule__ExternalCall__Group_4__0 )* ) ;
     public final void rule__ExternalCall__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7469:1: ( ( ( rule__ExternalCall__Group_4__0 )* ) )
-            // InternalDeviceDefinition.g:7470:1: ( ( rule__ExternalCall__Group_4__0 )* )
+            // InternalDeviceDefinition.g:7616:1: ( ( ( rule__ExternalCall__Group_4__0 )* ) )
+            // InternalDeviceDefinition.g:7617:1: ( ( rule__ExternalCall__Group_4__0 )* )
             {
-            // InternalDeviceDefinition.g:7470:1: ( ( rule__ExternalCall__Group_4__0 )* )
-            // InternalDeviceDefinition.g:7471:2: ( rule__ExternalCall__Group_4__0 )*
+            // InternalDeviceDefinition.g:7617:1: ( ( rule__ExternalCall__Group_4__0 )* )
+            // InternalDeviceDefinition.g:7618:2: ( rule__ExternalCall__Group_4__0 )*
             {
              before(grammarAccess.getExternalCallAccess().getGroup_4()); 
-            // InternalDeviceDefinition.g:7472:2: ( rule__ExternalCall__Group_4__0 )*
-            loop55:
+            // InternalDeviceDefinition.g:7619:2: ( rule__ExternalCall__Group_4__0 )*
+            loop57:
             do {
-                int alt55=2;
-                int LA55_0 = input.LA(1);
+                int alt57=2;
+                int LA57_0 = input.LA(1);
 
-                if ( (LA55_0==49) ) {
-                    alt55=1;
+                if ( (LA57_0==49) ) {
+                    alt57=1;
                 }
 
 
-                switch (alt55) {
+                switch (alt57) {
             	case 1 :
-            	    // InternalDeviceDefinition.g:7472:3: rule__ExternalCall__Group_4__0
+            	    // InternalDeviceDefinition.g:7619:3: rule__ExternalCall__Group_4__0
             	    {
             	    pushFollow(FOLLOW_47);
             	    rule__ExternalCall__Group_4__0();
@@ -23073,7 +23532,7 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
             	    break;
 
             	default :
-            	    break loop55;
+            	    break loop57;
                 }
             } while (true);
 
@@ -23100,14 +23559,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ExternalCall__Group__5"
-    // InternalDeviceDefinition.g:7480:1: rule__ExternalCall__Group__5 : rule__ExternalCall__Group__5__Impl ;
+    // InternalDeviceDefinition.g:7627:1: rule__ExternalCall__Group__5 : rule__ExternalCall__Group__5__Impl ;
     public final void rule__ExternalCall__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7484:1: ( rule__ExternalCall__Group__5__Impl )
-            // InternalDeviceDefinition.g:7485:2: rule__ExternalCall__Group__5__Impl
+            // InternalDeviceDefinition.g:7631:1: ( rule__ExternalCall__Group__5__Impl )
+            // InternalDeviceDefinition.g:7632:2: rule__ExternalCall__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ExternalCall__Group__5__Impl();
@@ -23133,17 +23592,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ExternalCall__Group__5__Impl"
-    // InternalDeviceDefinition.g:7491:1: rule__ExternalCall__Group__5__Impl : ( ')' ) ;
+    // InternalDeviceDefinition.g:7638:1: rule__ExternalCall__Group__5__Impl : ( ')' ) ;
     public final void rule__ExternalCall__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7495:1: ( ( ')' ) )
-            // InternalDeviceDefinition.g:7496:1: ( ')' )
+            // InternalDeviceDefinition.g:7642:1: ( ( ')' ) )
+            // InternalDeviceDefinition.g:7643:1: ( ')' )
             {
-            // InternalDeviceDefinition.g:7496:1: ( ')' )
-            // InternalDeviceDefinition.g:7497:2: ')'
+            // InternalDeviceDefinition.g:7643:1: ( ')' )
+            // InternalDeviceDefinition.g:7644:2: ')'
             {
              before(grammarAccess.getExternalCallAccess().getRightParenthesisKeyword_5()); 
             match(input,50,FOLLOW_2); 
@@ -23170,14 +23629,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ExternalCall__Group_4__0"
-    // InternalDeviceDefinition.g:7507:1: rule__ExternalCall__Group_4__0 : rule__ExternalCall__Group_4__0__Impl rule__ExternalCall__Group_4__1 ;
+    // InternalDeviceDefinition.g:7654:1: rule__ExternalCall__Group_4__0 : rule__ExternalCall__Group_4__0__Impl rule__ExternalCall__Group_4__1 ;
     public final void rule__ExternalCall__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7511:1: ( rule__ExternalCall__Group_4__0__Impl rule__ExternalCall__Group_4__1 )
-            // InternalDeviceDefinition.g:7512:2: rule__ExternalCall__Group_4__0__Impl rule__ExternalCall__Group_4__1
+            // InternalDeviceDefinition.g:7658:1: ( rule__ExternalCall__Group_4__0__Impl rule__ExternalCall__Group_4__1 )
+            // InternalDeviceDefinition.g:7659:2: rule__ExternalCall__Group_4__0__Impl rule__ExternalCall__Group_4__1
             {
             pushFollow(FOLLOW_50);
             rule__ExternalCall__Group_4__0__Impl();
@@ -23208,17 +23667,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ExternalCall__Group_4__0__Impl"
-    // InternalDeviceDefinition.g:7519:1: rule__ExternalCall__Group_4__0__Impl : ( ',' ) ;
+    // InternalDeviceDefinition.g:7666:1: rule__ExternalCall__Group_4__0__Impl : ( ',' ) ;
     public final void rule__ExternalCall__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7523:1: ( ( ',' ) )
-            // InternalDeviceDefinition.g:7524:1: ( ',' )
+            // InternalDeviceDefinition.g:7670:1: ( ( ',' ) )
+            // InternalDeviceDefinition.g:7671:1: ( ',' )
             {
-            // InternalDeviceDefinition.g:7524:1: ( ',' )
-            // InternalDeviceDefinition.g:7525:2: ','
+            // InternalDeviceDefinition.g:7671:1: ( ',' )
+            // InternalDeviceDefinition.g:7672:2: ','
             {
              before(grammarAccess.getExternalCallAccess().getCommaKeyword_4_0()); 
             match(input,49,FOLLOW_2); 
@@ -23245,14 +23704,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ExternalCall__Group_4__1"
-    // InternalDeviceDefinition.g:7534:1: rule__ExternalCall__Group_4__1 : rule__ExternalCall__Group_4__1__Impl ;
+    // InternalDeviceDefinition.g:7681:1: rule__ExternalCall__Group_4__1 : rule__ExternalCall__Group_4__1__Impl ;
     public final void rule__ExternalCall__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7538:1: ( rule__ExternalCall__Group_4__1__Impl )
-            // InternalDeviceDefinition.g:7539:2: rule__ExternalCall__Group_4__1__Impl
+            // InternalDeviceDefinition.g:7685:1: ( rule__ExternalCall__Group_4__1__Impl )
+            // InternalDeviceDefinition.g:7686:2: rule__ExternalCall__Group_4__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ExternalCall__Group_4__1__Impl();
@@ -23278,21 +23737,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ExternalCall__Group_4__1__Impl"
-    // InternalDeviceDefinition.g:7545:1: rule__ExternalCall__Group_4__1__Impl : ( ( rule__ExternalCall__ArgsAssignment_4_1 ) ) ;
+    // InternalDeviceDefinition.g:7692:1: rule__ExternalCall__Group_4__1__Impl : ( ( rule__ExternalCall__ArgsAssignment_4_1 ) ) ;
     public final void rule__ExternalCall__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7549:1: ( ( ( rule__ExternalCall__ArgsAssignment_4_1 ) ) )
-            // InternalDeviceDefinition.g:7550:1: ( ( rule__ExternalCall__ArgsAssignment_4_1 ) )
+            // InternalDeviceDefinition.g:7696:1: ( ( ( rule__ExternalCall__ArgsAssignment_4_1 ) ) )
+            // InternalDeviceDefinition.g:7697:1: ( ( rule__ExternalCall__ArgsAssignment_4_1 ) )
             {
-            // InternalDeviceDefinition.g:7550:1: ( ( rule__ExternalCall__ArgsAssignment_4_1 ) )
-            // InternalDeviceDefinition.g:7551:2: ( rule__ExternalCall__ArgsAssignment_4_1 )
+            // InternalDeviceDefinition.g:7697:1: ( ( rule__ExternalCall__ArgsAssignment_4_1 ) )
+            // InternalDeviceDefinition.g:7698:2: ( rule__ExternalCall__ArgsAssignment_4_1 )
             {
              before(grammarAccess.getExternalCallAccess().getArgsAssignment_4_1()); 
-            // InternalDeviceDefinition.g:7552:2: ( rule__ExternalCall__ArgsAssignment_4_1 )
-            // InternalDeviceDefinition.g:7552:3: rule__ExternalCall__ArgsAssignment_4_1
+            // InternalDeviceDefinition.g:7699:2: ( rule__ExternalCall__ArgsAssignment_4_1 )
+            // InternalDeviceDefinition.g:7699:3: rule__ExternalCall__ArgsAssignment_4_1
             {
             pushFollow(FOLLOW_2);
             rule__ExternalCall__ArgsAssignment_4_1();
@@ -23325,16 +23784,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ExternalVariableUse__Group__0"
-    // InternalDeviceDefinition.g:7561:1: rule__ExternalVariableUse__Group__0 : rule__ExternalVariableUse__Group__0__Impl rule__ExternalVariableUse__Group__1 ;
+    // InternalDeviceDefinition.g:7708:1: rule__ExternalVariableUse__Group__0 : rule__ExternalVariableUse__Group__0__Impl rule__ExternalVariableUse__Group__1 ;
     public final void rule__ExternalVariableUse__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7565:1: ( rule__ExternalVariableUse__Group__0__Impl rule__ExternalVariableUse__Group__1 )
-            // InternalDeviceDefinition.g:7566:2: rule__ExternalVariableUse__Group__0__Impl rule__ExternalVariableUse__Group__1
+            // InternalDeviceDefinition.g:7712:1: ( rule__ExternalVariableUse__Group__0__Impl rule__ExternalVariableUse__Group__1 )
+            // InternalDeviceDefinition.g:7713:2: rule__ExternalVariableUse__Group__0__Impl rule__ExternalVariableUse__Group__1
             {
-            pushFollow(FOLLOW_85);
+            pushFollow(FOLLOW_89);
             rule__ExternalVariableUse__Group__0__Impl();
 
             state._fsp--;
@@ -23363,21 +23822,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ExternalVariableUse__Group__0__Impl"
-    // InternalDeviceDefinition.g:7573:1: rule__ExternalVariableUse__Group__0__Impl : ( ( rule__ExternalVariableUse__ObjAssignment_0 ) ) ;
+    // InternalDeviceDefinition.g:7720:1: rule__ExternalVariableUse__Group__0__Impl : ( ( rule__ExternalVariableUse__ObjAssignment_0 ) ) ;
     public final void rule__ExternalVariableUse__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7577:1: ( ( ( rule__ExternalVariableUse__ObjAssignment_0 ) ) )
-            // InternalDeviceDefinition.g:7578:1: ( ( rule__ExternalVariableUse__ObjAssignment_0 ) )
+            // InternalDeviceDefinition.g:7724:1: ( ( ( rule__ExternalVariableUse__ObjAssignment_0 ) ) )
+            // InternalDeviceDefinition.g:7725:1: ( ( rule__ExternalVariableUse__ObjAssignment_0 ) )
             {
-            // InternalDeviceDefinition.g:7578:1: ( ( rule__ExternalVariableUse__ObjAssignment_0 ) )
-            // InternalDeviceDefinition.g:7579:2: ( rule__ExternalVariableUse__ObjAssignment_0 )
+            // InternalDeviceDefinition.g:7725:1: ( ( rule__ExternalVariableUse__ObjAssignment_0 ) )
+            // InternalDeviceDefinition.g:7726:2: ( rule__ExternalVariableUse__ObjAssignment_0 )
             {
              before(grammarAccess.getExternalVariableUseAccess().getObjAssignment_0()); 
-            // InternalDeviceDefinition.g:7580:2: ( rule__ExternalVariableUse__ObjAssignment_0 )
-            // InternalDeviceDefinition.g:7580:3: rule__ExternalVariableUse__ObjAssignment_0
+            // InternalDeviceDefinition.g:7727:2: ( rule__ExternalVariableUse__ObjAssignment_0 )
+            // InternalDeviceDefinition.g:7727:3: rule__ExternalVariableUse__ObjAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__ExternalVariableUse__ObjAssignment_0();
@@ -23410,14 +23869,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ExternalVariableUse__Group__1"
-    // InternalDeviceDefinition.g:7588:1: rule__ExternalVariableUse__Group__1 : rule__ExternalVariableUse__Group__1__Impl rule__ExternalVariableUse__Group__2 ;
+    // InternalDeviceDefinition.g:7735:1: rule__ExternalVariableUse__Group__1 : rule__ExternalVariableUse__Group__1__Impl rule__ExternalVariableUse__Group__2 ;
     public final void rule__ExternalVariableUse__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7592:1: ( rule__ExternalVariableUse__Group__1__Impl rule__ExternalVariableUse__Group__2 )
-            // InternalDeviceDefinition.g:7593:2: rule__ExternalVariableUse__Group__1__Impl rule__ExternalVariableUse__Group__2
+            // InternalDeviceDefinition.g:7739:1: ( rule__ExternalVariableUse__Group__1__Impl rule__ExternalVariableUse__Group__2 )
+            // InternalDeviceDefinition.g:7740:2: rule__ExternalVariableUse__Group__1__Impl rule__ExternalVariableUse__Group__2
             {
             pushFollow(FOLLOW_3);
             rule__ExternalVariableUse__Group__1__Impl();
@@ -23448,21 +23907,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ExternalVariableUse__Group__1__Impl"
-    // InternalDeviceDefinition.g:7600:1: rule__ExternalVariableUse__Group__1__Impl : ( ( rule__ExternalVariableUse__Alternatives_1 ) ) ;
+    // InternalDeviceDefinition.g:7747:1: rule__ExternalVariableUse__Group__1__Impl : ( ( rule__ExternalVariableUse__Alternatives_1 ) ) ;
     public final void rule__ExternalVariableUse__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7604:1: ( ( ( rule__ExternalVariableUse__Alternatives_1 ) ) )
-            // InternalDeviceDefinition.g:7605:1: ( ( rule__ExternalVariableUse__Alternatives_1 ) )
+            // InternalDeviceDefinition.g:7751:1: ( ( ( rule__ExternalVariableUse__Alternatives_1 ) ) )
+            // InternalDeviceDefinition.g:7752:1: ( ( rule__ExternalVariableUse__Alternatives_1 ) )
             {
-            // InternalDeviceDefinition.g:7605:1: ( ( rule__ExternalVariableUse__Alternatives_1 ) )
-            // InternalDeviceDefinition.g:7606:2: ( rule__ExternalVariableUse__Alternatives_1 )
+            // InternalDeviceDefinition.g:7752:1: ( ( rule__ExternalVariableUse__Alternatives_1 ) )
+            // InternalDeviceDefinition.g:7753:2: ( rule__ExternalVariableUse__Alternatives_1 )
             {
              before(grammarAccess.getExternalVariableUseAccess().getAlternatives_1()); 
-            // InternalDeviceDefinition.g:7607:2: ( rule__ExternalVariableUse__Alternatives_1 )
-            // InternalDeviceDefinition.g:7607:3: rule__ExternalVariableUse__Alternatives_1
+            // InternalDeviceDefinition.g:7754:2: ( rule__ExternalVariableUse__Alternatives_1 )
+            // InternalDeviceDefinition.g:7754:3: rule__ExternalVariableUse__Alternatives_1
             {
             pushFollow(FOLLOW_2);
             rule__ExternalVariableUse__Alternatives_1();
@@ -23495,14 +23954,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ExternalVariableUse__Group__2"
-    // InternalDeviceDefinition.g:7615:1: rule__ExternalVariableUse__Group__2 : rule__ExternalVariableUse__Group__2__Impl ;
+    // InternalDeviceDefinition.g:7762:1: rule__ExternalVariableUse__Group__2 : rule__ExternalVariableUse__Group__2__Impl ;
     public final void rule__ExternalVariableUse__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7619:1: ( rule__ExternalVariableUse__Group__2__Impl )
-            // InternalDeviceDefinition.g:7620:2: rule__ExternalVariableUse__Group__2__Impl
+            // InternalDeviceDefinition.g:7766:1: ( rule__ExternalVariableUse__Group__2__Impl )
+            // InternalDeviceDefinition.g:7767:2: rule__ExternalVariableUse__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ExternalVariableUse__Group__2__Impl();
@@ -23528,21 +23987,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ExternalVariableUse__Group__2__Impl"
-    // InternalDeviceDefinition.g:7626:1: rule__ExternalVariableUse__Group__2__Impl : ( ( rule__ExternalVariableUse__RefAssignment_2 ) ) ;
+    // InternalDeviceDefinition.g:7773:1: rule__ExternalVariableUse__Group__2__Impl : ( ( rule__ExternalVariableUse__RefAssignment_2 ) ) ;
     public final void rule__ExternalVariableUse__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7630:1: ( ( ( rule__ExternalVariableUse__RefAssignment_2 ) ) )
-            // InternalDeviceDefinition.g:7631:1: ( ( rule__ExternalVariableUse__RefAssignment_2 ) )
+            // InternalDeviceDefinition.g:7777:1: ( ( ( rule__ExternalVariableUse__RefAssignment_2 ) ) )
+            // InternalDeviceDefinition.g:7778:1: ( ( rule__ExternalVariableUse__RefAssignment_2 ) )
             {
-            // InternalDeviceDefinition.g:7631:1: ( ( rule__ExternalVariableUse__RefAssignment_2 ) )
-            // InternalDeviceDefinition.g:7632:2: ( rule__ExternalVariableUse__RefAssignment_2 )
+            // InternalDeviceDefinition.g:7778:1: ( ( rule__ExternalVariableUse__RefAssignment_2 ) )
+            // InternalDeviceDefinition.g:7779:2: ( rule__ExternalVariableUse__RefAssignment_2 )
             {
              before(grammarAccess.getExternalVariableUseAccess().getRefAssignment_2()); 
-            // InternalDeviceDefinition.g:7633:2: ( rule__ExternalVariableUse__RefAssignment_2 )
-            // InternalDeviceDefinition.g:7633:3: rule__ExternalVariableUse__RefAssignment_2
+            // InternalDeviceDefinition.g:7780:2: ( rule__ExternalVariableUse__RefAssignment_2 )
+            // InternalDeviceDefinition.g:7780:3: rule__ExternalVariableUse__RefAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__ExternalVariableUse__RefAssignment_2();
@@ -23575,16 +24034,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__GraphVariableUse__Group__0"
-    // InternalDeviceDefinition.g:7642:1: rule__GraphVariableUse__Group__0 : rule__GraphVariableUse__Group__0__Impl rule__GraphVariableUse__Group__1 ;
+    // InternalDeviceDefinition.g:7789:1: rule__GraphVariableUse__Group__0 : rule__GraphVariableUse__Group__0__Impl rule__GraphVariableUse__Group__1 ;
     public final void rule__GraphVariableUse__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7646:1: ( rule__GraphVariableUse__Group__0__Impl rule__GraphVariableUse__Group__1 )
-            // InternalDeviceDefinition.g:7647:2: rule__GraphVariableUse__Group__0__Impl rule__GraphVariableUse__Group__1
+            // InternalDeviceDefinition.g:7793:1: ( rule__GraphVariableUse__Group__0__Impl rule__GraphVariableUse__Group__1 )
+            // InternalDeviceDefinition.g:7794:2: rule__GraphVariableUse__Group__0__Impl rule__GraphVariableUse__Group__1
             {
-            pushFollow(FOLLOW_85);
+            pushFollow(FOLLOW_89);
             rule__GraphVariableUse__Group__0__Impl();
 
             state._fsp--;
@@ -23613,21 +24072,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__GraphVariableUse__Group__0__Impl"
-    // InternalDeviceDefinition.g:7654:1: rule__GraphVariableUse__Group__0__Impl : ( ( rule__GraphVariableUse__WorkerAssignment_0 ) ) ;
+    // InternalDeviceDefinition.g:7801:1: rule__GraphVariableUse__Group__0__Impl : ( ( rule__GraphVariableUse__WorkerAssignment_0 ) ) ;
     public final void rule__GraphVariableUse__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7658:1: ( ( ( rule__GraphVariableUse__WorkerAssignment_0 ) ) )
-            // InternalDeviceDefinition.g:7659:1: ( ( rule__GraphVariableUse__WorkerAssignment_0 ) )
+            // InternalDeviceDefinition.g:7805:1: ( ( ( rule__GraphVariableUse__WorkerAssignment_0 ) ) )
+            // InternalDeviceDefinition.g:7806:1: ( ( rule__GraphVariableUse__WorkerAssignment_0 ) )
             {
-            // InternalDeviceDefinition.g:7659:1: ( ( rule__GraphVariableUse__WorkerAssignment_0 ) )
-            // InternalDeviceDefinition.g:7660:2: ( rule__GraphVariableUse__WorkerAssignment_0 )
+            // InternalDeviceDefinition.g:7806:1: ( ( rule__GraphVariableUse__WorkerAssignment_0 ) )
+            // InternalDeviceDefinition.g:7807:2: ( rule__GraphVariableUse__WorkerAssignment_0 )
             {
              before(grammarAccess.getGraphVariableUseAccess().getWorkerAssignment_0()); 
-            // InternalDeviceDefinition.g:7661:2: ( rule__GraphVariableUse__WorkerAssignment_0 )
-            // InternalDeviceDefinition.g:7661:3: rule__GraphVariableUse__WorkerAssignment_0
+            // InternalDeviceDefinition.g:7808:2: ( rule__GraphVariableUse__WorkerAssignment_0 )
+            // InternalDeviceDefinition.g:7808:3: rule__GraphVariableUse__WorkerAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__GraphVariableUse__WorkerAssignment_0();
@@ -23660,14 +24119,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__GraphVariableUse__Group__1"
-    // InternalDeviceDefinition.g:7669:1: rule__GraphVariableUse__Group__1 : rule__GraphVariableUse__Group__1__Impl rule__GraphVariableUse__Group__2 ;
+    // InternalDeviceDefinition.g:7816:1: rule__GraphVariableUse__Group__1 : rule__GraphVariableUse__Group__1__Impl rule__GraphVariableUse__Group__2 ;
     public final void rule__GraphVariableUse__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7673:1: ( rule__GraphVariableUse__Group__1__Impl rule__GraphVariableUse__Group__2 )
-            // InternalDeviceDefinition.g:7674:2: rule__GraphVariableUse__Group__1__Impl rule__GraphVariableUse__Group__2
+            // InternalDeviceDefinition.g:7820:1: ( rule__GraphVariableUse__Group__1__Impl rule__GraphVariableUse__Group__2 )
+            // InternalDeviceDefinition.g:7821:2: rule__GraphVariableUse__Group__1__Impl rule__GraphVariableUse__Group__2
             {
             pushFollow(FOLLOW_3);
             rule__GraphVariableUse__Group__1__Impl();
@@ -23698,21 +24157,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__GraphVariableUse__Group__1__Impl"
-    // InternalDeviceDefinition.g:7681:1: rule__GraphVariableUse__Group__1__Impl : ( ( rule__GraphVariableUse__Alternatives_1 ) ) ;
+    // InternalDeviceDefinition.g:7828:1: rule__GraphVariableUse__Group__1__Impl : ( ( rule__GraphVariableUse__Alternatives_1 ) ) ;
     public final void rule__GraphVariableUse__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7685:1: ( ( ( rule__GraphVariableUse__Alternatives_1 ) ) )
-            // InternalDeviceDefinition.g:7686:1: ( ( rule__GraphVariableUse__Alternatives_1 ) )
+            // InternalDeviceDefinition.g:7832:1: ( ( ( rule__GraphVariableUse__Alternatives_1 ) ) )
+            // InternalDeviceDefinition.g:7833:1: ( ( rule__GraphVariableUse__Alternatives_1 ) )
             {
-            // InternalDeviceDefinition.g:7686:1: ( ( rule__GraphVariableUse__Alternatives_1 ) )
-            // InternalDeviceDefinition.g:7687:2: ( rule__GraphVariableUse__Alternatives_1 )
+            // InternalDeviceDefinition.g:7833:1: ( ( rule__GraphVariableUse__Alternatives_1 ) )
+            // InternalDeviceDefinition.g:7834:2: ( rule__GraphVariableUse__Alternatives_1 )
             {
              before(grammarAccess.getGraphVariableUseAccess().getAlternatives_1()); 
-            // InternalDeviceDefinition.g:7688:2: ( rule__GraphVariableUse__Alternatives_1 )
-            // InternalDeviceDefinition.g:7688:3: rule__GraphVariableUse__Alternatives_1
+            // InternalDeviceDefinition.g:7835:2: ( rule__GraphVariableUse__Alternatives_1 )
+            // InternalDeviceDefinition.g:7835:3: rule__GraphVariableUse__Alternatives_1
             {
             pushFollow(FOLLOW_2);
             rule__GraphVariableUse__Alternatives_1();
@@ -23745,16 +24204,16 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__GraphVariableUse__Group__2"
-    // InternalDeviceDefinition.g:7696:1: rule__GraphVariableUse__Group__2 : rule__GraphVariableUse__Group__2__Impl rule__GraphVariableUse__Group__3 ;
+    // InternalDeviceDefinition.g:7843:1: rule__GraphVariableUse__Group__2 : rule__GraphVariableUse__Group__2__Impl rule__GraphVariableUse__Group__3 ;
     public final void rule__GraphVariableUse__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7700:1: ( rule__GraphVariableUse__Group__2__Impl rule__GraphVariableUse__Group__3 )
-            // InternalDeviceDefinition.g:7701:2: rule__GraphVariableUse__Group__2__Impl rule__GraphVariableUse__Group__3
+            // InternalDeviceDefinition.g:7847:1: ( rule__GraphVariableUse__Group__2__Impl rule__GraphVariableUse__Group__3 )
+            // InternalDeviceDefinition.g:7848:2: rule__GraphVariableUse__Group__2__Impl rule__GraphVariableUse__Group__3
             {
-            pushFollow(FOLLOW_85);
+            pushFollow(FOLLOW_89);
             rule__GraphVariableUse__Group__2__Impl();
 
             state._fsp--;
@@ -23783,21 +24242,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__GraphVariableUse__Group__2__Impl"
-    // InternalDeviceDefinition.g:7708:1: rule__GraphVariableUse__Group__2__Impl : ( ( rule__GraphVariableUse__DeviceAssignment_2 ) ) ;
+    // InternalDeviceDefinition.g:7855:1: rule__GraphVariableUse__Group__2__Impl : ( ( rule__GraphVariableUse__DeviceAssignment_2 ) ) ;
     public final void rule__GraphVariableUse__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7712:1: ( ( ( rule__GraphVariableUse__DeviceAssignment_2 ) ) )
-            // InternalDeviceDefinition.g:7713:1: ( ( rule__GraphVariableUse__DeviceAssignment_2 ) )
+            // InternalDeviceDefinition.g:7859:1: ( ( ( rule__GraphVariableUse__DeviceAssignment_2 ) ) )
+            // InternalDeviceDefinition.g:7860:1: ( ( rule__GraphVariableUse__DeviceAssignment_2 ) )
             {
-            // InternalDeviceDefinition.g:7713:1: ( ( rule__GraphVariableUse__DeviceAssignment_2 ) )
-            // InternalDeviceDefinition.g:7714:2: ( rule__GraphVariableUse__DeviceAssignment_2 )
+            // InternalDeviceDefinition.g:7860:1: ( ( rule__GraphVariableUse__DeviceAssignment_2 ) )
+            // InternalDeviceDefinition.g:7861:2: ( rule__GraphVariableUse__DeviceAssignment_2 )
             {
              before(grammarAccess.getGraphVariableUseAccess().getDeviceAssignment_2()); 
-            // InternalDeviceDefinition.g:7715:2: ( rule__GraphVariableUse__DeviceAssignment_2 )
-            // InternalDeviceDefinition.g:7715:3: rule__GraphVariableUse__DeviceAssignment_2
+            // InternalDeviceDefinition.g:7862:2: ( rule__GraphVariableUse__DeviceAssignment_2 )
+            // InternalDeviceDefinition.g:7862:3: rule__GraphVariableUse__DeviceAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__GraphVariableUse__DeviceAssignment_2();
@@ -23830,14 +24289,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__GraphVariableUse__Group__3"
-    // InternalDeviceDefinition.g:7723:1: rule__GraphVariableUse__Group__3 : rule__GraphVariableUse__Group__3__Impl rule__GraphVariableUse__Group__4 ;
+    // InternalDeviceDefinition.g:7870:1: rule__GraphVariableUse__Group__3 : rule__GraphVariableUse__Group__3__Impl rule__GraphVariableUse__Group__4 ;
     public final void rule__GraphVariableUse__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7727:1: ( rule__GraphVariableUse__Group__3__Impl rule__GraphVariableUse__Group__4 )
-            // InternalDeviceDefinition.g:7728:2: rule__GraphVariableUse__Group__3__Impl rule__GraphVariableUse__Group__4
+            // InternalDeviceDefinition.g:7874:1: ( rule__GraphVariableUse__Group__3__Impl rule__GraphVariableUse__Group__4 )
+            // InternalDeviceDefinition.g:7875:2: rule__GraphVariableUse__Group__3__Impl rule__GraphVariableUse__Group__4
             {
             pushFollow(FOLLOW_3);
             rule__GraphVariableUse__Group__3__Impl();
@@ -23868,21 +24327,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__GraphVariableUse__Group__3__Impl"
-    // InternalDeviceDefinition.g:7735:1: rule__GraphVariableUse__Group__3__Impl : ( ( rule__GraphVariableUse__Alternatives_3 ) ) ;
+    // InternalDeviceDefinition.g:7882:1: rule__GraphVariableUse__Group__3__Impl : ( ( rule__GraphVariableUse__Alternatives_3 ) ) ;
     public final void rule__GraphVariableUse__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7739:1: ( ( ( rule__GraphVariableUse__Alternatives_3 ) ) )
-            // InternalDeviceDefinition.g:7740:1: ( ( rule__GraphVariableUse__Alternatives_3 ) )
+            // InternalDeviceDefinition.g:7886:1: ( ( ( rule__GraphVariableUse__Alternatives_3 ) ) )
+            // InternalDeviceDefinition.g:7887:1: ( ( rule__GraphVariableUse__Alternatives_3 ) )
             {
-            // InternalDeviceDefinition.g:7740:1: ( ( rule__GraphVariableUse__Alternatives_3 ) )
-            // InternalDeviceDefinition.g:7741:2: ( rule__GraphVariableUse__Alternatives_3 )
+            // InternalDeviceDefinition.g:7887:1: ( ( rule__GraphVariableUse__Alternatives_3 ) )
+            // InternalDeviceDefinition.g:7888:2: ( rule__GraphVariableUse__Alternatives_3 )
             {
              before(grammarAccess.getGraphVariableUseAccess().getAlternatives_3()); 
-            // InternalDeviceDefinition.g:7742:2: ( rule__GraphVariableUse__Alternatives_3 )
-            // InternalDeviceDefinition.g:7742:3: rule__GraphVariableUse__Alternatives_3
+            // InternalDeviceDefinition.g:7889:2: ( rule__GraphVariableUse__Alternatives_3 )
+            // InternalDeviceDefinition.g:7889:3: rule__GraphVariableUse__Alternatives_3
             {
             pushFollow(FOLLOW_2);
             rule__GraphVariableUse__Alternatives_3();
@@ -23915,14 +24374,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__GraphVariableUse__Group__4"
-    // InternalDeviceDefinition.g:7750:1: rule__GraphVariableUse__Group__4 : rule__GraphVariableUse__Group__4__Impl ;
+    // InternalDeviceDefinition.g:7897:1: rule__GraphVariableUse__Group__4 : rule__GraphVariableUse__Group__4__Impl ;
     public final void rule__GraphVariableUse__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7754:1: ( rule__GraphVariableUse__Group__4__Impl )
-            // InternalDeviceDefinition.g:7755:2: rule__GraphVariableUse__Group__4__Impl
+            // InternalDeviceDefinition.g:7901:1: ( rule__GraphVariableUse__Group__4__Impl )
+            // InternalDeviceDefinition.g:7902:2: rule__GraphVariableUse__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__GraphVariableUse__Group__4__Impl();
@@ -23948,21 +24407,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__GraphVariableUse__Group__4__Impl"
-    // InternalDeviceDefinition.g:7761:1: rule__GraphVariableUse__Group__4__Impl : ( ( rule__GraphVariableUse__RefAssignment_4 ) ) ;
+    // InternalDeviceDefinition.g:7908:1: rule__GraphVariableUse__Group__4__Impl : ( ( rule__GraphVariableUse__RefAssignment_4 ) ) ;
     public final void rule__GraphVariableUse__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7765:1: ( ( ( rule__GraphVariableUse__RefAssignment_4 ) ) )
-            // InternalDeviceDefinition.g:7766:1: ( ( rule__GraphVariableUse__RefAssignment_4 ) )
+            // InternalDeviceDefinition.g:7912:1: ( ( ( rule__GraphVariableUse__RefAssignment_4 ) ) )
+            // InternalDeviceDefinition.g:7913:1: ( ( rule__GraphVariableUse__RefAssignment_4 ) )
             {
-            // InternalDeviceDefinition.g:7766:1: ( ( rule__GraphVariableUse__RefAssignment_4 ) )
-            // InternalDeviceDefinition.g:7767:2: ( rule__GraphVariableUse__RefAssignment_4 )
+            // InternalDeviceDefinition.g:7913:1: ( ( rule__GraphVariableUse__RefAssignment_4 ) )
+            // InternalDeviceDefinition.g:7914:2: ( rule__GraphVariableUse__RefAssignment_4 )
             {
              before(grammarAccess.getGraphVariableUseAccess().getRefAssignment_4()); 
-            // InternalDeviceDefinition.g:7768:2: ( rule__GraphVariableUse__RefAssignment_4 )
-            // InternalDeviceDefinition.g:7768:3: rule__GraphVariableUse__RefAssignment_4
+            // InternalDeviceDefinition.g:7915:2: ( rule__GraphVariableUse__RefAssignment_4 )
+            // InternalDeviceDefinition.g:7915:3: rule__GraphVariableUse__RefAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__GraphVariableUse__RefAssignment_4();
@@ -23995,14 +24454,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Parenthesis__Group__0"
-    // InternalDeviceDefinition.g:7777:1: rule__Parenthesis__Group__0 : rule__Parenthesis__Group__0__Impl rule__Parenthesis__Group__1 ;
+    // InternalDeviceDefinition.g:7924:1: rule__Parenthesis__Group__0 : rule__Parenthesis__Group__0__Impl rule__Parenthesis__Group__1 ;
     public final void rule__Parenthesis__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7781:1: ( rule__Parenthesis__Group__0__Impl rule__Parenthesis__Group__1 )
-            // InternalDeviceDefinition.g:7782:2: rule__Parenthesis__Group__0__Impl rule__Parenthesis__Group__1
+            // InternalDeviceDefinition.g:7928:1: ( rule__Parenthesis__Group__0__Impl rule__Parenthesis__Group__1 )
+            // InternalDeviceDefinition.g:7929:2: rule__Parenthesis__Group__0__Impl rule__Parenthesis__Group__1
             {
             pushFollow(FOLLOW_50);
             rule__Parenthesis__Group__0__Impl();
@@ -24033,17 +24492,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Parenthesis__Group__0__Impl"
-    // InternalDeviceDefinition.g:7789:1: rule__Parenthesis__Group__0__Impl : ( '(' ) ;
+    // InternalDeviceDefinition.g:7936:1: rule__Parenthesis__Group__0__Impl : ( '(' ) ;
     public final void rule__Parenthesis__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7793:1: ( ( '(' ) )
-            // InternalDeviceDefinition.g:7794:1: ( '(' )
+            // InternalDeviceDefinition.g:7940:1: ( ( '(' ) )
+            // InternalDeviceDefinition.g:7941:1: ( '(' )
             {
-            // InternalDeviceDefinition.g:7794:1: ( '(' )
-            // InternalDeviceDefinition.g:7795:2: '('
+            // InternalDeviceDefinition.g:7941:1: ( '(' )
+            // InternalDeviceDefinition.g:7942:2: '('
             {
              before(grammarAccess.getParenthesisAccess().getLeftParenthesisKeyword_0()); 
             match(input,48,FOLLOW_2); 
@@ -24070,14 +24529,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Parenthesis__Group__1"
-    // InternalDeviceDefinition.g:7804:1: rule__Parenthesis__Group__1 : rule__Parenthesis__Group__1__Impl rule__Parenthesis__Group__2 ;
+    // InternalDeviceDefinition.g:7951:1: rule__Parenthesis__Group__1 : rule__Parenthesis__Group__1__Impl rule__Parenthesis__Group__2 ;
     public final void rule__Parenthesis__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7808:1: ( rule__Parenthesis__Group__1__Impl rule__Parenthesis__Group__2 )
-            // InternalDeviceDefinition.g:7809:2: rule__Parenthesis__Group__1__Impl rule__Parenthesis__Group__2
+            // InternalDeviceDefinition.g:7955:1: ( rule__Parenthesis__Group__1__Impl rule__Parenthesis__Group__2 )
+            // InternalDeviceDefinition.g:7956:2: rule__Parenthesis__Group__1__Impl rule__Parenthesis__Group__2
             {
             pushFollow(FOLLOW_25);
             rule__Parenthesis__Group__1__Impl();
@@ -24108,21 +24567,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Parenthesis__Group__1__Impl"
-    // InternalDeviceDefinition.g:7816:1: rule__Parenthesis__Group__1__Impl : ( ( rule__Parenthesis__ExpAssignment_1 ) ) ;
+    // InternalDeviceDefinition.g:7963:1: rule__Parenthesis__Group__1__Impl : ( ( rule__Parenthesis__ExpAssignment_1 ) ) ;
     public final void rule__Parenthesis__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7820:1: ( ( ( rule__Parenthesis__ExpAssignment_1 ) ) )
-            // InternalDeviceDefinition.g:7821:1: ( ( rule__Parenthesis__ExpAssignment_1 ) )
+            // InternalDeviceDefinition.g:7967:1: ( ( ( rule__Parenthesis__ExpAssignment_1 ) ) )
+            // InternalDeviceDefinition.g:7968:1: ( ( rule__Parenthesis__ExpAssignment_1 ) )
             {
-            // InternalDeviceDefinition.g:7821:1: ( ( rule__Parenthesis__ExpAssignment_1 ) )
-            // InternalDeviceDefinition.g:7822:2: ( rule__Parenthesis__ExpAssignment_1 )
+            // InternalDeviceDefinition.g:7968:1: ( ( rule__Parenthesis__ExpAssignment_1 ) )
+            // InternalDeviceDefinition.g:7969:2: ( rule__Parenthesis__ExpAssignment_1 )
             {
              before(grammarAccess.getParenthesisAccess().getExpAssignment_1()); 
-            // InternalDeviceDefinition.g:7823:2: ( rule__Parenthesis__ExpAssignment_1 )
-            // InternalDeviceDefinition.g:7823:3: rule__Parenthesis__ExpAssignment_1
+            // InternalDeviceDefinition.g:7970:2: ( rule__Parenthesis__ExpAssignment_1 )
+            // InternalDeviceDefinition.g:7970:3: rule__Parenthesis__ExpAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Parenthesis__ExpAssignment_1();
@@ -24155,14 +24614,14 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Parenthesis__Group__2"
-    // InternalDeviceDefinition.g:7831:1: rule__Parenthesis__Group__2 : rule__Parenthesis__Group__2__Impl ;
+    // InternalDeviceDefinition.g:7978:1: rule__Parenthesis__Group__2 : rule__Parenthesis__Group__2__Impl ;
     public final void rule__Parenthesis__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7835:1: ( rule__Parenthesis__Group__2__Impl )
-            // InternalDeviceDefinition.g:7836:2: rule__Parenthesis__Group__2__Impl
+            // InternalDeviceDefinition.g:7982:1: ( rule__Parenthesis__Group__2__Impl )
+            // InternalDeviceDefinition.g:7983:2: rule__Parenthesis__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Parenthesis__Group__2__Impl();
@@ -24188,17 +24647,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Parenthesis__Group__2__Impl"
-    // InternalDeviceDefinition.g:7842:1: rule__Parenthesis__Group__2__Impl : ( ')' ) ;
+    // InternalDeviceDefinition.g:7989:1: rule__Parenthesis__Group__2__Impl : ( ')' ) ;
     public final void rule__Parenthesis__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7846:1: ( ( ')' ) )
-            // InternalDeviceDefinition.g:7847:1: ( ')' )
+            // InternalDeviceDefinition.g:7993:1: ( ( ')' ) )
+            // InternalDeviceDefinition.g:7994:1: ( ')' )
             {
-            // InternalDeviceDefinition.g:7847:1: ( ')' )
-            // InternalDeviceDefinition.g:7848:2: ')'
+            // InternalDeviceDefinition.g:7994:1: ( ')' )
+            // InternalDeviceDefinition.g:7995:2: ')'
             {
              before(grammarAccess.getParenthesisAccess().getRightParenthesisKeyword_2()); 
             match(input,50,FOLLOW_2); 
@@ -24225,17 +24684,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__NameAssignment_1"
-    // InternalDeviceDefinition.g:7858:1: rule__System__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalDeviceDefinition.g:8005:1: rule__System__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__System__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7862:1: ( ( RULE_ID ) )
-            // InternalDeviceDefinition.g:7863:2: ( RULE_ID )
+            // InternalDeviceDefinition.g:8009:1: ( ( RULE_ID ) )
+            // InternalDeviceDefinition.g:8010:2: ( RULE_ID )
             {
-            // InternalDeviceDefinition.g:7863:2: ( RULE_ID )
-            // InternalDeviceDefinition.g:7864:3: RULE_ID
+            // InternalDeviceDefinition.g:8010:2: ( RULE_ID )
+            // InternalDeviceDefinition.g:8011:3: RULE_ID
             {
              before(grammarAccess.getSystemAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -24262,17 +24721,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__WifiSsidAssignment_4"
-    // InternalDeviceDefinition.g:7873:1: rule__System__WifiSsidAssignment_4 : ( RULE_STRING ) ;
+    // InternalDeviceDefinition.g:8020:1: rule__System__WifiSsidAssignment_4 : ( RULE_STRING ) ;
     public final void rule__System__WifiSsidAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7877:1: ( ( RULE_STRING ) )
-            // InternalDeviceDefinition.g:7878:2: ( RULE_STRING )
+            // InternalDeviceDefinition.g:8024:1: ( ( RULE_STRING ) )
+            // InternalDeviceDefinition.g:8025:2: ( RULE_STRING )
             {
-            // InternalDeviceDefinition.g:7878:2: ( RULE_STRING )
-            // InternalDeviceDefinition.g:7879:3: RULE_STRING
+            // InternalDeviceDefinition.g:8025:2: ( RULE_STRING )
+            // InternalDeviceDefinition.g:8026:3: RULE_STRING
             {
              before(grammarAccess.getSystemAccess().getWifiSsidSTRINGTerminalRuleCall_4_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -24299,17 +24758,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__WifiPasswordAssignment_5_2"
-    // InternalDeviceDefinition.g:7888:1: rule__System__WifiPasswordAssignment_5_2 : ( RULE_STRING ) ;
+    // InternalDeviceDefinition.g:8035:1: rule__System__WifiPasswordAssignment_5_2 : ( RULE_STRING ) ;
     public final void rule__System__WifiPasswordAssignment_5_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7892:1: ( ( RULE_STRING ) )
-            // InternalDeviceDefinition.g:7893:2: ( RULE_STRING )
+            // InternalDeviceDefinition.g:8039:1: ( ( RULE_STRING ) )
+            // InternalDeviceDefinition.g:8040:2: ( RULE_STRING )
             {
-            // InternalDeviceDefinition.g:7893:2: ( RULE_STRING )
-            // InternalDeviceDefinition.g:7894:3: RULE_STRING
+            // InternalDeviceDefinition.g:8040:2: ( RULE_STRING )
+            // InternalDeviceDefinition.g:8041:3: RULE_STRING
             {
              before(grammarAccess.getSystemAccess().getWifiPasswordSTRINGTerminalRuleCall_5_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -24336,17 +24795,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__MqttHostAssignment_7"
-    // InternalDeviceDefinition.g:7903:1: rule__System__MqttHostAssignment_7 : ( RULE_STRING ) ;
+    // InternalDeviceDefinition.g:8050:1: rule__System__MqttHostAssignment_7 : ( RULE_STRING ) ;
     public final void rule__System__MqttHostAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7907:1: ( ( RULE_STRING ) )
-            // InternalDeviceDefinition.g:7908:2: ( RULE_STRING )
+            // InternalDeviceDefinition.g:8054:1: ( ( RULE_STRING ) )
+            // InternalDeviceDefinition.g:8055:2: ( RULE_STRING )
             {
-            // InternalDeviceDefinition.g:7908:2: ( RULE_STRING )
-            // InternalDeviceDefinition.g:7909:3: RULE_STRING
+            // InternalDeviceDefinition.g:8055:2: ( RULE_STRING )
+            // InternalDeviceDefinition.g:8056:3: RULE_STRING
             {
              before(grammarAccess.getSystemAccess().getMqttHostSTRINGTerminalRuleCall_7_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -24373,17 +24832,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__MqttUsernameAssignment_8_2"
-    // InternalDeviceDefinition.g:7918:1: rule__System__MqttUsernameAssignment_8_2 : ( RULE_STRING ) ;
+    // InternalDeviceDefinition.g:8065:1: rule__System__MqttUsernameAssignment_8_2 : ( RULE_STRING ) ;
     public final void rule__System__MqttUsernameAssignment_8_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7922:1: ( ( RULE_STRING ) )
-            // InternalDeviceDefinition.g:7923:2: ( RULE_STRING )
+            // InternalDeviceDefinition.g:8069:1: ( ( RULE_STRING ) )
+            // InternalDeviceDefinition.g:8070:2: ( RULE_STRING )
             {
-            // InternalDeviceDefinition.g:7923:2: ( RULE_STRING )
-            // InternalDeviceDefinition.g:7924:3: RULE_STRING
+            // InternalDeviceDefinition.g:8070:2: ( RULE_STRING )
+            // InternalDeviceDefinition.g:8071:3: RULE_STRING
             {
              before(grammarAccess.getSystemAccess().getMqttUsernameSTRINGTerminalRuleCall_8_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -24410,17 +24869,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__MqttPasswordAssignment_8_5"
-    // InternalDeviceDefinition.g:7933:1: rule__System__MqttPasswordAssignment_8_5 : ( RULE_STRING ) ;
+    // InternalDeviceDefinition.g:8080:1: rule__System__MqttPasswordAssignment_8_5 : ( RULE_STRING ) ;
     public final void rule__System__MqttPasswordAssignment_8_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7937:1: ( ( RULE_STRING ) )
-            // InternalDeviceDefinition.g:7938:2: ( RULE_STRING )
+            // InternalDeviceDefinition.g:8084:1: ( ( RULE_STRING ) )
+            // InternalDeviceDefinition.g:8085:2: ( RULE_STRING )
             {
-            // InternalDeviceDefinition.g:7938:2: ( RULE_STRING )
-            // InternalDeviceDefinition.g:7939:3: RULE_STRING
+            // InternalDeviceDefinition.g:8085:2: ( RULE_STRING )
+            // InternalDeviceDefinition.g:8086:3: RULE_STRING
             {
              before(grammarAccess.getSystemAccess().getMqttPasswordSTRINGTerminalRuleCall_8_5_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -24447,17 +24906,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__GatewayAssignment_9"
-    // InternalDeviceDefinition.g:7948:1: rule__System__GatewayAssignment_9 : ( ruleGateway ) ;
+    // InternalDeviceDefinition.g:8095:1: rule__System__GatewayAssignment_9 : ( ruleGateway ) ;
     public final void rule__System__GatewayAssignment_9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7952:1: ( ( ruleGateway ) )
-            // InternalDeviceDefinition.g:7953:2: ( ruleGateway )
+            // InternalDeviceDefinition.g:8099:1: ( ( ruleGateway ) )
+            // InternalDeviceDefinition.g:8100:2: ( ruleGateway )
             {
-            // InternalDeviceDefinition.g:7953:2: ( ruleGateway )
-            // InternalDeviceDefinition.g:7954:3: ruleGateway
+            // InternalDeviceDefinition.g:8100:2: ( ruleGateway )
+            // InternalDeviceDefinition.g:8101:3: ruleGateway
             {
              before(grammarAccess.getSystemAccess().getGatewayGatewayParserRuleCall_9_0()); 
             pushFollow(FOLLOW_2);
@@ -24488,17 +24947,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__System__GraphsAssignment_10"
-    // InternalDeviceDefinition.g:7963:1: rule__System__GraphsAssignment_10 : ( ruleGraph ) ;
+    // InternalDeviceDefinition.g:8110:1: rule__System__GraphsAssignment_10 : ( ruleGraph ) ;
     public final void rule__System__GraphsAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7967:1: ( ( ruleGraph ) )
-            // InternalDeviceDefinition.g:7968:2: ( ruleGraph )
+            // InternalDeviceDefinition.g:8114:1: ( ( ruleGraph ) )
+            // InternalDeviceDefinition.g:8115:2: ( ruleGraph )
             {
-            // InternalDeviceDefinition.g:7968:2: ( ruleGraph )
-            // InternalDeviceDefinition.g:7969:3: ruleGraph
+            // InternalDeviceDefinition.g:8115:2: ( ruleGraph )
+            // InternalDeviceDefinition.g:8116:3: ruleGraph
             {
              before(grammarAccess.getSystemAccess().getGraphsGraphParserRuleCall_10_0()); 
             pushFollow(FOLLOW_2);
@@ -24529,17 +24988,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Graph__CategoryAssignment_3"
-    // InternalDeviceDefinition.g:7978:1: rule__Graph__CategoryAssignment_3 : ( RULE_STRING ) ;
+    // InternalDeviceDefinition.g:8125:1: rule__Graph__CategoryAssignment_3 : ( RULE_STRING ) ;
     public final void rule__Graph__CategoryAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7982:1: ( ( RULE_STRING ) )
-            // InternalDeviceDefinition.g:7983:2: ( RULE_STRING )
+            // InternalDeviceDefinition.g:8129:1: ( ( RULE_STRING ) )
+            // InternalDeviceDefinition.g:8130:2: ( RULE_STRING )
             {
-            // InternalDeviceDefinition.g:7983:2: ( RULE_STRING )
-            // InternalDeviceDefinition.g:7984:3: RULE_STRING
+            // InternalDeviceDefinition.g:8130:2: ( RULE_STRING )
+            // InternalDeviceDefinition.g:8131:3: RULE_STRING
             {
              before(grammarAccess.getGraphAccess().getCategorySTRINGTerminalRuleCall_3_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -24566,17 +25025,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Graph__TitleAssignment_5"
-    // InternalDeviceDefinition.g:7993:1: rule__Graph__TitleAssignment_5 : ( RULE_STRING ) ;
+    // InternalDeviceDefinition.g:8140:1: rule__Graph__TitleAssignment_5 : ( RULE_STRING ) ;
     public final void rule__Graph__TitleAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:7997:1: ( ( RULE_STRING ) )
-            // InternalDeviceDefinition.g:7998:2: ( RULE_STRING )
+            // InternalDeviceDefinition.g:8144:1: ( ( RULE_STRING ) )
+            // InternalDeviceDefinition.g:8145:2: ( RULE_STRING )
             {
-            // InternalDeviceDefinition.g:7998:2: ( RULE_STRING )
-            // InternalDeviceDefinition.g:7999:3: RULE_STRING
+            // InternalDeviceDefinition.g:8145:2: ( RULE_STRING )
+            // InternalDeviceDefinition.g:8146:3: RULE_STRING
             {
              before(grammarAccess.getGraphAccess().getTitleSTRINGTerminalRuleCall_5_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -24603,17 +25062,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Graph__XlabelAssignment_7"
-    // InternalDeviceDefinition.g:8008:1: rule__Graph__XlabelAssignment_7 : ( RULE_STRING ) ;
+    // InternalDeviceDefinition.g:8155:1: rule__Graph__XlabelAssignment_7 : ( RULE_STRING ) ;
     public final void rule__Graph__XlabelAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8012:1: ( ( RULE_STRING ) )
-            // InternalDeviceDefinition.g:8013:2: ( RULE_STRING )
+            // InternalDeviceDefinition.g:8159:1: ( ( RULE_STRING ) )
+            // InternalDeviceDefinition.g:8160:2: ( RULE_STRING )
             {
-            // InternalDeviceDefinition.g:8013:2: ( RULE_STRING )
-            // InternalDeviceDefinition.g:8014:3: RULE_STRING
+            // InternalDeviceDefinition.g:8160:2: ( RULE_STRING )
+            // InternalDeviceDefinition.g:8161:3: RULE_STRING
             {
              before(grammarAccess.getGraphAccess().getXlabelSTRINGTerminalRuleCall_7_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -24640,17 +25099,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Graph__YlabelAssignment_9"
-    // InternalDeviceDefinition.g:8023:1: rule__Graph__YlabelAssignment_9 : ( RULE_STRING ) ;
+    // InternalDeviceDefinition.g:8170:1: rule__Graph__YlabelAssignment_9 : ( RULE_STRING ) ;
     public final void rule__Graph__YlabelAssignment_9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8027:1: ( ( RULE_STRING ) )
-            // InternalDeviceDefinition.g:8028:2: ( RULE_STRING )
+            // InternalDeviceDefinition.g:8174:1: ( ( RULE_STRING ) )
+            // InternalDeviceDefinition.g:8175:2: ( RULE_STRING )
             {
-            // InternalDeviceDefinition.g:8028:2: ( RULE_STRING )
-            // InternalDeviceDefinition.g:8029:3: RULE_STRING
+            // InternalDeviceDefinition.g:8175:2: ( RULE_STRING )
+            // InternalDeviceDefinition.g:8176:3: RULE_STRING
             {
              before(grammarAccess.getGraphAccess().getYlabelSTRINGTerminalRuleCall_9_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -24677,17 +25136,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Graph__LinesAssignment_10"
-    // InternalDeviceDefinition.g:8038:1: rule__Graph__LinesAssignment_10 : ( ruleGraphLine ) ;
+    // InternalDeviceDefinition.g:8185:1: rule__Graph__LinesAssignment_10 : ( ruleGraphLine ) ;
     public final void rule__Graph__LinesAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8042:1: ( ( ruleGraphLine ) )
-            // InternalDeviceDefinition.g:8043:2: ( ruleGraphLine )
+            // InternalDeviceDefinition.g:8189:1: ( ( ruleGraphLine ) )
+            // InternalDeviceDefinition.g:8190:2: ( ruleGraphLine )
             {
-            // InternalDeviceDefinition.g:8043:2: ( ruleGraphLine )
-            // InternalDeviceDefinition.g:8044:3: ruleGraphLine
+            // InternalDeviceDefinition.g:8190:2: ( ruleGraphLine )
+            // InternalDeviceDefinition.g:8191:3: ruleGraphLine
             {
              before(grammarAccess.getGraphAccess().getLinesGraphLineParserRuleCall_10_0()); 
             pushFollow(FOLLOW_2);
@@ -24718,17 +25177,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__GraphLine__OutputAssignment_1"
-    // InternalDeviceDefinition.g:8053:1: rule__GraphLine__OutputAssignment_1 : ( ruleGraphVariableUse ) ;
+    // InternalDeviceDefinition.g:8200:1: rule__GraphLine__OutputAssignment_1 : ( ruleGraphVariableUse ) ;
     public final void rule__GraphLine__OutputAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8057:1: ( ( ruleGraphVariableUse ) )
-            // InternalDeviceDefinition.g:8058:2: ( ruleGraphVariableUse )
+            // InternalDeviceDefinition.g:8204:1: ( ( ruleGraphVariableUse ) )
+            // InternalDeviceDefinition.g:8205:2: ( ruleGraphVariableUse )
             {
-            // InternalDeviceDefinition.g:8058:2: ( ruleGraphVariableUse )
-            // InternalDeviceDefinition.g:8059:3: ruleGraphVariableUse
+            // InternalDeviceDefinition.g:8205:2: ( ruleGraphVariableUse )
+            // InternalDeviceDefinition.g:8206:3: ruleGraphVariableUse
             {
              before(grammarAccess.getGraphLineAccess().getOutputGraphVariableUseParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -24759,17 +25218,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__GraphLine__LegendAssignment_2_1"
-    // InternalDeviceDefinition.g:8068:1: rule__GraphLine__LegendAssignment_2_1 : ( RULE_STRING ) ;
+    // InternalDeviceDefinition.g:8215:1: rule__GraphLine__LegendAssignment_2_1 : ( RULE_STRING ) ;
     public final void rule__GraphLine__LegendAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8072:1: ( ( RULE_STRING ) )
-            // InternalDeviceDefinition.g:8073:2: ( RULE_STRING )
+            // InternalDeviceDefinition.g:8219:1: ( ( RULE_STRING ) )
+            // InternalDeviceDefinition.g:8220:2: ( RULE_STRING )
             {
-            // InternalDeviceDefinition.g:8073:2: ( RULE_STRING )
-            // InternalDeviceDefinition.g:8074:3: RULE_STRING
+            // InternalDeviceDefinition.g:8220:2: ( RULE_STRING )
+            // InternalDeviceDefinition.g:8221:3: RULE_STRING
             {
              before(grammarAccess.getGraphLineAccess().getLegendSTRINGTerminalRuleCall_2_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -24796,17 +25255,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__GraphLine__ColorAssignment_3_1"
-    // InternalDeviceDefinition.g:8083:1: rule__GraphLine__ColorAssignment_3_1 : ( ruleColor ) ;
+    // InternalDeviceDefinition.g:8230:1: rule__GraphLine__ColorAssignment_3_1 : ( ruleColor ) ;
     public final void rule__GraphLine__ColorAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8087:1: ( ( ruleColor ) )
-            // InternalDeviceDefinition.g:8088:2: ( ruleColor )
+            // InternalDeviceDefinition.g:8234:1: ( ( ruleColor ) )
+            // InternalDeviceDefinition.g:8235:2: ( ruleColor )
             {
-            // InternalDeviceDefinition.g:8088:2: ( ruleColor )
-            // InternalDeviceDefinition.g:8089:3: ruleColor
+            // InternalDeviceDefinition.g:8235:2: ( ruleColor )
+            // InternalDeviceDefinition.g:8236:3: ruleColor
             {
              before(grammarAccess.getGraphLineAccess().getColorColorParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -24837,17 +25296,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Color__RedAssignment_0_2"
-    // InternalDeviceDefinition.g:8098:1: rule__Color__RedAssignment_0_2 : ( RULE_DECIMAL ) ;
+    // InternalDeviceDefinition.g:8245:1: rule__Color__RedAssignment_0_2 : ( RULE_DECIMAL ) ;
     public final void rule__Color__RedAssignment_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8102:1: ( ( RULE_DECIMAL ) )
-            // InternalDeviceDefinition.g:8103:2: ( RULE_DECIMAL )
+            // InternalDeviceDefinition.g:8249:1: ( ( RULE_DECIMAL ) )
+            // InternalDeviceDefinition.g:8250:2: ( RULE_DECIMAL )
             {
-            // InternalDeviceDefinition.g:8103:2: ( RULE_DECIMAL )
-            // InternalDeviceDefinition.g:8104:3: RULE_DECIMAL
+            // InternalDeviceDefinition.g:8250:2: ( RULE_DECIMAL )
+            // InternalDeviceDefinition.g:8251:3: RULE_DECIMAL
             {
              before(grammarAccess.getColorAccess().getRedDECIMALTerminalRuleCall_0_2_0()); 
             match(input,RULE_DECIMAL,FOLLOW_2); 
@@ -24874,17 +25333,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Color__GreenAssignment_0_4"
-    // InternalDeviceDefinition.g:8113:1: rule__Color__GreenAssignment_0_4 : ( RULE_DECIMAL ) ;
+    // InternalDeviceDefinition.g:8260:1: rule__Color__GreenAssignment_0_4 : ( RULE_DECIMAL ) ;
     public final void rule__Color__GreenAssignment_0_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8117:1: ( ( RULE_DECIMAL ) )
-            // InternalDeviceDefinition.g:8118:2: ( RULE_DECIMAL )
+            // InternalDeviceDefinition.g:8264:1: ( ( RULE_DECIMAL ) )
+            // InternalDeviceDefinition.g:8265:2: ( RULE_DECIMAL )
             {
-            // InternalDeviceDefinition.g:8118:2: ( RULE_DECIMAL )
-            // InternalDeviceDefinition.g:8119:3: RULE_DECIMAL
+            // InternalDeviceDefinition.g:8265:2: ( RULE_DECIMAL )
+            // InternalDeviceDefinition.g:8266:3: RULE_DECIMAL
             {
              before(grammarAccess.getColorAccess().getGreenDECIMALTerminalRuleCall_0_4_0()); 
             match(input,RULE_DECIMAL,FOLLOW_2); 
@@ -24911,17 +25370,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Color__BlueAssignment_0_6"
-    // InternalDeviceDefinition.g:8128:1: rule__Color__BlueAssignment_0_6 : ( RULE_DECIMAL ) ;
+    // InternalDeviceDefinition.g:8275:1: rule__Color__BlueAssignment_0_6 : ( RULE_DECIMAL ) ;
     public final void rule__Color__BlueAssignment_0_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8132:1: ( ( RULE_DECIMAL ) )
-            // InternalDeviceDefinition.g:8133:2: ( RULE_DECIMAL )
+            // InternalDeviceDefinition.g:8279:1: ( ( RULE_DECIMAL ) )
+            // InternalDeviceDefinition.g:8280:2: ( RULE_DECIMAL )
             {
-            // InternalDeviceDefinition.g:8133:2: ( RULE_DECIMAL )
-            // InternalDeviceDefinition.g:8134:3: RULE_DECIMAL
+            // InternalDeviceDefinition.g:8280:2: ( RULE_DECIMAL )
+            // InternalDeviceDefinition.g:8281:3: RULE_DECIMAL
             {
              before(grammarAccess.getColorAccess().getBlueDECIMALTerminalRuleCall_0_6_0()); 
             match(input,RULE_DECIMAL,FOLLOW_2); 
@@ -24948,17 +25407,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Color__PresetAssignment_1_1"
-    // InternalDeviceDefinition.g:8143:1: rule__Color__PresetAssignment_1_1 : ( ruleColorPreset ) ;
+    // InternalDeviceDefinition.g:8290:1: rule__Color__PresetAssignment_1_1 : ( ruleColorPreset ) ;
     public final void rule__Color__PresetAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8147:1: ( ( ruleColorPreset ) )
-            // InternalDeviceDefinition.g:8148:2: ( ruleColorPreset )
+            // InternalDeviceDefinition.g:8294:1: ( ( ruleColorPreset ) )
+            // InternalDeviceDefinition.g:8295:2: ( ruleColorPreset )
             {
-            // InternalDeviceDefinition.g:8148:2: ( ruleColorPreset )
-            // InternalDeviceDefinition.g:8149:3: ruleColorPreset
+            // InternalDeviceDefinition.g:8295:2: ( ruleColorPreset )
+            // InternalDeviceDefinition.g:8296:3: ruleColorPreset
             {
              before(grammarAccess.getColorAccess().getPresetColorPresetEnumRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -24989,17 +25448,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__NameAssignment_1"
-    // InternalDeviceDefinition.g:8158:1: rule__Gateway__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalDeviceDefinition.g:8305:1: rule__Gateway__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Gateway__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8162:1: ( ( RULE_ID ) )
-            // InternalDeviceDefinition.g:8163:2: ( RULE_ID )
+            // InternalDeviceDefinition.g:8309:1: ( ( RULE_ID ) )
+            // InternalDeviceDefinition.g:8310:2: ( RULE_ID )
             {
-            // InternalDeviceDefinition.g:8163:2: ( RULE_ID )
-            // InternalDeviceDefinition.g:8164:3: RULE_ID
+            // InternalDeviceDefinition.g:8310:2: ( RULE_ID )
+            // InternalDeviceDefinition.g:8311:3: RULE_ID
             {
              before(grammarAccess.getGatewayAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -25026,17 +25485,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__MacAssignment_4"
-    // InternalDeviceDefinition.g:8173:1: rule__Gateway__MacAssignment_4 : ( RULE_MAC ) ;
+    // InternalDeviceDefinition.g:8320:1: rule__Gateway__MacAssignment_4 : ( RULE_MAC ) ;
     public final void rule__Gateway__MacAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8177:1: ( ( RULE_MAC ) )
-            // InternalDeviceDefinition.g:8178:2: ( RULE_MAC )
+            // InternalDeviceDefinition.g:8324:1: ( ( RULE_MAC ) )
+            // InternalDeviceDefinition.g:8325:2: ( RULE_MAC )
             {
-            // InternalDeviceDefinition.g:8178:2: ( RULE_MAC )
-            // InternalDeviceDefinition.g:8179:3: RULE_MAC
+            // InternalDeviceDefinition.g:8325:2: ( RULE_MAC )
+            // InternalDeviceDefinition.g:8326:3: RULE_MAC
             {
              before(grammarAccess.getGatewayAccess().getMacMACTerminalRuleCall_4_0()); 
             match(input,RULE_MAC,FOLLOW_2); 
@@ -25063,17 +25522,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__ChannelAssignment_6"
-    // InternalDeviceDefinition.g:8188:1: rule__Gateway__ChannelAssignment_6 : ( RULE_INT ) ;
+    // InternalDeviceDefinition.g:8335:1: rule__Gateway__ChannelAssignment_6 : ( RULE_INT ) ;
     public final void rule__Gateway__ChannelAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8192:1: ( ( RULE_INT ) )
-            // InternalDeviceDefinition.g:8193:2: ( RULE_INT )
+            // InternalDeviceDefinition.g:8339:1: ( ( RULE_INT ) )
+            // InternalDeviceDefinition.g:8340:2: ( RULE_INT )
             {
-            // InternalDeviceDefinition.g:8193:2: ( RULE_INT )
-            // InternalDeviceDefinition.g:8194:3: RULE_INT
+            // InternalDeviceDefinition.g:8340:2: ( RULE_INT )
+            // InternalDeviceDefinition.g:8341:3: RULE_INT
             {
              before(grammarAccess.getGatewayAccess().getChannelINTTerminalRuleCall_6_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -25100,17 +25559,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__ErrorLedAssignment_7_2"
-    // InternalDeviceDefinition.g:8203:1: rule__Gateway__ErrorLedAssignment_7_2 : ( RULE_INT ) ;
+    // InternalDeviceDefinition.g:8350:1: rule__Gateway__ErrorLedAssignment_7_2 : ( RULE_INT ) ;
     public final void rule__Gateway__ErrorLedAssignment_7_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8207:1: ( ( RULE_INT ) )
-            // InternalDeviceDefinition.g:8208:2: ( RULE_INT )
+            // InternalDeviceDefinition.g:8354:1: ( ( RULE_INT ) )
+            // InternalDeviceDefinition.g:8355:2: ( RULE_INT )
             {
-            // InternalDeviceDefinition.g:8208:2: ( RULE_INT )
-            // InternalDeviceDefinition.g:8209:3: RULE_INT
+            // InternalDeviceDefinition.g:8355:2: ( RULE_INT )
+            // InternalDeviceDefinition.g:8356:3: RULE_INT
             {
              before(grammarAccess.getGatewayAccess().getErrorLedINTTerminalRuleCall_7_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -25137,17 +25596,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__RetriesAssignment_8_1"
-    // InternalDeviceDefinition.g:8218:1: rule__Gateway__RetriesAssignment_8_1 : ( RULE_INT ) ;
+    // InternalDeviceDefinition.g:8365:1: rule__Gateway__RetriesAssignment_8_1 : ( RULE_INT ) ;
     public final void rule__Gateway__RetriesAssignment_8_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8222:1: ( ( RULE_INT ) )
-            // InternalDeviceDefinition.g:8223:2: ( RULE_INT )
+            // InternalDeviceDefinition.g:8369:1: ( ( RULE_INT ) )
+            // InternalDeviceDefinition.g:8370:2: ( RULE_INT )
             {
-            // InternalDeviceDefinition.g:8223:2: ( RULE_INT )
-            // InternalDeviceDefinition.g:8224:3: RULE_INT
+            // InternalDeviceDefinition.g:8370:2: ( RULE_INT )
+            // InternalDeviceDefinition.g:8371:3: RULE_INT
             {
              before(grammarAccess.getGatewayAccess().getRetriesINTTerminalRuleCall_8_1_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -25174,17 +25633,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__DelayAssignment_8_4"
-    // InternalDeviceDefinition.g:8233:1: rule__Gateway__DelayAssignment_8_4 : ( ruleNumberPrimitive ) ;
+    // InternalDeviceDefinition.g:8380:1: rule__Gateway__DelayAssignment_8_4 : ( ruleNumberPrimitive ) ;
     public final void rule__Gateway__DelayAssignment_8_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8237:1: ( ( ruleNumberPrimitive ) )
-            // InternalDeviceDefinition.g:8238:2: ( ruleNumberPrimitive )
+            // InternalDeviceDefinition.g:8384:1: ( ( ruleNumberPrimitive ) )
+            // InternalDeviceDefinition.g:8385:2: ( ruleNumberPrimitive )
             {
-            // InternalDeviceDefinition.g:8238:2: ( ruleNumberPrimitive )
-            // InternalDeviceDefinition.g:8239:3: ruleNumberPrimitive
+            // InternalDeviceDefinition.g:8385:2: ( ruleNumberPrimitive )
+            // InternalDeviceDefinition.g:8386:3: ruleNumberPrimitive
             {
              before(grammarAccess.getGatewayAccess().getDelayNumberPrimitiveParserRuleCall_8_4_0()); 
             pushFollow(FOLLOW_2);
@@ -25215,17 +25674,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__DelayTimeUnitAssignment_8_5"
-    // InternalDeviceDefinition.g:8248:1: rule__Gateway__DelayTimeUnitAssignment_8_5 : ( ruleTimeUnit ) ;
+    // InternalDeviceDefinition.g:8395:1: rule__Gateway__DelayTimeUnitAssignment_8_5 : ( ruleTimeUnit ) ;
     public final void rule__Gateway__DelayTimeUnitAssignment_8_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8252:1: ( ( ruleTimeUnit ) )
-            // InternalDeviceDefinition.g:8253:2: ( ruleTimeUnit )
+            // InternalDeviceDefinition.g:8399:1: ( ( ruleTimeUnit ) )
+            // InternalDeviceDefinition.g:8400:2: ( ruleTimeUnit )
             {
-            // InternalDeviceDefinition.g:8253:2: ( ruleTimeUnit )
-            // InternalDeviceDefinition.g:8254:3: ruleTimeUnit
+            // InternalDeviceDefinition.g:8400:2: ( ruleTimeUnit )
+            // InternalDeviceDefinition.g:8401:3: ruleTimeUnit
             {
              before(grammarAccess.getGatewayAccess().getDelayTimeUnitTimeUnitParserRuleCall_8_5_0()); 
             pushFollow(FOLLOW_2);
@@ -25256,17 +25715,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Gateway__WorkersAssignment_9"
-    // InternalDeviceDefinition.g:8263:1: rule__Gateway__WorkersAssignment_9 : ( ruleWorker ) ;
+    // InternalDeviceDefinition.g:8410:1: rule__Gateway__WorkersAssignment_9 : ( ruleWorker ) ;
     public final void rule__Gateway__WorkersAssignment_9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8267:1: ( ( ruleWorker ) )
-            // InternalDeviceDefinition.g:8268:2: ( ruleWorker )
+            // InternalDeviceDefinition.g:8414:1: ( ( ruleWorker ) )
+            // InternalDeviceDefinition.g:8415:2: ( ruleWorker )
             {
-            // InternalDeviceDefinition.g:8268:2: ( ruleWorker )
-            // InternalDeviceDefinition.g:8269:3: ruleWorker
+            // InternalDeviceDefinition.g:8415:2: ( ruleWorker )
+            // InternalDeviceDefinition.g:8416:3: ruleWorker
             {
              before(grammarAccess.getGatewayAccess().getWorkersWorkerParserRuleCall_9_0()); 
             pushFollow(FOLLOW_2);
@@ -25297,17 +25756,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__NameAssignment_1"
-    // InternalDeviceDefinition.g:8278:1: rule__Worker__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalDeviceDefinition.g:8425:1: rule__Worker__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Worker__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8282:1: ( ( RULE_ID ) )
-            // InternalDeviceDefinition.g:8283:2: ( RULE_ID )
+            // InternalDeviceDefinition.g:8429:1: ( ( RULE_ID ) )
+            // InternalDeviceDefinition.g:8430:2: ( RULE_ID )
             {
-            // InternalDeviceDefinition.g:8283:2: ( RULE_ID )
-            // InternalDeviceDefinition.g:8284:3: RULE_ID
+            // InternalDeviceDefinition.g:8430:2: ( RULE_ID )
+            // InternalDeviceDefinition.g:8431:3: RULE_ID
             {
              before(grammarAccess.getWorkerAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -25334,17 +25793,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__MacAssignment_4"
-    // InternalDeviceDefinition.g:8293:1: rule__Worker__MacAssignment_4 : ( RULE_MAC ) ;
+    // InternalDeviceDefinition.g:8440:1: rule__Worker__MacAssignment_4 : ( RULE_MAC ) ;
     public final void rule__Worker__MacAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8297:1: ( ( RULE_MAC ) )
-            // InternalDeviceDefinition.g:8298:2: ( RULE_MAC )
+            // InternalDeviceDefinition.g:8444:1: ( ( RULE_MAC ) )
+            // InternalDeviceDefinition.g:8445:2: ( RULE_MAC )
             {
-            // InternalDeviceDefinition.g:8298:2: ( RULE_MAC )
-            // InternalDeviceDefinition.g:8299:3: RULE_MAC
+            // InternalDeviceDefinition.g:8445:2: ( RULE_MAC )
+            // InternalDeviceDefinition.g:8446:3: RULE_MAC
             {
              before(grammarAccess.getWorkerAccess().getMacMACTerminalRuleCall_4_0()); 
             match(input,RULE_MAC,FOLLOW_2); 
@@ -25371,17 +25830,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__SleepTimeAssignment_7"
-    // InternalDeviceDefinition.g:8308:1: rule__Worker__SleepTimeAssignment_7 : ( ruleNumberPrimitive ) ;
+    // InternalDeviceDefinition.g:8455:1: rule__Worker__SleepTimeAssignment_7 : ( ruleNumberPrimitive ) ;
     public final void rule__Worker__SleepTimeAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8312:1: ( ( ruleNumberPrimitive ) )
-            // InternalDeviceDefinition.g:8313:2: ( ruleNumberPrimitive )
+            // InternalDeviceDefinition.g:8459:1: ( ( ruleNumberPrimitive ) )
+            // InternalDeviceDefinition.g:8460:2: ( ruleNumberPrimitive )
             {
-            // InternalDeviceDefinition.g:8313:2: ( ruleNumberPrimitive )
-            // InternalDeviceDefinition.g:8314:3: ruleNumberPrimitive
+            // InternalDeviceDefinition.g:8460:2: ( ruleNumberPrimitive )
+            // InternalDeviceDefinition.g:8461:3: ruleNumberPrimitive
             {
              before(grammarAccess.getWorkerAccess().getSleepTimeNumberPrimitiveParserRuleCall_7_0()); 
             pushFollow(FOLLOW_2);
@@ -25412,17 +25871,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__TimeUnitAssignment_8"
-    // InternalDeviceDefinition.g:8323:1: rule__Worker__TimeUnitAssignment_8 : ( ruleTimeUnit ) ;
+    // InternalDeviceDefinition.g:8470:1: rule__Worker__TimeUnitAssignment_8 : ( ruleTimeUnit ) ;
     public final void rule__Worker__TimeUnitAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8327:1: ( ( ruleTimeUnit ) )
-            // InternalDeviceDefinition.g:8328:2: ( ruleTimeUnit )
+            // InternalDeviceDefinition.g:8474:1: ( ( ruleTimeUnit ) )
+            // InternalDeviceDefinition.g:8475:2: ( ruleTimeUnit )
             {
-            // InternalDeviceDefinition.g:8328:2: ( ruleTimeUnit )
-            // InternalDeviceDefinition.g:8329:3: ruleTimeUnit
+            // InternalDeviceDefinition.g:8475:2: ( ruleTimeUnit )
+            // InternalDeviceDefinition.g:8476:3: ruleTimeUnit
             {
              before(grammarAccess.getWorkerAccess().getTimeUnitTimeUnitParserRuleCall_8_0()); 
             pushFollow(FOLLOW_2);
@@ -25453,17 +25912,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__ErrorLedAssignment_9_2"
-    // InternalDeviceDefinition.g:8338:1: rule__Worker__ErrorLedAssignment_9_2 : ( RULE_INT ) ;
+    // InternalDeviceDefinition.g:8485:1: rule__Worker__ErrorLedAssignment_9_2 : ( RULE_INT ) ;
     public final void rule__Worker__ErrorLedAssignment_9_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8342:1: ( ( RULE_INT ) )
-            // InternalDeviceDefinition.g:8343:2: ( RULE_INT )
+            // InternalDeviceDefinition.g:8489:1: ( ( RULE_INT ) )
+            // InternalDeviceDefinition.g:8490:2: ( RULE_INT )
             {
-            // InternalDeviceDefinition.g:8343:2: ( RULE_INT )
-            // InternalDeviceDefinition.g:8344:3: RULE_INT
+            // InternalDeviceDefinition.g:8490:2: ( RULE_INT )
+            // InternalDeviceDefinition.g:8491:3: RULE_INT
             {
              before(grammarAccess.getWorkerAccess().getErrorLedINTTerminalRuleCall_9_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -25490,17 +25949,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__RetriesAssignment_10_1"
-    // InternalDeviceDefinition.g:8353:1: rule__Worker__RetriesAssignment_10_1 : ( RULE_INT ) ;
+    // InternalDeviceDefinition.g:8500:1: rule__Worker__RetriesAssignment_10_1 : ( RULE_INT ) ;
     public final void rule__Worker__RetriesAssignment_10_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8357:1: ( ( RULE_INT ) )
-            // InternalDeviceDefinition.g:8358:2: ( RULE_INT )
+            // InternalDeviceDefinition.g:8504:1: ( ( RULE_INT ) )
+            // InternalDeviceDefinition.g:8505:2: ( RULE_INT )
             {
-            // InternalDeviceDefinition.g:8358:2: ( RULE_INT )
-            // InternalDeviceDefinition.g:8359:3: RULE_INT
+            // InternalDeviceDefinition.g:8505:2: ( RULE_INT )
+            // InternalDeviceDefinition.g:8506:3: RULE_INT
             {
              before(grammarAccess.getWorkerAccess().getRetriesINTTerminalRuleCall_10_1_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -25527,17 +25986,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__DelayAssignment_10_4"
-    // InternalDeviceDefinition.g:8368:1: rule__Worker__DelayAssignment_10_4 : ( ruleNumberPrimitive ) ;
+    // InternalDeviceDefinition.g:8515:1: rule__Worker__DelayAssignment_10_4 : ( ruleNumberPrimitive ) ;
     public final void rule__Worker__DelayAssignment_10_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8372:1: ( ( ruleNumberPrimitive ) )
-            // InternalDeviceDefinition.g:8373:2: ( ruleNumberPrimitive )
+            // InternalDeviceDefinition.g:8519:1: ( ( ruleNumberPrimitive ) )
+            // InternalDeviceDefinition.g:8520:2: ( ruleNumberPrimitive )
             {
-            // InternalDeviceDefinition.g:8373:2: ( ruleNumberPrimitive )
-            // InternalDeviceDefinition.g:8374:3: ruleNumberPrimitive
+            // InternalDeviceDefinition.g:8520:2: ( ruleNumberPrimitive )
+            // InternalDeviceDefinition.g:8521:3: ruleNumberPrimitive
             {
              before(grammarAccess.getWorkerAccess().getDelayNumberPrimitiveParserRuleCall_10_4_0()); 
             pushFollow(FOLLOW_2);
@@ -25568,17 +26027,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__DelayTimeUnitAssignment_10_5"
-    // InternalDeviceDefinition.g:8383:1: rule__Worker__DelayTimeUnitAssignment_10_5 : ( ruleTimeUnit ) ;
+    // InternalDeviceDefinition.g:8530:1: rule__Worker__DelayTimeUnitAssignment_10_5 : ( ruleTimeUnit ) ;
     public final void rule__Worker__DelayTimeUnitAssignment_10_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8387:1: ( ( ruleTimeUnit ) )
-            // InternalDeviceDefinition.g:8388:2: ( ruleTimeUnit )
+            // InternalDeviceDefinition.g:8534:1: ( ( ruleTimeUnit ) )
+            // InternalDeviceDefinition.g:8535:2: ( ruleTimeUnit )
             {
-            // InternalDeviceDefinition.g:8388:2: ( ruleTimeUnit )
-            // InternalDeviceDefinition.g:8389:3: ruleTimeUnit
+            // InternalDeviceDefinition.g:8535:2: ( ruleTimeUnit )
+            // InternalDeviceDefinition.g:8536:3: ruleTimeUnit
             {
              before(grammarAccess.getWorkerAccess().getDelayTimeUnitTimeUnitParserRuleCall_10_5_0()); 
             pushFollow(FOLLOW_2);
@@ -25609,17 +26068,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Worker__DevicesAssignment_11"
-    // InternalDeviceDefinition.g:8398:1: rule__Worker__DevicesAssignment_11 : ( ruleDevice ) ;
+    // InternalDeviceDefinition.g:8545:1: rule__Worker__DevicesAssignment_11 : ( ruleDevice ) ;
     public final void rule__Worker__DevicesAssignment_11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8402:1: ( ( ruleDevice ) )
-            // InternalDeviceDefinition.g:8403:2: ( ruleDevice )
+            // InternalDeviceDefinition.g:8549:1: ( ( ruleDevice ) )
+            // InternalDeviceDefinition.g:8550:2: ( ruleDevice )
             {
-            // InternalDeviceDefinition.g:8403:2: ( ruleDevice )
-            // InternalDeviceDefinition.g:8404:3: ruleDevice
+            // InternalDeviceDefinition.g:8550:2: ( ruleDevice )
+            // InternalDeviceDefinition.g:8551:3: ruleDevice
             {
              before(grammarAccess.getWorkerAccess().getDevicesDeviceParserRuleCall_11_0()); 
             pushFollow(FOLLOW_2);
@@ -25650,17 +26109,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Sensor__TypeAssignment_1"
-    // InternalDeviceDefinition.g:8413:1: rule__Sensor__TypeAssignment_1 : ( RULE_ID ) ;
+    // InternalDeviceDefinition.g:8560:1: rule__Sensor__TypeAssignment_1 : ( RULE_ID ) ;
     public final void rule__Sensor__TypeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8417:1: ( ( RULE_ID ) )
-            // InternalDeviceDefinition.g:8418:2: ( RULE_ID )
+            // InternalDeviceDefinition.g:8564:1: ( ( RULE_ID ) )
+            // InternalDeviceDefinition.g:8565:2: ( RULE_ID )
             {
-            // InternalDeviceDefinition.g:8418:2: ( RULE_ID )
-            // InternalDeviceDefinition.g:8419:3: RULE_ID
+            // InternalDeviceDefinition.g:8565:2: ( RULE_ID )
+            // InternalDeviceDefinition.g:8566:3: RULE_ID
             {
              before(grammarAccess.getSensorAccess().getTypeIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -25687,17 +26146,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Sensor__NameAssignment_2"
-    // InternalDeviceDefinition.g:8428:1: rule__Sensor__NameAssignment_2 : ( RULE_ID ) ;
+    // InternalDeviceDefinition.g:8575:1: rule__Sensor__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__Sensor__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8432:1: ( ( RULE_ID ) )
-            // InternalDeviceDefinition.g:8433:2: ( RULE_ID )
+            // InternalDeviceDefinition.g:8579:1: ( ( RULE_ID ) )
+            // InternalDeviceDefinition.g:8580:2: ( RULE_ID )
             {
-            // InternalDeviceDefinition.g:8433:2: ( RULE_ID )
-            // InternalDeviceDefinition.g:8434:3: RULE_ID
+            // InternalDeviceDefinition.g:8580:2: ( RULE_ID )
+            // InternalDeviceDefinition.g:8581:3: RULE_ID
             {
              before(grammarAccess.getSensorAccess().getNameIDTerminalRuleCall_2_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -25724,17 +26183,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Sensor__PinsAssignment_4_1"
-    // InternalDeviceDefinition.g:8443:1: rule__Sensor__PinsAssignment_4_1 : ( rulePin ) ;
+    // InternalDeviceDefinition.g:8590:1: rule__Sensor__PinsAssignment_4_1 : ( rulePin ) ;
     public final void rule__Sensor__PinsAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8447:1: ( ( rulePin ) )
-            // InternalDeviceDefinition.g:8448:2: ( rulePin )
+            // InternalDeviceDefinition.g:8594:1: ( ( rulePin ) )
+            // InternalDeviceDefinition.g:8595:2: ( rulePin )
             {
-            // InternalDeviceDefinition.g:8448:2: ( rulePin )
-            // InternalDeviceDefinition.g:8449:3: rulePin
+            // InternalDeviceDefinition.g:8595:2: ( rulePin )
+            // InternalDeviceDefinition.g:8596:3: rulePin
             {
              before(grammarAccess.getSensorAccess().getPinsPinParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -25765,17 +26224,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Sensor__PinsAssignment_4_2_1"
-    // InternalDeviceDefinition.g:8458:1: rule__Sensor__PinsAssignment_4_2_1 : ( rulePin ) ;
+    // InternalDeviceDefinition.g:8605:1: rule__Sensor__PinsAssignment_4_2_1 : ( rulePin ) ;
     public final void rule__Sensor__PinsAssignment_4_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8462:1: ( ( rulePin ) )
-            // InternalDeviceDefinition.g:8463:2: ( rulePin )
+            // InternalDeviceDefinition.g:8609:1: ( ( rulePin ) )
+            // InternalDeviceDefinition.g:8610:2: ( rulePin )
             {
-            // InternalDeviceDefinition.g:8463:2: ( rulePin )
-            // InternalDeviceDefinition.g:8464:3: rulePin
+            // InternalDeviceDefinition.g:8610:2: ( rulePin )
+            // InternalDeviceDefinition.g:8611:3: rulePin
             {
              before(grammarAccess.getSensorAccess().getPinsPinParserRuleCall_4_2_1_0()); 
             pushFollow(FOLLOW_2);
@@ -25806,17 +26265,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Sensor__OutputsAssignment_5"
-    // InternalDeviceDefinition.g:8473:1: rule__Sensor__OutputsAssignment_5 : ( ruleSensorOutput ) ;
+    // InternalDeviceDefinition.g:8620:1: rule__Sensor__OutputsAssignment_5 : ( ruleSensorOutput ) ;
     public final void rule__Sensor__OutputsAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8477:1: ( ( ruleSensorOutput ) )
-            // InternalDeviceDefinition.g:8478:2: ( ruleSensorOutput )
+            // InternalDeviceDefinition.g:8624:1: ( ( ruleSensorOutput ) )
+            // InternalDeviceDefinition.g:8625:2: ( ruleSensorOutput )
             {
-            // InternalDeviceDefinition.g:8478:2: ( ruleSensorOutput )
-            // InternalDeviceDefinition.g:8479:3: ruleSensorOutput
+            // InternalDeviceDefinition.g:8625:2: ( ruleSensorOutput )
+            // InternalDeviceDefinition.g:8626:3: ruleSensorOutput
             {
              before(grammarAccess.getSensorAccess().getOutputsSensorOutputParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -25847,17 +26306,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Sensor__SettingsAssignment_6"
-    // InternalDeviceDefinition.g:8488:1: rule__Sensor__SettingsAssignment_6 : ( ruleSetting ) ;
+    // InternalDeviceDefinition.g:8635:1: rule__Sensor__SettingsAssignment_6 : ( ruleSetting ) ;
     public final void rule__Sensor__SettingsAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8492:1: ( ( ruleSetting ) )
-            // InternalDeviceDefinition.g:8493:2: ( ruleSetting )
+            // InternalDeviceDefinition.g:8639:1: ( ( ruleSetting ) )
+            // InternalDeviceDefinition.g:8640:2: ( ruleSetting )
             {
-            // InternalDeviceDefinition.g:8493:2: ( ruleSetting )
-            // InternalDeviceDefinition.g:8494:3: ruleSetting
+            // InternalDeviceDefinition.g:8640:2: ( ruleSetting )
+            // InternalDeviceDefinition.g:8641:3: ruleSetting
             {
              before(grammarAccess.getSensorAccess().getSettingsSettingParserRuleCall_6_0()); 
             pushFollow(FOLLOW_2);
@@ -25888,17 +26347,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Sensor__PredicateAssignment_7_2"
-    // InternalDeviceDefinition.g:8503:1: rule__Sensor__PredicateAssignment_7_2 : ( ruleExp ) ;
+    // InternalDeviceDefinition.g:8650:1: rule__Sensor__PredicateAssignment_7_2 : ( ruleExp ) ;
     public final void rule__Sensor__PredicateAssignment_7_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8507:1: ( ( ruleExp ) )
-            // InternalDeviceDefinition.g:8508:2: ( ruleExp )
+            // InternalDeviceDefinition.g:8654:1: ( ( ruleExp ) )
+            // InternalDeviceDefinition.g:8655:2: ( ruleExp )
             {
-            // InternalDeviceDefinition.g:8508:2: ( ruleExp )
-            // InternalDeviceDefinition.g:8509:3: ruleExp
+            // InternalDeviceDefinition.g:8655:2: ( ruleExp )
+            // InternalDeviceDefinition.g:8656:3: ruleExp
             {
              before(grammarAccess.getSensorAccess().getPredicateExpParserRuleCall_7_2_0()); 
             pushFollow(FOLLOW_2);
@@ -25929,17 +26388,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Pin__TypeAssignment_0"
-    // InternalDeviceDefinition.g:8518:1: rule__Pin__TypeAssignment_0 : ( rulePinType ) ;
+    // InternalDeviceDefinition.g:8665:1: rule__Pin__TypeAssignment_0 : ( rulePinType ) ;
     public final void rule__Pin__TypeAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8522:1: ( ( rulePinType ) )
-            // InternalDeviceDefinition.g:8523:2: ( rulePinType )
+            // InternalDeviceDefinition.g:8669:1: ( ( rulePinType ) )
+            // InternalDeviceDefinition.g:8670:2: ( rulePinType )
             {
-            // InternalDeviceDefinition.g:8523:2: ( rulePinType )
-            // InternalDeviceDefinition.g:8524:3: rulePinType
+            // InternalDeviceDefinition.g:8670:2: ( rulePinType )
+            // InternalDeviceDefinition.g:8671:3: rulePinType
             {
              before(grammarAccess.getPinAccess().getTypePinTypeParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -25969,22 +26428,22 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
     // $ANTLR end "rule__Pin__TypeAssignment_0"
 
 
-    // $ANTLR start "rule__Pin__NumberAssignment_1"
-    // InternalDeviceDefinition.g:8533:1: rule__Pin__NumberAssignment_1 : ( RULE_INT ) ;
-    public final void rule__Pin__NumberAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Pin__PinIdAssignment_1"
+    // InternalDeviceDefinition.g:8680:1: rule__Pin__PinIdAssignment_1 : ( RULE_ID ) ;
+    public final void rule__Pin__PinIdAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8537:1: ( ( RULE_INT ) )
-            // InternalDeviceDefinition.g:8538:2: ( RULE_INT )
+            // InternalDeviceDefinition.g:8684:1: ( ( RULE_ID ) )
+            // InternalDeviceDefinition.g:8685:2: ( RULE_ID )
             {
-            // InternalDeviceDefinition.g:8538:2: ( RULE_INT )
-            // InternalDeviceDefinition.g:8539:3: RULE_INT
+            // InternalDeviceDefinition.g:8685:2: ( RULE_ID )
+            // InternalDeviceDefinition.g:8686:3: RULE_ID
             {
-             before(grammarAccess.getPinAccess().getNumberINTTerminalRuleCall_1_0()); 
-            match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getPinAccess().getNumberINTTerminalRuleCall_1_0()); 
+             before(grammarAccess.getPinAccess().getPinIdIDTerminalRuleCall_1_0()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getPinAccess().getPinIdIDTerminalRuleCall_1_0()); 
 
             }
 
@@ -26003,21 +26462,58 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
         }
         return ;
     }
-    // $ANTLR end "rule__Pin__NumberAssignment_1"
+    // $ANTLR end "rule__Pin__PinIdAssignment_1"
+
+
+    // $ANTLR start "rule__Pin__NumberAssignment_2"
+    // InternalDeviceDefinition.g:8695:1: rule__Pin__NumberAssignment_2 : ( RULE_INT ) ;
+    public final void rule__Pin__NumberAssignment_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDeviceDefinition.g:8699:1: ( ( RULE_INT ) )
+            // InternalDeviceDefinition.g:8700:2: ( RULE_INT )
+            {
+            // InternalDeviceDefinition.g:8700:2: ( RULE_INT )
+            // InternalDeviceDefinition.g:8701:3: RULE_INT
+            {
+             before(grammarAccess.getPinAccess().getNumberINTTerminalRuleCall_2_0()); 
+            match(input,RULE_INT,FOLLOW_2); 
+             after(grammarAccess.getPinAccess().getNumberINTTerminalRuleCall_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Pin__NumberAssignment_2"
 
 
     // $ANTLR start "rule__SensorOutput__OutputAssignment_1"
-    // InternalDeviceDefinition.g:8548:1: rule__SensorOutput__OutputAssignment_1 : ( RULE_STRING ) ;
+    // InternalDeviceDefinition.g:8710:1: rule__SensorOutput__OutputAssignment_1 : ( RULE_STRING ) ;
     public final void rule__SensorOutput__OutputAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8552:1: ( ( RULE_STRING ) )
-            // InternalDeviceDefinition.g:8553:2: ( RULE_STRING )
+            // InternalDeviceDefinition.g:8714:1: ( ( RULE_STRING ) )
+            // InternalDeviceDefinition.g:8715:2: ( RULE_STRING )
             {
-            // InternalDeviceDefinition.g:8553:2: ( RULE_STRING )
-            // InternalDeviceDefinition.g:8554:3: RULE_STRING
+            // InternalDeviceDefinition.g:8715:2: ( RULE_STRING )
+            // InternalDeviceDefinition.g:8716:3: RULE_STRING
             {
              before(grammarAccess.getSensorOutputAccess().getOutputSTRINGTerminalRuleCall_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -26044,17 +26540,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SensorOutput__NameAssignment_3"
-    // InternalDeviceDefinition.g:8563:1: rule__SensorOutput__NameAssignment_3 : ( RULE_ID ) ;
+    // InternalDeviceDefinition.g:8725:1: rule__SensorOutput__NameAssignment_3 : ( RULE_ID ) ;
     public final void rule__SensorOutput__NameAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8567:1: ( ( RULE_ID ) )
-            // InternalDeviceDefinition.g:8568:2: ( RULE_ID )
+            // InternalDeviceDefinition.g:8729:1: ( ( RULE_ID ) )
+            // InternalDeviceDefinition.g:8730:2: ( RULE_ID )
             {
-            // InternalDeviceDefinition.g:8568:2: ( RULE_ID )
-            // InternalDeviceDefinition.g:8569:3: RULE_ID
+            // InternalDeviceDefinition.g:8730:2: ( RULE_ID )
+            // InternalDeviceDefinition.g:8731:3: RULE_ID
             {
              before(grammarAccess.getSensorOutputAccess().getNameIDTerminalRuleCall_3_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -26081,17 +26577,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SensorOutput__MappingAssignment_4_2"
-    // InternalDeviceDefinition.g:8578:1: rule__SensorOutput__MappingAssignment_4_2 : ( ruleExp ) ;
+    // InternalDeviceDefinition.g:8740:1: rule__SensorOutput__MappingAssignment_4_2 : ( ruleExp ) ;
     public final void rule__SensorOutput__MappingAssignment_4_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8582:1: ( ( ruleExp ) )
-            // InternalDeviceDefinition.g:8583:2: ( ruleExp )
+            // InternalDeviceDefinition.g:8744:1: ( ( ruleExp ) )
+            // InternalDeviceDefinition.g:8745:2: ( ruleExp )
             {
-            // InternalDeviceDefinition.g:8583:2: ( ruleExp )
-            // InternalDeviceDefinition.g:8584:3: ruleExp
+            // InternalDeviceDefinition.g:8745:2: ( ruleExp )
+            // InternalDeviceDefinition.g:8746:3: ruleExp
             {
              before(grammarAccess.getSensorOutputAccess().getMappingExpParserRuleCall_4_2_0()); 
             pushFollow(FOLLOW_2);
@@ -26122,17 +26618,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Actuator__TypeAssignment_1"
-    // InternalDeviceDefinition.g:8593:1: rule__Actuator__TypeAssignment_1 : ( RULE_ID ) ;
+    // InternalDeviceDefinition.g:8755:1: rule__Actuator__TypeAssignment_1 : ( RULE_ID ) ;
     public final void rule__Actuator__TypeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8597:1: ( ( RULE_ID ) )
-            // InternalDeviceDefinition.g:8598:2: ( RULE_ID )
+            // InternalDeviceDefinition.g:8759:1: ( ( RULE_ID ) )
+            // InternalDeviceDefinition.g:8760:2: ( RULE_ID )
             {
-            // InternalDeviceDefinition.g:8598:2: ( RULE_ID )
-            // InternalDeviceDefinition.g:8599:3: RULE_ID
+            // InternalDeviceDefinition.g:8760:2: ( RULE_ID )
+            // InternalDeviceDefinition.g:8761:3: RULE_ID
             {
              before(grammarAccess.getActuatorAccess().getTypeIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -26159,17 +26655,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Actuator__NameAssignment_2"
-    // InternalDeviceDefinition.g:8608:1: rule__Actuator__NameAssignment_2 : ( RULE_ID ) ;
+    // InternalDeviceDefinition.g:8770:1: rule__Actuator__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__Actuator__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8612:1: ( ( RULE_ID ) )
-            // InternalDeviceDefinition.g:8613:2: ( RULE_ID )
+            // InternalDeviceDefinition.g:8774:1: ( ( RULE_ID ) )
+            // InternalDeviceDefinition.g:8775:2: ( RULE_ID )
             {
-            // InternalDeviceDefinition.g:8613:2: ( RULE_ID )
-            // InternalDeviceDefinition.g:8614:3: RULE_ID
+            // InternalDeviceDefinition.g:8775:2: ( RULE_ID )
+            // InternalDeviceDefinition.g:8776:3: RULE_ID
             {
              before(grammarAccess.getActuatorAccess().getNameIDTerminalRuleCall_2_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -26196,17 +26692,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Actuator__PinsAssignment_5"
-    // InternalDeviceDefinition.g:8623:1: rule__Actuator__PinsAssignment_5 : ( rulePin ) ;
+    // InternalDeviceDefinition.g:8785:1: rule__Actuator__PinsAssignment_5 : ( rulePin ) ;
     public final void rule__Actuator__PinsAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8627:1: ( ( rulePin ) )
-            // InternalDeviceDefinition.g:8628:2: ( rulePin )
+            // InternalDeviceDefinition.g:8789:1: ( ( rulePin ) )
+            // InternalDeviceDefinition.g:8790:2: ( rulePin )
             {
-            // InternalDeviceDefinition.g:8628:2: ( rulePin )
-            // InternalDeviceDefinition.g:8629:3: rulePin
+            // InternalDeviceDefinition.g:8790:2: ( rulePin )
+            // InternalDeviceDefinition.g:8791:3: rulePin
             {
              before(grammarAccess.getActuatorAccess().getPinsPinParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -26237,17 +26733,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Actuator__PinsAssignment_6_1"
-    // InternalDeviceDefinition.g:8638:1: rule__Actuator__PinsAssignment_6_1 : ( rulePin ) ;
+    // InternalDeviceDefinition.g:8800:1: rule__Actuator__PinsAssignment_6_1 : ( rulePin ) ;
     public final void rule__Actuator__PinsAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8642:1: ( ( rulePin ) )
-            // InternalDeviceDefinition.g:8643:2: ( rulePin )
+            // InternalDeviceDefinition.g:8804:1: ( ( rulePin ) )
+            // InternalDeviceDefinition.g:8805:2: ( rulePin )
             {
-            // InternalDeviceDefinition.g:8643:2: ( rulePin )
-            // InternalDeviceDefinition.g:8644:3: rulePin
+            // InternalDeviceDefinition.g:8805:2: ( rulePin )
+            // InternalDeviceDefinition.g:8806:3: rulePin
             {
              before(grammarAccess.getActuatorAccess().getPinsPinParserRuleCall_6_1_0()); 
             pushFollow(FOLLOW_2);
@@ -26278,17 +26774,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Actuator__SettingsAssignment_7"
-    // InternalDeviceDefinition.g:8653:1: rule__Actuator__SettingsAssignment_7 : ( ruleSetting ) ;
+    // InternalDeviceDefinition.g:8815:1: rule__Actuator__SettingsAssignment_7 : ( ruleSetting ) ;
     public final void rule__Actuator__SettingsAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8657:1: ( ( ruleSetting ) )
-            // InternalDeviceDefinition.g:8658:2: ( ruleSetting )
+            // InternalDeviceDefinition.g:8819:1: ( ( ruleSetting ) )
+            // InternalDeviceDefinition.g:8820:2: ( ruleSetting )
             {
-            // InternalDeviceDefinition.g:8658:2: ( ruleSetting )
-            // InternalDeviceDefinition.g:8659:3: ruleSetting
+            // InternalDeviceDefinition.g:8820:2: ( ruleSetting )
+            // InternalDeviceDefinition.g:8821:3: ruleSetting
             {
              before(grammarAccess.getActuatorAccess().getSettingsSettingParserRuleCall_7_0()); 
             pushFollow(FOLLOW_2);
@@ -26319,17 +26815,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Actuator__TriggerAssignment_8"
-    // InternalDeviceDefinition.g:8668:1: rule__Actuator__TriggerAssignment_8 : ( ruleTrigger ) ;
+    // InternalDeviceDefinition.g:8830:1: rule__Actuator__TriggerAssignment_8 : ( ruleTrigger ) ;
     public final void rule__Actuator__TriggerAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8672:1: ( ( ruleTrigger ) )
-            // InternalDeviceDefinition.g:8673:2: ( ruleTrigger )
+            // InternalDeviceDefinition.g:8834:1: ( ( ruleTrigger ) )
+            // InternalDeviceDefinition.g:8835:2: ( ruleTrigger )
             {
-            // InternalDeviceDefinition.g:8673:2: ( ruleTrigger )
-            // InternalDeviceDefinition.g:8674:3: ruleTrigger
+            // InternalDeviceDefinition.g:8835:2: ( ruleTrigger )
+            // InternalDeviceDefinition.g:8836:3: ruleTrigger
             {
              before(grammarAccess.getActuatorAccess().getTriggerTriggerParserRuleCall_8_0()); 
             pushFollow(FOLLOW_2);
@@ -26360,17 +26856,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Trigger__ExpAssignment_0_2"
-    // InternalDeviceDefinition.g:8683:1: rule__Trigger__ExpAssignment_0_2 : ( ruleExp ) ;
+    // InternalDeviceDefinition.g:8845:1: rule__Trigger__ExpAssignment_0_2 : ( ruleExp ) ;
     public final void rule__Trigger__ExpAssignment_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8687:1: ( ( ruleExp ) )
-            // InternalDeviceDefinition.g:8688:2: ( ruleExp )
+            // InternalDeviceDefinition.g:8849:1: ( ( ruleExp ) )
+            // InternalDeviceDefinition.g:8850:2: ( ruleExp )
             {
-            // InternalDeviceDefinition.g:8688:2: ( ruleExp )
-            // InternalDeviceDefinition.g:8689:3: ruleExp
+            // InternalDeviceDefinition.g:8850:2: ( ruleExp )
+            // InternalDeviceDefinition.g:8851:3: ruleExp
             {
              before(grammarAccess.getTriggerAccess().getExpExpParserRuleCall_0_2_0()); 
             pushFollow(FOLLOW_2);
@@ -26401,17 +26897,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Trigger__OnExpAssignment_1_2"
-    // InternalDeviceDefinition.g:8698:1: rule__Trigger__OnExpAssignment_1_2 : ( ruleExp ) ;
+    // InternalDeviceDefinition.g:8860:1: rule__Trigger__OnExpAssignment_1_2 : ( ruleExp ) ;
     public final void rule__Trigger__OnExpAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8702:1: ( ( ruleExp ) )
-            // InternalDeviceDefinition.g:8703:2: ( ruleExp )
+            // InternalDeviceDefinition.g:8864:1: ( ( ruleExp ) )
+            // InternalDeviceDefinition.g:8865:2: ( ruleExp )
             {
-            // InternalDeviceDefinition.g:8703:2: ( ruleExp )
-            // InternalDeviceDefinition.g:8704:3: ruleExp
+            // InternalDeviceDefinition.g:8865:2: ( ruleExp )
+            // InternalDeviceDefinition.g:8866:3: ruleExp
             {
              before(grammarAccess.getTriggerAccess().getOnExpExpParserRuleCall_1_2_0()); 
             pushFollow(FOLLOW_2);
@@ -26442,17 +26938,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Trigger__OffExpAssignment_1_3_0_1"
-    // InternalDeviceDefinition.g:8713:1: rule__Trigger__OffExpAssignment_1_3_0_1 : ( ruleExp ) ;
+    // InternalDeviceDefinition.g:8875:1: rule__Trigger__OffExpAssignment_1_3_0_1 : ( ruleExp ) ;
     public final void rule__Trigger__OffExpAssignment_1_3_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8717:1: ( ( ruleExp ) )
-            // InternalDeviceDefinition.g:8718:2: ( ruleExp )
+            // InternalDeviceDefinition.g:8879:1: ( ( ruleExp ) )
+            // InternalDeviceDefinition.g:8880:2: ( ruleExp )
             {
-            // InternalDeviceDefinition.g:8718:2: ( ruleExp )
-            // InternalDeviceDefinition.g:8719:3: ruleExp
+            // InternalDeviceDefinition.g:8880:2: ( ruleExp )
+            // InternalDeviceDefinition.g:8881:3: ruleExp
             {
              before(grammarAccess.getTriggerAccess().getOffExpExpParserRuleCall_1_3_0_1_0()); 
             pushFollow(FOLLOW_2);
@@ -26483,17 +26979,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Trigger__TimeAssignment_1_3_1_2"
-    // InternalDeviceDefinition.g:8728:1: rule__Trigger__TimeAssignment_1_3_1_2 : ( RULE_INT ) ;
+    // InternalDeviceDefinition.g:8890:1: rule__Trigger__TimeAssignment_1_3_1_2 : ( RULE_INT ) ;
     public final void rule__Trigger__TimeAssignment_1_3_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8732:1: ( ( RULE_INT ) )
-            // InternalDeviceDefinition.g:8733:2: ( RULE_INT )
+            // InternalDeviceDefinition.g:8894:1: ( ( RULE_INT ) )
+            // InternalDeviceDefinition.g:8895:2: ( RULE_INT )
             {
-            // InternalDeviceDefinition.g:8733:2: ( RULE_INT )
-            // InternalDeviceDefinition.g:8734:3: RULE_INT
+            // InternalDeviceDefinition.g:8895:2: ( RULE_INT )
+            // InternalDeviceDefinition.g:8896:3: RULE_INT
             {
              before(grammarAccess.getTriggerAccess().getTimeINTTerminalRuleCall_1_3_1_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -26520,17 +27016,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Trigger__UnitAssignment_1_3_1_3"
-    // InternalDeviceDefinition.g:8743:1: rule__Trigger__UnitAssignment_1_3_1_3 : ( ruleTimeUnit ) ;
+    // InternalDeviceDefinition.g:8905:1: rule__Trigger__UnitAssignment_1_3_1_3 : ( ruleTimeUnit ) ;
     public final void rule__Trigger__UnitAssignment_1_3_1_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8747:1: ( ( ruleTimeUnit ) )
-            // InternalDeviceDefinition.g:8748:2: ( ruleTimeUnit )
+            // InternalDeviceDefinition.g:8909:1: ( ( ruleTimeUnit ) )
+            // InternalDeviceDefinition.g:8910:2: ( ruleTimeUnit )
             {
-            // InternalDeviceDefinition.g:8748:2: ( ruleTimeUnit )
-            // InternalDeviceDefinition.g:8749:3: ruleTimeUnit
+            // InternalDeviceDefinition.g:8910:2: ( ruleTimeUnit )
+            // InternalDeviceDefinition.g:8911:3: ruleTimeUnit
             {
              before(grammarAccess.getTriggerAccess().getUnitTimeUnitParserRuleCall_1_3_1_3_0()); 
             pushFollow(FOLLOW_2);
@@ -26561,17 +27057,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Setting__NameAssignment_1"
-    // InternalDeviceDefinition.g:8758:1: rule__Setting__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalDeviceDefinition.g:8920:1: rule__Setting__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Setting__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8762:1: ( ( RULE_ID ) )
-            // InternalDeviceDefinition.g:8763:2: ( RULE_ID )
+            // InternalDeviceDefinition.g:8924:1: ( ( RULE_ID ) )
+            // InternalDeviceDefinition.g:8925:2: ( RULE_ID )
             {
-            // InternalDeviceDefinition.g:8763:2: ( RULE_ID )
-            // InternalDeviceDefinition.g:8764:3: RULE_ID
+            // InternalDeviceDefinition.g:8925:2: ( RULE_ID )
+            // InternalDeviceDefinition.g:8926:3: RULE_ID
             {
              before(grammarAccess.getSettingAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -26598,17 +27094,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Setting__ValueAssignment_3"
-    // InternalDeviceDefinition.g:8773:1: rule__Setting__ValueAssignment_3 : ( rulePrimitive ) ;
+    // InternalDeviceDefinition.g:8935:1: rule__Setting__ValueAssignment_3 : ( rulePrimitive ) ;
     public final void rule__Setting__ValueAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8777:1: ( ( rulePrimitive ) )
-            // InternalDeviceDefinition.g:8778:2: ( rulePrimitive )
+            // InternalDeviceDefinition.g:8939:1: ( ( rulePrimitive ) )
+            // InternalDeviceDefinition.g:8940:2: ( rulePrimitive )
             {
-            // InternalDeviceDefinition.g:8778:2: ( rulePrimitive )
-            // InternalDeviceDefinition.g:8779:3: rulePrimitive
+            // InternalDeviceDefinition.g:8940:2: ( rulePrimitive )
+            // InternalDeviceDefinition.g:8941:3: rulePrimitive
             {
              before(grammarAccess.getSettingAccess().getValuePrimitiveParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -26639,17 +27135,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__NumberPrimitive__ValueAssignment_0_1"
-    // InternalDeviceDefinition.g:8788:1: rule__NumberPrimitive__ValueAssignment_0_1 : ( RULE_INT ) ;
+    // InternalDeviceDefinition.g:8950:1: rule__NumberPrimitive__ValueAssignment_0_1 : ( RULE_INT ) ;
     public final void rule__NumberPrimitive__ValueAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8792:1: ( ( RULE_INT ) )
-            // InternalDeviceDefinition.g:8793:2: ( RULE_INT )
+            // InternalDeviceDefinition.g:8954:1: ( ( RULE_INT ) )
+            // InternalDeviceDefinition.g:8955:2: ( RULE_INT )
             {
-            // InternalDeviceDefinition.g:8793:2: ( RULE_INT )
-            // InternalDeviceDefinition.g:8794:3: RULE_INT
+            // InternalDeviceDefinition.g:8955:2: ( RULE_INT )
+            // InternalDeviceDefinition.g:8956:3: RULE_INT
             {
              before(grammarAccess.getNumberPrimitiveAccess().getValueINTTerminalRuleCall_0_1_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -26676,17 +27172,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__NumberPrimitive__ValueAssignment_1_1"
-    // InternalDeviceDefinition.g:8803:1: rule__NumberPrimitive__ValueAssignment_1_1 : ( RULE_DECIMAL ) ;
+    // InternalDeviceDefinition.g:8965:1: rule__NumberPrimitive__ValueAssignment_1_1 : ( RULE_DECIMAL ) ;
     public final void rule__NumberPrimitive__ValueAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8807:1: ( ( RULE_DECIMAL ) )
-            // InternalDeviceDefinition.g:8808:2: ( RULE_DECIMAL )
+            // InternalDeviceDefinition.g:8969:1: ( ( RULE_DECIMAL ) )
+            // InternalDeviceDefinition.g:8970:2: ( RULE_DECIMAL )
             {
-            // InternalDeviceDefinition.g:8808:2: ( RULE_DECIMAL )
-            // InternalDeviceDefinition.g:8809:3: RULE_DECIMAL
+            // InternalDeviceDefinition.g:8970:2: ( RULE_DECIMAL )
+            // InternalDeviceDefinition.g:8971:3: RULE_DECIMAL
             {
              before(grammarAccess.getNumberPrimitiveAccess().getValueDECIMALTerminalRuleCall_1_1_0()); 
             match(input,RULE_DECIMAL,FOLLOW_2); 
@@ -26713,17 +27209,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Exp__RightAssignment_1_1"
-    // InternalDeviceDefinition.g:8818:1: rule__Exp__RightAssignment_1_1 : ( ruleFactor ) ;
+    // InternalDeviceDefinition.g:8980:1: rule__Exp__RightAssignment_1_1 : ( ruleFactor ) ;
     public final void rule__Exp__RightAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8822:1: ( ( ruleFactor ) )
-            // InternalDeviceDefinition.g:8823:2: ( ruleFactor )
+            // InternalDeviceDefinition.g:8984:1: ( ( ruleFactor ) )
+            // InternalDeviceDefinition.g:8985:2: ( ruleFactor )
             {
-            // InternalDeviceDefinition.g:8823:2: ( ruleFactor )
-            // InternalDeviceDefinition.g:8824:3: ruleFactor
+            // InternalDeviceDefinition.g:8985:2: ( ruleFactor )
+            // InternalDeviceDefinition.g:8986:3: ruleFactor
             {
              before(grammarAccess.getExpAccess().getRightFactorParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -26754,17 +27250,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Factor__RightAssignment_1_1"
-    // InternalDeviceDefinition.g:8833:1: rule__Factor__RightAssignment_1_1 : ( ruleCompare ) ;
+    // InternalDeviceDefinition.g:8995:1: rule__Factor__RightAssignment_1_1 : ( ruleCompare ) ;
     public final void rule__Factor__RightAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8837:1: ( ( ruleCompare ) )
-            // InternalDeviceDefinition.g:8838:2: ( ruleCompare )
+            // InternalDeviceDefinition.g:8999:1: ( ( ruleCompare ) )
+            // InternalDeviceDefinition.g:9000:2: ( ruleCompare )
             {
-            // InternalDeviceDefinition.g:8838:2: ( ruleCompare )
-            // InternalDeviceDefinition.g:8839:3: ruleCompare
+            // InternalDeviceDefinition.g:9000:2: ( ruleCompare )
+            // InternalDeviceDefinition.g:9001:3: ruleCompare
             {
              before(grammarAccess.getFactorAccess().getRightCompareParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -26795,17 +27291,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Compare__RightAssignment_1_1"
-    // InternalDeviceDefinition.g:8848:1: rule__Compare__RightAssignment_1_1 : ( ruleCompareOrEquals ) ;
+    // InternalDeviceDefinition.g:9010:1: rule__Compare__RightAssignment_1_1 : ( ruleCompareOrEquals ) ;
     public final void rule__Compare__RightAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8852:1: ( ( ruleCompareOrEquals ) )
-            // InternalDeviceDefinition.g:8853:2: ( ruleCompareOrEquals )
+            // InternalDeviceDefinition.g:9014:1: ( ( ruleCompareOrEquals ) )
+            // InternalDeviceDefinition.g:9015:2: ( ruleCompareOrEquals )
             {
-            // InternalDeviceDefinition.g:8853:2: ( ruleCompareOrEquals )
-            // InternalDeviceDefinition.g:8854:3: ruleCompareOrEquals
+            // InternalDeviceDefinition.g:9015:2: ( ruleCompareOrEquals )
+            // InternalDeviceDefinition.g:9016:3: ruleCompareOrEquals
             {
              before(grammarAccess.getCompareAccess().getRightCompareOrEqualsParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -26836,17 +27332,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__CompareOrEquals__RightAssignment_1_1"
-    // InternalDeviceDefinition.g:8863:1: rule__CompareOrEquals__RightAssignment_1_1 : ( ruleEqualsOrNotEquals ) ;
+    // InternalDeviceDefinition.g:9025:1: rule__CompareOrEquals__RightAssignment_1_1 : ( ruleEqualsOrNotEquals ) ;
     public final void rule__CompareOrEquals__RightAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8867:1: ( ( ruleEqualsOrNotEquals ) )
-            // InternalDeviceDefinition.g:8868:2: ( ruleEqualsOrNotEquals )
+            // InternalDeviceDefinition.g:9029:1: ( ( ruleEqualsOrNotEquals ) )
+            // InternalDeviceDefinition.g:9030:2: ( ruleEqualsOrNotEquals )
             {
-            // InternalDeviceDefinition.g:8868:2: ( ruleEqualsOrNotEquals )
-            // InternalDeviceDefinition.g:8869:3: ruleEqualsOrNotEquals
+            // InternalDeviceDefinition.g:9030:2: ( ruleEqualsOrNotEquals )
+            // InternalDeviceDefinition.g:9031:3: ruleEqualsOrNotEquals
             {
              before(grammarAccess.getCompareOrEqualsAccess().getRightEqualsOrNotEqualsParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -26877,17 +27373,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__EqualsOrNotEquals__RightAssignment_1_1"
-    // InternalDeviceDefinition.g:8878:1: rule__EqualsOrNotEquals__RightAssignment_1_1 : ( ruleAndOr ) ;
+    // InternalDeviceDefinition.g:9040:1: rule__EqualsOrNotEquals__RightAssignment_1_1 : ( ruleAndOr ) ;
     public final void rule__EqualsOrNotEquals__RightAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8882:1: ( ( ruleAndOr ) )
-            // InternalDeviceDefinition.g:8883:2: ( ruleAndOr )
+            // InternalDeviceDefinition.g:9044:1: ( ( ruleAndOr ) )
+            // InternalDeviceDefinition.g:9045:2: ( ruleAndOr )
             {
-            // InternalDeviceDefinition.g:8883:2: ( ruleAndOr )
-            // InternalDeviceDefinition.g:8884:3: ruleAndOr
+            // InternalDeviceDefinition.g:9045:2: ( ruleAndOr )
+            // InternalDeviceDefinition.g:9046:3: ruleAndOr
             {
              before(grammarAccess.getEqualsOrNotEqualsAccess().getRightAndOrParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -26918,17 +27414,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__AndOr__RightAssignment_1_1"
-    // InternalDeviceDefinition.g:8893:1: rule__AndOr__RightAssignment_1_1 : ( rulePrimary ) ;
+    // InternalDeviceDefinition.g:9055:1: rule__AndOr__RightAssignment_1_1 : ( rulePrimary ) ;
     public final void rule__AndOr__RightAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8897:1: ( ( rulePrimary ) )
-            // InternalDeviceDefinition.g:8898:2: ( rulePrimary )
+            // InternalDeviceDefinition.g:9059:1: ( ( rulePrimary ) )
+            // InternalDeviceDefinition.g:9060:2: ( rulePrimary )
             {
-            // InternalDeviceDefinition.g:8898:2: ( rulePrimary )
-            // InternalDeviceDefinition.g:8899:3: rulePrimary
+            // InternalDeviceDefinition.g:9060:2: ( rulePrimary )
+            // InternalDeviceDefinition.g:9061:3: rulePrimary
             {
              before(grammarAccess.getAndOrAccess().getRightPrimaryParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -26959,17 +27455,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ExternalCall__FuncAssignment_1"
-    // InternalDeviceDefinition.g:8908:1: rule__ExternalCall__FuncAssignment_1 : ( RULE_ID ) ;
+    // InternalDeviceDefinition.g:9070:1: rule__ExternalCall__FuncAssignment_1 : ( RULE_ID ) ;
     public final void rule__ExternalCall__FuncAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8912:1: ( ( RULE_ID ) )
-            // InternalDeviceDefinition.g:8913:2: ( RULE_ID )
+            // InternalDeviceDefinition.g:9074:1: ( ( RULE_ID ) )
+            // InternalDeviceDefinition.g:9075:2: ( RULE_ID )
             {
-            // InternalDeviceDefinition.g:8913:2: ( RULE_ID )
-            // InternalDeviceDefinition.g:8914:3: RULE_ID
+            // InternalDeviceDefinition.g:9075:2: ( RULE_ID )
+            // InternalDeviceDefinition.g:9076:3: RULE_ID
             {
              before(grammarAccess.getExternalCallAccess().getFuncIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -26996,17 +27492,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ExternalCall__ArgsAssignment_3"
-    // InternalDeviceDefinition.g:8923:1: rule__ExternalCall__ArgsAssignment_3 : ( ruleExp ) ;
+    // InternalDeviceDefinition.g:9085:1: rule__ExternalCall__ArgsAssignment_3 : ( ruleExp ) ;
     public final void rule__ExternalCall__ArgsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8927:1: ( ( ruleExp ) )
-            // InternalDeviceDefinition.g:8928:2: ( ruleExp )
+            // InternalDeviceDefinition.g:9089:1: ( ( ruleExp ) )
+            // InternalDeviceDefinition.g:9090:2: ( ruleExp )
             {
-            // InternalDeviceDefinition.g:8928:2: ( ruleExp )
-            // InternalDeviceDefinition.g:8929:3: ruleExp
+            // InternalDeviceDefinition.g:9090:2: ( ruleExp )
+            // InternalDeviceDefinition.g:9091:3: ruleExp
             {
              before(grammarAccess.getExternalCallAccess().getArgsExpParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -27037,17 +27533,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ExternalCall__ArgsAssignment_4_1"
-    // InternalDeviceDefinition.g:8938:1: rule__ExternalCall__ArgsAssignment_4_1 : ( ruleExp ) ;
+    // InternalDeviceDefinition.g:9100:1: rule__ExternalCall__ArgsAssignment_4_1 : ( ruleExp ) ;
     public final void rule__ExternalCall__ArgsAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8942:1: ( ( ruleExp ) )
-            // InternalDeviceDefinition.g:8943:2: ( ruleExp )
+            // InternalDeviceDefinition.g:9104:1: ( ( ruleExp ) )
+            // InternalDeviceDefinition.g:9105:2: ( ruleExp )
             {
-            // InternalDeviceDefinition.g:8943:2: ( ruleExp )
-            // InternalDeviceDefinition.g:8944:3: ruleExp
+            // InternalDeviceDefinition.g:9105:2: ( ruleExp )
+            // InternalDeviceDefinition.g:9106:3: ruleExp
             {
              before(grammarAccess.getExternalCallAccess().getArgsExpParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -27078,21 +27574,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__InternalVariableUse__RefAssignment"
-    // InternalDeviceDefinition.g:8953:1: rule__InternalVariableUse__RefAssignment : ( ( RULE_ID ) ) ;
+    // InternalDeviceDefinition.g:9115:1: rule__InternalVariableUse__RefAssignment : ( ( RULE_ID ) ) ;
     public final void rule__InternalVariableUse__RefAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8957:1: ( ( ( RULE_ID ) ) )
-            // InternalDeviceDefinition.g:8958:2: ( ( RULE_ID ) )
+            // InternalDeviceDefinition.g:9119:1: ( ( ( RULE_ID ) ) )
+            // InternalDeviceDefinition.g:9120:2: ( ( RULE_ID ) )
             {
-            // InternalDeviceDefinition.g:8958:2: ( ( RULE_ID ) )
-            // InternalDeviceDefinition.g:8959:3: ( RULE_ID )
+            // InternalDeviceDefinition.g:9120:2: ( ( RULE_ID ) )
+            // InternalDeviceDefinition.g:9121:3: ( RULE_ID )
             {
              before(grammarAccess.getInternalVariableUseAccess().getRefBindingCrossReference_0()); 
-            // InternalDeviceDefinition.g:8960:3: ( RULE_ID )
-            // InternalDeviceDefinition.g:8961:4: RULE_ID
+            // InternalDeviceDefinition.g:9122:3: ( RULE_ID )
+            // InternalDeviceDefinition.g:9123:4: RULE_ID
             {
              before(grammarAccess.getInternalVariableUseAccess().getRefBindingIDTerminalRuleCall_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -27123,21 +27619,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ExternalVariableUse__ObjAssignment_0"
-    // InternalDeviceDefinition.g:8972:1: rule__ExternalVariableUse__ObjAssignment_0 : ( ( RULE_ID ) ) ;
+    // InternalDeviceDefinition.g:9134:1: rule__ExternalVariableUse__ObjAssignment_0 : ( ( RULE_ID ) ) ;
     public final void rule__ExternalVariableUse__ObjAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8976:1: ( ( ( RULE_ID ) ) )
-            // InternalDeviceDefinition.g:8977:2: ( ( RULE_ID ) )
+            // InternalDeviceDefinition.g:9138:1: ( ( ( RULE_ID ) ) )
+            // InternalDeviceDefinition.g:9139:2: ( ( RULE_ID ) )
             {
-            // InternalDeviceDefinition.g:8977:2: ( ( RULE_ID ) )
-            // InternalDeviceDefinition.g:8978:3: ( RULE_ID )
+            // InternalDeviceDefinition.g:9139:2: ( ( RULE_ID ) )
+            // InternalDeviceDefinition.g:9140:3: ( RULE_ID )
             {
              before(grammarAccess.getExternalVariableUseAccess().getObjDeviceCrossReference_0_0()); 
-            // InternalDeviceDefinition.g:8979:3: ( RULE_ID )
-            // InternalDeviceDefinition.g:8980:4: RULE_ID
+            // InternalDeviceDefinition.g:9141:3: ( RULE_ID )
+            // InternalDeviceDefinition.g:9142:4: RULE_ID
             {
              before(grammarAccess.getExternalVariableUseAccess().getObjDeviceIDTerminalRuleCall_0_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -27168,21 +27664,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ExternalVariableUse__RefAssignment_2"
-    // InternalDeviceDefinition.g:8991:1: rule__ExternalVariableUse__RefAssignment_2 : ( ( RULE_ID ) ) ;
+    // InternalDeviceDefinition.g:9153:1: rule__ExternalVariableUse__RefAssignment_2 : ( ( RULE_ID ) ) ;
     public final void rule__ExternalVariableUse__RefAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:8995:1: ( ( ( RULE_ID ) ) )
-            // InternalDeviceDefinition.g:8996:2: ( ( RULE_ID ) )
+            // InternalDeviceDefinition.g:9157:1: ( ( ( RULE_ID ) ) )
+            // InternalDeviceDefinition.g:9158:2: ( ( RULE_ID ) )
             {
-            // InternalDeviceDefinition.g:8996:2: ( ( RULE_ID ) )
-            // InternalDeviceDefinition.g:8997:3: ( RULE_ID )
+            // InternalDeviceDefinition.g:9158:2: ( ( RULE_ID ) )
+            // InternalDeviceDefinition.g:9159:3: ( RULE_ID )
             {
              before(grammarAccess.getExternalVariableUseAccess().getRefBindingCrossReference_2_0()); 
-            // InternalDeviceDefinition.g:8998:3: ( RULE_ID )
-            // InternalDeviceDefinition.g:8999:4: RULE_ID
+            // InternalDeviceDefinition.g:9160:3: ( RULE_ID )
+            // InternalDeviceDefinition.g:9161:4: RULE_ID
             {
              before(grammarAccess.getExternalVariableUseAccess().getRefBindingIDTerminalRuleCall_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -27213,21 +27709,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__GraphVariableUse__WorkerAssignment_0"
-    // InternalDeviceDefinition.g:9010:1: rule__GraphVariableUse__WorkerAssignment_0 : ( ( RULE_ID ) ) ;
+    // InternalDeviceDefinition.g:9172:1: rule__GraphVariableUse__WorkerAssignment_0 : ( ( RULE_ID ) ) ;
     public final void rule__GraphVariableUse__WorkerAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:9014:1: ( ( ( RULE_ID ) ) )
-            // InternalDeviceDefinition.g:9015:2: ( ( RULE_ID ) )
+            // InternalDeviceDefinition.g:9176:1: ( ( ( RULE_ID ) ) )
+            // InternalDeviceDefinition.g:9177:2: ( ( RULE_ID ) )
             {
-            // InternalDeviceDefinition.g:9015:2: ( ( RULE_ID ) )
-            // InternalDeviceDefinition.g:9016:3: ( RULE_ID )
+            // InternalDeviceDefinition.g:9177:2: ( ( RULE_ID ) )
+            // InternalDeviceDefinition.g:9178:3: ( RULE_ID )
             {
              before(grammarAccess.getGraphVariableUseAccess().getWorkerWorkerCrossReference_0_0()); 
-            // InternalDeviceDefinition.g:9017:3: ( RULE_ID )
-            // InternalDeviceDefinition.g:9018:4: RULE_ID
+            // InternalDeviceDefinition.g:9179:3: ( RULE_ID )
+            // InternalDeviceDefinition.g:9180:4: RULE_ID
             {
              before(grammarAccess.getGraphVariableUseAccess().getWorkerWorkerIDTerminalRuleCall_0_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -27258,21 +27754,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__GraphVariableUse__DeviceAssignment_2"
-    // InternalDeviceDefinition.g:9029:1: rule__GraphVariableUse__DeviceAssignment_2 : ( ( RULE_ID ) ) ;
+    // InternalDeviceDefinition.g:9191:1: rule__GraphVariableUse__DeviceAssignment_2 : ( ( RULE_ID ) ) ;
     public final void rule__GraphVariableUse__DeviceAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:9033:1: ( ( ( RULE_ID ) ) )
-            // InternalDeviceDefinition.g:9034:2: ( ( RULE_ID ) )
+            // InternalDeviceDefinition.g:9195:1: ( ( ( RULE_ID ) ) )
+            // InternalDeviceDefinition.g:9196:2: ( ( RULE_ID ) )
             {
-            // InternalDeviceDefinition.g:9034:2: ( ( RULE_ID ) )
-            // InternalDeviceDefinition.g:9035:3: ( RULE_ID )
+            // InternalDeviceDefinition.g:9196:2: ( ( RULE_ID ) )
+            // InternalDeviceDefinition.g:9197:3: ( RULE_ID )
             {
              before(grammarAccess.getGraphVariableUseAccess().getDeviceDeviceCrossReference_2_0()); 
-            // InternalDeviceDefinition.g:9036:3: ( RULE_ID )
-            // InternalDeviceDefinition.g:9037:4: RULE_ID
+            // InternalDeviceDefinition.g:9198:3: ( RULE_ID )
+            // InternalDeviceDefinition.g:9199:4: RULE_ID
             {
              before(grammarAccess.getGraphVariableUseAccess().getDeviceDeviceIDTerminalRuleCall_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -27303,21 +27799,21 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__GraphVariableUse__RefAssignment_4"
-    // InternalDeviceDefinition.g:9048:1: rule__GraphVariableUse__RefAssignment_4 : ( ( RULE_ID ) ) ;
+    // InternalDeviceDefinition.g:9210:1: rule__GraphVariableUse__RefAssignment_4 : ( ( RULE_ID ) ) ;
     public final void rule__GraphVariableUse__RefAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:9052:1: ( ( ( RULE_ID ) ) )
-            // InternalDeviceDefinition.g:9053:2: ( ( RULE_ID ) )
+            // InternalDeviceDefinition.g:9214:1: ( ( ( RULE_ID ) ) )
+            // InternalDeviceDefinition.g:9215:2: ( ( RULE_ID ) )
             {
-            // InternalDeviceDefinition.g:9053:2: ( ( RULE_ID ) )
-            // InternalDeviceDefinition.g:9054:3: ( RULE_ID )
+            // InternalDeviceDefinition.g:9215:2: ( ( RULE_ID ) )
+            // InternalDeviceDefinition.g:9216:3: ( RULE_ID )
             {
              before(grammarAccess.getGraphVariableUseAccess().getRefBindingCrossReference_4_0()); 
-            // InternalDeviceDefinition.g:9055:3: ( RULE_ID )
-            // InternalDeviceDefinition.g:9056:4: RULE_ID
+            // InternalDeviceDefinition.g:9217:3: ( RULE_ID )
+            // InternalDeviceDefinition.g:9218:4: RULE_ID
             {
              before(grammarAccess.getGraphVariableUseAccess().getRefBindingIDTerminalRuleCall_4_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -27348,17 +27844,17 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Parenthesis__ExpAssignment_1"
-    // InternalDeviceDefinition.g:9067:1: rule__Parenthesis__ExpAssignment_1 : ( ruleExp ) ;
+    // InternalDeviceDefinition.g:9229:1: rule__Parenthesis__ExpAssignment_1 : ( ruleExp ) ;
     public final void rule__Parenthesis__ExpAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDeviceDefinition.g:9071:1: ( ( ruleExp ) )
-            // InternalDeviceDefinition.g:9072:2: ( ruleExp )
+            // InternalDeviceDefinition.g:9233:1: ( ( ruleExp ) )
+            // InternalDeviceDefinition.g:9234:2: ( ruleExp )
             {
-            // InternalDeviceDefinition.g:9072:2: ( ruleExp )
-            // InternalDeviceDefinition.g:9073:3: ruleExp
+            // InternalDeviceDefinition.g:9234:2: ( ruleExp )
+            // InternalDeviceDefinition.g:9235:3: ruleExp
             {
              before(grammarAccess.getParenthesisAccess().getExpExpParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -27431,51 +27927,55 @@ public class InternalDeviceDefinitionParser extends AbstractInternalContentAssis
     public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000003FFC000L});
     public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x1000000000000000L});
     public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x2000000000000000L});
-    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x4280000000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x4000000000000002L,0x0000000000000100L});
-    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x8000000000000000L,0x0000000000002021L});
+    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x4280000000000000L,0x0000000000000400L});
+    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x4000000000000002L,0x0000000000000400L});
+    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x8000000000000000L,0x0000000000008021L});
     public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000020L});
-    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000000000000002L,0x0000000000002000L});
-    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0002000000000000L,0x000000000000003CL});
-    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0000000000000002L,0x000000000000003CL});
+    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000000000000002L,0x0000000000008000L});
+    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0002000000000000L,0x00000000000000FCL});
+    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0000000000000002L,0x00000000000000FCL});
     public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0002000000000002L});
-    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0000000000000000L,0x000000000000003CL});
+    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0000000000000000L,0x00000000000000FCL});
     public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x0001000000000150L,0x0000000030018000L});
-    public static final BitSet FOLLOW_51 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_52 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_53 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_54 = new BitSet(new long[]{0x000000000001C000L});
-    public static final BitSet FOLLOW_55 = new BitSet(new long[]{0x00000000000E0000L});
-    public static final BitSet FOLLOW_56 = new BitSet(new long[]{0x0000000000700000L});
-    public static final BitSet FOLLOW_57 = new BitSet(new long[]{0x0000000000000020L,0x0000000000000040L});
-    public static final BitSet FOLLOW_58 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_59 = new BitSet(new long[]{0x8000000000000000L});
-    public static final BitSet FOLLOW_60 = new BitSet(new long[]{0x0002000000000000L,0x000000000000263CL});
+    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x0001000000000150L,0x00000000C0060000L});
+    public static final BitSet FOLLOW_51 = new BitSet(new long[]{0x0000000000000110L});
+    public static final BitSet FOLLOW_52 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_53 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_54 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_55 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_56 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_57 = new BitSet(new long[]{0x000000000001C000L});
+    public static final BitSet FOLLOW_58 = new BitSet(new long[]{0x00000000000E0000L});
+    public static final BitSet FOLLOW_59 = new BitSet(new long[]{0x0000000000700000L});
+    public static final BitSet FOLLOW_60 = new BitSet(new long[]{0x0000000000000020L,0x0000000000000100L});
     public static final BitSet FOLLOW_61 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
-    public static final BitSet FOLLOW_62 = new BitSet(new long[]{0x0000000000000000L,0x0000000000001800L});
-    public static final BitSet FOLLOW_63 = new BitSet(new long[]{0x0000000000000000L,0x0000000000004000L});
-    public static final BitSet FOLLOW_64 = new BitSet(new long[]{0x0000000000000140L,0x0000000000018000L});
-    public static final BitSet FOLLOW_65 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
-    public static final BitSet FOLLOW_66 = new BitSet(new long[]{0x0000000000000000L,0x0000000000010000L});
-    public static final BitSet FOLLOW_67 = new BitSet(new long[]{0x0000000000000000L,0x0000000000060000L});
-    public static final BitSet FOLLOW_68 = new BitSet(new long[]{0x0000000000000002L,0x0000000000060000L});
+    public static final BitSet FOLLOW_62 = new BitSet(new long[]{0x8000000000000000L});
+    public static final BitSet FOLLOW_63 = new BitSet(new long[]{0x0002000000000000L,0x00000000000098FCL});
+    public static final BitSet FOLLOW_64 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_65 = new BitSet(new long[]{0x0000000000000000L,0x0000000000001800L});
+    public static final BitSet FOLLOW_66 = new BitSet(new long[]{0x0000000000000000L,0x0000000000006000L});
+    public static final BitSet FOLLOW_67 = new BitSet(new long[]{0x0000000000000000L,0x0000000000010000L});
+    public static final BitSet FOLLOW_68 = new BitSet(new long[]{0x0000000000000140L,0x0000000000060000L});
     public static final BitSet FOLLOW_69 = new BitSet(new long[]{0x0000000000000000L,0x0000000000020000L});
-    public static final BitSet FOLLOW_70 = new BitSet(new long[]{0x0000000000000000L,0x0000000000180000L});
-    public static final BitSet FOLLOW_71 = new BitSet(new long[]{0x0000000000000002L,0x0000000000180000L});
-    public static final BitSet FOLLOW_72 = new BitSet(new long[]{0x0000000000000000L,0x0000000000080000L});
-    public static final BitSet FOLLOW_73 = new BitSet(new long[]{0x0000000000000000L,0x0000000000600000L});
-    public static final BitSet FOLLOW_74 = new BitSet(new long[]{0x0000000000000002L,0x0000000000600000L});
-    public static final BitSet FOLLOW_75 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
-    public static final BitSet FOLLOW_76 = new BitSet(new long[]{0x0000000000000000L,0x0000000001800000L});
-    public static final BitSet FOLLOW_77 = new BitSet(new long[]{0x0000000000000002L,0x0000000001800000L});
-    public static final BitSet FOLLOW_78 = new BitSet(new long[]{0x0000000000000000L,0x0000000000800000L});
-    public static final BitSet FOLLOW_79 = new BitSet(new long[]{0x0000000000000000L,0x0000000006000000L});
-    public static final BitSet FOLLOW_80 = new BitSet(new long[]{0x0000000000000002L,0x0000000006000000L});
-    public static final BitSet FOLLOW_81 = new BitSet(new long[]{0x0000000000000000L,0x0000000002000000L});
-    public static final BitSet FOLLOW_82 = new BitSet(new long[]{0x0000008000000000L,0x0000000008000000L});
-    public static final BitSet FOLLOW_83 = new BitSet(new long[]{0x0000008000000002L,0x0000000008000000L});
-    public static final BitSet FOLLOW_84 = new BitSet(new long[]{0x0007000000000150L,0x0000000030018000L});
-    public static final BitSet FOLLOW_85 = new BitSet(new long[]{0x000000000C000000L});
+    public static final BitSet FOLLOW_70 = new BitSet(new long[]{0x0000000000000000L,0x0000000000040000L});
+    public static final BitSet FOLLOW_71 = new BitSet(new long[]{0x0000000000000000L,0x0000000000180000L});
+    public static final BitSet FOLLOW_72 = new BitSet(new long[]{0x0000000000000002L,0x0000000000180000L});
+    public static final BitSet FOLLOW_73 = new BitSet(new long[]{0x0000000000000000L,0x0000000000080000L});
+    public static final BitSet FOLLOW_74 = new BitSet(new long[]{0x0000000000000000L,0x0000000000600000L});
+    public static final BitSet FOLLOW_75 = new BitSet(new long[]{0x0000000000000002L,0x0000000000600000L});
+    public static final BitSet FOLLOW_76 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
+    public static final BitSet FOLLOW_77 = new BitSet(new long[]{0x0000000000000000L,0x0000000001800000L});
+    public static final BitSet FOLLOW_78 = new BitSet(new long[]{0x0000000000000002L,0x0000000001800000L});
+    public static final BitSet FOLLOW_79 = new BitSet(new long[]{0x0000000000000000L,0x0000000000800000L});
+    public static final BitSet FOLLOW_80 = new BitSet(new long[]{0x0000000000000000L,0x0000000006000000L});
+    public static final BitSet FOLLOW_81 = new BitSet(new long[]{0x0000000000000002L,0x0000000006000000L});
+    public static final BitSet FOLLOW_82 = new BitSet(new long[]{0x0000000000000000L,0x0000000002000000L});
+    public static final BitSet FOLLOW_83 = new BitSet(new long[]{0x0000000000000000L,0x0000000018000000L});
+    public static final BitSet FOLLOW_84 = new BitSet(new long[]{0x0000000000000002L,0x0000000018000000L});
+    public static final BitSet FOLLOW_85 = new BitSet(new long[]{0x0000000000000000L,0x0000000008000000L});
+    public static final BitSet FOLLOW_86 = new BitSet(new long[]{0x0000008000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_87 = new BitSet(new long[]{0x0000008000000002L,0x0000000020000000L});
+    public static final BitSet FOLLOW_88 = new BitSet(new long[]{0x0007000000000150L,0x00000000C0060000L});
+    public static final BitSet FOLLOW_89 = new BitSet(new long[]{0x000000000C000000L});
 
 }

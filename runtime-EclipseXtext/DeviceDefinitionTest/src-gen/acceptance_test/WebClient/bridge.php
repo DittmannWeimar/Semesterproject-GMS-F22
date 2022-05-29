@@ -14,7 +14,7 @@ $queryArguments = "$type/$gateway/$worker/$topic?from=$from&to=$to";
 if (!isset($apiHost)) {
     $apiRoot = "http://localhost:3000/$queryArguments";
 } else {
-    $apiRoot = $apiHost . "/$queryArguments";
+    $apiRoot = $apiHost . "$queryArguments";
 }
 
 $options = array(

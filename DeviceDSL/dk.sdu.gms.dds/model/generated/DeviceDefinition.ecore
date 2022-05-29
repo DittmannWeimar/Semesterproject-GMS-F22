@@ -86,6 +86,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Pin">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//PinType"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pinId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PinType"/>
@@ -143,6 +144,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="DAC" eSuperTypes="#//PinType"/>
   <eClassifiers xsi:type="ecore:EClass" name="GenericIn" eSuperTypes="#//PinType"/>
   <eClassifiers xsi:type="ecore:EClass" name="GenericOut" eSuperTypes="#//PinType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SerialData" eSuperTypes="#//PinType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SerialClock" eSuperTypes="#//PinType"/>
   <eClassifiers xsi:type="ecore:EClass" name="Millisecond" eSuperTypes="#//TimeUnit"/>
   <eClassifiers xsi:type="ecore:EClass" name="Second" eSuperTypes="#//TimeUnit"/>
   <eClassifiers xsi:type="ecore:EClass" name="Minute" eSuperTypes="#//TimeUnit"/>

@@ -81,6 +81,8 @@ public class DeviceDefinitionParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getPinTypeAccess().getGroup_1(), "rule__PinType__Group_1__0");
 			builder.put(grammarAccess.getPinTypeAccess().getGroup_2(), "rule__PinType__Group_2__0");
 			builder.put(grammarAccess.getPinTypeAccess().getGroup_3(), "rule__PinType__Group_3__0");
+			builder.put(grammarAccess.getPinTypeAccess().getGroup_4(), "rule__PinType__Group_4__0");
+			builder.put(grammarAccess.getPinTypeAccess().getGroup_5(), "rule__PinType__Group_5__0");
 			builder.put(grammarAccess.getTimeUnitAccess().getGroup_0(), "rule__TimeUnit__Group_0__0");
 			builder.put(grammarAccess.getTimeUnitAccess().getGroup_1(), "rule__TimeUnit__Group_1__0");
 			builder.put(grammarAccess.getTimeUnitAccess().getGroup_2(), "rule__TimeUnit__Group_2__0");
@@ -173,7 +175,8 @@ public class DeviceDefinitionParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getSensorAccess().getSettingsAssignment_6(), "rule__Sensor__SettingsAssignment_6");
 			builder.put(grammarAccess.getSensorAccess().getPredicateAssignment_7_2(), "rule__Sensor__PredicateAssignment_7_2");
 			builder.put(grammarAccess.getPinAccess().getTypeAssignment_0(), "rule__Pin__TypeAssignment_0");
-			builder.put(grammarAccess.getPinAccess().getNumberAssignment_1(), "rule__Pin__NumberAssignment_1");
+			builder.put(grammarAccess.getPinAccess().getPinIdAssignment_1(), "rule__Pin__PinIdAssignment_1");
+			builder.put(grammarAccess.getPinAccess().getNumberAssignment_2(), "rule__Pin__NumberAssignment_2");
 			builder.put(grammarAccess.getSensorOutputAccess().getOutputAssignment_1(), "rule__SensorOutput__OutputAssignment_1");
 			builder.put(grammarAccess.getSensorOutputAccess().getNameAssignment_3(), "rule__SensorOutput__NameAssignment_3");
 			builder.put(grammarAccess.getSensorOutputAccess().getMappingAssignment_4_2(), "rule__SensorOutput__MappingAssignment_4_2");

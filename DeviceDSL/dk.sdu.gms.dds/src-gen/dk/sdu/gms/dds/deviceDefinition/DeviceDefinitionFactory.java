@@ -312,6 +312,24 @@ public interface DeviceDefinitionFactory extends EFactory
   GenericOut createGenericOut();
 
   /**
+   * Returns a new object of class '<em>Serial Data</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Serial Data</em>'.
+   * @generated
+   */
+  SerialData createSerialData();
+
+  /**
+   * Returns a new object of class '<em>Serial Clock</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Serial Clock</em>'.
+   * @generated
+   */
+  SerialClock createSerialClock();
+
+  /**
    * Returns a new object of class '<em>Millisecond</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

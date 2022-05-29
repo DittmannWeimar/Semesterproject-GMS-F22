@@ -1,5 +1,6 @@
 package dk.sdu.gms.dds;
 
+import com.google.common.base.Objects;
 import dk.sdu.gms.dds.deviceDefinition.ADC;
 import dk.sdu.gms.dds.deviceDefinition.Actuator;
 import dk.sdu.gms.dds.deviceDefinition.And;
@@ -444,6 +445,28 @@ public class Utils {
       _xblockexpression = _switchResult;
     }
     return _xblockexpression;
+  }
+  
+  public static <T extends Object> ArrayList<Pin> getPinsOfType(final List<Pin> pins, final Class<T> type) {
+    final ArrayList<Pin> result = new ArrayList<Pin>();
+    for (final Pin pin : pins) {
+      boolean _isInstance = type.isInstance(pin);
+      if (_isInstance) {
+        result.add(pin);
+      }
+    }
+    return result;
+  }
+  
+  public static Pin getPinById(final List<Pin> pins, final String id) {
+    for (final Pin pin : pins) {
+      String _pinId = pin.getPinId();
+      boolean _equals = Objects.equal(_pinId, id);
+      if (_equals) {
+        return pin;
+      }
+    }
+    return null;
   }
   
   public static String getTimerName(final Actuator actuator) {

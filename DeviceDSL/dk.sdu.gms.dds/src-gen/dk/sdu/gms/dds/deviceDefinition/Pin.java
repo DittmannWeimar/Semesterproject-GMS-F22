@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Pin#getType <em>Type</em>}</li>
+ *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Pin#getPinId <em>Pin Id</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.Pin#getNumber <em>Number</em>}</li>
  * </ul>
  *
@@ -45,6 +46,28 @@ public interface Pin extends EObject
    * @generated
    */
   void setType(PinType value);
+
+  /**
+   * Returns the value of the '<em><b>Pin Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Pin Id</em>' attribute.
+   * @see #setPinId(String)
+   * @see dk.sdu.gms.dds.deviceDefinition.DeviceDefinitionPackage#getPin_PinId()
+   * @model
+   * @generated
+   */
+  String getPinId();
+
+  /**
+   * Sets the value of the '{@link dk.sdu.gms.dds.deviceDefinition.Pin#getPinId <em>Pin Id</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Pin Id</em>' attribute.
+   * @see #getPinId()
+   * @generated
+   */
+  void setPinId(String value);
 
   /**
    * Returns the value of the '<em><b>Number</b></em>' attribute.

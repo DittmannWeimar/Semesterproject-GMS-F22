@@ -8,11 +8,13 @@ import dk.sdu.gms.dds.deviceDefinition.Expression
 import dk.sdu.gms.dds.deviceDefinition.Trigger
 import dk.sdu.gms.dds.deviceDefinition.When
 import dk.sdu.gms.dds.deviceDefinition.OnOff
+import dk.sdu.gms.dds.actuators.OLEDMonitorActuator
 
 abstract class ActuatorDefinition extends DeviceDefinition {
 	
 	public static ActuatorDefinition[] Actuators = #[
-		new GenericActuator()
+		new GenericActuator(),
+		new OLEDMonitorActuator()
 	];
 	
 	public static def ActuatorDefinition getActuatorDefinition(Actuator actuator) {
@@ -23,9 +25,7 @@ abstract class ActuatorDefinition extends DeviceDefinition {
 		}
 		return null;
 	}
-	
-	public String type;
-	public int pinCount;
+
 	public String[] requiredSettings;
 	
 	override generateDirectives() {
@@ -61,14 +61,20 @@ abstract class ActuatorDefinition extends DeviceDefinition {
 	
 	protected def generateCheckLoop (Actuator actuator) {
 		val trigger = actuator.trigger;
-		switch (trigger) {
-			When: generateWhenLoop(trigger.exp, actuator)
-			OnOff: {
-				val isTimed = isTimed(trigger);
-				if (isTimed) {
-					generateWhenLoop(trigger.onExp, actuator)
-				}else{
-					trigger.generateOnOffLoop(actuator)					
+		if (trigger === null) {
+			return '''
+			«getEnabledVariableName(actuator)» = true);
+			'''
+		}else{
+			switch (trigger) {
+				When: generateWhenLoop(trigger.exp, actuator)
+				OnOff: {
+					val isTimed = isTimed(trigger);
+					if (isTimed) {
+						generateWhenLoop(trigger.onExp, actuator)
+					}else{
+						trigger.generateOnOffLoop(actuator)					
+					}
 				}
 			} 
 		}

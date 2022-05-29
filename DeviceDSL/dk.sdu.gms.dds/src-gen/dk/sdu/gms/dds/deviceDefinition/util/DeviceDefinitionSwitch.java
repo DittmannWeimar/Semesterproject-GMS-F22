@@ -51,6 +51,8 @@ import dk.sdu.gms.dds.deviceDefinition.Random;
 import dk.sdu.gms.dds.deviceDefinition.Second;
 import dk.sdu.gms.dds.deviceDefinition.Sensor;
 import dk.sdu.gms.dds.deviceDefinition.SensorOutput;
+import dk.sdu.gms.dds.deviceDefinition.SerialClock;
+import dk.sdu.gms.dds.deviceDefinition.SerialData;
 import dk.sdu.gms.dds.deviceDefinition.Setting;
 import dk.sdu.gms.dds.deviceDefinition.TimeUnit;
 import dk.sdu.gms.dds.deviceDefinition.Trigger;
@@ -371,6 +373,22 @@ public class DeviceDefinitionSwitch<T> extends Switch<T>
         GenericOut genericOut = (GenericOut)theEObject;
         T result = caseGenericOut(genericOut);
         if (result == null) result = casePinType(genericOut);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceDefinitionPackage.SERIAL_DATA:
+      {
+        SerialData serialData = (SerialData)theEObject;
+        T result = caseSerialData(serialData);
+        if (result == null) result = casePinType(serialData);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceDefinitionPackage.SERIAL_CLOCK:
+      {
+        SerialClock serialClock = (SerialClock)theEObject;
+        T result = caseSerialClock(serialClock);
+        if (result == null) result = casePinType(serialClock);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1076,6 +1094,38 @@ public class DeviceDefinitionSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseGenericOut(GenericOut object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Serial Data</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Serial Data</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSerialData(SerialData object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Serial Clock</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Serial Clock</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSerialClock(SerialClock object)
   {
     return null;
   }

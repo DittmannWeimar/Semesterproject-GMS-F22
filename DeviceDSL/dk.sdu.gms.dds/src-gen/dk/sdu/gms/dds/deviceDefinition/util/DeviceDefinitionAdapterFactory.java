@@ -51,6 +51,8 @@ import dk.sdu.gms.dds.deviceDefinition.Random;
 import dk.sdu.gms.dds.deviceDefinition.Second;
 import dk.sdu.gms.dds.deviceDefinition.Sensor;
 import dk.sdu.gms.dds.deviceDefinition.SensorOutput;
+import dk.sdu.gms.dds.deviceDefinition.SerialClock;
+import dk.sdu.gms.dds.deviceDefinition.SerialData;
 import dk.sdu.gms.dds.deviceDefinition.Setting;
 import dk.sdu.gms.dds.deviceDefinition.TimeUnit;
 import dk.sdu.gms.dds.deviceDefinition.Trigger;
@@ -288,6 +290,16 @@ public class DeviceDefinitionAdapterFactory extends AdapterFactoryImpl
       public Adapter caseGenericOut(GenericOut object)
       {
         return createGenericOutAdapter();
+      }
+      @Override
+      public Adapter caseSerialData(SerialData object)
+      {
+        return createSerialDataAdapter();
+      }
+      @Override
+      public Adapter caseSerialClock(SerialClock object)
+      {
+        return createSerialClockAdapter();
       }
       @Override
       public Adapter caseMillisecond(Millisecond object)
@@ -902,6 +914,36 @@ public class DeviceDefinitionAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createGenericOutAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dk.sdu.gms.dds.deviceDefinition.SerialData <em>Serial Data</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dk.sdu.gms.dds.deviceDefinition.SerialData
+   * @generated
+   */
+  public Adapter createSerialDataAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dk.sdu.gms.dds.deviceDefinition.SerialClock <em>Serial Clock</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dk.sdu.gms.dds.deviceDefinition.SerialClock
+   * @generated
+   */
+  public Adapter createSerialClockAdapter()
   {
     return null;
   }

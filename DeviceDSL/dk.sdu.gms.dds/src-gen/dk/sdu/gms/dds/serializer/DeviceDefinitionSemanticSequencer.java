@@ -45,6 +45,8 @@ import dk.sdu.gms.dds.deviceDefinition.Random;
 import dk.sdu.gms.dds.deviceDefinition.Second;
 import dk.sdu.gms.dds.deviceDefinition.Sensor;
 import dk.sdu.gms.dds.deviceDefinition.SensorOutput;
+import dk.sdu.gms.dds.deviceDefinition.SerialClock;
+import dk.sdu.gms.dds.deviceDefinition.SerialData;
 import dk.sdu.gms.dds.deviceDefinition.Setting;
 import dk.sdu.gms.dds.deviceDefinition.Value;
 import dk.sdu.gms.dds.deviceDefinition.When;
@@ -195,6 +197,12 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 			case DeviceDefinitionPackage.SENSOR_OUTPUT:
 				sequence_SensorOutput(context, (SensorOutput) semanticObject); 
 				return; 
+			case DeviceDefinitionPackage.SERIAL_CLOCK:
+				sequence_PinType(context, (SerialClock) semanticObject); 
+				return; 
+			case DeviceDefinitionPackage.SERIAL_DATA:
+				sequence_PinType(context, (SerialData) semanticObject); 
+				return; 
 			case DeviceDefinitionPackage.SETTING:
 				sequence_Setting(context, (Setting) semanticObject); 
 				return; 
@@ -228,7 +236,7 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 	 *         pins+=Pin* 
 	 *         pins+=Pin* 
 	 *         settings+=Setting* 
-	 *         trigger=Trigger
+	 *         trigger=Trigger?
 	 *     )
 	 * </pre>
 	 */
@@ -1076,23 +1084,42 @@ public class DeviceDefinitionSemanticSequencer extends AbstractDelegatingSemanti
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     PinType returns SerialClock
+	 *
+	 * Constraint:
+	 *     {SerialClock}
+	 * </pre>
+	 */
+	protected void sequence_PinType(ISerializationContext context, SerialClock semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     PinType returns SerialData
+	 *
+	 * Constraint:
+	 *     {SerialData}
+	 * </pre>
+	 */
+	protected void sequence_PinType(ISerializationContext context, SerialData semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     Pin returns Pin
 	 *
 	 * Constraint:
-	 *     (type=PinType number=INT)
+	 *     (type=PinType pinId=ID? number=INT)
 	 * </pre>
 	 */
 	protected void sequence_Pin(ISerializationContext context, Pin semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, DeviceDefinitionPackage.Literals.PIN__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeviceDefinitionPackage.Literals.PIN__TYPE));
-			if (transientValues.isValueTransient(semanticObject, DeviceDefinitionPackage.Literals.PIN__NUMBER) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeviceDefinitionPackage.Literals.PIN__NUMBER));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPinAccess().getTypePinTypeParserRuleCall_0_0(), semanticObject.getType());
-		feeder.accept(grammarAccess.getPinAccess().getNumberINTTerminalRuleCall_1_0(), semanticObject.getNumber());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

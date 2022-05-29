@@ -1325,9 +1325,27 @@ rulePin returns [EObject current=null]
 		)
 		(
 			(
-				lv_number_1_0=RULE_INT
+				lv_pinId_1_0=RULE_ID
 				{
-					newLeafNode(lv_number_1_0, grammarAccess.getPinAccess().getNumberINTTerminalRuleCall_1_0());
+					newLeafNode(lv_pinId_1_0, grammarAccess.getPinAccess().getPinIdIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getPinRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"pinId",
+						lv_pinId_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)?
+		(
+			(
+				lv_number_2_0=RULE_INT
+				{
+					newLeafNode(lv_number_2_0, grammarAccess.getPinAccess().getNumberINTTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -1336,7 +1354,7 @@ rulePin returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"number",
-						lv_number_1_0,
+						lv_number_2_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
@@ -1413,6 +1431,34 @@ rulePinType returns [EObject current=null]
 			otherlv_7='out'
 			{
 				newLeafNode(otherlv_7, grammarAccess.getPinTypeAccess().getOutKeyword_3_1());
+			}
+		)
+		    |
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getPinTypeAccess().getSerialDataAction_4_0(),
+						$current);
+				}
+			)
+			otherlv_9='sda'
+			{
+				newLeafNode(otherlv_9, grammarAccess.getPinTypeAccess().getSdaKeyword_4_1());
+			}
+		)
+		    |
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getPinTypeAccess().getSerialClockAction_5_0(),
+						$current);
+				}
+			)
+			otherlv_11='scl'
+			{
+				newLeafNode(otherlv_11, grammarAccess.getPinTypeAccess().getSclKeyword_5_1());
 			}
 		)
 	)
@@ -1777,7 +1823,7 @@ ruleActuator returns [EObject current=null]
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)
+		)?
 	)
 ;
 

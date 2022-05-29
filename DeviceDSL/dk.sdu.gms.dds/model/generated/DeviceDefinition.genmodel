@@ -68,6 +68,7 @@
     </genClasses>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Pin">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceDefinition.ecore#//Pin/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Pin/pinId"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceDefinition.ecore#//Pin/number"/>
     </genClasses>
     <genClasses ecoreClass="DeviceDefinition.ecore#//PinType"/>
@@ -120,6 +121,8 @@
     <genClasses ecoreClass="DeviceDefinition.ecore#//DAC"/>
     <genClasses ecoreClass="DeviceDefinition.ecore#//GenericIn"/>
     <genClasses ecoreClass="DeviceDefinition.ecore#//GenericOut"/>
+    <genClasses ecoreClass="DeviceDefinition.ecore#//SerialData"/>
+    <genClasses ecoreClass="DeviceDefinition.ecore#//SerialClock"/>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Millisecond"/>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Second"/>
     <genClasses ecoreClass="DeviceDefinition.ecore#//Minute"/>

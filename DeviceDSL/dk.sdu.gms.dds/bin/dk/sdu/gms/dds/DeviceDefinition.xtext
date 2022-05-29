@@ -66,11 +66,11 @@ Sensor:
 ;
 
 Pin:
-	type = PinType number = INT
+	type = PinType (pinId = ID)? number = INT
 ;
 
 PinType:
-	{ADC} 'adc' | {DAC} 'dac' | {GenericIn} 'in' | {GenericOut} 'out' 
+	{ADC} 'adc' | {DAC} 'dac' | {GenericIn} 'in' | {GenericOut} 'out' | {SerialData} 'sda' | {SerialClock} 'scl'
 ;
 
 TimeUnit:
@@ -97,7 +97,7 @@ Actuator:
 	'Actuator' type = ID name=ID ':'
 	'pins' pins += Pin* (',' pins += Pin)* 
 	settings += Setting*
-	trigger = Trigger
+	(trigger = Trigger)?
 ;
 
 Trigger:

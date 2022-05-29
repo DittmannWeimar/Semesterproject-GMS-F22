@@ -15,6 +15,7 @@ import dk.sdu.gms.dds.deviceDefinition.Graph;
 import dk.sdu.gms.dds.deviceDefinition.GraphVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.InternalVariableUse;
 import dk.sdu.gms.dds.deviceDefinition.NumberPrimitive;
+import dk.sdu.gms.dds.deviceDefinition.Pin;
 import dk.sdu.gms.dds.deviceDefinition.Sensor;
 import dk.sdu.gms.dds.deviceDefinition.VariableUse;
 import dk.sdu.gms.dds.deviceDefinition.Worker;
@@ -134,5 +135,19 @@ public class DeviceDefinitionValidator extends AbstractDeviceDefinitionValidator
     String _plus = (_sleepTime + " ");
     String _timeUnitToString = Utils.timeUnitToString(worker.getTimeUnit());
     return (_plus + _timeUnitToString);
+  }
+  
+  @Check
+  public void checkRequiredPins(final Device device) {
+    final DeviceDefinition definition = DeviceDefinition.getDefinition(device);
+    for (final String id : definition.requiredPinIds) {
+      {
+        final Pin pin = Utils.getPinById(device.getPins(), id);
+        boolean _equals = Objects.equal(pin, null);
+        if (_equals) {
+          this.error((("Required pin \'" + id) + "\' not found, please add it."), DeviceDefinitionPackage.Literals.DEVICE__PINS);
+        }
+      }
+    }
   }
 }

@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.PinImpl#getType <em>Type</em>}</li>
+ *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.PinImpl#getPinId <em>Pin Id</em>}</li>
  *   <li>{@link dk.sdu.gms.dds.deviceDefinition.impl.PinImpl#getNumber <em>Number</em>}</li>
  * </ul>
  *
@@ -41,6 +42,26 @@ public class PinImpl extends MinimalEObjectImpl.Container implements Pin
    * @ordered
    */
   protected PinType type;
+
+  /**
+   * The default value of the '{@link #getPinId() <em>Pin Id</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPinId()
+   * @generated
+   * @ordered
+   */
+  protected static final String PIN_ID_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getPinId() <em>Pin Id</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPinId()
+   * @generated
+   * @ordered
+   */
+  protected String pinId = PIN_ID_EDEFAULT;
 
   /**
    * The default value of the '{@link #getNumber() <em>Number</em>}' attribute.
@@ -139,6 +160,31 @@ public class PinImpl extends MinimalEObjectImpl.Container implements Pin
    * @generated
    */
   @Override
+  public String getPinId()
+  {
+    return pinId;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setPinId(String newPinId)
+  {
+    String oldPinId = pinId;
+    pinId = newPinId;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceDefinitionPackage.PIN__PIN_ID, oldPinId, pinId));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public int getNumber()
   {
     return number;
@@ -186,6 +232,8 @@ public class PinImpl extends MinimalEObjectImpl.Container implements Pin
     {
       case DeviceDefinitionPackage.PIN__TYPE:
         return getType();
+      case DeviceDefinitionPackage.PIN__PIN_ID:
+        return getPinId();
       case DeviceDefinitionPackage.PIN__NUMBER:
         return getNumber();
     }
@@ -204,6 +252,9 @@ public class PinImpl extends MinimalEObjectImpl.Container implements Pin
     {
       case DeviceDefinitionPackage.PIN__TYPE:
         setType((PinType)newValue);
+        return;
+      case DeviceDefinitionPackage.PIN__PIN_ID:
+        setPinId((String)newValue);
         return;
       case DeviceDefinitionPackage.PIN__NUMBER:
         setNumber((Integer)newValue);
@@ -225,6 +276,9 @@ public class PinImpl extends MinimalEObjectImpl.Container implements Pin
       case DeviceDefinitionPackage.PIN__TYPE:
         setType((PinType)null);
         return;
+      case DeviceDefinitionPackage.PIN__PIN_ID:
+        setPinId(PIN_ID_EDEFAULT);
+        return;
       case DeviceDefinitionPackage.PIN__NUMBER:
         setNumber(NUMBER_EDEFAULT);
         return;
@@ -244,6 +298,8 @@ public class PinImpl extends MinimalEObjectImpl.Container implements Pin
     {
       case DeviceDefinitionPackage.PIN__TYPE:
         return type != null;
+      case DeviceDefinitionPackage.PIN__PIN_ID:
+        return PIN_ID_EDEFAULT == null ? pinId != null : !PIN_ID_EDEFAULT.equals(pinId);
       case DeviceDefinitionPackage.PIN__NUMBER:
         return number != NUMBER_EDEFAULT;
     }
@@ -261,7 +317,9 @@ public class PinImpl extends MinimalEObjectImpl.Container implements Pin
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (number: ");
+    result.append(" (pinId: ");
+    result.append(pinId);
+    result.append(", number: ");
     result.append(number);
     result.append(')');
     return result.toString();

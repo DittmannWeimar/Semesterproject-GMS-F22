@@ -12,41 +12,16 @@ System acceptance_test:
 		Worker pump_01:
 		
 			mac 10:97:BD:D5:3E:64
-			sleep for 10 seconds
+			sleep for 500 ms
 			error light 15
-			retries 5 with delay 500 ms
 			
-			Sensor TemperatureHumidity th:
-				pins adc 4
-				out "temperature" as temperature
-				out "humidity" as humidity
+			Sensor Dummy dummy:
+				out as output with mapping call sin(call millis() / 10000)
 				
-			Sensor Generic moisture:
-				pins adc 32
-				out as output with mapping value / 1024.0 * 100.0
-				
-			Actuator Generic pump:
-				pins out 14
-				on moisture.output < 40 off moisture.output > 60
-				
-	Graph:
-		category "Environment"
-		title "Temperature"
-		x "Time"
-		y "Temperature (C)"
-		line pump_01.th.temperature
-		
-	Graph:
-		category "Environment"
-		title "Humidity"
-		x "Time"
-		y "Humidity (%)"
-		line pump_01.th.humidity
-		
-	Graph:
-		category "Plant 01"
-		title "Soil Moisture"
-		x "Time"
-		y "Moisture (%)"
-		line pump_01.moisture.output
-		
+			Actuator OLED oled:
+				pins 
+					sda MOSI 23
+					scl CLK 18
+					out DC 19
+					out CS 5
+					out RST 4
